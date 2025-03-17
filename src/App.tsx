@@ -22,9 +22,11 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/locations" element={<LocationsPage />} />
+            
+            {/* City Routes - different URL patterns */}
             <Route path="/vehicle-wraps-:citySlug-il" element={<CityLocationPage />} />
-            <Route path="/vehicle-wraps/:citySlug" element={<CityLocationPage />} />
             <Route path="/vehicle-wraps-:citySlug" element={<CityLocationPage />} />
+            <Route path="/vehicle-wraps/:citySlug" element={<CityLocationPage />} />
             
             {/* Services Routes */}
             <Route path="/services/fleet-wraps" element={<CityLocationPage />} />

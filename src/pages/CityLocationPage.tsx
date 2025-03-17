@@ -20,12 +20,19 @@ const CityLocationPage = () => {
   }
   
   // Clean up city slug if it contains any trailing characters
-  const cleanCitySlug = citySlug?.replace(/-il$/, '');
-  const city = findCityBySlug(cleanCitySlug || '');
+  let cleanCitySlug = citySlug || '';
+  
+  // Handle different URL formats
+  if (cleanCitySlug.endsWith('-il')) {
+    cleanCitySlug = cleanCitySlug.replace(/-il$/, '');
+  }
+  
+  const city = findCityBySlug(cleanCitySlug);
   
   console.log(`Attempting to find city with slug: ${cleanCitySlug}`, city, location.pathname);
   
   if (!city) {
+    console.error(`City not found for slug: ${cleanCitySlug}`);
     return <Navigate to="/locations" />;
   }
   
