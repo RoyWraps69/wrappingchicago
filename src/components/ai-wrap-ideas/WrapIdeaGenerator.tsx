@@ -20,6 +20,7 @@ interface GeneratorProps {
   onDownloadImage: () => void;
   selectedModel: string;
   setSelectedModel: (value: string) => void;
+  imageGenerationError?: string;
 }
 
 const WrapIdeaGenerator = (props: GeneratorProps) => {
@@ -39,7 +40,8 @@ const WrapIdeaGenerator = (props: GeneratorProps) => {
     generatedImage,
     onDownloadImage,
     selectedModel,
-    setSelectedModel
+    setSelectedModel,
+    imageGenerationError
   } = props;
 
   return (
@@ -70,6 +72,7 @@ const WrapIdeaGenerator = (props: GeneratorProps) => {
                 onDownloadImage={onDownloadImage}
                 selectedModel={selectedModel}
                 setSelectedModel={setSelectedModel}
+                errorMessage={imageGenerationError}
               />
             </div>
           </div>

@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import Header from '@/components/Header';
@@ -29,17 +28,15 @@ const AIWrapIdeas = () => {
   const [isGenerating, setIsGenerating] = useState(false);
   const [generatedIdeas, setGeneratedIdeas] = useState<WrapIdea[]>(exampleIdeas);
   
-  // State for direct image generation (DALL-E)
   const [imagePrompt, setImagePrompt] = useState('');
   const [isGeneratingImage, setIsGeneratingImage] = useState(false);
   const [generatedImage, setGeneratedImage] = useState<string | null>(null);
   const [selectedModel, setSelectedModel] = useState('dall-e-3');
+  const [imageGenerationError, setImageGenerationError] = useState<string | undefined>(undefined);
   
-  // API key modal state
   const [isApiKeyModalOpen, setIsApiKeyModalOpen] = useState(false);
   const [hasApiKey, setHasApiKey] = useState(false);
 
-  // Check if API key exists
   useEffect(() => {
     const apiKey = localStorage.getItem('openai_api_key');
     setHasApiKey(!!apiKey);
@@ -65,9 +62,6 @@ const AIWrapIdeas = () => {
 
     setIsGenerating(true);
     
-    // In a real implementation, this would call an AI service to generate
-    // custom ideas based on the business and description
-    // For now, we'll just use the example ideas with a delay
     setTimeout(() => {
       setGeneratedIdeas([...exampleIdeas]);
       setIsGenerating(false);
@@ -83,10 +77,10 @@ const AIWrapIdeas = () => {
     
     if (!checkApiKey()) return;
     
+    setImageGenerationError(undefined);
     setIsGeneratingImage(true);
     
     try {
-      // Call OpenAI API to generate the image
       const fullPrompt = `${selectedVehicleType} vehicle wrap design for ${business ? business + ',' : ''} ${imagePrompt}. Professional, high quality, photorealistic.`;
       
       const imageUrl = await generateImage({
@@ -99,11 +93,14 @@ const AIWrapIdeas = () => {
         setGeneratedImage(imageUrl);
         toast.success("Custom wrap design generated!");
       } else {
+        setImageGenerationError("Failed to generate image. Please try again.");
         toast.error("Failed to generate image. Please try again.");
       }
     } catch (error) {
       console.error("Error generating image:", error);
-      toast.error(error instanceof Error ? error.message : "Failed to generate image");
+      const errorMessage = error instanceof Error ? error.message : "Failed to generate image";
+      setImageGenerationError(errorMessage);
+      toast.error(errorMessage);
     } finally {
       setIsGeneratingImage(false);
     }
@@ -116,7 +113,6 @@ const AIWrapIdeas = () => {
   const handleDownloadImage = () => {
     if (!generatedImage) return;
     
-    // Create a temporary link to download the image
     const link = document.createElement('a');
     link.href = generatedImage;
     link.download = `wrap-design-${new Date().getTime()}.png`;
@@ -141,10 +137,8 @@ const AIWrapIdeas = () => {
         <Header />
         
         <main className="flex-grow">
-          {/* Hero Section */}
           <AIWrapHero />
           
-          {/* API Key Button */}
           <div className="container mx-auto px-4 flex justify-end -mb-6 mt-4">
             <Button 
               variant="outline" 
@@ -157,10 +151,8 @@ const AIWrapIdeas = () => {
             </Button>
           </div>
           
-          {/* Value Proposition Section */}
           <ValueProposition />
           
-          {/* Generator Section */}
           <WrapIdeaGenerator 
             onGenerateIdeas={handleGenerateIdeas}
             isGenerating={isGenerating}
@@ -178,9 +170,9 @@ const AIWrapIdeas = () => {
             onDownloadImage={handleDownloadImage}
             selectedModel={selectedModel}
             setSelectedModel={setSelectedModel}
+            imageGenerationError={imageGenerationError}
           />
           
-          {/* Results Section */}
           <div className="container mx-auto px-4 max-w-6xl py-12">
             <WrapIdeasResults 
               generatedIdeas={generatedIdeas}
@@ -190,7 +182,6 @@ const AIWrapIdeas = () => {
             />
           </div>
           
-          {/* Process Section */}
           <ProcessSection />
           
           <CallToAction city="Chicago" />
@@ -199,7 +190,6 @@ const AIWrapIdeas = () => {
         <Footer />
       </div>
       
-      {/* API Key Modal */}
       <ApiKeyModal 
         isOpen={isApiKeyModalOpen} 
         onClose={() => setIsApiKeyModalOpen(false)} 

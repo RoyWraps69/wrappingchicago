@@ -50,6 +50,8 @@ export const generateImage = async ({
         throw new Error("Invalid API key. Please check your OpenAI API key and try again.");
       } else if (errorData.error?.type === 'insufficient_quota') {
         throw new Error("You've exceeded your OpenAI API quota. Please check your usage limits.");
+      } else if (errorData.error?.code === 'billing_hard_limit_reached') {
+        throw new Error("Your OpenAI account has reached its billing hard limit. Please check your account settings or upgrade your plan.");
       }
       
       throw new Error(errorMessage);

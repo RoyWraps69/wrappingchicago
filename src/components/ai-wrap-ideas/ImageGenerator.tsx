@@ -1,9 +1,10 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
-import { ImageIcon, RefreshCw, Download } from 'lucide-react';
+import { ImageIcon, RefreshCw, Download, AlertCircle } from 'lucide-react';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { Alert, AlertDescription } from '@/components/ui/alert';
 
 interface ImageGeneratorProps {
   imagePrompt: string;
@@ -14,6 +15,7 @@ interface ImageGeneratorProps {
   onDownloadImage: () => void;
   selectedModel: string;
   setSelectedModel: (value: string) => void;
+  errorMessage?: string;
 }
 
 const ImageGenerator = ({
@@ -24,7 +26,8 @@ const ImageGenerator = ({
   generatedImage,
   onDownloadImage,
   selectedModel,
-  setSelectedModel
+  setSelectedModel,
+  errorMessage
 }: ImageGeneratorProps) => {
   return (
     <div>
@@ -34,6 +37,15 @@ const ImageGenerator = ({
         and our AI will create a custom visualization using DALL-E. 
         This helps us understand precisely what you're looking for.
       </p>
+      
+      {errorMessage && (
+        <Alert variant="destructive" className="mb-4">
+          <AlertCircle className="h-4 w-4" />
+          <AlertDescription>
+            {errorMessage}
+          </AlertDescription>
+        </Alert>
+      )}
       
       <div className="mb-4">
         <label htmlFor="imagePrompt" className="block text-sm font-medium text-gray-700 mb-1">
