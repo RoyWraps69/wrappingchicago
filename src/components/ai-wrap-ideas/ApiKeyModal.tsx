@@ -27,7 +27,8 @@ const ApiKeyModal: React.FC<ApiKeyModalProps> = ({ isOpen, onClose }) => {
   const handleSave = () => {
     try {
       if (fireflyKey) {
-        localStorage.setItem('firefly_api_key', fireflyKey);
+        // Trim whitespace from the API key to avoid authentication issues
+        localStorage.setItem('firefly_api_key', fireflyKey.trim());
         toast.success('Adobe Firefly API key saved successfully');
       } else {
         toast.error('Please enter a valid API key for Adobe Firefly');
@@ -55,7 +56,8 @@ const ApiKeyModal: React.FC<ApiKeyModalProps> = ({ isOpen, onClose }) => {
         <Alert variant="default" className="border-blue-500 bg-blue-50 text-blue-800">
           <AlertCircle className="h-4 w-4" />
           <AlertDescription>
-            Make sure you're using the API key (x-api-key) from the Adobe Developer Console, not an OAuth token.
+            Make sure you're using the correct API key from the Adobe Developer Console.
+            We've detected you may be using key: {fireflyKey ? fireflyKey.substring(0, 5) + '...' + fireflyKey.substring(fireflyKey.length - 5) : 'None set'}
           </AlertDescription>
         </Alert>
         
