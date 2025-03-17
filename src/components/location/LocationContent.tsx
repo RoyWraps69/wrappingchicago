@@ -3,6 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { City, cities } from '@/data/cities';
+import { ExternalLink } from 'lucide-react';
 
 interface LocationContentProps {
   city: City;
@@ -24,6 +25,18 @@ const LocationContent = ({ city }: LocationContentProps) => {
                 Located just {city.distance} from Chicago, {city.name} businesses and residents trust us for exceptional vehicle 
                 transformation services that deliver outstanding results every time.
               </p>
+              
+              <div className="mb-4 flex items-center">
+                <a 
+                  href={city.website} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="inline-flex items-center text-brand-red hover:underline"
+                >
+                  Visit the official {city.name} website
+                  <ExternalLink className="ml-1 h-4 w-4" />
+                </a>
+              </div>
               
               <p>
                 Our team of certified vehicle wrap professionals serves all of {city.county}, including the bustling 

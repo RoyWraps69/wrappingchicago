@@ -8,6 +8,7 @@ export interface City {
   businessAreas: string;
   distance: string;
   slug: string;
+  website: string;
 }
 
 export const cities: City[] = [
@@ -19,7 +20,8 @@ export const cities: City[] = [
     population: "73,000",
     businessAreas: "downtown Evanston, Central Street, and the Northwestern University campus area",
     distance: "12 miles",
-    slug: "evanston"
+    slug: "evanston",
+    website: "https://www.cityofevanston.org"
   },
   {
     name: "Oak Park",
@@ -29,7 +31,8 @@ export const cities: City[] = [
     population: "52,000",
     businessAreas: "Downtown Oak Park, The Avenue District, and Oak Park Arts District",
     distance: "9 miles",
-    slug: "oak-park"
+    slug: "oak-park",
+    website: "https://www.oak-park.us"
   },
   {
     name: "Naperville",
@@ -39,7 +42,8 @@ export const cities: City[] = [
     population: "148,000",
     businessAreas: "Downtown Naperville, Route 59 corridor, and Freedom Commons",
     distance: "28 miles",
-    slug: "naperville"
+    slug: "naperville",
+    website: "https://www.naperville.il.us"
   },
   {
     name: "Schaumburg",
@@ -49,7 +53,8 @@ export const cities: City[] = [
     population: "74,000",
     businessAreas: "Woodfield area, Schaumburg Business Park, and Motorola Solutions campus",
     distance: "20 miles",
-    slug: "schaumburg"
+    slug: "schaumburg",
+    website: "https://www.villageofschaumburg.com"
   },
   {
     name: "Skokie",
@@ -59,7 +64,8 @@ export const cities: City[] = [
     population: "64,000",
     businessAreas: "Downtown Skokie, Old Orchard Shopping Center, and Skokie Boulevard corridor",
     distance: "10 miles",
-    slug: "skokie"
+    slug: "skokie",
+    website: "https://www.skokie.org"
   }
 ];
 

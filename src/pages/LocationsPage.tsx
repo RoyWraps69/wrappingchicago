@@ -6,7 +6,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import CallToAction from '@/components/CallToAction';
 import { cities } from '@/data/cities';
-import { MapPin } from 'lucide-react';
+import { MapPin, ExternalLink } from 'lucide-react';
 
 const LocationsPage = () => {
   return (
@@ -52,29 +52,37 @@ const LocationsPage = () => {
               
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
                 {cities.map((city) => (
-                  <Link 
-                    key={city.slug}
-                    to={`/vehicle-wraps-${city.slug}-il`}
-                    className="group"
-                  >
-                    <div className="p-6 bg-brand-light rounded-lg shadow-md transition-all duration-300 hover:shadow-xl">
-                      <div className="flex items-center mb-4">
-                        <MapPin className="h-6 w-6 text-brand-red" />
-                        <h3 className="ml-2 text-xl font-bold text-brand-navy group-hover:text-brand-red transition-colors">
-                          {city.name}, IL
-                        </h3>
-                      </div>
-                      <p className="text-gray-700 mb-4">
-                        {city.description.substring(0, 120)}...
-                      </p>
-                      <p className="text-brand-red font-medium flex items-center">
-                        Learn more
-                        <svg className="w-4 h-4 ml-2 transition-transform duration-300 group-hover:translate-x-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <div key={city.slug} className="p-6 bg-brand-light rounded-lg shadow-md transition-all duration-300 hover:shadow-xl">
+                    <div className="flex items-center mb-4">
+                      <MapPin className="h-6 w-6 text-brand-red" />
+                      <h3 className="ml-2 text-xl font-bold text-brand-navy">
+                        {city.name}, IL
+                      </h3>
+                    </div>
+                    <p className="text-gray-700 mb-4">
+                      {city.description.substring(0, 120)}...
+                    </p>
+                    <div className="flex flex-col space-y-2">
+                      <Link 
+                        to={`/vehicle-wraps-${city.slug}-il`}
+                        className="text-brand-red font-medium flex items-center hover:underline"
+                      >
+                        Learn about our services in {city.name}
+                        <svg className="w-4 h-4 ml-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                           <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                         </svg>
-                      </p>
+                      </Link>
+                      <a 
+                        href={city.website} 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className="text-brand-navy hover:text-brand-red transition-colors flex items-center"
+                      >
+                        Visit official {city.name} website
+                        <ExternalLink className="ml-1 h-4 w-4" />
+                      </a>
                     </div>
-                  </Link>
+                  </div>
                 ))}
               </div>
               
