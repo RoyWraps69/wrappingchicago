@@ -94,19 +94,19 @@ const Index = () => {
                   {
                     title: "Fleet Wraps",
                     description: "Transform your company vehicles into eye-catching mobile billboards. Our fleet wrapping services help businesses maximize their advertising reach across Chicago.",
-                    image: "https://placehold.co/600x400/0B3954/FFFFFF?text=Fleet+Wraps",
+                    image: "/lovable-uploads/efdbc4bf-1f04-42bb-a904-f52dae7bef6c.png",
                     link: "/services/fleet-wraps"
                   },
                   {
                     title: "Color Change Wraps",
                     description: "Want a new look without the permanence of paint? Our color change wraps allow you to transform your vehicle with premium vinyl wraps in any color or finish.",
-                    image: "https://placehold.co/600x400/0B3954/FFFFFF?text=Color+Change+Wraps",
+                    image: "/lovable-uploads/f564c255-9ca3-4457-bef5-c940a4a1557a.png",
                     link: "/services/color-change-wraps"
                   },
                   {
                     title: "Commercial Graphics",
                     description: "From simple lettering to complex designs, our commercial graphics solutions help businesses create professional vehicle identities that stand out on the road.",
-                    image: "https://placehold.co/600x400/0B3954/FFFFFF?text=Commercial+Graphics",
+                    image: "/lovable-uploads/0ec34598-bcc3-486d-9021-dd527bafe83a.png",
                     link: "/services/commercial-graphics"
                   }
                 ].map((service, index) => (
