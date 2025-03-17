@@ -81,9 +81,11 @@ const ApiKeyModal: React.FC<ApiKeyModalProps> = ({ isOpen, onClose }) => {
                 <li>Create an Adobe Developer account</li>
                 <li>Create a new project in the Console</li>
                 <li>Add the Firefly API to your project</li>
-                <li>Generate an API key (labeled "Client ID" or "API Key (Client ID)")</li>
-                <li>Copy the value to use as your x-api-key</li>
+                <li>Generate credentials for Service Account (JWT)</li>
+                <li>Copy the "Client ID" to use as your API key</li>
+                <li>Ensure you've enabled the Firefly API service</li>
               </ol>
+              <p className="mt-2">Note: The Firefly API requires a valid API key (Client ID) without a Bearer token.</p>
               <p className="mt-2">Adobe Firefly provides state-of-the-art AI image generation designed specifically for commercial use.</p>
             </div>
           </div>

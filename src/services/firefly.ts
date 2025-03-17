@@ -23,15 +23,15 @@ export const generateImage = async ({
     
     console.log("Using Firefly API key:", apiKey.substring(0, 5) + '...' + apiKey.substring(apiKey.length - 5));
     
-    // Adobe Firefly API requires OAuth - their API Key is actually a Client ID
-    // We need to set the correct headers based on their documentation
+    // Adobe Firefly API uses a different OAuth flow 
+    // We need to use the correct authentication method
     const response = await fetch('https://firefly-api.adobe.io/v2/images/generate', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
         'x-api-key': apiKey.trim(),
-        // Adding Authorization header - often needed with Adobe APIs
-        'Authorization': `Bearer ${apiKey.trim()}`
+        // Adobe Firefly doesn't use Bearer token but OAuth
+        // Remove the Authorization header as it's causing the 401 error
       },
       body: JSON.stringify({
         prompt: `Vehicle wrap design concept: ${prompt}`,
