@@ -57,7 +57,7 @@ const ApiKeyModal: React.FC<ApiKeyModalProps> = ({ isOpen, onClose }) => {
           <AlertCircle className="h-4 w-4" />
           <AlertDescription>
             Make sure you're using the correct API key from the Adobe Developer Console.
-            We've detected you may be using key: {fireflyKey ? fireflyKey.substring(0, 5) + '...' + fireflyKey.substring(fireflyKey.length - 5) : 'None set'}
+            You need to use the "Client ID" value from your project credentials.
           </AlertDescription>
         </Alert>
         
@@ -81,12 +81,12 @@ const ApiKeyModal: React.FC<ApiKeyModalProps> = ({ isOpen, onClose }) => {
                 <li>Create an Adobe Developer account</li>
                 <li>Create a new project in the Console</li>
                 <li>Add the Firefly API to your project</li>
-                <li>Generate credentials for Service Account (JWT)</li>
-                <li>Copy the "Client ID" to use as your API key</li>
+                <li>Create an OAuth API credential (Web OAuth 2.0)</li>
+                <li>Copy the "Client ID" value to use as your API key</li>
                 <li>Ensure you've enabled the Firefly API service</li>
               </ol>
-              <p className="mt-2">Note: The Firefly API requires a valid API key (Client ID) without a Bearer token.</p>
-              <p className="mt-2">Adobe Firefly provides state-of-the-art AI image generation designed specifically for commercial use.</p>
+              <p className="mt-2 text-red-600 font-medium">Important: Use ONLY the Client ID value from your OAuth credentials, not any secret keys or JWT tokens.</p>
+              <p className="mt-2">The Adobe Firefly API is a premium service and may require a paid subscription.</p>
             </div>
           </div>
         </div>

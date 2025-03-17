@@ -23,49 +23,60 @@ export const generateImage = async ({
     
     console.log("Using Firefly API key:", apiKey.substring(0, 5) + '...' + apiKey.substring(apiKey.length - 5));
     
-    // Adobe Firefly API uses a different OAuth flow 
-    // We need to use the correct authentication method
-    const response = await fetch('https://firefly-api.adobe.io/v2/images/generate', {
+    // Adobe Firefly API endpoint for image generation
+    const apiUrl = 'https://firefly-api.adobe.io/v2/images/generate';
+    
+    const requestBody = {
+      prompt: `Vehicle wrap design concept: ${prompt}`,
+      n: 1,
+      size: {
+        width,
+        height
+      },
+      contentClass: "photo"
+    };
+    
+    console.log("Sending request to Firefly API:", JSON.stringify(requestBody, null, 2));
+    
+    const response = await fetch(apiUrl, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
         'x-api-key': apiKey.trim(),
-        // Adobe Firefly doesn't use Bearer token but OAuth
-        // Remove the Authorization header as it's causing the 401 error
+        // Note: Adobe Firefly API requires specific authentication
+        // For the Client ID approach, only x-api-key is needed
       },
-      body: JSON.stringify({
-        prompt: `Vehicle wrap design concept: ${prompt}`,
-        n: 1,
-        size: {
-          width,
-          height
-        },
-        contentClass: "photo"
-      })
+      body: JSON.stringify(requestBody)
     });
 
+    const responseText = await response.text();
+    console.log("Firefly API response status:", response.status);
+    console.log("Firefly API response headers:", JSON.stringify(Object.fromEntries([...response.headers]), null, 2));
+    
+    let responseData;
+    try {
+      responseData = JSON.parse(responseText);
+      console.log("Firefly API response data:", JSON.stringify(responseData, null, 2));
+    } catch (e) {
+      console.log("Raw response (not JSON):", responseText);
+      throw new Error("Received invalid JSON response from Firefly API");
+    }
+
     if (!response.ok) {
-      const errorData = await response.json();
-      console.error("Firefly API error:", errorData);
-      
-      const errorMessage = errorData.message || "Failed to generate image";
-      
-      if (errorData.error_code === '401013' || errorData.error_code === '403003') {
-        throw new Error("Authentication failed. Your API key may be invalid or improperly formatted.");
-      } else if (errorData.code === 'invalid_api_key' || errorData.error_code === '401012') {
-        throw new Error("Invalid API key. Please check your Adobe Firefly API key and try again.");
-      } else if (errorData.code === 'quota_exceeded') {
+      if (responseData.error_code === '403003' || responseData.error_code === '401013') {
+        throw new Error("Authentication failed. Your API key is invalid. Please ensure you're using the Client ID from your Adobe Developer Console project.");
+      } else if (responseData.error_code === '401012') {
+        throw new Error("Invalid API key format. Please check your Adobe Firefly API key format and try again.");
+      } else if (responseData.code === 'quota_exceeded') {
         throw new Error("You've exceeded your Adobe Firefly API quota. Please check your usage limits.");
       }
       
-      throw new Error(errorMessage);
+      throw new Error(responseData.message || "Failed to generate image");
     }
-
-    const data = await response.json();
     
     // Adobe Firefly will return a URL directly to the generated image
-    if (data.outputs && data.outputs.length > 0) {
-      return data.outputs[0].url;
+    if (responseData.outputs && responseData.outputs.length > 0) {
+      return responseData.outputs[0].url;
     }
     
     return null;
