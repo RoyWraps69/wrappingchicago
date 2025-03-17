@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 import BusinessInfoForm from './BusinessInfoForm';
 import ImageGenerator from './ImageGenerator';
 import { useAIWrap } from '@/contexts/AIWrapContext';
+import { getDefaultModelForProvider } from '@/utils/ai-wrap-utils';
 
 const WrapIdeaGenerator = () => {
   const {
@@ -28,8 +29,13 @@ const WrapIdeaGenerator = () => {
 
   // Set default model based on AI provider
   useEffect(() => {
-    if (aiProvider === 'firefly' && (!selectedModel || !selectedModel.startsWith('firefly'))) {
-      setSelectedModel('firefly-image');
+    const defaultModel = getDefaultModelForProvider(aiProvider);
+    
+    if (selectedModel !== defaultModel && 
+        (aiProvider === 'firefly' && !selectedModel.startsWith('firefly')) ||
+        (aiProvider === 'openai' && !selectedModel.startsWith('dall-e')) ||
+        (aiProvider === 'stability' && !selectedModel.startsWith('stable-diffusion'))) {
+      setSelectedModel(defaultModel);
     }
   }, [aiProvider, selectedModel, setSelectedModel]);
 
