@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import Header from '@/components/Header';
@@ -26,7 +27,8 @@ const AIWrapIdeas = () => {
   const [description, setDescription] = useState('');
   const [selectedVehicleType, setSelectedVehicleType] = useState('car');
   const [isGenerating, setIsGenerating] = useState(false);
-  const [generatedIdeas, setGeneratedIdeas] = useState<WrapIdea[]>(exampleIdeas);
+  const [generatedIdeas, setGeneratedIdeas] = useState<WrapIdea[]>([]);
+  const [showResults, setShowResults] = useState(false);
   
   const [imagePrompt, setImagePrompt] = useState('');
   const [isGeneratingImage, setIsGeneratingImage] = useState(false);
@@ -62,11 +64,34 @@ const AIWrapIdeas = () => {
 
     setIsGenerating(true);
     
+    // Simulate idea generation (in a real app this would call an API)
     setTimeout(() => {
-      setGeneratedIdeas([...exampleIdeas]);
+      // Create ideas based on user input
+      const newIdeas = generateMockIdeas(business, description, selectedVehicleType);
+      setGeneratedIdeas(newIdeas);
       setIsGenerating(false);
+      setShowResults(true);
       toast.success("New wrap concepts generated!");
+      
+      // Smooth scroll to results
+      const resultsSection = document.getElementById('results-section');
+      if (resultsSection) {
+        resultsSection.scrollIntoView({ behavior: 'smooth' });
+      }
     }, 2000);
+  };
+  
+  // Helper function to generate mock ideas based on user input
+  const generateMockIdeas = (businessName: string, desc: string, vehicleType: string): WrapIdea[] => {
+    // This would be replaced with an actual API call to generate ideas
+    // For now, we'll use the example ideas but modify them slightly based on input
+    return exampleIdeas.map((idea, index) => ({
+      ...idea,
+      id: `${Date.now()}-${index}`,
+      title: businessName ? `${idea.title} for ${businessName}` : idea.title,
+      description: desc ? `${desc} - ${idea.description}` : idea.description,
+      vehicleType: vehicleType || idea.vehicleType
+    }));
   };
   
   const handleGenerateImage = async () => {
@@ -173,14 +198,16 @@ const AIWrapIdeas = () => {
             imageGenerationError={imageGenerationError}
           />
           
-          <div className="container mx-auto px-4 max-w-6xl py-12">
-            <WrapIdeasResults 
-              generatedIdeas={generatedIdeas}
-              handleLikeIdea={handleLikeIdea}
-              handleGenerateIdeas={handleGenerateIdeas}
-              isGenerating={isGenerating}
-            />
-          </div>
+          {showResults && generatedIdeas.length > 0 && (
+            <div id="results-section" className="container mx-auto px-4 max-w-6xl py-12">
+              <WrapIdeasResults 
+                generatedIdeas={generatedIdeas}
+                handleLikeIdea={handleLikeIdea}
+                handleGenerateIdeas={handleGenerateIdeas}
+                isGenerating={isGenerating}
+              />
+            </div>
+          )}
           
           <ProcessSection />
           
