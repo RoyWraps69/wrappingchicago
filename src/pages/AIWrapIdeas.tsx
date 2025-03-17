@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -28,6 +28,33 @@ const AIWrapIdeasContent = () => {
     hasApiKey
   } = useAIWrap();
 
+  useEffect(() => {
+    // Load Adobe Express SDK
+    const loadAdobeExpressSDK = () => {
+      if (window.CCEverywhere) {
+        console.log("Adobe Express SDK already loaded");
+        return;
+      }
+
+      const script = document.createElement('script');
+      script.src = "https://sdk.cc-embed.adobe.com/v2/CCEverywhere.js";
+      script.async = true;
+      script.onload = () => console.log("Adobe Express SDK loaded successfully");
+      script.onerror = () => console.error("Failed to load Adobe Express SDK");
+      document.head.appendChild(script);
+    };
+
+    loadAdobeExpressSDK();
+
+    // Clean up
+    return () => {
+      const container = document.getElementById('adobe-express-container');
+      if (container) {
+        container.remove();
+      }
+    };
+  }, []);
+
   return (
     <>
       <Helmet>
@@ -52,7 +79,7 @@ const AIWrapIdeasContent = () => {
               className="flex items-center gap-2"
             >
               <Settings size={16} />
-              {hasApiKey ? "Update API Key" : "Set API Key"}
+              {hasApiKey ? "Update Client ID" : "Set Client ID"}
             </Button>
           </div>
           

@@ -1,5 +1,5 @@
 
-// Adobe Firefly service for image generation
+// Adobe Express Embed SDK for image generation
 
 interface GenerateImageParams {
   prompt: string;
@@ -10,89 +10,103 @@ export const generateImage = async ({
   prompt,
   size = "1024x1024" 
 }: GenerateImageParams): Promise<string | null> => {
-  // This requires an Adobe Firefly API key which should be provided by the user
-  const apiKey = localStorage.getItem('firefly_api_key');
-  
-  if (!apiKey) {
-    throw new Error("Adobe Firefly API key is required. Please set your API key in settings.");
-  }
-
-  if (apiKey.trim().length < 20) {
-    throw new Error("The API key format appears invalid. Adobe Firefly API keys are typically longer.");
-  }
-
-  try {
-    // Parse dimensions from size string
-    const [width, height] = size.split('x').map(Number);
-    
-    // Log a masked version of the API key for debugging
-    console.log("Using Firefly API key:", apiKey.substring(0, 4) + '***' + apiKey.substring(apiKey.length - 4));
-    console.log("API key length:", apiKey.length);
-    
-    // Adobe Firefly API endpoint for image generation
-    const apiUrl = 'https://firefly-api.adobe.io/v2/images/generate';
-    
-    const requestBody = {
-      prompt: `Vehicle wrap design concept: ${prompt}`,
-      n: 1,
-      size: {
-        width,
-        height
-      },
-      contentClass: "photo"
-    };
-    
-    console.log("Sending request to Firefly API:", JSON.stringify(requestBody, null, 2));
-    
-    // For Adobe Firefly Embed API, we use the API key as x-api-key header
-    const response = await fetch(apiUrl, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'x-api-key': apiKey.trim()
-      },
-      body: JSON.stringify(requestBody)
-    });
-
-    // Log the full response for debugging
-    const responseText = await response.text();
-    console.log("Firefly API response status:", response.status);
-    console.log("Firefly API response headers:", JSON.stringify(Object.fromEntries([...response.headers]), null, 2));
-    
-    let responseData;
+  return new Promise((resolve, reject) => {
     try {
-      responseData = JSON.parse(responseText);
-      console.log("Firefly API response data:", JSON.stringify(responseData, null, 2));
-    } catch (e) {
-      console.log("Raw response (not JSON):", responseText);
-      throw new Error(`Received invalid JSON response from Firefly API: ${responseText.substring(0, 200)}...`);
-    }
-
-    if (!response.ok) {
-      // Enhanced error handling for better troubleshooting
-      if (responseData.code === 'unauthorized' || responseData.error_code === '403003' || responseData.error_code === '401013') {
-        throw new Error("Authentication failed. Your API key is invalid. Please ensure you're using the correct API key from Adobe Firefly Embed.");
-      } else if (responseData.error_code === '401012') {
-        throw new Error("Invalid API key format. Please check your Adobe Firefly API key format and try again.");
-      } else if (responseData.code === 'quota_exceeded') {
-        throw new Error("You've exceeded your Adobe Firefly API quota. Please check your usage limits.");
-      } else if (responseData.error_code) {
-        throw new Error(`Firefly API error (${responseData.error_code}): ${responseData.message || "Unknown error"}`);
-      } else if (responseData.code) {
-        throw new Error(`Firefly API error (${responseData.code}): ${responseData.message || "Unknown error"}`);
+      // Check if Express SDK is loaded
+      if (!window.CCEverywhere) {
+        reject(new Error("Adobe Express Embed SDK not loaded. Please refresh the page and try again."));
+        return;
       }
+
+      console.log("Initializing Adobe Express with prompt:", prompt);
       
-      throw new Error(`Failed to generate image: ${JSON.stringify(responseData)}`);
+      // Get the container element for the Express editor
+      const container = document.getElementById('adobe-express-container');
+      if (!container) {
+        const newContainer = document.createElement('div');
+        newContainer.id = 'adobe-express-container';
+        newContainer.style.position = 'fixed';
+        newContainer.style.left = '-9999px';  // Position off-screen
+        newContainer.style.width = '1px';
+        newContainer.style.height = '1px';
+        document.body.appendChild(newContainer);
+      }
+
+      // Initialize the Express SDK
+      window.CCEverywhere.initialize({
+        clientId: localStorage.getItem('firefly_api_key') || '',
+        appName: 'Vehicle Wrap Designer',
+        appVersion: { major: 1, minor: 0 },
+        redirectUri: window.location.href,
+        onError: (err) => {
+          console.error("Adobe Express SDK Error:", err);
+          reject(new Error(`Adobe Express SDK Error: ${err.message || 'Unknown error'}`));
+        }
+      }).then(async (sdk) => {
+        try {
+          console.log("Adobe Express SDK initialized successfully");
+          
+          // Use design prompt to create an image
+          const [width, height] = size.split('x').map(Number);
+          
+          // Create a new design from prompt
+          const imageResponse = await sdk.createDesign({
+            width: width,
+            height: height,
+            browserWidth: width,
+            browserHeight: height,
+            prompt: `Vehicle wrap design concept: ${prompt}`,
+            outputParams: {
+              outputType: "base64"
+            }
+          });
+          
+          console.log("Image generated successfully", imageResponse);
+          
+          if (imageResponse && imageResponse.base64) {
+            // Convert base64 to data URL
+            const imageUrl = `data:image/png;base64,${imageResponse.base64}`;
+            resolve(imageUrl);
+          } else {
+            reject(new Error("Failed to generate image. No image data received."));
+          }
+        } catch (error) {
+          console.error("Error using Adobe Express SDK:", error);
+          reject(error);
+        }
+      });
+    } catch (error) {
+      console.error("Error initializing Adobe Express SDK:", error);
+      reject(error);
     }
-    
-    // Adobe Firefly will return a URL directly to the generated image
-    if (responseData.outputs && responseData.outputs.length > 0) {
-      return responseData.outputs[0].url;
-    }
-    
-    return null;
-  } catch (error) {
-    console.error("Error generating image:", error);
-    throw error;
-  }
+  });
 };
+
+// Type definition for the Adobe Express SDK
+declare global {
+  interface Window {
+    CCEverywhere: {
+      initialize: (options: {
+        clientId: string,
+        appName: string,
+        appVersion: { major: number, minor: number },
+        redirectUri: string,
+        onError: (error: any) => void
+      }) => Promise<{
+        createDesign: (options: {
+          width: number,
+          height: number,
+          browserWidth: number,
+          browserHeight: number,
+          prompt: string,
+          outputParams: {
+            outputType: string
+          }
+        }) => Promise<{
+          base64?: string,
+          [key: string]: any
+        }>
+      }>
+    }
+  }
+}
