@@ -10,7 +10,7 @@ interface LocationHeroProps {
 
 const LocationHero = ({ cityName }: LocationHeroProps) => {
   return (
-    <section className="bg-gradient-to-r from-brand-navy to-blue-900 text-white py-24">
+    <section className="bg-gradient-to-r from-brand-navy to-blue-900 text-white py-24" id="location-hero">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl">
           <div className="flex items-center mb-4">
@@ -27,6 +27,7 @@ const LocationHero = ({ cityName }: LocationHeroProps) => {
             <Button
               asChild
               className="bg-brand-red hover:bg-red-700 text-white text-lg px-8 py-6 h-auto"
+              data-wix-link="contact"
             >
               <Link to="/contact">Request a Free Quote</Link>
             </Button>
@@ -34,6 +35,7 @@ const LocationHero = ({ cityName }: LocationHeroProps) => {
               asChild
               variant="outline"
               className="border-white text-white hover:bg-white hover:text-brand-navy text-lg px-8 py-6 h-auto"
+              data-wix-link="gallery"
             >
               <Link to="/gallery">View Our {cityName} Projects</Link>
             </Button>

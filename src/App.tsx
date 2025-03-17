@@ -23,6 +23,8 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/locations" element={<LocationsPage />} />
             <Route path="/vehicle-wraps-:citySlug-il" element={<CityLocationPage />} />
+            {/* For Velo compatibility - alternate URL structure */}
+            <Route path="/vehicle-wraps/:citySlug" element={<CityLocationPage />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

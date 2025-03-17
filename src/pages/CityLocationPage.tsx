@@ -6,9 +6,16 @@ import { findCityBySlug } from '@/data/cities';
 
 const CityLocationPage = () => {
   const { citySlug } = useParams<{ citySlug: string }>();
-  const city = findCityBySlug(citySlug || '');
+  
+  // Clean up city slug if it contains any trailing characters
+  const cleanCitySlug = citySlug?.replace(/-il$/, '');
+  const city = findCityBySlug(cleanCitySlug || '');
+  
+  // For debugging
+  console.log(`Attempting to find city with slug: ${cleanCitySlug}`, city);
   
   if (!city) {
+    console.error(`City not found for slug: ${cleanCitySlug}`);
     return <Navigate to="/locations" />;
   }
   
