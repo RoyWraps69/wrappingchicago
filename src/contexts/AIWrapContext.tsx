@@ -139,7 +139,7 @@ export const AIWrapProvider: React.FC<{ children: ReactNode }> = ({ children }) 
       clearTimeout(timeoutExtended);
       
       if (imageUrl) {
-        console.log("Image generated successfully:", imageUrl.substring(0, 50) + "...");
+        console.log("Image generated successfully:", imageUrl.substring(0, 100) + "...");
         setGeneratedImage(imageUrl);
         toast.success("Custom wrap design generated!");
         
@@ -151,21 +151,22 @@ export const AIWrapProvider: React.FC<{ children: ReactNode }> = ({ children }) 
             imageUrl: imageUrl
           };
           setGeneratedIdeas(updatedIdeas);
+          console.log("Updated first idea with new image");
+        } else {
+          // If we don't have any generated ideas yet, generate them now
+          if (business.trim()) {
+            handleGenerateIdeas();
+          }
         }
         
-        // If we don't have any generated ideas yet, generate them now
-        if (generatedIdeas.length === 0 && business.trim()) {
-          handleGenerateIdeas();
-        } else if (!showResults) {
-          // If we haven't shown results yet, show them
-          setShowResults(true);
-          setTimeout(() => {
-            const resultsSection = document.getElementById('results-section');
-            if (resultsSection) {
-              resultsSection.scrollIntoView({ behavior: 'smooth' });
-            }
-          }, 100);
-        }
+        // Always show results after generating an image
+        setShowResults(true);
+        setTimeout(() => {
+          const resultsSection = document.getElementById('results-section');
+          if (resultsSection) {
+            resultsSection.scrollIntoView({ behavior: 'smooth' });
+          }
+        }, 100);
       } else {
         setImageGenerationError("Failed to generate image. Please try again.");
         toast.error("Failed to generate image. Please try again.");

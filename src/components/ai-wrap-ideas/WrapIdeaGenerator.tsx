@@ -3,6 +3,7 @@ import React from 'react';
 import BusinessInfoForm from './BusinessInfoForm';
 import ImageGenerator from './ImageGenerator';
 import { useAIWrap } from '@/contexts/AIWrapContext';
+import { toast } from 'sonner';
 
 const WrapIdeaGenerator = () => {
   const {
@@ -22,8 +23,23 @@ const WrapIdeaGenerator = () => {
     handleGenerateIdeas,
     isGenerating,
     handleGenerateImage,
-    handleDownloadImage
+    handleDownloadImage,
+    showResults
   } = useAIWrap();
+
+  // Handle scrolling to results after generation
+  const handleAfterGeneration = () => {
+    if (showResults) {
+      setTimeout(() => {
+        const resultsSection = document.getElementById('results-section');
+        if (resultsSection) {
+          resultsSection.scrollIntoView({ behavior: 'smooth' });
+        } else {
+          toast.error("Could not find results section to scroll to");
+        }
+      }, 500);
+    }
+  };
 
   return (
     <section id="generator-section" className="py-12 px-4 md:px-6 bg-gray-50">
@@ -38,7 +54,10 @@ const WrapIdeaGenerator = () => {
                 setDescription={setDescription}
                 selectedVehicleType={selectedVehicleType}
                 setSelectedVehicleType={setSelectedVehicleType}
-                onGenerateIdeas={handleGenerateIdeas}
+                onGenerateIdeas={() => {
+                  handleGenerateIdeas();
+                  handleAfterGeneration();
+                }}
                 isGenerating={isGenerating}
               />
             </div>
@@ -47,7 +66,10 @@ const WrapIdeaGenerator = () => {
               <ImageGenerator
                 imagePrompt={imagePrompt}
                 setImagePrompt={setImagePrompt}
-                onGenerateImage={handleGenerateImage}
+                onGenerateImage={() => {
+                  handleGenerateImage();
+                  // The scrolling is handled inside the context after the image is generated
+                }}
                 isGeneratingImage={isGeneratingImage}
                 generatedImage={generatedImage}
                 onDownloadImage={handleDownloadImage}

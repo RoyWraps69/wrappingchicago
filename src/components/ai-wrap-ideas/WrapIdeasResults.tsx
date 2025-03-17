@@ -21,14 +21,14 @@ const WrapIdeasResults = () => {
       <h2 className="text-2xl font-bold text-brand-navy mb-6">Your AI-Generated Wrap Ideas</h2>
       
       {(generatedImage || isGeneratingImage) && (
-        <div className="mb-8 p-4 bg-gray-50 rounded-lg border border-gray-200">
-          <h3 className="flex items-center text-lg font-semibold mb-3">
+        <div className="mb-8 p-6 bg-gray-50 rounded-lg border border-gray-200">
+          <h3 className="flex items-center text-lg font-semibold mb-4">
             <ImageIcon className="mr-2 h-5 w-5 text-brand-navy" />
             Your Custom Generated Design
           </h3>
           
           {isGeneratingImage ? (
-            <div className="aspect-w-16 aspect-h-9 bg-white rounded-md overflow-hidden shadow-md flex items-center justify-center">
+            <div className="aspect-video bg-white rounded-md overflow-hidden shadow-md flex items-center justify-center">
               <div className="w-full max-w-md">
                 <Skeleton className="h-48 w-full rounded-md" />
                 <div className="mt-4 flex items-center justify-center">
@@ -38,16 +38,20 @@ const WrapIdeasResults = () => {
               </div>
             </div>
           ) : generatedImage ? (
-            <div className="aspect-w-16 aspect-h-9 bg-white rounded-md overflow-hidden shadow-md">
+            <div className="aspect-video bg-white rounded-md overflow-hidden shadow-md">
               <img 
                 src={generatedImage} 
                 alt="Your custom generated wrap design" 
                 className="object-contain w-full h-full"
+                onError={(e) => {
+                  console.error("Image failed to load:", e);
+                  e.currentTarget.src = "placeholder.svg";
+                }}
               />
             </div>
           ) : null}
           
-          <p className="text-sm text-gray-500 mt-2">
+          <p className="text-sm text-gray-500 mt-3">
             {isGeneratingImage ? 
               "This may take 15-30 seconds. The Adobe Express API is processing your design..." : 
               "This custom design has been applied to your first concept below"}
@@ -69,7 +73,7 @@ const WrapIdeasResults = () => {
               </div>
             </div>
           ))
-        ) : (
+        ) : generatedIdeas.length > 0 ? (
           generatedIdeas.map((idea) => (
             <WrapIdeaCard 
               key={idea.id} 
@@ -77,30 +81,36 @@ const WrapIdeasResults = () => {
               onLike={() => handleLikeIdea(idea.id)} 
             />
           ))
+        ) : (
+          <div className="col-span-3 text-center py-10">
+            <p className="text-gray-500">No wrap ideas generated yet. Try generating some ideas first.</p>
+          </div>
         )}
       </div>
       
-      <div className="text-center mt-8">
-        <p className="text-gray-500 mb-4">Not seeing what you like? Try adjusting your description or generating new ideas.</p>
-        <Button
-          variant="outline"
-          className="border-brand-navy text-brand-navy hover:bg-brand-navy hover:text-white"
-          onClick={handleGenerateIdeas}
-          disabled={isGenerating}
-        >
-          {isGenerating ? (
-            <>
-              <RefreshCw className="mr-2 h-4 w-4 animate-spin" />
-              Generating...
-            </>
-          ) : (
-            <>
-              <RefreshCw className="mr-2 h-4 w-4" />
-              Generate More Ideas
-            </>
-          )}
-        </Button>
-      </div>
+      {generatedIdeas.length > 0 && (
+        <div className="text-center mt-8">
+          <p className="text-gray-500 mb-4">Not seeing what you like? Try adjusting your description or generating new ideas.</p>
+          <Button
+            variant="outline"
+            className="border-brand-navy text-brand-navy hover:bg-brand-navy hover:text-white"
+            onClick={handleGenerateIdeas}
+            disabled={isGenerating}
+          >
+            {isGenerating ? (
+              <>
+                <RefreshCw className="mr-2 h-4 w-4 animate-spin" />
+                Generating...
+              </>
+            ) : (
+              <>
+                <RefreshCw className="mr-2 h-4 w-4" />
+                Generate More Ideas
+              </>
+            )}
+          </Button>
+        </div>
+      )}
     </div>
   );
 };
