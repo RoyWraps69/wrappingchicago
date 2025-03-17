@@ -23,12 +23,11 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/locations" element={<LocationsPage />} />
             
-            {/* City Routes - consolidated patterns */}
-            <Route path="/vehicle-wraps-:citySlug" element={<CityLocationPage />} />
-            <Route path="/vehicle-wraps-:citySlug-il" element={<CityLocationPage />} />
-            <Route path="/vehicle-wraps-:citySlug-il/" element={<CityLocationPage />} />
-            <Route path="/vehicle-wraps/:citySlug" element={<CityLocationPage />} />
-            <Route path="/vehicle-wraps/:citySlug/" element={<CityLocationPage />} />
+            {/* Explicitly define routes for main navigation */}
+            <Route path="/services" element={<CityLocationPage />} />
+            <Route path="/about" element={<CityLocationPage />} />
+            <Route path="/contact" element={<CityLocationPage />} />
+            <Route path="/gallery" element={<CityLocationPage />} />
             
             {/* Services Routes */}
             <Route path="/services/fleet-wraps" element={<CityLocationPage />} />
@@ -36,9 +35,12 @@ const App = () => (
             <Route path="/services/commercial-graphics" element={<CityLocationPage />} />
             <Route path="/services/partial-wraps" element={<CityLocationPage />} />
             
-            {/* Contact Route */}
-            <Route path="/contact" element={<CityLocationPage />} />
-            <Route path="/gallery" element={<CityLocationPage />} />
+            {/* City Routes - consolidated patterns */}
+            <Route path="/vehicle-wraps-:citySlug" element={<CityLocationPage />} />
+            <Route path="/vehicle-wraps-:citySlug-il" element={<CityLocationPage />} />
+            <Route path="/vehicle-wraps-:citySlug-il/" element={<CityLocationPage />} />
+            <Route path="/vehicle-wraps/:citySlug" element={<CityLocationPage />} />
+            <Route path="/vehicle-wraps/:citySlug/" element={<CityLocationPage />} />
             
             {/* Exact city matches */}
             <Route path="/arlington-heights" element={<CityLocationPage />} />
@@ -47,7 +49,7 @@ const App = () => (
             <Route path="/chicago" element={<CityLocationPage />} />
             
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-            <Route path="*" element={<CityLocationPage />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
       </TooltipProvider>
