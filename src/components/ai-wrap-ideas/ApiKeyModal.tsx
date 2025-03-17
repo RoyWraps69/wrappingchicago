@@ -1,17 +1,10 @@
 
 import React, { useState, useEffect } from 'react';
-import { 
-  Dialog, 
-  DialogContent, 
-  DialogHeader, 
-  DialogTitle, 
-  DialogDescription,
-  DialogFooter
-} from '@/components/ui/dialog';
+import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { KeyRound, Eye, EyeOff } from 'lucide-react';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { toast } from 'sonner';
 
 interface ApiKeyModalProps {
@@ -19,97 +12,118 @@ interface ApiKeyModalProps {
   onClose: () => void;
 }
 
-const ApiKeyModal = ({ isOpen, onClose }: ApiKeyModalProps) => {
-  const [apiKey, setApiKey] = useState('');
-  const [showKey, setShowKey] = useState(false);
-
+const ApiKeyModal: React.FC<ApiKeyModalProps> = ({ isOpen, onClose }) => {
+  const [openAIKey, setOpenAIKey] = useState('');
+  const [stabilityAIKey, setStabilityAIKey] = useState('');
+  const [selectedProvider, setSelectedProvider] = useState('openai');
+  
   useEffect(() => {
-    // Load existing API key from localStorage if available
-    const savedKey = localStorage.getItem('openai_api_key');
-    if (savedKey) {
-      setApiKey(savedKey);
+    if (isOpen) {
+      // Load saved keys when modal opens
+      const savedOpenAIKey = localStorage.getItem('openai_api_key') || '';
+      const savedStabilityAIKey = localStorage.getItem('stability_api_key') || '';
+      
+      setOpenAIKey(savedOpenAIKey);
+      setStabilityAIKey(savedStabilityAIKey);
+      
+      // Default to Stability if it has a key, otherwise OpenAI
+      if (savedStabilityAIKey) {
+        setSelectedProvider('stability');
+      } else {
+        setSelectedProvider('openai');
+      }
     }
   }, [isOpen]);
 
   const handleSave = () => {
-    if (!apiKey.trim()) {
-      toast.error('Please enter a valid API key');
-      return;
+    try {
+      // Save API keys
+      if (selectedProvider === 'openai' && openAIKey) {
+        localStorage.setItem('openai_api_key', openAIKey);
+        localStorage.setItem('selected_ai_provider', 'openai');
+        toast.success('OpenAI API key saved successfully');
+      } else if (selectedProvider === 'stability' && stabilityAIKey) {
+        localStorage.setItem('stability_api_key', stabilityAIKey);
+        localStorage.setItem('selected_ai_provider', 'stability');
+        toast.success('Stability AI API key saved successfully');
+      } else {
+        toast.error(`Please enter a valid API key for ${selectedProvider === 'openai' ? 'OpenAI' : 'Stability AI'}`);
+        return;
+      }
+      
+      onClose();
+    } catch (error) {
+      toast.error('Failed to save API key');
+      console.error('Error saving API key:', error);
     }
-
-    if (!apiKey.startsWith('sk-')) {
-      toast.error('Invalid API key format. OpenAI keys start with "sk-"');
-      return;
-    }
-
-    localStorage.setItem('openai_api_key', apiKey.trim());
-    toast.success('API key saved successfully');
-    onClose();
-  };
-
-  const toggleShowKey = () => {
-    setShowKey(!showKey);
   };
 
   return (
-    <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="sm:max-w-md">
+    <Dialog open={isOpen} onOpenChange={(open) => !open && onClose()}>
+      <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
-          <DialogTitle>OpenAI API Key</DialogTitle>
+          <DialogTitle>AI Provider Settings</DialogTitle>
           <DialogDescription>
-            Enter your OpenAI API key to enable AI image generation functionality.
-            Your key is stored locally and never sent to our servers.
+            Enter your AI provider API key to use the image generation feature.
+            Your API key is stored locally in your browser and is never sent to our servers.
           </DialogDescription>
         </DialogHeader>
         
-        <div className="space-y-4 py-4">
-          <div className="space-y-2">
-            <Label htmlFor="api-key">API Key</Label>
-            <div className="flex items-center space-x-2">
-              <KeyRound className="h-4 w-4 text-gray-500" />
-              <div className="relative flex-1">
+        <Tabs value={selectedProvider} onValueChange={setSelectedProvider} className="w-full">
+          <TabsList className="grid w-full grid-cols-2">
+            <TabsTrigger value="openai">OpenAI</TabsTrigger>
+            <TabsTrigger value="stability">Stability AI</TabsTrigger>
+          </TabsList>
+          
+          <TabsContent value="openai" className="pt-4">
+            <div className="grid gap-4 py-4">
+              <div className="grid grid-cols-4 items-center gap-4">
+                <Label htmlFor="openai-key" className="col-span-4">
+                  OpenAI API Key
+                </Label>
                 <Input
-                  id="api-key"
-                  type={showKey ? "text" : "password"}
+                  id="openai-key"
+                  type="password"
+                  value={openAIKey}
+                  onChange={(e) => setOpenAIKey(e.target.value)}
                   placeholder="sk-..."
-                  value={apiKey}
-                  onChange={(e) => setApiKey(e.target.value)}
+                  className="col-span-4"
                 />
-                <Button
-                  type="button"
-                  variant="ghost"
-                  size="sm"
-                  className="absolute right-0 top-0 h-full px-3 py-2"
-                  onClick={toggleShowKey}
-                >
-                  {showKey ? (
-                    <EyeOff className="h-4 w-4" />
-                  ) : (
-                    <Eye className="h-4 w-4" />
-                  )}
-                </Button>
+                <div className="col-span-4 text-xs text-muted-foreground">
+                  <p>Get your API key from <a href="https://platform.openai.com/account/api-keys" target="_blank" rel="noopener noreferrer" className="text-brand-red hover:underline">OpenAI Dashboard</a></p>
+                  <p className="mt-2">This uses DALL-E models which require credits on your OpenAI account.</p>
+                </div>
               </div>
             </div>
-            <p className="text-xs text-gray-500">
-              Your API key is stored securely in your browser and never transmitted to our servers.
-            </p>
-            <p className="text-xs text-gray-500">
-              Get your API key from{' '}
-              <a 
-                href="https://platform.openai.com/api-keys" 
-                target="_blank" 
-                rel="noreferrer"
-                className="text-blue-500 underline"
-              >
-                OpenAI dashboard
-              </a>
-            </p>
-          </div>
-        </div>
-        
+          </TabsContent>
+          
+          <TabsContent value="stability" className="pt-4">
+            <div className="grid gap-4 py-4">
+              <div className="grid grid-cols-4 items-center gap-4">
+                <Label htmlFor="stability-key" className="col-span-4">
+                  Stability AI API Key
+                </Label>
+                <Input
+                  id="stability-key"
+                  type="password"
+                  value={stabilityAIKey}
+                  onChange={(e) => setStabilityAIKey(e.target.value)}
+                  placeholder="sk-..."
+                  className="col-span-4"
+                />
+                <div className="col-span-4 text-xs text-muted-foreground">
+                  <p>Get your API key from <a href="https://platform.stability.ai/account/keys" target="_blank" rel="noopener noreferrer" className="text-brand-red hover:underline">Stability AI Dashboard</a></p>
+                  <p className="mt-2">This uses Stable Diffusion XL which requires credits on your Stability AI account.</p>
+                </div>
+              </div>
+            </div>
+          </TabsContent>
+        </Tabs>
+
         <DialogFooter>
-          <Button variant="outline" onClick={onClose}>Cancel</Button>
-          <Button onClick={handleSave}>Save API Key</Button>
+          <Button type="submit" onClick={handleSave}>
+            Save API Key
+          </Button>
         </DialogFooter>
       </DialogContent>
     </Dialog>

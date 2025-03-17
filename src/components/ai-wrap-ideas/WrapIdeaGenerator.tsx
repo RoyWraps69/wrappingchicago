@@ -19,6 +19,7 @@ const WrapIdeaGenerator = () => {
     selectedModel,
     setSelectedModel,
     imageGenerationError,
+    aiProvider,
     handleGenerateIdeas,
     isGenerating,
     handleGenerateImage,
@@ -54,6 +55,7 @@ const WrapIdeaGenerator = () => {
                 selectedModel={selectedModel}
                 setSelectedModel={setSelectedModel}
                 errorMessage={imageGenerationError}
+                aiProvider={aiProvider}
               />
             </div>
           </div>

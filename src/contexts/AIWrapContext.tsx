@@ -1,8 +1,8 @@
-
 import React, { createContext, useState, useContext, ReactNode, useEffect } from 'react';
 import { WrapIdea, exampleIdeas } from '@/types/wrap-idea';
 import { toast } from 'sonner';
-import { generateImage } from '@/services/openai';
+import { generateImage as generateImageOpenAI } from '@/services/openai';
+import { generateImage as generateImageStability } from '@/services/stability';
 
 interface AIWrapContextType {
   // Form state
@@ -21,6 +21,7 @@ interface AIWrapContextType {
   selectedModel: string;
   setSelectedModel: (value: string) => void;
   imageGenerationError: string | undefined;
+  aiProvider: string;
   
   // Ideas generation state
   isGenerating: boolean;
@@ -55,19 +56,42 @@ export const AIWrapProvider: React.FC<{ children: ReactNode }> = ({ children }) 
   const [generatedImage, setGeneratedImage] = useState<string | null>(null);
   const [selectedModel, setSelectedModel] = useState('dall-e-3');
   const [imageGenerationError, setImageGenerationError] = useState<string | undefined>(undefined);
+  const [aiProvider, setAiProvider] = useState('openai');
   
   const [isApiKeyModalOpen, setIsApiKeyModalOpen] = useState(false);
   const [hasApiKey, setHasApiKey] = useState(false);
 
   useEffect(() => {
-    const apiKey = localStorage.getItem('openai_api_key');
-    setHasApiKey(!!apiKey);
+    const selectedProvider = localStorage.getItem('selected_ai_provider') || 'openai';
+    setAiProvider(selectedProvider);
+    
+    if (selectedProvider === 'openai') {
+      const apiKey = localStorage.getItem('openai_api_key');
+      setHasApiKey(!!apiKey);
+      
+      setSelectedModel('dall-e-3');
+    } else {
+      const apiKey = localStorage.getItem('stability_api_key');
+      setHasApiKey(!!apiKey);
+      
+      setSelectedModel('stable-diffusion-xl-1024-v1-0');
+    }
   }, [isApiKeyModalOpen]);
 
   const checkApiKey = (): boolean => {
-    const apiKey = localStorage.getItem('openai_api_key');
+    let apiKey;
+    let providerName;
+    
+    if (aiProvider === 'openai') {
+      apiKey = localStorage.getItem('openai_api_key');
+      providerName = 'OpenAI';
+    } else {
+      apiKey = localStorage.getItem('stability_api_key');
+      providerName = 'Stability AI';
+    }
+    
     if (!apiKey) {
-      toast.error("OpenAI API key is required. Please set your API key.");
+      toast.error(`${providerName} API key is required. Please set your API key.`);
       setIsApiKeyModalOpen(true);
       return false;
     }
@@ -84,12 +108,9 @@ export const AIWrapProvider: React.FC<{ children: ReactNode }> = ({ children }) 
 
     setIsGenerating(true);
     
-    // Simulate idea generation (in a real app this would call an API)
     setTimeout(() => {
-      // Create ideas based on user input
       const newIdeas = generateMockIdeas(business, description, selectedVehicleType);
       
-      // Add generated image to the first idea if available
       if (generatedImage) {
         newIdeas[0] = {
           ...newIdeas[0],
@@ -102,7 +123,6 @@ export const AIWrapProvider: React.FC<{ children: ReactNode }> = ({ children }) 
       setShowResults(true);
       toast.success("New wrap concepts generated!");
       
-      // Smooth scroll to results
       const resultsSection = document.getElementById('results-section');
       if (resultsSection) {
         resultsSection.scrollIntoView({ behavior: 'smooth' });
@@ -110,10 +130,7 @@ export const AIWrapProvider: React.FC<{ children: ReactNode }> = ({ children }) 
     }, 2000);
   };
   
-  // Helper function to generate mock ideas based on user input
   const generateMockIdeas = (businessName: string, desc: string, vehicleType: string): WrapIdea[] => {
-    // This would be replaced with an actual API call to generate ideas
-    // For now, we'll use the example ideas but modify them slightly based on input
     return exampleIdeas.map((idea, index) => ({
       ...idea,
       id: `${Date.now()}-${index}`,
@@ -137,17 +154,27 @@ export const AIWrapProvider: React.FC<{ children: ReactNode }> = ({ children }) 
     try {
       const fullPrompt = `${selectedVehicleType} vehicle wrap design for ${business ? business + ',' : ''} ${imagePrompt}. Professional, high quality, photorealistic.`;
       
-      const imageUrl = await generateImage({
-        prompt: fullPrompt,
-        size: "1024x1024",
-        model: selectedModel
-      });
+      let imageUrl;
+      
+      if (aiProvider === 'openai') {
+        imageUrl = await generateImageOpenAI({
+          prompt: fullPrompt,
+          size: "1024x1024",
+          model: selectedModel
+        });
+      } else {
+        imageUrl = await generateImageStability({
+          prompt: fullPrompt,
+          size: "1024x1024",
+          steps: 30,
+          cfgScale: 7
+        });
+      }
       
       if (imageUrl) {
         setGeneratedImage(imageUrl);
         toast.success("Custom wrap design generated!");
         
-        // If we already have generated ideas, update the first one with the new image
         if (generatedIdeas.length > 0) {
           const updatedIdeas = [...generatedIdeas];
           updatedIdeas[0] = {
@@ -201,6 +228,7 @@ export const AIWrapProvider: React.FC<{ children: ReactNode }> = ({ children }) 
     selectedModel,
     setSelectedModel,
     imageGenerationError,
+    aiProvider,
     isGenerating,
     generatedIdeas,
     showResults,
