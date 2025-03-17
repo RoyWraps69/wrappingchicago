@@ -1,9 +1,8 @@
 
-import React, { useEffect } from 'react';
+import React from 'react';
 import BusinessInfoForm from './BusinessInfoForm';
 import ImageGenerator from './ImageGenerator';
 import { useAIWrap } from '@/contexts/AIWrapContext';
-import { getDefaultModelForProvider } from '@/utils/ai-wrap-utils';
 
 const WrapIdeaGenerator = () => {
   const {
@@ -20,24 +19,11 @@ const WrapIdeaGenerator = () => {
     selectedModel,
     setSelectedModel,
     imageGenerationError,
-    aiProvider,
     handleGenerateIdeas,
     isGenerating,
     handleGenerateImage,
     handleDownloadImage
   } = useAIWrap();
-
-  // Set default model based on AI provider
-  useEffect(() => {
-    const defaultModel = getDefaultModelForProvider(aiProvider);
-    
-    if (selectedModel !== defaultModel && 
-        (aiProvider === 'firefly' && !selectedModel.startsWith('firefly')) ||
-        (aiProvider === 'openai' && !selectedModel.startsWith('dall-e')) ||
-        (aiProvider === 'stability' && !selectedModel.startsWith('stable-diffusion'))) {
-      setSelectedModel(defaultModel);
-    }
-  }, [aiProvider, selectedModel, setSelectedModel]);
 
   return (
     <section id="generator-section" className="py-12 px-4 md:px-6 bg-gray-50">
@@ -68,7 +54,6 @@ const WrapIdeaGenerator = () => {
                 selectedModel={selectedModel}
                 setSelectedModel={setSelectedModel}
                 errorMessage={imageGenerationError}
-                aiProvider={aiProvider}
               />
             </div>
           </div>

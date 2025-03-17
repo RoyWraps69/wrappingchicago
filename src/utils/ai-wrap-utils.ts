@@ -1,4 +1,3 @@
-
 import { toast } from 'sonner';
 import { WrapIdea, exampleIdeas } from '@/types/wrap-idea';
 import { AIProvider, ImageModel } from '@/types/ai-wrap';
@@ -14,25 +13,12 @@ export const generateMockIdeas = (businessName: string, desc: string, vehicleTyp
   }));
 };
 
-// Check if API key exists for the selected provider
+// Check if API key exists for Firefly
 export const checkApiKey = (aiProvider: AIProvider): { valid: boolean; providerName: string } => {
-  let apiKey;
-  let providerName;
-  
-  if (aiProvider === 'openai') {
-    apiKey = localStorage.getItem('openai_api_key');
-    providerName = 'OpenAI';
-  } else if (aiProvider === 'stability') {
-    apiKey = localStorage.getItem('stability_api_key');
-    providerName = 'Stability AI';
-  } else {
-    apiKey = localStorage.getItem('firefly_api_key');
-    providerName = 'Adobe Firefly';
-  }
-  
+  const apiKey = localStorage.getItem('firefly_api_key');
   return { 
     valid: !!apiKey,
-    providerName
+    providerName: 'Adobe Firefly'
   };
 };
 
@@ -47,15 +33,7 @@ export const createImagePrompt = (
 
 // Get the default model based on provider
 export const getDefaultModelForProvider = (provider: AIProvider): ImageModel => {
-  switch (provider) {
-    case 'openai':
-      return 'dall-e-3';
-    case 'stability':
-      return 'stable-diffusion-xl-1024-v1-0';
-    case 'firefly':
-    default:
-      return 'firefly-image';
-  }
+  return 'firefly-image';
 };
 
 // Download the generated image

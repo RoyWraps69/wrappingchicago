@@ -1,14 +1,8 @@
 
 import { WrapIdea } from '@/types/wrap-idea';
 
-export type AIProvider = 'openai' | 'stability' | 'firefly';
-export type ImageModel = 
-  | 'dall-e-3' 
-  | 'dall-e-2' 
-  | 'stable-diffusion-xl-1024-v1-0' 
-  | 'stable-diffusion-v1-6' 
-  | 'firefly-image' 
-  | 'firefly-vector';
+export type AIProvider = 'firefly';
+export type ImageModel = 'firefly-image' | 'firefly-vector';
 
 export interface AIWrapContextType {
   // Form state

@@ -17,7 +17,6 @@ interface ImageGeneratorProps {
   selectedModel: string;
   setSelectedModel: (value: string) => void;
   errorMessage?: string;
-  aiProvider: string;
 }
 
 const ImageGenerator = ({
@@ -29,16 +28,14 @@ const ImageGenerator = ({
   onDownloadImage,
   selectedModel,
   setSelectedModel,
-  errorMessage,
-  aiProvider
+  errorMessage
 }: ImageGeneratorProps) => {
   return (
     <div>
       <div className="flex items-center justify-between mb-6">
         <h2 className="text-2xl font-bold text-brand-navy">Custom Image Generator</h2>
         <Badge variant="outline" className="ml-2">
-          {aiProvider === 'firefly' ? 'Adobe Firefly' : 
-           aiProvider === 'stability' ? 'Stability AI' : 'OpenAI DALL-E'}
+          Adobe Firefly
         </Badge>
       </div>
       
@@ -71,65 +68,23 @@ const ImageGenerator = ({
         />
       </div>
 
-      {aiProvider === 'firefly' && (
-        <div className="mb-4">
-          <label htmlFor="modelSelect" className="block text-sm font-medium text-gray-700 mb-1">
-            Adobe Firefly Model
-          </label>
-          <Select value={selectedModel} onValueChange={setSelectedModel}>
-            <SelectTrigger id="modelSelect" className="w-full">
-              <SelectValue placeholder="Select Firefly model" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="firefly-image">Firefly Image Generator</SelectItem>
-              <SelectItem value="firefly-vector">Firefly Vector Generator</SelectItem>
-            </SelectContent>
-          </Select>
-          <p className="text-xs text-gray-500 mt-1">
-            Adobe Firefly is designed for commercial use and is trained on licensed content.
-          </p>
-        </div>
-      )}
-
-      {aiProvider === 'openai' && (
-        <div className="mb-4">
-          <label htmlFor="modelSelect" className="block text-sm font-medium text-gray-700 mb-1">
-            DALL-E Model
-          </label>
-          <Select value={selectedModel} onValueChange={setSelectedModel}>
-            <SelectTrigger id="modelSelect" className="w-full">
-              <SelectValue placeholder="Select DALL-E model" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="dall-e-3">DALL-E 3 (Higher quality, slower)</SelectItem>
-              <SelectItem value="dall-e-2">DALL-E 2 (Faster, less detailed)</SelectItem>
-            </SelectContent>
-          </Select>
-          <p className="text-xs text-gray-500 mt-1">
-            DALL-E 3 offers higher quality images but may use more API credits.
-          </p>
-        </div>
-      )}
-      
-      {aiProvider === 'stability' && (
-        <div className="mb-4">
-          <label htmlFor="modelSelect" className="block text-sm font-medium text-gray-700 mb-1">
-            Stable Diffusion Model
-          </label>
-          <Select value={selectedModel} onValueChange={setSelectedModel}>
-            <SelectTrigger id="modelSelect" className="w-full">
-              <SelectValue placeholder="Select Stable Diffusion model" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="stable-diffusion-xl-1024-v1-0">SDXL 1.0 (High quality)</SelectItem>
-              <SelectItem value="stable-diffusion-v1-6">SD 1.6 (Faster)</SelectItem>
-            </SelectContent>
-          </Select>
-          <p className="text-xs text-gray-500 mt-1">
-            SDXL offers higher quality images but may use more API credits.
-          </p>
-        </div>
-      )}
+      <div className="mb-4">
+        <label htmlFor="modelSelect" className="block text-sm font-medium text-gray-700 mb-1">
+          Adobe Firefly Model
+        </label>
+        <Select value={selectedModel} onValueChange={setSelectedModel}>
+          <SelectTrigger id="modelSelect" className="w-full">
+            <SelectValue placeholder="Select Firefly model" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="firefly-image">Firefly Image Generator</SelectItem>
+            <SelectItem value="firefly-vector">Firefly Vector Generator</SelectItem>
+          </SelectContent>
+        </Select>
+        <p className="text-xs text-gray-500 mt-1">
+          Adobe Firefly is designed for commercial use and is trained on licensed content.
+        </p>
+      </div>
       
       <Button
         onClick={onGenerateImage}
