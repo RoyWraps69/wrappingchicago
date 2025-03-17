@@ -86,7 +86,23 @@ const Schema = ({ city }: SchemaProps) => {
           "description": `Eye-catching commercial graphics and vehicle lettering for ${city.name}, IL businesses.`
         }
       }
-    ]
+    ],
+    "potentialAction": {
+      "@type": "ReserveAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://chicagofleetwraps.com/contact",
+        "inLanguage": "en-US",
+        "actionPlatform": [
+          "http://schema.org/DesktopWebPlatform",
+          "http://schema.org/MobileWebPlatform"
+        ]
+      },
+      "result": {
+        "@type": "Reservation",
+        "name": "Request a Quote"
+      }
+    }
   };
 
   return (
