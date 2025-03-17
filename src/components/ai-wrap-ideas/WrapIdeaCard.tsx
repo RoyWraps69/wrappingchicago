@@ -24,6 +24,7 @@ const WrapIdeaCard = ({ idea, onLike }: WrapIdeaCardProps) => (
         src={idea.imageUrl || "https://placehold.co/600x400/0B3954/FFFFFF?text=AI+Concept"}
         alt={idea.title}
         className="object-cover w-full h-full"
+        loading="lazy"
       />
     </div>
     <h3 className="text-xl font-bold text-brand-navy mb-2">{idea.title}</h3>
@@ -39,18 +40,27 @@ const WrapIdeaCard = ({ idea, onLike }: WrapIdeaCardProps) => (
         Like this idea
       </Button>
       
-      <Button
-        variant="ghost" 
-        size="sm"
-        className="text-gray-600"
-        onClick={() => {
-          // In a real app, this would download the image
-          toast.success("Concept downloaded successfully!");
-        }}
-      >
-        <Download className="w-4 h-4 mr-2" />
-        Save
-      </Button>
+      {idea.imageUrl && (
+        <Button
+          variant="ghost" 
+          size="sm"
+          className="text-gray-600"
+          onClick={() => {
+            // Create a download link for the image
+            const link = document.createElement('a');
+            link.href = idea.imageUrl || '';
+            link.download = `${idea.title.replace(/\s+/g, '-').toLowerCase()}-${Date.now()}.png`;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            
+            toast.success("Design concept downloaded!");
+          }}
+        >
+          <Download className="w-4 h-4 mr-2" />
+          Save
+        </Button>
+      )}
     </div>
   </div>
 );

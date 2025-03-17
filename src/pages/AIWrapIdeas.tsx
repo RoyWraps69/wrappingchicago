@@ -68,6 +68,15 @@ const AIWrapIdeas = () => {
     setTimeout(() => {
       // Create ideas based on user input
       const newIdeas = generateMockIdeas(business, description, selectedVehicleType);
+      
+      // Add generated image to the first idea if available
+      if (generatedImage) {
+        newIdeas[0] = {
+          ...newIdeas[0],
+          imageUrl: generatedImage
+        };
+      }
+      
       setGeneratedIdeas(newIdeas);
       setIsGenerating(false);
       setShowResults(true);
@@ -117,6 +126,16 @@ const AIWrapIdeas = () => {
       if (imageUrl) {
         setGeneratedImage(imageUrl);
         toast.success("Custom wrap design generated!");
+        
+        // If we already have generated ideas, update the first one with the new image
+        if (generatedIdeas.length > 0) {
+          const updatedIdeas = [...generatedIdeas];
+          updatedIdeas[0] = {
+            ...updatedIdeas[0],
+            imageUrl: imageUrl
+          };
+          setGeneratedIdeas(updatedIdeas);
+        }
       } else {
         setImageGenerationError("Failed to generate image. Please try again.");
         toast.error("Failed to generate image. Please try again.");
