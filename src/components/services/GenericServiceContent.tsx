@@ -1,22 +1,71 @@
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const GenericServiceContent: React.FC = () => {
   return (
-    <div className="grid md:grid-cols-2 gap-8 mb-12">
-      <div>
-        <h2 className="text-2xl font-semibold text-brand-navy mb-4">Professional Installers</h2>
-        <p>
-          Our certified installers have years of experience wrapping vehicles of all types.
-          From compact cars to large commercial trucks, we have the expertise to handle any project.
-        </p>
+    <div className="mb-12">
+      <div className="grid md:grid-cols-2 gap-8 mb-12">
+        <div>
+          <h2 className="text-2xl font-semibold text-brand-navy mb-4">Professional Installers</h2>
+          <p className="mb-4">
+            Our certified installers have years of experience wrapping vehicles of all types.
+            From compact cars to large commercial trucks, we have the expertise to handle any project.
+          </p>
+          <img 
+            src="/lovable-uploads/33e966e0-f935-4f39-8702-a9ccf53ae49b.png" 
+            alt="Professional installers at work" 
+            className="rounded-lg shadow-md w-full h-60 object-cover"
+          />
+        </div>
+        <div>
+          <h2 className="text-2xl font-semibold text-brand-navy mb-4">Premium Materials</h2>
+          <p className="mb-4">
+            We use only the highest quality 3M and Avery vinyl wraps, ensuring your vehicle
+            wrap will look great and stand up to the harsh Chicago weather for years to come.
+          </p>
+          <img 
+            src="/lovable-uploads/efc6c586-8651-43ad-811a-b896a91a1b69.png" 
+            alt="Premium wrap materials" 
+            className="rounded-lg shadow-md w-full h-60 object-cover"
+          />
+        </div>
       </div>
-      <div>
-        <h2 className="text-2xl font-semibold text-brand-navy mb-4">Premium Materials</h2>
-        <p>
-          We use only the highest quality 3M and Avery vinyl wraps, ensuring your vehicle
-          wrap will look great and stand up to the harsh Chicago weather for years to come.
-        </p>
+      
+      <h2 className="text-2xl font-semibold text-brand-navy mb-6">Featured Services</h2>
+      <div className="grid md:grid-cols-3 gap-6 mb-8">
+        <div className="bg-white p-6 rounded-lg shadow hover:shadow-md transition-shadow">
+          <img 
+            src="/lovable-uploads/6d45d332-9949-413e-b840-8007afa41d56.png" 
+            alt="Fleet wraps" 
+            className="w-full h-48 object-cover rounded-md mb-4"
+          />
+          <h3 className="font-semibold text-brand-navy mb-2 text-xl">Fleet Wraps</h3>
+          <p className="text-sm mb-4">Turn your business vehicles into moving billboards with our professional fleet wrapping services.</p>
+          <Link to="/services/fleet-wraps" className="text-brand-red hover:underline">Learn more →</Link>
+        </div>
+        
+        <div className="bg-white p-6 rounded-lg shadow hover:shadow-md transition-shadow">
+          <img 
+            src="/lovable-uploads/9de106b5-94cb-4fd1-a7c7-5c75c75b7cbb.png" 
+            alt="Color change wraps" 
+            className="w-full h-48 object-cover rounded-md mb-4"
+          />
+          <h3 className="font-semibold text-brand-navy mb-2 text-xl">Color Change Wraps</h3>
+          <p className="text-sm mb-4">Transform your vehicle with a complete color change - a perfect alternative to paint.</p>
+          <Link to="/services/color-change-wraps" className="text-brand-red hover:underline">Learn more →</Link>
+        </div>
+        
+        <div className="bg-white p-6 rounded-lg shadow hover:shadow-md transition-shadow">
+          <img 
+            src="/lovable-uploads/0ec34598-bcc3-486d-9021-dd527bafe83a.png" 
+            alt="Commercial graphics" 
+            className="w-full h-48 object-cover rounded-md mb-4"
+          />
+          <h3 className="font-semibold text-brand-navy mb-2 text-xl">Commercial Graphics</h3>
+          <p className="text-sm mb-4">Add professional logos, lettering, and graphics to your business vehicles.</p>
+          <Link to="/services/commercial-graphics" className="text-brand-red hover:underline">Learn more →</Link>
+        </div>
       </div>
     </div>
   );

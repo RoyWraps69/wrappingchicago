@@ -18,7 +18,7 @@ const ServicesPage = () => {
   // Determine which service to display based on the URL
   let serviceTitle = "Our Services";
   let serviceDescription = "Professional vehicle wrapping services in Chicago";
-  let serviceKeywords = "vehicle wraps, fleet wraps, car wraps, Chicago";
+  let serviceKeywords = "vehicle wraps, fleet wraps, car wraps, Chicago, color change wraps, commercial graphics";
   
   if (isSpecificService) {
     if (path.includes('fleet-wraps')) {
@@ -54,7 +54,10 @@ const ServicesPage = () => {
         
         <main className="flex-grow">
           <div className="container mx-auto py-12 px-4">
-            <ServiceHeader title={serviceTitle} />
+            <ServiceHeader 
+              title={serviceTitle} 
+              showImages={!isSpecificService} // Show images only on the main services page
+            />
             
             {/* Service content - either generic or specific */}
             <ServiceContentSelector path={path} />
