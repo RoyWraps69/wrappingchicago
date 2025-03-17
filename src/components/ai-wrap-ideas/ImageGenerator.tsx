@@ -35,7 +35,7 @@ const ImageGenerator = ({
       <div className="flex items-center justify-between mb-6">
         <h2 className="text-2xl font-bold text-brand-navy">Custom Image Generator</h2>
         <Badge variant="outline" className="ml-2">
-          Adobe Firefly (Demo)
+          Adobe Firefly
         </Badge>
       </div>
       
@@ -44,13 +44,6 @@ const ImageGenerator = ({
         and our AI will create a custom visualization. 
         This helps us understand precisely what you're looking for.
       </p>
-      
-      <Alert variant="default" className="mb-4 border-yellow-500 bg-yellow-50 text-yellow-800">
-        <AlertCircle className="h-4 w-4" />
-        <AlertDescription>
-          Due to API authentication issues, image generation is currently in demo mode and will return placeholder images.
-        </AlertDescription>
-      </Alert>
       
       {errorMessage && (
         <Alert variant="destructive" className="mb-4">

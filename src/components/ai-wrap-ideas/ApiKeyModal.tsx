@@ -5,8 +5,6 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { toast } from 'sonner';
-import { AlertCircle } from 'lucide-react';
-import { Alert, AlertDescription } from '@/components/ui/alert';
 
 interface ApiKeyModalProps {
   isOpen: boolean;
@@ -52,13 +50,6 @@ const ApiKeyModal: React.FC<ApiKeyModalProps> = ({ isOpen, onClose }) => {
           </DialogDescription>
         </DialogHeader>
         
-        <Alert variant="default" className="mb-4 border-yellow-500 bg-yellow-50 text-yellow-800">
-          <AlertCircle className="h-4 w-4" />
-          <AlertDescription>
-            Due to API authentication issues, image generation is currently in demo mode and will return placeholder images.
-          </AlertDescription>
-        </Alert>
-        
         <div className="grid gap-4 py-4">
           <div className="grid grid-cols-4 items-center gap-4">
             <Label htmlFor="firefly-key" className="col-span-4">
@@ -74,6 +65,13 @@ const ApiKeyModal: React.FC<ApiKeyModalProps> = ({ isOpen, onClose }) => {
             />
             <div className="col-span-4 text-xs text-muted-foreground">
               <p>Get your API key from the <a href="https://developer.adobe.com/console/" target="_blank" rel="noopener noreferrer" className="text-brand-red hover:underline">Adobe Developer Console</a></p>
+              <p className="mt-2">To generate a valid API key:</p>
+              <ol className="list-decimal ml-4 mt-1">
+                <li>Create an Adobe Developer account</li>
+                <li>Create a new project in the Console</li>
+                <li>Add the Firefly API to your project</li>
+                <li>Generate an API key from the project settings</li>
+              </ol>
               <p className="mt-2">Adobe Firefly provides state-of-the-art AI image generation designed specifically for commercial use.</p>
             </div>
           </div>

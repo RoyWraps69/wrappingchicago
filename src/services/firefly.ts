@@ -11,7 +11,6 @@ export const generateImage = async ({
   size = "1024x1024" 
 }: GenerateImageParams): Promise<string | null> => {
   // This requires an Adobe Firefly API key which should be provided by the user
-  // and handled securely in a production environment
   const apiKey = localStorage.getItem('firefly_api_key');
   
   if (!apiKey) {
@@ -22,14 +21,7 @@ export const generateImage = async ({
     // Parse dimensions from size string
     const [width, height] = size.split('x').map(Number);
     
-    // For demo purposes, we'll simulate a successful response
-    // In a real implementation, we would make an actual API call to Adobe Firefly
-    console.log(`Generating image with prompt: ${prompt}, size: ${width}x${height}`);
-
-    // Mock successful response with a placeholder image
-    return 'https://placehold.co/1024x1024/52b788/FFFFFF/png?text=AI+Generated+Wrap+Design';
-    
-    /* Commented out the actual API call since it's returning OAuth token errors
+    // Make the actual API call to Adobe Firefly
     const response = await fetch('https://firefly-api.adobe.io/v2/images/generate', {
       method: 'POST',
       headers: {
@@ -66,8 +58,8 @@ export const generateImage = async ({
     if (data.outputs && data.outputs.length > 0) {
       return data.outputs[0].url;
     }
-    */
     
+    return null;
   } catch (error) {
     console.error("Error generating image:", error);
     throw error;
