@@ -12,6 +12,7 @@ import ServicesPage from "./pages/ServicesPage";
 import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
 import GalleryPage from "./pages/GalleryPage";
+import AIWrapIdeas from "./pages/AIWrapIdeas";
 import { cities } from "./data/cities";
 
 const queryClient = new QueryClient();
@@ -30,6 +31,7 @@ const App = () => (
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/gallery" element={<GalleryPage />} />
             <Route path="/locations" element={<LocationsPage />} />
+            <Route path="/ai-wrap-ideas" element={<AIWrapIdeas />} />
             
             {/* Services Routes */}
             <Route path="/services" element={<ServicesPage />} />

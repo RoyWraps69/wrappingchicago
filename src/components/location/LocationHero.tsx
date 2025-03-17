@@ -2,7 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { MapPin, Phone, ArrowRight } from 'lucide-react';
+import { MapPin, Phone, ArrowRight, Sparkles } from 'lucide-react';
 import { City } from '@/data/cities';
 
 interface LocationHeroProps {
@@ -58,6 +58,18 @@ const LocationHero = ({ cityName }: LocationHeroProps) => {
                   <Phone className="mr-2 h-4 w-4" />
                   (312) 597-1286
                 </a>
+              </Button>
+              
+              <Button
+                asChild
+                variant="outline"
+                size="lg"
+                className="border-white/20 bg-white/5 backdrop-blur-sm text-white hover:bg-white hover:text-brand-navy font-medium px-8 py-6 h-auto rounded-full flex items-center"
+              >
+                <Link to="/ai-wrap-ideas" className="inline-flex items-center">
+                  <Sparkles className="mr-2 h-4 w-4" />
+                  AI Wrap Ideas
+                </Link>
               </Button>
             </div>
           </div>
