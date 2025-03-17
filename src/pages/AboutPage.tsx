@@ -6,14 +6,44 @@ import Footer from '@/components/Footer';
 import CallToAction from '@/components/CallToAction';
 
 const AboutPage = () => {
+  const companySchema = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Chicago Fleet Wraps",
+    "description": "Chicago's premier vehicle wrapping company specializing in fleet wraps, color change wraps, and commercial graphics.",
+    "url": "https://chicagofleetwraps.com/about",
+    "telephone": "(312) 597-1286",
+    "email": "roy@chicagofleetwraps.com",
+    "foundingDate": "2015",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "4711 N. Lamon Ave",
+      "addressLocality": "Chicago",
+      "addressRegion": "IL",
+      "postalCode": "60630",
+      "addressCountry": "US"
+    },
+    "priceRange": "$$",
+    "sameAs": [
+      "https://www.facebook.com/chicagofleetwraps",
+      "https://www.instagram.com/chicagofleetwraps",
+      "https://twitter.com/chifleetwraps"
+    ],
+  };
+
   return (
     <>
       <Helmet>
-        <title>About Us | Chicago Fleet Wraps</title>
+        <title>About Chicago Fleet Wraps | Premier Vehicle Wrapping Company</title>
         <meta 
           name="description" 
-          content="Learn about Chicago Fleet Wraps, the leading vehicle wrapping company in the Chicago area with years of experience and hundreds of satisfied customers."
+          content="Established in 2015, Chicago Fleet Wraps is the leading vehicle wrapping company in the Chicago area with certified 3M installers and premium quality materials."
         />
+        <meta name="keywords" content="vehicle wraps Chicago, car wrapping services, fleet wraps, 3M certified installers, commercial vehicle graphics" />
+        <link rel="canonical" href="https://chicagofleetwraps.com/about" />
+        <script type="application/ld+json">
+          {JSON.stringify(companySchema)}
+        </script>
       </Helmet>
       
       <div className="flex flex-col min-h-screen">
@@ -49,14 +79,40 @@ const AboutPage = () => {
             <div className="mb-12">
               <h2 className="text-2xl font-semibold text-brand-navy mb-4">Why Choose Us?</h2>
               <ul className="list-disc pl-6 space-y-2">
-                <li>Certified 3M Preferred Installers</li>
-                <li>Premium quality materials that last</li>
-                <li>5-year warranty on all installs</li>
-                <li>Convenient Chicago location</li>
-                <li>Fast turnaround times</li>
-                <li>Competitive pricing</li>
-                <li>Expert design services available</li>
+                <li><strong>Certified 3M Preferred Installers</strong> - Our technicians are trained and certified by 3M</li>
+                <li><strong>Premium quality materials</strong> - We use only genuine 3M and Avery vinyl that lasts</li>
+                <li><strong>5-year warranty</strong> - All our installations are backed by a comprehensive warranty</li>
+                <li><strong>Convenient Chicago location</strong> - Centrally located for all Chicagoland customers</li>
+                <li><strong>Fast turnaround times</strong> - We respect your time and business needs</li>
+                <li><strong>Competitive pricing</strong> - Quality work at fair market rates</li>
+                <li><strong>Expert design services available</strong> - Full graphic design team for custom projects</li>
               </ul>
+            </div>
+
+            <div className="mb-12">
+              <h2 className="text-2xl font-semibold text-brand-navy mb-4">Our Process</h2>
+              <ol className="list-decimal pl-6 space-y-4">
+                <li>
+                  <h3 className="font-semibold">Consultation</h3>
+                  <p>We begin with a detailed consultation to understand your business needs and goals for your vehicle wrap.</p>
+                </li>
+                <li>
+                  <h3 className="font-semibold">Design</h3>
+                  <p>Our design team creates custom graphics that perfectly represent your brand and maximize visibility.</p>
+                </li>
+                <li>
+                  <h3 className="font-semibold">Production</h3>
+                  <p>Using state-of-the-art printing equipment, we produce high-resolution graphics on premium vinyl materials.</p>
+                </li>
+                <li>
+                  <h3 className="font-semibold">Installation</h3>
+                  <p>Our certified installers carefully apply your wrap, ensuring perfect alignment and a bubble-free finish.</p>
+                </li>
+                <li>
+                  <h3 className="font-semibold">Quality Check</h3>
+                  <p>Before delivery, we inspect every vehicle wrap to ensure it meets our rigorous quality standards.</p>
+                </li>
+              </ol>
             </div>
           </div>
           
