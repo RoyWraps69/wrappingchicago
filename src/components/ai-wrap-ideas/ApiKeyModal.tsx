@@ -52,7 +52,7 @@ const ApiKeyModal: React.FC<ApiKeyModalProps> = ({ isOpen, onClose }) => {
           </DialogDescription>
         </DialogHeader>
         
-        <Alert variant="warning" className="mb-4">
+        <Alert variant="default" className="mb-4 border-yellow-500 bg-yellow-50 text-yellow-800">
           <AlertCircle className="h-4 w-4" />
           <AlertDescription>
             Due to API authentication issues, image generation is currently in demo mode and will return placeholder images.
