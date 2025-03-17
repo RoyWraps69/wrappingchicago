@@ -9,7 +9,7 @@ interface ServiceCardsProps {
 
 const ServiceCards: React.FC<ServiceCardsProps> = ({ city }) => {
   return (
-    <div className="grid md:grid-cols-2 gap-6 my-8">
+    <div className="grid md:grid-cols-3 gap-6 my-8">
       <div className="bg-brand-light p-5 rounded-lg">
         <h4 className="text-xl font-semibold mb-3 text-brand-navy">Fleet Wraps</h4>
         <p className="mb-4">
@@ -33,6 +33,19 @@ const ServiceCards: React.FC<ServiceCardsProps> = ({ city }) => {
           <ServiceFeatureItem text="Matte, gloss, satin, and specialty finishes available" />
           <ServiceFeatureItem text="Reversible alternative to permanent paint" />
           <ServiceFeatureItem text="Protects resale value while customizing your look" />
+        </ul>
+      </div>
+
+      <div className="bg-brand-light p-5 rounded-lg">
+        <h4 className="text-xl font-semibold mb-3 text-brand-navy">Commercial Graphics</h4>
+        <p className="mb-4">
+          Make your business stand out with professional commercial vehicle graphics. Our {city.name}-based wrap services
+          help local businesses create effective and eye-catching mobile advertising.
+        </p>
+        <ul className="space-y-2">
+          <ServiceFeatureItem text="Custom designs tailored to your brand" />
+          <ServiceFeatureItem text="Options from simple lettering to full wraps" />
+          <ServiceFeatureItem text="Durable materials that withstand weather conditions" />
         </ul>
       </div>
     </div>
