@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { City, cities } from '@/data/cities';
 import { MapPin, Phone, Mail } from 'lucide-react';
+import ContactItem from './ContactItem';
 
 interface LocationSidebarProps {
   city: City;
@@ -14,28 +15,18 @@ const LocationSidebar: React.FC<LocationSidebarProps> = ({ city }) => {
     <div className="bg-brand-light p-6 rounded-lg shadow-md">
       <h3 className="text-xl font-bold mb-4 text-brand-navy">Contact Us</h3>
       <div className="space-y-4 mb-6">
-        <div className="flex items-start">
-          <Phone className="h-5 w-5 text-brand-red mr-2 mt-0.5" />
-          <div>
-            <p className="font-semibold">Call Us</p>
-            <p>(773) 555-1234</p>
-          </div>
-        </div>
-        <div className="flex items-start">
-          <Mail className="h-5 w-5 text-brand-red mr-2 mt-0.5" />
-          <div>
-            <p className="font-semibold">Email Us</p>
-            <p>info@chicagofleetwraps.com</p>
-          </div>
-        </div>
-        <div className="flex items-start">
-          <MapPin className="h-5 w-5 text-brand-red mr-2 mt-0.5" />
-          <div>
-            <p className="font-semibold">Visit Us</p>
-            <p>123 Wrap Avenue<br />Chicago, IL 60601</p>
-            <p className="text-sm text-gray-600 mt-1">Just {city.distance} from {city.name}</p>
-          </div>
-        </div>
+        <ContactItem icon={Phone} title="Call Us">
+          <p>(773) 555-1234</p>
+        </ContactItem>
+
+        <ContactItem icon={Mail} title="Email Us">
+          <p>info@chicagofleetwraps.com</p>
+        </ContactItem>
+
+        <ContactItem icon={MapPin} title="Visit Us">
+          <p>123 Wrap Avenue<br />Chicago, IL 60601</p>
+          <p className="text-sm text-gray-600 mt-1">Just {city.distance} from {city.name}</p>
+        </ContactItem>
       </div>
       
       <h3 className="text-xl font-bold mt-8 mb-4 text-brand-navy">Our Services</h3>

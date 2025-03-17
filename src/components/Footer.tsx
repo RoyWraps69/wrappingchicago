@@ -3,6 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { cities } from '@/data/cities';
 import { Phone, Mail, MapPin } from 'lucide-react';
+import ContactItem from './location/ContactItem';
 
 const Footer = () => {
   // Split cities into two columns
@@ -21,17 +22,20 @@ const Footer = () => {
               We specialize in fleet wraps, color change wraps, and commercial graphics.
             </p>
             <ul className="space-y-2">
-              <li className="flex items-start">
-                <MapPin className="h-5 w-5 text-brand-red mr-2 mt-0.5" />
-                <span>123 Wrap Avenue<br />Chicago, IL 60601</span>
+              <li>
+                <ContactItem icon={MapPin} title="">
+                  <span>123 Wrap Avenue<br />Chicago, IL 60601</span>
+                </ContactItem>
               </li>
-              <li className="flex items-start">
-                <Phone className="h-5 w-5 text-brand-red mr-2 mt-0.5" />
-                <span>(773) 555-1234</span>
+              <li>
+                <ContactItem icon={Phone} title="">
+                  <span>(773) 555-1234</span>
+                </ContactItem>
               </li>
-              <li className="flex items-start">
-                <Mail className="h-5 w-5 text-brand-red mr-2 mt-0.5" />
-                <span>info@chicagofleetwraps.com</span>
+              <li>
+                <ContactItem icon={Mail} title="">
+                  <span>info@chicagofleetwraps.com</span>
+                </ContactItem>
               </li>
             </ul>
           </div>
