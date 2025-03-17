@@ -1,7 +1,7 @@
 
 import React from 'react';
-import { Check } from 'lucide-react';
 import { City } from '@/data/cities';
+import ServiceFeatureItem from './ServiceFeatureItem';
 
 interface ServiceCardsProps {
   city: City;
@@ -17,18 +17,9 @@ const ServiceCards: React.FC<ServiceCardsProps> = ({ city }) => {
           businesses maximize their advertising reach throughout the Chicago area.
         </p>
         <ul className="space-y-2">
-          <li className="flex items-start">
-            <Check className="h-5 w-5 text-green-600 mr-2 mt-0.5" />
-            <span>Consistent branding across multiple vehicles</span>
-          </li>
-          <li className="flex items-start">
-            <Check className="h-5 w-5 text-green-600 mr-2 mt-0.5" />
-            <span>Cost-effective compared to traditional advertising</span>
-          </li>
-          <li className="flex items-start">
-            <Check className="h-5 w-5 text-green-600 mr-2 mt-0.5" />
-            <span>Protects original paint from everyday wear</span>
-          </li>
+          <ServiceFeatureItem text="Consistent branding across multiple vehicles" />
+          <ServiceFeatureItem text="Cost-effective compared to traditional advertising" />
+          <ServiceFeatureItem text="Protects original paint from everyday wear" />
         </ul>
       </div>
       
@@ -39,18 +30,9 @@ const ServiceCards: React.FC<ServiceCardsProps> = ({ city }) => {
           drivers the ability to transform their vehicles with premium vinyl wraps.
         </p>
         <ul className="space-y-2">
-          <li className="flex items-start">
-            <Check className="h-5 w-5 text-green-600 mr-2 mt-0.5" />
-            <span>Matte, gloss, satin, and specialty finishes available</span>
-          </li>
-          <li className="flex items-start">
-            <Check className="h-5 w-5 text-green-600 mr-2 mt-0.5" />
-            <span>Reversible alternative to permanent paint</span>
-          </li>
-          <li className="flex items-start">
-            <Check className="h-5 w-5 text-green-600 mr-2 mt-0.5" />
-            <span>Protects resale value while customizing your look</span>
-          </li>
+          <ServiceFeatureItem text="Matte, gloss, satin, and specialty finishes available" />
+          <ServiceFeatureItem text="Reversible alternative to permanent paint" />
+          <ServiceFeatureItem text="Protects resale value while customizing your look" />
         </ul>
       </div>
     </div>
