@@ -5,6 +5,8 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { toast } from 'sonner';
+import { AlertCircle } from 'lucide-react';
+import { Alert, AlertDescription } from '@/components/ui/alert';
 
 interface ApiKeyModalProps {
   isOpen: boolean;
@@ -49,6 +51,13 @@ const ApiKeyModal: React.FC<ApiKeyModalProps> = ({ isOpen, onClose }) => {
             Your API key is stored locally in your browser and is never sent to our servers.
           </DialogDescription>
         </DialogHeader>
+        
+        <Alert variant="default" className="border-blue-500 bg-blue-50 text-blue-800">
+          <AlertCircle className="h-4 w-4" />
+          <AlertDescription>
+            Adobe Firefly uses API key authentication, not OAuth. Make sure you're using the API key from the Adobe Developer Console.
+          </AlertDescription>
+        </Alert>
         
         <div className="grid gap-4 py-4">
           <div className="grid grid-cols-4 items-center gap-4">

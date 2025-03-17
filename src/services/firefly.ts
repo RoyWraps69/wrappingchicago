@@ -21,12 +21,14 @@ export const generateImage = async ({
     // Parse dimensions from size string
     const [width, height] = size.split('x').map(Number);
     
-    // Make the actual API call to Adobe Firefly
+    // Adobe Firefly expects the x-api-key in the headers
+    // Note: This is the correct authentication method for Adobe Firefly API
     const response = await fetch('https://firefly-api.adobe.io/v2/images/generate', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
         'x-api-key': apiKey,
+        // Adobe requires the 'x-api-key' header only, not OAuth token
       },
       body: JSON.stringify({
         prompt: `Vehicle wrap design concept: ${prompt}`,
@@ -41,9 +43,13 @@ export const generateImage = async ({
 
     if (!response.ok) {
       const errorData = await response.json();
+      console.error("Firefly API error:", errorData);
+      
       const errorMessage = errorData.message || "Failed to generate image";
       
-      if (errorData.code === 'invalid_api_key') {
+      if (errorData.error_code === '401013') {
+        throw new Error("Authentication failed. Your API key may be invalid or improperly formatted.");
+      } else if (errorData.code === 'invalid_api_key' || errorData.error_code === '401012') {
         throw new Error("Invalid API key. Please check your Adobe Firefly API key and try again.");
       } else if (errorData.code === 'quota_exceeded') {
         throw new Error("You've exceeded your Adobe Firefly API quota. Please check your usage limits.");
