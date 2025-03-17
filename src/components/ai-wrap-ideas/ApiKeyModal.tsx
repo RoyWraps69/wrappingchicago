@@ -55,7 +55,7 @@ const ApiKeyModal: React.FC<ApiKeyModalProps> = ({ isOpen, onClose }) => {
         <Alert variant="default" className="border-blue-500 bg-blue-50 text-blue-800">
           <AlertCircle className="h-4 w-4" />
           <AlertDescription>
-            Adobe Firefly uses API key authentication, not OAuth. Make sure you're using the API key from the Adobe Developer Console.
+            Make sure you're using the API key (x-api-key) from the Adobe Developer Console, not an OAuth token.
           </AlertDescription>
         </Alert>
         
@@ -79,7 +79,8 @@ const ApiKeyModal: React.FC<ApiKeyModalProps> = ({ isOpen, onClose }) => {
                 <li>Create an Adobe Developer account</li>
                 <li>Create a new project in the Console</li>
                 <li>Add the Firefly API to your project</li>
-                <li>Generate an API key from the project settings</li>
+                <li>Generate an API key (labeled "Client ID" or "API Key (Client ID)")</li>
+                <li>Copy the value to use as your x-api-key</li>
               </ol>
               <p className="mt-2">Adobe Firefly provides state-of-the-art AI image generation designed specifically for commercial use.</p>
             </div>

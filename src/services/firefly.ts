@@ -21,14 +21,12 @@ export const generateImage = async ({
     // Parse dimensions from size string
     const [width, height] = size.split('x').map(Number);
     
-    // Adobe Firefly expects the x-api-key in the headers
-    // Note: This is the correct authentication method for Adobe Firefly API
+    // Adobe Firefly API authentication
     const response = await fetch('https://firefly-api.adobe.io/v2/images/generate', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'x-api-key': apiKey,
-        // Adobe requires the 'x-api-key' header only, not OAuth token
+        'x-api-key': apiKey
       },
       body: JSON.stringify({
         prompt: `Vehicle wrap design concept: ${prompt}`,
