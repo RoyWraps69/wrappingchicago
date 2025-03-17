@@ -2,7 +2,7 @@
 import React from 'react';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
-import { ImageIcon, RefreshCw, Download, AlertCircle } from 'lucide-react';
+import { ImageIcon, RefreshCw, Download, AlertCircle, ArrowDown } from 'lucide-react';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Badge } from '@/components/ui/badge';
@@ -120,6 +120,25 @@ const ImageGenerator = ({
             >
               <Download className="mr-2 h-4 w-4" />
               Download
+            </Button>
+          </div>
+          <div className="mt-4 flex flex-col items-center text-center">
+            <p className="text-gray-700 mb-2">
+              Your design has been generated! Scroll down to see it applied to your wrap concepts.
+            </p>
+            <Button 
+              variant="outline" 
+              size="sm" 
+              className="mt-2"
+              onClick={() => {
+                const resultsSection = document.getElementById('results-section');
+                if (resultsSection) {
+                  resultsSection.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}
+            >
+              <ArrowDown className="mr-2 h-4 w-4" />
+              View Results Below
             </Button>
           </div>
         </div>

@@ -1,3 +1,4 @@
+
 import React, { createContext, useState, useContext, ReactNode, useEffect } from 'react';
 import { toast } from 'sonner';
 import { WrapIdea } from '@/types/wrap-idea';
@@ -74,6 +75,7 @@ export const AIWrapProvider: React.FC<{ children: ReactNode }> = ({ children }) 
     setTimeout(() => {
       const newIdeas = generateMockIdeas(business, description, selectedVehicleType);
       
+      // Apply custom image to first idea if available
       if (generatedImage) {
         newIdeas[0] = {
           ...newIdeas[0],
@@ -86,10 +88,13 @@ export const AIWrapProvider: React.FC<{ children: ReactNode }> = ({ children }) 
       setShowResults(true);
       toast.success("New wrap concepts generated!");
       
-      const resultsSection = document.getElementById('results-section');
-      if (resultsSection) {
-        resultsSection.scrollIntoView({ behavior: 'smooth' });
-      }
+      // Scroll to results section
+      setTimeout(() => {
+        const resultsSection = document.getElementById('results-section');
+        if (resultsSection) {
+          resultsSection.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
     }, 2000);
   };
   
@@ -107,6 +112,7 @@ export const AIWrapProvider: React.FC<{ children: ReactNode }> = ({ children }) 
     
     try {
       const fullPrompt = createImagePrompt(selectedVehicleType, business, imagePrompt);
+      console.log("Generating image with prompt:", fullPrompt);
       
       const imageUrl = await generateImage({
         prompt: fullPrompt,
@@ -115,9 +121,11 @@ export const AIWrapProvider: React.FC<{ children: ReactNode }> = ({ children }) 
       });
       
       if (imageUrl) {
+        console.log("Image generated successfully:", imageUrl.substring(0, 50) + "...");
         setGeneratedImage(imageUrl);
         toast.success("Custom wrap design generated!");
         
+        // If we already have ideas, update the first one with the new image
         if (generatedIdeas.length > 0) {
           const updatedIdeas = [...generatedIdeas];
           updatedIdeas[0] = {
@@ -125,6 +133,20 @@ export const AIWrapProvider: React.FC<{ children: ReactNode }> = ({ children }) 
             imageUrl: imageUrl
           };
           setGeneratedIdeas(updatedIdeas);
+        }
+        
+        // If we don't have any generated ideas yet, generate them now
+        if (generatedIdeas.length === 0 && business.trim()) {
+          handleGenerateIdeas();
+        } else if (!showResults) {
+          // If we haven't shown results yet, show them
+          setShowResults(true);
+          setTimeout(() => {
+            const resultsSection = document.getElementById('results-section');
+            if (resultsSection) {
+              resultsSection.scrollIntoView({ behavior: 'smooth' });
+            }
+          }, 100);
         }
       } else {
         setImageGenerationError("Failed to generate image. Please try again.");
