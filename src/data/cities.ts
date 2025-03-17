@@ -25,17 +25,23 @@ export const findCityBySlug = (slug: string): City | undefined => {
   // Normalize the slug
   const normalizedSlug = slug.toLowerCase().trim();
   
-  // First try exact match
-  const exactMatch = cities.find(city => city.slug.toLowerCase() === normalizedSlug);
+  // Exact match
+  const exactMatch = cities.find(city => 
+    city.slug.toLowerCase() === normalizedSlug || 
+    city.name.toLowerCase() === normalizedSlug
+  );
+  
   if (exactMatch) {
     console.log(`Found exact match for "${slug}": ${exactMatch.name}`);
     return exactMatch;
   }
   
-  // Then try partial match (if the slug contains the city slug)
+  // Partial match (if the slug contains the city slug or name)
   const partialMatch = cities.find(city => 
-    normalizedSlug.includes(city.slug.toLowerCase()) ||
-    city.slug.toLowerCase().includes(normalizedSlug)
+    normalizedSlug.includes(city.slug.toLowerCase()) || 
+    city.slug.toLowerCase().includes(normalizedSlug) ||
+    normalizedSlug.includes(city.name.toLowerCase()) ||
+    city.name.toLowerCase().includes(normalizedSlug)
   );
   
   if (partialMatch) {
@@ -43,11 +49,12 @@ export const findCityBySlug = (slug: string): City | undefined => {
     return partialMatch;
   }
   
-  // Try to match with hyphen variations
+  // Handle special cases with hyphen variations
   const hyphenMatch = cities.find(city => {
     const citySlugVariations = [
       city.slug.toLowerCase().replace(/-/g, ''),  // no hyphens
-      city.slug.toLowerCase().replace(/\s/g, '-') // spaces to hyphens
+      city.slug.toLowerCase().replace(/\s/g, '-'), // spaces to hyphens
+      city.name.toLowerCase().replace(/\s+/g, '-') // name with spaces to hyphens
     ];
     
     return citySlugVariations.includes(normalizedSlug) || 
@@ -57,6 +64,19 @@ export const findCityBySlug = (slug: string): City | undefined => {
   if (hyphenMatch) {
     console.log(`Found hyphen variation match for "${slug}": ${hyphenMatch.name}`);
     return hyphenMatch;
+  }
+  
+  // Handle arlington-heights specifically (common case)
+  if (normalizedSlug.includes('arlington') || normalizedSlug.includes('heights')) {
+    const arlingtonHeights = cities.find(city => 
+      city.name.toLowerCase().includes('arlington') || 
+      city.slug.includes('arlington')
+    );
+    
+    if (arlingtonHeights) {
+      console.log(`Special case match for Arlington Heights`);
+      return arlingtonHeights;
+    }
   }
   
   console.log(`No match found for "${slug}"`);
