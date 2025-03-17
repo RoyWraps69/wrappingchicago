@@ -66,7 +66,7 @@ const LocationHero = ({ cityName }: LocationHeroProps) => {
             <div className="relative">
               <div className="absolute -inset-4 bg-brand-red/20 rounded-full blur-xl"></div>
               <img 
-                src="https://placehold.co/600x400/FF4A1C/FFFFFF?text=Vehicle+Wrap" 
+                src="/lovable-uploads/199c2a21-e0b0-4c29-972f-f32d72698382.png" 
                 alt={`Professional vehicle wraps in ${cityName}`}
                 className="rounded-lg shadow-2xl relative z-10 transform rotate-2"
               />
