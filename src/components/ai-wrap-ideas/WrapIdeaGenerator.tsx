@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { Sparkles, RefreshCw, ImageIcon, Truck, Car } from 'lucide-react';
+import { Sparkles, RefreshCw, ImageIcon, Truck, Car, Download } from 'lucide-react';
 import { toast } from 'sonner';
 
 interface VehicleType {
