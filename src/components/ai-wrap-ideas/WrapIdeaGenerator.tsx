@@ -33,6 +33,7 @@ interface GeneratorProps {
   onGenerateImage: () => void;
   isGeneratingImage: boolean;
   generatedImage: string | null;
+  onDownloadImage: () => void;
 }
 
 const WrapIdeaGenerator = ({
@@ -48,7 +49,8 @@ const WrapIdeaGenerator = ({
   setImagePrompt,
   onGenerateImage,
   isGeneratingImage,
-  generatedImage
+  generatedImage,
+  onDownloadImage
 }: GeneratorProps) => {
   return (
     <section id="generator-section" className="py-12 px-4 md:px-6 bg-gray-50">
@@ -132,7 +134,7 @@ const WrapIdeaGenerator = ({
             <div className="md:w-1/2 border-t md:border-t-0 md:border-l border-gray-200 pt-6 md:pt-0 md:pl-6">
               <h2 className="text-2xl font-bold text-brand-navy mb-6">Custom Image Generator</h2>
               <p className="text-gray-700 mb-6">
-                Have a specific vision in mind? Describe the exact wrap design you want, and our AI will create a custom visualization. This helps us understand precisely what you're looking for.
+                Have a specific vision in mind? Describe the exact wrap design you want, and our AI will create a custom visualization using DALL-E. This helps us understand precisely what you're looking for.
               </p>
               
               <div className="mb-4">
@@ -179,10 +181,7 @@ const WrapIdeaGenerator = ({
                       variant="secondary"
                       size="sm"
                       className="absolute bottom-4 right-4 bg-white/80 hover:bg-white"
-                      onClick={() => {
-                        // In a real app, this would download the image
-                        toast.success("Image downloaded successfully!");
-                      }}
+                      onClick={onDownloadImage}
                     >
                       <Download className="mr-2 h-4 w-4" />
                       Download
