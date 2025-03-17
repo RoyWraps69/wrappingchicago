@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { Phone, Menu, X } from 'lucide-react';
+import { Phone, Menu, X, Sparkles } from 'lucide-react';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -43,6 +43,10 @@ const Header = () => {
             </Link>
             <Link to="/about" className="hover:text-brand-red transition-colors">
               About
+            </Link>
+            <Link to="/ai-wrap-ideas" className="hover:text-brand-red transition-colors flex items-center">
+              <Sparkles className="mr-1 h-4 w-4" />
+              AI Wrap Ideas
             </Link>
             <Link to="/contact" className="hover:text-brand-red transition-colors">
               Contact
@@ -91,6 +95,14 @@ const Header = () => {
               onClick={() => setIsMenuOpen(false)}
             >
               About
+            </Link>
+            <Link 
+              to="/ai-wrap-ideas" 
+              className="hover:text-brand-red transition-colors flex items-center"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              <Sparkles className="mr-1 h-4 w-4" />
+              AI Wrap Ideas
             </Link>
             <Link 
               to="/contact" 

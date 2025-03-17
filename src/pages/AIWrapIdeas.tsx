@@ -8,7 +8,7 @@ import Breadcrumbs from '@/components/navigation/Breadcrumbs';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { Sparkles, RefreshCw, Download, Truck, Car, ThumbsUp } from 'lucide-react';
+import { Sparkles, RefreshCw, Download, Truck, Car, ThumbsUp, ImageIcon } from 'lucide-react';
 import { toast } from 'sonner';
 
 const vehicleTypes = [
@@ -95,6 +95,11 @@ const AIWrapIdeas = () => {
   const [selectedVehicleType, setSelectedVehicleType] = useState('car');
   const [isGenerating, setIsGenerating] = useState(false);
   const [generatedIdeas, setGeneratedIdeas] = useState<WrapIdea[]>(exampleIdeas);
+  
+  // New state for direct image generation (DALL-E style)
+  const [imagePrompt, setImagePrompt] = useState('');
+  const [isGeneratingImage, setIsGeneratingImage] = useState(false);
+  const [generatedImage, setGeneratedImage] = useState<string | null>(null);
 
   const handleGenerateIdeas = () => {
     if (!business.trim()) {
@@ -112,6 +117,24 @@ const AIWrapIdeas = () => {
       setIsGenerating(false);
       toast.success("New wrap concepts generated!");
     }, 2000);
+  };
+  
+  const handleGenerateImage = () => {
+    if (!imagePrompt.trim()) {
+      toast.error("Please enter a description for your wrap design");
+      return;
+    }
+    
+    setIsGeneratingImage(true);
+    
+    // Simulate API call to image generation service
+    setTimeout(() => {
+      // In a real app, this would call an image generation API like DALL-E
+      // For demo, we'll just use a placeholder
+      setGeneratedImage(`https://placehold.co/1024x512/0B3954/FFFFFF?text=${encodeURIComponent(imagePrompt)}`);
+      setIsGeneratingImage(false);
+      toast.success("Custom wrap design generated!");
+    }, 3000);
   };
 
   const handleLikeIdea = (ideaId: string) => {
@@ -132,29 +155,47 @@ const AIWrapIdeas = () => {
         <Header />
         
         <main className="flex-grow">
-          <section className="bg-gradient-to-r from-brand-navy to-blue-900 text-white py-16">
-            <div className="container mx-auto px-4 md:px-6">
+          <section className="bg-gradient-to-r from-brand-navy to-blue-900 text-white py-24 relative h-[80vh] flex items-center">
+            <div className="absolute inset-0 z-0 opacity-25">
+              <img 
+                src="/lovable-uploads/199c2a21-e0b0-4c29-972f-f32d72698382.png" 
+                alt="Vehicle wrap background" 
+                className="object-cover w-full h-full"
+              />
+            </div>
+            <div className="container mx-auto px-4 md:px-6 relative z-10">
               <Breadcrumbs />
               <div className="max-w-3xl mx-auto text-center">
                 <div className="inline-flex items-center bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full text-white mb-4">
                   <Sparkles className="h-4 w-4 mr-2 text-brand-red" />
                   <span>AI-Powered Design Assistant</span>
                 </div>
-                <h1 className="text-4xl md:text-5xl font-bold mb-4">Generate Vehicle Wrap Ideas</h1>
+                <h1 className="text-4xl md:text-6xl font-bold mb-6">Generate Vehicle Wrap Ideas</h1>
                 <p className="text-xl text-white/80 mb-8">
                   Get AI-generated design concepts for your business vehicles that will make you stand out from the competition.
                 </p>
+                <Button
+                  size="lg" 
+                  className="bg-brand-red hover:bg-red-700 text-white py-6 px-8 rounded-full h-auto"
+                  onClick={() => document.getElementById('generator-section')?.scrollIntoView({ behavior: 'smooth' })}
+                >
+                  <Sparkles className="mr-2 h-5 w-5" />
+                  Create Your Design Now
+                </Button>
               </div>
             </div>
           </section>
           
-          <section className="py-12 px-4 md:px-6 bg-gray-50">
+          <section id="generator-section" className="py-12 px-4 md:px-6 bg-gray-50">
             <div className="container mx-auto max-w-6xl">
               <div className="bg-white rounded-xl shadow-lg p-6 md:p-8">
-                <h2 className="text-2xl font-bold text-brand-navy mb-6">Tell us about your business</h2>
-                
-                <div className="grid md:grid-cols-2 gap-8 mb-8">
-                  <div>
+                <div className="flex flex-col md:flex-row gap-6 mb-8">
+                  <div className="md:w-1/2">
+                    <h2 className="text-2xl font-bold text-brand-navy mb-6">AI Wrap Concept Generator</h2>
+                    <p className="text-gray-700 mb-6">
+                      Tell us about your business, and we'll generate wrap design concepts tailored to your needs.
+                    </p>
+                    
                     <div className="mb-4">
                       <label htmlFor="business" className="block text-sm font-medium text-gray-700 mb-1">
                         Business Name
@@ -181,13 +222,11 @@ const AIWrapIdeas = () => {
                         className="w-full"
                       />
                     </div>
-                  </div>
-                  
-                  <div>
+                    
                     <label className="block text-sm font-medium text-gray-700 mb-3">
                       Vehicle Type
                     </label>
-                    <div className="grid grid-cols-2 gap-3">
+                    <div className="grid grid-cols-2 gap-3 mb-6">
                       {vehicleTypes.map((type) => (
                         <Button
                           key={type.id}
@@ -206,25 +245,86 @@ const AIWrapIdeas = () => {
                       ))}
                     </div>
                     
-                    <div className="mt-8">
-                      <Button
-                        onClick={handleGenerateIdeas}
-                        disabled={isGenerating}
-                        className="w-full bg-brand-red hover:bg-red-700 text-white py-3 h-auto"
-                      >
-                        {isGenerating ? (
-                          <>
-                            <RefreshCw className="mr-2 h-4 w-4 animate-spin" />
-                            Generating Ideas...
-                          </>
-                        ) : (
-                          <>
-                            <Sparkles className="mr-2 h-4 w-4" />
-                            Generate Wrap Ideas
-                          </>
-                        )}
-                      </Button>
+                    <Button
+                      onClick={handleGenerateIdeas}
+                      disabled={isGenerating}
+                      className="w-full bg-brand-red hover:bg-red-700 text-white py-3 h-auto"
+                    >
+                      {isGenerating ? (
+                        <>
+                          <RefreshCw className="mr-2 h-4 w-4 animate-spin" />
+                          Generating Ideas...
+                        </>
+                      ) : (
+                        <>
+                          <Sparkles className="mr-2 h-4 w-4" />
+                          Generate Wrap Ideas
+                        </>
+                      )}
+                    </Button>
+                  </div>
+                  
+                  <div className="md:w-1/2 border-t md:border-t-0 md:border-l border-gray-200 pt-6 md:pt-0 md:pl-6">
+                    <h2 className="text-2xl font-bold text-brand-navy mb-6">Custom Image Generator</h2>
+                    <p className="text-gray-700 mb-6">
+                      Describe the exact wrap design you want, and our AI will create a custom image for you.
+                    </p>
+                    
+                    <div className="mb-4">
+                      <label htmlFor="imagePrompt" className="block text-sm font-medium text-gray-700 mb-1">
+                        Describe Your Ideal Wrap Design
+                      </label>
+                      <Textarea
+                        id="imagePrompt"
+                        placeholder="Example: A sleek black van with green gradient stripes and modern typography for a landscaping business"
+                        value={imagePrompt}
+                        onChange={(e) => setImagePrompt(e.target.value)}
+                        rows={5}
+                        className="w-full"
+                      />
                     </div>
+                    
+                    <Button
+                      onClick={handleGenerateImage}
+                      disabled={isGeneratingImage}
+                      className="w-full bg-brand-navy hover:bg-blue-800 text-white py-3 h-auto mb-6"
+                    >
+                      {isGeneratingImage ? (
+                        <>
+                          <RefreshCw className="mr-2 h-4 w-4 animate-spin" />
+                          Creating Your Design...
+                        </>
+                      ) : (
+                        <>
+                          <ImageIcon className="mr-2 h-4 w-4" />
+                          Generate Custom Design
+                        </>
+                      )}
+                    </Button>
+                    
+                    {generatedImage && (
+                      <div className="mt-4">
+                        <div className="relative bg-gray-100 rounded-lg overflow-hidden">
+                          <img 
+                            src={generatedImage} 
+                            alt="Generated wrap design" 
+                            className="w-full h-auto"
+                          />
+                          <Button
+                            variant="secondary"
+                            size="sm"
+                            className="absolute bottom-4 right-4 bg-white/80 hover:bg-white"
+                            onClick={() => {
+                              // In a real app, this would download the image
+                              toast.success("Image downloaded successfully!");
+                            }}
+                          >
+                            <Download className="mr-2 h-4 w-4" />
+                            Download
+                          </Button>
+                        </div>
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>

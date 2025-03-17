@@ -1,8 +1,16 @@
+
+/* Global styles */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Allow content to expand to full width */
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: left;
 }
 
 .logo {

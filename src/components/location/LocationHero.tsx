@@ -11,7 +11,7 @@ interface LocationHeroProps {
 
 const LocationHero = ({ cityName }: LocationHeroProps) => {
   return (
-    <section className="relative bg-brand-navy overflow-hidden py-28" id="location-hero">
+    <section className="relative bg-brand-navy overflow-hidden py-28 min-h-[80vh] flex items-center" id="location-hero">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute inset-0" style={{ 
