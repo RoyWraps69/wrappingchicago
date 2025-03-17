@@ -33,6 +33,7 @@ const AIWrapIdeas = () => {
   const [imagePrompt, setImagePrompt] = useState('');
   const [isGeneratingImage, setIsGeneratingImage] = useState(false);
   const [generatedImage, setGeneratedImage] = useState<string | null>(null);
+  const [selectedModel, setSelectedModel] = useState('dall-e-3');
   
   // API key modal state
   const [isApiKeyModalOpen, setIsApiKeyModalOpen] = useState(false);
@@ -90,7 +91,8 @@ const AIWrapIdeas = () => {
       
       const imageUrl = await generateImage({
         prompt: fullPrompt,
-        size: "1024x1024"
+        size: "1024x1024",
+        model: selectedModel
       });
       
       if (imageUrl) {
@@ -174,6 +176,8 @@ const AIWrapIdeas = () => {
             isGeneratingImage={isGeneratingImage}
             generatedImage={generatedImage}
             onDownloadImage={handleDownloadImage}
+            selectedModel={selectedModel}
+            setSelectedModel={setSelectedModel}
           />
           
           {/* Results Section */}

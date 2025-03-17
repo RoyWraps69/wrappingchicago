@@ -3,6 +3,7 @@ import React from 'react';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
 import { ImageIcon, RefreshCw, Download } from 'lucide-react';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 
 interface ImageGeneratorProps {
   imagePrompt: string;
@@ -11,6 +12,8 @@ interface ImageGeneratorProps {
   isGeneratingImage: boolean;
   generatedImage: string | null;
   onDownloadImage: () => void;
+  selectedModel: string;
+  setSelectedModel: (value: string) => void;
 }
 
 const ImageGenerator = ({
@@ -19,7 +22,9 @@ const ImageGenerator = ({
   onGenerateImage,
   isGeneratingImage,
   generatedImage,
-  onDownloadImage
+  onDownloadImage,
+  selectedModel,
+  setSelectedModel
 }: ImageGeneratorProps) => {
   return (
     <div>
@@ -42,6 +47,24 @@ const ImageGenerator = ({
           rows={5}
           className="w-full"
         />
+      </div>
+
+      <div className="mb-4">
+        <label htmlFor="modelSelect" className="block text-sm font-medium text-gray-700 mb-1">
+          DALL-E Model
+        </label>
+        <Select value={selectedModel} onValueChange={setSelectedModel}>
+          <SelectTrigger id="modelSelect" className="w-full">
+            <SelectValue placeholder="Select DALL-E model" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="dall-e-3">DALL-E 3 (Higher quality, slower)</SelectItem>
+            <SelectItem value="dall-e-2">DALL-E 2 (Faster, less detailed)</SelectItem>
+          </SelectContent>
+        </Select>
+        <p className="text-xs text-gray-500 mt-1">
+          DALL-E 3 offers higher quality images but may use more API credits.
+        </p>
       </div>
       
       <Button

@@ -18,6 +18,8 @@ interface GeneratorProps {
   isGeneratingImage: boolean;
   generatedImage: string | null;
   onDownloadImage: () => void;
+  selectedModel: string;
+  setSelectedModel: (value: string) => void;
 }
 
 const WrapIdeaGenerator = (props: GeneratorProps) => {
@@ -35,7 +37,9 @@ const WrapIdeaGenerator = (props: GeneratorProps) => {
     onGenerateImage,
     isGeneratingImage,
     generatedImage,
-    onDownloadImage
+    onDownloadImage,
+    selectedModel,
+    setSelectedModel
   } = props;
 
   return (
@@ -64,6 +68,8 @@ const WrapIdeaGenerator = (props: GeneratorProps) => {
                 isGeneratingImage={isGeneratingImage}
                 generatedImage={generatedImage}
                 onDownloadImage={onDownloadImage}
+                selectedModel={selectedModel}
+                setSelectedModel={setSelectedModel}
               />
             </div>
           </div>
