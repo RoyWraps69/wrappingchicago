@@ -3,7 +3,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { City } from '@/data/cities';
+import { City, cities } from '@/data/cities';  // Added 'cities' import here
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import CallToAction from '@/components/CallToAction';
