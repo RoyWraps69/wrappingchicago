@@ -1,7 +1,8 @@
 
 import React, { useEffect } from 'react';
-import { X } from 'lucide-react';
+import { X, Download } from 'lucide-react';
 import { GalleryItem } from '@/types/gallery';
+import { Button } from '@/components/ui/button';
 
 interface ImageViewerProps {
   item: GalleryItem | null;
@@ -23,6 +24,18 @@ const ImageViewer: React.FC<ImageViewerProps> = ({ item, onClose }) => {
     };
   }, [item]);
 
+  const handleDownload = () => {
+    if (!item) return;
+    
+    // Create a link element and simulate click to download the image
+    const link = document.createElement('a');
+    link.href = item.image;
+    link.download = `${item.title.toLowerCase().replace(/\s+/g, '-')}-chicago-fleet-wraps.jpg`;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   if (!item) return null;
 
   return (
@@ -38,12 +51,26 @@ const ImageViewer: React.FC<ImageViewerProps> = ({ item, onClose }) => {
         className="relative max-w-4xl w-full animate-scale-in"
         onClick={(e) => e.stopPropagation()}
       >
-        <button 
-          className="absolute top-4 right-4 bg-white rounded-full p-2 shadow-lg hover:scale-110 transition-transform"
-          onClick={onClose}
-        >
-          <X className="h-5 w-5 text-brand-navy" />
-        </button>
+        <div className="absolute top-4 right-4 flex gap-2">
+          <Button 
+            variant="secondary"
+            size="icon"
+            className="bg-white hover:bg-gray-100 border-none shadow-lg"
+            onClick={handleDownload}
+            aria-label="Download image"
+          >
+            <Download className="h-5 w-5 text-brand-navy" />
+          </Button>
+          <Button 
+            variant="secondary"
+            size="icon"
+            className="bg-white hover:bg-gray-100 border-none shadow-lg"
+            onClick={onClose}
+            aria-label="Close modal"
+          >
+            <X className="h-5 w-5 text-brand-navy" />
+          </Button>
+        </div>
         <img 
           src={item.image} 
           alt={item.title} 
