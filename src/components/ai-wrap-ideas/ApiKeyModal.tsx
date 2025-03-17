@@ -5,6 +5,8 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { toast } from 'sonner';
+import { AlertCircle } from 'lucide-react';
+import { Alert, AlertDescription } from '@/components/ui/alert';
 
 interface ApiKeyModalProps {
   isOpen: boolean;
@@ -49,6 +51,13 @@ const ApiKeyModal: React.FC<ApiKeyModalProps> = ({ isOpen, onClose }) => {
             Your API key is stored locally in your browser and is never sent to our servers.
           </DialogDescription>
         </DialogHeader>
+        
+        <Alert variant="warning" className="mb-4">
+          <AlertCircle className="h-4 w-4" />
+          <AlertDescription>
+            Due to API authentication issues, image generation is currently in demo mode and will return placeholder images.
+          </AlertDescription>
+        </Alert>
         
         <div className="grid gap-4 py-4">
           <div className="grid grid-cols-4 items-center gap-4">
