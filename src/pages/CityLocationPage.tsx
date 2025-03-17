@@ -8,6 +8,7 @@ const CityLocationPage = () => {
   const { citySlug } = useParams<{ citySlug: string }>();
   
   // Clean up city slug if it contains any trailing characters
+  // The -il suffix might be part of the URL route, so we need to remove it
   const cleanCitySlug = citySlug?.replace(/-il$/, '');
   const city = findCityBySlug(cleanCitySlug || '');
   
