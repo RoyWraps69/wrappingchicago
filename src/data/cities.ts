@@ -13,7 +13,7 @@ export const cities: City[] = [
   ...southCities
 ];
 
-export { City } from './types/city';
+export type { City } from './types/city';
 
 export const findCityBySlug = (slug: string): City | undefined => {
   return cities.find(city => city.slug === slug);
