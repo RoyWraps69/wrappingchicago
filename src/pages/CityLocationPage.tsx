@@ -27,12 +27,22 @@ const CityLocationPage = () => {
     cleanCitySlug = cleanCitySlug.replace(/-il$/, '');
   }
   
-  const city = findCityBySlug(cleanCitySlug);
+  console.log(`Attempting to find city with slug: ${cleanCitySlug}`, location.pathname);
   
-  console.log(`Attempting to find city with slug: ${cleanCitySlug}`, city, location.pathname);
+  const city = findCityBySlug(cleanCitySlug);
   
   if (!city) {
     console.error(`City not found for slug: ${cleanCitySlug}`);
+    // If no city is found, try to match by name (case insensitive)
+    const cityByName = cities.find(c => 
+      c.name.toLowerCase() === cleanCitySlug.toLowerCase() ||
+      c.slug.toLowerCase() === cleanCitySlug.toLowerCase()
+    );
+    
+    if (cityByName) {
+      return <LocationPage city={cityByName} />;
+    }
+    
     return <Navigate to="/locations" />;
   }
   

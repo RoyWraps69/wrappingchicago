@@ -27,6 +27,8 @@ const App = () => (
             <Route path="/vehicle-wraps-:citySlug-il" element={<CityLocationPage />} />
             <Route path="/vehicle-wraps-:citySlug" element={<CityLocationPage />} />
             <Route path="/vehicle-wraps/:citySlug" element={<CityLocationPage />} />
+            <Route path="/vehicle-wraps-:citySlug/" element={<CityLocationPage />} />
+            <Route path="/vehicle-wraps/:citySlug/" element={<CityLocationPage />} />
             
             {/* Services Routes */}
             <Route path="/services/fleet-wraps" element={<CityLocationPage />} />
