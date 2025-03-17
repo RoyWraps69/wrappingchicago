@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { toast } from 'sonner';
-import { AlertCircle, ExternalLink } from 'lucide-react';
+import { AlertCircle, ExternalLink, Info } from 'lucide-react';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 
 interface ApiKeyModalProps {
@@ -27,14 +27,20 @@ const ApiKeyModal: React.FC<ApiKeyModalProps> = ({ isOpen, onClose }) => {
   }, [isOpen]);
 
   const validateApiKey = (key: string): boolean => {
-    // Basic validation for API key format
+    // Enhanced validation for API key format
     if (!key.trim()) {
       setErrorMessage("API key cannot be empty");
       return false;
     }
     
     if (key.trim().length < 20) {
-      setErrorMessage("API key seems too short. Adobe Firefly API keys are typically longer");
+      setErrorMessage("API key seems too short. Adobe Firefly Embed API keys are typically longer");
+      return false;
+    }
+    
+    // Check for common formatting issues
+    if (key.includes(' ')) {
+      setErrorMessage("API key contains spaces. Please remove any spaces from your API key");
       return false;
     }
     
@@ -65,15 +71,15 @@ const ApiKeyModal: React.FC<ApiKeyModalProps> = ({ isOpen, onClose }) => {
         <DialogHeader>
           <DialogTitle>Adobe Firefly API Settings</DialogTitle>
           <DialogDescription>
-            Enter your Adobe Firefly API key to use the image generation feature.
+            Enter your Adobe Firefly Embed API key to use the image generation feature.
             Your API key is stored locally in your browser and is never sent to our servers.
           </DialogDescription>
         </DialogHeader>
         
         <Alert variant="default" className="border-blue-500 bg-blue-50 text-blue-800">
-          <AlertCircle className="h-4 w-4" />
+          <Info className="h-4 w-4" />
           <AlertDescription>
-            You need an Adobe Firefly Embed API key for this feature to work properly.
+            This feature requires an Adobe Firefly <strong>Embed API key</strong>, not a regular API key.
           </AlertDescription>
         </Alert>
         
@@ -87,49 +93,50 @@ const ApiKeyModal: React.FC<ApiKeyModalProps> = ({ isOpen, onClose }) => {
         <div className="grid gap-4 py-4">
           <div className="grid grid-cols-4 items-center gap-4">
             <Label htmlFor="firefly-key" className="col-span-4">
-              Adobe Firefly API Key
+              Adobe Firefly Embed API Key
             </Label>
             <Input
               id="firefly-key"
               type="password"
               value={fireflyKey}
               onChange={(e) => setFireflyKey(e.target.value)}
-              placeholder="Your Firefly API key..."
+              placeholder="Enter your Firefly Embed API key..."
               className="col-span-4"
             />
             <div className="col-span-4 text-xs text-muted-foreground space-y-2">
               <p>
                 <a 
-                  href="https://developer.adobe.com/firefly-services/docs/guides/" 
+                  href="https://developer.adobe.com/firefly-services/docs/guides/embedding/api-key/" 
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className="text-brand-red hover:underline inline-flex items-center"
                 >
-                  Adobe Firefly API Documentation <ExternalLink className="ml-1 h-3 w-3" />
+                  Adobe Firefly Embed API Documentation <ExternalLink className="ml-1 h-3 w-3" />
                 </a>
               </p>
               
               <div className="p-3 bg-gray-50 rounded border border-gray-200">
                 <p className="font-medium mb-1">Getting your Adobe Firefly Embed API key:</p>
                 <ol className="list-decimal ml-4 space-y-1">
-                  <li>Register for the Adobe Firefly Embed service</li>
-                  <li>Create a project in the Adobe Developer Console</li>
-                  <li>Add the Firefly API service to your project</li>
-                  <li>Generate API credentials for the service</li>
-                  <li>Copy the API key (not the client secret or client ID)</li>
+                  <li>Sign up for the Adobe Firefly API at <a href="https://developer.adobe.com/firefly-services/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">developer.adobe.com</a></li>
+                  <li>Create a new project in the Developer Console</li>
+                  <li>Add the "Firefly Image API" to your project</li>
+                  <li>Generate <strong>Embed API credentials</strong> (not Service credentials)</li>
+                  <li>Copy the API key (NOT client ID or client secret)</li>
                 </ol>
               </div>
               
-              <p className="text-red-600 font-medium">
-                Note: If you're seeing authentication errors after saving your key, please verify that:
+              <p className="text-red-600 font-medium mt-2">
+                Common authentication issues:
               </p>
               <ul className="list-disc ml-4 text-red-600">
-                <li>Your API key is specifically for the Firefly Embed service</li>
-                <li>Your API key has not expired or been revoked</li>
-                <li>You've copied the entire key without any extra spaces</li>
+                <li>Using a regular API key instead of an Embed API key</li>
+                <li>Using a Client ID or Client Secret instead of the API key</li>
+                <li>Using an expired or revoked API key</li>
+                <li>Copy-pasting with extra spaces or characters</li>
               </ul>
               
-              <p>The Adobe Firefly API is a premium service and requires an Adobe subscription with Firefly access.</p>
+              <p className="mt-2">The Adobe Firefly API is a premium service and requires an Adobe subscription with Firefly access.</p>
             </div>
           </div>
         </div>
