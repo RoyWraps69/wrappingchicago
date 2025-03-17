@@ -8,7 +8,7 @@ import Breadcrumbs from '@/components/navigation/Breadcrumbs';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { Sparkles, RefreshCw, Download, Truck, Car, ThumbsUp, ImageIcon } from 'lucide-react';
+import { Sparkles, RefreshCw, Download, Truck, Car, ThumbsUp, ImageIcon, LightbulbIcon, Clock, DollarSign, Zap } from 'lucide-react';
 import { toast } from 'sonner';
 
 const vehicleTypes = [
@@ -172,7 +172,7 @@ const AIWrapIdeas = () => {
                 </div>
                 <h1 className="text-4xl md:text-6xl font-bold mb-6">Generate Vehicle Wrap Ideas</h1>
                 <p className="text-xl text-white/80 mb-8">
-                  Get AI-generated design concepts for your business vehicles that will make you stand out from the competition.
+                  Our AI design tool helps bridge the gap between your vision and reality, allowing you to explore concepts before committing to a design.
                 </p>
                 <Button
                   size="lg" 
@@ -186,6 +186,81 @@ const AIWrapIdeas = () => {
             </div>
           </section>
           
+          {/* New value proposition section */}
+          <section className="py-16 bg-white">
+            <div className="container mx-auto px-4 max-w-6xl">
+              <div className="text-center mb-12">
+                <h2 className="text-3xl font-bold text-brand-navy mb-4">Why Use Our AI Wrap Designer?</h2>
+                <p className="text-lg text-gray-700 max-w-3xl mx-auto">
+                  The AI generator helps us understand your vision with precision, eliminating the frustration of miscommunications and design revisions.
+                </p>
+              </div>
+              
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div className="bg-gray-50 p-6 rounded-lg text-center hover:shadow-md transition-shadow">
+                  <div className="bg-brand-navy/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Zap className="h-8 w-8 text-brand-navy" />
+                  </div>
+                  <h3 className="text-xl font-bold text-brand-navy mb-2">Visualize Your Ideas</h3>
+                  <p className="text-gray-700">
+                    See your concepts come to life before committing to a design, helping you refine your vision with confidence.
+                  </p>
+                </div>
+                
+                <div className="bg-gray-50 p-6 rounded-lg text-center hover:shadow-md transition-shadow">
+                  <div className="bg-brand-navy/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Clock className="h-8 w-8 text-brand-navy" />
+                  </div>
+                  <h3 className="text-xl font-bold text-brand-navy mb-2">Save Time</h3>
+                  <p className="text-gray-700">
+                    Reduce back-and-forth revisions and shorten your project timeline by starting with clear visual concepts.
+                  </p>
+                </div>
+                
+                <div className="bg-gray-50 p-6 rounded-lg text-center hover:shadow-md transition-shadow">
+                  <div className="bg-brand-navy/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <DollarSign className="h-8 w-8 text-brand-navy" />
+                  </div>
+                  <h3 className="text-xl font-bold text-brand-navy mb-2">Reduce Costs</h3>
+                  <p className="text-gray-700">
+                    Minimize expensive design changes by exploring multiple concepts before production begins.
+                  </p>
+                </div>
+                
+                <div className="bg-gray-50 p-6 rounded-lg text-center hover:shadow-md transition-shadow">
+                  <div className="bg-brand-navy/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <LightbulbIcon className="h-8 w-8 text-brand-navy" />
+                  </div>
+                  <h3 className="text-xl font-bold text-brand-navy mb-2">Spark Inspiration</h3>
+                  <p className="text-gray-700">
+                    Discover creative directions you might not have considered, expanding your branding possibilities.
+                  </p>
+                </div>
+              </div>
+              
+              <div className="mt-12 bg-brand-navy/5 p-8 rounded-xl">
+                <div className="flex flex-col md:flex-row items-center">
+                  <div className="md:w-2/3 mb-6 md:mb-0 md:pr-8">
+                    <h3 className="text-2xl font-bold text-brand-navy mb-4">Bridging the Communication Gap</h3>
+                    <p className="text-gray-700 mb-4">
+                      One of the biggest challenges in vehicle wrap design is translating your vision into reality. Our AI tool bridges that gap by creating visual concepts based on your descriptions.
+                    </p>
+                    <p className="text-gray-700">
+                      By generating images that reflect your ideas, we can better understand your preferences for style, color, layout, and overall aesthetic. This helps us create a final design that truly represents your brand and meets your expectations from the start.
+                    </p>
+                  </div>
+                  <div className="md:w-1/3">
+                    <img 
+                      src="/lovable-uploads/efc6c586-8651-43ad-811a-b896a91a1b69.png" 
+                      alt="Vehicle wrap design process" 
+                      className="rounded-lg shadow-lg"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          
           <section id="generator-section" className="py-12 px-4 md:px-6 bg-gray-50">
             <div className="container mx-auto max-w-6xl">
               <div className="bg-white rounded-xl shadow-lg p-6 md:p-8">
@@ -193,7 +268,7 @@ const AIWrapIdeas = () => {
                   <div className="md:w-1/2">
                     <h2 className="text-2xl font-bold text-brand-navy mb-6">AI Wrap Concept Generator</h2>
                     <p className="text-gray-700 mb-6">
-                      Tell us about your business, and we'll generate wrap design concepts tailored to your needs.
+                      Tell us about your business, and we'll generate wrap design concepts tailored to your needs. This helps us understand your vision more clearly and creates a foundation for our design process.
                     </p>
                     
                     <div className="mb-4">
@@ -267,7 +342,7 @@ const AIWrapIdeas = () => {
                   <div className="md:w-1/2 border-t md:border-t-0 md:border-l border-gray-200 pt-6 md:pt-0 md:pl-6">
                     <h2 className="text-2xl font-bold text-brand-navy mb-6">Custom Image Generator</h2>
                     <p className="text-gray-700 mb-6">
-                      Describe the exact wrap design you want, and our AI will create a custom image for you.
+                      Have a specific vision in mind? Describe the exact wrap design you want, and our AI will create a custom visualization. This helps us understand precisely what you're looking for.
                     </p>
                     
                     <div className="mb-4">
@@ -369,25 +444,24 @@ const AIWrapIdeas = () => {
           
           <section className="py-12 bg-white">
             <div className="container mx-auto px-4 md:px-6 max-w-4xl text-center">
-              <h2 className="text-2xl font-bold text-brand-navy mb-4">How Our AI Design Assistant Works</h2>
+              <h2 className="text-2xl font-bold text-brand-navy mb-4">From Concept to Completion: How Our Process Works</h2>
               <p className="text-gray-700 mb-8">
-                Our AI-powered design assistant analyzes thousands of successful vehicle wraps and your specific business 
-                needs to generate custom design concepts tailored to your brand.
+                Our AI-powered design assistant is just the first step in creating your perfect vehicle wrap. Here's how we use this technology to deliver exceptional results.
               </p>
               
               <div className="grid md:grid-cols-3 gap-6">
                 {[
                   {
-                    title: "1. Tell Us About Your Business",
-                    description: "Share your business type, target audience, and what message you want to communicate."
+                    title: "1. AI-Powered Exploration",
+                    description: "Share your vision and let our AI create visual concepts that help us understand exactly what you're looking for."
                   },
                   {
-                    title: "2. AI Generates Concepts",
-                    description: "Our AI creates custom design concepts based on successful wrap designs for your industry."
+                    title: "2. Professional Refinement",
+                    description: "Our expert designers take your favorite AI concepts and refine them with industry expertise and brand strategy."
                   },
                   {
-                    title: "3. Refine & Implement",
-                    description: "Like your favorite concepts and our designers will refine them into your perfect wrap."
+                    title: "3. Production & Installation",
+                    description: "We transform the approved design into a high-quality vehicle wrap installed by certified technicians."
                   }
                 ].map((step, index) => (
                   <div key={index} className="bg-gray-50 p-6 rounded-lg">
@@ -395,6 +469,13 @@ const AIWrapIdeas = () => {
                     <p className="text-gray-700">{step.description}</p>
                   </div>
                 ))}
+              </div>
+              
+              <div className="mt-12 p-6 bg-brand-light rounded-lg">
+                <p className="text-lg font-medium text-brand-navy">
+                  "The AI design tool helped us communicate our vision much more clearly. Instead of struggling to explain what we wanted, we could show the design team exactly what we had in mind. The final wrap exceeded our expectations!"
+                </p>
+                <p className="mt-4 font-medium">— Chicago Business Owner</p>
               </div>
             </div>
           </section>
