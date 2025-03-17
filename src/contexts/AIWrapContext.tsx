@@ -3,6 +3,7 @@ import { WrapIdea, exampleIdeas } from '@/types/wrap-idea';
 import { toast } from 'sonner';
 import { generateImage as generateImageOpenAI } from '@/services/openai';
 import { generateImage as generateImageStability } from '@/services/stability';
+import { generateImage as generateImageFirefly } from '@/services/firefly';
 
 interface AIWrapContextType {
   // Form state
@@ -54,27 +55,29 @@ export const AIWrapProvider: React.FC<{ children: ReactNode }> = ({ children }) 
   const [imagePrompt, setImagePrompt] = useState('');
   const [isGeneratingImage, setIsGeneratingImage] = useState(false);
   const [generatedImage, setGeneratedImage] = useState<string | null>(null);
-  const [selectedModel, setSelectedModel] = useState('dall-e-3');
+  const [selectedModel, setSelectedModel] = useState('firefly-image');
   const [imageGenerationError, setImageGenerationError] = useState<string | undefined>(undefined);
-  const [aiProvider, setAiProvider] = useState('openai');
+  const [aiProvider, setAiProvider] = useState('firefly');
   
   const [isApiKeyModalOpen, setIsApiKeyModalOpen] = useState(false);
   const [hasApiKey, setHasApiKey] = useState(false);
 
   useEffect(() => {
-    const selectedProvider = localStorage.getItem('selected_ai_provider') || 'openai';
+    const selectedProvider = localStorage.getItem('selected_ai_provider') || 'firefly';
     setAiProvider(selectedProvider);
     
     if (selectedProvider === 'openai') {
       const apiKey = localStorage.getItem('openai_api_key');
       setHasApiKey(!!apiKey);
-      
       setSelectedModel('dall-e-3');
-    } else {
+    } else if (selectedProvider === 'stability') {
       const apiKey = localStorage.getItem('stability_api_key');
       setHasApiKey(!!apiKey);
-      
       setSelectedModel('stable-diffusion-xl-1024-v1-0');
+    } else {
+      const apiKey = localStorage.getItem('firefly_api_key');
+      setHasApiKey(!!apiKey);
+      setSelectedModel('firefly-image');
     }
   }, [isApiKeyModalOpen]);
 
@@ -85,9 +88,12 @@ export const AIWrapProvider: React.FC<{ children: ReactNode }> = ({ children }) 
     if (aiProvider === 'openai') {
       apiKey = localStorage.getItem('openai_api_key');
       providerName = 'OpenAI';
-    } else {
+    } else if (aiProvider === 'stability') {
       apiKey = localStorage.getItem('stability_api_key');
       providerName = 'Stability AI';
+    } else {
+      apiKey = localStorage.getItem('firefly_api_key');
+      providerName = 'Adobe Firefly';
     }
     
     if (!apiKey) {
@@ -162,12 +168,17 @@ export const AIWrapProvider: React.FC<{ children: ReactNode }> = ({ children }) 
           size: "1024x1024",
           model: selectedModel
         });
-      } else {
+      } else if (aiProvider === 'stability') {
         imageUrl = await generateImageStability({
           prompt: fullPrompt,
           size: "1024x1024",
           steps: 30,
           cfgScale: 7
+        });
+      } else {
+        imageUrl = await generateImageFirefly({
+          prompt: fullPrompt,
+          size: "1024x1024"
         });
       }
       

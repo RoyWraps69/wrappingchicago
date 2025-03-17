@@ -15,29 +15,29 @@ interface ApiKeyModalProps {
 const ApiKeyModal: React.FC<ApiKeyModalProps> = ({ isOpen, onClose }) => {
   const [openAIKey, setOpenAIKey] = useState('');
   const [stabilityAIKey, setStabilityAIKey] = useState('');
-  const [selectedProvider, setSelectedProvider] = useState('openai');
+  const [fireflyKey, setFireflyKey] = useState('');
+  const [selectedProvider, setSelectedProvider] = useState('firefly');
   
   useEffect(() => {
     if (isOpen) {
       // Load saved keys when modal opens
       const savedOpenAIKey = localStorage.getItem('openai_api_key') || '';
       const savedStabilityAIKey = localStorage.getItem('stability_api_key') || '';
+      const savedFireflyKey = localStorage.getItem('firefly_api_key') || '';
       
       setOpenAIKey(savedOpenAIKey);
       setStabilityAIKey(savedStabilityAIKey);
+      setFireflyKey(savedFireflyKey);
       
-      // Default to Stability if it has a key, otherwise OpenAI
-      if (savedStabilityAIKey) {
-        setSelectedProvider('stability');
-      } else {
-        setSelectedProvider('openai');
-      }
+      // Get the currently selected provider or default to Firefly
+      const savedProvider = localStorage.getItem('selected_ai_provider') || 'firefly';
+      setSelectedProvider(savedProvider);
     }
   }, [isOpen]);
 
   const handleSave = () => {
     try {
-      // Save API keys
+      // Save API keys based on selected provider
       if (selectedProvider === 'openai' && openAIKey) {
         localStorage.setItem('openai_api_key', openAIKey);
         localStorage.setItem('selected_ai_provider', 'openai');
@@ -46,8 +46,15 @@ const ApiKeyModal: React.FC<ApiKeyModalProps> = ({ isOpen, onClose }) => {
         localStorage.setItem('stability_api_key', stabilityAIKey);
         localStorage.setItem('selected_ai_provider', 'stability');
         toast.success('Stability AI API key saved successfully');
+      } else if (selectedProvider === 'firefly' && fireflyKey) {
+        localStorage.setItem('firefly_api_key', fireflyKey);
+        localStorage.setItem('selected_ai_provider', 'firefly');
+        toast.success('Adobe Firefly API key saved successfully');
       } else {
-        toast.error(`Please enter a valid API key for ${selectedProvider === 'openai' ? 'OpenAI' : 'Stability AI'}`);
+        toast.error(`Please enter a valid API key for ${
+          selectedProvider === 'openai' ? 'OpenAI' : 
+          selectedProvider === 'stability' ? 'Stability AI' : 'Adobe Firefly'
+        }`);
         return;
       }
       
@@ -70,10 +77,33 @@ const ApiKeyModal: React.FC<ApiKeyModalProps> = ({ isOpen, onClose }) => {
         </DialogHeader>
         
         <Tabs value={selectedProvider} onValueChange={setSelectedProvider} className="w-full">
-          <TabsList className="grid w-full grid-cols-2">
+          <TabsList className="grid w-full grid-cols-3">
+            <TabsTrigger value="firefly">Adobe Firefly</TabsTrigger>
             <TabsTrigger value="openai">OpenAI</TabsTrigger>
             <TabsTrigger value="stability">Stability AI</TabsTrigger>
           </TabsList>
+          
+          <TabsContent value="firefly" className="pt-4">
+            <div className="grid gap-4 py-4">
+              <div className="grid grid-cols-4 items-center gap-4">
+                <Label htmlFor="firefly-key" className="col-span-4">
+                  Adobe Firefly API Key
+                </Label>
+                <Input
+                  id="firefly-key"
+                  type="password"
+                  value={fireflyKey}
+                  onChange={(e) => setFireflyKey(e.target.value)}
+                  placeholder="Your Firefly API key..."
+                  className="col-span-4"
+                />
+                <div className="col-span-4 text-xs text-muted-foreground">
+                  <p>Get your API key from the <a href="https://developer.adobe.com/console/" target="_blank" rel="noopener noreferrer" className="text-brand-red hover:underline">Adobe Developer Console</a></p>
+                  <p className="mt-2">Adobe Firefly provides state-of-the-art AI image generation designed specifically for commercial use.</p>
+                </div>
+              </div>
+            </div>
+          </TabsContent>
           
           <TabsContent value="openai" className="pt-4">
             <div className="grid gap-4 py-4">

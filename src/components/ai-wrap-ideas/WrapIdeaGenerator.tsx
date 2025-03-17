@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import BusinessInfoForm from './BusinessInfoForm';
 import ImageGenerator from './ImageGenerator';
 import { useAIWrap } from '@/contexts/AIWrapContext';
@@ -25,6 +25,13 @@ const WrapIdeaGenerator = () => {
     handleGenerateImage,
     handleDownloadImage
   } = useAIWrap();
+
+  // Set default model based on AI provider
+  useEffect(() => {
+    if (aiProvider === 'firefly' && (!selectedModel || !selectedModel.startsWith('firefly'))) {
+      setSelectedModel('firefly-image');
+    }
+  }, [aiProvider, selectedModel, setSelectedModel]);
 
   return (
     <section id="generator-section" className="py-12 px-4 md:px-6 bg-gray-50">

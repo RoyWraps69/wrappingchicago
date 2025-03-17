@@ -37,7 +37,8 @@ const ImageGenerator = ({
       <div className="flex items-center justify-between mb-6">
         <h2 className="text-2xl font-bold text-brand-navy">Custom Image Generator</h2>
         <Badge variant="outline" className="ml-2">
-          {aiProvider === 'stability' ? 'Stability AI' : 'OpenAI DALL-E'}
+          {aiProvider === 'firefly' ? 'Adobe Firefly' : 
+           aiProvider === 'stability' ? 'Stability AI' : 'OpenAI DALL-E'}
         </Badge>
       </div>
       
@@ -69,6 +70,26 @@ const ImageGenerator = ({
           className="w-full"
         />
       </div>
+
+      {aiProvider === 'firefly' && (
+        <div className="mb-4">
+          <label htmlFor="modelSelect" className="block text-sm font-medium text-gray-700 mb-1">
+            Adobe Firefly Model
+          </label>
+          <Select value={selectedModel} onValueChange={setSelectedModel}>
+            <SelectTrigger id="modelSelect" className="w-full">
+              <SelectValue placeholder="Select Firefly model" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="firefly-image">Firefly Image Generator</SelectItem>
+              <SelectItem value="firefly-vector">Firefly Vector Generator</SelectItem>
+            </SelectContent>
+          </Select>
+          <p className="text-xs text-gray-500 mt-1">
+            Adobe Firefly is designed for commercial use and is trained on licensed content.
+          </p>
+        </div>
+      )}
 
       {aiProvider === 'openai' && (
         <div className="mb-4">
