@@ -2,10 +2,12 @@
 import React from 'react';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
-import { ImageIcon, RefreshCw, Download, AlertCircle, ArrowDown } from 'lucide-react';
+import { ImageIcon, RefreshCw, Download, AlertCircle, ArrowDown, Info } from 'lucide-react';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Badge } from '@/components/ui/badge';
+import { Progress } from '@/components/ui/progress';
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 
 interface ImageGeneratorProps {
   imagePrompt: string;
@@ -30,6 +32,32 @@ const ImageGenerator = ({
   setSelectedModel,
   errorMessage
 }: ImageGeneratorProps) => {
+  const [progress, setProgress] = React.useState(0);
+  
+  // Simulate progress when generating image
+  React.useEffect(() => {
+    let interval: ReturnType<typeof setInterval>;
+    
+    if (isGeneratingImage) {
+      setProgress(0);
+      
+      interval = setInterval(() => {
+        setProgress(prev => {
+          // Slowly increase until 90%, the final 10% when the image actually arrives
+          const increment = prev < 30 ? 5 : prev < 60 ? 3 : prev < 85 ? 1 : 0.5;
+          const newProgress = Math.min(prev + increment, 90);
+          return newProgress;
+        });
+      }, 400);
+    } else {
+      setProgress(isGeneratingImage ? 0 : 100);
+    }
+    
+    return () => {
+      if (interval) clearInterval(interval);
+    };
+  }, [isGeneratingImage]);
+  
   return (
     <div>
       <div className="flex items-center justify-between mb-6">
@@ -69,9 +97,30 @@ const ImageGenerator = ({
       </div>
 
       <div className="mb-4">
-        <label htmlFor="modelSelect" className="block text-sm font-medium text-gray-700 mb-1">
-          Design Generation Mode
-        </label>
+        <div className="flex items-center justify-between">
+          <label htmlFor="modelSelect" className="block text-sm font-medium text-gray-700 mb-1">
+            Design Generation Mode
+          </label>
+          
+          <TooltipProvider>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <Button variant="ghost" size="sm" className="h-6 w-6 p-0 rounded-full">
+                  <Info className="h-4 w-4 text-gray-500" />
+                  <span className="sr-only">Info</span>
+                </Button>
+              </TooltipTrigger>
+              <TooltipContent>
+                <p className="max-w-xs">
+                  <strong>Standard Design:</strong> Photorealistic design (faster)
+                  <br />
+                  <strong>Vector Design:</strong> Illustration style with cleaner lines (slower)
+                </p>
+              </TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
+        </div>
+        
         <Select value={selectedModel} onValueChange={setSelectedModel}>
           <SelectTrigger id="modelSelect" className="w-full">
             <SelectValue placeholder="Select design mode" />
@@ -83,6 +132,8 @@ const ImageGenerator = ({
         </Select>
         <p className="text-xs text-gray-500 mt-1">
           Adobe Express creates commercial-use designs using licensed content and AI technology.
+          {selectedModel === 'firefly-vector' && 
+            " Vector design mode takes longer to process."}
         </p>
       </div>
       
@@ -103,6 +154,20 @@ const ImageGenerator = ({
           </>
         )}
       </Button>
+      
+      {isGeneratingImage && (
+        <div className="mb-6">
+          <div className="flex justify-between text-sm text-gray-500 mb-1">
+            <span>Generating design</span>
+            <span>{Math.round(progress)}%</span>
+          </div>
+          <Progress value={progress} className="h-2" />
+          <p className="text-xs text-gray-500 mt-2">
+            Creating your custom wrap design. This typically takes 15-30 seconds with Adobe Express.
+            {selectedModel === 'firefly-vector' && " Vector designs may take longer to process."}
+          </p>
+        </div>
+      )}
       
       {generatedImage && (
         <div className="mt-4">

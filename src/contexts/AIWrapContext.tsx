@@ -54,7 +54,7 @@ export const AIWrapProvider: React.FC<{ children: ReactNode }> = ({ children }) 
     const { valid, providerName } = checkApiKey(aiProvider);
     
     if (!valid) {
-      toast.error(`${providerName} API key is required. Please set your API key.`);
+      toast.error(`${providerName} API key is required. Please set your API key in settings.`);
       setIsApiKeyModalOpen(true);
       return false;
     }
@@ -71,6 +71,9 @@ export const AIWrapProvider: React.FC<{ children: ReactNode }> = ({ children }) 
     if (!validateApiKey()) return;
 
     setIsGenerating(true);
+    
+    // Show a toast to indicate the process has started
+    toast.info("Generating new wrap concepts...");
     
     setTimeout(() => {
       const newIdeas = generateMockIdeas(business, description, selectedVehicleType);
@@ -110,15 +113,30 @@ export const AIWrapProvider: React.FC<{ children: ReactNode }> = ({ children }) 
     setImageGenerationError(undefined);
     setIsGeneratingImage(true);
     
+    // Clear any existing timeouts
+    const timeoutWarning = setTimeout(() => {
+      toast.info("Design generation in progress. This may take 15-30 seconds...");
+    }, 8000);
+    
+    const timeoutExtended = setTimeout(() => {
+      toast.info("Still working on your design. Complex designs may take longer to generate...");
+    }, 25000);
+    
     try {
       const fullPrompt = createImagePrompt(selectedVehicleType, business, imagePrompt);
       console.log("Generating image with prompt:", fullPrompt);
+      
+      toast.info(`Starting design generation with Adobe Express...`);
       
       const imageUrl = await generateImage({
         prompt: fullPrompt,
         size: "1024x1024",
         model: selectedModel
       });
+      
+      // Clear timeouts
+      clearTimeout(timeoutWarning);
+      clearTimeout(timeoutExtended);
       
       if (imageUrl) {
         console.log("Image generated successfully:", imageUrl.substring(0, 50) + "...");
@@ -158,6 +176,8 @@ export const AIWrapProvider: React.FC<{ children: ReactNode }> = ({ children }) 
       setImageGenerationError(errorMessage);
       toast.error(errorMessage);
     } finally {
+      clearTimeout(timeoutWarning);
+      clearTimeout(timeoutExtended);
       setIsGeneratingImage(false);
     }
   };
