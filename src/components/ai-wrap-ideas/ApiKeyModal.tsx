@@ -53,40 +53,40 @@ const ApiKeyModal: React.FC<ApiKeyModalProps> = ({ isOpen, onClose }) => {
           </DialogDescription>
         </DialogHeader>
         
-        <Alert variant="default" className="border-blue-500 bg-blue-50 text-blue-800">
+        <Alert variant="default" className="border-amber-500 bg-amber-50 text-amber-800">
           <AlertCircle className="h-4 w-4" />
           <AlertDescription>
-            Make sure you're using the correct API key from the Adobe Developer Console.
-            You need to use the "Client ID" value from your project credentials.
+            Adobe Firefly requires a specific authentication format. You need to provide both a Client ID 
+            and obtain an Access Token for API access.
           </AlertDescription>
         </Alert>
         
         <div className="grid gap-4 py-4">
           <div className="grid grid-cols-4 items-center gap-4">
             <Label htmlFor="firefly-key" className="col-span-4">
-              Adobe Firefly API Key
+              Adobe Firefly API Key (OAuth Access Token)
             </Label>
             <Input
               id="firefly-key"
               type="password"
               value={fireflyKey}
               onChange={(e) => setFireflyKey(e.target.value)}
-              placeholder="Your Firefly API key..."
+              placeholder="Your Firefly OAuth Access Token..."
               className="col-span-4"
             />
             <div className="col-span-4 text-xs text-muted-foreground">
-              <p>Get your API key from the <a href="https://developer.adobe.com/console/" target="_blank" rel="noopener noreferrer" className="text-brand-red hover:underline">Adobe Developer Console</a></p>
-              <p className="mt-2">To generate a valid API key:</p>
+              <p>Get your API credentials from the <a href="https://developer.adobe.com/console/" target="_blank" rel="noopener noreferrer" className="text-brand-red hover:underline">Adobe Developer Console</a></p>
+              <p className="mt-2">To generate valid credentials for Firefly:</p>
               <ol className="list-decimal ml-4 mt-1">
                 <li>Create an Adobe Developer account</li>
                 <li>Create a new project in the Console</li>
                 <li>Add the Firefly API to your project</li>
                 <li>Create an OAuth API credential (Web OAuth 2.0)</li>
-                <li>Copy the "Client ID" value to use as your API key</li>
-                <li>Ensure you've enabled the Firefly API service</li>
+                <li>Generate an Access Token using your OAuth credentials</li>
+                <li>Paste the Access Token here (not the Client ID)</li>
               </ol>
-              <p className="mt-2 text-red-600 font-medium">Important: Use ONLY the Client ID value from your OAuth credentials, not any secret keys or JWT tokens.</p>
-              <p className="mt-2">The Adobe Firefly API is a premium service and may require a paid subscription.</p>
+              <p className="mt-2 text-red-600 font-medium">Important: For the Adobe Firefly API v2, you need an OAuth Access Token, not just the Client ID.</p>
+              <p className="mt-2">The Adobe Firefly API is a premium service and requires an Adobe subscription with Firefly access.</p>
             </div>
           </div>
         </div>

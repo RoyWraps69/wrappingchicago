@@ -38,13 +38,15 @@ export const generateImage = async ({
     
     console.log("Sending request to Firefly API:", JSON.stringify(requestBody, null, 2));
     
+    // Adobe Firefly API requires OAuth authentication token
+    // For API Key authentication, we need to pass it as x-api-key header
     const response = await fetch(apiUrl, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
         'x-api-key': apiKey.trim(),
-        // Note: Adobe Firefly API requires specific authentication
-        // For the Client ID approach, only x-api-key is needed
+        // The API key needs to be passed as OAuth token and not as Bearer token
+        'Authorization': `Bearer ${apiKey.trim()}`
       },
       body: JSON.stringify(requestBody)
     });
