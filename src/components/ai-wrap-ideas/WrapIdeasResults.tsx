@@ -3,28 +3,16 @@ import React from 'react';
 import { Button } from '@/components/ui/button';
 import { RefreshCw } from 'lucide-react';
 import WrapIdeaCard from './WrapIdeaCard';
+import { useAIWrap } from '@/contexts/AIWrapContext';
 
-interface WrapIdea {
-  id: string;
-  title: string;
-  description: string;
-  imageUrl?: string;
-  vehicleType: string;
-}
-
-interface ResultsProps {
-  generatedIdeas: WrapIdea[];
-  handleLikeIdea: (id: string) => void;
-  handleGenerateIdeas: () => void;
-  isGenerating: boolean;
-}
-
-const WrapIdeasResults = ({ 
-  generatedIdeas, 
-  handleLikeIdea, 
-  handleGenerateIdeas, 
-  isGenerating 
-}: ResultsProps) => {
+const WrapIdeasResults = () => {
+  const { 
+    generatedIdeas, 
+    handleLikeIdea, 
+    handleGenerateIdeas, 
+    isGenerating 
+  } = useAIWrap();
+  
   return (
     <div className="mt-12">
       <h2 className="text-2xl font-bold text-brand-navy mb-6">Your AI-Generated Wrap Ideas</h2>

@@ -2,31 +2,10 @@
 import React from 'react';
 import BusinessInfoForm from './BusinessInfoForm';
 import ImageGenerator from './ImageGenerator';
+import { useAIWrap } from '@/contexts/AIWrapContext';
 
-interface GeneratorProps {
-  onGenerateIdeas: () => void;
-  isGenerating: boolean;
-  business: string;
-  setBusiness: (value: string) => void;
-  description: string;
-  setDescription: (value: string) => void;
-  selectedVehicleType: string;
-  setSelectedVehicleType: (value: string) => void;
-  imagePrompt: string;
-  setImagePrompt: (value: string) => void;
-  onGenerateImage: () => void;
-  isGeneratingImage: boolean;
-  generatedImage: string | null;
-  onDownloadImage: () => void;
-  selectedModel: string;
-  setSelectedModel: (value: string) => void;
-  imageGenerationError?: string;
-}
-
-const WrapIdeaGenerator = (props: GeneratorProps) => {
+const WrapIdeaGenerator = () => {
   const {
-    onGenerateIdeas,
-    isGenerating,
     business,
     setBusiness,
     description,
@@ -41,8 +20,12 @@ const WrapIdeaGenerator = (props: GeneratorProps) => {
     onDownloadImage,
     selectedModel,
     setSelectedModel,
-    imageGenerationError
-  } = props;
+    imageGenerationError,
+    handleGenerateIdeas,
+    isGenerating,
+    handleGenerateImage,
+    handleDownloadImage
+  } = useAIWrap();
 
   return (
     <section id="generator-section" className="py-12 px-4 md:px-6 bg-gray-50">
@@ -57,7 +40,7 @@ const WrapIdeaGenerator = (props: GeneratorProps) => {
                 setDescription={setDescription}
                 selectedVehicleType={selectedVehicleType}
                 setSelectedVehicleType={setSelectedVehicleType}
-                onGenerateIdeas={onGenerateIdeas}
+                onGenerateIdeas={handleGenerateIdeas}
                 isGenerating={isGenerating}
               />
             </div>
@@ -66,10 +49,10 @@ const WrapIdeaGenerator = (props: GeneratorProps) => {
               <ImageGenerator
                 imagePrompt={imagePrompt}
                 setImagePrompt={setImagePrompt}
-                onGenerateImage={onGenerateImage}
+                onGenerateImage={handleGenerateImage}
                 isGeneratingImage={isGeneratingImage}
                 generatedImage={generatedImage}
-                onDownloadImage={onDownloadImage}
+                onDownloadImage={handleDownloadImage}
                 selectedModel={selectedModel}
                 setSelectedModel={setSelectedModel}
                 errorMessage={imageGenerationError}
