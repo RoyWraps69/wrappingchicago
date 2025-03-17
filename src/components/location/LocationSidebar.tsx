@@ -11,6 +11,11 @@ interface LocationSidebarProps {
 }
 
 const LocationSidebar: React.FC<LocationSidebarProps> = ({ city }) => {
+  // Filter cities to show only different cities
+  const nearbyCities = cities
+    .filter(c => c.slug !== city.slug)
+    .slice(0, 4);
+
   return (
     <div className="space-y-8">
       {/* Contact Section */}
@@ -129,19 +134,15 @@ const LocationSidebar: React.FC<LocationSidebarProps> = ({ city }) => {
       <div className="bg-white p-6 rounded-2xl shadow-lg border border-gray-100">
         <h3 className="text-xl font-bold mb-4 text-brand-navy">Nearby Cities</h3>
         <div className="grid grid-cols-2 gap-2">
-          {cities
-            .filter(c => c.slug !== city.slug)
-            .slice(0, 4)
-            .map(nearbyCity => (
-              <Link 
-                key={nearbyCity.slug}
-                to={`/vehicle-wraps-${nearbyCity.slug}-il`} 
-                className="text-sm bg-gray-50 hover:bg-brand-red/10 p-3 rounded-lg text-brand-navy hover:text-brand-red transition-all duration-200"
-              >
-                {nearbyCity.name}, IL
-              </Link>
-            ))
-          }
+          {nearbyCities.map(nearbyCity => (
+            <Link 
+              key={nearbyCity.slug}
+              to={`/vehicle-wraps-${nearbyCity.slug}-il`} 
+              className="text-sm bg-gray-50 hover:bg-brand-red/10 p-3 rounded-lg text-brand-navy hover:text-brand-red transition-all duration-200"
+            >
+              {nearbyCity.name}, IL
+            </Link>
+          ))}
         </div>
         <div className="mt-3 text-center">
           <Button

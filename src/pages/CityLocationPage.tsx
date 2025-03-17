@@ -1,11 +1,16 @@
 
 import React, { useEffect } from 'react';
-import { useParams, useLocation, Navigate } from 'react-router-dom';
+import { useParams, useLocation } from 'react-router-dom';
 import LocationPage from '@/components/LocationPage';
 import { findCityBySlug, cities } from '@/data/cities';
+import NotFound from './NotFound';
 
-const CityLocationPage = () => {
-  const { citySlug } = useParams<{ citySlug: string }>();
+interface CityLocationPageProps {
+  citySlug?: string;
+}
+
+const CityLocationPage = ({ citySlug: propCitySlug }: CityLocationPageProps = {}) => {
+  const { citySlug: paramCitySlug } = useParams<{ citySlug: string }>();
   const location = useLocation();
   
   useEffect(() => {
@@ -13,90 +18,41 @@ const CityLocationPage = () => {
     console.log("CityLocationPage mounted with path:", location.pathname);
   }, [location.pathname]);
   
-  // Redirect specific routes to their dedicated pages
-  if (location.pathname === '/services') {
-    return <Navigate to="/services" replace />;
-  }
+  // Determine the city slug from props or params
+  let slug = propCitySlug || paramCitySlug || '';
   
-  if (location.pathname === '/about') {
-    return <Navigate to="/about" replace />;
-  }
+  // Clean up the slug if it has -il suffix
+  slug = slug.replace(/-il$/, '');
   
-  if (location.pathname === '/contact') {
-    return <Navigate to="/contact" replace />;
-  }
-  
-  if (location.pathname === '/gallery') {
-    return <Navigate to="/gallery" replace />;
-  }
-  
-  if (location.pathname.includes('/services/')) {
-    return <Navigate to={location.pathname} replace />;
-  }
-  
-  // Extract the city slug from the URL path
-  let cleanCitySlug = '';
-  
-  if (citySlug) {
-    cleanCitySlug = citySlug;
-    // Remove "-il" suffix if present
-    cleanCitySlug = cleanCitySlug.replace(/-il$/, '');
-  } else {
-    // No citySlug param, try to extract from pathname
+  // If we still don't have a slug, try to extract from pathname
+  if (!slug) {
     const pathParts = location.pathname.split('/').filter(Boolean);
     const lastPart = pathParts[pathParts.length - 1];
     
     if (lastPart) {
+      // Handle various formats like "vehicle-wraps-arlington-heights-il"
       if (lastPart.includes('vehicle-wraps-')) {
-        cleanCitySlug = lastPart.replace('vehicle-wraps-', '').replace(/-il$/, '');
+        slug = lastPart.replace('vehicle-wraps-', '').replace(/-il$/, '');
       } else if (lastPart.endsWith('-il')) {
-        cleanCitySlug = lastPart.replace(/-il$/, '');
+        slug = lastPart.replace(/-il$/, '');
       } else {
-        cleanCitySlug = lastPart;
+        slug = lastPart;
       }
     }
   }
   
-  // Special case for direct access to /vehicle-wraps-arlington-heights-il
-  if (location.pathname === '/vehicle-wraps-arlington-heights-il') {
-    cleanCitySlug = 'arlington-heights';
-  }
+  console.log(`Looking for city with slug: "${slug}" from path: ${location.pathname}`);
   
-  console.log(`Extracted city slug: "${cleanCitySlug}" from path: ${location.pathname}`);
-  
-  // If we still don't have a slug, try to parse the full path
-  if (!cleanCitySlug && location.pathname) {
-    // Try to match known patterns
-    const knownCities = cities.map(c => c.slug);
-    for (const cityName of knownCities) {
-      if (location.pathname.includes(cityName)) {
-        cleanCitySlug = cityName;
-        break;
-      }
-    }
-  }
-
   // Find the city by slug
-  let city = findCityBySlug(cleanCitySlug);
+  const city = findCityBySlug(slug);
   
+  // If no city is found, return a 404 page
   if (!city) {
-    console.warn(`City not found for slug: "${cleanCitySlug}"`);
-    
-    // Fallback for "arlington-heights" specifically
-    if (cleanCitySlug.includes('arlington') || location.pathname.includes('arlington')) {
-      const arlingtonHeights = cities.find(c => c.slug === 'arlington-heights' || c.name.toLowerCase().includes('arlington'));
-      if (arlingtonHeights) {
-        console.log(`Using specific match for Arlington Heights`);
-        city = arlingtonHeights;
-      }
-    } else {
-      // Fallback to using first city for demo
-      console.log(`No city match found, using default city (${cities[0].name})`);
-      city = cities[0];
-    }
+    console.error(`City not found for slug: "${slug}"`);
+    return <NotFound />;
   }
   
-  console.log(`Final city selected: ${city.name} (${city.slug})`);
+  console.log(`Rendering city page for: ${city.name} (${city.slug})`);
   return <LocationPage city={city} />;
 };
 

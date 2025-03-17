@@ -65,23 +65,47 @@
     <priority>0.8</priority>
   </url>
   
-  <!-- Location Pages - Chicago -->
+  <!-- North Region Cities -->
   <url>
-    <loc>https://chicagofleetwraps.com/chicago</loc>
+    <loc>https://chicagofleetwraps.com/vehicle-wraps-evanston-il</loc>
     <lastmod>2023-07-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://chicagofleetwraps.com/vehicle-wraps-chicago-il</loc>
+    <loc>https://chicagofleetwraps.com/vehicle-wraps-skokie-il</loc>
+    <lastmod>2023-07-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://chicagofleetwraps.com/vehicle-wraps-arlington-heights-il</loc>
+    <lastmod>2023-07-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://chicagofleetwraps.com/vehicle-wraps-palatine-il</loc>
+    <lastmod>2023-07-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://chicagofleetwraps.com/vehicle-wraps-waukegan-il</loc>
+    <lastmod>2023-07-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://chicagofleetwraps.com/vehicle-wraps-des-plaines-il</loc>
     <lastmod>2023-07-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
-  <!-- Location Pages - Popular Cities -->
+  <!-- Northwest Region Cities -->
   <url>
-    <loc>https://chicagofleetwraps.com/vehicle-wraps-arlington-heights-il</loc>
+    <loc>https://chicagofleetwraps.com/vehicle-wraps-schaumburg-il</loc>
     <lastmod>2023-07-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -93,17 +117,13 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://chicagofleetwraps.com/vehicle-wraps-naperville-il</loc>
+    <loc>https://chicagofleetwraps.com/vehicle-wraps-hoffman-estates-il</loc>
     <lastmod>2023-07-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-  <url>
-    <loc>https://chicagofleetwraps.com/vehicle-wraps-evanston-il</loc>
-    <lastmod>2023-07-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
+  
+  <!-- West Region Cities -->
   <url>
     <loc>https://chicagofleetwraps.com/vehicle-wraps-oak-park-il</loc>
     <lastmod>2023-07-15</lastmod>
@@ -111,9 +131,109 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://chicagofleetwraps.com/vehicle-wraps-schaumburg-il</loc>
+    <loc>https://chicagofleetwraps.com/vehicle-wraps-naperville-il</loc>
     <lastmod>2023-07-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://chicagofleetwraps.com/vehicle-wraps-aurora-il</loc>
+    <lastmod>2023-07-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://chicagofleetwraps.com/vehicle-wraps-cicero-il</loc>
+    <lastmod>2023-07-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://chicagofleetwraps.com/vehicle-wraps-berwyn-il</loc>
+    <lastmod>2023-07-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://chicagofleetwraps.com/vehicle-wraps-wheaton-il</loc>
+    <lastmod>2023-07-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://chicagofleetwraps.com/vehicle-wraps-downers-grove-il</loc>
+    <lastmod>2023-07-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- South Region Cities -->
+  <url>
+    <loc>https://chicagofleetwraps.com/vehicle-wraps-joliet-il</loc>
+    <lastmod>2023-07-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://chicagofleetwraps.com/vehicle-wraps-bolingbrook-il</loc>
+    <lastmod>2023-07-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://chicagofleetwraps.com/vehicle-wraps-orland-park-il</loc>
+    <lastmod>2023-07-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://chicagofleetwraps.com/vehicle-wraps-tinley-park-il</loc>
+    <lastmod>2023-07-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://chicagofleetwraps.com/vehicle-wraps-oak-lawn-il</loc>
+    <lastmod>2023-07-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- Direct City Access URLs -->
+  <url>
+    <loc>https://chicagofleetwraps.com/chicago</loc>
+    <lastmod>2023-07-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://chicagofleetwraps.com/evanston</loc>
+    <lastmod>2023-07-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://chicagofleetwraps.com/arlington-heights</loc>
+    <lastmod>2023-07-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://chicagofleetwraps.com/naperville</loc>
+    <lastmod>2023-07-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://chicagofleetwraps.com/oak-park</loc>
+    <lastmod>2023-07-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://chicagofleetwraps.com/schaumburg</loc>
+    <lastmod>2023-07-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
 </urlset>
