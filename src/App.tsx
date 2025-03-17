@@ -1,3 +1,4 @@
+
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -39,6 +40,10 @@ const App = () => (
             <Route path="/services/color-change-wraps" element={<ServicesPage />} />
             <Route path="/services/commercial-graphics" element={<ServicesPage />} />
             <Route path="/services/partial-wraps" element={<ServicesPage />} />
+            <Route path="/services/protective-films" element={<ServicesPage />} />
+            <Route path="/services/vehicle-lettering" element={<ServicesPage />} />
+            <Route path="/services/specialty-wraps" element={<ServicesPage />} />
+            <Route path="/services/retail-graphics" element={<ServicesPage />} />
             
             {/* Individual City Pages - Explicit routes for each city */}
             {cities.map(city => (
