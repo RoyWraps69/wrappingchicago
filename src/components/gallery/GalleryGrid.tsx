@@ -21,7 +21,7 @@ const GalleryGrid: React.FC<GalleryGridProps> = ({
 
   if (filteredItems.length === 0) {
     return (
-      <div className="text-center py-12">
+      <div className="text-center py-12 animate-fade-in">
         <p className="text-lg text-gray-600">No projects found in this category.</p>
       </div>
     );
@@ -29,12 +29,20 @@ const GalleryGrid: React.FC<GalleryGridProps> = ({
 
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-      {filteredItems.map(item => (
-        <GalleryItem 
-          key={item.id} 
-          item={item} 
-          onExpand={onExpandImage} 
-        />
+      {filteredItems.map((item, index) => (
+        <div 
+          key={item.id}
+          className="transition-all"
+          style={{ 
+            animationDelay: `${index * 100}ms`,
+            animationFillMode: 'both'
+          }}
+        >
+          <GalleryItem
+            item={item} 
+            onExpand={onExpandImage} 
+          />
+        </div>
       ))}
     </div>
   );
