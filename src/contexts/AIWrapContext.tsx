@@ -1,4 +1,3 @@
-
 import React, { createContext, useState, useContext, ReactNode, useEffect } from 'react';
 import { toast } from 'sonner';
 import { WrapIdea } from '@/types/wrap-idea';
@@ -112,7 +111,6 @@ export const AIWrapProvider: React.FC<{ children: ReactNode }> = ({ children }) 
       const imageUrl = await generateImage({
         prompt: fullPrompt,
         size: "1024x1024",
-        aiProvider,
         model: selectedModel
       });
       
@@ -183,7 +181,6 @@ export const AIWrapProvider: React.FC<{ children: ReactNode }> = ({ children }) 
   return <AIWrapContext.Provider value={value}>{children}</AIWrapContext.Provider>;
 };
 
-// Custom hook for using the context
 export const useAIWrap = () => {
   const context = useContext(AIWrapContext);
   if (context === undefined) {
