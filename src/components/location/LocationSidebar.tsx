@@ -24,17 +24,17 @@ const LocationSidebar: React.FC<LocationSidebarProps> = ({ city }) => {
         
         <div className="space-y-3">
           <ContactItem icon={Phone} title="Call Us" highlight>
-            <p className="text-lg font-medium">(773) 555-1234</p>
+            <p className="text-lg font-medium">(312) 597-1286</p>
             <p className="text-sm text-gray-500">Mon-Fri, 8am-6pm</p>
           </ContactItem>
 
           <ContactItem icon={Mail} title="Email Us">
-            <p>info@chicagofleetwraps.com</p>
+            <p>roy@chicagofleetwraps.com</p>
             <p className="text-sm text-gray-500">We reply within 24 hours</p>
           </ContactItem>
 
           <ContactItem icon={MapPin} title="Visit Us">
-            <p>123 Wrap Avenue<br />Chicago, IL 60601</p>
+            <p>4711 N. Lamon Ave<br />Chicago, IL 60630</p>
             <p className="text-sm text-gray-600 mt-1">
               Just {city.distance} from {city.name}
             </p>
@@ -44,7 +44,7 @@ const LocationSidebar: React.FC<LocationSidebarProps> = ({ city }) => {
               asChild
             >
               <a 
-                href={`https://maps.google.com/?q=123+Wrap+Avenue+Chicago+IL+60601`}
+                href={`https://maps.google.com/?q=4711+N.+Lamon+Ave+Chicago+IL+60630`}
                 target="_blank" 
                 rel="noopener noreferrer"
               >

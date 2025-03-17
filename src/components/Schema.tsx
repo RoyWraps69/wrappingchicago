@@ -13,13 +13,13 @@ const Schema = ({ city }: SchemaProps) => {
     "name": "Chicago Fleet Wraps",
     "description": `Premium vehicle wrapping service serving ${city.name}, IL with fleet wraps, color change wraps, and commercial graphics.`,
     "url": `https://chicagofleetwraps.com/vehicle-wraps-${city.slug}-il`,
-    "telephone": "(773) 555-1234",
+    "telephone": "(312) 597-1286",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "123 Wrap Avenue",
+      "streetAddress": "4711 N. Lamon Ave",
       "addressLocality": "Chicago",
       "addressRegion": "IL",
-      "postalCode": "60601",
+      "postalCode": "60630",
       "addressCountry": "US"
     },
     "geo": {

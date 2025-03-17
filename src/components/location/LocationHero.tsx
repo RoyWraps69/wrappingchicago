@@ -54,9 +54,9 @@ const LocationHero = ({ cityName }: LocationHeroProps) => {
                 size="lg"
                 className="border-white/20 bg-white/5 backdrop-blur-sm text-white hover:bg-white hover:text-brand-navy font-medium px-8 py-6 h-auto rounded-full"
               >
-                <a href="tel:7735551234" className="inline-flex items-center">
+                <a href="tel:3125971286" className="inline-flex items-center">
                   <Phone className="mr-2 h-4 w-4" />
-                  (773) 555-1234
+                  (312) 597-1286
                 </a>
               </Button>
             </div>

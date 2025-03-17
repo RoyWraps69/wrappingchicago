@@ -24,17 +24,17 @@ const Footer = () => {
             <ul className="space-y-2">
               <li>
                 <ContactItem icon={MapPin} title="">
-                  <span>123 Wrap Avenue<br />Chicago, IL 60601</span>
+                  <span>4711 N. Lamon Ave<br />Chicago, IL 60630</span>
                 </ContactItem>
               </li>
               <li>
                 <ContactItem icon={Phone} title="">
-                  <span>(773) 555-1234</span>
+                  <span>(312) 597-1286</span>
                 </ContactItem>
               </li>
               <li>
                 <ContactItem icon={Mail} title="">
-                  <span>info@chicagofleetwraps.com</span>
+                  <span>roy@chicagofleetwraps.com</span>
                 </ContactItem>
               </li>
             </ul>

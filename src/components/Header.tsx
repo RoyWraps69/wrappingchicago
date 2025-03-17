@@ -32,9 +32,15 @@ const Header = () => {
               Contact
             </Link>
             
-            <Button variant="default" className="bg-brand-red hover:bg-red-700 text-white">
-              <Phone className="mr-2 h-4 w-4" />
-              (773) 555-1234
+            <Button 
+              variant="default" 
+              className="bg-brand-red hover:bg-red-700 text-white"
+              asChild
+            >
+              <a href="tel:3125971286" className="inline-flex items-center">
+                <Phone className="mr-2 h-4 w-4" />
+                (312) 597-1286
+              </a>
             </Button>
           </nav>
         </div>
