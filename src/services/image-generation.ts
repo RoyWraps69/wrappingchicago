@@ -25,9 +25,11 @@ export const generateImage = async ({
         model
       });
     case 'stability':
+      // Convert the generic size to a stability-compatible size
+      const stabilitySize = convertToStabilitySize(size);
       return generateImageStability({
         prompt,
-        size,
+        size: stabilitySize,
         steps: 30,
         cfgScale: 7
       });
@@ -39,3 +41,20 @@ export const generateImage = async ({
       });
   }
 };
+
+// Helper function to convert generic size to Stability API compatible size
+function convertToStabilitySize(size: string): "1024x1024" | "1152x896" | "896x1152" | "768x768" {
+  switch (size) {
+    case "1024x1024":
+      return "1024x1024";
+    case "1152x896":
+      return "1152x896";
+    case "896x1152":
+      return "896x1152";
+    case "768x768":
+      return "768x768";
+    default:
+      // Default to 1024x1024 if the size is not supported
+      return "1024x1024";
+  }
+}

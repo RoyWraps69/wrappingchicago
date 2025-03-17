@@ -3,7 +3,7 @@
 
 interface GenerateImageParams {
   prompt: string;
-  size?: "1024x1024" | "1152x896" | "896x1152" | "768x768";
+  size: "1024x1024" | "1152x896" | "896x1152" | "768x768";
   cfgScale?: number;
   steps?: number;
   samples?: number;
