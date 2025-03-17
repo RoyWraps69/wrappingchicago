@@ -14,6 +14,7 @@ const Schema = ({ city }: SchemaProps) => {
     "description": `Premium vehicle wrapping service serving ${city.name}, IL with fleet wraps, color change wraps, and commercial graphics.`,
     "url": `https://chicagofleetwraps.com/vehicle-wraps-${city.slug}-il`,
     "telephone": "(312) 597-1286",
+    "email": "roy@chicagofleetwraps.com",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "4711 N. Lamon Ave",
