@@ -25,6 +25,17 @@ const App = () => (
             <Route path="/vehicle-wraps-:citySlug-il" element={<CityLocationPage />} />
             <Route path="/vehicle-wraps/:citySlug" element={<CityLocationPage />} />
             <Route path="/vehicle-wraps-:citySlug" element={<CityLocationPage />} />
+            
+            {/* Services Routes */}
+            <Route path="/services/fleet-wraps" element={<CityLocationPage />} />
+            <Route path="/services/color-change-wraps" element={<CityLocationPage />} />
+            <Route path="/services/commercial-graphics" element={<CityLocationPage />} />
+            <Route path="/services/partial-wraps" element={<CityLocationPage />} />
+            
+            {/* Contact Route */}
+            <Route path="/contact" element={<CityLocationPage />} />
+            <Route path="/gallery" element={<CityLocationPage />} />
+            
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
