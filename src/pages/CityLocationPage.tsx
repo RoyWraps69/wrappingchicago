@@ -16,6 +16,7 @@ const CityLocationPage = () => {
   if (location.pathname.includes('/services/') || location.pathname === '/contact' || location.pathname === '/gallery') {
     // For demo purposes, just show Chicago
     const defaultCity = cities[0];
+    console.log("Rendering service/contact page with default city:", defaultCity.name);
     return <LocationPage city={defaultCity} />;
   }
   
@@ -27,12 +28,25 @@ const CityLocationPage = () => {
     cleanCitySlug = cleanCitySlug.replace(/-il$/, '');
   }
   
-  console.log(`Attempting to find city with slug: ${cleanCitySlug}`, location.pathname);
+  // Also handle if the city name is part of a larger slug
+  if (location.pathname.includes('vehicle-wraps-') && !citySlug) {
+    // Try to extract from the full path
+    const pathParts = location.pathname.split('/');
+    const potentialSlug = pathParts[pathParts.length - 1];
+    
+    if (potentialSlug.startsWith('vehicle-wraps-')) {
+      cleanCitySlug = potentialSlug.replace('vehicle-wraps-', '').replace(/-il\/?$/, '');
+    }
+  }
+  
+  console.log(`Attempting to find city with slug: "${cleanCitySlug}", full path: ${location.pathname}`);
+  console.log("Available cities:", cities.map(c => `${c.name} (${c.slug})`).join(', '));
   
   const city = findCityBySlug(cleanCitySlug);
   
   if (!city) {
     console.error(`City not found for slug: ${cleanCitySlug}`);
+    
     // If no city is found, try to match by name (case insensitive)
     const cityByName = cities.find(c => 
       c.name.toLowerCase() === cleanCitySlug.toLowerCase() ||
@@ -40,12 +54,16 @@ const CityLocationPage = () => {
     );
     
     if (cityByName) {
+      console.log(`Found city by name: ${cityByName.name}`);
       return <LocationPage city={cityByName} />;
     }
     
-    return <Navigate to="/locations" />;
+    // As a fallback for demo purposes, use the first city
+    console.log("No matching city found, using default city for demo");
+    return <LocationPage city={cities[0]} />;
   }
   
+  console.log(`Rendering city page for: ${city.name}`);
   return <LocationPage city={city} />;
 };
 
