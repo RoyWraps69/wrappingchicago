@@ -113,7 +113,7 @@ const LocationsPage = () => {
                   Our Service Area
                 </h2>
                 <p className="text-lg text-gray-700">
-                  Chicago Fleet Wraps serves businesses and individuals within a 30-mile radius of Chicago.
+                  Chicago Fleet Wraps serves businesses and individuals within a 40-mile radius of Chicago.
                   Our central location allows us to efficiently serve the entire metropolitan area.
                 </p>
               </div>

@@ -2,24 +2,38 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { cities } from '@/data/cities';
+import { Phone, Mail, MapPin } from 'lucide-react';
 
 const Footer = () => {
+  // Split cities into two columns
+  const halfwayThrough = Math.ceil(cities.length / 2);
+  const firstHalf = cities.slice(0, halfwayThrough);
+  const secondHalf = cities.slice(halfwayThrough);
+
   return (
     <footer className="bg-brand-navy text-white py-12">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
             <h3 className="text-xl font-bold mb-4">Chicago Fleet Wraps</h3>
             <p className="mb-4">
               The leading provider of premium vehicle wraps in the Greater Chicago area. 
               We specialize in fleet wraps, color change wraps, and commercial graphics.
             </p>
-            <p>
-              123 Wrap Avenue<br />
-              Chicago, IL 60601<br />
-              (773) 555-1234<br />
-              info@chicagofleetwraps.com
-            </p>
+            <ul className="space-y-2">
+              <li className="flex items-start">
+                <MapPin className="h-5 w-5 text-brand-red mr-2 mt-0.5" />
+                <span>123 Wrap Avenue<br />Chicago, IL 60601</span>
+              </li>
+              <li className="flex items-start">
+                <Phone className="h-5 w-5 text-brand-red mr-2 mt-0.5" />
+                <span>(773) 555-1234</span>
+              </li>
+              <li className="flex items-start">
+                <Mail className="h-5 w-5 text-brand-red mr-2 mt-0.5" />
+                <span>info@chicagofleetwraps.com</span>
+              </li>
+            </ul>
           </div>
           
           <div>
@@ -36,8 +50,24 @@ const Footer = () => {
           
           <div>
             <h3 className="text-xl font-bold mb-4">Locations We Serve</h3>
-            <ul className="grid grid-cols-2 gap-2">
-              {cities.map((city) => (
+            <ul className="space-y-2">
+              {firstHalf.map((city) => (
+                <li key={city.slug}>
+                  <Link 
+                    to={`/vehicle-wraps-${city.slug}-il`} 
+                    className="hover:text-brand-red transition-colors"
+                  >
+                    {city.name}, IL
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+          
+          <div>
+            <h3 className="text-xl font-bold mb-4">More Locations</h3>
+            <ul className="space-y-2">
+              {secondHalf.map((city) => (
                 <li key={city.slug}>
                   <Link 
                     to={`/vehicle-wraps-${city.slug}-il`} 
