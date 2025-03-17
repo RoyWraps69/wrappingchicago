@@ -1,9 +1,9 @@
-
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import CallToAction from '@/components/CallToAction';
+import Breadcrumbs from '@/components/navigation/Breadcrumbs';
 
 const GalleryPage = () => {
   // For demo purposes, we'll use a simple gallery layout
@@ -31,6 +31,7 @@ const GalleryPage = () => {
         
         <main className="flex-grow">
           <div className="container mx-auto py-12 px-4">
+            <Breadcrumbs />
             <h1 className="text-4xl font-bold text-brand-navy mb-6">Our Work</h1>
             <p className="text-lg mb-8">
               Browse our gallery of completed projects to see examples of our high-quality

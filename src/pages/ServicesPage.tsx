@@ -9,6 +9,7 @@ import ServiceHeader from '@/components/services/ServiceHeader';
 import ServiceCatalog from '@/components/services/ServiceCatalog';
 import ServiceContentSelector from '@/components/services/ServiceContentSelector';
 import ServiceSchema from '@/components/services/ServiceSchema';
+import Breadcrumbs from '@/components/navigation/Breadcrumbs';
 
 const ServicesPage = () => {
   const location = useLocation();
@@ -54,6 +55,8 @@ const ServicesPage = () => {
         
         <main className="flex-grow">
           <div className="container mx-auto py-12 px-4">
+            <Breadcrumbs />
+            
             <ServiceHeader 
               title={serviceTitle} 
               showImages={!isSpecificService} // Show images only on the main services page

@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
@@ -7,6 +6,7 @@ import Footer from '@/components/Footer';
 import CallToAction from '@/components/CallToAction';
 import { cities } from '@/data/cities';
 import { MapPin, ExternalLink } from 'lucide-react';
+import Breadcrumbs from '@/components/navigation/Breadcrumbs';
 
 const LocationsPage = () => {
   return (
@@ -27,6 +27,7 @@ const LocationsPage = () => {
           {/* Hero Section */}
           <section className="bg-gradient-to-r from-brand-navy to-blue-900 text-white py-24">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+              <Breadcrumbs />
               <h1 className="text-4xl sm:text-5xl font-bold mb-4">
                 Areas We Serve
               </h1>

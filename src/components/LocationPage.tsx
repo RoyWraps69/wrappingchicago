@@ -10,6 +10,7 @@ import LocationHero from '@/components/location/LocationHero';
 import LocationContent from '@/components/location/LocationContent';
 import LocationProjects from '@/components/location/LocationProjects';
 import LocationTestimonials from '@/components/location/LocationTestimonials';
+import Breadcrumbs from '@/components/navigation/Breadcrumbs';
 
 interface LocationPageProps {
   city: City;
@@ -47,6 +48,9 @@ const LocationPage = ({ city }: LocationPageProps) => {
         <Header />
         
         <main className="flex-grow">
+          <div className="container mx-auto px-4 py-4">
+            <Breadcrumbs />
+          </div>
           <LocationHero cityName={city.name} />
           <LocationContent city={city} />
           <LocationProjects cityName={city.name} />

@@ -6,6 +6,7 @@ import Footer from '@/components/Footer';
 import { MapPin, Phone, Mail, Clock, Check } from 'lucide-react';
 import ContactItem from '@/components/location/ContactItem';
 import { useToast } from "@/components/ui/use-toast";
+import Breadcrumbs from '@/components/navigation/Breadcrumbs';
 
 const ContactPage = () => {
   const { toast } = useToast();
@@ -68,6 +69,7 @@ const ContactPage = () => {
         
         <main className="flex-grow">
           <div className="container mx-auto py-12 px-4">
+            <Breadcrumbs />
             <h1 className="text-4xl font-bold text-brand-navy mb-6">Contact Us</h1>
             
             <div className="grid md:grid-cols-2 gap-12 mb-12">
