@@ -53,39 +53,36 @@ const ApiKeyModal: React.FC<ApiKeyModalProps> = ({ isOpen, onClose }) => {
           </DialogDescription>
         </DialogHeader>
         
-        <Alert variant="default" className="border-amber-500 bg-amber-50 text-amber-800">
+        <Alert variant="default" className="border-blue-500 bg-blue-50 text-blue-800">
           <AlertCircle className="h-4 w-4" />
           <AlertDescription>
-            Adobe Firefly requires a specific authentication format. You need to provide both a Client ID 
-            and obtain an Access Token for API access.
+            You need to use the API key from Adobe Firefly Embed service.
+            This is a simple API key that's passed in the x-api-key header.
           </AlertDescription>
         </Alert>
         
         <div className="grid gap-4 py-4">
           <div className="grid grid-cols-4 items-center gap-4">
             <Label htmlFor="firefly-key" className="col-span-4">
-              Adobe Firefly API Key (OAuth Access Token)
+              Adobe Firefly API Key
             </Label>
             <Input
               id="firefly-key"
               type="password"
               value={fireflyKey}
               onChange={(e) => setFireflyKey(e.target.value)}
-              placeholder="Your Firefly OAuth Access Token..."
+              placeholder="Your Firefly API key..."
               className="col-span-4"
             />
             <div className="col-span-4 text-xs text-muted-foreground">
-              <p>Get your API credentials from the <a href="https://developer.adobe.com/console/" target="_blank" rel="noopener noreferrer" className="text-brand-red hover:underline">Adobe Developer Console</a></p>
-              <p className="mt-2">To generate valid credentials for Firefly:</p>
+              <p>Get your API key from the <a href="https://developer.adobe.com/console/" target="_blank" rel="noopener noreferrer" className="text-brand-red hover:underline">Adobe Developer Console</a></p>
+              <p className="mt-2">To get your Adobe Firefly Embed API key:</p>
               <ol className="list-decimal ml-4 mt-1">
-                <li>Create an Adobe Developer account</li>
-                <li>Create a new project in the Console</li>
-                <li>Add the Firefly API to your project</li>
-                <li>Create an OAuth API credential (Web OAuth 2.0)</li>
-                <li>Generate an Access Token using your OAuth credentials</li>
-                <li>Paste the Access Token here (not the Client ID)</li>
+                <li>Sign up for Adobe Firefly Embed service</li>
+                <li>Get your API key from the Adobe Firefly Embed dashboard</li>
+                <li>Copy the API key and paste it here</li>
               </ol>
-              <p className="mt-2 text-red-600 font-medium">Important: For the Adobe Firefly API v2, you need an OAuth Access Token, not just the Client ID.</p>
+              <p className="mt-2 text-red-600 font-medium">Important: The API key you provided (starting with "76f09...") appears to be a Client ID, but for the Embed API, you need the actual API key provided for the Embed service.</p>
               <p className="mt-2">The Adobe Firefly API is a premium service and requires an Adobe subscription with Firefly access.</p>
             </div>
           </div>
