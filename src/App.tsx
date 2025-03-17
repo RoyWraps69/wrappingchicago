@@ -9,6 +9,10 @@ import NotFound from "./pages/NotFound";
 import LocationsPage from "./pages/LocationsPage";
 import CityLocationPage from "./pages/CityLocationPage";
 import { HelmetProvider } from "react-helmet-async";
+import ServicesPage from "./pages/ServicesPage";
+import AboutPage from "./pages/AboutPage";
+import ContactPage from "./pages/ContactPage";
+import GalleryPage from "./pages/GalleryPage";
 
 const queryClient = new QueryClient();
 
@@ -23,17 +27,17 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/locations" element={<LocationsPage />} />
             
-            {/* Explicitly define routes for main navigation */}
-            <Route path="/services" element={<CityLocationPage />} />
-            <Route path="/about" element={<CityLocationPage />} />
-            <Route path="/contact" element={<CityLocationPage />} />
-            <Route path="/gallery" element={<CityLocationPage />} />
+            {/* Main navigation */}
+            <Route path="/services" element={<ServicesPage />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/contact" element={<ContactPage />} />
+            <Route path="/gallery" element={<GalleryPage />} />
             
             {/* Services Routes */}
-            <Route path="/services/fleet-wraps" element={<CityLocationPage />} />
-            <Route path="/services/color-change-wraps" element={<CityLocationPage />} />
-            <Route path="/services/commercial-graphics" element={<CityLocationPage />} />
-            <Route path="/services/partial-wraps" element={<CityLocationPage />} />
+            <Route path="/services/fleet-wraps" element={<ServicesPage />} />
+            <Route path="/services/color-change-wraps" element={<ServicesPage />} />
+            <Route path="/services/commercial-graphics" element={<ServicesPage />} />
+            <Route path="/services/partial-wraps" element={<ServicesPage />} />
             
             {/* City Routes - consolidated patterns */}
             <Route path="/vehicle-wraps-:citySlug" element={<CityLocationPage />} />

@@ -1,6 +1,6 @@
 
 import React, { useEffect } from 'react';
-import { useParams, useLocation } from 'react-router-dom';
+import { useParams, useLocation, Navigate } from 'react-router-dom';
 import LocationPage from '@/components/LocationPage';
 import { findCityBySlug, cities } from '@/data/cities';
 
@@ -13,12 +13,25 @@ const CityLocationPage = () => {
     console.log("CityLocationPage mounted with path:", location.pathname);
   }, [location.pathname]);
   
-  // Check if it's a service or contact page
-  if (location.pathname.includes('/services/') || location.pathname === '/contact' || location.pathname === '/gallery') {
-    // For demo purposes, just show Chicago
-    const defaultCity = cities[0];
-    console.log("Rendering service/contact page with default city:", defaultCity.name);
-    return <LocationPage city={defaultCity} />;
+  // Redirect specific routes to their dedicated pages
+  if (location.pathname === '/services') {
+    return <Navigate to="/services" replace />;
+  }
+  
+  if (location.pathname === '/about') {
+    return <Navigate to="/about" replace />;
+  }
+  
+  if (location.pathname === '/contact') {
+    return <Navigate to="/contact" replace />;
+  }
+  
+  if (location.pathname === '/gallery') {
+    return <Navigate to="/gallery" replace />;
+  }
+  
+  if (location.pathname.includes('/services/')) {
+    return <Navigate to={location.pathname} replace />;
   }
   
   // Extract the city slug from the URL path
