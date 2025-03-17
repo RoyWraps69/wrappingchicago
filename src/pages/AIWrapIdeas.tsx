@@ -15,6 +15,7 @@ import WrapIdeasResults from '@/components/ai-wrap-ideas/WrapIdeasResults';
 import ProcessSection from '@/components/ai-wrap-ideas/ProcessSection';
 import ApiKeyModal from '@/components/ai-wrap-ideas/ApiKeyModal';
 import { AIWrapProvider, useAIWrap } from '@/contexts/AIWrapContext';
+import { toast } from 'sonner';
 
 const AIWrapIdeasContent = () => {
   const { 
@@ -29,6 +30,13 @@ const AIWrapIdeasContent = () => {
   } = useAIWrap();
 
   useEffect(() => {
+    // Set default client ID if not already set
+    const clientId = localStorage.getItem('firefly_api_key');
+    if (!clientId) {
+      localStorage.setItem('firefly_api_key', '76f09770425e4f7fbb1d30281b4f4fc3');
+      toast.success("Adobe Express Client ID has been set automatically");
+    }
+    
     // Load Adobe Express SDK
     const loadAdobeExpressSDK = () => {
       if (window.CCEverywhere) {

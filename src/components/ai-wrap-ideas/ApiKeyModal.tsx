@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { toast } from 'sonner';
-import { AlertCircle, ExternalLink, Info } from 'lucide-react';
+import { AlertCircle, ExternalLink, Info, CheckCircle } from 'lucide-react';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 
 interface ApiKeyModalProps {
@@ -16,6 +16,7 @@ interface ApiKeyModalProps {
 const ApiKeyModal: React.FC<ApiKeyModalProps> = ({ isOpen, onClose }) => {
   const [fireflyKey, setFireflyKey] = useState('');
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const [isDefaultKey, setIsDefaultKey] = useState(false);
   
   useEffect(() => {
     if (isOpen) {
@@ -23,24 +24,27 @@ const ApiKeyModal: React.FC<ApiKeyModalProps> = ({ isOpen, onClose }) => {
       const savedFireflyKey = localStorage.getItem('firefly_api_key') || '';
       setFireflyKey(savedFireflyKey);
       setErrorMessage(null);
+      
+      // Check if it's the default client ID
+      setIsDefaultKey(savedFireflyKey === '76f09770425e4f7fbb1d30281b4f4fc3');
     }
   }, [isOpen]);
 
   const validateApiKey = (key: string): boolean => {
     // Enhanced validation for API key format
     if (!key.trim()) {
-      setErrorMessage("API key cannot be empty");
+      setErrorMessage("Client ID cannot be empty");
       return false;
     }
     
     if (key.trim().length < 20) {
-      setErrorMessage("API key seems too short. Adobe Express client IDs are typically longer");
+      setErrorMessage("Client ID seems too short. Adobe Express client IDs are typically longer");
       return false;
     }
     
     // Check for common formatting issues
     if (key.includes(' ')) {
-      setErrorMessage("API key contains spaces. Please remove any spaces from your client ID");
+      setErrorMessage("Client ID contains spaces. Please remove any spaces from your client ID");
       return false;
     }
     
@@ -57,6 +61,7 @@ const ApiKeyModal: React.FC<ApiKeyModalProps> = ({ isOpen, onClose }) => {
       
       // Trim whitespace from the API key to avoid authentication issues
       localStorage.setItem('firefly_api_key', fireflyKey.trim());
+      setIsDefaultKey(fireflyKey.trim() === '76f09770425e4f7fbb1d30281b4f4fc3');
       toast.success('Adobe Express client ID saved successfully');
       onClose();
     } catch (error) {
@@ -75,6 +80,15 @@ const ApiKeyModal: React.FC<ApiKeyModalProps> = ({ isOpen, onClose }) => {
             Your client ID is stored locally in your browser and is never sent to our servers.
           </DialogDescription>
         </DialogHeader>
+        
+        {isDefaultKey && (
+          <Alert variant="default" className="border-green-500 bg-green-50 text-green-800">
+            <CheckCircle className="h-4 w-4" />
+            <AlertDescription>
+              You're using the default client ID provided for this demo. This will work for testing purposes.
+            </AlertDescription>
+          </Alert>
+        )}
         
         <Alert variant="default" className="border-blue-500 bg-blue-50 text-blue-800">
           <Info className="h-4 w-4" />
