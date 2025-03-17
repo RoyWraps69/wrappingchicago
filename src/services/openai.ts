@@ -6,13 +6,15 @@ interface GenerateImageParams {
   size?: string;
   quality?: string;
   n?: number;
+  model?: string;
 }
 
 export const generateImage = async ({ 
   prompt, 
   size = "1024x1024", 
   quality = "standard",
-  n = 1 
+  n = 1,
+  model = "dall-e-3"
 }: GenerateImageParams): Promise<string | null> => {
   // This requires an OpenAI API key which should be provided by the user
   // and handled securely in a production environment
@@ -30,7 +32,7 @@ export const generateImage = async ({
         'Authorization': `Bearer ${apiKey}`
       },
       body: JSON.stringify({
-        model: "dall-e-3", // Using DALL-E 3 for higher quality images
+        model, // Configurable model
         prompt: `Vehicle wrap design concept: ${prompt}`,
         n,
         size,
@@ -41,7 +43,16 @@ export const generateImage = async ({
 
     if (!response.ok) {
       const errorData = await response.json();
-      throw new Error(errorData.error?.message || "Failed to generate image");
+      const errorMessage = errorData.error?.message || "Failed to generate image";
+      
+      // Check for specific error types
+      if (errorData.error?.code === 'invalid_api_key') {
+        throw new Error("Invalid API key. Please check your OpenAI API key and try again.");
+      } else if (errorData.error?.type === 'insufficient_quota') {
+        throw new Error("You've exceeded your OpenAI API quota. Please check your usage limits.");
+      }
+      
+      throw new Error(errorMessage);
     }
 
     const data = await response.json();

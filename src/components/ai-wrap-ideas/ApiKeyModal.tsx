@@ -11,7 +11,7 @@ import {
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { KeyRound } from 'lucide-react';
+import { KeyRound, Eye, EyeOff } from 'lucide-react';
 import { toast } from 'sonner';
 
 interface ApiKeyModalProps {
@@ -21,6 +21,7 @@ interface ApiKeyModalProps {
 
 const ApiKeyModal = ({ isOpen, onClose }: ApiKeyModalProps) => {
   const [apiKey, setApiKey] = useState('');
+  const [showKey, setShowKey] = useState(false);
 
   useEffect(() => {
     // Load existing API key from localStorage if available
@@ -36,9 +37,18 @@ const ApiKeyModal = ({ isOpen, onClose }: ApiKeyModalProps) => {
       return;
     }
 
+    if (!apiKey.startsWith('sk-')) {
+      toast.error('Invalid API key format. OpenAI keys start with "sk-"');
+      return;
+    }
+
     localStorage.setItem('openai_api_key', apiKey.trim());
     toast.success('API key saved successfully');
     onClose();
+  };
+
+  const toggleShowKey = () => {
+    setShowKey(!showKey);
   };
 
   return (
@@ -57,14 +67,32 @@ const ApiKeyModal = ({ isOpen, onClose }: ApiKeyModalProps) => {
             <Label htmlFor="api-key">API Key</Label>
             <div className="flex items-center space-x-2">
               <KeyRound className="h-4 w-4 text-gray-500" />
-              <Input
-                id="api-key"
-                type="password"
-                placeholder="sk-..."
-                value={apiKey}
-                onChange={(e) => setApiKey(e.target.value)}
-              />
+              <div className="relative flex-1">
+                <Input
+                  id="api-key"
+                  type={showKey ? "text" : "password"}
+                  placeholder="sk-..."
+                  value={apiKey}
+                  onChange={(e) => setApiKey(e.target.value)}
+                />
+                <Button
+                  type="button"
+                  variant="ghost"
+                  size="sm"
+                  className="absolute right-0 top-0 h-full px-3 py-2"
+                  onClick={toggleShowKey}
+                >
+                  {showKey ? (
+                    <EyeOff className="h-4 w-4" />
+                  ) : (
+                    <Eye className="h-4 w-4" />
+                  )}
+                </Button>
+              </div>
             </div>
+            <p className="text-xs text-gray-500">
+              Your API key is stored securely in your browser and never transmitted to our servers.
+            </p>
             <p className="text-xs text-gray-500">
               Get your API key from{' '}
               <a 
