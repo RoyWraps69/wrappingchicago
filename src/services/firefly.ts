@@ -38,8 +38,7 @@ export const generateImage = async ({
     
     console.log("Sending request to Firefly API:", JSON.stringify(requestBody, null, 2));
     
-    // For Adobe Firefly Embed API, we need to use the API key as x-api-key
-    // and without the Authorization header
+    // For Adobe Firefly Embed API, we need to use the API key as x-api-key header
     const response = await fetch(apiUrl, {
       method: 'POST',
       headers: {
@@ -64,11 +63,13 @@ export const generateImage = async ({
 
     if (!response.ok) {
       if (responseData.error_code === '403003' || responseData.error_code === '401013') {
-        throw new Error("Authentication failed. Your API key is invalid. Please ensure you're using the correct API key from Adobe Firefly Embed.");
+        throw new Error("Authentication failed. Your API key is invalid or has expired. Please obtain a fresh API key from Adobe Firefly Embed.");
       } else if (responseData.error_code === '401012') {
         throw new Error("Invalid API key format. Please check your Adobe Firefly API key format and try again.");
       } else if (responseData.code === 'quota_exceeded') {
         throw new Error("You've exceeded your Adobe Firefly API quota. Please check your usage limits.");
+      } else if (responseData.error_code) {
+        throw new Error(`Firefly API error (${responseData.error_code}): ${responseData.message || "Unknown error"}`);
       }
       
       throw new Error(responseData.message || "Failed to generate image");
