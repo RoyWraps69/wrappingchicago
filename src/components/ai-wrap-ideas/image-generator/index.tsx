@@ -12,7 +12,6 @@ interface ImageGeneratorProps {
   generatedImage: string | null;
   onDownloadImage: () => void;
   errorMessage?: string;
-  setIsApiKeyModalOpen: (value: boolean) => void;
 }
 
 const ImageGenerator = (props: ImageGeneratorProps) => {
@@ -44,9 +43,7 @@ const ImageGenerator = (props: ImageGeneratorProps) => {
 
   return (
     <div>
-      <ImageGeneratorHeader 
-        setIsApiKeyModalOpen={props.setIsApiKeyModalOpen} 
-      />
+      <ImageGeneratorHeader />
       
       <p className="text-gray-700 mb-6">
         Have a specific vision in mind? Describe the exact wrap design you want, 

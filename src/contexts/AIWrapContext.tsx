@@ -1,9 +1,9 @@
 
 import React, { createContext, useState, useContext, ReactNode, useEffect } from 'react';
+import { toast } from 'sonner';
 import { AIWrapContextType } from '@/types/ai-wrap';
 import { useIdeasGeneration } from '@/hooks/useIdeasGeneration';
 import { useImageGeneration } from '@/hooks/useImageGeneration';
-import { toast } from 'sonner';
 
 const AIWrapContext = createContext<AIWrapContextType | undefined>(undefined);
 
@@ -14,14 +14,13 @@ export const AIWrapProvider: React.FC<{ children: ReactNode }> = ({ children }) 
   const [selectedVehicleType, setSelectedVehicleType] = useState('car');
   
   // API key management
-  const [isApiKeyModalOpen, setIsApiKeyModalOpen] = useState(false);
   const [hasApiKey, setHasApiKey] = useState(false);
   
   // Check for API key
   useEffect(() => {
     const apiKey = localStorage.getItem('stability_api_key');
     setHasApiKey(!!apiKey);
-  }, [isApiKeyModalOpen]);
+  }, []);
   
   // Ideas generation
   const {
@@ -38,8 +37,7 @@ export const AIWrapProvider: React.FC<{ children: ReactNode }> = ({ children }) 
   const validateApiKey = (): boolean => {
     const apiKey = localStorage.getItem('stability_api_key');
     if (!apiKey) {
-      toast.error("Stability AI API key is required. Please set your API key in settings.");
-      setIsApiKeyModalOpen(true);
+      toast.error("Stability AI API key is required for image generation.");
       return false;
     }
     return true;
@@ -109,8 +107,8 @@ export const AIWrapProvider: React.FC<{ children: ReactNode }> = ({ children }) 
     isGenerating,
     generatedIdeas,
     showResults,
-    isApiKeyModalOpen,
-    setIsApiKeyModalOpen,
+    isApiKeyModalOpen: false,
+    setIsApiKeyModalOpen: () => {},
     hasApiKey,
     handleGenerateIdeas,
     handleGenerateImage,
