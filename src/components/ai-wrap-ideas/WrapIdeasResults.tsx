@@ -59,7 +59,7 @@ const WrapIdeasResults = () => {
                 className="object-contain w-full h-full"
                 onError={(e) => {
                   console.error("Image failed to load:", e);
-                  e.currentTarget.src = "placeholder.svg";
+                  e.currentTarget.src = "/placeholder.svg";
                 }}
               />
             </div>

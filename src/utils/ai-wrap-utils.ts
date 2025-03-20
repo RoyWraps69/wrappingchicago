@@ -10,13 +10,21 @@ export const generateMockIdeas = (businessName: string, desc: string, vehicleTyp
   // Create a copy of the example ideas to avoid mutating the original
   const ideasCopy = JSON.parse(JSON.stringify(exampleIdeas));
   
+  // Set vehicle-specific placeholders
+  const vehiclePlaceholder = vehicleType === 'truck' ? 
+    'https://placehold.co/600x400/ff5e7d/FFFFFF?text=Truck+Wrap' :
+    vehicleType === 'van' ? 
+      'https://placehold.co/600x400/0B3954/FFFFFF?text=Van+Wrap' :
+      'https://placehold.co/600x400/0B3954/FFFFFF?text=Car+Wrap';
+  
   // Customize the ideas based on inputs
   const customizedIdeas = ideasCopy.map((idea: WrapIdea, index: number) => ({
     ...idea,
     id: `${Date.now()}-${index}`,
     title: businessName ? `${idea.title} for ${businessName}` : idea.title,
     description: desc ? `${desc} - ${idea.description}` : idea.description,
-    vehicleType: vehicleType || idea.vehicleType
+    vehicleType: vehicleType || idea.vehicleType,
+    imageUrl: idea.imageUrl || vehiclePlaceholder
   }));
   
   console.log("Generated ideas:", customizedIdeas);
@@ -38,7 +46,11 @@ export const createImagePrompt = (
   business: string, 
   imagePrompt: string
 ): string => {
-  return `${selectedVehicleType} vehicle wrap design for ${business ? business + ',' : ''} ${imagePrompt}. Professional, high quality, photorealistic.`;
+  // Make sure we have a valid vehicle type
+  const vehicleType = selectedVehicleType || 'car';
+  
+  // Create a descriptive prompt for the image generation
+  return `${vehicleType} vehicle wrap design for ${business ? business + ',' : ''} ${imagePrompt}. Professional, high quality, photorealistic.`;
 };
 
 // Get the default model based on provider
@@ -48,8 +60,12 @@ export const getDefaultModelForProvider = (provider: AIProvider): ImageModel => 
 
 // Download the generated image
 export const downloadImage = (imageUrl: string | null): void => {
-  if (!imageUrl) return;
+  if (!imageUrl) {
+    toast.error("No image available to download");
+    return;
+  }
   
+  // Create a download link and trigger a click
   const link = document.createElement('a');
   link.href = imageUrl;
   link.download = `wrap-design-${new Date().getTime()}.png`;

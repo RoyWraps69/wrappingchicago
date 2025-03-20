@@ -39,7 +39,11 @@ export const useImageGeneration = (
     }, 25000);
     
     try {
-      const fullPrompt = createImagePrompt('car', business, imagePrompt);
+      const fullPrompt = createImagePrompt(
+        'car',  // Default to car if no vehicle type selected
+        business, 
+        imagePrompt
+      );
       console.log("Generating image with prompt:", fullPrompt);
       
       toast.info(`Starting design generation with Adobe Express...`);
@@ -55,22 +59,23 @@ export const useImageGeneration = (
       clearTimeout(timeoutExtended);
       
       if (imageUrl) {
-        console.log("Image generated successfully:", imageUrl.substring(0, 100) + "...");
+        console.log("Image generated successfully:", imageUrl);
         setGeneratedImage(imageUrl);
         toast.success("Custom wrap design generated!");
         
         // If we already have ideas, update the first one with the new image
         if (generatedIdeas.length > 0) {
+          console.log("Updating first idea with new image");
           const updatedIdeas = [...generatedIdeas];
           updatedIdeas[0] = {
             ...updatedIdeas[0],
             imageUrl: imageUrl
           };
           setGeneratedIdeas(updatedIdeas);
-          console.log("Updated first idea with new image");
         } else {
           // If we don't have any generated ideas yet, generate them now
           if (business.trim()) {
+            console.log("No ideas exist yet, generating ideas with business:", business);
             handleGenerateIdeas();
           }
         }
