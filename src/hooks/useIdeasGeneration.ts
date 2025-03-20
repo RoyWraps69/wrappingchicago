@@ -37,16 +37,29 @@ export const useIdeasGeneration = (generatedImage: string | null) => {
       const newIdeas = generateMockIdeas(business, description, selectedVehicleType);
       console.log("Mock ideas generated:", newIdeas.length);
       
-      // Generate an image for the first idea if we don't already have one
-      if (!generatedImage && newIdeas.length > 0) {
+      // Generate images for all ideas sequentially
+      for (let i = 0; i < newIdeas.length; i++) {
+        // For the first idea, use the existing generated image if available
+        if (i === 0 && generatedImage) {
+          console.log("Using existing generated image for first idea:", generatedImage);
+          newIdeas[0] = {
+            ...newIdeas[0],
+            imageUrl: generatedImage
+          };
+          continue; // Skip to next iteration
+        }
+        
+        // Create a custom prompt for each idea
         const prompt = createImagePrompt(
           selectedVehicleType,
           business,
-          description || `Professional ${selectedVehicleType} wrap for ${business}`
+          i === 0 ? 
+            (description || `Professional ${selectedVehicleType} wrap for ${business}`) :
+            `${newIdeas[i].title} - ${newIdeas[i].description}`
         );
         
-        console.log("Auto-generating image with prompt:", prompt);
-        toast.info("Generating a design for your first concept...");
+        console.log(`Generating image for idea ${i+1} with prompt:`, prompt);
+        toast.info(`Generating design for concept ${i+1}...`);
         
         try {
           const imageUrl = await generateImage({
@@ -55,32 +68,22 @@ export const useIdeasGeneration = (generatedImage: string | null) => {
           });
           
           if (imageUrl) {
-            console.log("Auto-generated image for first idea:", imageUrl);
-            newIdeas[0] = {
-              ...newIdeas[0],
+            console.log(`Generated image for idea ${i+1}:`, imageUrl);
+            newIdeas[i] = {
+              ...newIdeas[i],
               imageUrl
             };
+            
+            // Update the ideas in state after each successful generation
+            // This allows the UI to update as each image is generated
+            const updatedIdeas = [...newIdeas];
+            setGeneratedIdeas(updatedIdeas);
           }
         } catch (error) {
-          console.error("Error auto-generating image:", error);
-          // Continue even if image generation fails
+          console.error(`Error generating image for idea ${i+1}:`, error);
+          toast.error(`Failed to generate image for concept ${i+1}. Continuing with other concepts.`);
+          // Continue with other ideas even if one fails
         }
-      } else if (generatedImage) {
-        // Apply custom image to first idea if available
-        console.log("Applying custom image to first idea:", generatedImage);
-        newIdeas[0] = {
-          ...newIdeas[0],
-          imageUrl: generatedImage
-        };
-      }
-      
-      // Important fix: Set imageUrl for all ideas to prevent loading state
-      // This makes it clear that we're not generating images for all ideas
-      for (let i = 1; i < newIdeas.length; i++) {
-        newIdeas[i] = {
-          ...newIdeas[i],
-          imageUrl: `https://placehold.co/600x400/${getRandomColor()}/FFFFFF?text=Concept+${i+1}`
-        };
       }
       
       console.log("Final generated ideas:", newIdeas);
@@ -101,12 +104,6 @@ export const useIdeasGeneration = (generatedImage: string | null) => {
     } finally {
       setIsGenerating(false);
     }
-  };
-
-  // Helper function to generate random colors for placeholders
-  const getRandomColor = () => {
-    const colors = ['ff5e7d', '0B3954', 'ffc107', '4CAF50', '2196F3', '9C27B0'];
-    return colors[Math.floor(Math.random() * colors.length)];
   };
 
   // Handle like idea feedback
