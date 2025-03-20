@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { ThumbsUp, Download } from 'lucide-react';
+import { ThumbsUp, Download, ImageIcon } from 'lucide-react';
 import { toast } from 'sonner';
 import { Skeleton } from '@/components/ui/skeleton';
 
@@ -30,20 +30,30 @@ const WrapIdeaCard = ({ idea, onLike }: WrapIdeaCardProps) => {
             loading="lazy"
             onError={(e) => {
               console.error("Card image failed to load:", e);
-              // No fallback - show error state
+              // Replace with placeholder
               const target = e.currentTarget;
               target.style.display = 'none';
               target.parentElement?.classList.add('flex', 'items-center', 'justify-center');
-              const errorMsg = document.createElement('div');
-              errorMsg.textContent = 'Image generation failed';
-              errorMsg.className = 'text-red-500 text-sm';
-              target.parentElement?.appendChild(errorMsg);
+              
+              const placeholder = document.createElement('div');
+              placeholder.className = 'flex flex-col items-center justify-center text-gray-400';
+              
+              const icon = document.createElement('div');
+              icon.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"></rect><circle cx="9" cy="9" r="2"></circle><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"></path></svg>';
+              
+              const text = document.createElement('span');
+              text.textContent = 'Image unavailable';
+              text.className = 'mt-2 text-sm';
+              
+              placeholder.appendChild(icon);
+              placeholder.appendChild(text);
+              target.parentElement?.appendChild(placeholder);
             }}
           />
         ) : (
-          <div className="w-full h-full flex items-center justify-center">
-            <Skeleton className="h-full w-full absolute" />
-            <span className="relative z-10 text-gray-500">Waiting for image generation...</span>
+          <div className="w-full h-full flex flex-col items-center justify-center text-gray-400">
+            <ImageIcon size={48} strokeWidth={1.5} />
+            <span className="mt-2 text-sm">Image unavailable</span>
           </div>
         )}
       </div>

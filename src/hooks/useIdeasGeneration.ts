@@ -1,7 +1,7 @@
 
 import { useState } from 'react';
 import { toast } from 'sonner';
-import { WrapIdea } from '@/types/wrap-idea';
+import { WrapIdea, exampleIdeas } from '@/types/wrap-idea';
 import { generateMockIdeas } from '@/utils/ai-wrap-utils';
 import { generateImage } from '@/services/image-generation';
 import { createImagePrompt } from '@/utils/ai-wrap-utils';
@@ -36,6 +36,9 @@ export const useIdeasGeneration = (generatedImage: string | null) => {
       // Generate ideas first
       const newIdeas = generateMockIdeas(business, description, selectedVehicleType);
       console.log("Mock ideas generated:", newIdeas.length);
+      
+      let imageGenerationFailed = false;
+      let failedCount = 0;
       
       // Generate images for all ideas sequentially
       for (let i = 0; i < newIdeas.length; i++) {
@@ -73,23 +76,50 @@ export const useIdeasGeneration = (generatedImage: string | null) => {
               ...newIdeas[i],
               imageUrl
             };
-            
-            // Update the ideas in state after each successful generation
-            // This allows the UI to update as each image is generated
-            const updatedIdeas = [...newIdeas];
-            setGeneratedIdeas(updatedIdeas);
+          } else {
+            failedCount++;
+            // Use an example image when generation fails
+            if (exampleIdeas[i]) {
+              newIdeas[i] = {
+                ...newIdeas[i],
+                imageUrl: exampleIdeas[i].imageUrl
+              };
+            }
+            imageGenerationFailed = true;
           }
         } catch (error) {
+          failedCount++;
           console.error(`Error generating image for idea ${i+1}:`, error);
-          toast.error(`Failed to generate image for concept ${i+1}. Continuing with other concepts.`);
+          
+          // Use an example image when generation fails
+          if (exampleIdeas[i]) {
+            newIdeas[i] = {
+              ...newIdeas[i],
+              imageUrl: exampleIdeas[i].imageUrl
+            };
+          }
+          imageGenerationFailed = true;
           // Continue with other ideas even if one fails
         }
+        
+        // Update the ideas in state after each attempt
+        const updatedIdeas = [...newIdeas];
+        setGeneratedIdeas(updatedIdeas);
       }
       
       console.log("Final generated ideas:", newIdeas);
       setGeneratedIdeas(newIdeas);
       setShowResults(true);
-      toast.success("New wrap concepts generated!");
+      
+      if (imageGenerationFailed) {
+        if (failedCount === newIdeas.length) {
+          toast.error("Failed to generate images. Using example images instead.");
+        } else {
+          toast.warning("Some images failed to generate. Using example images for those.");
+        }
+      } else {
+        toast.success("New wrap concepts generated!");
+      }
       
       // Scroll to results section
       setTimeout(() => {
@@ -100,7 +130,28 @@ export const useIdeasGeneration = (generatedImage: string | null) => {
       }, 100);
     } catch (error) {
       console.error("Error generating ideas:", error);
-      toast.error("Failed to generate ideas. Please try again.");
+      
+      // Fallback to example ideas if generation completely fails
+      const fallbackIdeas = exampleIdeas.map((idea, index) => ({
+        ...idea,
+        id: `fallback-${index}`,
+        title: idea.title.includes(business) ? idea.title : `${idea.title} for ${business}`,
+        description: description ? `${description} - ${idea.description}` : idea.description,
+        vehicleType: selectedVehicleType,
+        aiGenerated: true
+      }));
+      
+      setGeneratedIdeas(fallbackIdeas);
+      setShowResults(true);
+      toast.warning("Failed to generate custom ideas. Showing example concepts instead.");
+      
+      // Scroll to results section
+      setTimeout(() => {
+        const resultsSection = document.getElementById('results-section');
+        if (resultsSection) {
+          resultsSection.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
     } finally {
       setIsGenerating(false);
     }

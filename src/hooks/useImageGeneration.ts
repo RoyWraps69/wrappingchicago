@@ -64,14 +64,25 @@ export const useImageGeneration = () => {
         toast.success("Custom wrap design generated!");
         return imageUrl;
       } else {
-        setImageGenerationError("Failed to generate image. Please try again.");
+        setImageGenerationError("Failed to generate image. Using example designs instead.");
         setIsGeneratingImage(false); // Make sure this is set to false even on failure
-        toast.error("Failed to generate image. Please try again.");
+        toast.error("Failed to generate custom image. Using example designs instead.");
         return null;
       }
     } catch (error) {
       console.error("Error generating image:", error);
-      const errorMessage = error instanceof Error ? error.message : "Failed to generate image";
+      
+      // Check for insufficient balance error
+      let errorMessage = "Failed to generate image";
+      
+      if (error instanceof Error) {
+        if (error.message.includes("balance") || error.message.includes("insufficient")) {
+          errorMessage = "Your Stability AI account has insufficient balance. Using example designs instead.";
+        } else {
+          errorMessage = error.message;
+        }
+      }
+      
       setImageGenerationError(errorMessage);
       setIsGeneratingImage(false); // Make sure this is set to false even on exception
       toast.error(errorMessage);
