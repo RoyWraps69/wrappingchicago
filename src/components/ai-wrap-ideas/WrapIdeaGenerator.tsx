@@ -1,7 +1,7 @@
 
 import React from 'react';
 import BusinessInfoForm from './BusinessInfoForm';
-import ImageGenerator from './ImageGenerator';
+import ImageGenerator from './image-generator';
 import { useAIWrap } from '@/contexts/AIWrapContext';
 import { toast } from 'sonner';
 
