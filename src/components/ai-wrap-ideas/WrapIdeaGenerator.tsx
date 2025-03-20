@@ -17,15 +17,12 @@ const WrapIdeaGenerator = () => {
     setImagePrompt,
     isGeneratingImage,
     generatedImage,
-    selectedModel,
-    setSelectedModel,
     imageGenerationError,
     handleGenerateIdeas,
     isGenerating,
     handleGenerateImage,
     handleDownloadImage,
     showResults,
-    aiProvider,
     setIsApiKeyModalOpen
   } = useAIWrap();
 
@@ -75,10 +72,7 @@ const WrapIdeaGenerator = () => {
                 isGeneratingImage={isGeneratingImage}
                 generatedImage={generatedImage}
                 onDownloadImage={handleDownloadImage}
-                selectedModel={selectedModel}
-                setSelectedModel={setSelectedModel}
                 errorMessage={imageGenerationError}
-                aiProvider={aiProvider}
                 setIsApiKeyModalOpen={setIsApiKeyModalOpen}
               />
             </div>

@@ -33,38 +33,6 @@ const AIWrapIdeasContent = () => {
     const stabilityKey = 'sk-glMSCek7n7U8wQJtZACxVDc2iu017px1RmwbOmqDwmNVGpcH';
     storeStabilityApiKey(stabilityKey);
     
-    // Set default client ID if not already set
-    const clientId = localStorage.getItem('firefly_api_key');
-    if (!clientId) {
-      localStorage.setItem('firefly_api_key', '76f09770425e4f7fbb1d30281b4f4fc3');
-      toast.success("Adobe Express Client ID has been set automatically");
-    }
-    
-    // Load Adobe Express SDK
-    const loadAdobeExpressSDK = () => {
-      if (window.CCEverywhere) {
-        console.log("Adobe Express SDK already loaded");
-        return;
-      }
-
-      const script = document.createElement('script');
-      script.src = "https://sdk.cc-embed.adobe.com/v2/CCEverywhere.js";
-      script.async = true;
-      
-      script.onload = () => {
-        console.log("Adobe Express SDK loaded successfully");
-        // Clear any existing isInitialized flag
-        if (window.CCEverywhere) {
-          delete window.CCEverywhere.isInitialized;
-        }
-      };
-      
-      script.onerror = () => console.error("Failed to load Adobe Express SDK");
-      document.head.appendChild(script);
-    };
-
-    loadAdobeExpressSDK();
-
     // Clean up
     return () => {
       const container = document.getElementById('adobe-express-container');

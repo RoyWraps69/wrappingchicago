@@ -2,43 +2,28 @@
 import React from 'react';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
-import { ImageIcon, RefreshCw, Info } from 'lucide-react';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { ImageIcon, RefreshCw } from 'lucide-react';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Progress } from '@/components/ui/progress';
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
-import { AIProvider, PROVIDER_MODELS } from '@/types/ai-wrap';
 import { AlertCircle } from 'lucide-react';
-import { ModelSelector } from './ModelSelector';
 
 interface ImageGeneratorFormProps {
   imagePrompt: string;
   setImagePrompt: (value: string) => void;
-  selectedModel: string;
-  setSelectedModel: (value: string) => void;
   onGenerateImage: () => void;
   isGeneratingImage: boolean;
   errorMessage?: string;
-  aiProvider: AIProvider;
   progress: number;
 }
 
 export const ImageGeneratorForm: React.FC<ImageGeneratorFormProps> = ({
   imagePrompt,
   setImagePrompt,
-  selectedModel,
-  setSelectedModel,
   onGenerateImage,
   isGeneratingImage,
   errorMessage,
-  aiProvider,
   progress
 }) => {
-  // Get available models for the current provider
-  const availableModels = PROVIDER_MODELS[aiProvider] || [];
-  const providerName = aiProvider === 'firefly' ? 'Adobe Express' : 
-                       aiProvider === 'openai' ? 'DALL-E 3' : 'Stability AI';
-  
   return (
     <>
       {errorMessage && (
@@ -63,15 +48,6 @@ export const ImageGeneratorForm: React.FC<ImageGeneratorFormProps> = ({
           className="w-full"
         />
       </div>
-
-      {availableModels.length > 0 && (
-        <ModelSelector 
-          selectedModel={selectedModel}
-          setSelectedModel={setSelectedModel}
-          aiProvider={aiProvider}
-          availableModels={availableModels}
-        />
-      )}
       
       <Button
         onClick={onGenerateImage}
@@ -92,7 +68,7 @@ export const ImageGeneratorForm: React.FC<ImageGeneratorFormProps> = ({
       </Button>
       
       {isGeneratingImage && (
-        <ProgressIndicator progress={progress} aiProvider={aiProvider} selectedModel={selectedModel} />
+        <ProgressIndicator progress={progress} />
       )}
     </>
   );
@@ -101,12 +77,7 @@ export const ImageGeneratorForm: React.FC<ImageGeneratorFormProps> = ({
 // Sub-component for progress indicator
 const ProgressIndicator: React.FC<{
   progress: number;
-  aiProvider: AIProvider;
-  selectedModel: string;
-}> = ({ progress, aiProvider, selectedModel }) => {
-  const providerName = aiProvider === 'firefly' ? 'Adobe Express' : 
-                       aiProvider === 'openai' ? 'DALL-E 3' : 'Stability AI';
-  
+}> = ({ progress }) => {
   return (
     <div className="mb-6">
       <div className="flex justify-between text-sm text-gray-500 mb-1">
@@ -115,13 +86,8 @@ const ProgressIndicator: React.FC<{
       </div>
       <Progress value={progress} className="h-2" />
       <p className="text-xs text-gray-500 mt-2">
-        Creating your custom wrap design with {providerName}.
-        {aiProvider === 'openai' 
-          ? " This typically takes 10-15 seconds with DALL-E 3."
-          : aiProvider === 'stability'
-            ? " This typically takes 5-10 seconds with Stability AI."
-            : " This typically takes 15-30 seconds with Adobe Express."}
-        {selectedModel === 'firefly-vector' && " Vector designs may take longer to process."}
+        Creating your custom wrap design with Stability AI.
+        This typically takes 5-10 seconds with Stability AI's SDXL model.
       </p>
     </div>
   );

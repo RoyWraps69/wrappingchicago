@@ -1,7 +1,6 @@
 
 import React, { createContext, useState, useContext, ReactNode, useEffect } from 'react';
-import { AIWrapContextType, AIProvider, ImageModel, PROVIDER_MODELS } from '@/types/ai-wrap';
-import { useApiKeyManagement } from '@/hooks/useApiKeyManagement';
+import { AIWrapContextType } from '@/types/ai-wrap';
 import { useIdeasGeneration } from '@/hooks/useIdeasGeneration';
 import { useImageGeneration } from '@/hooks/useImageGeneration';
 
@@ -14,14 +13,14 @@ export const AIWrapProvider: React.FC<{ children: ReactNode }> = ({ children }) 
   const [selectedVehicleType, setSelectedVehicleType] = useState('car');
   
   // API key management
-  const {
-    aiProvider,
-    setAiProvider,
-    isApiKeyModalOpen,
-    setIsApiKeyModalOpen,
-    hasApiKey,
-    validateApiKey
-  } = useApiKeyManagement();
+  const [isApiKeyModalOpen, setIsApiKeyModalOpen] = useState(false);
+  const [hasApiKey, setHasApiKey] = useState(false);
+  
+  // Check for API key
+  useEffect(() => {
+    const apiKey = localStorage.getItem('stability_api_key');
+    setHasApiKey(!!apiKey);
+  }, [isApiKeyModalOpen]);
   
   // Ideas generation
   const {
@@ -33,6 +32,17 @@ export const AIWrapProvider: React.FC<{ children: ReactNode }> = ({ children }) 
     handleGenerateIdeas: generateIdeas,
     handleLikeIdea
   } = useIdeasGeneration(null); // Pass null initially, will be updated with generatedImage
+  
+  // Validate API key
+  const validateApiKey = (): boolean => {
+    const apiKey = localStorage.getItem('stability_api_key');
+    if (!apiKey) {
+      toast.error("Stability AI API key is required. Please set your API key in settings.");
+      setIsApiKeyModalOpen(true);
+      return false;
+    }
+    return true;
+  };
   
   // Define the wrapper function for handleGenerateIdeas
   const handleGenerateIdeas = () => {
@@ -46,8 +56,6 @@ export const AIWrapProvider: React.FC<{ children: ReactNode }> = ({ children }) 
     setImagePrompt,
     isGeneratingImage,
     generatedImage,
-    selectedModel,
-    setSelectedModel,
     imageGenerationError,
     handleGenerateImage,
     handleDownloadImage
@@ -56,9 +64,7 @@ export const AIWrapProvider: React.FC<{ children: ReactNode }> = ({ children }) 
     generatedIdeas,
     setGeneratedIdeas,
     business,
-    handleGenerateIdeas,
-    aiProvider,
-    setAiProvider
+    handleGenerateIdeas
   );
   
   // Update ideas generation with latest generated image
@@ -83,20 +89,9 @@ export const AIWrapProvider: React.FC<{ children: ReactNode }> = ({ children }) 
       hasApiKey,
       isGenerating,
       showResults,
-      ideasCount: generatedIdeas.length,
-      aiProvider
+      ideasCount: generatedIdeas.length
     });
-  }, [business, description, selectedVehicleType, hasApiKey, isGenerating, showResults, generatedIdeas, aiProvider]);
-
-  // Update model when provider changes
-  useEffect(() => {
-    // Check if current model is compatible with selected provider
-    const providerModels = PROVIDER_MODELS[aiProvider] || [];
-    if (!providerModels.includes(selectedModel)) {
-      // Set to first available model for this provider
-      setSelectedModel(providerModels[0]);
-    }
-  }, [aiProvider, selectedModel]);
+  }, [business, description, selectedVehicleType, hasApiKey, isGenerating, showResults, generatedIdeas]);
 
   const value: AIWrapContextType = {
     business,
@@ -109,11 +104,7 @@ export const AIWrapProvider: React.FC<{ children: ReactNode }> = ({ children }) 
     setImagePrompt,
     isGeneratingImage,
     generatedImage,
-    selectedModel,
-    setSelectedModel,
     imageGenerationError,
-    aiProvider,
-    setAiProvider,
     isGenerating,
     generatedIdeas,
     showResults,

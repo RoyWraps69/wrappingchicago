@@ -3,7 +3,6 @@ import React from 'react';
 import { ImageGeneratorForm } from './ImageGeneratorForm';
 import { ImageGeneratorHeader } from './ImageGeneratorHeader';
 import { ImageGeneratorResults } from './ImageGeneratorResults';
-import { AIProvider, ImageModel } from '@/types/ai-wrap';
 
 interface ImageGeneratorProps {
   imagePrompt: string;
@@ -12,10 +11,7 @@ interface ImageGeneratorProps {
   isGeneratingImage: boolean;
   generatedImage: string | null;
   onDownloadImage: () => void;
-  selectedModel: string;
-  setSelectedModel: (value: string) => void;
   errorMessage?: string;
-  aiProvider: AIProvider;
   setIsApiKeyModalOpen: (value: boolean) => void;
 }
 
@@ -36,7 +32,7 @@ const ImageGenerator = (props: ImageGeneratorProps) => {
           const newProgress = Math.min(prev + increment, 90);
           return newProgress;
         });
-      }, 400);
+      }, 300); // Slightly faster for Stability AI
     } else {
       setProgress(props.isGeneratingImage ? 0 : 100);
     }
@@ -49,7 +45,6 @@ const ImageGenerator = (props: ImageGeneratorProps) => {
   return (
     <div>
       <ImageGeneratorHeader 
-        aiProvider={props.aiProvider} 
         setIsApiKeyModalOpen={props.setIsApiKeyModalOpen} 
       />
       
@@ -62,12 +57,9 @@ const ImageGenerator = (props: ImageGeneratorProps) => {
       <ImageGeneratorForm 
         imagePrompt={props.imagePrompt}
         setImagePrompt={props.setImagePrompt}
-        selectedModel={props.selectedModel}
-        setSelectedModel={props.setSelectedModel}
         onGenerateImage={props.onGenerateImage}
         isGeneratingImage={props.isGeneratingImage}
         errorMessage={props.errorMessage}
-        aiProvider={props.aiProvider}
         progress={progress}
       />
       

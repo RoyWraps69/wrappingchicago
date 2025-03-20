@@ -1,33 +1,21 @@
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { toast } from 'sonner';
-import { AIProvider, ImageModel, PROVIDER_MODELS } from '@/types/ai-wrap';
-import { createImagePrompt, downloadImage, getDefaultModelForProvider } from '@/utils/ai-wrap-utils';
-import { generateImage } from '@/services/image-generation';
 import { WrapIdea } from '@/types/wrap-idea';
+import { createImagePrompt, downloadImage } from '@/utils/ai-wrap-utils';
+import { generateImage } from '@/services/stability';
 
 export const useImageGeneration = (
   setShowResults: (show: boolean) => void,
   generatedIdeas: WrapIdea[],
   setGeneratedIdeas: (ideas: WrapIdea[]) => void,
   business: string,
-  handleGenerateIdeas: () => void,
-  aiProvider: AIProvider,
-  setAiProvider: (provider: AIProvider) => void
+  handleGenerateIdeas: () => void
 ) => {
   const [imagePrompt, setImagePrompt] = useState('');
   const [isGeneratingImage, setIsGeneratingImage] = useState(false);
   const [generatedImage, setGeneratedImage] = useState<string | null>(null);
-  const [selectedModel, setSelectedModel] = useState<ImageModel>('firefly-image');
   const [imageGenerationError, setImageGenerationError] = useState<string | undefined>(undefined);
-
-  // Update model when provider changes
-  useEffect(() => {
-    const models = PROVIDER_MODELS[aiProvider] || [];
-    if (!models.includes(selectedModel)) {
-      setSelectedModel(models[0]);
-    }
-  }, [aiProvider, selectedModel]);
 
   // Generate custom image
   const handleGenerateImage = async () => {
@@ -38,16 +26,12 @@ export const useImageGeneration = (
     
     setImageGenerationError(undefined);
     setIsGeneratingImage(true);
-    console.log("Starting image generation process with provider:", aiProvider);
+    console.log("Starting image generation process with Stability AI");
     
     // Clear any existing timeouts
     const timeoutWarning = setTimeout(() => {
-      toast.info("Design generation in progress. This may take 15-30 seconds...");
-    }, 8000);
-    
-    const timeoutExtended = setTimeout(() => {
-      toast.info("Still working on your design. Complex designs may take longer to generate...");
-    }, 25000);
+      toast.info("Design generation in progress. This may take 10-15 seconds...");
+    }, 5000);
     
     try {
       const fullPrompt = createImagePrompt(
@@ -57,18 +41,15 @@ export const useImageGeneration = (
       );
       console.log("Generating image with prompt:", fullPrompt);
       
-      toast.info(`Starting design generation with ${aiProvider}...`);
+      toast.info("Starting design generation with Stability AI...");
       
       const imageUrl = await generateImage({
         prompt: fullPrompt,
-        size: "1024x1024",
-        model: selectedModel,
-        provider: aiProvider
+        size: "1024x1024"
       });
       
-      // Clear timeouts
+      // Clear timeout
       clearTimeout(timeoutWarning);
-      clearTimeout(timeoutExtended);
       
       if (imageUrl) {
         console.log("Image generated successfully:", imageUrl);
@@ -111,7 +92,6 @@ export const useImageGeneration = (
       toast.error(errorMessage);
     } finally {
       clearTimeout(timeoutWarning);
-      clearTimeout(timeoutExtended);
       setIsGeneratingImage(false);
     }
   };
@@ -130,8 +110,6 @@ export const useImageGeneration = (
     setImagePrompt,
     isGeneratingImage,
     generatedImage,
-    selectedModel,
-    setSelectedModel,
     imageGenerationError,
     handleGenerateImage,
     handleDownloadImage

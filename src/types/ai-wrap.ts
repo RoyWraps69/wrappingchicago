@@ -1,9 +1,6 @@
 
 import { WrapIdea } from '@/types/wrap-idea';
 
-export type AIProvider = 'firefly' | 'openai' | 'stability';
-export type ImageModel = 'firefly-image' | 'firefly-vector' | 'dall-e-3' | 'stability-sdxl';
-
 export interface AIWrapContextType {
   // Form state
   business: string;
@@ -18,11 +15,7 @@ export interface AIWrapContextType {
   setImagePrompt: (value: string) => void;
   isGeneratingImage: boolean;
   generatedImage: string | null;
-  selectedModel: ImageModel;
-  setSelectedModel: (value: ImageModel) => void;
   imageGenerationError: string | undefined;
-  aiProvider: AIProvider;
-  setAiProvider: (value: AIProvider) => void;
   
   // Ideas generation state
   isGenerating: boolean;
@@ -41,19 +34,3 @@ export interface AIWrapContextType {
   handleDownloadImage: () => void;
   checkApiKey: () => boolean;
 }
-
-export interface ProviderModelMap {
-  [key: string]: ImageModel[];
-}
-
-export const PROVIDER_MODELS: ProviderModelMap = {
-  'firefly': ['firefly-image', 'firefly-vector'],
-  'openai': ['dall-e-3'],
-  'stability': ['stability-sdxl']
-};
-
-export const PROVIDER_NAMES = {
-  'firefly': 'Adobe Express',
-  'openai': 'DALL-E 3',
-  'stability': 'Stability AI'
-};
