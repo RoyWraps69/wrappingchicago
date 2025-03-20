@@ -7,6 +7,7 @@ import CallToAction from '@/components/CallToAction';
 import { cities } from '@/data/cities';
 import { MapPin, ExternalLink } from 'lucide-react';
 import Breadcrumbs from '@/components/navigation/Breadcrumbs';
+import ChicagoServiceMap from '@/components/location/ChicagoServiceMap';
 
 const LocationsPage = () => {
   return (
@@ -119,13 +120,7 @@ const LocationsPage = () => {
                 </p>
               </div>
               
-              <div className="aspect-w-16 aspect-h-9 bg-gray-200 rounded-lg overflow-hidden shadow-md">
-                <img 
-                  src="https://placehold.co/1200x675/0B3954/FFFFFF?text=Chicago+Service+Area+Map"
-                  alt="Chicago Fleet Wraps service area map"
-                  className="object-cover w-full h-full"
-                />
-              </div>
+              <ChicagoServiceMap />
             </div>
           </section>
           
