@@ -28,8 +28,7 @@ export const generateImage = async ({
         
         // Fallback to placeholder for development
         console.log("Falling back to placeholder image for development");
-        const businessText = prompt.split(',')[0] || 'Vehicle';
-        const placeholderUrl = `https://placehold.co/1024x1024/0B3954/FFFFFF?text=${encodeURIComponent(businessText + ' Wrap')}`;
+        const placeholderUrl = `https://placehold.co/1024x1024/0B3954/FFFFFF?text=${encodeURIComponent(prompt)}`;
         resolve(placeholderUrl);
         return;
       }
@@ -48,12 +47,13 @@ export const generateImage = async ({
       .then(ccEverywhere => {
         console.log("Adobe Express SDK initialized successfully");
         
-        // Use the SDK to create a design
-        return ccEverywhere.createDesign({
-          width: 1024,
-          height: 1024,
-          browserWidth: window.innerWidth,
-          browserHeight: window.innerHeight,
+        // Size mapping - Adobe Express expects specific dimensions
+        const [width, height] = size.split('x').map(Number);
+        
+        // Use the createImage API specifically for image generation with a prompt
+        return ccEverywhere.createImage({
+          width: width || 1024,
+          height: height || 1024,
           prompt: prompt,
           outputParams: {
             outputType: 'base64'
@@ -61,7 +61,7 @@ export const generateImage = async ({
         });
       })
       .then(result => {
-        console.log("Adobe Express design created:", result);
+        console.log("Adobe Express image created:", result);
         
         if (result?.base64) {
           // Convert base64 to URL
@@ -71,21 +71,15 @@ export const generateImage = async ({
         } else {
           // Fallback if we don't get a base64 result
           console.warn("No base64 data returned from Adobe Express, using fallback");
-          const vehicleType = prompt.toLowerCase().includes('truck') ? 'truck' : 
-                              prompt.toLowerCase().includes('van') ? 'van' : 'car';
-          const businessText = prompt.split(',')[0] || vehicleType;
           const placeholderUrl = `https://placehold.co/1024x1024/0B3954/FFFFFF?text=${encodeURIComponent(prompt)}`;
           console.log("Using placeholder instead:", placeholderUrl);
           resolve(placeholderUrl);
         }
       })
       .catch(error => {
-        console.error("Error with Adobe Express design creation:", error);
+        console.error("Error with Adobe Express image creation:", error);
         
         // Fallback to placeholder on error
-        const vehicleType = prompt.toLowerCase().includes('truck') ? 'truck' : 
-                            prompt.toLowerCase().includes('van') ? 'van' : 'car';
-        const businessText = prompt.split(',')[0] || vehicleType;
         const placeholderUrl = `https://placehold.co/1024x1024/0B3954/FFFFFF?text=${encodeURIComponent(prompt)}`;
         console.log("Error occurred, using placeholder:", placeholderUrl);
         resolve(placeholderUrl);
@@ -117,6 +111,17 @@ declare global {
           height: number,
           browserWidth: number,
           browserHeight: number,
+          prompt: string,
+          outputParams: {
+            outputType: string
+          }
+        }) => Promise<{
+          base64?: string,
+          [key: string]: any
+        }>,
+        createImage: (options: {
+          width: number,
+          height: number,
           prompt: string,
           outputParams: {
             outputType: string
