@@ -30,6 +30,8 @@ export const useImageGeneration = () => {
     
     setImageGenerationError(undefined);
     setIsGeneratingImage(true);
+    setGeneratedImage(null); // Reset any previous image
+    
     console.log("Starting image generation process with Stability AI");
     
     // Clear any existing timeouts
@@ -58,10 +60,12 @@ export const useImageGeneration = () => {
       if (imageUrl) {
         console.log("Image generated successfully:", imageUrl);
         setGeneratedImage(imageUrl);
+        setIsGeneratingImage(false); // Make sure this is set to false
         toast.success("Custom wrap design generated!");
         return imageUrl;
       } else {
         setImageGenerationError("Failed to generate image. Please try again.");
+        setIsGeneratingImage(false); // Make sure this is set to false even on failure
         toast.error("Failed to generate image. Please try again.");
         return null;
       }
@@ -69,11 +73,12 @@ export const useImageGeneration = () => {
       console.error("Error generating image:", error);
       const errorMessage = error instanceof Error ? error.message : "Failed to generate image";
       setImageGenerationError(errorMessage);
+      setIsGeneratingImage(false); // Make sure this is set to false even on exception
       toast.error(errorMessage);
       return null;
     } finally {
       clearTimeout(timeoutWarning);
-      setIsGeneratingImage(false);
+      setIsGeneratingImage(false); // Ensure this always happens
     }
   };
 

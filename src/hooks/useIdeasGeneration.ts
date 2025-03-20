@@ -35,6 +35,7 @@ export const useIdeasGeneration = (generatedImage: string | null) => {
     try {
       // Generate ideas first
       const newIdeas = generateMockIdeas(business, description, selectedVehicleType);
+      console.log("Mock ideas generated:", newIdeas.length);
       
       // Generate an image for the first idea if we don't already have one
       if (!generatedImage && newIdeas.length > 0) {
@@ -73,7 +74,7 @@ export const useIdeasGeneration = (generatedImage: string | null) => {
         };
       }
       
-      console.log("Generated ideas:", newIdeas);
+      console.log("Final generated ideas:", newIdeas);
       setGeneratedIdeas(newIdeas);
       setShowResults(true);
       toast.success("New wrap concepts generated!");

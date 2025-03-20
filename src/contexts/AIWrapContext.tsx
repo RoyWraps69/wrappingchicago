@@ -57,29 +57,38 @@ export const AIWrapProvider: React.FC<{ children: ReactNode }> = ({ children }) 
   
   // Define the wrapper function for handleGenerateImage
   const handleGenerateImage = async () => {
+    console.log("AIWrapContext: handleGenerateImage called");
+    
     if (!validateApiKey()) return;
     
-    const result = await generateImage(imagePrompt, business, selectedVehicleType);
-    
-    if (result && generatedIdeas.length > 0) {
-      // Update first idea with the new image
-      const updatedIdeas = [...generatedIdeas];
-      updatedIdeas[0] = {
-        ...updatedIdeas[0],
-        imageUrl: result
-      };
-      setGeneratedIdeas(updatedIdeas);
+    try {
+      const result = await generateImage(imagePrompt, business, selectedVehicleType);
+      console.log("Image generation completed, result:", result ? "Success" : "Failed");
       
-      // Show results
-      setShowResults(true);
-      
-      // Scroll to results
-      setTimeout(() => {
-        const resultsSection = document.getElementById('results-section');
-        if (resultsSection) {
-          resultsSection.scrollIntoView({ behavior: 'smooth' });
-        }
-      }, 100);
+      if (result && generatedIdeas.length > 0) {
+        console.log("Updating first idea with new image");
+        // Update first idea with the new image
+        const updatedIdeas = [...generatedIdeas];
+        updatedIdeas[0] = {
+          ...updatedIdeas[0],
+          imageUrl: result
+        };
+        setGeneratedIdeas(updatedIdeas);
+        
+        // Show results
+        setShowResults(true);
+        
+        // Scroll to results
+        setTimeout(() => {
+          const resultsSection = document.getElementById('results-section');
+          if (resultsSection) {
+            resultsSection.scrollIntoView({ behavior: 'smooth' });
+          }
+        }, 100);
+      }
+    } catch (error) {
+      console.error("Error in handleGenerateImage:", error);
+      toast.error("Failed to generate image. Please try again.");
     }
   };
   
@@ -90,11 +99,12 @@ export const AIWrapProvider: React.FC<{ children: ReactNode }> = ({ children }) 
       description,
       selectedVehicleType,
       isGenerating,
+      isGeneratingImage,
       showResults,
       ideasCount: generatedIdeas.length,
       hasGeneratedImage: !!generatedImage
     });
-  }, [business, description, selectedVehicleType, isGenerating, showResults, generatedIdeas, generatedImage]);
+  }, [business, description, selectedVehicleType, isGenerating, isGeneratingImage, showResults, generatedIdeas, generatedImage]);
 
   const value: AIWrapContextType = {
     business,

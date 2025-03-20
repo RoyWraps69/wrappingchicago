@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { ImageGeneratorForm } from './ImageGeneratorForm';
 import { ImageGeneratorHeader } from './ImageGeneratorHeader';
 import { ImageGeneratorResults } from './ImageGeneratorResults';
@@ -18,10 +18,11 @@ const ImageGenerator = (props: ImageGeneratorProps) => {
   const [progress, setProgress] = React.useState(0);
   
   // Simulate progress when generating image
-  React.useEffect(() => {
+  useEffect(() => {
     let interval: ReturnType<typeof setInterval>;
     
     if (props.isGeneratingImage) {
+      // Reset progress when starting
       setProgress(0);
       
       interval = setInterval(() => {
@@ -29,17 +30,25 @@ const ImageGenerator = (props: ImageGeneratorProps) => {
           // Slowly increase until 90%, the final 10% when the image actually arrives
           const increment = prev < 30 ? 5 : prev < 60 ? 3 : prev < 85 ? 1 : 0.5;
           const newProgress = Math.min(prev + increment, 90);
+          console.log("Progress updated:", newProgress);
           return newProgress;
         });
       }, 300); // Slightly faster for Stability AI
+      
+      console.log("Progress simulation started");
     } else {
-      setProgress(props.isGeneratingImage ? 0 : 100);
+      // Complete or reset progress based on whether generation is complete
+      setProgress(props.generatedImage ? 100 : 0);
+      console.log("Progress complete or reset:", props.generatedImage ? 100 : 0);
     }
     
     return () => {
-      if (interval) clearInterval(interval);
+      if (interval) {
+        clearInterval(interval);
+        console.log("Progress interval cleared");
+      }
     };
-  }, [props.isGeneratingImage]);
+  }, [props.isGeneratingImage, props.generatedImage]);
 
   return (
     <div>
