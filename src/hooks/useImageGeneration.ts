@@ -1,8 +1,8 @@
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { toast } from 'sonner';
-import { ImageModel } from '@/types/ai-wrap';
-import { createImagePrompt, downloadImage } from '@/utils/ai-wrap-utils';
+import { AIProvider, ImageModel, PROVIDER_MODELS } from '@/types/ai-wrap';
+import { createImagePrompt, downloadImage, getDefaultModelForProvider } from '@/utils/ai-wrap-utils';
 import { generateImage } from '@/services/image-generation';
 import { WrapIdea } from '@/types/wrap-idea';
 
@@ -11,13 +11,23 @@ export const useImageGeneration = (
   generatedIdeas: WrapIdea[],
   setGeneratedIdeas: (ideas: WrapIdea[]) => void,
   business: string,
-  handleGenerateIdeas: () => void
+  handleGenerateIdeas: () => void,
+  aiProvider: AIProvider,
+  setAiProvider: (provider: AIProvider) => void
 ) => {
   const [imagePrompt, setImagePrompt] = useState('');
   const [isGeneratingImage, setIsGeneratingImage] = useState(false);
   const [generatedImage, setGeneratedImage] = useState<string | null>(null);
   const [selectedModel, setSelectedModel] = useState<ImageModel>('firefly-image');
   const [imageGenerationError, setImageGenerationError] = useState<string | undefined>(undefined);
+
+  // Update model when provider changes
+  useEffect(() => {
+    const models = PROVIDER_MODELS[aiProvider] || [];
+    if (!models.includes(selectedModel)) {
+      setSelectedModel(models[0]);
+    }
+  }, [aiProvider, selectedModel]);
 
   // Generate custom image
   const handleGenerateImage = async () => {
@@ -28,7 +38,7 @@ export const useImageGeneration = (
     
     setImageGenerationError(undefined);
     setIsGeneratingImage(true);
-    console.log("Starting image generation process...");
+    console.log("Starting image generation process with provider:", aiProvider);
     
     // Clear any existing timeouts
     const timeoutWarning = setTimeout(() => {
@@ -47,12 +57,13 @@ export const useImageGeneration = (
       );
       console.log("Generating image with prompt:", fullPrompt);
       
-      toast.info(`Starting design generation...`);
+      toast.info(`Starting design generation with ${aiProvider}...`);
       
       const imageUrl = await generateImage({
         prompt: fullPrompt,
         size: "1024x1024",
-        model: selectedModel
+        model: selectedModel,
+        provider: aiProvider
       });
       
       // Clear timeouts

@@ -1,6 +1,6 @@
 
 import React, { createContext, useState, useContext, ReactNode, useEffect } from 'react';
-import { AIWrapContextType } from '@/types/ai-wrap';
+import { AIWrapContextType, AIProvider, ImageModel, PROVIDER_MODELS } from '@/types/ai-wrap';
 import { useApiKeyManagement } from '@/hooks/useApiKeyManagement';
 import { useIdeasGeneration } from '@/hooks/useIdeasGeneration';
 import { useImageGeneration } from '@/hooks/useImageGeneration';
@@ -16,6 +16,7 @@ export const AIWrapProvider: React.FC<{ children: ReactNode }> = ({ children }) 
   // API key management
   const {
     aiProvider,
+    setAiProvider,
     isApiKeyModalOpen,
     setIsApiKeyModalOpen,
     hasApiKey,
@@ -55,7 +56,9 @@ export const AIWrapProvider: React.FC<{ children: ReactNode }> = ({ children }) 
     generatedIdeas,
     setGeneratedIdeas,
     business,
-    handleGenerateIdeas
+    handleGenerateIdeas,
+    aiProvider,
+    setAiProvider
   );
   
   // Update ideas generation with latest generated image
@@ -80,9 +83,20 @@ export const AIWrapProvider: React.FC<{ children: ReactNode }> = ({ children }) 
       hasApiKey,
       isGenerating,
       showResults,
-      ideasCount: generatedIdeas.length
+      ideasCount: generatedIdeas.length,
+      aiProvider
     });
-  }, [business, description, selectedVehicleType, hasApiKey, isGenerating, showResults, generatedIdeas]);
+  }, [business, description, selectedVehicleType, hasApiKey, isGenerating, showResults, generatedIdeas, aiProvider]);
+
+  // Update model when provider changes
+  useEffect(() => {
+    // Check if current model is compatible with selected provider
+    const providerModels = PROVIDER_MODELS[aiProvider] || [];
+    if (!providerModels.includes(selectedModel)) {
+      // Set to first available model for this provider
+      setSelectedModel(providerModels[0]);
+    }
+  }, [aiProvider, selectedModel]);
 
   const value: AIWrapContextType = {
     business,
@@ -99,6 +113,7 @@ export const AIWrapProvider: React.FC<{ children: ReactNode }> = ({ children }) 
     setSelectedModel,
     imageGenerationError,
     aiProvider,
+    setAiProvider,
     isGenerating,
     generatedIdeas,
     showResults,

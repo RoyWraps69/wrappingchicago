@@ -4,8 +4,7 @@ import { Helmet } from 'react-helmet-async';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import CallToAction from '@/components/CallToAction';
-import { Settings } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { toast } from 'sonner';
 
 // Import components
 import AIWrapHero from '@/components/ai-wrap-ideas/AIWrapHero';
@@ -15,7 +14,6 @@ import WrapIdeasResults from '@/components/ai-wrap-ideas/WrapIdeasResults';
 import ProcessSection from '@/components/ai-wrap-ideas/ProcessSection';
 import ApiKeyModal from '@/components/ai-wrap-ideas/ApiKeyModal';
 import { AIWrapProvider, useAIWrap } from '@/contexts/AIWrapContext';
-import { toast } from 'sonner';
 
 const AIWrapIdeasContent = () => {
   const { 
@@ -86,18 +84,6 @@ const AIWrapIdeasContent = () => {
         
         <main className="flex-grow">
           <AIWrapHero />
-          
-          <div className="container mx-auto px-4 flex justify-end -mb-6 mt-4">
-            <Button 
-              variant="outline" 
-              size="sm"
-              onClick={() => setIsApiKeyModalOpen(true)}
-              className="flex items-center gap-2"
-            >
-              <Settings size={16} />
-              {hasApiKey ? "Update Client ID" : "Set Client ID"}
-            </Button>
-          </div>
           
           <ValueProposition />
           

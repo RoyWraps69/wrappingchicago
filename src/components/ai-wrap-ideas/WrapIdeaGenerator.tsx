@@ -24,7 +24,9 @@ const WrapIdeaGenerator = () => {
     isGenerating,
     handleGenerateImage,
     handleDownloadImage,
-    showResults
+    showResults,
+    aiProvider,
+    setIsApiKeyModalOpen
   } = useAIWrap();
 
   // Handle scrolling to results after generation
@@ -76,6 +78,8 @@ const WrapIdeaGenerator = () => {
                 selectedModel={selectedModel}
                 setSelectedModel={setSelectedModel}
                 errorMessage={imageGenerationError}
+                aiProvider={aiProvider}
+                setIsApiKeyModalOpen={setIsApiKeyModalOpen}
               />
             </div>
           </div>

@@ -2,12 +2,13 @@
 import React from 'react';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
-import { ImageIcon, RefreshCw, Download, AlertCircle, ArrowDown, Info } from 'lucide-react';
+import { ImageIcon, RefreshCw, Download, AlertCircle, ArrowDown, Info, Settings } from 'lucide-react';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Badge } from '@/components/ui/badge';
 import { Progress } from '@/components/ui/progress';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
+import { AIProvider, ImageModel, PROVIDER_MODELS, PROVIDER_NAMES } from '@/types/ai-wrap';
 
 interface ImageGeneratorProps {
   imagePrompt: string;
@@ -19,6 +20,8 @@ interface ImageGeneratorProps {
   selectedModel: string;
   setSelectedModel: (value: string) => void;
   errorMessage?: string;
+  aiProvider: AIProvider;
+  setIsApiKeyModalOpen: (value: boolean) => void;
 }
 
 const ImageGenerator = ({
@@ -30,7 +33,9 @@ const ImageGenerator = ({
   onDownloadImage,
   selectedModel,
   setSelectedModel,
-  errorMessage
+  errorMessage,
+  aiProvider,
+  setIsApiKeyModalOpen
 }: ImageGeneratorProps) => {
   const [progress, setProgress] = React.useState(0);
   
@@ -57,14 +62,40 @@ const ImageGenerator = ({
       if (interval) clearInterval(interval);
     };
   }, [isGeneratingImage]);
+
+  // Get available models for the current provider
+  const availableModels = PROVIDER_MODELS[aiProvider] || [];
+  const providerName = PROVIDER_NAMES[aiProvider] || 'AI';
+  
+  // Get model display names
+  const getModelDisplayName = (model: string) => {
+    switch (model) {
+      case 'firefly-image': return 'Standard Design';
+      case 'firefly-vector': return 'Vector Design';
+      case 'dall-e-3': return 'Standard Quality';
+      case 'stability-sdxl': return 'Standard Quality';
+      default: return model;
+    }
+  };
   
   return (
     <div>
       <div className="flex items-center justify-between mb-6">
         <h2 className="text-2xl font-bold text-brand-navy">Custom Image Generator</h2>
-        <Badge variant="outline" className="ml-2">
-          Adobe Express
-        </Badge>
+        <div className="flex items-center gap-2">
+          <Badge variant="outline" className="bg-white">
+            {providerName}
+          </Badge>
+          <Button 
+            variant="ghost" 
+            size="icon" 
+            onClick={() => setIsApiKeyModalOpen(true)}
+            className="h-8 w-8"
+          >
+            <Settings className="h-4 w-4" />
+            <span className="sr-only">AI Provider Settings</span>
+          </Button>
+        </div>
       </div>
       
       <p className="text-gray-700 mb-6">
@@ -96,46 +127,69 @@ const ImageGenerator = ({
         />
       </div>
 
-      <div className="mb-4">
-        <div className="flex items-center justify-between">
-          <label htmlFor="modelSelect" className="block text-sm font-medium text-gray-700 mb-1">
-            Design Generation Mode
-          </label>
+      {availableModels.length > 0 && (
+        <div className="mb-4">
+          <div className="flex items-center justify-between">
+            <label htmlFor="modelSelect" className="block text-sm font-medium text-gray-700 mb-1">
+              Design Generation Mode
+            </label>
+            
+            <TooltipProvider>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Button variant="ghost" size="sm" className="h-6 w-6 p-0 rounded-full">
+                    <Info className="h-4 w-4 text-gray-500" />
+                    <span className="sr-only">Info</span>
+                  </Button>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p className="max-w-xs">
+                    {aiProvider === 'firefly' ? (
+                      <>
+                        <strong>Standard Design:</strong> Photorealistic design (faster)
+                        <br />
+                        <strong>Vector Design:</strong> Illustration style with cleaner lines (slower)
+                      </>
+                    ) : aiProvider === 'openai' ? (
+                      <>
+                        <strong>DALL-E 3:</strong> Creates high-quality vehicle wrap designs with excellent brand recognition
+                      </>
+                    ) : (
+                      <>
+                        <strong>Stability AI:</strong> Creates detailed wrap designs with high fidelity
+                      </>
+                    )}
+                  </p>
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
+          </div>
           
-          <TooltipProvider>
-            <Tooltip>
-              <TooltipTrigger asChild>
-                <Button variant="ghost" size="sm" className="h-6 w-6 p-0 rounded-full">
-                  <Info className="h-4 w-4 text-gray-500" />
-                  <span className="sr-only">Info</span>
-                </Button>
-              </TooltipTrigger>
-              <TooltipContent>
-                <p className="max-w-xs">
-                  <strong>Standard Design:</strong> Photorealistic design (faster)
-                  <br />
-                  <strong>Vector Design:</strong> Illustration style with cleaner lines (slower)
-                </p>
-              </TooltipContent>
-            </Tooltip>
-          </TooltipProvider>
+          <Select value={selectedModel} onValueChange={setSelectedModel}>
+            <SelectTrigger id="modelSelect" className="w-full">
+              <SelectValue placeholder="Select design mode" />
+            </SelectTrigger>
+            <SelectContent>
+              {availableModels.map((model) => (
+                <SelectItem key={model} value={model}>
+                  {getModelDisplayName(model)}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
+          <p className="text-xs text-gray-500 mt-1">
+            {aiProvider === 'firefly' ? (
+              <>Adobe Express creates commercial-use designs using licensed content and AI technology.</>
+            ) : aiProvider === 'openai' ? (
+              <>DALL-E 3 creates detailed designs with high brand recognition.</>
+            ) : (
+              <>Stability AI creates high-fidelity wrap designs with excellent details.</>
+            )}
+            {selectedModel === 'firefly-vector' && 
+              " Vector design mode takes longer to process."}
+          </p>
         </div>
-        
-        <Select value={selectedModel} onValueChange={setSelectedModel}>
-          <SelectTrigger id="modelSelect" className="w-full">
-            <SelectValue placeholder="Select design mode" />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectItem value="firefly-image">Standard Design</SelectItem>
-            <SelectItem value="firefly-vector">Vector Design</SelectItem>
-          </SelectContent>
-        </Select>
-        <p className="text-xs text-gray-500 mt-1">
-          Adobe Express creates commercial-use designs using licensed content and AI technology.
-          {selectedModel === 'firefly-vector' && 
-            " Vector design mode takes longer to process."}
-        </p>
-      </div>
+      )}
       
       <Button
         onClick={onGenerateImage}
@@ -163,7 +217,12 @@ const ImageGenerator = ({
           </div>
           <Progress value={progress} className="h-2" />
           <p className="text-xs text-gray-500 mt-2">
-            Creating your custom wrap design. This typically takes 15-30 seconds with Adobe Express.
+            Creating your custom wrap design with {providerName}.
+            {aiProvider === 'openai' 
+              ? " This typically takes 10-15 seconds with DALL-E 3."
+              : aiProvider === 'stability'
+                ? " This typically takes 5-10 seconds with Stability AI."
+                : " This typically takes 15-30 seconds with Adobe Express."}
             {selectedModel === 'firefly-vector' && " Vector designs may take longer to process."}
           </p>
         </div>

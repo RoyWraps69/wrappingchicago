@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from 'react';
-import { AIProvider, ImageModel } from '@/types/ai-wrap';
+import { AIProvider, ImageModel, PROVIDER_MODELS } from '@/types/ai-wrap';
 import { checkApiKey, getDefaultModelForProvider } from '@/utils/ai-wrap-utils';
 import { toast } from 'sonner';
 
@@ -32,6 +32,7 @@ export const useApiKeyManagement = () => {
 
   return {
     aiProvider,
+    setAiProvider,
     isApiKeyModalOpen,
     setIsApiKeyModalOpen,
     hasApiKey,
