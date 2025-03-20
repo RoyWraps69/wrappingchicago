@@ -13,6 +13,9 @@ export const AIWrapProvider: React.FC<{ children: ReactNode }> = ({ children }) 
   const [description, setDescription] = useState('');
   const [selectedVehicleType, setSelectedVehicleType] = useState('car');
   
+  // API Key Modal state
+  const [isApiKeyModalOpen, setIsApiKeyModalOpen] = useState(false);
+  
   // Image generation
   const {
     imagePrompt,
@@ -40,6 +43,7 @@ export const AIWrapProvider: React.FC<{ children: ReactNode }> = ({ children }) 
     const apiKey = localStorage.getItem('stability_api_key');
     if (!apiKey) {
       toast.error("Stability AI API key is required for image generation.");
+      setIsApiKeyModalOpen(true);
       return false;
     }
     return true;
@@ -108,6 +112,8 @@ export const AIWrapProvider: React.FC<{ children: ReactNode }> = ({ children }) 
     generatedIdeas,
     showResults,
     hasApiKey: !!localStorage.getItem('stability_api_key'),
+    isApiKeyModalOpen,
+    setIsApiKeyModalOpen,
     handleGenerateIdeas,
     handleGenerateImage,
     handleLikeIdea,

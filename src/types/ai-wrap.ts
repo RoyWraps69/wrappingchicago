@@ -1,6 +1,12 @@
 
 import { WrapIdea } from '@/types/wrap-idea';
 
+// Define the possible image generation providers
+export type ImageModel = 'stability-sdxl';
+
+// Define the AI Provider type
+export type AIProvider = 'stability';
+
 export interface AIWrapContextType {
   // Form state
   business: string;
@@ -24,6 +30,8 @@ export interface AIWrapContextType {
   
   // API key state
   hasApiKey: boolean;
+  isApiKeyModalOpen: boolean;
+  setIsApiKeyModalOpen: (isOpen: boolean) => void;
   
   // Actions
   handleGenerateIdeas: () => void;
