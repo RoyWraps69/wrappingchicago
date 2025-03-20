@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { ArrowDown, Download } from 'lucide-react';
+import { Download } from 'lucide-react';
 
 interface ImageGeneratorResultsProps {
   generatedImage: string;
@@ -34,20 +34,6 @@ export const ImageGeneratorResults: React.FC<ImageGeneratorResultsProps> = ({
         <p className="text-gray-700 mb-2">
           Your design has been generated! Scroll down to see it applied to your wrap concepts.
         </p>
-        <Button 
-          variant="outline" 
-          size="sm" 
-          className="mt-2"
-          onClick={() => {
-            const resultsSection = document.getElementById('results-section');
-            if (resultsSection) {
-              resultsSection.scrollIntoView({ behavior: 'smooth' });
-            }
-          }}
-        >
-          <ArrowDown className="mr-2 h-4 w-4" />
-          View Results Below
-        </Button>
       </div>
     </div>
   );
