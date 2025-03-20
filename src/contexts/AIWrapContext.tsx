@@ -29,12 +29,13 @@ export const AIWrapProvider: React.FC<{ children: ReactNode }> = ({ children }) 
     setGeneratedIdeas,
     showResults,
     setShowResults,
+    handleGenerateIdeas: generateIdeas,
     handleLikeIdea
-  } = useIdeasGeneration(null); // Pass null initially, will be updated
+  } = useIdeasGeneration(null); // Pass null initially, will be updated with generatedImage
   
-  // Custom wrapper for handleGenerateIdeas to include the form state
-  const handleGenerateIdeasWrapper = () => {
-    return handleGenerateIdeas(business, description, selectedVehicleType, validateApiKey);
+  // Define the wrapper function for handleGenerateIdeas
+  const handleGenerateIdeas = () => {
+    return generateIdeas(business, description, selectedVehicleType, validateApiKey);
   };
   
   // Image generation
@@ -53,7 +54,7 @@ export const AIWrapProvider: React.FC<{ children: ReactNode }> = ({ children }) 
     generatedIdeas,
     setGeneratedIdeas,
     business,
-    handleGenerateIdeasWrapper
+    handleGenerateIdeas
   );
 
   const value: AIWrapContextType = {
@@ -77,7 +78,7 @@ export const AIWrapProvider: React.FC<{ children: ReactNode }> = ({ children }) 
     isApiKeyModalOpen,
     setIsApiKeyModalOpen,
     hasApiKey,
-    handleGenerateIdeas: handleGenerateIdeasWrapper,
+    handleGenerateIdeas,
     handleGenerateImage,
     handleLikeIdea,
     handleDownloadImage,
