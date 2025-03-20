@@ -35,6 +35,10 @@ const Header = () => {
             <Link to="/" className="hover:text-brand-red transition-colors">
               Home
             </Link>
+            <Link to="/ai-wrap-ideas" className="hover:text-brand-red transition-colors flex items-center">
+              <Sparkles className="mr-1 h-4 w-4" />
+              AI Wrap Ideas
+            </Link>
             <Link to="/services/fleet-wraps" className="hover:text-brand-red transition-colors">
               Services
             </Link>
@@ -43,10 +47,6 @@ const Header = () => {
             </Link>
             <Link to="/about" className="hover:text-brand-red transition-colors">
               About
-            </Link>
-            <Link to="/ai-wrap-ideas" className="hover:text-brand-red transition-colors flex items-center">
-              <Sparkles className="mr-1 h-4 w-4" />
-              AI Wrap Ideas
             </Link>
             <Link to="/contact" className="hover:text-brand-red transition-colors">
               Contact
@@ -76,6 +76,14 @@ const Header = () => {
               Home
             </Link>
             <Link 
+              to="/ai-wrap-ideas" 
+              className="hover:text-brand-red transition-colors flex items-center"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              <Sparkles className="mr-1 h-4 w-4" />
+              AI Wrap Ideas
+            </Link>
+            <Link 
               to="/services/fleet-wraps" 
               className="hover:text-brand-red transition-colors"
               onClick={() => setIsMenuOpen(false)}
@@ -95,14 +103,6 @@ const Header = () => {
               onClick={() => setIsMenuOpen(false)}
             >
               About
-            </Link>
-            <Link 
-              to="/ai-wrap-ideas" 
-              className="hover:text-brand-red transition-colors flex items-center"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              <Sparkles className="mr-1 h-4 w-4" />
-              AI Wrap Ideas
             </Link>
             <Link 
               to="/contact" 
