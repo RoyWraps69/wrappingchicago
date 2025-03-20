@@ -1,3 +1,4 @@
+
 import { generateImage as generateImageFirefly } from '@/services/firefly';
 import { ImageModel } from '@/types/ai-wrap';
 
@@ -14,10 +15,18 @@ export const generateImage = async ({
 }: GenerateImageParams): Promise<string | null> => {
   console.log(`Generating image with ${model || 'default'} model and prompt: ${prompt}`);
   
-  // Firefly doesn't actually use the model parameter in our implementation
-  // but we'll keep it for future functionality
-  return generateImageFirefly({
-    prompt,
-    size
-  });
+  try {
+    // Simply pass through to the firefly generator for now
+    // The model isn't used in our implementation currently
+    const result = await generateImageFirefly({
+      prompt,
+      size
+    });
+    
+    console.log("Image generation result:", result);
+    return result;
+  } catch (error) {
+    console.error("Error in image generation service:", error);
+    throw error;
+  }
 };

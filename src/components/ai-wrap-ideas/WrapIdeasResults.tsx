@@ -59,7 +59,9 @@ const WrapIdeasResults = () => {
                 className="object-contain w-full h-full"
                 onError={(e) => {
                   console.error("Image failed to load:", e);
-                  e.currentTarget.src = "/placeholder.svg";
+                  const target = e.currentTarget;
+                  target.onerror = null; // Prevent infinite loop
+                  target.src = "https://placehold.co/1024x1024/0B3954/FFFFFF?text=Design+Loading+Error";
                 }}
               />
             </div>
@@ -67,7 +69,7 @@ const WrapIdeasResults = () => {
           
           <p className="text-sm text-gray-500 mt-3">
             {isGeneratingImage ? 
-              "This may take 15-30 seconds. The Adobe Express API is processing your design..." : 
+              "This may take 15-30 seconds..." : 
               "This custom design has been applied to your first concept below"}
           </p>
         </div>

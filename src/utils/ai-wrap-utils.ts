@@ -7,27 +7,31 @@ import { AIProvider, ImageModel } from '@/types/ai-wrap';
 export const generateMockIdeas = (businessName: string, desc: string, vehicleType: string): WrapIdea[] => {
   console.log("Generating mock ideas with:", businessName, desc, vehicleType);
   
-  // Create a copy of the example ideas to avoid mutating the original
+  // Create a deep copy of the example ideas to avoid mutating the original
   const ideasCopy = JSON.parse(JSON.stringify(exampleIdeas));
   
   // Set vehicle-specific placeholders
   const vehiclePlaceholder = vehicleType === 'truck' ? 
-    'https://placehold.co/600x400/ff5e7d/FFFFFF?text=Truck+Wrap' :
+    'https://placehold.co/1024x1024/ff5e7d/FFFFFF?text=Truck+Wrap' :
     vehicleType === 'van' ? 
-      'https://placehold.co/600x400/0B3954/FFFFFF?text=Van+Wrap' :
-      'https://placehold.co/600x400/0B3954/FFFFFF?text=Car+Wrap';
+      'https://placehold.co/1024x1024/0B3954/FFFFFF?text=Van+Wrap' :
+      'https://placehold.co/1024x1024/0B3954/FFFFFF?text=Car+Wrap';
   
   // Customize the ideas based on inputs
-  const customizedIdeas = ideasCopy.map((idea: WrapIdea, index: number) => ({
-    ...idea,
-    id: `${Date.now()}-${index}`,
-    title: businessName ? `${idea.title} for ${businessName}` : idea.title,
-    description: desc ? `${desc} - ${idea.description}` : idea.description,
-    vehicleType: vehicleType || idea.vehicleType,
-    imageUrl: idea.imageUrl || vehiclePlaceholder
-  }));
+  const customizedIdeas = ideasCopy.map((idea: WrapIdea, index: number) => {
+    const newIdea = {
+      ...idea,
+      id: `${Date.now()}-${index}`,
+      title: businessName ? `${idea.title} for ${businessName}` : idea.title,
+      description: desc ? `${desc} - ${idea.description}` : idea.description,
+      vehicleType: vehicleType || idea.vehicleType,
+      imageUrl: vehiclePlaceholder // Always set a placeholder to ensure we have an image
+    };
+    console.log(`Generated idea ${index}:`, newIdea);
+    return newIdea;
+  });
   
-  console.log("Generated ideas:", customizedIdeas);
+  console.log("Final generated ideas:", customizedIdeas);
   return customizedIdeas;
 };
 
@@ -65,13 +69,20 @@ export const downloadImage = (imageUrl: string | null): void => {
     return;
   }
   
-  // Create a download link and trigger a click
-  const link = document.createElement('a');
-  link.href = imageUrl;
-  link.download = `wrap-design-${new Date().getTime()}.png`;
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
+  console.log("Downloading image:", imageUrl);
   
-  toast.success("Image downloaded successfully!");
+  try {
+    // Create a download link and trigger a click
+    const link = document.createElement('a');
+    link.href = imageUrl;
+    link.download = `wrap-design-${new Date().getTime()}.png`;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    
+    toast.success("Image downloaded successfully!");
+  } catch (error) {
+    console.error("Error downloading image:", error);
+    toast.error("Failed to download image");
+  }
 };

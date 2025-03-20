@@ -28,6 +28,7 @@ export const useImageGeneration = (
     
     setImageGenerationError(undefined);
     setIsGeneratingImage(true);
+    console.log("Starting image generation process...");
     
     // Clear any existing timeouts
     const timeoutWarning = setTimeout(() => {
@@ -46,7 +47,7 @@ export const useImageGeneration = (
       );
       console.log("Generating image with prompt:", fullPrompt);
       
-      toast.info(`Starting design generation with Adobe Express...`);
+      toast.info(`Starting design generation...`);
       
       const imageUrl = await generateImage({
         prompt: fullPrompt,
