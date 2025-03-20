@@ -25,7 +25,7 @@ const GenericServiceContent: React.FC = () => {
             wrap will look great and stand up to the harsh Chicago weather for years to come.
           </p>
           <img 
-            src="/lovable-uploads/efc6c586-8651-43ad-811a-b896a91a1b69.png" 
+            src="/lovable-uploads/676b4902-7b81-4619-90d8-8feb1f986636.png" 
             alt="Premium wrap materials" 
             className="rounded-lg shadow-md w-full h-60 object-cover"
           />
@@ -36,7 +36,7 @@ const GenericServiceContent: React.FC = () => {
       <div className="grid md:grid-cols-3 gap-6 mb-8">
         <div className="bg-white p-6 rounded-lg shadow hover:shadow-md transition-shadow">
           <img 
-            src="/lovable-uploads/6d45d332-9949-413e-b840-8007afa41d56.png" 
+            src="/lovable-uploads/efdbc4bf-1f04-42bb-a904-f52dae7bef6c.png" 
             alt="Fleet wraps" 
             className="w-full h-48 object-cover rounded-md mb-4"
           />
@@ -47,7 +47,7 @@ const GenericServiceContent: React.FC = () => {
         
         <div className="bg-white p-6 rounded-lg shadow hover:shadow-md transition-shadow">
           <img 
-            src="/lovable-uploads/9de106b5-94cb-4fd1-a7c7-5c75c75b7cbb.png" 
+            src="/lovable-uploads/f564c255-9ca3-4457-bef5-c940a4a1557a.png" 
             alt="Color change wraps" 
             className="w-full h-48 object-cover rounded-md mb-4"
           />
@@ -58,7 +58,7 @@ const GenericServiceContent: React.FC = () => {
         
         <div className="bg-white p-6 rounded-lg shadow hover:shadow-md transition-shadow">
           <img 
-            src="/lovable-uploads/0ec34598-bcc3-486d-9021-dd527bafe83a.png" 
+            src="/lovable-uploads/fb7a4b97-4b57-4b2e-8f81-42a1098270df.png" 
             alt="Commercial graphics" 
             className="w-full h-48 object-cover rounded-md mb-4"
           />

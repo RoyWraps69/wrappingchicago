@@ -20,21 +20,21 @@ const ServiceHeader: React.FC<ServiceHeaderProps> = ({ title, showImages = false
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
           <div className="rounded-lg overflow-hidden shadow-md">
             <img 
-              src="/lovable-uploads/0316f206-884b-44b4-bdb3-e0f7962a1714.png" 
+              src="/lovable-uploads/efdbc4bf-1f04-42bb-a904-f52dae7bef6c.png" 
               alt="Fleet wrap example" 
               className="w-full h-48 object-cover"
             />
           </div>
           <div className="rounded-lg overflow-hidden shadow-md">
             <img 
-              src="/lovable-uploads/0ec34598-bcc3-486d-9021-dd527bafe83a.png" 
+              src="/lovable-uploads/f564c255-9ca3-4457-bef5-c940a4a1557a.png" 
               alt="Color change wrap example" 
               className="w-full h-48 object-cover"
             />
           </div>
           <div className="rounded-lg overflow-hidden shadow-md">
             <img 
-              src="/lovable-uploads/22a9b401-dc9c-4e13-90da-50d4e85ea3ca.png" 
+              src="/lovable-uploads/fb7a4b97-4b57-4b2e-8f81-42a1098270df.png" 
               alt="Commercial graphics example" 
               className="w-full h-48 object-cover"
             />
