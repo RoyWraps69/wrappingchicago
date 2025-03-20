@@ -74,6 +74,15 @@ export const useIdeasGeneration = (generatedImage: string | null) => {
         };
       }
       
+      // Important fix: Set imageUrl for all ideas to prevent loading state
+      // This makes it clear that we're not generating images for all ideas
+      for (let i = 1; i < newIdeas.length; i++) {
+        newIdeas[i] = {
+          ...newIdeas[i],
+          imageUrl: `https://placehold.co/600x400/${getRandomColor()}/FFFFFF?text=Concept+${i+1}`
+        };
+      }
+      
       console.log("Final generated ideas:", newIdeas);
       setGeneratedIdeas(newIdeas);
       setShowResults(true);
@@ -92,6 +101,12 @@ export const useIdeasGeneration = (generatedImage: string | null) => {
     } finally {
       setIsGenerating(false);
     }
+  };
+
+  // Helper function to generate random colors for placeholders
+  const getRandomColor = () => {
+    const colors = ['ff5e7d', '0B3954', 'ffc107', '4CAF50', '2196F3', '9C27B0'];
+    return colors[Math.floor(Math.random() * colors.length)];
   };
 
   // Handle like idea feedback

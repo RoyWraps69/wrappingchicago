@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { ThumbsUp, Download } from 'lucide-react';
+import { ThumbsUp, Download, ImageIcon } from 'lucide-react';
 import { toast } from 'sonner';
 import { Skeleton } from '@/components/ui/skeleton';
 
@@ -19,6 +19,9 @@ interface WrapIdeaCardProps {
 }
 
 const WrapIdeaCard = ({ idea, onLike }: WrapIdeaCardProps) => {
+  // Check if this is a placeholder image
+  const isPlaceholder = idea.imageUrl?.includes('placehold.co');
+
   return (
     <div className="bg-white rounded-lg shadow-lg p-6 transition-all hover:shadow-xl">
       <div className="aspect-w-16 aspect-h-9 mb-4 overflow-hidden rounded-md bg-gray-100">
@@ -60,7 +63,7 @@ const WrapIdeaCard = ({ idea, onLike }: WrapIdeaCardProps) => {
           Like this idea
         </Button>
         
-        {idea.imageUrl && (
+        {idea.imageUrl && !isPlaceholder ? (
           <Button
             variant="ghost" 
             size="sm"
@@ -85,7 +88,12 @@ const WrapIdeaCard = ({ idea, onLike }: WrapIdeaCardProps) => {
             <Download className="w-4 h-4 mr-2" />
             Save
           </Button>
-        )}
+        ) : isPlaceholder ? (
+          <div className="text-xs text-gray-500 flex items-center">
+            <ImageIcon className="w-3 h-3 mr-1" />
+            Concept preview
+          </div>
+        ) : null}
       </div>
     </div>
   );
