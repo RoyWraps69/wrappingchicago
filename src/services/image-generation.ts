@@ -15,7 +15,7 @@ export const generateImage = async ({
   console.log(`Generating image with Stability AI and prompt: ${prompt}`);
   
   try {
-    // Use only Stability AI for generation
+    // Use Stability AI for generation
     const result = await generateImageStability({
       prompt,
       size: size as "1024x1024" | "1152x896" | "896x1152" | "768x768"

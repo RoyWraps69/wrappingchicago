@@ -1,7 +1,6 @@
 
 import { useState, useEffect } from 'react';
 import { toast } from 'sonner';
-import { checkApiKey } from '@/utils/ai-wrap-utils';
 
 export const useApiKeyManagement = () => {
   const [isApiKeyModalOpen, setIsApiKeyModalOpen] = useState(false);
@@ -9,16 +8,16 @@ export const useApiKeyManagement = () => {
 
   // Initialize API key state
   useEffect(() => {
-    const { valid } = checkApiKey();
-    setHasApiKey(valid);
+    const apiKey = localStorage.getItem('stability_api_key');
+    setHasApiKey(!!apiKey);
   }, [isApiKeyModalOpen]);
 
   // Validate API key
   const validateApiKey = (): boolean => {
-    const { valid, providerName } = checkApiKey();
+    const apiKey = localStorage.getItem('stability_api_key');
     
-    if (!valid) {
-      toast.error(`${providerName} API key is required. Please set your API key in settings.`);
+    if (!apiKey) {
+      toast.error("Stability AI API key is required. Please set your API key in settings.");
       setIsApiKeyModalOpen(true);
       return false;
     }

@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { toast } from 'sonner';
 import { WrapIdea } from '@/types/wrap-idea';
 import { createImagePrompt, downloadImage } from '@/utils/ai-wrap-utils';
-import { generateImage } from '@/services/stability';
+import { generateImage } from '@/services/image-generation';
 
 export const useImageGeneration = (
   setShowResults: (show: boolean) => void,
@@ -21,6 +21,13 @@ export const useImageGeneration = (
   const handleGenerateImage = async () => {
     if (!imagePrompt.trim()) {
       toast.error("Please enter a description for your wrap design");
+      return;
+    }
+    
+    // Check for API key
+    const apiKey = localStorage.getItem('stability_api_key');
+    if (!apiKey) {
+      toast.error("Stability AI API key is required. Please set your API key in settings.");
       return;
     }
     

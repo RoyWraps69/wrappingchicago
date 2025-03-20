@@ -17,7 +17,6 @@ export const generateImage = async ({
   samples = 1
 }: GenerateImageParams): Promise<string | null> => {
   // This requires a Stability AI API key which should be provided by the user
-  // and handled securely in a production environment
   const apiKey = localStorage.getItem('stability_api_key');
   
   if (!apiKey) {
@@ -26,6 +25,8 @@ export const generateImage = async ({
 
   // Parse dimensions from size string
   const [width, height] = size.split('x').map(Number);
+  
+  console.log(`Making request to Stability AI with dimensions: ${width}x${height}`);
 
   try {
     const response = await fetch('https://api.stability.ai/v1/generation/stable-diffusion-xl-1024-v1-0/text-to-image', {
@@ -51,19 +52,21 @@ export const generateImage = async ({
     });
 
     if (!response.ok) {
-      const errorData = await response.json();
+      const errorData = await response.json().catch(() => ({ message: "Failed to generate image" }));
       const errorMessage = errorData.message || "Failed to generate image";
       
-      if (errorData.name === 'unauthorized') {
+      if (response.status === 401) {
         throw new Error("Invalid API key. Please check your Stability AI API key and try again.");
       } else if (errorData.name === 'insufficient_credits') {
         throw new Error("You've used all your Stability AI credits. Please check your account settings.");
       }
       
+      console.error("Stability API error:", errorData);
       throw new Error(errorMessage);
     }
 
     const data = await response.json();
+    console.log("Stability API response received", data.artifacts ? `with ${data.artifacts.length} images` : "with no images");
     
     // Stability returns an array of generated images
     if (data.artifacts && data.artifacts.length > 0) {
@@ -72,6 +75,7 @@ export const generateImage = async ({
       return `data:image/png;base64,${base64Image}`;
     }
     
+    console.error("No images returned from Stability API");
     return null;
   } catch (error) {
     console.error("Error generating image:", error);
