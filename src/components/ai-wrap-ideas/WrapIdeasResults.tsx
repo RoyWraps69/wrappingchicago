@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { RefreshCw, ImageIcon } from 'lucide-react';
 import WrapIdeaCard from './WrapIdeaCard';
@@ -15,6 +15,20 @@ const WrapIdeasResults = () => {
     generatedImage,
     isGeneratingImage 
   } = useAIWrap();
+
+  // Debug logging
+  useEffect(() => {
+    console.log("WrapIdeasResults rendered with:", {
+      generatedIdeasCount: generatedIdeas.length,
+      isGenerating,
+      hasGeneratedImage: !!generatedImage,
+      isGeneratingImage
+    });
+
+    if (generatedIdeas.length > 0) {
+      console.log("First idea:", generatedIdeas[0]);
+    }
+  }, [generatedIdeas, isGenerating, generatedImage, isGeneratingImage]);
   
   return (
     <div className="mt-12">
@@ -73,7 +87,7 @@ const WrapIdeasResults = () => {
               </div>
             </div>
           ))
-        ) : generatedIdeas.length > 0 ? (
+        ) : generatedIdeas && generatedIdeas.length > 0 ? (
           generatedIdeas.map((idea) => (
             <WrapIdeaCard 
               key={idea.id} 
@@ -88,7 +102,7 @@ const WrapIdeasResults = () => {
         )}
       </div>
       
-      {generatedIdeas.length > 0 && (
+      {generatedIdeas && generatedIdeas.length > 0 && (
         <div className="text-center mt-8">
           <p className="text-gray-500 mb-4">Not seeing what you like? Try adjusting your description or generating new ideas.</p>
           <Button

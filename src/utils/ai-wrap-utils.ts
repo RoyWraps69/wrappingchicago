@@ -1,16 +1,26 @@
+
 import { toast } from 'sonner';
 import { WrapIdea, exampleIdeas } from '@/types/wrap-idea';
 import { AIProvider, ImageModel } from '@/types/ai-wrap';
 
 // Generate mock ideas for demonstration
 export const generateMockIdeas = (businessName: string, desc: string, vehicleType: string): WrapIdea[] => {
-  return exampleIdeas.map((idea, index) => ({
+  console.log("Generating mock ideas with:", businessName, desc, vehicleType);
+  
+  // Create a copy of the example ideas to avoid mutating the original
+  const ideasCopy = JSON.parse(JSON.stringify(exampleIdeas));
+  
+  // Customize the ideas based on inputs
+  const customizedIdeas = ideasCopy.map((idea: WrapIdea, index: number) => ({
     ...idea,
     id: `${Date.now()}-${index}`,
     title: businessName ? `${idea.title} for ${businessName}` : idea.title,
     description: desc ? `${desc} - ${idea.description}` : idea.description,
     vehicleType: vehicleType || idea.vehicleType
   }));
+  
+  console.log("Generated ideas:", customizedIdeas);
+  return customizedIdeas;
 };
 
 // Check if API key exists for Firefly

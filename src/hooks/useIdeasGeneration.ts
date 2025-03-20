@@ -28,12 +28,15 @@ export const useIdeasGeneration = (generatedImage: string | null) => {
     
     // Show a toast to indicate the process has started
     toast.info("Generating new wrap concepts...");
+    console.log("Generating ideas for:", business, description, selectedVehicleType);
     
     setTimeout(() => {
       const newIdeas = generateMockIdeas(business, description, selectedVehicleType);
+      console.log("Generated ideas:", newIdeas);
       
       // Apply custom image to first idea if available
       if (generatedImage) {
+        console.log("Applying custom image to first idea:", generatedImage);
         newIdeas[0] = {
           ...newIdeas[0],
           imageUrl: generatedImage
@@ -44,6 +47,7 @@ export const useIdeasGeneration = (generatedImage: string | null) => {
       setIsGenerating(false);
       setShowResults(true);
       toast.success("New wrap concepts generated!");
+      console.log("Ideas generation complete, showing results");
       
       // Scroll to results section
       setTimeout(() => {

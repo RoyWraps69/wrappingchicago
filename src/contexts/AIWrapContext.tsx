@@ -1,5 +1,5 @@
 
-import React, { createContext, useState, useContext, ReactNode } from 'react';
+import React, { createContext, useState, useContext, ReactNode, useEffect } from 'react';
 import { AIWrapContextType } from '@/types/ai-wrap';
 import { useApiKeyManagement } from '@/hooks/useApiKeyManagement';
 import { useIdeasGeneration } from '@/hooks/useIdeasGeneration';
@@ -35,6 +35,7 @@ export const AIWrapProvider: React.FC<{ children: ReactNode }> = ({ children }) 
   
   // Define the wrapper function for handleGenerateIdeas
   const handleGenerateIdeas = () => {
+    console.log("AIWrapContext: handleGenerateIdeas called with", business, description, selectedVehicleType);
     return generateIdeas(business, description, selectedVehicleType, validateApiKey);
   };
   
@@ -56,6 +57,32 @@ export const AIWrapProvider: React.FC<{ children: ReactNode }> = ({ children }) 
     business,
     handleGenerateIdeas
   );
+  
+  // Update ideas generation with latest generated image
+  useEffect(() => {
+    if (generatedImage && generatedIdeas.length > 0) {
+      console.log("Updating first idea with generated image:", generatedImage);
+      const updatedIdeas = [...generatedIdeas];
+      updatedIdeas[0] = {
+        ...updatedIdeas[0],
+        imageUrl: generatedImage
+      };
+      setGeneratedIdeas(updatedIdeas);
+    }
+  }, [generatedImage]);
+
+  // Debug logging for context values
+  useEffect(() => {
+    console.log("AIWrapContext values updated:", {
+      business,
+      description,
+      selectedVehicleType,
+      hasApiKey,
+      isGenerating,
+      showResults,
+      ideasCount: generatedIdeas.length
+    });
+  }, [business, description, selectedVehicleType, hasApiKey, isGenerating, showResults, generatedIdeas]);
 
   const value: AIWrapContextType = {
     business,
