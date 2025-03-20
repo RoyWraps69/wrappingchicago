@@ -3,6 +3,8 @@ import { useState } from 'react';
 import { toast } from 'sonner';
 import { WrapIdea } from '@/types/wrap-idea';
 import { generateMockIdeas } from '@/utils/ai-wrap-utils';
+import { generateImage } from '@/services/image-generation';
+import { createImagePrompt } from '@/utils/ai-wrap-utils';
 
 export const useIdeasGeneration = (generatedImage: string | null) => {
   // Ideas generation state
@@ -11,7 +13,7 @@ export const useIdeasGeneration = (generatedImage: string | null) => {
   const [showResults, setShowResults] = useState(false);
   
   // Generate wrap ideas
-  const handleGenerateIdeas = (
+  const handleGenerateIdeas = async (
     business: string, 
     description: string, 
     selectedVehicleType: string,
@@ -30,12 +32,40 @@ export const useIdeasGeneration = (generatedImage: string | null) => {
     toast.info("Generating new wrap concepts...");
     console.log("Generating ideas for:", business, description, selectedVehicleType);
     
-    setTimeout(() => {
+    try {
+      // Generate ideas first
       const newIdeas = generateMockIdeas(business, description, selectedVehicleType);
-      console.log("Generated ideas:", newIdeas);
       
-      // Apply custom image to first idea if available
-      if (generatedImage) {
+      // Generate an image for the first idea if we don't already have one
+      if (!generatedImage && newIdeas.length > 0) {
+        const prompt = createImagePrompt(
+          selectedVehicleType,
+          business,
+          description || `Professional ${selectedVehicleType} wrap for ${business}`
+        );
+        
+        console.log("Auto-generating image with prompt:", prompt);
+        toast.info("Generating a design for your first concept...");
+        
+        try {
+          const imageUrl = await generateImage({
+            prompt,
+            size: "1024x1024"
+          });
+          
+          if (imageUrl) {
+            console.log("Auto-generated image for first idea:", imageUrl);
+            newIdeas[0] = {
+              ...newIdeas[0],
+              imageUrl
+            };
+          }
+        } catch (error) {
+          console.error("Error auto-generating image:", error);
+          // Continue even if image generation fails
+        }
+      } else if (generatedImage) {
+        // Apply custom image to first idea if available
         console.log("Applying custom image to first idea:", generatedImage);
         newIdeas[0] = {
           ...newIdeas[0],
@@ -43,11 +73,10 @@ export const useIdeasGeneration = (generatedImage: string | null) => {
         };
       }
       
+      console.log("Generated ideas:", newIdeas);
       setGeneratedIdeas(newIdeas);
-      setIsGenerating(false);
       setShowResults(true);
       toast.success("New wrap concepts generated!");
-      console.log("Ideas generation complete, showing results");
       
       // Scroll to results section
       setTimeout(() => {
@@ -56,7 +85,12 @@ export const useIdeasGeneration = (generatedImage: string | null) => {
           resultsSection.scrollIntoView({ behavior: 'smooth' });
         }
       }, 100);
-    }, 2000);
+    } catch (error) {
+      console.error("Error generating ideas:", error);
+      toast.error("Failed to generate ideas. Please try again.");
+    } finally {
+      setIsGenerating(false);
+    }
   };
 
   // Handle like idea feedback

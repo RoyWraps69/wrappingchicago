@@ -13,14 +13,16 @@ export const AIWrapProvider: React.FC<{ children: ReactNode }> = ({ children }) 
   const [description, setDescription] = useState('');
   const [selectedVehicleType, setSelectedVehicleType] = useState('car');
   
-  // API key management
-  const [hasApiKey, setHasApiKey] = useState(false);
-  
-  // Check for API key
-  useEffect(() => {
-    const apiKey = localStorage.getItem('stability_api_key');
-    setHasApiKey(!!apiKey);
-  }, []);
+  // Image generation
+  const {
+    imagePrompt,
+    setImagePrompt,
+    isGeneratingImage,
+    generatedImage,
+    imageGenerationError,
+    handleGenerateImage: generateImage,
+    handleDownloadImage
+  } = useImageGeneration();
   
   // Ideas generation
   const {
@@ -31,7 +33,7 @@ export const AIWrapProvider: React.FC<{ children: ReactNode }> = ({ children }) 
     setShowResults,
     handleGenerateIdeas: generateIdeas,
     handleLikeIdea
-  } = useIdeasGeneration(null); // Pass null initially, will be updated with generatedImage
+  } = useIdeasGeneration(generatedImage);
   
   // Validate API key
   const validateApiKey = (): boolean => {
@@ -49,48 +51,46 @@ export const AIWrapProvider: React.FC<{ children: ReactNode }> = ({ children }) 
     return generateIdeas(business, description, selectedVehicleType, validateApiKey);
   };
   
-  // Image generation
-  const {
-    imagePrompt,
-    setImagePrompt,
-    isGeneratingImage,
-    generatedImage,
-    imageGenerationError,
-    handleGenerateImage,
-    handleDownloadImage
-  } = useImageGeneration(
-    setShowResults,
-    generatedIdeas,
-    setGeneratedIdeas,
-    business,
-    handleGenerateIdeas
-  );
-  
-  // Update ideas generation with latest generated image
-  useEffect(() => {
-    if (generatedImage && generatedIdeas.length > 0) {
-      console.log("Updating first idea with generated image:", generatedImage);
+  // Define the wrapper function for handleGenerateImage
+  const handleGenerateImage = async () => {
+    if (!validateApiKey()) return;
+    
+    const result = await generateImage(imagePrompt, business, selectedVehicleType);
+    
+    if (result && generatedIdeas.length > 0) {
+      // Update first idea with the new image
       const updatedIdeas = [...generatedIdeas];
       updatedIdeas[0] = {
         ...updatedIdeas[0],
-        imageUrl: generatedImage
+        imageUrl: result
       };
       setGeneratedIdeas(updatedIdeas);
+      
+      // Show results
+      setShowResults(true);
+      
+      // Scroll to results
+      setTimeout(() => {
+        const resultsSection = document.getElementById('results-section');
+        if (resultsSection) {
+          resultsSection.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
     }
-  }, [generatedImage]);
-
+  };
+  
   // Debug logging for context values
   useEffect(() => {
     console.log("AIWrapContext values updated:", {
       business,
       description,
       selectedVehicleType,
-      hasApiKey,
       isGenerating,
       showResults,
-      ideasCount: generatedIdeas.length
+      ideasCount: generatedIdeas.length,
+      hasGeneratedImage: !!generatedImage
     });
-  }, [business, description, selectedVehicleType, hasApiKey, isGenerating, showResults, generatedIdeas]);
+  }, [business, description, selectedVehicleType, isGenerating, showResults, generatedIdeas, generatedImage]);
 
   const value: AIWrapContextType = {
     business,
@@ -107,9 +107,7 @@ export const AIWrapProvider: React.FC<{ children: ReactNode }> = ({ children }) 
     isGenerating,
     generatedIdeas,
     showResults,
-    isApiKeyModalOpen: false,
-    setIsApiKeyModalOpen: () => {},
-    hasApiKey,
+    hasApiKey: !!localStorage.getItem('stability_api_key'),
     handleGenerateIdeas,
     handleGenerateImage,
     handleLikeIdea,

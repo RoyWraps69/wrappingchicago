@@ -1,22 +1,6 @@
 
 import { WrapIdea } from '@/types/wrap-idea';
 
-// AI Provider types
-export type AIProvider = 'stability';
-
-// Image model types
-export type ImageModel = 'stability-sdxl';
-
-// Provider model mapping
-export const PROVIDER_MODELS: Record<AIProvider, ImageModel[]> = {
-  'stability': ['stability-sdxl']
-};
-
-// Provider display names
-export const PROVIDER_NAMES: Record<AIProvider, string> = {
-  'stability': 'Stability AI'
-};
-
 export interface AIWrapContextType {
   // Form state
   business: string;
@@ -39,8 +23,6 @@ export interface AIWrapContextType {
   showResults: boolean;
   
   // API key state
-  isApiKeyModalOpen: boolean;
-  setIsApiKeyModalOpen: (value: boolean) => void;
   hasApiKey: boolean;
   
   // Actions

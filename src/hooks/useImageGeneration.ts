@@ -1,34 +1,31 @@
 
 import { useState } from 'react';
 import { toast } from 'sonner';
-import { WrapIdea } from '@/types/wrap-idea';
 import { createImagePrompt, downloadImage } from '@/utils/ai-wrap-utils';
 import { generateImage } from '@/services/image-generation';
 
-export const useImageGeneration = (
-  setShowResults: (show: boolean) => void,
-  generatedIdeas: WrapIdea[],
-  setGeneratedIdeas: (ideas: WrapIdea[]) => void,
-  business: string,
-  handleGenerateIdeas: () => void
-) => {
+export const useImageGeneration = () => {
   const [imagePrompt, setImagePrompt] = useState('');
   const [isGeneratingImage, setIsGeneratingImage] = useState(false);
   const [generatedImage, setGeneratedImage] = useState<string | null>(null);
   const [imageGenerationError, setImageGenerationError] = useState<string | undefined>(undefined);
 
   // Generate custom image
-  const handleGenerateImage = async () => {
-    if (!imagePrompt.trim()) {
+  const handleGenerateImage = async (
+    prompt: string,
+    business: string,
+    vehicleType: string
+  ): Promise<string | null> => {
+    if (!prompt.trim()) {
       toast.error("Please enter a description for your wrap design");
-      return;
+      return null;
     }
     
     // Check for API key
     const apiKey = localStorage.getItem('stability_api_key');
     if (!apiKey) {
       toast.error("Stability AI API key is required. Please set your API key in settings.");
-      return;
+      return null;
     }
     
     setImageGenerationError(undefined);
@@ -42,9 +39,9 @@ export const useImageGeneration = (
     
     try {
       const fullPrompt = createImagePrompt(
-        'car',  // Default to car if no vehicle type selected
+        vehicleType || 'car',
         business, 
-        imagePrompt
+        prompt
       );
       console.log("Generating image with prompt:", fullPrompt);
       
@@ -62,41 +59,18 @@ export const useImageGeneration = (
         console.log("Image generated successfully:", imageUrl);
         setGeneratedImage(imageUrl);
         toast.success("Custom wrap design generated!");
-        
-        // If we already have ideas, update the first one with the new image
-        if (generatedIdeas.length > 0) {
-          console.log("Updating first idea with new image");
-          const updatedIdeas = [...generatedIdeas];
-          updatedIdeas[0] = {
-            ...updatedIdeas[0],
-            imageUrl: imageUrl
-          };
-          setGeneratedIdeas(updatedIdeas);
-        } else {
-          // If we don't have any generated ideas yet, generate them now
-          if (business.trim()) {
-            console.log("No ideas exist yet, generating ideas with business:", business);
-            handleGenerateIdeas();
-          }
-        }
-        
-        // Always show results after generating an image
-        setShowResults(true);
-        setTimeout(() => {
-          const resultsSection = document.getElementById('results-section');
-          if (resultsSection) {
-            resultsSection.scrollIntoView({ behavior: 'smooth' });
-          }
-        }, 100);
+        return imageUrl;
       } else {
         setImageGenerationError("Failed to generate image. Please try again.");
         toast.error("Failed to generate image. Please try again.");
+        return null;
       }
     } catch (error) {
       console.error("Error generating image:", error);
       const errorMessage = error instanceof Error ? error.message : "Failed to generate image";
       setImageGenerationError(errorMessage);
       toast.error(errorMessage);
+      return null;
     } finally {
       clearTimeout(timeoutWarning);
       setIsGeneratingImage(false);
