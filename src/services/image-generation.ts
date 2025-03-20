@@ -11,13 +11,13 @@ type GenerateImageParams = {
 export const generateImage = async ({
   prompt,
   size = "1024x1024",
-  model
+  model = "firefly-image"
 }: GenerateImageParams): Promise<string | null> => {
-  console.log(`Generating image with ${model || 'default'} model and prompt: ${prompt}`);
+  console.log(`Generating image with ${model} model and prompt: ${prompt}`);
   
   try {
-    // Simply pass through to the firefly generator for now
-    // The model isn't used in our implementation currently
+    // For now, we're just using Firefly regardless of the model type
+    // In the future, we could branch based on model type
     const result = await generateImageFirefly({
       prompt,
       size
