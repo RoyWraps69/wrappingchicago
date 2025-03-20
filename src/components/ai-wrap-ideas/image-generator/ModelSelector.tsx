@@ -4,27 +4,22 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { Button } from '@/components/ui/button';
 import { Info } from 'lucide-react';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
-import { AIProvider } from '@/types/ai-wrap';
+import { AIProvider, ImageModel } from '@/types/ai-wrap';
 
 interface ModelSelectorProps {
   selectedModel: string;
   setSelectedModel: (value: string) => void;
-  aiProvider: AIProvider;
   availableModels: string[];
 }
 
 export const ModelSelector: React.FC<ModelSelectorProps> = ({
   selectedModel,
   setSelectedModel,
-  aiProvider,
   availableModels
 }) => {
   // Get model display names
   const getModelDisplayName = (model: string) => {
     switch (model) {
-      case 'firefly-image': return 'Standard Design';
-      case 'firefly-vector': return 'Vector Design';
-      case 'dall-e-3': return 'Standard Quality';
       case 'stability-sdxl': return 'Standard Quality';
       default: return model;
     }
@@ -47,21 +42,7 @@ export const ModelSelector: React.FC<ModelSelectorProps> = ({
             </TooltipTrigger>
             <TooltipContent>
               <p className="max-w-xs">
-                {aiProvider === 'firefly' ? (
-                  <>
-                    <strong>Standard Design:</strong> Photorealistic design (faster)
-                    <br />
-                    <strong>Vector Design:</strong> Illustration style with cleaner lines (slower)
-                  </>
-                ) : aiProvider === 'openai' ? (
-                  <>
-                    <strong>DALL-E 3:</strong> Creates high-quality vehicle wrap designs with excellent brand recognition
-                  </>
-                ) : (
-                  <>
-                    <strong>Stability AI:</strong> Creates detailed wrap designs with high fidelity
-                  </>
-                )}
+                <strong>Stability AI:</strong> Creates detailed wrap designs with high fidelity
               </p>
             </TooltipContent>
           </Tooltip>
@@ -81,15 +62,7 @@ export const ModelSelector: React.FC<ModelSelectorProps> = ({
         </SelectContent>
       </Select>
       <p className="text-xs text-gray-500 mt-1">
-        {aiProvider === 'firefly' ? (
-          <>Adobe Express creates commercial-use designs using licensed content and AI technology.</>
-        ) : aiProvider === 'openai' ? (
-          <>DALL-E 3 creates detailed designs with high brand recognition.</>
-        ) : (
-          <>Stability AI creates high-fidelity wrap designs with excellent details.</>
-        )}
-        {selectedModel === 'firefly-vector' && 
-          " Vector design mode takes longer to process."}
+        Stability AI creates high-fidelity wrap designs with excellent details.
       </p>
     </div>
   );
