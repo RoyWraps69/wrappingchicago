@@ -3,6 +3,7 @@ import React from 'react';
 import { Button } from '@/components/ui/button';
 import { ThumbsUp, Download } from 'lucide-react';
 import { toast } from 'sonner';
+import { Skeleton } from '@/components/ui/skeleton';
 
 interface WrapIdea {
   id: string;
@@ -18,23 +19,33 @@ interface WrapIdeaCardProps {
 }
 
 const WrapIdeaCard = ({ idea, onLike }: WrapIdeaCardProps) => {
-  const defaultImage = `https://placehold.co/1024x1024/0B3954/FFFFFF?text=${encodeURIComponent(idea.vehicleType + ' Wrap')}`;
-  
   return (
     <div className="bg-white rounded-lg shadow-lg p-6 transition-all hover:shadow-xl">
       <div className="aspect-w-16 aspect-h-9 mb-4 overflow-hidden rounded-md bg-gray-100">
-        <img 
-          src={idea.imageUrl || defaultImage}
-          alt={idea.title}
-          className="object-cover w-full h-full"
-          loading="lazy"
-          onError={(e) => {
-            console.error("Card image failed to load:", e);
-            const target = e.currentTarget;
-            target.onerror = null; // Prevent infinite loop
-            target.src = defaultImage;
-          }}
-        />
+        {idea.imageUrl ? (
+          <img 
+            src={idea.imageUrl}
+            alt={idea.title}
+            className="object-cover w-full h-full"
+            loading="lazy"
+            onError={(e) => {
+              console.error("Card image failed to load:", e);
+              // No fallback - show error state
+              const target = e.currentTarget;
+              target.style.display = 'none';
+              target.parentElement?.classList.add('flex', 'items-center', 'justify-center');
+              const errorMsg = document.createElement('div');
+              errorMsg.textContent = 'Image generation failed';
+              errorMsg.className = 'text-red-500 text-sm';
+              target.parentElement?.appendChild(errorMsg);
+            }}
+          />
+        ) : (
+          <div className="w-full h-full flex items-center justify-center">
+            <Skeleton className="h-full w-full absolute" />
+            <span className="relative z-10 text-gray-500">Waiting for image generation...</span>
+          </div>
+        )}
       </div>
       <h3 className="text-xl font-bold text-brand-navy mb-2">{idea.title}</h3>
       <p className="text-gray-700 mb-4">{idea.description}</p>
@@ -49,30 +60,32 @@ const WrapIdeaCard = ({ idea, onLike }: WrapIdeaCardProps) => {
           Like this idea
         </Button>
         
-        <Button
-          variant="ghost" 
-          size="sm"
-          className="text-gray-600"
-          onClick={() => {
-            try {
-              // Create a download link for the image
-              const link = document.createElement('a');
-              link.href = idea.imageUrl || defaultImage;
-              link.download = `${idea.title.replace(/\s+/g, '-').toLowerCase()}-${Date.now()}.png`;
-              document.body.appendChild(link);
-              link.click();
-              document.body.removeChild(link);
-              
-              toast.success("Design concept downloaded!");
-            } catch (error) {
-              console.error("Error downloading card image:", error);
-              toast.error("Failed to download image");
-            }
-          }}
-        >
-          <Download className="w-4 h-4 mr-2" />
-          Save
-        </Button>
+        {idea.imageUrl && (
+          <Button
+            variant="ghost" 
+            size="sm"
+            className="text-gray-600"
+            onClick={() => {
+              try {
+                // Create a download link for the image
+                const link = document.createElement('a');
+                link.href = idea.imageUrl || '';
+                link.download = `${idea.title.replace(/\s+/g, '-').toLowerCase()}-${Date.now()}.png`;
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                
+                toast.success("Design concept downloaded!");
+              } catch (error) {
+                console.error("Error downloading card image:", error);
+                toast.error("Failed to download image");
+              }
+            }}
+          >
+            <Download className="w-4 h-4 mr-2" />
+            Save
+          </Button>
+        )}
       </div>
     </div>
   );

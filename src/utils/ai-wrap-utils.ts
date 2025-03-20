@@ -10,14 +10,7 @@ export const generateMockIdeas = (businessName: string, desc: string, vehicleTyp
   // Create a deep copy of the example ideas to avoid mutating the original
   const ideasCopy = JSON.parse(JSON.stringify(exampleIdeas));
   
-  // Set vehicle-specific placeholders
-  const vehiclePlaceholder = vehicleType === 'truck' ? 
-    'https://placehold.co/1024x1024/ff5e7d/FFFFFF?text=Truck+Wrap' :
-    vehicleType === 'van' ? 
-      'https://placehold.co/1024x1024/0B3954/FFFFFF?text=Van+Wrap' :
-      'https://placehold.co/1024x1024/0B3954/FFFFFF?text=Car+Wrap';
-  
-  // Customize the ideas based on inputs
+  // Customize the ideas based on inputs without placeholders
   const customizedIdeas = ideasCopy.map((idea: WrapIdea, index: number) => {
     const newIdea = {
       ...idea,
@@ -25,7 +18,8 @@ export const generateMockIdeas = (businessName: string, desc: string, vehicleTyp
       title: businessName ? `${idea.title} for ${businessName}` : idea.title,
       description: desc ? `${desc} - ${idea.description}` : idea.description,
       vehicleType: vehicleType || idea.vehicleType,
-      imageUrl: vehiclePlaceholder // Always set a placeholder to ensure we have an image
+      // Don't set a default imageUrl - wait for AI generation
+      imageUrl: undefined
     };
     console.log(`Generated idea ${index}:`, newIdea);
     return newIdea;

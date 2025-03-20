@@ -107,6 +107,10 @@ export const useImageGeneration = (
 
   // Handle image download
   const handleDownloadImage = () => {
+    if (!generatedImage) {
+      toast.error("No image to download. Please generate an image first.");
+      return;
+    }
     downloadImage(generatedImage);
   };
 

@@ -25,11 +25,7 @@ export const generateImage = async ({
       // Check if Adobe Express SDK is available
       if (!window.CCEverywhere) {
         console.error("Adobe Express SDK not loaded");
-        
-        // Fallback to placeholder for development
-        console.log("Falling back to placeholder image for development");
-        const placeholderUrl = `https://placehold.co/1024x1024/0B3954/FFFFFF?text=${encodeURIComponent(prompt)}`;
-        resolve(placeholderUrl);
+        reject(new Error("Adobe Express SDK not loaded. Please refresh the page and try again."));
         return;
       }
       
@@ -60,19 +56,11 @@ export const generateImage = async ({
       })
       .catch(error => {
         console.error("Error initializing Adobe Express SDK:", error);
-        
-        // Fallback to placeholder on error
-        const placeholderUrl = `https://placehold.co/1024x1024/0B3954/FFFFFF?text=${encodeURIComponent(prompt)}`;
-        console.log("Error occurred, using placeholder:", placeholderUrl);
-        resolve(placeholderUrl);
+        reject(new Error("Failed to initialize Adobe Express. Please refresh and try again."));
       });
     } catch (error) {
       console.error("Error in generateImage:", error);
-      
-      // Fallback to placeholder on unexpected error
-      const placeholderUrl = `https://placehold.co/1024x1024/0B3954/FFFFFF?text=${encodeURIComponent("Error: " + error)}`;
-      console.log("Unexpected error, using error placeholder:", placeholderUrl);
-      resolve(placeholderUrl);
+      reject(error);
     }
   });
 };
@@ -106,20 +94,13 @@ const createImageWithSDK = (
       console.log("Generated image URL from Adobe Express");
       resolve(imageUrl);
     } else {
-      // Fallback if we don't get a base64 result
-      console.warn("No base64 data returned from Adobe Express, using fallback");
-      const placeholderUrl = `https://placehold.co/1024x1024/0B3954/FFFFFF?text=${encodeURIComponent(prompt)}`;
-      console.log("Using placeholder instead:", placeholderUrl);
-      resolve(placeholderUrl);
+      console.warn("No base64 data returned from Adobe Express");
+      reject(new Error("No image data returned from Adobe Express. Please try again."));
     }
   })
   .catch((error: any) => {
     console.error("Error with Adobe Express image creation:", error);
-    
-    // Fallback to placeholder on error
-    const placeholderUrl = `https://placehold.co/1024x1024/0B3954/FFFFFF?text=${encodeURIComponent(prompt)}`;
-    console.log("Error occurred, using placeholder:", placeholderUrl);
-    resolve(placeholderUrl);
+    reject(error);
   });
 };
 

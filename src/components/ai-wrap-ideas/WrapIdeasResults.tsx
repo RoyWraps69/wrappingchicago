@@ -60,8 +60,12 @@ const WrapIdeasResults = () => {
                 onError={(e) => {
                   console.error("Image failed to load:", e);
                   const target = e.currentTarget;
-                  target.onerror = null; // Prevent infinite loop
-                  target.src = "https://placehold.co/1024x1024/0B3954/FFFFFF?text=Design+Loading+Error";
+                  target.style.display = 'none';
+                  
+                  const errorMsg = document.createElement('div');
+                  errorMsg.innerHTML = 'Image generation failed. Please try again.';
+                  errorMsg.className = 'text-red-500 p-4 text-center';
+                  target.parentElement?.appendChild(errorMsg);
                 }}
               />
             </div>

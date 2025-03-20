@@ -16,8 +16,7 @@ export const generateImage = async ({
   console.log(`Generating image with ${model} model and prompt: ${prompt}`);
   
   try {
-    // For now, we're just using Firefly regardless of the model type
-    // In the future, we could branch based on model type
+    // Generate image using Firefly
     const result = await generateImageFirefly({
       prompt,
       size
@@ -27,6 +26,6 @@ export const generateImage = async ({
     return result;
   } catch (error) {
     console.error("Error in image generation service:", error);
-    throw error;
+    throw error; // Rethrow to let caller handle the error
   }
 };
