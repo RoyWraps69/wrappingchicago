@@ -11,9 +11,9 @@ export interface WrapIdea {
 export const exampleIdeas: WrapIdea[] = [
   {
     id: '1',
-    title: 'Gradient Splash for Food Truck',
-    description: 'A vibrant gradient design with splashes of color that attract attention, perfect for food trucks wanting to stand out.',
-    imageUrl: 'https://placehold.co/600x400/ff5e7d/FFFFFF?text=Food+Truck+Design',
+    title: 'Gradient Splash Design',
+    description: 'A vibrant gradient design with splashes of color that attract attention, perfect for businesses wanting to stand out.',
+    imageUrl: 'https://placehold.co/600x400/ff5e7d/FFFFFF?text=Vehicle+Design',
     vehicleType: 'truck'
   },
   {
