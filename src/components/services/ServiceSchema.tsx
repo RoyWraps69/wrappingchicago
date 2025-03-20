@@ -5,13 +5,19 @@ interface ServiceSchemaProps {
   title: string;
   description: string;
   path: string;
+  includeAI?: boolean;
 }
 
-const ServiceSchema: React.FC<ServiceSchemaProps> = ({ title, description, path }) => {
+const ServiceSchema: React.FC<ServiceSchemaProps> = ({ 
+  title, 
+  description, 
+  path,
+  includeAI = false 
+}) => {
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
-    "name": title,
+    "name": includeAI ? `AI-Powered ${title}` : title,
     "provider": {
       "@type": "LocalBusiness",
       "name": "Chicago Fleet Wraps",
@@ -26,8 +32,10 @@ const ServiceSchema: React.FC<ServiceSchemaProps> = ({ title, description, path 
       "telephone": "(312) 597-1286",
       "priceRange": "$$"
     },
-    "description": description,
-    "serviceType": title,
+    "description": includeAI 
+      ? `${description} Designs created with our artificial intelligence design generator.` 
+      : description,
+    "serviceType": includeAI ? `AI-Enhanced ${title}` : title,
     "areaServed": {
       "@type": "City",
       "name": "Chicago"
@@ -42,6 +50,22 @@ const ServiceSchema: React.FC<ServiceSchemaProps> = ({ title, description, path 
       }
     }
   };
+
+  // Add AI tool schema if AI is included
+  if (includeAI) {
+    serviceSchema["additionalProperty"] = [
+      {
+        "@type": "PropertyValue",
+        "name": "AI Design Assistant",
+        "value": "Included"
+      },
+      {
+        "@type": "PropertyValue",
+        "name": "Technology",
+        "value": "Artificial Intelligence Image Generation"
+      }
+    ];
+  }
 
   return (
     <script type="application/ld+json">

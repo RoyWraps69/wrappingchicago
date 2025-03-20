@@ -4,16 +4,38 @@ import React from 'react';
 interface ServiceHeaderProps {
   title: string;
   showImages?: boolean;
+  highlightAI?: boolean;
 }
 
-const ServiceHeader: React.FC<ServiceHeaderProps> = ({ title, showImages = false }) => {
+const ServiceHeader: React.FC<ServiceHeaderProps> = ({ 
+  title, 
+  showImages = false,
+  highlightAI = false
+}) => {
   return (
     <div className="mb-8">
-      <h1 className="text-4xl font-bold text-brand-navy mb-6">{title}</h1>
+      <h1 className="text-4xl font-bold text-brand-navy mb-6">
+        {title}
+        {highlightAI && (
+          <span className="ml-2 text-sm bg-brand-red text-white px-3 py-1 rounded-full uppercase">
+            AI-Powered
+          </span>
+        )}
+      </h1>
       <p className="text-lg mb-6">
-        At Chicago Fleet Wraps, we provide premium quality vehicle wrapping services
-        throughout the greater Chicago area. Our team of experienced professionals
-        uses only the highest quality materials to ensure your wrap looks great and lasts.
+        {highlightAI ? (
+          <>
+            At Chicago Fleet Wraps, we combine <strong>artificial intelligence</strong> with expert craftsmanship to provide 
+            premium quality vehicle wrapping services throughout the greater Chicago area. Our team of experienced professionals
+            uses only the highest quality materials and <strong>AI design technology</strong> to ensure your wrap looks great and lasts.
+          </>
+        ) : (
+          <>
+            At Chicago Fleet Wraps, we provide premium quality vehicle wrapping services
+            throughout the greater Chicago area. Our team of experienced professionals
+            uses only the highest quality materials to ensure your wrap looks great and lasts.
+          </>
+        )}
       </p>
       
       {showImages && (

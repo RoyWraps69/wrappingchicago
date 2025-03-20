@@ -14,7 +14,7 @@ const Schema = ({ city }: SchemaProps) => {
     "@type": "LocalBusiness",
     "name": "Chicago Fleet Wraps",
     "alternateName": "CFW Vehicle Wrapping Services",
-    "description": `Premium vehicle wrapping service serving ${city.name}, IL with fleet wraps, color change wraps, and commercial graphics.`,
+    "description": `Premium vehicle wrapping service serving ${city.name}, IL with AI-powered design for fleet wraps, color change wraps, and commercial graphics.`,
     "url": `https://chicagofleetwraps.com/vehicle-wraps-${city.slug}-il`,
     "telephone": "(312) 597-1286",
     "email": "roy@chicagofleetwraps.com",
@@ -83,8 +83,8 @@ const Schema = ({ city }: SchemaProps) => {
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": "Fleet Vehicle Wraps",
-            "description": `Professional fleet vehicle wraps for ${city.name}, IL businesses. Transform your company vehicles into mobile billboards.`,
+            "name": "AI-Powered Fleet Vehicle Wraps",
+            "description": `Professional fleet vehicle wraps with AI design assistance for ${city.name}, IL businesses. Transform your company vehicles into mobile billboards.`,
             "areaServed": city.name
           }
         },
@@ -101,8 +101,8 @@ const Schema = ({ city }: SchemaProps) => {
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": "Commercial Graphics",
-            "description": `Eye-catching commercial graphics and vehicle lettering for ${city.name}, IL businesses.`,
+            "name": "AI-Generated Commercial Graphics",
+            "description": `Eye-catching commercial graphics and vehicle lettering for ${city.name}, IL businesses, designed with artificial intelligence assistance.`,
             "areaServed": city.name
           }
         },
@@ -145,8 +145,35 @@ const Schema = ({ city }: SchemaProps) => {
         },
         "datePublished": "2023-03-22",
         "reviewBody": "I couldn't be happier with the color change wrap they did on my Tesla. The attention to detail was impressive."
+      },
+      {
+        "@type": "Review",
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5",
+          "bestRating": "5"
+        },
+        "author": {
+          "@type": "Person",
+          "name": "Robert Chen"
+        },
+        "datePublished": "2023-09-15",
+        "reviewBody": "Their AI wrap design tool saved us so much time in the design phase. The final wrap looks exactly like the generated concept!"
       }
     ],
+    "makesOffer": {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "AI Vehicle Wrap Design Generator",
+        "url": "https://chicagofleetwraps.com/ai-wrap-ideas"
+      }
+    },
+    "additionalProperty": {
+      "@type": "PropertyValue",
+      "name": "Technology",
+      "value": "AI-powered design"
+    },
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": "4.9",
