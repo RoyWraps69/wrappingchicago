@@ -33,6 +33,13 @@ export const generateImage = async ({
         return;
       }
       
+      // Check if SDK is already initialized
+      if (window.CCEverywhere.isInitialized) {
+        console.log("Adobe Express SDK already initialized, using existing instance");
+        createImageWithSDK(window.CCEverywhere, prompt, size, resolve, reject);
+        return;
+      }
+      
       // Initialize Adobe Express
       window.CCEverywhere.initialize({
         clientId: clientId,
@@ -46,38 +53,13 @@ export const generateImage = async ({
       })
       .then(ccEverywhere => {
         console.log("Adobe Express SDK initialized successfully");
+        // Store initialization state
+        window.CCEverywhere.isInitialized = true;
         
-        // Size mapping - Adobe Express expects specific dimensions
-        const [width, height] = size.split('x').map(Number);
-        
-        // Use the createImage API specifically for image generation with a prompt
-        return ccEverywhere.createImage({
-          width: width || 1024,
-          height: height || 1024,
-          prompt: prompt,
-          outputParams: {
-            outputType: 'base64'
-          }
-        });
-      })
-      .then(result => {
-        console.log("Adobe Express image created:", result);
-        
-        if (result?.base64) {
-          // Convert base64 to URL
-          const imageUrl = `data:image/png;base64,${result.base64}`;
-          console.log("Generated image URL from Adobe Express");
-          resolve(imageUrl);
-        } else {
-          // Fallback if we don't get a base64 result
-          console.warn("No base64 data returned from Adobe Express, using fallback");
-          const placeholderUrl = `https://placehold.co/1024x1024/0B3954/FFFFFF?text=${encodeURIComponent(prompt)}`;
-          console.log("Using placeholder instead:", placeholderUrl);
-          resolve(placeholderUrl);
-        }
+        createImageWithSDK(ccEverywhere, prompt, size, resolve, reject);
       })
       .catch(error => {
-        console.error("Error with Adobe Express image creation:", error);
+        console.error("Error initializing Adobe Express SDK:", error);
         
         // Fallback to placeholder on error
         const placeholderUrl = `https://placehold.co/1024x1024/0B3954/FFFFFF?text=${encodeURIComponent(prompt)}`;
@@ -95,10 +77,57 @@ export const generateImage = async ({
   });
 };
 
+// Helper function to create an image using the SDK instance
+const createImageWithSDK = (
+  ccEverywhere: any, 
+  prompt: string, 
+  size: string,
+  resolve: (value: string | null) => void,
+  reject: (reason?: any) => void
+) => {
+  // Size mapping - Adobe Express expects specific dimensions
+  const [width, height] = size.split('x').map(Number);
+  
+  // Use the createImage API specifically for image generation with a prompt
+  ccEverywhere.createImage({
+    width: width || 1024,
+    height: height || 1024,
+    prompt: prompt,
+    outputParams: {
+      outputType: 'base64'
+    }
+  })
+  .then((result: any) => {
+    console.log("Adobe Express image created:", result);
+    
+    if (result?.base64) {
+      // Convert base64 to URL
+      const imageUrl = `data:image/png;base64,${result.base64}`;
+      console.log("Generated image URL from Adobe Express");
+      resolve(imageUrl);
+    } else {
+      // Fallback if we don't get a base64 result
+      console.warn("No base64 data returned from Adobe Express, using fallback");
+      const placeholderUrl = `https://placehold.co/1024x1024/0B3954/FFFFFF?text=${encodeURIComponent(prompt)}`;
+      console.log("Using placeholder instead:", placeholderUrl);
+      resolve(placeholderUrl);
+    }
+  })
+  .catch((error: any) => {
+    console.error("Error with Adobe Express image creation:", error);
+    
+    // Fallback to placeholder on error
+    const placeholderUrl = `https://placehold.co/1024x1024/0B3954/FFFFFF?text=${encodeURIComponent(prompt)}`;
+    console.log("Error occurred, using placeholder:", placeholderUrl);
+    resolve(placeholderUrl);
+  });
+};
+
 // Type definition for the Adobe Express SDK
 declare global {
   interface Window {
     CCEverywhere: {
+      isInitialized?: boolean;
       initialize: (options: {
         clientId: string,
         appName: string,
