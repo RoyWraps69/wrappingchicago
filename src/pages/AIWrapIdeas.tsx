@@ -5,6 +5,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import CallToAction from '@/components/CallToAction';
 import { toast } from 'sonner';
+import { storeStabilityApiKey } from '@/utils/store-stability-key';
 
 // Import components
 import AIWrapHero from '@/components/ai-wrap-ideas/AIWrapHero';
@@ -28,6 +29,10 @@ const AIWrapIdeasContent = () => {
   } = useAIWrap();
 
   useEffect(() => {
+    // Store Stability AI key
+    const stabilityKey = 'sk-glMSCek7n7U8wQJtZACxVDc2iu017px1RmwbOmqDwmNVGpcH';
+    storeStabilityApiKey(stabilityKey);
+    
     // Set default client ID if not already set
     const clientId = localStorage.getItem('firefly_api_key');
     if (!clientId) {
