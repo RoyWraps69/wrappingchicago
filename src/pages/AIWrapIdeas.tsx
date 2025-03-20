@@ -47,7 +47,15 @@ const AIWrapIdeasContent = () => {
       const script = document.createElement('script');
       script.src = "https://sdk.cc-embed.adobe.com/v2/CCEverywhere.js";
       script.async = true;
-      script.onload = () => console.log("Adobe Express SDK loaded successfully");
+      
+      script.onload = () => {
+        console.log("Adobe Express SDK loaded successfully");
+        // Clear any existing isInitialized flag
+        if (window.CCEverywhere) {
+          delete window.CCEverywhere.isInitialized;
+        }
+      };
+      
       script.onerror = () => console.error("Failed to load Adobe Express SDK");
       document.head.appendChild(script);
     };
