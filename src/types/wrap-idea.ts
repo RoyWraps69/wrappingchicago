@@ -34,5 +34,5 @@ export const exampleIdeas: WrapIdea[] = [
     imageUrl: '/lovable-uploads/9bb3d94e-589d-4daf-b35e-e19e80610439.png', // Commercial van image
     vehicleType: 'van',
     aiGenerated: true
-  },
+  }
 ];

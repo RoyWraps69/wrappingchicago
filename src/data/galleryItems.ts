@@ -109,5 +109,5 @@ export const galleryItems: GalleryItem[] = [
     description: 'Custom accent graphics highlighting the vehicle's performance characteristics with precise application.',
     client: 'Automotive Enthusiast',
     location: 'Chicago, IL'
-  },
+  }
 ];
