@@ -15,7 +15,7 @@ export const exampleIdeas: WrapIdea[] = [
     id: '1',
     title: 'Vibrant Metallic Blue Design',
     description: 'A stunning metallic blue wrap with dynamic design elements, perfect for businesses wanting to make a bold statement.',
-    imageUrl: '/lovable-uploads/9de106b5-94cb-4fd1-a7c7-5c75c75b7cbb.png', // Blue metallic wrap
+    imageUrl: '/lovable-uploads/9de106b5-94cb-4fd1-a7c7-5c75c75b7cbb.png', // Blue metallic wrap - Color Change
     vehicleType: 'sports-car',
     aiGenerated: true
   },
@@ -31,7 +31,7 @@ export const exampleIdeas: WrapIdea[] = [
     id: '3',
     title: 'Service Van Comprehensive Branding',
     description: 'Bold typography and comprehensive service information that clearly communicates your business offerings.',
-    imageUrl: '/lovable-uploads/9bb3d94e-589d-4daf-b35e-e19e80610439.png', // Commercial van image
+    imageUrl: '/lovable-uploads/9bb3d94e-589d-4daf-b35e-e19e80610439.png', // Commercial Graphics van image
     vehicleType: 'van',
     aiGenerated: true
   }
