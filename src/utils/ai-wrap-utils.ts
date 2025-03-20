@@ -1,6 +1,6 @@
+
 import { toast } from 'sonner';
 import { WrapIdea, exampleIdeas } from '@/types/wrap-idea';
-import { AIProvider, ImageModel, PROVIDER_NAMES } from '@/types/ai-wrap';
 
 // Generate mock ideas for demonstration
 export const generateMockIdeas = (businessName: string, desc: string, vehicleType: string): WrapIdea[] => {
@@ -28,35 +28,12 @@ export const generateMockIdeas = (businessName: string, desc: string, vehicleTyp
   return customizedIdeas;
 };
 
-// Check if API key exists for the selected provider
-export const checkApiKey = (aiProvider: AIProvider): { valid: boolean; providerName: string } => {
-  let apiKey: string | null = null;
-  let storageKey = '';
-  let providerName = '';
-  
-  switch (aiProvider) {
-    case 'firefly':
-      storageKey = 'firefly_api_key';
-      providerName = PROVIDER_NAMES.firefly;
-      break;
-    case 'openai':
-      storageKey = 'openai_api_key';
-      providerName = PROVIDER_NAMES.openai;
-      break;
-    case 'stability':
-      storageKey = 'stability_api_key';
-      providerName = PROVIDER_NAMES.stability;
-      break;
-    default:
-      storageKey = 'firefly_api_key';
-      providerName = PROVIDER_NAMES.firefly;
-  }
-  
-  apiKey = localStorage.getItem(storageKey);
-  
+// Check if Stability API key exists
+export const checkApiKey = (): { valid: boolean; providerName: string } => {
+  const apiKey = localStorage.getItem('stability_api_key');
   return { 
     valid: !!apiKey,
-    providerName
+    providerName: 'Stability AI'
   };
 };
 
@@ -71,34 +48,6 @@ export const createImagePrompt = (
   
   // Create a descriptive prompt for the image generation
   return `${vehicleType} vehicle wrap design for ${business ? business + ',' : ''} ${imagePrompt}. Professional, high quality, photorealistic.`;
-};
-
-// Get the default model based on provider
-export const getDefaultModelForProvider = (provider: AIProvider): ImageModel => {
-  switch (provider) {
-    case 'firefly':
-      return 'firefly-image';
-    case 'openai':
-      return 'dall-e-3';
-    case 'stability':
-      return 'stability-sdxl';
-    default:
-      return 'firefly-image';
-  }
-};
-
-// Get localStorage key for a provider
-export const getApiKeyStorageKey = (provider: AIProvider): string => {
-  switch (provider) {
-    case 'firefly':
-      return 'firefly_api_key';
-    case 'openai':
-      return 'openai_api_key';
-    case 'stability':
-      return 'stability_api_key';
-    default:
-      return 'firefly_api_key';
-  }
 };
 
 // Download the generated image

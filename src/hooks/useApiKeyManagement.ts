@@ -1,26 +1,21 @@
 
 import { useState, useEffect } from 'react';
-import { AIProvider, ImageModel, PROVIDER_MODELS } from '@/types/ai-wrap';
-import { checkApiKey, getDefaultModelForProvider } from '@/utils/ai-wrap-utils';
 import { toast } from 'sonner';
+import { checkApiKey } from '@/utils/ai-wrap-utils';
 
 export const useApiKeyManagement = () => {
-  const [aiProvider, setAiProvider] = useState<AIProvider>('firefly');
   const [isApiKeyModalOpen, setIsApiKeyModalOpen] = useState(false);
   const [hasApiKey, setHasApiKey] = useState(false);
 
-  // Initialize provider and API key state
+  // Initialize API key state
   useEffect(() => {
-    const selectedProvider = localStorage.getItem('selected_ai_provider') as AIProvider || 'firefly';
-    setAiProvider(selectedProvider);
-    
-    const { valid } = checkApiKey(selectedProvider);
+    const { valid } = checkApiKey();
     setHasApiKey(valid);
   }, [isApiKeyModalOpen]);
 
   // Validate API key
   const validateApiKey = (): boolean => {
-    const { valid, providerName } = checkApiKey(aiProvider);
+    const { valid, providerName } = checkApiKey();
     
     if (!valid) {
       toast.error(`${providerName} API key is required. Please set your API key in settings.`);
@@ -31,8 +26,6 @@ export const useApiKeyManagement = () => {
   };
 
   return {
-    aiProvider,
-    setAiProvider,
     isApiKeyModalOpen,
     setIsApiKeyModalOpen,
     hasApiKey,

@@ -3,6 +3,7 @@ import React, { createContext, useState, useContext, ReactNode, useEffect } from
 import { AIWrapContextType } from '@/types/ai-wrap';
 import { useIdeasGeneration } from '@/hooks/useIdeasGeneration';
 import { useImageGeneration } from '@/hooks/useImageGeneration';
+import { toast } from 'sonner';
 
 const AIWrapContext = createContext<AIWrapContextType | undefined>(undefined);
 
