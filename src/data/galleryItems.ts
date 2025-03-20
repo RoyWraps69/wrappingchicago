@@ -52,7 +52,7 @@ export const galleryItems: GalleryItem[] = [
     title: 'Luxury Black Sedan Transformation', 
     category: 'Color Change Wraps',
     image: '/lovable-uploads/0316f206-884b-44b4-bdb3-e0f7962a1714.png', 
-    description: 'Elegant matte black wrap installation enhancing the vehicle's luxury appearance.',
+    description: "Elegant matte black wrap installation enhancing the vehicle's luxury appearance.",
     client: 'Executive Car Service',
     location: 'Highland Park, IL'
   },
@@ -70,7 +70,7 @@ export const galleryItems: GalleryItem[] = [
     title: 'Sports Car Racing Stripes', 
     category: 'Partial Wraps',
     image: '/lovable-uploads/77a1f4b1-efe3-4779-8646-f92e01667a29.png', 
-    description: 'Custom racing stripe design enhancing the vehicle's sporty appearance with precision installation.',
+    description: "Custom racing stripe design enhancing the vehicle's sporty appearance with precision installation.",
     client: 'Motorsport Enthusiast',
     location: 'Naperville, IL'
   },
@@ -97,7 +97,7 @@ export const galleryItems: GalleryItem[] = [
     title: 'Metallic Blue Sports Car Wrap', 
     category: 'Color Change Wraps',
     image: '/lovable-uploads/9de106b5-94cb-4fd1-a7c7-5c75c75b7cbb.png', 
-    description: 'Stunning metallic blue color change wrap enhancing the vehicle's contours and design lines.',
+    description: "Stunning metallic blue color change wrap enhancing the vehicle's contours and design lines.",
     client: 'Luxury Vehicle Owner',
     location: 'Winnetka, IL'
   },
@@ -106,7 +106,7 @@ export const galleryItems: GalleryItem[] = [
     title: 'Performance Car Custom Graphics', 
     category: 'Partial Wraps',
     image: '/lovable-uploads/d2a8e418-117f-4bfc-a6a2-efb63dbbce7f.png', 
-    description: 'Custom accent graphics highlighting the vehicle's performance characteristics with precise application.',
+    description: "Custom accent graphics highlighting the vehicle's performance characteristics with precise application.",
     client: 'Automotive Enthusiast',
     location: 'Chicago, IL'
   }
