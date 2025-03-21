@@ -27,15 +27,15 @@ const LocationsPage = () => {
         
         <main className="flex-grow">
           {/* Hero Section with Background Image */}
-          <section className="relative bg-gradient-to-r from-brand-navy to-blue-900 text-white py-24">
+          <section className="relative text-white py-24">
             {/* Background image overlay */}
             <div className="absolute inset-0 z-0">
               <img 
                 src="https://images.unsplash.com/photo-1549194898-b87383b330c4?auto=format&fit=crop&w=2000&q=80"
                 alt="Chicago skyline with highways and vehicle traffic"
-                className="w-full h-full object-cover opacity-40"
+                className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-r from-brand-navy/90 to-blue-900/90"></div>
+              <div className="absolute inset-0 bg-gray-900/50"></div>
             </div>
             
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
