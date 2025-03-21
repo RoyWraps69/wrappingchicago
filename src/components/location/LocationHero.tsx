@@ -2,7 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { MapPin, Phone, ArrowRight, Sparkles, MessageSquare } from 'lucide-react';
+import { MapPin, Phone, ArrowRight, Sparkles, MessageSquare, Car, Truck, Shield } from 'lucide-react';
 
 interface LocationHeroProps {
   cityName: string;
@@ -12,6 +12,35 @@ const LocationHero = ({ cityName }: LocationHeroProps) => {
   return (
     <section className="relative overflow-hidden py-32 min-h-[90vh] flex items-center bg-gray-50" id="location-hero">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-30">
+        {/* Contact Bar - Prominent at the top */}
+        <div className="bg-white/90 backdrop-blur-sm shadow-lg rounded-lg p-4 mb-8 border border-gray-200 flex flex-col sm:flex-row items-center justify-between">
+          <div className="mb-4 sm:mb-0">
+            <h3 className="text-lg font-semibold text-brand-navy">Need Vehicle Wraps in {cityName}?</h3>
+            <p className="text-gray-700">Premium car wraps, truck wraps, van wraps, and fleet graphics</p>
+          </div>
+          <div className="flex flex-col sm:flex-row gap-3">
+            <Button
+              asChild
+              className="bg-brand-red hover:bg-red-700 text-white"
+            >
+              <Link to="/contact" className="inline-flex items-center">
+                <MessageSquare className="mr-2 h-4 w-4" />
+                Get a Free Quote Today
+              </Link>
+            </Button>
+            <Button
+              asChild
+              variant="outline"
+              className="border-brand-navy text-brand-navy hover:bg-brand-navy hover:text-white"
+            >
+              <a href="tel:3125971286" className="inline-flex items-center">
+                <Phone className="mr-2 h-4 w-4" />
+                (312) 597-1286
+              </a>
+            </Button>
+          </div>
+        </div>
+        
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="animate-fade-in">
             <div className="inline-flex items-center px-4 py-2 rounded-full bg-brand-red/90 text-white mb-6">
@@ -24,12 +53,36 @@ const LocationHero = ({ cityName }: LocationHeroProps) => {
             </h1>
             
             <p className="text-xl text-gray-700 mb-8 max-w-lg">
-              Transform your vehicles with professional wraps that make your business stand out on every street in {cityName}.
+              Transform your cars, trucks, vans, and fleet vehicles with professional wraps that make your business stand out on every street in {cityName}.
             </p>
+            
+            {/* Services Overview Section */}
+            <div className="grid grid-cols-2 gap-3 mb-6">
+              <div className="flex items-center gap-2 bg-white rounded-lg p-3 shadow-sm">
+                <Car className="h-5 w-5 text-brand-red" />
+                <span className="text-sm font-medium">Car Wraps</span>
+              </div>
+              <div className="flex items-center gap-2 bg-white rounded-lg p-3 shadow-sm">
+                <Truck className="h-5 w-5 text-brand-red" />
+                <span className="text-sm font-medium">Truck Wraps</span>
+              </div>
+              <div className="flex items-center gap-2 bg-white rounded-lg p-3 shadow-sm">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-brand-red">
+                  <path d="M10 17h4V8h-4z"/>
+                  <path d="M2 9v8h10V9c0-4-1.5-5-5-5S2 5 2 9z"/>
+                  <path d="M12 9v8h10V9c0-4-1.5-5-5-5s-5 1-5 5z"/>
+                </svg>
+                <span className="text-sm font-medium">Van Wraps</span>
+              </div>
+              <div className="flex items-center gap-2 bg-white rounded-lg p-3 shadow-sm">
+                <Shield className="h-5 w-5 text-brand-red" />
+                <span className="text-sm font-medium">Vinyl Wraps</span>
+              </div>
+            </div>
             
             {/* Enhanced Contact Buttons Section */}
             <div className="bg-black/5 backdrop-blur-sm rounded-xl p-4 mb-6 border border-gray-200">
-              <h3 className="text-gray-800 font-semibold mb-3">Ready to transform your vehicle?</h3>
+              <h3 className="text-gray-800 font-semibold mb-3">Ready to transform your vehicle in {cityName}?</h3>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button
                   asChild
@@ -88,11 +141,12 @@ const LocationHero = ({ cityName }: LocationHeroProps) => {
               <div className="absolute -inset-4 bg-brand-red/20 rounded-full blur-xl"></div>
               <img 
                 src="/lovable-uploads/199c2a21-e0b0-4c29-972f-f32d72698382.png" 
-                alt={`Professional commercial vehicle wrap installation in ${cityName}, IL - fleet branding services`}
+                alt={`Professional commercial vehicle wrap installation in ${cityName}, IL - fleet branding services with 3M vinyl materials`}
                 className="rounded-lg shadow-2xl relative z-10 transform rotate-2"
               />
               <div className="absolute -bottom-6 -right-6 bg-white/90 backdrop-blur rounded-lg shadow-xl p-4 transform -rotate-3 z-20 border border-gray-200">
-                <p className="text-gray-800 font-bold">{cityName}'s Most Trusted Wrap Provider</p>
+                <p className="text-gray-800 font-bold">{cityName}'s Most Trusted Vehicle Wrap Provider</p>
+                <p className="text-sm text-gray-600">Car wraps • Truck wraps • Van wraps • Fleet graphics</p>
               </div>
             </div>
           </div>

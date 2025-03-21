@@ -10,18 +10,30 @@ import ServiceSchema from './schemas/ServiceSchema';
 import WebsiteSchema from './schemas/WebsiteSchema';
 import BreadcrumbSchema from './schemas/BreadcrumbSchema';
 import FAQSchema from './schemas/FAQSchema';
+import VehicleWrapServiceSchema from './schemas/VehicleWrapServiceSchema';
 
 interface SchemaProps {
   city: City;
   path?: string;
   pageTitle?: string;
   pageDescription?: string;
+  keywords?: string[];
 }
 
-const Schema = ({ city, path = '/', pageTitle, pageDescription }: SchemaProps) => {
+const Schema = ({ 
+  city, 
+  path = '/', 
+  pageTitle, 
+  pageDescription,
+  keywords = [
+    "vehicle wraps Chicago", "car wraps Chicago", "truck wraps Chicago", 
+    "van wraps Chicago", "fleet wraps Chicago", "custom vehicle wraps", 
+    "commercial vehicle wraps", "vinyl wraps Chicago"
+  ]
+}: SchemaProps) => {
   return (
     <>
-      <WebsiteSchema />
+      <WebsiteSchema keywords={keywords} />
       <LocalBusinessSchema city={city} />
       <OfferCatalogSchema city={city} />
       <ReviewsSchema />
@@ -31,9 +43,10 @@ const Schema = ({ city, path = '/', pageTitle, pageDescription }: SchemaProps) =
       <FAQSchema />
       <ServiceSchema 
         title="Vehicle Wrapping Services" 
-        description={pageDescription || "Premium vehicle wraps for businesses and individuals. Transform your vehicle and elevate your brand with expert installation and premium materials."}
+        description={pageDescription || "Premium vehicle wraps for businesses and individuals in Chicago. Transform your vehicle and elevate your brand with expert installation and premium materials. Specializing in car wraps, truck wraps, van wraps, and fleet graphics."}
         path={path}
       />
+      <VehicleWrapServiceSchema city={city} />
     </>
   );
 };
