@@ -15,14 +15,17 @@ import DesignerWrapsGallery from '@/components/designer-wraps/DesignerWrapsGalle
 import DesignerWrapsProcess from '@/components/designer-wraps/DesignerWrapsProcess';
 
 const DesignerWrapsPage = () => {
-  // For Schema component
+  // For Schema component - updated with all required City properties
   const chicago = {
-    name: 'Chicago',
-    county: 'Cook',
-    slug: 'chicago',
-    population: 2746388,
-    region: 'north',
-    suburbs: []
+    name: "Chicago",
+    county: "Cook County",
+    state: "IL",
+    description: "Chicago is the third-largest city in the United States, known for its bold architecture, vibrant arts scene, and diverse neighborhoods. As a major transportation hub, it offers businesses excellent connectivity and access to markets.",
+    population: "2.7 million",
+    businessAreas: "Downtown Chicago, Michigan Avenue, West Loop, and River North",
+    distance: "0 miles",
+    slug: "chicago",
+    website: "https://www.chicago.gov"
   };
   
   return (
