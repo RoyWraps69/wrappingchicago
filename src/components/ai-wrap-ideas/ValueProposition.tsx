@@ -1,10 +1,7 @@
-
 import React from 'react';
 import { Zap, Clock, DollarSign, LightbulbIcon } from 'lucide-react';
-
 const ValueProposition = () => {
-  return (
-    <section className="py-10 bg-white">
+  return <section className="py-10 bg-white">
       <div className="container mx-auto px-4 max-w-6xl">
         <div className="text-center mb-8">
           <h2 className="text-3xl font-bold text-brand-navy mb-3">Why Use Our AI Wrap Designer?</h2>
@@ -67,17 +64,11 @@ const ValueProposition = () => {
               </p>
             </div>
             <div className="md:w-1/3">
-              <img 
-                src="/lovable-uploads/efc6c586-8651-43ad-811a-b896a91a1b69.png" 
-                alt="Vehicle wrap design process" 
-                className="rounded-lg shadow-lg"
-              />
+              <img alt="Vehicle wrap design process" className="rounded-lg shadow-lg" src="/lovable-uploads/c4a531de-bb9d-47ee-8771-598051ce485e.jpg" />
             </div>
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default ValueProposition;
