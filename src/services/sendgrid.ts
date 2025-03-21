@@ -1,6 +1,6 @@
 
 /**
- * Service for handling email operations via mailto links
+ * Service for handling email operations via form submission
  */
 
 export interface EmailData {
@@ -12,27 +12,38 @@ export interface EmailData {
 }
 
 export const sendEmail = async (data: EmailData): Promise<void> => {
-  const subject = encodeURIComponent(`New Quote Request: ${data.service}`);
-  const body = encodeURIComponent(`
-Name: ${data.name}
-Email: ${data.email}
-Phone: ${data.phone}
-Service: ${data.service}
+  try {
+    // Format the email data for submission
+    const formData = new FormData();
+    formData.append('name', data.name);
+    formData.append('email', data.email);
+    formData.append('phone', data.phone);
+    formData.append('service', data.service);
+    formData.append('message', data.message);
+    
+    // Send a POST request to a serverless function endpoint or email service
+    const response = await fetch('https://formsubmit.co/roy@chicagofleetwraps.com', {
+      method: 'POST',
+      body: formData,
+      headers: {
+        'Accept': 'application/json',
+      },
+    });
 
-Message:
-${data.message}
-  `);
-
-  // Create mailto link to open Gmail or default email client
-  const mailtoLink = `mailto:roy@chicagofleetwraps.com?subject=${subject}&body=${body}`;
-  
-  // Use window.location instead of window.open to avoid popup blockers
-  window.location.href = mailtoLink;
+    if (!response.ok) {
+      throw new Error('Failed to send email');
+    }
+    
+    return;
+  } catch (error) {
+    console.error('Email submission error:', error);
+    throw error;
+  }
 };
 
-// These functions are maintained for backward compatibility but simplified
+// These functions are maintained for backward compatibility
 export const setApiKey = (): void => {
-  // No longer needed but kept for compatibility
+  // No longer needed
   return;
 };
 
