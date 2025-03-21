@@ -11,9 +11,19 @@ const ScrollToTop = () => {
 
   useEffect(() => {
     // Execute after component updates
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'instant'
+    });
+    
+    // Cancel any ongoing smooth scrolls
+    document.documentElement.style.scrollBehavior = 'auto';
+    
+    // Reset after a short delay
     const timeoutId = setTimeout(() => {
-      window.scrollTo(0, 0);
-    }, 0);
+      document.documentElement.style.scrollBehavior = '';
+    }, 100);
     
     return () => clearTimeout(timeoutId);
   }, [pathname]);

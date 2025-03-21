@@ -1,9 +1,29 @@
 
 import React, { useEffect } from 'react';
-import { useParams, useLocation } from 'react-router-dom';
+import { useParams, useLocation, Navigate } from 'react-router-dom';
 import LocationPage from '@/components/LocationPage';
 import { findCityBySlug, cities } from '@/data/cities';
 import NotFound from './NotFound';
+
+// List of known service routes to prevent them from being treated as city pages
+const SERVICE_ROUTES = [
+  'services',
+  'fleet-wraps',
+  'color-change-wraps',
+  'commercial-graphics',
+  'partial-wraps',
+  'protective-films',
+  'vehicle-lettering',
+  'specialty-wraps',
+  'retail-graphics',
+  'designer-wraps',
+  'luxury-exotic-wraps',
+  'gallery',
+  'about',
+  'ai-wrap-ideas',
+  'contact',
+  'locations'
+];
 
 const CityLocationPage = () => {
   const { citySlug: paramCitySlug } = useParams<{ citySlug: string }>();
@@ -41,6 +61,12 @@ const CityLocationPage = () => {
   
   const slug = extractCitySlug();
   console.log(`Looking for city with slug: "${slug}" from path: ${location.pathname}`);
+  
+  // Check if this is actually a service route being mistaken for a city
+  if (SERVICE_ROUTES.includes(slug) || location.pathname.includes('/services/')) {
+    console.log(`Identified as a service route, not a city: ${slug}`);
+    return <Navigate to={location.pathname} replace />;
+  }
   
   // Find the city by slug
   const city = findCityBySlug(slug);
