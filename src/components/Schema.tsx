@@ -18,6 +18,7 @@ interface SchemaProps {
   pageTitle: string;
   pageDescription: string;
   faqs?: FAQ[];
+  keywords?: string[]; // Add keywords as an optional prop
 }
 
 const Schema: React.FC<SchemaProps> = ({ 
@@ -25,7 +26,8 @@ const Schema: React.FC<SchemaProps> = ({
   path, 
   pageTitle, 
   pageDescription, 
-  faqs = [] // Add default empty array to prevent undefined errors
+  faqs = [], // Add default empty array to prevent undefined errors
+  keywords = [] // Default empty array for keywords
 }) => {
   const currentDate = new Date().toISOString();
   
@@ -33,12 +35,12 @@ const Schema: React.FC<SchemaProps> = ({
     <>
       <LocalBusinessSchema 
         city={city}
-        currentUrl={`https://wrappingchicago.com${path}`}
-        dateModified={currentDate}
       />
       <WebsiteSchema 
-        pageUrl={`https://wrappingchicago.com${path}`}
-        dateModified={currentDate}
+        name={pageTitle}
+        description={pageDescription}
+        url={`https://wrappingchicago.com${path}`}
+        lastModified={currentDate}
       />
       {faqs && faqs.length > 0 && (
         <FAQSchema 
@@ -47,9 +49,18 @@ const Schema: React.FC<SchemaProps> = ({
         />
       )}
       <BreadcrumbSchema 
-        city={city}
-        path={path}
-        pageTitle={pageTitle}
+        items={[
+          {
+            position: 1,
+            name: "Home",
+            item: "https://wrappingchicago.com/"
+          },
+          {
+            position: 2,
+            name: pageTitle,
+            item: `https://wrappingchicago.com${path}`
+          }
+        ]}
       />
       <OfferCatalogSchema 
         city={city} 

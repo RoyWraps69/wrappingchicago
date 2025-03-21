@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { City } from '@/data/cities';
@@ -71,7 +70,6 @@ const LocationPage = ({ city }: LocationPageProps) => {
         path={`/vehicle-wraps-${city.slug}-il`}
         pageTitle={`Professional Vehicle Wraps in ${city.name}, IL | Car, Truck & Fleet Wraps`}
         pageDescription={`Chicago's top-rated vehicle wrap provider serving ${city.name}, IL. Professional car wraps, truck wraps, van wraps & fleet wraps with over 16,000 completed projects in our 20 years of business. Free quotes available.`}
-        keywords={cityKeywords}
       />
       
       <div className="flex flex-col min-h-screen">

@@ -15,6 +15,26 @@ const TruckWrapsChicago = () => {
   // For Schema component
   const chicagoCity = cities.find(city => city.slug === 'chicago') || cities[0];
   
+  // FAQ data for schema
+  const faqData = [
+    {
+      question: "How much do truck wraps cost in Chicago?",
+      answer: "Truck wrap costs in Chicago vary by size and complexity. Box truck wraps typically range from $3,000-$6,000, while pickup truck wraps start around $2,000. Partial wraps are available from $1,200."
+    },
+    {
+      question: "How long do truck wraps last?",
+      answer: "With proper care and maintenance, our premium truck wraps typically last 5-7 years. All commercial truck wraps come with a 2-year warranty and are made with durable 3M vinyl materials."
+    },
+    {
+      question: "Do truck wraps damage paint?",
+      answer: "No, our professional truck wraps protect your vehicle's paint when properly installed and removed. The vinyl acts as a barrier against sun damage, minor scratches, and road debris."
+    },
+    {
+      question: "How long does it take to wrap a truck?",
+      answer: "Most commercial truck wraps can be completed in 3-5 business days. Larger vehicles like box trucks or semi-trucks may take 5-7 days depending on design complexity."
+    }
+  ];
+  
   return (
     <>
       <Helmet>
@@ -44,11 +64,7 @@ const TruckWrapsChicago = () => {
         path="/truck-wraps-chicago"
         pageTitle="Truck Wraps Chicago | Commercial & Box Truck Wrapping Services"
         pageDescription="Professional truck wraps in Chicago with over 16,000 wraps completed in our 20 years of business. Serving delivery trucks, box trucks, pickup trucks & commercial fleets with expert installation and premium 3M materials."
-        keywords={[
-          "truck wraps Chicago", "commercial truck wraps", "box truck wraps", 
-          "pickup truck wraps", "delivery truck wraps", "truck graphics Chicago", 
-          "truck lettering Chicago", "semi truck wraps", "truck advertising Chicago"
-        ]}
+        faqs={faqData}
       />
       
       <div className="flex flex-col min-h-screen">
