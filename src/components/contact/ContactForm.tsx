@@ -28,24 +28,26 @@ const ContactForm = () => {
     
     try {
       await sendEmail(data);
+      console.log('Email client opened');
       
-      console.log('Email client opened successfully!');
+      // We'll show success state even if the email client may not have opened
+      // The user will see their email client open anyway
       setIsSubmitting(false);
       setSubmitted(true);
       
       toast({
-        title: "Email Client Opened",
-        description: "Complete the process in your email client to send your request.",
+        title: "Email Client Opening",
+        description: "Your default email client should be opening. Please complete sending the email there.",
       });
       
       form.reset();
     } catch (error) {
-      console.error('Failed to open email client:', error);
+      console.error('Failed to process email request:', error);
       setIsSubmitting(false);
       
       toast({
         title: "Request Failed",
-        description: "There was an error opening your email client. Please contact us directly.",
+        description: "There was an error opening your email client. Please try again or contact us directly.",
         variant: "destructive"
       });
     }

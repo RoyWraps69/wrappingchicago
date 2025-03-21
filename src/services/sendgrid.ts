@@ -26,8 +26,8 @@ ${data.message}
   // Create mailto link to open Gmail or default email client
   const mailtoLink = `mailto:roy@chicagofleetwraps.com?subject=${subject}&body=${body}`;
   
-  // Open the email client
-  window.open(mailtoLink, '_blank');
+  // Use window.location instead of window.open to avoid popup blockers
+  window.location.href = mailtoLink;
 };
 
 // These functions are maintained for backward compatibility but simplified
