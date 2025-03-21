@@ -10,11 +10,17 @@ import { cities } from '@/data/cities';
 import { galleryItems } from '@/data/galleryItems';
 
 const Index = () => {
-  // Filter for van images from the gallery (assuming these are the "bratcher vans")
+  // Filter for van images from the gallery
   const vanImages = galleryItems.filter(item => 
     item.title.toLowerCase().includes('van') || 
     item.description.toLowerCase().includes('van')
   ).slice(0, 3); // Take the first 3 van-related images
+  
+  // Get specific van image for fleet wraps section
+  const fleetWrapVan = galleryItems.find(item => 
+    item.title.toLowerCase().includes('van') && 
+    item.category === 'Fleet Wraps'
+  )?.image || "/lovable-uploads/9bb3d94e-589d-4daf-b35e-e19e80610439.png";
   
   return (
     <>
@@ -101,7 +107,7 @@ const Index = () => {
                   {
                     title: "Fleet Wraps",
                     description: "Transform your company vehicles into eye-catching mobile billboards. Our fleet wrapping services help businesses maximize their advertising reach across Chicago.",
-                    image: vanImages[0] ? vanImages[0].image : "/lovable-uploads/9bb3d94e-589d-4daf-b35e-e19e80610439.png",
+                    image: fleetWrapVan,
                     link: "/services/fleet-wraps"
                   },
                   {
