@@ -2,7 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Sparkles, Shield, Award, Clock, Wrench } from 'lucide-react';
+import { ArrowRight, Sparkles, Shield, Award, Clock, Wrench, Zap } from 'lucide-react';
 
 const Hero = () => {
   return (
@@ -44,18 +44,58 @@ const Hero = () => {
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
-                
+            
+            {/* Enhanced AI Wrap Designer button with special effects */}
             <Button
               asChild
               variant="outline"
               size="lg"
-              className="border-white bg-black/40 text-white hover:bg-white hover:text-brand-navy text-lg px-8 py-7 h-auto rounded-full shadow-2xl backdrop-blur-sm drop-shadow-[0_4px_4px_rgba(0,0,0,0.3)]"
+              className="border-white bg-black/40 text-white hover:bg-white hover:text-brand-navy text-lg px-8 py-7 h-auto rounded-full shadow-2xl backdrop-blur-sm drop-shadow-[0_4px_4px_rgba(0,0,0,0.3)] relative overflow-hidden group"
             >
               <Link to="/ai-wrap-ideas" className="inline-flex items-center">
-                <Sparkles className="mr-2 h-5 w-5" />
-                Try Our AI Wrap Designer
+                {/* Animated sparkle effect inside button */}
+                <div className="absolute -inset-1 bg-gradient-to-r from-yellow-400 via-pink-500 to-purple-500 rounded-full opacity-30 group-hover:opacity-100 blur-sm group-hover:blur transition duration-500 group-hover:animate-pulse"></div>
+                <div className="absolute -right-3 -top-3 bg-yellow-400 rounded-full w-12 h-12 opacity-40 group-hover:opacity-60 blur-lg group-hover:animate-ping"></div>
+                
+                <span className="relative flex items-center">
+                  <Sparkles className="mr-2 h-5 w-5 text-yellow-400 group-hover:animate-pulse" />
+                  <span className="relative z-10">Design Your Wrap Now</span>
+                  <Zap className="ml-2 h-5 w-5 text-yellow-400 group-hover:animate-bounce" />
+                </span>
               </Link>
             </Button>
+          </div>
+          
+          {/* New AI Wrap Designer promo banner */}
+          <div className="mt-6 bg-black/30 backdrop-blur-sm p-4 rounded-xl border border-white/20 animate-enter shadow-xl" style={{ animationDelay: "0.9s" }}>
+            <div className="flex items-center">
+              <div className="hidden sm:block mr-4">
+                <div className="bg-gradient-to-br from-yellow-400 to-purple-600 p-0.5 rounded-full">
+                  <div className="bg-black rounded-full p-2">
+                    <Sparkles className="h-6 w-6 text-yellow-400" />
+                  </div>
+                </div>
+              </div>
+              <div>
+                <h3 className="text-white text-sm sm:text-base font-bold mb-1">NEW: AI-Powered Wrap Designer Tool</h3>
+                <p className="text-white/80 text-xs sm:text-sm">
+                  Visualize your vehicle wrap in seconds! Our exclusive AI tool creates custom vehicle wrap mockups from your ideas.
+                  <span className="hidden sm:inline"> Try it now and see your concept before committing.</span>
+                </p>
+              </div>
+              <div className="ml-auto pl-2">
+                <Button
+                  asChild
+                  variant="outline"
+                  size="sm"
+                  className="border-yellow-400/80 text-yellow-400 hover:bg-yellow-400/10 text-xs sm:text-sm h-auto py-1 sm:py-2 whitespace-nowrap"
+                >
+                  <Link to="/ai-wrap-ideas">
+                    Try Free <ArrowRight className="h-3 w-3 ml-1" />
+                  </Link>
+                </Button>
+              </div>
+            </div>
           </div>
               
           <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4 animate-enter" style={{ animationDelay: "0.8s" }}>
