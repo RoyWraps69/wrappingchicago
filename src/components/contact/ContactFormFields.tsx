@@ -32,7 +32,6 @@ const ContactFormFields = ({ form, onSubmit, isSubmitting, apiKeyExists }: Conta
         action="https://formsubmit.co/roy@chicagofleetwraps.com"
         method="POST"
         className="space-y-4"
-        onSubmit={form.handleSubmit(onSubmit)}
       >
         {/* FormSubmit.co specific configuration fields */}
         <input type="hidden" name="_subject" value="Chicago Fleet Wraps: New Quote Request" />
