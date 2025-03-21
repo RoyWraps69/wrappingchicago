@@ -1,4 +1,3 @@
-
 import { GalleryItem } from '@/types/gallery';
 
 export const galleryItems: GalleryItem[] = [
@@ -117,6 +116,15 @@ export const galleryItems: GalleryItem[] = [
     image: '/lovable-uploads/fc2146ab-62aa-4fc9-85aa-3582af7ce980.png', 
     description: 'Bold blue and red fleet branding for HVAC service vans, featuring striking company logo and clean design elements.',
     client: 'Bratcher HVAC',
+    location: 'Chicago, IL'
+  },
+  { 
+    id: 14, 
+    title: 'Blue Truck Commercial Graphics', 
+    category: 'Commercial Graphics',
+    image: '/lovable-uploads/fb7a4b97-4b57-4b2e-8f81-42a1098270df.png', 
+    description: 'Professional commercial graphics for service trucks with bold branding and contact information.',
+    client: 'Chicago Service Company',
     location: 'Chicago, IL'
   }
 ];

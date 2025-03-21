@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
@@ -28,6 +27,12 @@ const Index = () => {
     item.category === 'Color Change Wraps'
   )?.image || vanImages[0]?.image || "/lovable-uploads/230338ed-a8d9-4584-bb4c-ba33c793f7ab.png";
   
+  // Get specific image for commercial graphics section
+  const commercialGraphics = galleryItems.find(item => 
+    item.title === 'Blue Truck Commercial Graphics' && 
+    item.category === 'Commercial Graphics'
+  )?.image || "/lovable-uploads/fb7a4b97-4b57-4b2e-8f81-42a1098270df.png";
+
   return (
     <>
       <Helmet>
@@ -125,7 +130,7 @@ const Index = () => {
                   {
                     title: "Commercial Graphics",
                     description: "From simple lettering to complex designs, our commercial graphics solutions help businesses create professional vehicle identities that stand out on the road.",
-                    image: vanImages[2] ? vanImages[2].image : "/lovable-uploads/fb7a4b97-4b57-4b2e-8f81-42a1098270df.png",
+                    image: commercialGraphics,
                     link: "/services/commercial-graphics"
                   }
                 ].map((service, index) => (
