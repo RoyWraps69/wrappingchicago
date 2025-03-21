@@ -36,7 +36,7 @@ const Index = () => {
         <main className="flex-grow">
           <Hero />
           
-          <div className="py-12">
+          <div className="py-12 racing-stripes">
             <ServicesSection 
               fleetWrapVan={fleetWrapVan}
               colorChangeVan={colorChangeVan}
@@ -44,11 +44,9 @@ const Index = () => {
             />
           </div>
           
-          <div className="bg-gray-50 py-12">
-            <WhyChooseUsSection />
-          </div>
+          <WhyChooseUsSection />
           
-          <div className="py-12">
+          <div className="py-12 carbon-fiber-light">
             <AreasServedSection cities={cities} />
           </div>
           

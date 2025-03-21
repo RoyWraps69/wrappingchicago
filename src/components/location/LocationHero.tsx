@@ -10,18 +10,19 @@ interface LocationHeroProps {
 
 const LocationHero = ({ cityName }: LocationHeroProps) => {
   return (
-    <section className="relative bg-brand-navy overflow-hidden py-32 min-h-[90vh] flex items-center" id="location-hero">
+    <section className="relative carbon-fiber overflow-hidden py-32 min-h-[90vh] flex items-center" id="location-hero">
       {/* Full background image with overlay */}
       <div className="absolute inset-0 w-full h-full">
-        <div className="absolute inset-0 bg-gradient-to-r from-brand-navy/90 to-blue-900/80 z-10"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/90 to-brand-navy/80 z-10"></div>
         <img 
           src="/lovable-uploads/199c2a21-e0b0-4c29-972f-f32d72698382.png" 
           alt={`Professional vehicle wraps in ${cityName}`}
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover opacity-60"
         />
+        <div className="absolute inset-0 racing-stripes opacity-20 z-20"></div>
       </div>
       
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-30">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="animate-fade-in">
             <div className="inline-flex items-center px-4 py-2 rounded-full bg-brand-red/90 text-white mb-6">
@@ -83,8 +84,8 @@ const LocationHero = ({ cityName }: LocationHeroProps) => {
                 alt={`Professional vehicle wraps in ${cityName}`}
                 className="rounded-lg shadow-2xl relative z-10 transform rotate-2"
               />
-              <div className="absolute -bottom-6 -right-6 bg-white rounded-lg shadow-xl p-4 transform -rotate-3 z-20">
-                <p className="text-brand-navy font-bold">{cityName}'s Most Trusted Wrap Provider</p>
+              <div className="absolute -bottom-6 -right-6 bg-gray-900/90 backdrop-blur rounded-lg shadow-xl p-4 transform -rotate-3 z-20 border border-gray-700">
+                <p className="text-white font-bold">{cityName}'s Most Trusted Wrap Provider</p>
               </div>
             </div>
           </div>
@@ -93,8 +94,8 @@ const LocationHero = ({ cityName }: LocationHeroProps) => {
       
       {/* Wave divider */}
       <div className="absolute bottom-0 left-0 right-0">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 160">
-          <path fill="#ffffff" fillOpacity="1" d="M0,128L80,117.3C160,107,320,85,480,90.7C640,96,800,128,960,128C1120,128,1280,96,1360,80L1440,64L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 160" className="fill-gray-900">
+          <path d="M0,128L80,117.3C160,107,320,85,480,90.7C640,96,800,128,960,128C1120,128,1280,96,1360,80L1440,64L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path>
         </svg>
       </div>
     </section>

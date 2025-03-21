@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Shield, Users, Palette, Award, Clock, Wrench, Truck, ThumbsUp } from 'lucide-react';
 
@@ -46,24 +47,14 @@ const WhyChooseUsSection = () => {
   ];
 
   return (
-    <section className="py-10 relative">
-      {/* Automotive-themed background pattern */}
-      <div className="absolute inset-0 opacity-5 z-0">
-        <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-          <pattern id="tire-pattern" width="60" height="60" patternUnits="userSpaceOnUse">
-            <circle cx="30" cy="30" r="25" fill="none" stroke="#000" strokeWidth="2"/>
-            <circle cx="30" cy="30" r="20" fill="none" stroke="#000" strokeWidth="1"/>
-            <circle cx="30" cy="30" r="15" fill="none" stroke="#000" strokeWidth="1"/>
-            <circle cx="30" cy="30" r="5" fill="#000"/>
-          </pattern>
-          <rect width="100%" height="100%" fill="url(#tire-pattern)" />
-        </svg>
-      </div>
+    <section className="py-10 relative carbon-fiber">
+      {/* Automotive-themed background pattern - racing stripes overlay */}
+      <div className="absolute inset-0 racing-stripes opacity-20 z-0"></div>
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-8">
-          <h2 className="text-3xl font-bold mb-3 text-brand-navy">Why Choose Wrapping Chicago</h2>
-          <p className="text-lg text-gray-700 max-w-3xl mx-auto">
+          <h2 className="text-3xl font-bold mb-3 text-white">Why Choose Wrapping Chicago</h2>
+          <p className="text-lg text-gray-300 max-w-3xl mx-auto">
             When it comes to vehicle wraps in Chicago and surrounding areas, Wrapping Chicago stands apart from the competition.
           </p>
         </div>
@@ -74,11 +65,11 @@ const WhyChooseUsSection = () => {
               key={index} 
               className="section-card p-5 flex flex-col items-center transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
             >
-              <div className="w-16 h-16 mb-4 bg-gradient-to-r from-brand-navy to-blue-700 rounded-full flex items-center justify-center shadow-md">
+              <div className="w-16 h-16 mb-4 bg-gradient-to-r from-brand-navy to-brand-red rounded-full flex items-center justify-center shadow-md">
                 {benefit.icon}
               </div>
-              <h3 className="text-xl font-bold mb-2 text-brand-navy">{benefit.title}</h3>
-              <p className="text-gray-700 text-center">{benefit.description}</p>
+              <h3 className="text-xl font-bold mb-2 text-white">{benefit.title}</h3>
+              <p className="text-gray-300 text-center">{benefit.description}</p>
             </div>
           ))}
         </div>
