@@ -16,7 +16,7 @@ const NavLink: React.FC<NavLinkProps> = ({ to, children, icon: Icon, onClick, cl
   return (
     <Link 
       to={to} 
-      className={cn("hover:text-brand-red transition-colors flex items-center", className)}
+      className={cn("hover:text-brand-red transition-colors flex items-center text-gray-800", className)}
       onClick={onClick}
     >
       {Icon && <Icon className="mr-1 h-4 w-4" />}

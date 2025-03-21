@@ -36,7 +36,7 @@ const DesktopNav = () => {
       <div className="flex gap-2 ml-2">
         <Button 
           variant="outline" 
-          className="border-brand-gold/20 bg-white/10 text-white hover:bg-white/20"
+          className="border-brand-gold/20 bg-white/10 text-gray-800 hover:bg-white/20"
           asChild
         >
           <Link to="/contact" className="inline-flex items-center">
