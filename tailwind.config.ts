@@ -63,11 +63,14 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Custom colors for Chicago Fleet Wraps
+				// Updated brand colors
 				brand: {
-					navy: '#0B3954',
-					red: '#FF4A1C',
-					light: '#F5F5F5',
+					navy: '#0B3954', // Keeping this for backward compatibility
+					red: '#FF4A1C', // Keeping this for backward compatibility
+					light: '#F5F5F5', // Keeping this for backward compatibility
+					gold: '#D4AF37',  // Elegant gold
+					black: '#1A1A1A', // Rich black
+					grey: '#555555',  // Medium grey
 				}
 			},
 			borderRadius: {

@@ -10,18 +10,21 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-brand-red text-white hover:bg-red-700",
+        default: "bg-brand-gold text-brand-black hover:bg-yellow-600",
         destructive:
           "bg-destructive text-destructive-foreground hover:bg-destructive/90",
         outline:
           "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
         secondary:
-          "bg-brand-navy text-white hover:bg-blue-900",
+          "bg-brand-grey text-white hover:bg-gray-700",
         ghost: "hover:bg-accent hover:text-accent-foreground",
-        link: "text-brand-red underline-offset-4 hover:underline",
+        link: "text-brand-gold underline-offset-4 hover:underline",
         navy: "bg-brand-navy text-white hover:bg-blue-900",
-        white: "bg-white text-brand-red hover:bg-gray-100 border border-gray-200",
+        gold: "bg-brand-gold text-brand-black hover:bg-yellow-600",
+        white: "bg-white text-brand-black hover:bg-gray-100 border border-gray-200",
+        black: "bg-brand-black text-white hover:bg-brand-grey",
         outlineWhite: "bg-transparent border border-white text-white hover:bg-white/20",
+        outlineGold: "border border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-brand-black",
         outlineNavy: "border border-brand-navy text-brand-navy hover:bg-brand-navy hover:text-white",
       },
       size: {

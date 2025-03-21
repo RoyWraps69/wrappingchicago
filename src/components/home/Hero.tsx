@@ -28,7 +28,7 @@ const Hero = () => {
             </div>
                 
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white leading-tight mb-4 animate-enter drop-shadow-[0_4px_8px_rgba(0,0,0,0.6)] [text-shadow:_0_1px_2px_#000]" style={{ animationDelay: "0.2s" }}>
-              Transform Your <span className="text-brand-red drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] [text-shadow:_0_1px_2px_#000]">Vehicle</span>. Elevate Your <span className="text-brand-red drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] [text-shadow:_0_1px_2px_#000]">Brand</span>.
+              Transform Your <span className="text-brand-gold drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] [text-shadow:_0_1px_2px_#000]">Vehicle</span>. Elevate Your <span className="text-brand-gold drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] [text-shadow:_0_1px_2px_#000]">Brand</span>.
             </h1>
                 
             <p className="text-lg md:text-xl text-white mb-8 max-w-xl animate-enter drop-shadow-[0_3px_5px_rgba(0,0,0,0.6)] [text-shadow:_0_1px_1px_#000]" style={{ animationDelay: "0.4s" }}>
@@ -39,7 +39,7 @@ const Hero = () => {
               <Button
                 asChild
                 size="lg"
-                className="bg-brand-red hover:bg-red-700 text-white text-lg px-8 py-7 h-auto rounded-full shadow-2xl drop-shadow-[0_4px_4px_rgba(0,0,0,0.3)]"
+                className="bg-brand-gold hover:bg-yellow-600 text-brand-black text-lg px-8 py-7 h-auto rounded-full shadow-2xl drop-shadow-[0_4px_4px_rgba(0,0,0,0.3)]"
               >
                 <Link to="/contact" className="inline-flex items-center">
                   Request a Free Quote
@@ -51,25 +51,25 @@ const Hero = () => {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 animate-enter" style={{ animationDelay: "0.8s" }}>
               <div className="flex items-center">
                 <div className="bg-black/50 backdrop-blur-sm rounded-lg p-3 shadow-xl">
-                  <Award className="h-8 w-8 text-brand-red drop-shadow-[0_2px_3px_rgba(0,0,0,0.5)]" />
+                  <Award className="h-8 w-8 text-brand-gold drop-shadow-[0_2px_3px_rgba(0,0,0,0.5)]" />
                 </div>
                 <span className="ml-3 text-white font-medium drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)] [text-shadow:_0_1px_1px_#000]">Premium Materials</span>
               </div>
               <div className="flex items-center">
                 <div className="bg-black/50 backdrop-blur-sm rounded-lg p-3 shadow-xl">
-                  <Shield className="h-8 w-8 text-brand-red drop-shadow-[0_2px_3px_rgba(0,0,0,0.5)]" />
+                  <Shield className="h-8 w-8 text-brand-gold drop-shadow-[0_2px_3px_rgba(0,0,0,0.5)]" />
                 </div>
                 <span className="ml-3 text-white font-medium drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)] [text-shadow:_0_1px_1px_#000]">2-Year Warranty</span>
               </div>
               <div className="flex items-center">
                 <div className="bg-black/50 backdrop-blur-sm rounded-lg p-3 shadow-xl">
-                  <Wrench className="h-8 w-8 text-brand-red drop-shadow-[0_2px_3px_rgba(0,0,0,0.5)]" />
+                  <Wrench className="h-8 w-8 text-brand-gold drop-shadow-[0_2px_3px_rgba(0,0,0,0.5)]" />
                 </div>
                 <span className="ml-3 text-white font-medium drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)] [text-shadow:_0_1px_1px_#000]">Expert Installation</span>
               </div>
               <div className="flex items-center">
                 <div className="bg-black/50 backdrop-blur-sm rounded-lg p-3 shadow-xl">
-                  <Clock className="h-8 w-8 text-brand-red drop-shadow-[0_2px_3px_rgba(0,0,0,0.5)]" />
+                  <Clock className="h-8 w-8 text-brand-gold drop-shadow-[0_2px_3px_rgba(0,0,0,0.5)]" />
                 </div>
                 <span className="ml-3 text-white font-medium drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)] [text-shadow:_0_1px_1px_#000]">Quick Turnaround</span>
               </div>
@@ -78,16 +78,16 @@ const Hero = () => {
 
           {/* Right side: AI Wrap Designer promotion */}
           <div className="flex items-center justify-center animate-enter" style={{ animationDelay: "0.7s" }}>
-            <div className="bg-brand-navy/40 backdrop-blur-md border border-white/20 rounded-2xl shadow-2xl p-6 w-full max-w-md transform hover:scale-[1.02] transition-transform duration-300">
+            <div className="bg-brand-black/70 backdrop-blur-md border border-brand-gold/30 rounded-2xl shadow-2xl p-6 w-full max-w-md transform hover:scale-[1.02] transition-transform duration-300">
               <div className="relative mb-6">
                 {/* Animated decorative elements */}
-                <div className="absolute -top-6 -right-6 w-20 h-20 bg-brand-red/20 rounded-full blur-xl animate-pulse"></div>
-                <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-brand-navy/40 rounded-full blur-xl animate-pulse delay-700"></div>
+                <div className="absolute -top-6 -right-6 w-20 h-20 bg-brand-gold/20 rounded-full blur-xl animate-pulse"></div>
+                <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-brand-grey/40 rounded-full blur-xl animate-pulse delay-700"></div>
                 
                 <div className="flex justify-center">
-                  <div className="bg-gradient-to-br from-brand-red to-brand-navy p-0.5 rounded-full">
-                    <div className="bg-black/50 backdrop-blur-sm rounded-full p-4">
-                      <Sparkles className="h-12 w-12 text-brand-red animate-pulse" />
+                  <div className="bg-gradient-to-br from-brand-gold to-yellow-600 p-0.5 rounded-full">
+                    <div className="bg-brand-black/80 backdrop-blur-sm rounded-full p-4">
+                      <Sparkles className="h-12 w-12 text-brand-gold animate-pulse" />
                     </div>
                   </div>
                 </div>
@@ -102,16 +102,16 @@ const Hero = () => {
               </p>
               
               <div className="space-y-4 mb-8">
-                <div className="flex items-center bg-brand-navy/30 px-4 py-3 rounded-lg">
-                  <Zap className="h-5 w-5 text-brand-red mr-3 flex-shrink-0" />
+                <div className="flex items-center bg-brand-grey/30 px-4 py-3 rounded-lg">
+                  <Zap className="h-5 w-5 text-brand-gold mr-3 flex-shrink-0" />
                   <span className="text-white/90 text-sm">Generate custom designs instantly</span>
                 </div>
-                <div className="flex items-center bg-brand-navy/30 px-4 py-3 rounded-lg">
-                  <Sparkles className="h-5 w-5 text-brand-red mr-3 flex-shrink-0" />
+                <div className="flex items-center bg-brand-grey/30 px-4 py-3 rounded-lg">
+                  <Sparkles className="h-5 w-5 text-brand-gold mr-3 flex-shrink-0" />
                   <span className="text-white/90 text-sm">No design skills required</span>
                 </div>
-                <div className="flex items-center bg-brand-navy/30 px-4 py-3 rounded-lg">
-                  <Clock className="h-5 w-5 text-brand-red mr-3 flex-shrink-0" />
+                <div className="flex items-center bg-brand-grey/30 px-4 py-3 rounded-lg">
+                  <Clock className="h-5 w-5 text-brand-gold mr-3 flex-shrink-0" />
                   <span className="text-white/90 text-sm">Save weeks in the design process</span>
                 </div>
               </div>
@@ -119,14 +119,14 @@ const Hero = () => {
               <Button 
                 asChild
                 size="lg"
-                className="relative w-full bg-brand-navy hover:bg-blue-900 text-white text-lg px-8 py-7 h-auto rounded-xl shadow-xl overflow-hidden group"
+                className="relative w-full bg-brand-black hover:bg-brand-grey/90 text-white text-lg px-8 py-7 h-auto rounded-xl shadow-xl overflow-hidden group"
               >
                 <Link to="/ai-wrap-ideas" className="inline-flex items-center justify-center">
                   {/* Animated background effect */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-brand-navy via-brand-red to-brand-navy bg-[length:200%_100%] animate-gradient-x"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-brand-black via-brand-gold to-brand-black bg-[length:200%_100%] animate-gradient-x"></div>
                   
                   <span className="relative z-10 font-bold flex items-center">
-                    <Sparkles className="mr-2 h-5 w-5 text-white group-hover:animate-ping" />
+                    <Sparkles className="mr-2 h-5 w-5 text-brand-gold group-hover:animate-ping" />
                     Design Your Wrap Now
                     <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                   </span>
