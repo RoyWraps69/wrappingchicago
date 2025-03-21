@@ -23,11 +23,8 @@ export const useGalleryImages = (): GalleryImages => {
     item.category === 'Color Change Wraps'
   )?.image || vanImages[0]?.image || "/lovable-uploads/230338ed-a8d9-4584-bb4c-ba33c793f7ab.png";
   
-  // Get specific image for commercial graphics section
-  const commercialGraphics = galleryItems.find(item => 
-    item.title === 'Blue Truck Commercial Graphics' && 
-    item.category === 'Commercial Graphics'
-  )?.image || "/lovable-uploads/fb7a4b97-4b57-4b2e-8f81-42a1098270df.png";
+  // Use the new uploaded image for commercial graphics section
+  const commercialGraphics = "/lovable-uploads/bc84c157-8367-4197-9b08-8ef75da53ce3.png";
 
   return {
     fleetWrapVan,
