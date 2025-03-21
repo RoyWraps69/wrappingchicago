@@ -64,6 +64,10 @@ const ContactForm = () => {
           apiKeyExists={true}
         />
       )}
+      
+      <p className="text-xs text-gray-500 mt-4">
+        * This form uses FormSubmit.co to deliver your message directly to roy@chicagofleetwraps.com
+      </p>
     </div>
   );
 };

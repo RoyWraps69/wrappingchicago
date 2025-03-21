@@ -25,6 +25,11 @@ const ContactFormFields = ({ form, onSubmit, isSubmitting, apiKeyExists }: Conta
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+        {/* Honeypot field to prevent spam - not visible to users */}
+        <div className="hidden">
+          <input type="text" name="_honey" style={{ display: 'none' }} />
+        </div>
+        
         <FormField
           control={form.control}
           name="name"
