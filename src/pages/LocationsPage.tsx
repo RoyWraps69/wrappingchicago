@@ -35,7 +35,7 @@ const LocationsPage = () => {
                 alt="Chicago skyline with highways and vehicle traffic"
                 className="w-full h-full object-cover"
                 loading="eager"
-                fetchpriority="high"
+                fetchPriority="high"
               />
               <div className="absolute inset-0 bg-black/30"></div>
             </div>
