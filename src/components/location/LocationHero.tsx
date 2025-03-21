@@ -10,7 +10,7 @@ interface LocationHeroProps {
 
 const LocationHero = ({ cityName }: LocationHeroProps) => {
   return (
-    <section className="relative overflow-hidden py-32 min-h-[90vh] flex items-center" id="location-hero">
+    <section className="relative overflow-hidden py-32 min-h-[90vh] flex items-center bg-gray-50" id="location-hero">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-30">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="animate-fade-in">
@@ -19,11 +19,11 @@ const LocationHero = ({ cityName }: LocationHeroProps) => {
               <span className="font-medium">Serving {cityName}, Illinois</span>
             </div>
             
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white leading-tight mb-6">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 leading-tight mb-6">
               Premium Vehicle Wraps in {cityName}
             </h1>
             
-            <p className="text-xl text-white/80 mb-8 max-w-lg">
+            <p className="text-xl text-gray-700 mb-8 max-w-lg">
               Transform your vehicles with professional wraps that make your business stand out on every street in {cityName}.
             </p>
             
@@ -43,7 +43,7 @@ const LocationHero = ({ cityName }: LocationHeroProps) => {
                 asChild
                 variant="outline"
                 size="lg"
-                className="border-white/20 bg-white/5 backdrop-blur-sm text-white hover:bg-white hover:text-brand-navy font-medium px-8 py-6 h-auto rounded-full"
+                className="border-gray-300 bg-white text-gray-800 hover:bg-gray-100 font-medium px-8 py-6 h-auto rounded-full"
               >
                 <a href="tel:3125971286" className="inline-flex items-center">
                   <Phone className="mr-2 h-4 w-4" />
@@ -55,7 +55,7 @@ const LocationHero = ({ cityName }: LocationHeroProps) => {
                 asChild
                 variant="outline"
                 size="lg"
-                className="border-white/20 bg-white/5 backdrop-blur-sm text-white hover:bg-white hover:text-brand-navy font-medium px-8 py-6 h-auto rounded-full flex items-center"
+                className="border-gray-300 bg-white text-gray-800 hover:bg-gray-100 font-medium px-8 py-6 h-auto rounded-full flex items-center"
               >
                 <Link to="/ai-wrap-ideas" className="inline-flex items-center">
                   <Sparkles className="mr-2 h-4 w-4" />
@@ -73,8 +73,8 @@ const LocationHero = ({ cityName }: LocationHeroProps) => {
                 alt={`Professional vehicle wraps in ${cityName}`}
                 className="rounded-lg shadow-2xl relative z-10 transform rotate-2"
               />
-              <div className="absolute -bottom-6 -right-6 bg-gray-900/90 backdrop-blur rounded-lg shadow-xl p-4 transform -rotate-3 z-20 border border-gray-700">
-                <p className="text-white font-bold">{cityName}'s Most Trusted Wrap Provider</p>
+              <div className="absolute -bottom-6 -right-6 bg-white/90 backdrop-blur rounded-lg shadow-xl p-4 transform -rotate-3 z-20 border border-gray-200">
+                <p className="text-gray-800 font-bold">{cityName}'s Most Trusted Wrap Provider</p>
               </div>
             </div>
           </div>
@@ -83,7 +83,7 @@ const LocationHero = ({ cityName }: LocationHeroProps) => {
       
       {/* Wave divider */}
       <div className="absolute bottom-0 left-0 right-0">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 160" className="fill-gray-900">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 160" className="fill-white">
           <path d="M0,128L80,117.3C160,107,320,85,480,90.7C640,96,800,128,960,128C1120,128,1280,96,1360,80L1440,64L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path>
         </svg>
       </div>

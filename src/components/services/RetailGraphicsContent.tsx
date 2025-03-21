@@ -5,15 +5,15 @@ const RetailGraphicsContent: React.FC = () => {
   return (
     <>
       <h2 className="text-2xl font-semibold text-brand-navy mb-4">Retail Graphics and Signage</h2>
-      <p className="mb-6">
+      <p className="mb-6 text-gray-700">
         Enhance your retail space with our custom window wraps, wall graphics, and storefront signage. 
         Our retail graphics solutions help you create an immersive brand experience that attracts customers 
         and communicates your message effectively.
       </p>
       <div className="grid md:grid-cols-2 gap-6 mb-8">
-        <div className="bg-brand-light p-6 rounded-lg">
+        <div className="bg-white shadow p-6 rounded-lg">
           <h3 className="text-xl font-semibold text-brand-navy mb-3">Retail Graphics Options</h3>
-          <ul className="list-disc pl-5 space-y-2">
+          <ul className="list-disc pl-5 space-y-2 text-gray-700">
             <li>Storefront window graphics</li>
             <li>One-way window vision films</li>
             <li>Floor graphics and decals</li>
@@ -22,9 +22,9 @@ const RetailGraphicsContent: React.FC = () => {
             <li>Temporary promotional signage</li>
           </ul>
         </div>
-        <div className="bg-brand-light p-6 rounded-lg">
+        <div className="bg-white shadow p-6 rounded-lg">
           <h3 className="text-xl font-semibold text-brand-navy mb-3">Ideal Applications</h3>
-          <ul className="list-disc pl-5 space-y-2">
+          <ul className="list-disc pl-5 space-y-2 text-gray-700">
             <li>Retail shops and boutiques</li>
             <li>Restaurant and cafe storefronts</li>
             <li>Pop-up stores and kiosks</li>
