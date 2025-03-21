@@ -1,6 +1,7 @@
 
 /**
- * Service for handling email operations via form submission
+ * Service for handling email operations via FormSubmit.co
+ * This file is maintained for compatibility with existing code
  */
 
 export interface EmailData {
@@ -11,8 +12,8 @@ export interface EmailData {
   message: string;
 }
 
-// FormSubmit.co is used for direct email submission
-// This file is kept for compatibility with existing code
+// This service is no longer actively used since we're using FormSubmit.co
+// These methods are kept for backward compatibility
 export const sendEmail = async (data: EmailData): Promise<void> => {
   console.log('Email would be sent with the following data:', data);
   // No implementation needed as FormSubmit.co handles the actual sending

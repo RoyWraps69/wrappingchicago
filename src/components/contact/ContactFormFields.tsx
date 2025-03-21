@@ -22,22 +22,26 @@ interface ContactFormFieldsProps {
 }
 
 const ContactFormFields = ({ form, onSubmit, isSubmitting, apiKeyExists }: ContactFormFieldsProps) => {
+  // Get absolute URL for the success redirect
+  const baseUrl = window.location.origin;
+  const successUrl = `${baseUrl}/contact?success=true`;
+
   return (
     <Form {...form}>
       <form 
-        onSubmit={form.handleSubmit(onSubmit)}
         action="https://formsubmit.co/roy@chicagofleetwraps.com"
         method="POST"
         className="space-y-4"
+        onSubmit={form.handleSubmit(onSubmit)}
       >
-        {/* Honeypot field to prevent spam - FormSubmit specific */}
-        <input type="text" name="_honey" style={{ display: 'none' }} />
-        
-        {/* FormSubmit.co specific fields - updated for better reliability */}
+        {/* FormSubmit.co specific configuration fields */}
         <input type="hidden" name="_subject" value="Chicago Fleet Wraps: New Quote Request" />
-        <input type="hidden" name="_template" value="table" />
         <input type="hidden" name="_captcha" value="false" />
-        <input type="hidden" name="_next" value={`${window.location.origin}/contact?success=true`} />
+        <input type="hidden" name="_next" value={successUrl} />
+        <input type="hidden" name="_template" value="table" />
+        
+        {/* Honeypot field to prevent spam */}
+        <input type="text" name="_honey" style={{ display: 'none' }} />
         
         <FormField
           control={form.control}

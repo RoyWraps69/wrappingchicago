@@ -30,30 +30,26 @@ const ContactForm = () => {
     }
   }, []);
 
-  // Function to handle form submission - primarily for form validation and UI feedback
+  // This function mainly handles client-side validation and UI feedback
+  // The actual form submission is handled by the native HTML form action
   const handleSubmit = async (data: FormValues) => {
     setIsSubmitting(true);
     
     try {
       console.log("Form data validated:", data);
       
-      // The actual form submission happens via the HTML form action attribute
-      // This handler is mainly for client-side validation and UX
-      
+      // Show feedback to user while form is submitting
       toast({
-        title: "Form Submitted",
-        description: "Processing your request. You'll be redirected shortly.",
+        title: "Submitting Form",
+        description: "Your request is being sent. Please wait...",
         variant: "default",
         duration: 3000,
       });
       
-      // We don't reset the form here because FormSubmit will handle the actual submission
-      // and redirect back to our page
+      // We don't need to manually submit the form - it will be handled by the HTML form action
+      // This function is just for validation and UI feedback
       
-      setTimeout(() => {
-        setIsSubmitting(false);
-      }, 3000);
-      
+      // FormSubmit.co will handle the actual submission and redirect
     } catch (error) {
       console.error('Form validation error:', error);
       setIsSubmitting(false);
