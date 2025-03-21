@@ -1,6 +1,5 @@
-
 import React from 'react';
-import { Shield, Users, Palette, Award, Clock, Tools, Truck, ThumbsUp } from 'lucide-react';
+import { Shield, Users, Palette, Award, Clock, Wrench, Truck, ThumbsUp } from 'lucide-react';
 
 const WhyChooseUsSection = () => {
   const benefits = [
@@ -17,7 +16,7 @@ const WhyChooseUsSection = () => {
     {
       title: "Comprehensive Design",
       description: "From concept to completion, our design team will create eye-catching graphics.",
-      icon: <Tools className="w-8 h-8 text-white" />
+      icon: <Wrench className="w-8 h-8 text-white" />
     },
     {
       title: "2-Year \"NO QUESTIONS ASKED\" Warranty",
