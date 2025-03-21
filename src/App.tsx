@@ -6,6 +6,7 @@ import Index from './pages/Index';
 import CityLocationPage from './pages/CityLocationPage';
 import LocationsPage from './pages/LocationsPage';
 import ContactPage from './pages/ContactPage';
+import AIWrapIdeas from './pages/AIWrapIdeas';
 import GoogleTagManager from './components/GoogleTagManager';
 import GoogleSearchConsole from './components/seo/GoogleSearchConsole';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
@@ -25,6 +26,7 @@ function App() {
             <Route path="/" element={<Index />} />
             <Route path="/locations" element={<LocationsPage />} />
             <Route path="/contact" element={<ContactPage />} />
+            <Route path="/ai-wrap-ideas" element={<AIWrapIdeas />} />
             <Route path="/vehicle-wraps-:citySlug-il" element={<CityLocationPage />} />
             <Route path="/:citySlug" element={<CityLocationPage />} />
           </Routes>
