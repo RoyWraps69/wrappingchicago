@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import Header from '@/components/Header';
@@ -7,32 +6,18 @@ import Breadcrumbs from '@/components/navigation/Breadcrumbs';
 import Schema from '@/components/Schema';
 import { cities } from '@/data/cities';
 import CallToAction from '@/components/CallToAction';
-
 const AboutPage = () => {
   // For Schema component
   const chicagoCity = cities.find(city => city.slug === 'chicago') || cities[0];
-  
-  return (
-    <>
+  return <>
       <Helmet>
         <title>About Chicago Fleet Wraps | Professional Vehicle Wrap Company</title>
-        <meta 
-          name="description" 
-          content="Learn about Chicago Fleet Wraps, a premier vehicle wrapping company serving Chicago and surrounding areas. Discover our experience, expertise, and commitment to quality."
-        />
-        <meta 
-          name="keywords" 
-          content="about Chicago Fleet Wraps, vehicle wrap company Chicago, professional car wrapping, Chicago wrap installers, vehicle wrapping experts, 3M certified wrap company"
-        />
+        <meta name="description" content="Learn about Chicago Fleet Wraps, a premier vehicle wrapping company serving Chicago and surrounding areas. Discover our experience, expertise, and commitment to quality." />
+        <meta name="keywords" content="about Chicago Fleet Wraps, vehicle wrap company Chicago, professional car wrapping, Chicago wrap installers, vehicle wrapping experts, 3M certified wrap company" />
         <link rel="canonical" href="https://wrappingchicago.com/about" />
       </Helmet>
       
-      <Schema 
-        city={chicagoCity}
-        path="/about"
-        pageTitle="About Chicago Fleet Wraps | Professional Vehicle Wrap Company"
-        pageDescription="Learn about Chicago Fleet Wraps, a premier vehicle wrapping company serving Chicago and surrounding areas."
-      />
+      <Schema city={chicagoCity} path="/about" pageTitle="About Chicago Fleet Wraps | Professional Vehicle Wrap Company" pageDescription="Learn about Chicago Fleet Wraps, a premier vehicle wrapping company serving Chicago and surrounding areas." />
       
       <div className="flex flex-col min-h-screen">
         <Header />
@@ -90,11 +75,7 @@ const AboutPage = () => {
               
               <div>
                 <div className="bg-white rounded-lg shadow-md overflow-hidden mb-8">
-                  <img 
-                    src="/lovable-uploads/efdbc4bf-1f04-42bb-a904-f52dae7bef6c.png" 
-                    alt="Chicago Fleet Wraps Installation Facility" 
-                    className="w-full h-64 object-cover"
-                  />
+                  <img alt="Chicago Fleet Wraps Installation Facility" className="w-full h-64 object-cover" src="/lovable-uploads/a10b218d-522c-49b7-b10f-6cde9ee79cf6.jpg" />
                   <div className="p-6">
                     <h3 className="text-xl font-semibold text-brand-navy mb-2">State-of-the-Art Facility</h3>
                     <p className="text-gray-700">
@@ -204,8 +185,6 @@ const AboutPage = () => {
         
         <Footer />
       </div>
-    </>
-  );
+    </>;
 };
-
 export default AboutPage;
