@@ -9,6 +9,12 @@ import { Form, FormControl, FormField, FormItem, FormLabel } from "@/components/
 import { useForm } from "react-hook-form";
 import emailjs from 'emailjs-com';
 
+// EmailJS configuration
+// Replace these with your actual EmailJS account details
+const EMAILJS_SERVICE_ID = 'service_5f00lkt';
+const EMAILJS_TEMPLATE_ID = 'template_lznnmhm';
+const EMAILJS_USER_ID = 'p4Ac1nNy55x5QUFel';
+
 const ContactForm = () => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -33,10 +39,10 @@ const ContactForm = () => {
       
       // Send email using EmailJS
       const result = await emailjs.sendForm(
-        'gmail',                // Service ID
-        'template_default',     // Template ID
-        formElement,            // Properly cast form element
-        null                    // No user ID required with this approach
+        EMAILJS_SERVICE_ID,      // Service ID
+        EMAILJS_TEMPLATE_ID,     // Template ID
+        formElement,             // Properly cast form element
+        EMAILJS_USER_ID          // User ID is required
       );
       
       console.log('Email sent successfully!', result);
