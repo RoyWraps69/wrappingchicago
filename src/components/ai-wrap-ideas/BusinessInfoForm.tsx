@@ -29,7 +29,7 @@ const BusinessInfoForm = ({
 }: BusinessInfoFormProps) => {
   return (
     <div>
-      <h2 className="text-2xl font-bold text-brand-navy mb-6">AI Wrap Concept Generator</h2>
+      <h2 className="text-2xl font-bold text-brand-black mb-6">AI Wrap Concept Generator</h2>
       <p className="text-gray-700 mb-6">
         Tell us about your business, and we'll generate wrap design concepts tailored to your needs. 
         This helps us understand your vision more clearly and creates a foundation for our design process.
@@ -70,7 +70,7 @@ const BusinessInfoForm = ({
       <Button
         onClick={onGenerateIdeas}
         disabled={isGenerating}
-        className="w-full bg-brand-red hover:bg-red-700 text-white py-3 h-auto"
+        className="w-full bg-brand-gold hover:bg-yellow-600 text-brand-black py-3 h-auto"
       >
         {isGenerating ? (
           <>

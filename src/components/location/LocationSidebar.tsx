@@ -20,8 +20,8 @@ const LocationSidebar: React.FC<LocationSidebarProps> = ({ city }) => {
     <div className="space-y-8">
       {/* Contact Section */}
       <div className="bg-white p-6 rounded-2xl shadow-lg border border-gray-100">
-        <h3 className="text-xl font-bold mb-6 text-brand-navy flex items-center">
-          <span className="w-8 h-8 flex items-center justify-center rounded-full bg-brand-red text-white mr-2">
+        <h3 className="text-xl font-bold mb-6 text-brand-black flex items-center">
+          <span className="w-8 h-8 flex items-center justify-center rounded-full bg-brand-gold text-brand-black mr-2">
             <Phone className="h-4 w-4" />
           </span>
           Contact Us
@@ -45,7 +45,7 @@ const LocationSidebar: React.FC<LocationSidebarProps> = ({ city }) => {
             </p>
             <Button 
               variant="link" 
-              className="p-0 h-auto text-brand-red mt-1"
+              className="p-0 h-auto text-brand-gold mt-1"
               asChild
             >
               <a 
@@ -62,9 +62,9 @@ const LocationSidebar: React.FC<LocationSidebarProps> = ({ city }) => {
       </div>
       
       {/* Schedule Appointment */}
-      <div className="bg-brand-navy p-6 rounded-2xl shadow-lg text-white">
+      <div className="bg-brand-black p-6 rounded-2xl shadow-lg text-white">
         <h3 className="text-xl font-bold mb-4 flex items-center">
-          <Calendar className="h-5 w-5 text-brand-red mr-2" />
+          <Calendar className="h-5 w-5 text-brand-gold mr-2" />
           Schedule Consultation
         </h3>
         <p className="mb-4 text-white/80">
@@ -72,7 +72,7 @@ const LocationSidebar: React.FC<LocationSidebarProps> = ({ city }) => {
         </p>
         <Button
           asChild
-          variant="default"
+          variant="gold"
           className="w-full"
         >
           <Link to="/contact" className="inline-flex items-center">
@@ -84,8 +84,8 @@ const LocationSidebar: React.FC<LocationSidebarProps> = ({ city }) => {
       
       {/* Services */}
       <div className="bg-white p-6 rounded-2xl shadow-lg border border-gray-100">
-        <h3 className="text-xl font-bold mb-4 text-brand-navy flex items-center">
-          <Car className="h-5 w-5 text-brand-red mr-2" />
+        <h3 className="text-xl font-bold mb-4 text-brand-black flex items-center">
+          <Car className="h-5 w-5 text-brand-gold mr-2" />
           Our Services
         </h3>
         <ul className="space-y-2 divide-y divide-gray-100">
@@ -98,7 +98,7 @@ const LocationSidebar: React.FC<LocationSidebarProps> = ({ city }) => {
             <li key={index}>
               <Link 
                 to={service.link} 
-                className="flex items-center py-3 text-brand-navy hover:text-brand-red transition-colors"
+                className="flex items-center py-3 text-brand-black hover:text-brand-gold transition-colors"
               >
                 <ArrowRight className="h-4 w-4 mr-2 opacity-50" />
                 {service.name}
@@ -111,21 +111,21 @@ const LocationSidebar: React.FC<LocationSidebarProps> = ({ city }) => {
       {/* Testimonial */}
       <div className="bg-gradient-to-br from-brand-light to-white p-6 rounded-2xl shadow-lg border border-gray-100">
         <div className="flex items-center mb-4">
-          <Star className="h-5 w-5 text-yellow-400" fill="#FBBF24" />
-          <Star className="h-5 w-5 text-yellow-400" fill="#FBBF24" />
-          <Star className="h-5 w-5 text-yellow-400" fill="#FBBF24" />
-          <Star className="h-5 w-5 text-yellow-400" fill="#FBBF24" />
-          <Star className="h-5 w-5 text-yellow-400" fill="#FBBF24" />
+          <Star className="h-5 w-5 text-brand-gold" fill="#D4AF37" />
+          <Star className="h-5 w-5 text-brand-gold" fill="#D4AF37" />
+          <Star className="h-5 w-5 text-brand-gold" fill="#D4AF37" />
+          <Star className="h-5 w-5 text-brand-gold" fill="#D4AF37" />
+          <Star className="h-5 w-5 text-brand-gold" fill="#D4AF37" />
         </div>
         <p className="italic text-gray-700 mb-4">
           "Chicago Fleet Wraps transformed our delivery vehicles with stunning graphics. The team was professional and the quality is outstanding!"
         </p>
         <div className="flex items-center">
-          <div className="w-10 h-10 rounded-full bg-brand-navy text-white flex items-center justify-center mr-3">
+          <div className="w-10 h-10 rounded-full bg-brand-black text-white flex items-center justify-center mr-3">
             AB
           </div>
           <div>
-            <p className="font-medium text-brand-navy">Alex Brown</p>
+            <p className="font-medium text-brand-black">Alex Brown</p>
             <p className="text-sm text-gray-500">{city.name} Business Owner</p>
           </div>
         </div>
@@ -133,13 +133,13 @@ const LocationSidebar: React.FC<LocationSidebarProps> = ({ city }) => {
       
       {/* Nearby Cities */}
       <div className="bg-white p-6 rounded-2xl shadow-lg border border-gray-100">
-        <h3 className="text-xl font-bold mb-4 text-brand-navy">Nearby Cities</h3>
+        <h3 className="text-xl font-bold mb-4 text-brand-black">Nearby Cities</h3>
         <div className="grid grid-cols-2 gap-2">
           {nearbyCities.map(nearbyCity => (
             <Link 
               key={nearbyCity.slug}
               to={`/vehicle-wraps-${nearbyCity.slug}-il`} 
-              className="text-sm bg-gray-50 hover:bg-brand-red/10 p-3 rounded-lg text-brand-navy hover:text-brand-red transition-all duration-200"
+              className="text-sm bg-gray-50 hover:bg-brand-gold/10 p-3 rounded-lg text-brand-black hover:text-brand-gold transition-all duration-200"
             >
               {nearbyCity.name}, IL
             </Link>
@@ -149,7 +149,7 @@ const LocationSidebar: React.FC<LocationSidebarProps> = ({ city }) => {
           <Button
             asChild
             variant="link"
-            className="text-brand-red"
+            className="text-brand-gold"
           >
             <Link to="/locations" className="inline-flex items-center">
               View All Locations

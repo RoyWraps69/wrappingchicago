@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
@@ -24,10 +23,10 @@ const ServiceHeader: React.FC<ServiceHeaderProps> = ({
   
   return (
     <div className="mb-8">
-      <h1 className="text-4xl font-bold text-brand-navy mb-6">
+      <h1 className="text-4xl font-bold text-brand-black mb-6">
         {title}
         {highlightAI && (
-          <span className="ml-2 text-sm bg-brand-red text-white px-3 py-1 rounded-full uppercase">
+          <span className="ml-2 text-sm bg-brand-gold text-brand-black px-3 py-1 rounded-full uppercase">
             AI-Powered
           </span>
         )}
@@ -37,7 +36,7 @@ const ServiceHeader: React.FC<ServiceHeaderProps> = ({
       <div className="flex flex-col sm:flex-row gap-3 mb-6">
         <Button
           asChild
-          className="bg-brand-red hover:bg-red-700 text-white"
+          className="bg-brand-gold hover:bg-yellow-600 text-brand-black"
         >
           <Link to="/contact" className="inline-flex items-center">
             <MessageSquare className="mr-2 h-4 w-4" />
@@ -47,7 +46,7 @@ const ServiceHeader: React.FC<ServiceHeaderProps> = ({
         <Button
           asChild
           variant="outline"
-          className="border-brand-navy text-brand-navy hover:bg-brand-navy hover:text-white"
+          className="border-brand-black text-brand-black hover:bg-brand-black hover:text-white"
         >
           <a href="tel:3125971286" className="inline-flex items-center">
             <Phone className="mr-2 h-4 w-4" />
@@ -82,8 +81,8 @@ const ServiceHeader: React.FC<ServiceHeaderProps> = ({
         )}
       </p>
       
-      <div className="bg-brand-light p-5 rounded-lg border border-brand-navy/10 mb-6">
-        <h2 className="text-xl font-semibold text-brand-navy mb-3">Why Choose Wrapping Chicago For Your Vehicle Wrap Needs?</h2>
+      <div className="bg-brand-light p-5 rounded-lg border border-brand-black/10 mb-6">
+        <h2 className="text-xl font-semibold text-brand-black mb-3">Why Choose Wrapping Chicago For Your Vehicle Wrap Needs?</h2>
         <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-2 list-disc pl-5">
           <li className="text-gray-700">Over 16,000 vehicle wraps completed</li>
           <li className="text-gray-700">20 years of professional experience</li>
@@ -134,7 +133,6 @@ const ServiceHeader: React.FC<ServiceHeaderProps> = ({
         </div>
       )}
       
-      {/* Added section with keyword-rich badges */}
       <div className="bg-gray-50 p-4 rounded-lg border border-gray-200 mb-8">
         <h2 className="text-lg font-semibold text-brand-navy mb-3">Chicago's Premium Vehicle Wrap Services:</h2>
         <div className="flex flex-wrap gap-2">

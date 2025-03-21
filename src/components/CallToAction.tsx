@@ -6,7 +6,7 @@ import { Phone, Camera } from 'lucide-react';
 
 const CallToAction = ({ city = 'your area' }: { city?: string }) => {
   return (
-    <section className="bg-brand-red text-white py-12">
+    <section className="bg-brand-gold text-brand-black py-12">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 className="text-3xl font-bold mb-3">Ready to Transform Your Vehicles in {city}?</h2>
         <p className="text-xl mb-6 max-w-2xl mx-auto">
@@ -16,7 +16,7 @@ const CallToAction = ({ city = 'your area' }: { city?: string }) => {
         <div className="flex flex-col sm:flex-row justify-center gap-4">
           <Button
             asChild
-            variant="white"
+            variant="black"
             className="text-lg px-8 py-5 h-auto"
           >
             <Link to="/contact" className="inline-flex items-center">
@@ -26,8 +26,8 @@ const CallToAction = ({ city = 'your area' }: { city?: string }) => {
           </Button>
           <Button
             asChild
-            variant="outlineWhite"
-            className="text-lg px-8 py-5 h-auto"
+            variant="outlineGold"
+            className="text-lg px-8 py-5 h-auto border-brand-black text-brand-black hover:bg-brand-black hover:text-brand-gold"
           >
             <Link to="/gallery" className="inline-flex items-center">
               <Camera className="mr-2 h-5 w-5" />

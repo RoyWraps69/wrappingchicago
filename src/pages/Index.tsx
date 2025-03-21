@@ -14,7 +14,7 @@ import Schema from '@/components/Schema';
 import AIWrapSchema from '@/components/ai-wrap-ideas/AIWrapSchema';
 import EasyButtonSection from '@/components/home/EasyButtonSection';
 
-// Import the new components
+// Import the components
 import InfoBar from '@/components/home/InfoBar';
 import QuickLinksBar from '@/components/home/QuickLinksBar';
 import StickyContactButtons from '@/components/home/StickyContactButtons';
@@ -44,9 +44,6 @@ const Index = () => {
         <Header />
         
         <main className="flex-grow">
-          {/* Easy Button Section - Added at the top */}
-          <EasyButtonSection />
-          
           <Hero />
           
           {/* Information Bar with Contact Buttons */}
@@ -82,6 +79,9 @@ const Index = () => {
           <VehicleWrapFAQ />
           
           <CallToAction />
+          
+          {/* Easy Button Section - Moved to the bottom */}
+          <EasyButtonSection />
         </main>
         
         <Footer />

@@ -19,7 +19,7 @@ const ContactBar = () => {
             <span className="text-brand-gold">Our Locations:</span>
             <a 
               href="https://wrappingchicago.com" 
-              className="flex items-center hover:text-brand-gold transition-colors"
+              className="flex items-center text-white hover:text-brand-gold transition-colors"
             >
               <Globe className="w-4 h-4 mr-1 text-white" />
               Chicago
@@ -28,7 +28,7 @@ const ContactBar = () => {
               href="https://centralimagewraps.com" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="flex items-center hover:text-brand-gold transition-colors"
+              className="flex items-center text-white hover:text-brand-gold transition-colors"
             >
               <Globe className="w-4 h-4 mr-1 text-white" />
               Central IL
@@ -37,7 +37,7 @@ const ContactBar = () => {
               href="https://lasvegascarwraps.com" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="flex items-center hover:text-brand-gold transition-colors"
+              className="flex items-center text-white hover:text-brand-gold transition-colors"
             >
               <Globe className="w-4 h-4 mr-1 text-white" />
               Las Vegas
