@@ -12,7 +12,7 @@ interface CallToActionBoxProps {
 const CallToActionBox: React.FC<CallToActionBoxProps> = ({ city }) => {
   return (
     <div className="mt-8 bg-gray-50 p-6 rounded-lg border border-brand-light">
-      <h4 className="text-xl font-bold mb-3 text-brand-navy">Ready to Transform Your Vehicles in {city.name}?</h4>
+      <h4 className="text-xl font-bold mb-3 text-gray-900">Ready to Transform Your Vehicles in {city.name}?</h4>
       <p className="mb-4 text-gray-700">
         Contact Chicago Fleet Wraps today to schedule a consultation or request a free, no-obligation quote for your {city.name} vehicle wrap project. 
         Our team uses premium Avery and 3M materials to help you make a statement on the roads of {city.county} and beyond!

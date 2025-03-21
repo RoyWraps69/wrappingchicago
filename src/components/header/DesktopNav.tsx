@@ -9,27 +9,27 @@ const DesktopNav = () => {
   return (
     <nav className="hidden md:flex items-center space-x-6">
       <NavLink to="/">
-        <Home className="mr-1 h-4 w-4" />
+        <Home className="mr-1 h-4 w-4 text-brand-gold" />
         Home
       </NavLink>
       <NavLink to="/ai-wrap-ideas" icon={Sparkles}>
-        <Sparkles className="mr-1 h-4 w-4" />
+        <Sparkles className="mr-1 h-4 w-4 text-brand-gold" />
         AI Wrap Designer
       </NavLink>
       <NavLink to="/services/fleet-wraps">
-        <Car className="mr-1 h-4 w-4" />
+        <Car className="mr-1 h-4 w-4 text-brand-gold" />
         Services
       </NavLink>
       <NavLink to="/gallery">
-        <Image className="mr-1 h-4 w-4" />
+        <Image className="mr-1 h-4 w-4 text-brand-gold" />
         Gallery
       </NavLink>
       <NavLink to="/about">
-        <Info className="mr-1 h-4 w-4" />
+        <Info className="mr-1 h-4 w-4 text-brand-gold" />
         About
       </NavLink>
       <NavLink to="/contact">
-        <Mail className="mr-1 h-4 w-4" />
+        <Mail className="mr-1 h-4 w-4 text-brand-gold" />
         Contact
       </NavLink>
       
@@ -40,7 +40,7 @@ const DesktopNav = () => {
           asChild
         >
           <Link to="/contact" className="inline-flex items-center">
-            <MessageSquare className="mr-2 h-4 w-4" />
+            <MessageSquare className="mr-2 h-4 w-4 text-brand-gold" />
             Get a Quote
           </Link>
         </Button>

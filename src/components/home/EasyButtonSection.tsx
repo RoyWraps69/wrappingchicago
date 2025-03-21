@@ -46,7 +46,7 @@ const EasyButtonSection = () => {
               </div>
               
               <p className="text-white/90 mb-6 text-lg max-w-2xl">
-                Professional design, premium materials, and expert installation for one all-inclusive price of just <span className="font-bold text-brand-gold text-xl">$3,999</span> — with <span className="font-bold underline">no hidden fees</span> (up to 400 sq ft).
+                Professional design, premium Avery and 3M materials, and expert installation for one all-inclusive price of just <span className="font-bold text-brand-gold text-xl">$3,999</span> — with <span className="font-bold underline">no hidden fees</span> (up to 400 sq ft).
               </p>
               
               <div className="grid grid-cols-2 gap-4 mb-6">
@@ -60,7 +60,7 @@ const EasyButtonSection = () => {
                 <div className="flex items-start">
                   <Check className="h-5 w-5 text-brand-gold mr-2 mt-0.5 flex-shrink-0" />
                   <div>
-                    <span className="text-white font-medium">Premium 3M Materials</span>
+                    <span className="text-white font-medium">Premium Avery & 3M Materials</span>
                     <p className="text-white/70 text-sm">High-quality vinyl that lasts years</p>
                   </div>
                 </div>

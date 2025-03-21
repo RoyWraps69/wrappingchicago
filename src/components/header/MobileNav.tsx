@@ -23,7 +23,7 @@ const MobileNav: React.FC<MobileNavProps> = ({ isOpen, onClose }) => {
         className="absolute top-4 right-4 p-2 text-white hover:bg-white/10 rounded-full"
         aria-label="Close menu"
       >
-        <X className="h-6 w-6" />
+        <X className="h-6 w-6 text-brand-gold" />
       </button>
       
       <div className="flex flex-col space-y-3 mt-4">
@@ -56,7 +56,7 @@ const MobileNav: React.FC<MobileNavProps> = ({ isOpen, onClose }) => {
           asChild
         >
           <Link to="/contact" className="inline-flex items-center">
-            <MessageSquare className="mr-2 h-5 w-5" />
+            <MessageSquare className="mr-2 h-5 w-5 text-brand-gold" />
             Get a Quote
           </Link>
         </Button>
