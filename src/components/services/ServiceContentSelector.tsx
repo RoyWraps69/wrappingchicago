@@ -15,22 +15,30 @@ interface ServiceContentSelectorProps {
 }
 
 const ServiceContentSelector: React.FC<ServiceContentSelectorProps> = ({ path }) => {
-  if (path.includes('fleet-wraps')) {
+  // Normalize path by removing /services/ prefix if present
+  const normalizedPath = path.replace(/^\/services\//, '');
+  
+  if (normalizedPath.includes('fleet-wraps')) {
     return <FleetWrapsContent />;
-  } else if (path.includes('color-change-wraps')) {
+  } else if (normalizedPath.includes('color-change-wraps')) {
     return <ColorChangeWrapsContent />;
-  } else if (path.includes('commercial-graphics')) {
+  } else if (normalizedPath.includes('commercial-graphics')) {
     return <CommercialGraphicsContent />;
-  } else if (path.includes('partial-wraps')) {
+  } else if (normalizedPath.includes('partial-wraps')) {
     return <PartialWrapsContent />;
-  } else if (path.includes('protective-films')) {
+  } else if (normalizedPath.includes('protective-films')) {
     return <ProtectiveFilmsContent />;
-  } else if (path.includes('vehicle-lettering')) {
+  } else if (normalizedPath.includes('vehicle-lettering')) {
     return <VehicleLetteringContent />;
-  } else if (path.includes('specialty-wraps')) {
+  } else if (normalizedPath.includes('specialty-wraps')) {
     return <SpecialtyWrapsContent />;
-  } else if (path.includes('retail-graphics')) {
+  } else if (normalizedPath.includes('retail-graphics')) {
     return <RetailGraphicsContent />;
+  } else if (normalizedPath.includes('car-wraps') || 
+             normalizedPath.includes('truck-wraps') || 
+             normalizedPath.includes('van-wraps')) {
+    // For vehicle-specific wraps, we can either create dedicated components or use the generic one
+    return <GenericServiceContent />;
   } else {
     return <GenericServiceContent />;
   }

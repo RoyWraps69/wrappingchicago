@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
@@ -40,8 +41,10 @@ function App() {
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/ai-wrap-ideas" element={<AIWrapIdeas />} />
             
-            {/* Services routes */}
-            <Route path="/services/*" element={<ServicesPage />} />
+            {/* Services main route */}
+            <Route path="/services" element={<ServicesPage />} />
+            
+            {/* Services routes under /services/ path */}
             <Route path="/services/fleet-wraps" element={<ServicesPage />} />
             <Route path="/services/color-change-wraps" element={<ServicesPage />} />
             <Route path="/services/commercial-graphics" element={<ServicesPage />} />
@@ -50,9 +53,24 @@ function App() {
             <Route path="/services/vehicle-lettering" element={<ServicesPage />} />
             <Route path="/services/specialty-wraps" element={<ServicesPage />} />
             <Route path="/services/retail-graphics" element={<ServicesPage />} />
+            <Route path="/services/car-wraps" element={<ServicesPage />} />
+            <Route path="/services/truck-wraps" element={<ServicesPage />} />
+            <Route path="/services/van-wraps" element={<ServicesPage />} />
+            <Route path="/services/designer-wraps" element={<ServicesPage />} />
+            <Route path="/services/luxury-exotic-wraps" element={<ServicesPage />} />
             
-            {/* Other service pages directly on root */}
+            {/* Direct service routes */}
+            <Route path="/fleet-wraps" element={<ServicesPage />} />
+            <Route path="/partial-wraps" element={<ServicesPage />} />
             <Route path="/color-change-wraps" element={<ServicesPage />} />
+            <Route path="/commercial-graphics" element={<ServicesPage />} />
+            <Route path="/protective-films" element={<ServicesPage />} />
+            <Route path="/vehicle-lettering" element={<ServicesPage />} />
+            <Route path="/specialty-wraps" element={<ServicesPage />} />
+            <Route path="/retail-graphics" element={<ServicesPage />} />
+            <Route path="/car-wraps" element={<ServicesPage />} />
+            <Route path="/truck-wraps" element={<ServicesPage />} />
+            <Route path="/van-wraps" element={<ServicesPage />} />
             <Route path="/designer-wraps" element={<ServicesPage />} />
             <Route path="/luxury-exotic-wraps" element={<ServicesPage />} />
             

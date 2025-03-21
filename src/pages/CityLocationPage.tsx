@@ -18,6 +18,9 @@ const SERVICE_ROUTES = [
   'retail-graphics',
   'designer-wraps',
   'luxury-exotic-wraps',
+  'car-wraps',
+  'truck-wraps',
+  'van-wraps',
   'gallery',
   'about',
   'ai-wrap-ideas',
@@ -65,7 +68,13 @@ const CityLocationPage = () => {
   // Check if this is actually a service route being mistaken for a city
   if (SERVICE_ROUTES.includes(slug) || location.pathname.includes('/services/')) {
     console.log(`Identified as a service route, not a city: ${slug}`);
-    return <Navigate to={location.pathname} replace />;
+    
+    // For direct service pages like /partial-wraps, send to the appropriate ServicesPage route
+    if (location.pathname.startsWith('/')) {
+      return <Navigate to={location.pathname} replace />;
+    }
+    
+    return <Navigate to={`/services/${slug}`} replace />;
   }
   
   // Find the city by slug

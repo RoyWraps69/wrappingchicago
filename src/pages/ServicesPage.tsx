@@ -19,7 +19,13 @@ import { cities } from '@/data/cities';
 const ServicesPage = () => {
   const location = useLocation();
   const path = location.pathname;
-  const isSpecificService = path.includes('/services/');
+  const isSpecificService = path !== '/services';
+  
+  // Get service name from path regardless of whether it's /services/X or just /X
+  const pathParts = path.split('/').filter(Boolean);
+  const servicePath = pathParts.length > 1 && pathParts[0] === 'services' 
+    ? pathParts[1] 
+    : pathParts[0];
   
   // For Schema component
   const chicagoCity = cities.find(city => city.slug === 'chicago') || cities[0];
@@ -62,6 +68,18 @@ const ServicesPage = () => {
       serviceTitle = "Retail Graphics";
       serviceDescription = "Transform your storefront with our custom window wraps, wall graphics, and retail signage solutions for maximum visual impact.";
       serviceKeywords = "retail graphics, store window wraps, business signage, Chicago retail graphics, storefront wraps";
+    } else if (path.includes('car-wraps')) {
+      serviceTitle = "Car Wraps";
+      serviceDescription = "Professional car wrapping services in Chicago for personal and business vehicles. Stand out with a custom car wrap.";
+      serviceKeywords = "car wraps, auto wraps, vehicle wraps, Chicago car wraps, custom car wraps";
+    } else if (path.includes('truck-wraps')) {
+      serviceTitle = "Truck Wraps";
+      serviceDescription = "Transform your trucks with professional wrapping services. Make your commercial trucks work as mobile billboards.";
+      serviceKeywords = "truck wraps, commercial truck wraps, pickup truck wraps, Chicago truck wraps";
+    } else if (path.includes('van-wraps')) {
+      serviceTitle = "Van Wraps";
+      serviceDescription = "Professional van wrapping services for commercial and personal vans. Maximize visibility for your business with custom van wraps.";
+      serviceKeywords = "van wraps, commercial van wraps, delivery van wraps, Chicago van wraps";
     }
   }
 
