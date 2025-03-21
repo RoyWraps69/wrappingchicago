@@ -31,8 +31,8 @@ const LocationsPage = () => {
             {/* Background image without overlay */}
             <div className="absolute inset-0 z-0">
               <img 
-                src="https://images.unsplash.com/photo-1449157291145-7efd050a4d0e"
-                alt="Chicago skyline with highways and vehicle traffic"
+                src="https://images.unsplash.com/photo-1561466273-c13f88329aa0?auto=format&fit=crop&w=2000&q=80"
+                alt="Chicago highway with vehicle traffic"
                 className="w-full h-full object-cover"
                 loading="eager"
                 fetchPriority="high"
