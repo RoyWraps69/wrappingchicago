@@ -1,14 +1,12 @@
-
 import React from 'react';
 import { Zap, Clock, DollarSign, LightbulbIcon } from 'lucide-react';
-
 const ValueProposition = () => {
   return <section className="py-10 bg-white">
       <div className="container mx-auto px-4 max-w-6xl">
         <div className="text-center mb-8">
           <h2 className="text-3xl font-bold text-brand-navy mb-3">Why Use Our AI Wrap Designer?</h2>
           <p className="text-lg text-gray-700 max-w-3xl mx-auto">
-            The AI generator helps us understand your vision with precision, eliminating the frustration of miscommunications and design revisions before creating your wrap with premium Avery and 3M materials.
+            The AI generator helps us understand your vision with precision, eliminating the frustration of miscommunications and design revisions.
           </p>
         </div>
         
@@ -62,7 +60,7 @@ const ValueProposition = () => {
                 One of the biggest challenges in vehicle wrap design is translating your vision into reality. Our AI tool bridges that gap by creating visual concepts based on your descriptions.
               </p>
               <p className="text-gray-700">
-                By generating images that reflect your ideas, we can better understand your preferences for style, color, layout, and overall aesthetic. This helps us create a final design using Avery and 3M materials that truly represents your brand and meets your expectations from the start.
+                By generating images that reflect your ideas, we can better understand your preferences for style, color, layout, and overall aesthetic. This helps us create a final design that truly represents your brand and meets your expectations from the start.
               </p>
             </div>
             <div className="md:w-1/3">
@@ -73,5 +71,4 @@ const ValueProposition = () => {
       </div>
     </section>;
 };
-
 export default ValueProposition;

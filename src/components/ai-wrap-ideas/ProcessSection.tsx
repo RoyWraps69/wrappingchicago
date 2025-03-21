@@ -7,7 +7,7 @@ const ProcessSection = () => {
       <div className="container mx-auto px-4 md:px-6 max-w-4xl text-center">
         <h2 className="text-2xl font-bold text-brand-navy mb-3">From Concept to Completion: How Our Process Works</h2>
         <p className="text-gray-700 mb-6">
-          Our AI-powered design assistant is just the first step in creating your perfect vehicle wrap using premium Avery and 3M materials. Here's how we use this technology to deliver exceptional results.
+          Our AI-powered design assistant is just the first step in creating your perfect vehicle wrap. Here's how we use this technology to deliver exceptional results.
         </p>
         
         <div className="grid md:grid-cols-3 gap-5">
@@ -34,9 +34,9 @@ const ProcessSection = () => {
         
         <div className="mt-8 p-5 bg-brand-light rounded-lg">
           <p className="text-lg font-medium text-brand-navy">
-            "The AI design tool helped us communicate our vision much more clearly. Instead of struggling to explain what we wanted, we could show the design team exactly what we had in mind. The final wrap using Avery and 3M materials exceeded our expectations!"
+            "The AI design tool helped us communicate our vision much more clearly. Instead of struggling to explain what we wanted, we could show the design team exactly what we had in mind. The final wrap exceeded our expectations!"
           </p>
-          <p className="mt-3 font-medium text-gray-700">— Chicago Business Owner</p>
+          <p className="mt-3 font-medium">— Chicago Business Owner</p>
         </div>
       </div>
     </section>

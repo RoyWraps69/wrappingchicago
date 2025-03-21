@@ -32,8 +32,7 @@ const BusinessInfoForm = ({
       <h2 className="text-2xl font-bold text-brand-black mb-6">AI Wrap Concept Generator</h2>
       <p className="text-gray-700 mb-6">
         Tell us about your business, and we'll generate wrap design concepts tailored to your needs. 
-        This helps us understand your vision more clearly and creates a foundation for our design process 
-        using premium Avery and 3M materials.
+        This helps us understand your vision more clearly and creates a foundation for our design process.
       </p>
       
       <div className="mb-4">
