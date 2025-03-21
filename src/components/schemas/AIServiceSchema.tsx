@@ -8,7 +8,7 @@ const AIServiceSchema = () => {
     "itemOffered": {
       "@type": "Service",
       "name": "AI Wrap Designer",
-      "url": "https://chicagofleetwraps.com/ai-wrap-ideas"
+      "url": "https://wrappingchicago.com/ai-wrap-ideas"
     },
     "additionalProperty": {
       "@type": "PropertyValue",

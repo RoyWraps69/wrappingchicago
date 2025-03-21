@@ -60,10 +60,10 @@ const ServicesPage = () => {
   return (
     <>
       <Helmet>
-        <title>{serviceTitle} | Chicago Fleet Wraps</title>
+        <title>{serviceTitle} | Wrapping Chicago</title>
         <meta name="description" content={serviceDescription} />
         <meta name="keywords" content={serviceKeywords} />
-        <link rel="canonical" href={`https://chicagofleetwraps.com${path}`} />
+        <link rel="canonical" href={`https://wrappingchicago.com${path}`} />
       </Helmet>
       
       <div className="flex flex-col min-h-screen">

@@ -13,10 +13,10 @@ const ContactPage = () => {
   return (
     <>
       <Helmet>
-        <title>Contact Us | Chicago Fleet Wraps</title>
+        <title>Contact Us | Wrapping Chicago</title>
         <meta 
           name="description" 
-          content="Contact Chicago Fleet Wraps for all your vehicle wrapping needs. Get a free quote for fleet wraps, color change wraps, and commercial graphics."
+          content="Contact Wrapping Chicago for all your vehicle wrapping needs. Get a free quote for fleet wraps, color change wraps, and commercial graphics."
         />
       </Helmet>
       

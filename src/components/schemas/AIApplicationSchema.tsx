@@ -23,14 +23,14 @@ const AIApplicationSchema = () => {
     ],
     "creator": {
       "@type": "Organization",
-      "name": "Chicago Fleet Wraps",
-      "url": "https://chicagofleetwraps.com"
+      "name": "Wrapping Chicago",
+      "url": "https://wrappingchicago.com"
     },
     "potentialAction": {
       "@type": "UseAction",
       "target": {
         "@type": "EntryPoint",
-        "urlTemplate": "https://chicagofleetwraps.com/ai-wrap-ideas#generator-section"
+        "urlTemplate": "https://wrappingchicago.com/ai-wrap-ideas#generator-section"
       },
       "expectsAcceptanceOf": {
         "@type": "Offer",
@@ -72,7 +72,7 @@ const AIApplicationSchema = () => {
     "mainEntityOfPage": {
       "@type": "WebPage",
       "name": "AI Vehicle Wrap Design Generator",
-      "@id": "https://chicagofleetwraps.com/ai-wrap-ideas"
+      "@id": "https://wrappingchicago.com/ai-wrap-ideas"
     }
   };
 

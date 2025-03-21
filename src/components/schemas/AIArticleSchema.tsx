@@ -12,20 +12,20 @@ const AIArticleSchema = () => {
     "dateModified": new Date().toISOString(),
     "author": {
       "@type": "Organization",
-      "name": "Chicago Fleet Wraps",
-      "url": "https://chicagofleetwraps.com"
+      "name": "Wrapping Chicago",
+      "url": "https://wrappingchicago.com"
     },
     "publisher": {
       "@type": "Organization",
-      "name": "Chicago Fleet Wraps",
+      "name": "Wrapping Chicago",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://chicagofleetwraps.com/logo.png"
+        "url": "https://wrappingchicago.com/logo.png"
       }
     },
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "https://chicagofleetwraps.com/ai-wrap-ideas"
+      "@id": "https://wrappingchicago.com/ai-wrap-ideas"
     },
     "keywords": "AI vehicle wrap design, artificial intelligence wrap generator, vehicle wrap AI, Chicago fleet wraps"
   };

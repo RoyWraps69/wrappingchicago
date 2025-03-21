@@ -10,11 +10,11 @@ const AboutPage = () => {
   const companySchema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "name": "Chicago Fleet Wraps",
+    "name": "Wrapping Chicago",
     "description": "Chicago's premier vehicle wrapping company specializing in fleet wraps, color change wraps, and commercial graphics.",
-    "url": "https://chicagofleetwraps.com/about",
+    "url": "https://wrappingchicago.com/about",
     "telephone": "(312) 597-1286",
-    "email": "roy@chicagofleetwraps.com",
+    "email": "roy@wrappingchicago.com",
     "foundingDate": "2015",
     "address": {
       "@type": "PostalAddress",
@@ -26,22 +26,22 @@ const AboutPage = () => {
     },
     "priceRange": "$$",
     "sameAs": [
-      "https://www.facebook.com/chicagofleetwraps",
-      "https://www.instagram.com/chicagofleetwraps",
-      "https://twitter.com/chifleetwraps"
+      "https://www.facebook.com/wrappingchicago",
+      "https://www.instagram.com/wrappingchicago",
+      "https://twitter.com/wrappingchicago"
     ],
   };
 
   return (
     <>
       <Helmet>
-        <title>About Chicago Fleet Wraps | Premier Vehicle Wrapping Company</title>
+        <title>About Wrapping Chicago | Premier Vehicle Wrapping Company</title>
         <meta 
           name="description" 
-          content="Established in 2015, Chicago Fleet Wraps is the leading vehicle wrapping company in the Chicago area with certified 3M installers and premium quality materials."
+          content="Established in 2015, Wrapping Chicago is the leading vehicle wrapping company in the Chicago area with certified 3M installers and premium quality materials."
         />
         <meta name="keywords" content="vehicle wraps Chicago, car wrapping services, fleet wraps, 3M certified installers, commercial vehicle graphics" />
-        <link rel="canonical" href="https://chicagofleetwraps.com/about" />
+        <link rel="canonical" href="https://wrappingchicago.com/about" />
         <script type="application/ld+json">
           {JSON.stringify(companySchema)}
         </script>
@@ -53,12 +53,12 @@ const AboutPage = () => {
         <main className="flex-grow">
           <div className="container mx-auto py-12 px-4">
             <Breadcrumbs />
-            <h1 className="text-4xl font-bold text-brand-navy mb-6">About Chicago Fleet Wraps</h1>
+            <h1 className="text-4xl font-bold text-brand-navy mb-6">About Wrapping Chicago</h1>
             
             <div className="grid md:grid-cols-2 gap-12 mb-12">
               <div>
                 <p className="text-lg mb-6">
-                  Chicago Fleet Wraps is the premier vehicle wrapping company in the Chicago area, 
+                  Wrapping Chicago is the premier vehicle wrapping company in the Chicago area, 
                   serving businesses and individuals throughout the region with high-quality wrapping 
                   services that make vehicles stand out on the road.
                 </p>

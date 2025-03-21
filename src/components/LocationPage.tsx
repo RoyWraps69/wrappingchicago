@@ -27,17 +27,17 @@ const LocationPage = ({ city }: LocationPageProps) => {
         <title>Vehicle Wraps in {city.name}, IL | Fleet & Color Change Wraps</title>
         <meta 
           name="description" 
-          content={`Professional vehicle wraps, fleet wraps & color change wraps in ${city.name}, IL. Chicago Fleet Wraps provides high-quality vehicle wrapping services with free quotes.`} 
+          content={`Professional vehicle wraps, fleet wraps & color change wraps in ${city.name}, IL. Wrapping Chicago provides high-quality vehicle wrapping services with free quotes.`} 
         />
         <link rel="canonical" href={`https://wrappingchicago.com/vehicle-wraps-${city.slug}-il`} />
         <meta name="robots" content="index, follow" />
-        <meta property="og:title" content={`Vehicle Wraps in ${city.name}, IL | Chicago Fleet Wraps`} />
+        <meta property="og:title" content={`Vehicle Wraps in ${city.name}, IL | Wrapping Chicago`} />
         <meta property="og:description" content={`Professional vehicle wrapping services in ${city.name}, IL. Specializing in fleet wraps, color change wraps, and commercial graphics.`} />
         <meta property="og:url" content={`https://wrappingchicago.com/vehicle-wraps-${city.slug}-il`} />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="/og-image.png" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={`Vehicle Wraps in ${city.name}, IL | Chicago Fleet Wraps`} />
+        <meta name="twitter:title" content={`Vehicle Wraps in ${city.name}, IL | Wrapping Chicago`} />
         <meta name="twitter:description" content={`Professional vehicle wrapping services in ${city.name}, IL. Specializing in fleet wraps, color change wraps, and commercial graphics.`} />
         <meta name="twitter:image" content="/og-image.png" />
       </Helmet>

@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
@@ -13,12 +14,12 @@ const LocationsPage = () => {
   return (
     <>
       <Helmet>
-        <title>Areas We Serve | Chicago Fleet Wraps Vehicle Wrapping</title>
+        <title>Areas We Serve | Wrapping Chicago Vehicle Wrapping</title>
         <meta 
           name="description" 
-          content="Chicago Fleet Wraps provides professional vehicle wrapping services throughout Chicago and surrounding areas. Find location-specific information for your city." 
+          content="Wrapping Chicago provides professional vehicle wrapping services throughout Chicago and surrounding areas. Find location-specific information for your city." 
         />
-        <link rel="canonical" href="https://chicagofleetwraps.com/locations" />
+        <link rel="canonical" href="https://wrappingchicago.com/locations" />
       </Helmet>
       
       <div className="flex flex-col min-h-screen">
@@ -33,7 +34,7 @@ const LocationsPage = () => {
                 Areas We Serve
               </h1>
               <p className="text-xl mb-8 max-w-3xl mx-auto">
-                Chicago Fleet Wraps provides premium vehicle wrapping services throughout Chicago
+                Wrapping Chicago provides premium vehicle wrapping services throughout Chicago
                 and surrounding communities. Find location-specific information for your city below.
               </p>
             </div>
@@ -47,7 +48,7 @@ const LocationsPage = () => {
                   Serving Chicago and Surrounding Areas
                 </h2>
                 <p className="text-lg text-gray-700">
-                  Chicago Fleet Wraps is proud to serve businesses and individuals throughout the Greater Chicago area.
+                  Wrapping Chicago is proud to serve businesses and individuals throughout the Greater Chicago area.
                   Click on your city below to learn more about our vehicle wrapping services in your specific location.
                 </p>
               </div>
@@ -91,7 +92,7 @@ const LocationsPage = () => {
               <div className="bg-brand-light p-8 rounded-lg shadow-md">
                 <h3 className="text-2xl font-bold mb-4 text-brand-navy">Don't see your city?</h3>
                 <p className="text-lg text-gray-700 mb-6">
-                  Chicago Fleet Wraps serves the entire Greater Chicago area. If you don't see your specific location 
+                  Wrapping Chicago serves the entire Greater Chicago area. If you don't see your specific location 
                   listed, please contact us. We're likely able to serve your area as well!
                 </p>
                 <Link 
@@ -115,7 +116,7 @@ const LocationsPage = () => {
                   Our Service Area
                 </h2>
                 <p className="text-lg text-gray-700">
-                  Chicago Fleet Wraps serves businesses and individuals within a 40-mile radius of Chicago.
+                  Wrapping Chicago serves businesses and individuals within a 40-mile radius of Chicago.
                   Our central location allows us to efficiently serve the entire metropolitan area.
                 </p>
               </div>

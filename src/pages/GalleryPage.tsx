@@ -18,7 +18,7 @@ const GalleryPage = () => {
   return (
     <>
       <Helmet>
-        <title>Our Work Gallery | Chicago Fleet Wraps</title>
+        <title>Our Work Gallery | Wrapping Chicago</title>
         <meta 
           name="description" 
           content="Browse our gallery of completed vehicle wrap projects including fleet wraps, color change wraps, and commercial graphics across Chicago and surrounding areas."

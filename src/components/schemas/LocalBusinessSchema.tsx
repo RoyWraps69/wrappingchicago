@@ -10,8 +10,8 @@ const LocalBusinessSchema = ({ city }: LocalBusinessSchemaProps) => {
   const schema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "name": "Chicago Fleet Wraps",
-    "alternateName": "CFW Vehicle Wrapping Services",
+    "name": "Wrapping Chicago",
+    "alternateName": "Vehicle Wrapping Services",
     "description": `Premium vehicle wrapping service serving ${city.name}, IL with AI-powered design for fleet wraps, color change wraps, and commercial graphics.`,
     "url": `https://wrappingchicago.com/vehicle-wraps-${city.slug}-il`,
     "telephone": "(312) 597-1286",
@@ -48,10 +48,10 @@ const LocalBusinessSchema = ({ city }: LocalBusinessSchemaProps) => {
     "paymentAccepted": "Cash, Credit Card",
     "currenciesAccepted": "USD",
     "sameAs": [
-      "https://www.facebook.com/chicagofleetwraps",
-      "https://www.instagram.com/chicagofleetwraps",
-      "https://twitter.com/chifleetwraps",
-      "https://www.linkedin.com/company/chicagofleetwraps"
+      "https://www.facebook.com/wrappingchicago",
+      "https://www.instagram.com/wrappingchicago",
+      "https://twitter.com/wrappingchicago",
+      "https://www.linkedin.com/company/wrappingchicago"
     ],
     "image": [
       "https://wrappingchicago.com/images/vehicle-wrap-chicago.jpg",

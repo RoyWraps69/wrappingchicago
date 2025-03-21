@@ -20,7 +20,7 @@ const ServiceSchema = ({
     "name": includeAI ? `AI-Powered ${title}` : title,
     "provider": {
       "@type": "LocalBusiness",
-      "name": "Chicago Fleet Wraps",
+      "name": "Wrapping Chicago",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "4711 N. Lamon Ave",
@@ -43,7 +43,7 @@ const ServiceSchema = ({
     "offers": {
       "@type": "Offer",
       "availability": "https://schema.org/InStock",
-      "url": `https://chicagofleetwraps.com${path}`,
+      "url": `https://wrappingchicago.com${path}`,
       "priceSpecification": {
         "@type": "PriceSpecification",
         "priceCurrency": "USD"

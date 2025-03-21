@@ -19,7 +19,7 @@ const Header = () => {
           <div className="flex flex-wrap justify-center md:justify-end gap-4 md:gap-6 text-sm">
             <span className="text-white/70">Our Locations Across the US:</span>
             <a 
-              href="https://chicagofleetwraps.com" 
+              href="https://wrappingchicago.com" 
               className="flex items-center hover:text-brand-red transition-colors"
             >
               <Globe className="w-4 h-4 mr-1 text-brand-red" />
@@ -52,7 +52,7 @@ const Header = () => {
         <div className="flex justify-between items-center">
           <div>
             <Link to="/" className="text-2xl font-bold">
-              Chicago Fleet Wraps
+              Wrapping Chicago
             </Link>
           </div>
           

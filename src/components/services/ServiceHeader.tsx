@@ -25,13 +25,13 @@ const ServiceHeader: React.FC<ServiceHeaderProps> = ({
       <p className="text-lg mb-6">
         {highlightAI ? (
           <>
-            At Chicago Fleet Wraps, we combine <strong>artificial intelligence</strong> with expert craftsmanship to provide 
+            At Wrapping Chicago, we combine <strong>artificial intelligence</strong> with expert craftsmanship to provide 
             premium quality vehicle wrapping services throughout the greater Chicago area. Our team of experienced professionals
             uses only the highest quality materials and <strong>AI design technology</strong> to ensure your wrap looks great and lasts.
           </>
         ) : (
           <>
-            At Chicago Fleet Wraps, we provide premium quality vehicle wrapping services
+            At Wrapping Chicago, we provide premium quality vehicle wrapping services
             throughout the greater Chicago area. Our team of experienced professionals
             uses only the highest quality materials to ensure your wrap looks great and lasts.
           </>

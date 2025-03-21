@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { cities } from '@/data/cities';
@@ -15,7 +16,7 @@ const Footer = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
-            <h3 className="text-xl font-bold mb-4">Chicago Fleet Wraps</h3>
+            <h3 className="text-xl font-bold mb-4">Wrapping Chicago</h3>
             <p className="mb-4">
               The leading provider of premium vehicle wraps in the Greater Chicago area. 
               We specialize in fleet wraps, color change wraps, and commercial graphics.
@@ -33,7 +34,7 @@ const Footer = () => {
               </li>
               <li>
                 <ContactItem icon={Mail} title="">
-                  <span>roy@chicagofleetwraps.com</span>
+                  <span>roy@wrappingchicago.com</span>
                 </ContactItem>
               </li>
             </ul>
@@ -96,10 +97,10 @@ const Footer = () => {
             <div className="flex items-center">
               <Globe className="w-5 h-5 mr-2 text-brand-red" />
               <a 
-                href="https://chicagofleetwraps.com" 
+                href="https://wrappingchicago.com" 
                 className="hover:text-brand-red transition-colors"
               >
-                Chicago Fleet Wraps
+                Wrapping Chicago
               </a>
             </div>
             <div className="flex items-center">
@@ -128,7 +129,7 @@ const Footer = () => {
         </div>
         
         <div className="border-t border-gray-700 mt-4 pt-4 text-center">
-          <p>© {new Date().getFullYear()} Chicago Fleet Wraps. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Wrapping Chicago. All rights reserved.</p>
         </div>
       </div>
     </footer>
