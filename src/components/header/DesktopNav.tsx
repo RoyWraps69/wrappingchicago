@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Sparkles, MessageSquare, Phone } from 'lucide-react';
+import { Sparkles, MessageSquare, Phone, Home, Car, Image, Info, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import NavLink from './NavLink';
 
@@ -9,21 +9,27 @@ const DesktopNav = () => {
   return (
     <nav className="hidden md:flex items-center space-x-6">
       <NavLink to="/">
+        <Home className="mr-1 h-4 w-4" />
         Home
       </NavLink>
       <NavLink to="/ai-wrap-ideas" icon={Sparkles}>
+        <Sparkles className="mr-1 h-4 w-4" />
         AI Wrap Designer
       </NavLink>
       <NavLink to="/services/fleet-wraps">
+        <Car className="mr-1 h-4 w-4" />
         Services
       </NavLink>
       <NavLink to="/gallery">
+        <Image className="mr-1 h-4 w-4" />
         Gallery
       </NavLink>
       <NavLink to="/about">
+        <Info className="mr-1 h-4 w-4" />
         About
       </NavLink>
       <NavLink to="/contact">
+        <Mail className="mr-1 h-4 w-4" />
         Contact
       </NavLink>
       

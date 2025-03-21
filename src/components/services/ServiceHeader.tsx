@@ -1,7 +1,8 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { Phone, MessageSquare } from 'lucide-react';
+import { Phone, MessageSquare, ShieldCheck, TruckIcon, Award } from 'lucide-react';
 
 interface ServiceHeaderProps {
   title: string;
@@ -55,18 +56,18 @@ const ServiceHeader: React.FC<ServiceHeaderProps> = ({
         </Button>
       </div>
       
-      <p className="text-lg mb-6">
+      <p className="text-lg mb-6 text-gray-700">
         {highlightAI ? (
           <>
             At Wrapping Chicago, we combine <strong>artificial intelligence</strong> with expert craftsmanship to provide 
             premium quality vehicle wrapping services throughout the greater Chicago area. Our professional team 
-            uses only the highest quality 3M vinyl materials and <strong>AI design technology</strong> to ensure 
+            uses only the highest quality Avery and 3M vinyl materials and <strong>AI design technology</strong> to ensure 
             your car wraps, truck wraps, van wraps, and fleet graphics look great and last.
           </>
         ) : isVehicleSpecificService ? (
           <>
             At Wrapping Chicago, we specialize in premium quality {title.toLowerCase()} throughout the greater Chicago area. 
-            Our team of experienced vehicle wrap professionals uses only the highest quality 3M vinyl materials to ensure 
+            Our team of experienced vehicle wrap professionals uses only the highest quality Avery and 3M vinyl materials to ensure 
             your {title.toLowerCase()} look great and last for years. With over 16,000 vehicle wraps completed in our 20 years of 
             business, we've wrapped hundreds of vehicles throughout Chicago and surrounding suburbs with industry-leading results.
           </>
@@ -75,7 +76,7 @@ const ServiceHeader: React.FC<ServiceHeaderProps> = ({
             At Wrapping Chicago, we provide premium quality vehicle wrapping services
             throughout the greater Chicago area. Our team of experienced professionals
             specializes in car wraps, truck wraps, van wraps, and fleet graphics using only the highest quality 
-            3M vinyl materials to ensure your vehicle wrap looks great and lasts. With over 16,000 vehicle wraps 
+            Avery and 3M vinyl materials to ensure your vehicle wrap looks great and lasts. With over 16,000 vehicle wraps 
             completed in our 20 years of business, we've established ourselves as Chicago's trusted vehicle wrap provider.
           </>
         )}
@@ -86,7 +87,7 @@ const ServiceHeader: React.FC<ServiceHeaderProps> = ({
         <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-2 list-disc pl-5">
           <li className="text-gray-700">Over 16,000 vehicle wraps completed</li>
           <li className="text-gray-700">20 years of professional experience</li>
-          <li className="text-gray-700">Premium 3M vinyl materials for durability</li>
+          <li className="text-gray-700">Premium Avery and 3M vinyl materials</li>
           <li className="text-gray-700">Expert design team for custom graphics</li>
           <li className="text-gray-700">Comprehensive vehicle wrap warranty</li>
           <li className="text-gray-700">Fast turnaround times for installations</li>
@@ -100,7 +101,7 @@ const ServiceHeader: React.FC<ServiceHeaderProps> = ({
           <div className="rounded-lg overflow-hidden shadow-md">
             <img 
               src="/lovable-uploads/efdbc4bf-1f04-42bb-a904-f52dae7bef6c.png" 
-              alt="Professional fleet wrap installation on commercial van in Chicago - 3M vehicle wraps" 
+              alt="Professional fleet wrap installation on commercial van in Chicago - Avery and 3M vehicle wraps" 
               className="w-full h-48 object-cover"
             />
             <div className="p-3 bg-brand-light">
@@ -144,7 +145,7 @@ const ServiceHeader: React.FC<ServiceHeaderProps> = ({
           <Link to="/custom-vehicle-wraps-chicago" className="bg-brand-navy/10 text-brand-navy text-xs font-medium px-2.5 py-1.5 rounded hover:bg-brand-navy/20">Custom Vehicle Wraps</Link>
           <Link to="/vehicle-graphics-chicago" className="bg-brand-navy/10 text-brand-navy text-xs font-medium px-2.5 py-1.5 rounded hover:bg-brand-navy/20">Vehicle Graphics Chicago</Link>
           <Link to="/vinyl-wraps-chicago" className="bg-brand-navy/10 text-brand-navy text-xs font-medium px-2.5 py-1.5 rounded hover:bg-brand-navy/20">Vinyl Vehicle Wraps</Link>
-          <Link to="/best-vehicle-wraps-chicago" className="bg-brand-navy/10 text-brand-navy text-xs font-medium px-2.5 py-1.5 rounded hover:bg-brand-navy/20">Premium 3M Installation</Link>
+          <Link to="/best-vehicle-wraps-chicago" className="bg-brand-navy/10 text-brand-navy text-xs font-medium px-2.5 py-1.5 rounded hover:bg-brand-navy/20">Premium Installation</Link>
           <Link to="/partial-vehicle-wraps-chicago" className="bg-brand-navy/10 text-brand-navy text-xs font-medium px-2.5 py-1.5 rounded hover:bg-brand-navy/20">Partial Vehicle Wraps</Link>
           <Link to="/color-change-wraps-chicago" className="bg-brand-navy/10 text-brand-navy text-xs font-medium px-2.5 py-1.5 rounded hover:bg-brand-navy/20">Color Change Wraps</Link>
           <Link to="/vehicle-wrap-installation-chicago" className="bg-brand-navy/10 text-brand-navy text-xs font-medium px-2.5 py-1.5 rounded hover:bg-brand-navy/20">Professional Installation</Link>
@@ -153,7 +154,7 @@ const ServiceHeader: React.FC<ServiceHeaderProps> = ({
         </div>
       </div>
       
-      <div className="prose max-w-none mb-8">
+      <div className="prose max-w-none mb-8 text-gray-700">
         <p>
           Whether you're looking for a full vehicle wrap, partial wrap, color change wrap, or commercial graphics for your 
           business vehicles, Wrapping Chicago has the expertise and experience to deliver outstanding results. Our vehicle 
@@ -161,7 +162,7 @@ const ServiceHeader: React.FC<ServiceHeaderProps> = ({
           provide a powerful advertising platform for businesses throughout Chicago.
         </p>
         <p>
-          With our state-of-the-art printing technology and premium 3M vinyl materials, we create vivid, eye-catching vehicle 
+          With our state-of-the-art printing technology and premium Avery and 3M vinyl materials, we create vivid, eye-catching vehicle 
           wraps that stand up to Chicago's harsh weather conditions. From design to installation, our team of professionals 
           will guide you through every step of the process to ensure your complete satisfaction with the final product.
         </p>

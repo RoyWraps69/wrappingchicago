@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Car, Truck, Shield, Award, CheckCircle2, StarIcon } from 'lucide-react';
+import { Car, Truck, Shield, Award, CheckCircle2, Star } from 'lucide-react';
 import { City } from '@/data/cities';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
@@ -20,17 +20,17 @@ const CityHeader: React.FC<CityHeaderProps> = ({ city }) => {
       
       <div className="flex flex-wrap gap-1 mb-3">
         <div className="inline-flex items-center text-yellow-500">
-          <StarIcon className="h-4 w-4" />
-          <StarIcon className="h-4 w-4" />
-          <StarIcon className="h-4 w-4" />
-          <StarIcon className="h-4 w-4" />
-          <StarIcon className="h-4 w-4" />
+          <Star className="h-4 w-4" />
+          <Star className="h-4 w-4" />
+          <Star className="h-4 w-4" />
+          <Star className="h-4 w-4" />
+          <Star className="h-4 w-4" />
           <span className="ml-1 text-sm text-gray-700">Top-rated vehicle wrap company serving {city.name}</span>
         </div>
       </div>
       
       <p className="text-gray-700 mb-4">
-        Expert installation of car wraps, truck wraps, van wraps, and fleet graphics with durable 3M vinyl materials. 
+        Expert installation of car wraps, truck wraps, van wraps, and fleet graphics with durable Avery and 3M vinyl materials. 
         Over 16,000 wraps completed in our 20 years of business serving {city.name}, {city.county} County, and surrounding areas.
         Transform your personal or business vehicle with our professional vehicle wrapping services.
       </p>
@@ -48,7 +48,7 @@ const CityHeader: React.FC<CityHeaderProps> = ({ city }) => {
           </li>
           <li className="flex items-start">
             <CheckCircle2 className="h-4 w-4 mr-1 mt-0.5 text-brand-red" />
-            <span>Premium 3M vinyl wrap materials</span>
+            <span>Premium Avery and 3M vinyl materials</span>
           </li>
           <li className="flex items-start">
             <CheckCircle2 className="h-4 w-4 mr-1 mt-0.5 text-brand-red" />
@@ -85,7 +85,7 @@ const CityHeader: React.FC<CityHeaderProps> = ({ city }) => {
         </div>
         <div className="inline-flex items-center px-3 py-1 rounded-full bg-brand-navy/10 text-brand-navy text-sm">
           <Shield className="h-4 w-4 mr-1" />
-          Premium 3M Materials
+          Avery & 3M Materials
         </div>
       </div>
       
@@ -159,14 +159,14 @@ const CityHeader: React.FC<CityHeaderProps> = ({ city }) => {
           We offer complete vehicle wrap services for individuals and businesses in {city.name}, including:
         </p>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-2 text-xs">
-          <Link to="/full-vehicle-wrap-cost-chicago" className="p-2 bg-white rounded border border-gray-200 hover:bg-brand-light text-center">Full Vehicle Wraps</Link>
-          <Link to="/partial-vehicle-wraps-chicago" className="p-2 bg-white rounded border border-gray-200 hover:bg-brand-light text-center">Partial Vehicle Wraps</Link>
-          <Link to="/color-change-wraps-chicago" className="p-2 bg-white rounded border border-gray-200 hover:bg-brand-light text-center">Color Change Wraps</Link>
-          <Link to="/commercial-vehicle-wraps-chicago" className="p-2 bg-white rounded border border-gray-200 hover:bg-brand-light text-center">Commercial Vehicle Wraps</Link>
-          <Link to="/fleet-wraps-chicago" className="p-2 bg-white rounded border border-gray-200 hover:bg-brand-light text-center">Fleet Vehicle Wraps</Link>
-          <Link to="/business-vehicle-wraps-chicago" className="p-2 bg-white rounded border border-gray-200 hover:bg-brand-light text-center">Business Vehicle Branding</Link>
-          <Link to="/truck-lettering-chicago" className="p-2 bg-white rounded border border-gray-200 hover:bg-brand-light text-center">Vehicle Lettering & Decals</Link>
-          <Link to="/van-graphics-installation-chicago" className="p-2 bg-white rounded border border-gray-200 hover:bg-brand-light text-center">Window Graphics</Link>
+          <Link to="/full-vehicle-wrap-cost-chicago" className="p-2 bg-white rounded border border-gray-200 hover:bg-brand-light text-center text-gray-700">Full Vehicle Wraps</Link>
+          <Link to="/partial-vehicle-wraps-chicago" className="p-2 bg-white rounded border border-gray-200 hover:bg-brand-light text-center text-gray-700">Partial Vehicle Wraps</Link>
+          <Link to="/color-change-wraps-chicago" className="p-2 bg-white rounded border border-gray-200 hover:bg-brand-light text-center text-gray-700">Color Change Wraps</Link>
+          <Link to="/commercial-vehicle-wraps-chicago" className="p-2 bg-white rounded border border-gray-200 hover:bg-brand-light text-center text-gray-700">Commercial Vehicle Wraps</Link>
+          <Link to="/fleet-wraps-chicago" className="p-2 bg-white rounded border border-gray-200 hover:bg-brand-light text-center text-gray-700">Fleet Vehicle Wraps</Link>
+          <Link to="/business-vehicle-wraps-chicago" className="p-2 bg-white rounded border border-gray-200 hover:bg-brand-light text-center text-gray-700">Business Vehicle Branding</Link>
+          <Link to="/truck-lettering-chicago" className="p-2 bg-white rounded border border-gray-200 hover:bg-brand-light text-center text-gray-700">Vehicle Lettering & Decals</Link>
+          <Link to="/van-graphics-installation-chicago" className="p-2 bg-white rounded border border-gray-200 hover:bg-brand-light text-center text-gray-700">Window Graphics</Link>
         </div>
       </div>
     </div>
