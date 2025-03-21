@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
@@ -14,7 +13,8 @@ const Hero = () => {
           alt="Sports car with colorful paint splash wrap design" 
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-black/30"></div> {/* Overlay to ensure text is readable */}
+        <div className="absolute inset-0 bg-white/30 backdrop-blur-[2px]"></div> {/* Light overlay at 30% opacity */}
+        <div className="absolute inset-0 bg-black/30"></div> {/* Darker overlay to ensure text is readable */}
       </div>
       
       <div className="relative z-20 container mx-auto px-4 sm:px-6 lg:px-8 min-h-[80vh] flex items-center">
