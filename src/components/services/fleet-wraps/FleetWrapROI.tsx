@@ -1,21 +1,14 @@
-
 import React from 'react';
 import { BarChart3 } from 'lucide-react';
-
 const FleetWrapROI: React.FC = () => {
-  return (
-    <div className="mb-8">
+  return <div className="mb-8">
       <h3 className="text-xl font-semibold text-brand-navy mb-4 flex items-center">
         <BarChart3 className="w-6 h-6 text-brand-red mr-2" />
         Fleet Wrap ROI for Chicago Businesses
       </h3>
       
       <div className="float-left mr-6 mb-4 w-full md:w-2/5">
-        <img 
-          src="/lovable-uploads/bc55562c-aa6e-45ac-86ea-5b2657a3f6d5.png" 
-          alt="Fleet wrap ROI - Commercial vehicle wrap generating impressions in Chicago" 
-          className="rounded-lg shadow-md w-full"
-        />
+        <img alt="Fleet wrap ROI - Commercial vehicle wrap generating impressions in Chicago" className="rounded-lg shadow-md w-full" src="/lovable-uploads/5003af4f-76a6-441a-9f2c-8c1bcade2af7.jpg" />
         <p className="text-sm text-gray-600 mt-1 text-center">Fleet wraps deliver exceptional ROI for Chicago businesses</p>
       </div>
       
@@ -34,8 +27,6 @@ const FleetWrapROI: React.FC = () => {
         providing continuous advertising 24/7 for a one-time investment. Unlike traditional advertising with recurring monthly costs, 
         vehicle wraps continue working for your business for years.
       </p>
-    </div>
-  );
+    </div>;
 };
-
 export default FleetWrapROI;
