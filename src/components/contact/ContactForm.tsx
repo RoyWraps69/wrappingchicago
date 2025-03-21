@@ -10,17 +10,24 @@ import { useForm } from "react-hook-form";
 import emailjs from 'emailjs-com';
 
 // EmailJS configuration
-// Replace these with your actual EmailJS account details
 const EMAILJS_SERVICE_ID = 'service_5f00lkt';
 const EMAILJS_TEMPLATE_ID = 'template_lznnmhm';
 const EMAILJS_USER_ID = 'p4Ac1nNy55x5QUFel';
+
+type FormValues = {
+  name: string;
+  email: string;
+  phone: string;
+  service: string;
+  message: string;
+};
 
 const ContactForm = () => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   
-  const form = useForm({
+  const form = useForm<FormValues>({
     defaultValues: {
       name: '',
       email: '',
@@ -30,19 +37,25 @@ const ContactForm = () => {
     }
   });
 
-  const handleSubmit = async (data) => {
+  const handleSubmit = async (data: FormValues) => {
     setIsSubmitting(true);
     
     try {
-      // Get the form element and properly cast it to HTMLFormElement
-      const formElement = document.getElementById('contact-form') as HTMLFormElement;
+      const templateParams = {
+        from_name: data.name,
+        from_email: data.email,
+        phone: data.phone,
+        service: data.service,
+        message: data.message,
+        to_email: 'roy@chicagofleetwraps.com'
+      };
       
       // Send email using EmailJS
-      const result = await emailjs.sendForm(
-        EMAILJS_SERVICE_ID,      // Service ID
-        EMAILJS_TEMPLATE_ID,     // Template ID
-        formElement,             // Properly cast form element
-        EMAILJS_USER_ID          // User ID is required
+      const result = await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        templateParams,
+        EMAILJS_USER_ID
       );
       
       console.log('Email sent successfully!', result);
@@ -86,90 +99,115 @@ const ContactForm = () => {
           </Button>
         </div>
       ) : (
-        <form id="contact-form" className="space-y-4" onSubmit={form.handleSubmit(handleSubmit)}>
-          <div>
-            <label htmlFor="name" className="block mb-1">Your Name</label>
-            <Input 
-              type="text" 
-              id="name"
-              name="name" 
-              {...form.register('name')}
-              className="w-full p-2 border border-gray-300 rounded"
-              placeholder="John Smith"
-              required
+        <Form {...form}>
+          <form onSubmit={form.handleSubmit(handleSubmit)} className="space-y-4">
+            <FormField
+              control={form.control}
+              name="name"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Your Name</FormLabel>
+                  <FormControl>
+                    <Input 
+                      placeholder="John Smith" 
+                      {...field} 
+                      required
+                    />
+                  </FormControl>
+                </FormItem>
+              )}
             />
-          </div>
-          
-          <div>
-            <label htmlFor="email" className="block mb-1">Email Address</label>
-            <Input 
-              type="email" 
-              id="email"
-              name="from_email"  
-              {...form.register('email')}
-              className="w-full p-2 border border-gray-300 rounded"
-              placeholder="you@example.com"
-              required
+            
+            <FormField
+              control={form.control}
+              name="email"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Email Address</FormLabel>
+                  <FormControl>
+                    <Input 
+                      type="email" 
+                      placeholder="you@example.com" 
+                      {...field} 
+                      required
+                    />
+                  </FormControl>
+                </FormItem>
+              )}
             />
-          </div>
-          
-          <div>
-            <label htmlFor="phone" className="block mb-1">Phone Number</label>
-            <Input 
-              type="tel" 
-              id="phone"
-              name="phone" 
-              {...form.register('phone')}
-              className="w-full p-2 border border-gray-300 rounded"
-              placeholder="(123) 456-7890"
-              required
+            
+            <FormField
+              control={form.control}
+              name="phone"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Phone Number</FormLabel>
+                  <FormControl>
+                    <Input 
+                      type="tel" 
+                      placeholder="(123) 456-7890" 
+                      {...field} 
+                      required
+                    />
+                  </FormControl>
+                </FormItem>
+              )}
             />
-          </div>
-          
-          <div>
-            <label htmlFor="service" className="block mb-1">Service Interested In</label>
-            <select 
-              id="service"
-              name="service" 
-              {...form.register('service')}
-              className="w-full p-2 border border-gray-300 rounded"
-              required
+            
+            <FormField
+              control={form.control}
+              name="service"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Service Interested In</FormLabel>
+                  <FormControl>
+                    <select 
+                      className="w-full p-2 border border-gray-300 rounded" 
+                      {...field} 
+                      required
+                    >
+                      <option value="">Select a Service</option>
+                      <option value="Fleet Wraps">Fleet Wraps</option>
+                      <option value="Color Change Wraps">Color Change Wraps</option>
+                      <option value="Commercial Graphics">Commercial Graphics</option>
+                      <option value="Partial Wraps">Partial Wraps</option>
+                      <option value="Easy Button Package">Easy Button Package ($3,999)</option>
+                    </select>
+                  </FormControl>
+                </FormItem>
+              )}
+            />
+            
+            <FormField
+              control={form.control}
+              name="message"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Message</FormLabel>
+                  <FormControl>
+                    <Textarea 
+                      placeholder="Tell us about your project..." 
+                      rows={4} 
+                      {...field} 
+                      required
+                    />
+                  </FormControl>
+                </FormItem>
+              )}
+            />
+            
+            <Button 
+              type="submit" 
+              disabled={isSubmitting}
             >
-              <option value="">Select a Service</option>
-              <option value="fleet-wraps">Fleet Wraps</option>
-              <option value="color-change">Color Change Wraps</option>
-              <option value="commercial-graphics">Commercial Graphics</option>
-              <option value="partial-wraps">Partial Wraps</option>
-              <option value="easy-button-package">Easy Button Package ($3,999)</option>
-            </select>
-          </div>
-          
-          <div>
-            <label htmlFor="message" className="block mb-1">Message</label>
-            <Textarea 
-              id="message"
-              name="message" 
-              rows={4} 
-              {...form.register('message')}
-              className="w-full p-2 border border-gray-300 rounded"
-              placeholder="Tell us about your project..."
-              required
-            />
-          </div>
-          
-          <Button 
-            type="submit" 
-            disabled={isSubmitting}
-          >
-            {isSubmitting ? 'Submitting...' : 'Submit Request'}
-          </Button>
-          
-          <p className="text-sm text-gray-500 mt-2">
-            By submitting this form, your request will be sent to: roy@chicagofleetwraps.com
-          </p>
-          
-          <input type="hidden" name="to_email" value="roy@chicagofleetwraps.com" />
-        </form>
+              {isSubmitting ? 'Submitting...' : 'Submit Request'}
+            </Button>
+            
+            <p className="text-sm text-gray-500 mt-2">
+              By submitting this form, your request will be sent to: roy@chicagofleetwraps.com
+            </p>
+          </form>
+        </Form>
       )}
     </div>
   );
