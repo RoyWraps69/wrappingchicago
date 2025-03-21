@@ -26,8 +26,8 @@ const CallToAction = ({ city = 'your area' }: { city?: string }) => {
           </Button>
           <Button
             asChild
-            variant="outlineGold"
-            className="text-lg px-8 py-5 h-auto border-brand-black text-brand-black hover:bg-brand-black hover:text-brand-gold"
+            variant="outlineBlack"
+            className="text-lg px-8 py-5 h-auto"
           >
             <Link to="/gallery" className="inline-flex items-center">
               <Camera className="mr-2 h-5 w-5" />

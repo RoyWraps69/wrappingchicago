@@ -60,15 +60,15 @@ const ColorChangeWrapsPage = () => {
             <Breadcrumbs />
             
             {/* Contact Buttons Section */}
-            <div className="mb-8 p-5 bg-gray-50 rounded-lg border border-gray-200 flex flex-col sm:flex-row items-center justify-between">
+            <div className="mb-8 p-5 bg-brand-black/5 rounded-lg border border-brand-gold/10 flex flex-col sm:flex-row items-center justify-between">
               <div>
-                <h2 className="text-xl font-bold text-brand-navy mb-2">Ready to transform your vehicle?</h2>
-                <p className="text-gray-700 mb-4 sm:mb-0">Contact us today for a free consultation and quote</p>
+                <h2 className="text-xl font-bold text-brand-black mb-2">Ready to transform your vehicle?</h2>
+                <p className="text-brand-grey mb-4 sm:mb-0">Contact us today for a free consultation and quote</p>
               </div>
               <div className="flex flex-col sm:flex-row gap-3">
                 <Button
                   asChild
-                  className="bg-brand-red hover:bg-red-700 text-white"
+                  variant="gold"
                 >
                   <Link to="/contact" className="inline-flex items-center">
                     <MessageSquare className="mr-2 h-4 w-4" />
@@ -78,7 +78,7 @@ const ColorChangeWrapsPage = () => {
                 <Button
                   asChild
                   variant="outline"
-                  className="border-brand-navy text-brand-navy hover:bg-brand-navy hover:text-white"
+                  className="border-brand-black text-brand-black hover:bg-brand-black hover:text-brand-gold"
                 >
                   <a href="tel:3125971286" className="inline-flex items-center">
                     <Phone className="mr-2 h-4 w-4" />
@@ -93,52 +93,52 @@ const ColorChangeWrapsPage = () => {
           
           <div className="container mx-auto px-4 py-12">
             <div className="mb-12">
-              <h2 className="text-3xl font-bold text-brand-navy mb-6">Premium Color Change Wraps in Chicago</h2>
-              <p className="text-lg text-gray-700 mb-4">
+              <h2 className="text-3xl font-bold text-brand-black mb-6">Premium Color Change Wraps in Chicago</h2>
+              <p className="text-lg text-brand-grey mb-4">
                 Transform your vehicle with our premium color change wraps. Whether you're looking for a sleek matte finish, 
                 vibrant gloss, elegant satin, eye-catching chrome, or custom color shift effects, our expert installers will 
                 deliver flawless results that turn heads wherever you go.
               </p>
-              <p className="text-lg text-gray-700 mb-4">
+              <p className="text-lg text-brand-grey mb-4">
                 Our color change wraps offer numerous advantages over traditional paint:
               </p>
               <ul className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-6">
                 <li className="flex items-start">
-                  <CheckCircle2 className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
-                  <span>Preserve your vehicle's original paint and resale value</span>
+                  <CheckCircle2 className="h-5 w-5 text-brand-gold mr-2 flex-shrink-0 mt-0.5" />
+                  <span className="text-brand-grey">Preserve your vehicle's original paint and resale value</span>
                 </li>
                 <li className="flex items-start">
-                  <CheckCircle2 className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
-                  <span>Fraction of the cost of a quality paint job</span>
+                  <CheckCircle2 className="h-5 w-5 text-brand-gold mr-2 flex-shrink-0 mt-0.5" />
+                  <span className="text-brand-grey">Fraction of the cost of a quality paint job</span>
                 </li>
                 <li className="flex items-start">
-                  <CheckCircle2 className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
-                  <span>Removable when you want a change or to sell your vehicle</span>
+                  <CheckCircle2 className="h-5 w-5 text-brand-gold mr-2 flex-shrink-0 mt-0.5" />
+                  <span className="text-brand-grey">Removable when you want a change or to sell your vehicle</span>
                 </li>
                 <li className="flex items-start">
-                  <CheckCircle2 className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
-                  <span>Protection against minor scratches and stone chips</span>
+                  <CheckCircle2 className="h-5 w-5 text-brand-gold mr-2 flex-shrink-0 mt-0.5" />
+                  <span className="text-brand-grey">Protection against minor scratches and stone chips</span>
                 </li>
                 <li className="flex items-start">
-                  <CheckCircle2 className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
-                  <span>Extensive selection of colors and finishes unavailable in paint</span>
+                  <CheckCircle2 className="h-5 w-5 text-brand-gold mr-2 flex-shrink-0 mt-0.5" />
+                  <span className="text-brand-grey">Extensive selection of colors and finishes unavailable in paint</span>
                 </li>
                 <li className="flex items-start">
-                  <CheckCircle2 className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
-                  <span>Quick installation process (typically 3-5 days)</span>
+                  <CheckCircle2 className="h-5 w-5 text-brand-gold mr-2 flex-shrink-0 mt-0.5" />
+                  <span className="text-brand-grey">Quick installation process (typically 3-5 days)</span>
                 </li>
               </ul>
               
-              <div className="bg-brand-light p-5 rounded-lg">
+              <div className="bg-brand-black/5 p-5 rounded-lg border border-brand-gold/10">
                 <div className="flex items-center mb-3">
-                  <Sparkles className="h-5 w-5 text-brand-navy mr-2" />
-                  <h3 className="text-xl font-semibold text-brand-navy">Design Your Custom Color Wrap</h3>
+                  <Sparkles className="h-5 w-5 text-brand-gold mr-2" />
+                  <h3 className="text-xl font-semibold text-brand-black">Design Your Custom Color Wrap</h3>
                 </div>
-                <p className="mb-4">
+                <p className="mb-4 text-brand-grey">
                   Want to visualize your vehicle with a new color? Try our AI-powered wrap designer tool to see your 
                   car, truck, or SUV in different colors and finishes before committing.
                 </p>
-                <Button asChild className="bg-brand-navy hover:bg-blue-800">
+                <Button asChild variant="gold">
                   <Link to="/ai-wrap-ideas" className="inline-flex items-center">
                     <Sparkles className="mr-2 h-4 w-4" />
                     Try Our AI Wrap Designer

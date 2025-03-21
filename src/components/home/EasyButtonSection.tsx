@@ -125,7 +125,7 @@ const EasyButtonSection = () => {
               
               <div className="bg-white/10 rounded-lg p-3 mb-6">
                 <div className="flex items-center mb-2">
-                  <CreditCard className="h-4 w-4 text-white mr-2" />
+                  <CreditCard className="h-4 w-4 text-brand-gold mr-2" />
                   <span className="text-white font-medium">Flexible Payment Options</span>
                 </div>
                 <div className="pl-6 text-white/80 text-sm space-y-1">
@@ -139,7 +139,8 @@ const EasyButtonSection = () => {
                 <Button
                   asChild
                   size="lg"
-                  className="bg-brand-gold hover:bg-yellow-600 text-brand-black font-bold text-lg shadow-xl w-full py-6 animate-pulse"
+                  variant="gold"
+                  className="font-bold text-lg shadow-xl w-full py-6 animate-pulse"
                 >
                   <Link to="/contact" className="inline-flex items-center whitespace-nowrap">
                     Lock In This Special Price Now!

@@ -70,7 +70,8 @@ const BusinessInfoForm = ({
       <Button
         onClick={onGenerateIdeas}
         disabled={isGenerating}
-        className="w-full bg-brand-gold hover:bg-yellow-600 text-brand-black py-3 h-auto"
+        variant="gold"
+        className="w-full py-3 h-auto"
       >
         {isGenerating ? (
           <>

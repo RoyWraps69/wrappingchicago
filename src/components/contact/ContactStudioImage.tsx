@@ -13,29 +13,29 @@ const ContactStudioImage = () => {
           alt="Wrapping Chicago installation facility - Professional vehicle wrap, car wrap, truck wrap, and van wrap installation shop in Chicago" 
           className="w-full h-auto object-cover"
         />
-        <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 via-black/70 to-transparent p-6">
+        <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-brand-black/90 via-brand-black/70 to-transparent p-6">
           <h3 className="text-white text-xl font-bold mb-3">Need Vehicle Wraps in Chicago?</h3>
           
           {/* Service badges */}
           <div className="flex flex-wrap gap-2 mb-4">
-            <span className="bg-white/20 backdrop-blur-sm text-white text-xs font-medium px-2.5 py-0.5 rounded flex items-center">
-              <Car className="w-3 h-3 mr-1" /> Car Wraps
+            <span className="bg-brand-black/60 backdrop-blur-sm text-white text-xs font-medium px-2.5 py-0.5 rounded flex items-center border border-brand-gold/20">
+              <Car className="w-3 h-3 mr-1 text-brand-gold" /> Car Wraps
             </span>
-            <span className="bg-white/20 backdrop-blur-sm text-white text-xs font-medium px-2.5 py-0.5 rounded flex items-center">
-              <Truck className="w-3 h-3 mr-1" /> Truck Wraps
+            <span className="bg-brand-black/60 backdrop-blur-sm text-white text-xs font-medium px-2.5 py-0.5 rounded flex items-center border border-brand-gold/20">
+              <Truck className="w-3 h-3 mr-1 text-brand-gold" /> Truck Wraps
             </span>
-            <span className="bg-white/20 backdrop-blur-sm text-white text-xs font-medium px-2.5 py-0.5 rounded flex items-center">
-              <Shield className="w-3 h-3 mr-1" /> Fleet Wraps
+            <span className="bg-brand-black/60 backdrop-blur-sm text-white text-xs font-medium px-2.5 py-0.5 rounded flex items-center border border-brand-gold/20">
+              <Shield className="w-3 h-3 mr-1 text-brand-gold" /> Fleet Wraps
             </span>
-            <span className="bg-white/20 backdrop-blur-sm text-white text-xs font-medium px-2.5 py-0.5 rounded flex items-center">
-              <Zap className="w-3 h-3 mr-1" /> Vinyl Graphics
+            <span className="bg-brand-black/60 backdrop-blur-sm text-white text-xs font-medium px-2.5 py-0.5 rounded flex items-center border border-brand-gold/20">
+              <Zap className="w-3 h-3 mr-1 text-brand-gold" /> Vinyl Graphics
             </span>
           </div>
           
           <div className="flex flex-col sm:flex-row gap-3">
             <Button
               asChild
-              variant="default"
+              variant="gold"
             >
               <Link to="/contact">Get a Free Quote Today</Link>
             </Button>

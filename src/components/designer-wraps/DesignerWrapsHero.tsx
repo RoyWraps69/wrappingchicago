@@ -6,7 +6,7 @@ import { MessageSquare, Phone } from 'lucide-react';
 
 const DesignerWrapsHero = () => {
   return (
-    <div className="relative bg-black overflow-hidden">
+    <div className="relative bg-brand-black overflow-hidden">
       <div className="absolute inset-0 z-0">
         <img 
           src="https://images.unsplash.com/photo-1562911791-c7a97b729ec5?auto=format&fit=crop&w=2000&q=80"
@@ -26,7 +26,7 @@ const DesignerWrapsHero = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4">
-            <Button asChild size="lg" variant="default">
+            <Button asChild size="lg" variant="gold">
               <Link to="/contact" className="inline-flex items-center">
                 <MessageSquare className="mr-2 h-5 w-5" />
                 Get a Free Consultation

@@ -30,7 +30,7 @@ const DesktopNav = () => {
       <div className="flex gap-2 ml-2">
         <Button 
           variant="outline" 
-          className="border-white/20 bg-white/10 text-white hover:bg-white/20"
+          className="border-brand-gold/20 bg-white/10 text-white hover:bg-white/20"
           asChild
         >
           <Link to="/contact" className="inline-flex items-center">
@@ -40,8 +40,7 @@ const DesktopNav = () => {
         </Button>
         
         <Button 
-          variant="default" 
-          className="bg-brand-red hover:bg-red-700 text-white"
+          variant="gold" 
           asChild
         >
           <a href="tel:3125971286" className="inline-flex items-center">

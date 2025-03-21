@@ -24,8 +24,9 @@ const buttonVariants = cva(
         white: "bg-white text-brand-black hover:bg-gray-100 border border-gray-200",
         black: "bg-brand-black text-white hover:bg-brand-grey",
         outlineWhite: "bg-transparent border border-white text-white hover:bg-white/20",
-        outlineGold: "border border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-brand-black",
-        outlineNavy: "border border-brand-navy text-brand-navy hover:bg-brand-navy hover:text-white",
+        outlineGold: "bg-transparent border border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-brand-black",
+        outlineBlack: "bg-transparent border border-brand-black text-brand-black hover:bg-brand-black hover:text-brand-gold",
+        outlineGrey: "bg-transparent border border-brand-grey text-brand-grey hover:bg-brand-grey hover:text-white",
       },
       size: {
         default: "h-10 px-4 py-2",

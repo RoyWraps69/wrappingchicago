@@ -15,7 +15,7 @@ const MobileNav: React.FC<MobileNavProps> = ({ isOpen, onClose }) => {
   
   return (
     <nav 
-      className="md:hidden fixed inset-0 z-50 bg-gray-900/95 backdrop-blur-sm flex flex-col overflow-y-auto pt-16 pb-6 px-4"
+      className="md:hidden fixed inset-0 z-50 bg-brand-black/95 backdrop-blur-sm flex flex-col overflow-y-auto pt-16 pb-6 px-4"
       aria-label="Mobile navigation"
     >
       <button 
@@ -27,23 +27,23 @@ const MobileNav: React.FC<MobileNavProps> = ({ isOpen, onClose }) => {
       </button>
       
       <div className="flex flex-col space-y-3 mt-4">
-        <NavLink to="/" onClick={onClose} className="text-white text-lg p-3 hover:bg-white/10 rounded-lg">
+        <NavLink to="/" onClick={onClose} className="text-white text-lg p-3 hover:bg-brand-grey/30 rounded-lg">
           Home
         </NavLink>
-        <NavLink to="/ai-wrap-ideas" onClick={onClose} className="text-white text-lg p-3 hover:bg-white/10 rounded-lg flex items-center">
-          <Sparkles className="h-5 w-5 mr-2" />
+        <NavLink to="/ai-wrap-ideas" onClick={onClose} className="text-white text-lg p-3 hover:bg-brand-grey/30 rounded-lg flex items-center">
+          <Sparkles className="h-5 w-5 mr-2 text-brand-gold" />
           AI Wrap Designer
         </NavLink>
-        <NavLink to="/services/fleet-wraps" onClick={onClose} className="text-white text-lg p-3 hover:bg-white/10 rounded-lg">
+        <NavLink to="/services/fleet-wraps" onClick={onClose} className="text-white text-lg p-3 hover:bg-brand-grey/30 rounded-lg">
           Services
         </NavLink>
-        <NavLink to="/gallery" onClick={onClose} className="text-white text-lg p-3 hover:bg-white/10 rounded-lg">
+        <NavLink to="/gallery" onClick={onClose} className="text-white text-lg p-3 hover:bg-brand-grey/30 rounded-lg">
           Gallery
         </NavLink>
-        <NavLink to="/about" onClick={onClose} className="text-white text-lg p-3 hover:bg-white/10 rounded-lg">
+        <NavLink to="/about" onClick={onClose} className="text-white text-lg p-3 hover:bg-brand-grey/30 rounded-lg">
           About
         </NavLink>
-        <NavLink to="/contact" onClick={onClose} className="text-white text-lg p-3 hover:bg-white/10 rounded-lg">
+        <NavLink to="/contact" onClick={onClose} className="text-white text-lg p-3 hover:bg-brand-grey/30 rounded-lg">
           Contact
         </NavLink>
       </div>
@@ -52,7 +52,7 @@ const MobileNav: React.FC<MobileNavProps> = ({ isOpen, onClose }) => {
         <Button 
           variant="outline" 
           size="lg"
-          className="border-white/20 bg-white/10 text-white hover:bg-white/20 w-full justify-center py-6 rounded-xl text-lg"
+          className="border-brand-gold/30 bg-white/10 text-white hover:bg-white/20 w-full justify-center py-6 rounded-xl text-lg"
           asChild
         >
           <Link to="/contact" className="inline-flex items-center">
@@ -62,9 +62,9 @@ const MobileNav: React.FC<MobileNavProps> = ({ isOpen, onClose }) => {
         </Button>
         
         <Button 
-          variant="default" 
+          variant="gold" 
           size="lg"
-          className="bg-brand-red hover:bg-red-700 text-white w-full justify-center py-6 rounded-xl text-lg"
+          className="w-full justify-center py-6 rounded-xl text-lg"
           asChild
         >
           <a href="tel:3125971286" className="inline-flex items-center">

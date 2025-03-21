@@ -17,7 +17,7 @@ const InfoBar: React.FC = () => {
             <Button
               asChild
               size="sm"
-              className="bg-brand-gold hover:bg-yellow-600 text-brand-black"
+              variant="gold"
             >
               <Link to="/contact" className="inline-flex items-center">
                 <MessageSquare className="mr-2 h-4 w-4" />
@@ -28,7 +28,7 @@ const InfoBar: React.FC = () => {
               asChild
               variant="outline"
               size="sm"
-              className="border-white/30 bg-white/10 text-white hover:bg-white/20"
+              className="border-brand-grey/30 bg-white/10 text-white hover:bg-white/20"
             >
               <a href="tel:3125971286" className="inline-flex items-center">
                 <Phone className="mr-2 h-4 w-4" />

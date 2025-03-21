@@ -84,7 +84,8 @@ export const ImageGeneratorForm: React.FC<ImageGeneratorFormProps> = ({
       <Button
         onClick={onGenerateImage}
         disabled={isGeneratingImage || (balance !== null && balance <= 0)}
-        className="w-full bg-brand-navy hover:bg-blue-800 text-white py-3 h-auto mb-6"
+        variant="black"
+        className="w-full py-3 h-auto mb-6"
       >
         {isGeneratingImage ? (
           <>
@@ -112,7 +113,7 @@ export const ImageGeneratorForm: React.FC<ImageGeneratorFormProps> = ({
               variant="outline" 
               size="sm" 
               onClick={handleRefreshBalance} 
-              className="text-xs"
+              className="text-xs border-brand-black/30 text-brand-black hover:bg-brand-black/10"
             >
               <RefreshCw className="mr-2 h-3 w-3" />
               I've Added Credits

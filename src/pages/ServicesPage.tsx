@@ -127,15 +127,15 @@ const ServicesPage = () => {
             <Breadcrumbs />
             
             {/* Contact Buttons Section */}
-            <div className="mb-8 p-5 bg-gray-50 rounded-lg border border-gray-200 flex flex-col sm:flex-row items-center justify-between">
+            <div className="mb-8 p-5 bg-brand-black/5 rounded-lg border border-brand-gold/10 flex flex-col sm:flex-row items-center justify-between">
               <div>
-                <h2 className="text-xl font-bold text-brand-navy mb-2">Interested in {serviceTitle.toLowerCase()}?</h2>
-                <p className="text-gray-700 mb-4 sm:mb-0">Contact us today for a free consultation and quote</p>
+                <h2 className="text-xl font-bold text-brand-black mb-2">Interested in {serviceTitle.toLowerCase()}?</h2>
+                <p className="text-brand-grey mb-4 sm:mb-0">Contact us today for a free consultation and quote</p>
               </div>
               <div className="flex flex-col sm:flex-row gap-3">
                 <Button
                   asChild
-                  className="bg-brand-red hover:bg-red-700 text-white"
+                  variant="gold"
                 >
                   <Link to="/contact" className="inline-flex items-center">
                     <MessageSquare className="mr-2 h-4 w-4" />
@@ -145,7 +145,7 @@ const ServicesPage = () => {
                 <Button
                   asChild
                   variant="outline"
-                  className="border-brand-navy text-brand-navy hover:bg-brand-navy hover:text-white"
+                  className="border-brand-black text-brand-black hover:bg-brand-black hover:text-brand-gold"
                 >
                   <a href="tel:3125971286" className="inline-flex items-center">
                     <Phone className="mr-2 h-4 w-4" />

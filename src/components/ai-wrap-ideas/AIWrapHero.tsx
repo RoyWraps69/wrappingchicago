@@ -17,7 +17,7 @@ const AIWrapHero = () => {
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <Breadcrumbs />
         <div className="max-w-3xl mx-auto text-center">
-          <div className="inline-flex items-center bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full text-white mb-4">
+          <div className="inline-flex items-center bg-brand-black/70 backdrop-blur-sm px-4 py-2 rounded-full text-white mb-4 border border-brand-gold/20">
             <Sparkles className="h-4 w-4 mr-2 text-brand-gold" />
             <span>AI-Powered Design Assistant</span>
           </div>
@@ -27,7 +27,8 @@ const AIWrapHero = () => {
           </p>
           <Button
             size="lg" 
-            className="bg-brand-gold hover:bg-yellow-600 text-brand-black py-6 px-8 rounded-full h-auto"
+            variant="gold"
+            className="py-6 px-8 rounded-full h-auto"
             onClick={() => document.getElementById('generator-section')?.scrollIntoView({ behavior: 'smooth' })}
           >
             <Sparkles className="mr-2 h-5 w-5" />

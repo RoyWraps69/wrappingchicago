@@ -60,15 +60,15 @@ const LuxuryExoticWrapsPage = () => {
             <Breadcrumbs />
             
             {/* Contact Buttons Section */}
-            <div className="mb-8 p-5 bg-gray-50 rounded-lg border border-gray-200 flex flex-col sm:flex-row items-center justify-between">
+            <div className="mb-8 p-5 bg-brand-black/5 rounded-lg border border-brand-gold/10 flex flex-col sm:flex-row items-center justify-between">
               <div>
-                <h2 className="text-xl font-bold text-brand-navy mb-2">Exotic & luxury car specialists</h2>
-                <p className="text-gray-700 mb-4 sm:mb-0">Contact us for premium wrapping services for high-end vehicles</p>
+                <h2 className="text-xl font-bold text-brand-black mb-2">Exotic & luxury car specialists</h2>
+                <p className="text-brand-grey mb-4 sm:mb-0">Contact us for premium wrapping services for high-end vehicles</p>
               </div>
               <div className="flex flex-col sm:flex-row gap-3">
                 <Button
                   asChild
-                  className="bg-brand-red hover:bg-red-700 text-white"
+                  variant="gold"
                 >
                   <Link to="/contact" className="inline-flex items-center">
                     <MessageSquare className="mr-2 h-4 w-4" />
@@ -78,7 +78,7 @@ const LuxuryExoticWrapsPage = () => {
                 <Button
                   asChild
                   variant="outline"
-                  className="border-brand-navy text-brand-navy hover:bg-brand-navy hover:text-white"
+                  className="border-brand-black text-brand-black hover:bg-brand-black hover:text-brand-gold"
                 >
                   <a href="tel:3125971286" className="inline-flex items-center">
                     <Phone className="mr-2 h-4 w-4" />
@@ -93,53 +93,53 @@ const LuxuryExoticWrapsPage = () => {
           
           <div className="container mx-auto px-4 py-12">
             <div className="mb-12">
-              <h2 className="text-3xl font-bold text-brand-navy mb-6">Chicago's Premier Exotic Car Wrap Specialists</h2>
-              <p className="text-lg text-gray-700 mb-4">
+              <h2 className="text-3xl font-bold text-brand-black mb-6">Chicago's Premier Exotic Car Wrap Specialists</h2>
+              <p className="text-lg text-brand-grey mb-4">
                 When it comes to wrapping exotic and luxury vehicles, experience and expertise matter. Our dedicated team 
                 of specialists has extensive training in handling high-end automobiles like Ferrari, Lamborghini, Porsche, 
                 McLaren, and Aston Martin. We understand the unique curves, materials, and requirements of these premium vehicles.
               </p>
-              <p className="text-lg text-gray-700 mb-4">
+              <p className="text-lg text-brand-grey mb-4">
                 Our luxury vehicle wrapping services provide numerous benefits:
               </p>
               <ul className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-6">
                 <li className="flex items-start">
-                  <CheckCircle2 className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
-                  <span>Preserve your exotic car's factory paint and value</span>
+                  <CheckCircle2 className="h-5 w-5 text-brand-gold mr-2 flex-shrink-0 mt-0.5" />
+                  <span className="text-brand-grey">Preserve your exotic car's factory paint and value</span>
                 </li>
                 <li className="flex items-start">
-                  <CheckCircle2 className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
-                  <span>Custom colors and finishes without permanent modification</span>
+                  <CheckCircle2 className="h-5 w-5 text-brand-gold mr-2 flex-shrink-0 mt-0.5" />
+                  <span className="text-brand-grey">Custom colors and finishes without permanent modification</span>
                 </li>
                 <li className="flex items-start">
-                  <CheckCircle2 className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
-                  <span>Protection from road debris, minor scratches, and UV damage</span>
+                  <CheckCircle2 className="h-5 w-5 text-brand-gold mr-2 flex-shrink-0 mt-0.5" />
+                  <span className="text-brand-grey">Protection from road debris, minor scratches, and UV damage</span>
                 </li>
                 <li className="flex items-start">
-                  <CheckCircle2 className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
-                  <span>Significantly less downtime than a custom paint job</span>
+                  <CheckCircle2 className="h-5 w-5 text-brand-gold mr-2 flex-shrink-0 mt-0.5" />
+                  <span className="text-brand-grey">Significantly less downtime than a custom paint job</span>
                 </li>
                 <li className="flex items-start">
-                  <CheckCircle2 className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
-                  <span>Ability to personalize your vehicle while maintaining warranty</span>
+                  <CheckCircle2 className="h-5 w-5 text-brand-gold mr-2 flex-shrink-0 mt-0.5" />
+                  <span className="text-brand-grey">Ability to personalize your vehicle while maintaining warranty</span>
                 </li>
                 <li className="flex items-start">
-                  <CheckCircle2 className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
-                  <span>Exclusive access to premium materials and specialized techniques</span>
+                  <CheckCircle2 className="h-5 w-5 text-brand-gold mr-2 flex-shrink-0 mt-0.5" />
+                  <span className="text-brand-grey">Exclusive access to premium materials and specialized techniques</span>
                 </li>
               </ul>
               
-              <div className="bg-brand-light p-5 rounded-lg">
+              <div className="bg-brand-black/5 p-5 rounded-lg border border-brand-gold/10">
                 <div className="flex items-center mb-3">
-                  <Shield className="h-5 w-5 text-brand-navy mr-2" />
-                  <h3 className="text-xl font-semibold text-brand-navy">Our Exotic Vehicle Guarantee</h3>
+                  <Shield className="h-5 w-5 text-brand-gold mr-2" />
+                  <h3 className="text-xl font-semibold text-brand-black">Our Exotic Vehicle Guarantee</h3>
                 </div>
-                <p className="mb-4">
+                <p className="mb-4 text-brand-grey">
                   We understand that your exotic or luxury vehicle is a significant investment. That's why we offer a 
                   comprehensive guarantee on all our high-end wrapping services, including expert installation, premium 
                   materials, and exceptional care throughout the process.
                 </p>
-                <Button asChild className="bg-brand-navy hover:bg-blue-800">
+                <Button asChild variant="gold">
                   <Link to="/contact" className="inline-flex items-center">
                     <MessageSquare className="mr-2 h-4 w-4" />
                     Schedule a Consultation

@@ -14,7 +14,7 @@ const Hero = () => {
           alt="Professional vehicle wrap with colorful paint splash design on sports car in Chicago" 
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-black/60"></div> {/* Darker overlay (60% opacity) to ensure text is readable */}
+        <div className="absolute inset-0 bg-brand-black/60"></div> {/* Darker overlay (60% opacity) to ensure text is readable */}
       </div>
       
       <div className="relative z-20 container mx-auto px-4 sm:px-6 lg:px-8 min-h-[80vh] flex items-center">
@@ -22,7 +22,7 @@ const Hero = () => {
           {/* Left side: Main hero content */}
           <div className="max-w-2xl">
             <div className="animate-fade-in mb-4">
-              <span className="bg-brand-red/90 text-white px-4 py-2 rounded-full text-sm uppercase font-medium tracking-wide shadow-xl">
+              <span className="bg-brand-black/90 text-brand-gold px-4 py-2 rounded-full text-sm uppercase font-medium tracking-wide shadow-xl border border-brand-gold/30">
                 Chicago's Premier Vehicle Wrap Specialist
               </span>
             </div>
@@ -39,7 +39,8 @@ const Hero = () => {
               <Button
                 asChild
                 size="lg"
-                className="bg-brand-gold hover:bg-yellow-600 text-brand-black text-lg px-8 py-7 h-auto rounded-full shadow-2xl drop-shadow-[0_4px_4px_rgba(0,0,0,0.3)]"
+                variant="gold"
+                className="text-lg px-8 py-7 h-auto rounded-full shadow-2xl drop-shadow-[0_4px_4px_rgba(0,0,0,0.3)]"
               >
                 <Link to="/contact" className="inline-flex items-center">
                   Request a Free Quote
@@ -50,25 +51,25 @@ const Hero = () => {
                 
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 animate-enter" style={{ animationDelay: "0.8s" }}>
               <div className="flex items-center">
-                <div className="bg-black/50 backdrop-blur-sm rounded-lg p-3 shadow-xl">
+                <div className="bg-brand-black/50 backdrop-blur-sm rounded-lg p-3 shadow-xl border border-brand-gold/20">
                   <Award className="h-8 w-8 text-brand-gold drop-shadow-[0_2px_3px_rgba(0,0,0,0.5)]" />
                 </div>
                 <span className="ml-3 text-white font-medium drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)] [text-shadow:_0_1px_1px_#000]">Premium Materials</span>
               </div>
               <div className="flex items-center">
-                <div className="bg-black/50 backdrop-blur-sm rounded-lg p-3 shadow-xl">
+                <div className="bg-brand-black/50 backdrop-blur-sm rounded-lg p-3 shadow-xl border border-brand-gold/20">
                   <Shield className="h-8 w-8 text-brand-gold drop-shadow-[0_2px_3px_rgba(0,0,0,0.5)]" />
                 </div>
                 <span className="ml-3 text-white font-medium drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)] [text-shadow:_0_1px_1px_#000]">2-Year Warranty</span>
               </div>
               <div className="flex items-center">
-                <div className="bg-black/50 backdrop-blur-sm rounded-lg p-3 shadow-xl">
+                <div className="bg-brand-black/50 backdrop-blur-sm rounded-lg p-3 shadow-xl border border-brand-gold/20">
                   <Wrench className="h-8 w-8 text-brand-gold drop-shadow-[0_2px_3px_rgba(0,0,0,0.5)]" />
                 </div>
                 <span className="ml-3 text-white font-medium drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)] [text-shadow:_0_1px_1px_#000]">Expert Installation</span>
               </div>
               <div className="flex items-center">
-                <div className="bg-black/50 backdrop-blur-sm rounded-lg p-3 shadow-xl">
+                <div className="bg-brand-black/50 backdrop-blur-sm rounded-lg p-3 shadow-xl border border-brand-gold/20">
                   <Clock className="h-8 w-8 text-brand-gold drop-shadow-[0_2px_3px_rgba(0,0,0,0.5)]" />
                 </div>
                 <span className="ml-3 text-white font-medium drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)] [text-shadow:_0_1px_1px_#000]">Quick Turnaround</span>
@@ -102,15 +103,15 @@ const Hero = () => {
               </p>
               
               <div className="space-y-4 mb-8">
-                <div className="flex items-center bg-brand-grey/30 px-4 py-3 rounded-lg">
+                <div className="flex items-center bg-brand-grey/30 px-4 py-3 rounded-lg border border-brand-gold/10">
                   <Zap className="h-5 w-5 text-brand-gold mr-3 flex-shrink-0" />
                   <span className="text-white/90 text-sm">Generate custom designs instantly</span>
                 </div>
-                <div className="flex items-center bg-brand-grey/30 px-4 py-3 rounded-lg">
+                <div className="flex items-center bg-brand-grey/30 px-4 py-3 rounded-lg border border-brand-gold/10">
                   <Sparkles className="h-5 w-5 text-brand-gold mr-3 flex-shrink-0" />
                   <span className="text-white/90 text-sm">No design skills required</span>
                 </div>
-                <div className="flex items-center bg-brand-grey/30 px-4 py-3 rounded-lg">
+                <div className="flex items-center bg-brand-grey/30 px-4 py-3 rounded-lg border border-brand-gold/10">
                   <Clock className="h-5 w-5 text-brand-gold mr-3 flex-shrink-0" />
                   <span className="text-white/90 text-sm">Save weeks in the design process</span>
                 </div>
@@ -119,7 +120,7 @@ const Hero = () => {
               <Button 
                 asChild
                 size="lg"
-                className="relative w-full bg-brand-black hover:bg-brand-grey/90 text-white text-lg px-8 py-7 h-auto rounded-xl shadow-xl overflow-hidden group"
+                className="relative w-full bg-brand-black hover:bg-brand-grey/90 text-white text-lg px-8 py-7 h-auto rounded-xl shadow-xl overflow-hidden group border border-brand-gold/30"
               >
                 <Link to="/ai-wrap-ideas" className="inline-flex items-center justify-center">
                   {/* Animated background effect */}
