@@ -7,8 +7,15 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import CallToAction from '@/components/CallToAction';
 import { cities } from '@/data/cities';
+import { galleryItems } from '@/data/galleryItems';
 
 const Index = () => {
+  // Filter for van images from the gallery (assuming these are the "bratcher vans")
+  const vanImages = galleryItems.filter(item => 
+    item.title.toLowerCase().includes('van') || 
+    item.description.toLowerCase().includes('van')
+  ).slice(0, 3); // Take the first 3 van-related images
+  
   return (
     <>
       <Helmet>
@@ -94,19 +101,19 @@ const Index = () => {
                   {
                     title: "Fleet Wraps",
                     description: "Transform your company vehicles into eye-catching mobile billboards. Our fleet wrapping services help businesses maximize their advertising reach across Chicago.",
-                    image: "/lovable-uploads/9de106b5-94cb-4fd1-a7c7-5c75c75b7cbb.png",
+                    image: vanImages[0] ? vanImages[0].image : "/lovable-uploads/9bb3d94e-589d-4daf-b35e-e19e80610439.png",
                     link: "/services/fleet-wraps"
                   },
                   {
                     title: "Color Change Wraps",
                     description: "Want a new look without the permanence of paint? Our color change wraps allow you to transform your vehicle with premium vinyl wraps in any color or finish.",
-                    image: "/lovable-uploads/cc335205-fcef-4ca9-a269-5cf6dee478ed.png",
+                    image: vanImages[1] ? vanImages[1].image : "/lovable-uploads/230338ed-a8d9-4584-bb4c-ba33c793f7ab.png",
                     link: "/services/color-change-wraps"
                   },
                   {
                     title: "Commercial Graphics",
                     description: "From simple lettering to complex designs, our commercial graphics solutions help businesses create professional vehicle identities that stand out on the road.",
-                    image: "/lovable-uploads/0316f206-884b-44b4-bdb3-e0f7962a1714.png",
+                    image: vanImages[2] ? vanImages[2].image : "/lovable-uploads/fb7a4b97-4b57-4b2e-8f81-42a1098270df.png",
                     link: "/services/commercial-graphics"
                   }
                 ].map((service, index) => (
