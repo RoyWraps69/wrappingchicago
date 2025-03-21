@@ -16,12 +16,10 @@ export type FormValues = {
 
 interface ContactFormFieldsProps {
   form: UseFormReturn<FormValues>;
-  onSubmit: (data: FormValues) => void;
-  isSubmitting: boolean;
   apiKeyExists: boolean;
 }
 
-const ContactFormFields = ({ form, onSubmit, isSubmitting, apiKeyExists }: ContactFormFieldsProps) => {
+const ContactFormFields = ({ form, apiKeyExists }: ContactFormFieldsProps) => {
   // Get absolute URL for the success redirect
   const baseUrl = window.location.origin;
   const successUrl = `${baseUrl}/contact?success=true`;
@@ -144,9 +142,9 @@ const ContactFormFields = ({ form, onSubmit, isSubmitting, apiKeyExists }: Conta
         
         <Button 
           type="submit" 
-          disabled={isSubmitting || !apiKeyExists}
+          disabled={!apiKeyExists}
         >
-          {isSubmitting ? 'Submitting...' : 'Submit Request'}
+          Submit Request
         </Button>
         
         <p className="text-sm text-gray-500 mt-2">

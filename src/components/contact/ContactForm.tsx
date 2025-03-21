@@ -7,7 +7,6 @@ import ContactFormFields, { FormValues } from './ContactFormFields';
 
 const ContactForm = () => {
   const { toast } = useToast();
-  const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   
   const form = useForm<FormValues>({
@@ -30,13 +29,6 @@ const ContactForm = () => {
     }
   }, []);
 
-  // Note: We're no longer using this function with onSubmit
-  // We're letting the native form submission handle everything
-  const handleSubmit = async (data: FormValues) => {
-    console.log("Form data:", data);
-    // This function is now unused as we're relying on the native form submission
-  };
-
   return (
     <div className="bg-gray-100 p-6 rounded-lg">
       <h2 className="text-2xl font-semibold text-brand-navy mb-4">Request a Quote</h2>
@@ -45,9 +37,7 @@ const ContactForm = () => {
         <SubmissionSuccess onReset={() => setSubmitted(false)} />
       ) : (
         <ContactFormFields 
-          form={form} 
-          onSubmit={handleSubmit} 
-          isSubmitting={isSubmitting} 
+          form={form}
           apiKeyExists={true}
         />
       )}
