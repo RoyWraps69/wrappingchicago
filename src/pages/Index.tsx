@@ -28,6 +28,26 @@ const Index = () => {
   
   // For the Schema component, choose Chicago as the default city
   const chicagoCity = cities.find(city => city.slug === 'chicago') || cities[0];
+  
+  // FAQ data for schema
+  const faqData = [
+    {
+      question: "How much does a vehicle wrap cost in Chicago?",
+      answer: "Vehicle wrap costs in Chicago typically range from $2,500 to $5,000 for a full wrap, depending on vehicle size and design complexity. Partial wraps start around $1,500."
+    },
+    {
+      question: "How long does a vehicle wrap last?",
+      answer: "With proper care and maintenance, a professional vehicle wrap can last 5-7 years. We use premium 3M materials that provide excellent durability and UV resistance."
+    },
+    {
+      question: "How long does it take to wrap a vehicle?",
+      answer: "Most vehicle wraps can be completed in 2-3 days. Fleet projects are scheduled according to your timeline and business needs."
+    },
+    {
+      question: "Will a vehicle wrap damage my paint?",
+      answer: "No, professional vehicle wraps protect your paint and when removed properly, leave the original paint in excellent condition, often better than vehicles without wraps."
+    }
+  ];
 
   return (
     <>
@@ -37,6 +57,7 @@ const Index = () => {
         path="/"
         pageTitle="Vehicle Wraps Chicago | Premium Car, Truck & Van Wrapping Services"
         pageDescription="Chicago's leading vehicle wrap company offering professional car wraps, truck wraps, van wraps, fleet wraps & commercial graphics with expert installation using premium 3M materials."
+        faqs={faqData}
       />
       <AIWrapSchema />
       

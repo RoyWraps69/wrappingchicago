@@ -12,6 +12,7 @@ interface MetaTagsProps {
   twitterCard?: string;
   noIndex?: boolean;
   structuredData?: object;
+  lastModified?: string;
 }
 
 const MetaTags: React.FC<MetaTagsProps> = ({
@@ -24,23 +25,28 @@ const MetaTags: React.FC<MetaTagsProps> = ({
   twitterCard = 'summary_large_image',
   noIndex = false,
   structuredData,
+  lastModified,
 }) => {
+  const currentYear = new Date().getFullYear();
+  const formattedTitle = title.includes(currentYear.toString()) ? title : `${title} | ${currentYear}`;
+  
   return (
     <Helmet>
       {/* Basic Meta Tags */}
-      <title>{title}</title>
+      <title>{formattedTitle}</title>
       <meta name="description" content={description} />
       {keywords && <meta name="keywords" content={keywords} />}
       <link rel="canonical" href={canonicalUrl} />
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+      {lastModified && <meta name="last-modified" content={lastModified} />}
       
       {/* Performance optimizations */}
       <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
       <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
       <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
       
-      {/* Favicon - optimized for faster loading and better display in search results */}
+      {/* Favicon */}
       <link rel="icon" type="image/png" sizes="32x32" href="/lovable-uploads/6ef3b1af-8591-4d36-97c2-9366401115fa.png" />
       <link rel="icon" type="image/png" sizes="16x16" href="/lovable-uploads/6ef3b1af-8591-4d36-97c2-9366401115fa.png" />
       <link rel="apple-touch-icon" sizes="180x180" href="/lovable-uploads/6ef3b1af-8591-4d36-97c2-9366401115fa.png" />
@@ -57,7 +63,7 @@ const MetaTags: React.FC<MetaTagsProps> = ({
       )}
       
       {/* Open Graph / Facebook */}
-      <meta property="og:title" content={title} />
+      <meta property="og:title" content={formattedTitle} />
       <meta property="og:description" content={description} />
       <meta property="og:url" content={canonicalUrl} />
       <meta property="og:type" content={ogType} />
@@ -69,7 +75,7 @@ const MetaTags: React.FC<MetaTagsProps> = ({
       
       {/* Twitter Card */}
       <meta name="twitter:card" content={twitterCard} />
-      <meta name="twitter:title" content={title} />
+      <meta name="twitter:title" content={formattedTitle} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={ogImage} />
       <meta name="twitter:site" content="@wrappingchicago" />

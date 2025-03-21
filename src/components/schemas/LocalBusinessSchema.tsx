@@ -7,9 +7,13 @@ interface LocalBusinessSchemaProps {
 }
 
 const LocalBusinessSchema = ({ city }: LocalBusinessSchemaProps) => {
+  const currentYear = new Date().getFullYear();
+  const currentDate = new Date().toISOString().split('T')[0];
+  
   const schema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
+    "@id": "https://wrappingchicago.com/#organization",
     "name": "Wrapping Chicago",
     "alternateName": "Chicago Vehicle Wrapping Services",
     "description": `Premium vehicle wrapping service serving ${city.name}, IL with professional design for fleet wraps, color change wraps, and commercial graphics. With over 16,000 vehicle wraps completed in our 20 years of business, we've transformed vehicles into eye-catching mobile advertisements throughout Chicago and suburbs.`,
@@ -59,13 +63,13 @@ const LocalBusinessSchema = ({ city }: LocalBusinessSchemaProps) => {
       "https://wrappingchicago.com/lovable-uploads/199c2a21-e0b0-4c29-972f-f32d72698382.png",
       "https://wrappingchicago.com/lovable-uploads/efdbc4bf-1f04-42bb-a904-f52dae7bef6c.png"
     ],
-    "logo": "https://wrappingchicago.com/logo.png",
+    "logo": "https://wrappingchicago.com/lovable-uploads/6ef3b1af-8591-4d36-97c2-9366401115fa.png",
     "numberOfEmployees": {
       "@type": "QuantitativeValue",
       "value": "15"
     },
     "award": [
-      "Best Vehicle Wrap Company in Chicago 2023",
+      `Best Vehicle Wrap Company in Chicago ${currentYear}`,
       "Premium 3M Materials Provider",
       "16,000+ Vehicle Wraps Completed"
     ],
@@ -118,7 +122,7 @@ const LocalBusinessSchema = ({ city }: LocalBusinessSchemaProps) => {
           "ratingValue": "5",
           "bestRating": "5"
         },
-        "datePublished": "2023-11-15",
+        "datePublished": currentDate,
         "reviewBody": "Exceptional work from the Wrapping Chicago team. They transformed our fleet vehicles into eye-catching mobile advertisements. The quality of materials and installation is top-notch."
       }
     ],
@@ -131,6 +135,22 @@ const LocalBusinessSchema = ({ city }: LocalBusinessSchemaProps) => {
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": `https://wrappingchicago.com/vehicle-wraps-${city.slug}-il`
+    },
+    "potentialAction": {
+      "@type": "ReserveAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://wrappingchicago.com/contact",
+        "inLanguage": "en-US",
+        "actionPlatform": [
+          "http://schema.org/DesktopWebPlatform",
+          "http://schema.org/MobileWebPlatform"
+        ]
+      },
+      "result": {
+        "@type": "Reservation",
+        "name": "Vehicle Wrap Consultation"
+      }
     }
   };
 

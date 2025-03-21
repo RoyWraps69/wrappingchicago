@@ -8,16 +8,18 @@ import WebsiteSchema from './schemas/WebsiteSchema';
 import ServiceSchema from './schemas/ServiceSchema';
 import VehicleWrapServiceSchema from './schemas/VehicleWrapServiceSchema';
 import ReviewsSchema from './schemas/ReviewsSchema';
+import FAQSchema from './schemas/FAQSchema';
 
 interface SchemaProps {
   city: City;
   path: string;
   pageTitle: string;
   pageDescription: string;
-  keywords?: string[]; // Added keywords as an optional prop
+  keywords?: string[]; 
+  faqs?: Array<{question: string; answer: string}>;
 }
 
-const Schema: React.FC<SchemaProps> = ({ city, path, pageTitle, pageDescription }) => {
+const Schema: React.FC<SchemaProps> = ({ city, path, pageTitle, pageDescription, faqs }) => {
   // Base URL for the website
   const baseUrl = 'https://wrappingchicago.com';
   
@@ -130,6 +132,9 @@ const Schema: React.FC<SchemaProps> = ({ city, path, pageTitle, pageDescription 
       
       {/* Reviews Schema */}
       <ReviewsSchema reviews={reviews} />
+      
+      {/* FAQ Schema if FAQs are provided */}
+      {faqs && faqs.length > 0 && <FAQSchema faqs={faqs} />}
     </>
   );
 };
