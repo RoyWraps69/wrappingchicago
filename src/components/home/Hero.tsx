@@ -28,8 +28,7 @@ const Hero = () => {
         backgroundPosition: 'center' 
       }}
     >
-      {/* Dark overlay to make text stand out better */}
-      <div className="absolute inset-0 bg-black/50 z-10"></div>
+      {/* Removed the dark overlay div */}
       
       <div className="relative z-20 container mx-auto px-4 sm:px-6 lg:px-8 min-h-[80vh] flex items-center">
         <div className="max-w-3xl py-16">
