@@ -9,6 +9,16 @@ const FleetWrapROI: React.FC = () => {
         <BarChart3 className="w-6 h-6 text-brand-red mr-2" />
         Fleet Wrap ROI for Chicago Businesses
       </h3>
+      
+      <div className="float-left mr-6 mb-4 w-full md:w-2/5">
+        <img 
+          src="/lovable-uploads/bc55562c-aa6e-45ac-86ea-5b2657a3f6d5.png" 
+          alt="Fleet wrap ROI - Commercial vehicle wrap generating impressions in Chicago" 
+          className="rounded-lg shadow-md w-full"
+        />
+        <p className="text-sm text-gray-600 mt-1 text-center">Fleet wraps deliver exceptional ROI for Chicago businesses</p>
+      </div>
+      
       <p className="mb-4 text-gray-700">
         Fleet vehicle wraps offer an exceptional return on investment for Chicago businesses. Consider these statistics:
       </p>

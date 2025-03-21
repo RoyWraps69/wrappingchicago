@@ -1,11 +1,24 @@
 
 import React from 'react';
 import { Truck } from 'lucide-react';
+import { useGalleryImages } from '@/hooks/useGalleryImages';
 
 const FleetWrapIntro: React.FC = () => {
+  const { fleetWrapVan } = useGalleryImages();
+  
   return (
     <>
       <h2 className="text-2xl font-semibold text-brand-navy mb-4">Professional Fleet Vehicle Wrapping Services in Chicago</h2>
+      
+      <div className="float-right ml-6 mb-4 w-full md:w-2/5">
+        <img 
+          src={fleetWrapVan} 
+          alt="Professional fleet vehicle wrap on service van - Chicago fleet wrapping services" 
+          className="rounded-lg shadow-md w-full"
+        />
+        <p className="text-sm text-gray-600 mt-1 text-center">Custom fleet wrap for Chicago business vehicle</p>
+      </div>
+      
       <p className="mb-4 text-gray-700">
         Make your company vehicles work harder for your business with our professional fleet wrapping services in Chicago. 
         A wrapped fleet creates thousands of impressions every day, turning your vehicles into powerful mobile 

@@ -1,51 +1,64 @@
 
 import React from 'react';
+import { HelpCircle } from 'lucide-react';
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const FleetWrapFAQ: React.FC = () => {
   return (
-    <div className="prose max-w-none mt-8">
-      <h3>Frequently Asked Questions About Fleet Vehicle Wraps in Chicago</h3>
+    <div className="mb-8">
+      <h3 className="text-xl font-semibold text-brand-navy mb-4 flex items-center">
+        <HelpCircle className="w-6 h-6 text-brand-red mr-2" />
+        Frequently Asked Questions About Fleet Wraps
+      </h3>
       
-      <h4>How much does it cost to wrap a fleet of vehicles in Chicago?</h4>
-      <p>
-        Fleet vehicle wrap pricing in Chicago depends on several factors, including the number of vehicles, 
-        size of each vehicle, complexity of the design, and whether you need full wraps or partial wraps. 
-        For a small business fleet of 3-5 vehicles, you can expect to invest anywhere from $7,500 to $25,000 
-        for professional vehicle wraps. Larger fleets often qualify for volume discounts. Contact us for a 
-        customized quote based on your specific fleet.
-      </p>
-      
-      <h4>How long do fleet vehicle wraps last in Chicago's climate?</h4>
-      <p>
-        When properly installed and maintained, our premium vehicle wraps typically last 5-7 years in Chicago's 
-        climate. Our vehicle wraps are made from high-quality 3M vinyl materials specifically designed to withstand 
-        extreme weather conditions, including Chicago's hot summers, cold winters, and road salt. Regular washing 
-        and proper care can extend the life of your fleet wraps.
-      </p>
-      
-      <h4>Can I wrap leased fleet vehicles?</h4>
-      <p>
-        Yes, vehicle wraps are an excellent solution for leased fleet vehicles as they can be safely removed without 
-        damaging the original paint when the lease ends. Many Chicago businesses choose to wrap their leased commercial 
-        fleet vehicles to maximize their marketing potential while maintaining the vehicle's value. We recommend checking 
-        your lease agreement, but most leasing companies allow professional vehicle wrapping.
-      </p>
-      
-      <h4>How long does it take to wrap an entire fleet of vehicles?</h4>
-      <p>
-        The timeline for wrapping your Chicago business fleet depends on the number of vehicles, their size, and the 
-        complexity of the designs. Typically, a single vehicle takes 2-3 days for a full wrap installation. For larger 
-        fleets, we can develop a staggered installation schedule to minimize disruption to your operations, wrapping a 
-        few vehicles at a time while keeping the rest of your fleet on the road.
-      </p>
-      
-      <h4>Do you offer fleet wrap maintenance programs?</h4>
-      <p>
-        Yes, we offer fleet wrap maintenance programs for Chicago businesses to ensure your vehicle wraps maintain their 
-        professional appearance and maximum longevity. Our maintenance services include regular inspections, cleaning 
-        recommendations, touch-ups for minor damage, and repair services. With Chicago's harsh winters and road salt, 
-        regular maintenance helps protect your investment and maintain your brand's professional image.
-      </p>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+        <div className="col-span-1 md:col-span-2">
+          <Accordion type="single" collapsible className="w-full">
+            <AccordionItem value="item-1">
+              <AccordionTrigger className="text-left">How much does it cost to wrap a fleet of vehicles?</AccordionTrigger>
+              <AccordionContent>
+                The cost to wrap a fleet depends on several factors including the number of vehicles, vehicle sizes, design complexity, and coverage area. For a full fleet wrap package in Chicago, prices typically range from $1,800 to $3,500 per vehicle. We offer volume discounts for multiple vehicles and can customize packages to fit your budget.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-2">
+              <AccordionTrigger className="text-left">How long do fleet wraps last in Chicago's climate?</AccordionTrigger>
+              <AccordionContent>
+                When properly installed and maintained, our premium fleet wraps typically last 5-7 years, even in Chicago's harsh weather conditions. We use high-quality 3M vinyl materials specifically designed to withstand extreme temperatures, UV exposure, and precipitation, ensuring your fleet wraps maintain their appearance and effectiveness for years.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-3">
+              <AccordionTrigger className="text-left">How long does it take to wrap a fleet of vehicles?</AccordionTrigger>
+              <AccordionContent>
+                Installation time varies based on fleet size and wrap complexity. For a typical business fleet, we can wrap 1-2 vehicles per day. We'll work with you to create a staggered installation schedule that minimizes disruption to your operations, ensuring your business can continue running while we transform your fleet.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-4">
+              <AccordionTrigger className="text-left">Do you offer fleet wrap maintenance services?</AccordionTrigger>
+              <AccordionContent>
+                Yes, we offer fleet wrap maintenance programs to keep your vehicles looking their best. This includes regular inspections, cleaning recommendations, and repair services for any damage. We can also update specific information on wraps (like phone numbers or website URLs) without replacing the entire wrap, saving you time and money.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-5">
+              <AccordionTrigger className="text-left">Can you match our branding exactly on fleet wraps?</AccordionTrigger>
+              <AccordionContent>
+                Absolutely. Our professional design team uses color-matching technology to ensure your fleet wraps perfectly represent your brand. We'll work from your existing brand guidelines or help develop a new look, ensuring exact color matching, font consistency, and proper logo reproduction across your entire fleet.
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
+        </div>
+        <div className="col-span-1 flex items-center justify-center">
+          <img 
+            src="/lovable-uploads/bc55562c-aa6e-45ac-86ea-5b2657a3f6d5.png"
+            alt="Fleet wrap FAQ - Professional vehicle wrapping service in Chicago" 
+            className="rounded-lg shadow-md max-w-full h-auto"
+          />
+        </div>
+      </div>
     </div>
   );
 };

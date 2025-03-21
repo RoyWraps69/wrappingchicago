@@ -9,6 +9,15 @@ const FleetWrapBenefits: React.FC = () => {
         <CheckCircle className="w-6 h-6 text-brand-navy mr-2" />
         <h3 className="text-xl font-semibold text-brand-navy">Benefits of Fleet Vehicle Wraps</h3>
       </div>
+      
+      <div className="mb-4">
+        <img 
+          src="/lovable-uploads/efdbc4bf-1f04-42bb-a904-f52dae7bef6c.png" 
+          alt="Fleet wrapped service van showing marketing benefits - Chicago fleet wrap advertising" 
+          className="w-full h-48 object-cover rounded-md mb-3"
+        />
+      </div>
+      
       <ul className="list-disc pl-5 space-y-2 text-gray-700">
         <li>Create thousands of impressions daily throughout Chicago</li>
         <li>Lower cost-per-impression than traditional advertising</li>

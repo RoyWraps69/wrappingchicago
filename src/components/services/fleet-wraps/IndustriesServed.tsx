@@ -9,23 +9,34 @@ const IndustriesServed: React.FC = () => {
         <Building className="w-6 h-6 text-brand-red mr-2" />
         Chicago Industries We Serve
       </h3>
-      <p className="mb-4 text-gray-700">
-        We've provided professional fleet wrapping services for a wide range of Chicago businesses and industries, including:
-      </p>
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-3 mb-4">
-        <div className="p-3 bg-gray-50 rounded border border-gray-200 text-gray-700">Construction Companies</div>
-        <div className="p-3 bg-gray-50 rounded border border-gray-200 text-gray-700">HVAC Services</div>
-        <div className="p-3 bg-gray-50 rounded border border-gray-200 text-gray-700">Plumbing Contractors</div>
-        <div className="p-3 bg-gray-50 rounded border border-gray-200 text-gray-700">Food Delivery Services</div>
-        <div className="p-3 bg-gray-50 rounded border border-gray-200 text-gray-700">Electricians</div>
-        <div className="p-3 bg-gray-50 rounded border border-gray-200 text-gray-700">Landscaping Companies</div>
-        <div className="p-3 bg-gray-50 rounded border border-gray-200 text-gray-700">Real Estate Agencies</div>
-        <div className="p-3 bg-gray-50 rounded border border-gray-200 text-gray-700">Catering Services</div>
-        <div className="p-3 bg-gray-50 rounded border border-gray-200 text-gray-700">Home Service Providers</div>
-        <div className="p-3 bg-gray-50 rounded border border-gray-200 text-gray-700">Security Companies</div>
-        <div className="p-3 bg-gray-50 rounded border border-gray-200 text-gray-700">Cleaning Services</div>
-        <div className="p-3 bg-gray-50 rounded border border-gray-200 text-gray-700">Local Delivery Fleets</div>
+      
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
+        <div>
+          <p className="mb-4 text-gray-700">
+            We've provided professional fleet wrapping services for a wide range of Chicago businesses and industries, including:
+          </p>
+          <div className="grid grid-cols-2 gap-3 mb-4">
+            <div className="p-3 bg-gray-50 rounded border border-gray-200 text-gray-700">Construction Companies</div>
+            <div className="p-3 bg-gray-50 rounded border border-gray-200 text-gray-700">HVAC Services</div>
+            <div className="p-3 bg-gray-50 rounded border border-gray-200 text-gray-700">Plumbing Contractors</div>
+            <div className="p-3 bg-gray-50 rounded border border-gray-200 text-gray-700">Food Delivery Services</div>
+            <div className="p-3 bg-gray-50 rounded border border-gray-200 text-gray-700">Electricians</div>
+            <div className="p-3 bg-gray-50 rounded border border-gray-200 text-gray-700">Landscaping Companies</div>
+            <div className="p-3 bg-gray-50 rounded border border-gray-200 text-gray-700">Real Estate Agencies</div>
+            <div className="p-3 bg-gray-50 rounded border border-gray-200 text-gray-700">Catering Services</div>
+            <div className="p-3 bg-gray-50 rounded border border-gray-200 text-gray-700">Home Service Providers</div>
+            <div className="p-3 bg-gray-50 rounded border border-gray-200 text-gray-700">Security Companies</div>
+          </div>
+        </div>
+        <div className="flex items-center justify-center">
+          <img 
+            src="/lovable-uploads/9bb3d94e-589d-4daf-b35e-e19e80610439.png"
+            alt="Service industry van with professional wrap - Chicago business fleet wrapping" 
+            className="rounded-lg shadow-md max-w-full h-auto"
+          />
+        </div>
       </div>
+      
       <p className="text-gray-700">
         No matter what industry you're in, our expert vehicle wrap designers can create a custom fleet wrap solution 
         that perfectly represents your Chicago business and helps you stand out from the competition.
