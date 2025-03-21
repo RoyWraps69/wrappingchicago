@@ -31,13 +31,13 @@ const LocationsPage = () => {
             {/* Background image without overlay */}
             <div className="absolute inset-0 z-0">
               <img 
-                src="https://images.unsplash.com/photo-1549194898-b87383b330c4?auto=format&fit=crop&w=2000&q=80"
+                src="https://images.unsplash.com/photo-1449157291145-7efd050a4d0e"
                 alt="Chicago skyline with highways and vehicle traffic"
                 className="w-full h-full object-cover"
                 loading="eager"
                 fetchPriority="high"
               />
-              {/* Removed the overlay div that was here */}
+              {/* No overlay for maximum visibility */}
             </div>
             
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
