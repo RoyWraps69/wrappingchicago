@@ -1,23 +1,12 @@
 
 import React, { useState, useEffect } from 'react';
 import { useToast } from "@/hooks/use-toast";
-import { useForm } from "react-hook-form";
 import SubmissionSuccess from './SubmissionSuccess';
 
 const ContactForm = () => {
   const { toast } = useToast();
   const [submitted, setSubmitted] = useState(false);
   
-  const form = useForm({
-    defaultValues: {
-      name: '',
-      email: '',
-      phone: '',
-      service: '',
-      message: ''
-    }
-  });
-
   // Check for success parameter in URL to show success message after redirect
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search);
