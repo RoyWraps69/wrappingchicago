@@ -1,0 +1,15 @@
+
+User-agent: *
+Allow: /
+
+# Sitemap declaration
+Sitemap: https://wrappingchicago.com/sitemap.xml
+
+# Specific directories and files
+Disallow: /private/
+Disallow: /admin/
+Disallow: /development/
+Disallow: /temp/
+Disallow: /*.json$
+Disallow: /*.js$
+Disallow: /*.css$

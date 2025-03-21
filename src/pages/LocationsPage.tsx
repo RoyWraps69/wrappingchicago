@@ -9,18 +9,43 @@ import { cities } from '@/data/cities';
 import { MapPin, ExternalLink } from 'lucide-react';
 import Breadcrumbs from '@/components/navigation/Breadcrumbs';
 import ChicagoServiceMap from '@/components/location/ChicagoServiceMap';
+import Schema from '@/components/Schema';
 
 const LocationsPage = () => {
+  // For Schema component - Chicago as the default city
+  const chicagoCity = cities.find(city => city.slug === 'chicago') || cities[0];
+  
   return (
     <>
       <Helmet>
-        <title>Areas We Serve | Wrapping Chicago Vehicle Wrapping</title>
+        <title>Areas We Serve | Vehicle Wraps in Chicago & Suburbs | Wrapping Chicago</title>
         <meta 
           name="description" 
-          content="Wrapping Chicago provides professional vehicle wrapping services throughout Chicago and surrounding areas. Find location-specific information for your city." 
+          content="Wrapping Chicago provides professional vehicle wrapping services throughout Chicago and surrounding areas including Naperville, Schaumburg, Evanston, and more. Find location-specific information for your city." 
         />
+        <meta name="keywords" content="vehicle wraps Chicago, car wraps Chicago suburbs, truck wraps Illinois, commercial vehicle wraps Chicago area, fleet wrapping services Chicago, professional vehicle wraps near me, Naperville vehicle wraps, Schaumburg car wraps, Evanston truck wraps" />
         <link rel="canonical" href="https://wrappingchicago.com/locations" />
+        
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://wrappingchicago.com/locations" />
+        <meta property="og:title" content="Areas We Serve | Vehicle Wraps in Chicago & Suburbs | Wrapping Chicago" />
+        <meta property="og:description" content="Wrapping Chicago provides professional vehicle wrapping services throughout Chicago and surrounding areas including Naperville, Schaumburg, Evanston, and more." />
+        <meta property="og:image" content="/lovable-uploads/15ed5c80-d0f3-416b-aff9-e86391a376b2.png" />
+        
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Areas We Serve | Vehicle Wraps in Chicago & Suburbs | Wrapping Chicago" />
+        <meta name="twitter:description" content="Wrapping Chicago provides professional vehicle wrapping services throughout Chicago and surrounding areas including Naperville, Schaumburg, Evanston, and more." />
+        <meta name="twitter:image" content="/lovable-uploads/15ed5c80-d0f3-416b-aff9-e86391a376b2.png" />
       </Helmet>
+      
+      <Schema 
+        city={chicagoCity}
+        path="/locations"
+        pageTitle="Areas We Serve | Vehicle Wraps in Chicago & Suburbs | Wrapping Chicago"
+        pageDescription="Wrapping Chicago provides professional vehicle wrapping services throughout Chicago and surrounding areas including Naperville, Schaumburg, Evanston, and more. Find location-specific information for your city."
+      />
       
       <div className="flex flex-col min-h-screen">
         <Header />
@@ -98,6 +123,7 @@ const LocationsPage = () => {
                       <Link 
                         to={`/vehicle-wraps-${city.slug}-il`}
                         className="text-brand-red font-medium flex items-center hover:underline"
+                        aria-label={`Learn more about our vehicle wrap services in ${city.name}, Illinois`}
                       >
                         Learn about our services in {city.name}
                         <svg className="w-4 h-4 ml-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -109,6 +135,7 @@ const LocationsPage = () => {
                         target="_blank" 
                         rel="noopener noreferrer" 
                         className="text-brand-navy hover:text-brand-red transition-colors flex items-center"
+                        aria-label={`Visit the official website for ${city.name}, Illinois`}
                       >
                         Visit official {city.name} website
                         <ExternalLink className="ml-1 h-4 w-4" />
@@ -127,6 +154,7 @@ const LocationsPage = () => {
                 <Link 
                   to="/contact" 
                   className="inline-flex items-center text-brand-red font-medium hover:underline"
+                  aria-label="Contact us to confirm vehicle wrap services in your area"
                 >
                   Contact us to confirm service in your area
                   <svg className="w-4 h-4 ml-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
