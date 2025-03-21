@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { useToast } from "@/hooks/use-toast";
 import SubmissionSuccess from './SubmissionSuccess';
+import Airform from 'react-airform';
 
 const ContactForm = () => {
   const { toast } = useToast();
@@ -18,6 +19,15 @@ const ContactForm = () => {
     }
   }, []);
 
+  const handleSubmit = () => {
+    setIsSubmitting(true);
+    toast({
+      title: "Submitting your request...",
+      description: "Please wait while we process your information.",
+    });
+    // Form will be automatically submitted by Airform component
+  };
+
   return (
     <div className="bg-gray-100 p-6 rounded-lg">
       <h2 className="text-2xl font-semibold text-brand-navy mb-4">Request a Quote</h2>
@@ -25,17 +35,11 @@ const ContactForm = () => {
       {submitted ? (
         <SubmissionSuccess onReset={() => setSubmitted(false)} />
       ) : (
-        <form 
-          action="https://airform.io/roy@chicagofleetwraps.com" 
-          method="post"
+        <Airform 
+          email="roy@chicagofleetwraps.com"
+          onSubmit={handleSubmit}
+          successUrl={`${window.location.origin}/contact?success=true`}
           className="space-y-4"
-          onSubmit={(e) => {
-            setIsSubmitting(true);
-            toast({
-              title: "Submitting your request...",
-              description: "Please wait while we process your information.",
-            });
-          }}
         >
           <div className="space-y-4">
             <div>
@@ -117,7 +121,7 @@ const ContactForm = () => {
           </p>
           
           <input type="hidden" name="_subject" value="Chicago Fleet Wraps: New Quote Request" />
-        </form>
+        </Airform>
       )}
       
       <p className="text-xs text-gray-500 mt-4">
