@@ -1,12 +1,9 @@
-
 import React from 'react';
 import { Car } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-
 const VehicleTypes: React.FC = () => {
-  return (
-    <div className="mb-8">
+  return <div className="mb-8">
       <h3 className="text-xl font-semibold text-brand-navy mb-4 flex items-center">
         <Car className="w-6 h-6 text-brand-red mr-2" />
         Types of Fleet Vehicles We Wrap
@@ -29,11 +26,7 @@ const VehicleTypes: React.FC = () => {
           </div>
         </div>
         <div className="flex items-center justify-center">
-          <img 
-            src="/lovable-uploads/efdbc4bf-1f04-42bb-a904-f52dae7bef6c.png"
-            alt="Fleet wrap on commercial vehicle - Chicago vehicle wrap solutions" 
-            className="rounded-lg shadow-md max-w-full h-auto"
-          />
+          <img alt="Fleet wrap on commercial vehicle - Chicago vehicle wrap solutions" className="rounded-lg shadow-md max-w-full h-auto" src="/lovable-uploads/38f1a5ce-45bd-4ebc-83bd-709dc1a2f9ce.jpg" />
         </div>
       </div>
       
@@ -54,11 +47,7 @@ const VehicleTypes: React.FC = () => {
             </p>
           </div>
           <div className="col-span-1">
-            <img 
-              src="/lovable-uploads/bc84c157-8367-4197-9b08-8ef75da53ce3.png"
-              alt="HVAC company fleet wrap example - Professional vehicle wrapping in Chicago" 
-              className="rounded-lg shadow-sm max-w-full h-auto"
-            />
+            <img src="/lovable-uploads/bc84c157-8367-4197-9b08-8ef75da53ce3.png" alt="HVAC company fleet wrap example - Professional vehicle wrapping in Chicago" className="rounded-lg shadow-sm max-w-full h-auto" />
           </div>
         </div>
       </div>
@@ -71,8 +60,6 @@ const VehicleTypes: React.FC = () => {
           <Link to="/gallery">View Our Fleet Wrap Portfolio</Link>
         </Button>
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default VehicleTypes;
