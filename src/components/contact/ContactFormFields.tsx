@@ -24,11 +24,22 @@ interface ContactFormFieldsProps {
 const ContactFormFields = ({ form, onSubmit, isSubmitting, apiKeyExists }: ContactFormFieldsProps) => {
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+      <form 
+        onSubmit={form.handleSubmit(onSubmit)} 
+        action="https://formsubmit.co/roy@chicagofleetwraps.com" 
+        method="POST"
+        className="space-y-4"
+      >
         {/* Honeypot field to prevent spam - not visible to users */}
         <div className="hidden">
           <input type="text" name="_honey" style={{ display: 'none' }} />
         </div>
+        
+        {/* FormSubmit.co specific fields */}
+        <input type="hidden" name="_subject" value="Chicago Fleet Wraps: Quote Request" />
+        <input type="hidden" name="_template" value="table" />
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_next" value={window.location.href} />
         
         <FormField
           control={form.control}
@@ -40,6 +51,7 @@ const ContactFormFields = ({ form, onSubmit, isSubmitting, apiKeyExists }: Conta
                 <Input 
                   placeholder="John Smith" 
                   {...field} 
+                  name="name"
                   required
                 />
               </FormControl>
@@ -58,6 +70,7 @@ const ContactFormFields = ({ form, onSubmit, isSubmitting, apiKeyExists }: Conta
                   type="email" 
                   placeholder="you@example.com" 
                   {...field} 
+                  name="email"
                   required
                 />
               </FormControl>
@@ -76,6 +89,7 @@ const ContactFormFields = ({ form, onSubmit, isSubmitting, apiKeyExists }: Conta
                   type="tel" 
                   placeholder="(123) 456-7890" 
                   {...field} 
+                  name="phone"
                   required
                 />
               </FormControl>
@@ -93,6 +107,7 @@ const ContactFormFields = ({ form, onSubmit, isSubmitting, apiKeyExists }: Conta
                 <select 
                   className="w-full p-2 border border-gray-300 rounded" 
                   {...field} 
+                  name="service"
                   required
                 >
                   <option value="">Select a Service</option>
@@ -118,6 +133,7 @@ const ContactFormFields = ({ form, onSubmit, isSubmitting, apiKeyExists }: Conta
                   placeholder="Tell us about your project..." 
                   rows={4} 
                   {...field} 
+                  name="message"
                   required
                 />
               </FormControl>

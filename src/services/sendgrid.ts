@@ -11,6 +11,8 @@ export interface EmailData {
   message: string;
 }
 
+// This function is kept for backward compatibility but is no longer used
+// since we're using direct form submission to FormSubmit.co
 export const sendEmail = async (data: EmailData): Promise<void> => {
   try {
     // Create a FormData object

@@ -2,7 +2,6 @@
 import React, { useState } from 'react';
 import { useToast } from "@/components/ui/use-toast";
 import { useForm } from "react-hook-form";
-import { sendEmail } from '@/services/sendgrid';
 import SubmissionSuccess from './SubmissionSuccess';
 import ContactFormFields, { FormValues } from './ContactFormFields';
 
@@ -21,31 +20,32 @@ const ContactForm = () => {
     }
   });
 
+  // This is now just used for client-side validation before the form submits
   const handleSubmit = async (data: FormValues) => {
     setIsSubmitting(true);
     
     try {
-      await sendEmail(data);
+      // Form will be submitted directly via the form action
       setIsSubmitting(false);
       setSubmitted(true);
       
       toast({
-        title: "Request Submitted Successfully",
-        description: "Thank you for your message. We'll get back to you shortly.",
+        title: "Form Submitted",
+        description: "Your form is being processed. Thank you!",
         variant: "default",
         duration: 5000,
       });
       
       form.reset();
     } catch (error) {
-      console.error('Failed to send email:', error);
+      console.error('Form validation error:', error);
       setIsSubmitting(false);
       
       toast({
-        title: "Request Failed",
-        description: "There was an error sending your message. Please try again or contact us directly at roy@chicagofleetwraps.com",
+        title: "Validation Failed",
+        description: "Please check your information and try again.",
         variant: "destructive",
-        duration: 8000,
+        duration: 5000,
       });
     }
   };
