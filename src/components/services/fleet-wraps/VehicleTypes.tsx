@@ -2,6 +2,7 @@ import React from 'react';
 import { Car } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
+
 const VehicleTypes: React.FC = () => {
   return <div className="mb-8">
       <h3 className="text-xl font-semibold text-brand-navy mb-4 flex items-center">
@@ -25,8 +26,13 @@ const VehicleTypes: React.FC = () => {
             <div className="p-3 bg-gray-50 rounded border border-gray-200 text-gray-700">Company Cars</div>
           </div>
         </div>
-        <div className="flex items-center justify-center">
-          <img alt="Fleet wrap on commercial vehicle - Chicago vehicle wrap solutions" className="rounded-lg shadow-md max-w-full h-auto" src="/lovable-uploads/38f1a5ce-45bd-4ebc-83bd-709dc1a2f9ce.jpg" />
+        <div className="flex items-center justify-center h-full">
+          <img 
+            alt="Fleet wrap on commercial vehicle - Chicago vehicle wrap solutions" 
+            className="w-full h-auto object-cover rounded-lg shadow-md" 
+            src="/lovable-uploads/38f1a5ce-45bd-4ebc-83bd-709dc1a2f9ce.jpg" 
+            style={{ maxHeight: '380px' }}
+          />
         </div>
       </div>
       
@@ -62,4 +68,5 @@ const VehicleTypes: React.FC = () => {
       </div>
     </div>;
 };
+
 export default VehicleTypes;
