@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Shield, Users, Palette, Award } from 'lucide-react';
+import { Shield, Users, Palette, Award, Clock, Tools, Truck, ThumbsUp } from 'lucide-react';
 
 const WhyChooseUsSection = () => {
   const benefits = [
@@ -17,18 +17,51 @@ const WhyChooseUsSection = () => {
     {
       title: "Comprehensive Design",
       description: "From concept to completion, our design team will create eye-catching graphics.",
-      icon: <Palette className="w-8 h-8 text-white" />
+      icon: <Tools className="w-8 h-8 text-white" />
     },
     {
       title: "2-Year \"NO QUESTIONS ASKED\" Warranty",
       description: "We stand behind our work with a 2-year no questions asked warranty on all installations.",
       icon: <Shield className="w-8 h-8 text-white" />
+    },
+    {
+      title: "Fast Turnaround Times",
+      description: "We understand your time is valuable. Most projects are completed within 3-5 business days.",
+      icon: <Clock className="w-8 h-8 text-white" />
+    },
+    {
+      title: "Expert Vehicle Handling",
+      description: "Your vehicle is in safe hands with our team's extensive automotive experience.",
+      icon: <Truck className="w-8 h-8 text-white" />
+    },
+    {
+      title: "Competitive Pricing",
+      description: "High-quality wraps at competitive prices to maximize your advertising budget.",
+      icon: <Award className="w-8 h-8 text-white" />
+    },
+    {
+      title: "Satisfaction Guaranteed",
+      description: "We're not happy until you're completely satisfied with your vehicle transformation.",
+      icon: <ThumbsUp className="w-8 h-8 text-white" />
     }
   ];
 
   return (
-    <section className="py-10">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-10 relative">
+      {/* Automotive-themed background pattern */}
+      <div className="absolute inset-0 opacity-5 z-0">
+        <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+          <pattern id="tire-pattern" width="60" height="60" patternUnits="userSpaceOnUse">
+            <circle cx="30" cy="30" r="25" fill="none" stroke="#000" strokeWidth="2"/>
+            <circle cx="30" cy="30" r="20" fill="none" stroke="#000" strokeWidth="1"/>
+            <circle cx="30" cy="30" r="15" fill="none" stroke="#000" strokeWidth="1"/>
+            <circle cx="30" cy="30" r="5" fill="#000"/>
+          </pattern>
+          <rect width="100%" height="100%" fill="url(#tire-pattern)" />
+        </svg>
+      </div>
+      
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-8">
           <h2 className="text-3xl font-bold mb-3 text-brand-navy">Why Choose Wrapping Chicago</h2>
           <p className="text-lg text-gray-700 max-w-3xl mx-auto">
@@ -36,14 +69,17 @@ const WhyChooseUsSection = () => {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {benefits.map((benefit, index) => (
-            <div key={index} className="section-card p-5 flex flex-col items-center">
-              <div className="w-16 h-16 mb-3 bg-brand-navy rounded-full flex items-center justify-center">
+            <div 
+              key={index} 
+              className="section-card p-5 flex flex-col items-center transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
+            >
+              <div className="w-16 h-16 mb-4 bg-gradient-to-r from-brand-navy to-blue-700 rounded-full flex items-center justify-center shadow-md">
                 {benefit.icon}
               </div>
               <h3 className="text-xl font-bold mb-2 text-brand-navy">{benefit.title}</h3>
-              <p className="text-gray-700">{benefit.description}</p>
+              <p className="text-gray-700 text-center">{benefit.description}</p>
             </div>
           ))}
         </div>

@@ -2,7 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Sparkles } from 'lucide-react';
+import { ArrowRight, Sparkles, Shield, Award, Clock, Tools } from 'lucide-react';
 
 const Hero = () => {
   return (
@@ -58,7 +58,7 @@ const Hero = () => {
             </Button>
           </div>
           
-          <div className="mt-8 flex items-center gap-8 animate-enter" style={{ animationDelay: "0.8s" }}>
+          <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4 animate-enter" style={{ animationDelay: "0.8s" }}>
             <div className="flex items-center">
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3">
                 <img src="/lovable-uploads/9de106b5-94cb-4fd1-a7c7-5c75c75b7cbb.png" alt="High-quality materials" className="w-8 h-8" />
@@ -67,9 +67,21 @@ const Hero = () => {
             </div>
             <div className="flex items-center">
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3">
-                <img src="/lovable-uploads/bc55562c-aa6e-45ac-86ea-5b2657a3f6d5.png" alt="5 year warranty" className="w-8 h-8" />
+                <Shield className="h-8 w-8 text-brand-red" />
               </div>
-              <span className="ml-3 text-white font-medium">5-Year Warranty</span>
+              <span className="ml-3 text-white font-medium">2-Year Warranty</span>
+            </div>
+            <div className="flex items-center">
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3">
+                <Tools className="h-8 w-8 text-brand-red" />
+              </div>
+              <span className="ml-3 text-white font-medium">Expert Installation</span>
+            </div>
+            <div className="flex items-center">
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3">
+                <Clock className="h-8 w-8 text-brand-red" />
+              </div>
+              <span className="ml-3 text-white font-medium">Quick Turnaround</span>
             </div>
           </div>
         </div>
