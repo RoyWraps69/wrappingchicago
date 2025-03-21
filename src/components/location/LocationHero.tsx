@@ -3,7 +3,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { MapPin, Phone, ArrowRight, Sparkles } from 'lucide-react';
-import { City } from '@/data/cities';
 
 interface LocationHeroProps {
   cityName: string;
@@ -11,25 +10,27 @@ interface LocationHeroProps {
 
 const LocationHero = ({ cityName }: LocationHeroProps) => {
   return (
-    <section className="relative bg-brand-navy overflow-hidden py-28 min-h-[80vh] flex items-center" id="location-hero">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute inset-0" style={{ 
-          backgroundImage: 'url("data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="1"%3E%3Cpath d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")',
-          backgroundSize: '30px 30px'
-        }}></div>
+    <section className="relative bg-brand-navy overflow-hidden py-32 min-h-[90vh] flex items-center" id="location-hero">
+      {/* Full background image with overlay */}
+      <div className="absolute inset-0 w-full h-full">
+        <div className="absolute inset-0 bg-gradient-to-r from-brand-navy/90 to-blue-900/80 z-10"></div>
+        <img 
+          src="/lovable-uploads/199c2a21-e0b0-4c29-972f-f32d72698382.png" 
+          alt={`Professional vehicle wraps in ${cityName}`}
+          className="w-full h-full object-cover"
+        />
       </div>
       
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div>
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-brand-red/10 text-brand-red mb-6">
+          <div className="animate-fade-in">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-brand-red/90 text-white mb-6">
               <MapPin className="h-4 w-4 mr-2" />
               <span className="font-medium">Serving {cityName}, Illinois</span>
             </div>
             
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white leading-tight mb-6">
-              Premier Vehicle Wraps in {cityName}
+              Premium Vehicle Wraps in {cityName}
             </h1>
             
             <p className="text-xl text-white/80 mb-8 max-w-lg">
@@ -74,7 +75,7 @@ const LocationHero = ({ cityName }: LocationHeroProps) => {
             </div>
           </div>
           
-          <div className="hidden md:block">
+          <div className="hidden md:block animate-scale-in">
             <div className="relative">
               <div className="absolute -inset-4 bg-brand-red/20 rounded-full blur-xl"></div>
               <img 

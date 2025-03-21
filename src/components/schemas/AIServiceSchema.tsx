@@ -14,6 +14,13 @@ const AIServiceSchema = () => {
       "@type": "PropertyValue",
       "name": "Technology",
       "value": "AI-powered design"
+    },
+    "offeredBy": {
+      "@type": "LocalBusiness",
+      "name": "Wrapping Chicago",
+      "url": "https://wrappingchicago.com",
+      "telephone": "(312) 597-1286",
+      "email": "roy@wrappingchicago.com"
     }
   };
 

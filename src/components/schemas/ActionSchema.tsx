@@ -7,7 +7,7 @@ const ActionSchema = () => {
     "@type": "ReserveAction",
     "target": {
       "@type": "EntryPoint",
-      "urlTemplate": "https://chicagofleetwraps.com/contact",
+      "urlTemplate": "https://wrappingchicago.com/contact",
       "inLanguage": "en-US",
       "actionPlatform": [
         "http://schema.org/DesktopWebPlatform",
@@ -17,6 +17,11 @@ const ActionSchema = () => {
     "result": {
       "@type": "Reservation",
       "name": "Request a Quote"
+    },
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "Wrapping Chicago",
+      "url": "https://wrappingchicago.com"
     }
   };
 

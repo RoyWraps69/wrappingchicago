@@ -2,51 +2,75 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
+import { ArrowRight, Sparkles } from 'lucide-react';
 
 const Hero = () => {
   return (
-    <section className="bg-gradient-to-r from-brand-navy to-blue-900 text-white py-16 relative overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute inset-0" style={{ 
-          backgroundImage: 'url("data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="1"%3E%3Cpath d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")',
-          backgroundSize: '30px 30px'
-        }}></div>
+    <section className="relative w-full overflow-hidden">
+      {/* Full-width background image */}
+      <div className="absolute inset-0 w-full h-full">
+        <div className="absolute inset-0 bg-gradient-to-r from-brand-navy/90 to-blue-900/80 z-10"></div>
+        <img 
+          src="/lovable-uploads/199c2a21-e0b0-4c29-972f-f32d72698382.png" 
+          alt="Professional vehicle wrapping services in Chicago"
+          className="w-full h-full object-cover"
+        />
       </div>
       
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid md:grid-cols-2 gap-8 items-center">
-          <div className="pt-8 pb-12 md:py-16">
-            <h1 className="text-4xl sm:text-5xl font-bold mb-4 leading-tight">
-              Premium Vehicle Wraps in Chicago
-            </h1>
-            <p className="text-xl mb-8 text-white/90 max-w-lg">
-              Transform your vehicles with professional wraps that turn heads and make your business stand out on every street.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button
-                asChild
-                className="bg-brand-red hover:bg-red-700 text-white text-lg px-8 py-6 h-auto rounded-full"
-              >
-                <Link to="/contact">Request a Quote</Link>
-              </Button>
-              <Button
-                asChild
-                variant="outline"
-                className="border-white/30 bg-white/10 text-white hover:bg-white hover:text-brand-navy text-lg px-8 py-6 h-auto rounded-full"
-              >
-                <Link to="/gallery">View Our Work</Link>
-              </Button>
-            </div>
+      <div className="relative z-20 container mx-auto px-4 sm:px-6 lg:px-8 min-h-[90vh] flex items-center">
+        <div className="max-w-3xl py-20">
+          <div className="animate-fade-in mb-6">
+            <span className="bg-brand-red/90 text-white px-4 py-2 rounded-full text-sm uppercase font-medium tracking-wide">
+              Chicago's Premier Vehicle Wrap Specialist
+            </span>
           </div>
           
-          <div className="relative">
-            <div className="absolute -inset-4 bg-brand-red/20 rounded-3xl blur-xl"></div>
-            <img 
-              src="/lovable-uploads/199c2a21-e0b0-4c29-972f-f32d72698382.png" 
-              alt="Chicago Fleet Wraps - Professional vehicle wrapping services"
-              className="rounded-xl shadow-2xl relative z-10 w-full h-auto"
-            />
+          <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold text-white leading-tight mb-6 animate-enter" style={{ animationDelay: "0.2s" }}>
+            Transform Your <span className="text-brand-red">Vehicle</span>. Elevate Your <span className="text-brand-red">Brand</span>.
+          </h1>
+          
+          <p className="text-xl md:text-2xl text-white/90 mb-10 max-w-2xl animate-enter" style={{ animationDelay: "0.4s" }}>
+            Professional vehicle wraps that turn heads and make your business stand out on every street in Chicago.
+          </p>
+          
+          <div className="flex flex-col sm:flex-row gap-4 animate-enter" style={{ animationDelay: "0.6s" }}>
+            <Button
+              asChild
+              size="lg"
+              className="bg-brand-red hover:bg-red-700 text-white text-lg px-8 py-7 h-auto rounded-full"
+            >
+              <Link to="/contact" className="inline-flex items-center">
+                Request a Free Quote
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
+            </Button>
+            
+            <Button
+              asChild
+              variant="outline"
+              size="lg"
+              className="border-white/30 bg-white/10 text-white hover:bg-white hover:text-brand-navy text-lg px-8 py-7 h-auto rounded-full"
+            >
+              <Link to="/ai-wrap-ideas" className="inline-flex items-center">
+                <Sparkles className="mr-2 h-5 w-5" />
+                Try Our AI Wrap Designer
+              </Link>
+            </Button>
+          </div>
+          
+          <div className="mt-12 flex items-center gap-8 animate-enter" style={{ animationDelay: "0.8s" }}>
+            <div className="flex items-center">
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3">
+                <img src="/lovable-uploads/9de106b5-94cb-4fd1-a7c7-5c75c75b7cbb.png" alt="High-quality materials" className="w-8 h-8" />
+              </div>
+              <span className="ml-3 text-white font-medium">Premium Materials</span>
+            </div>
+            <div className="flex items-center">
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3">
+                <img src="/lovable-uploads/bc55562c-aa6e-45ac-86ea-5b2657a3f6d5.png" alt="5 year warranty" className="w-8 h-8" />
+              </div>
+              <span className="ml-3 text-white font-medium">5-Year Warranty</span>
+            </div>
           </div>
         </div>
       </div>

@@ -27,7 +27,7 @@ const AIArticleSchema = () => {
       "@type": "WebPage",
       "@id": "https://wrappingchicago.com/ai-wrap-ideas"
     },
-    "keywords": "AI vehicle wrap design, artificial intelligence wrap generator, vehicle wrap AI, Chicago fleet wraps"
+    "keywords": "AI vehicle wrap design, artificial intelligence wrap generator, vehicle wrap AI, Chicago fleet wraps, Wrapping Chicago"
   };
 
   return (
