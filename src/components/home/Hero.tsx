@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { ArrowRight, Sparkles, Shield, Award, Clock, Wrench } from 'lucide-react';
 
 const Hero = () => {
-  const [imageLoaded, setImageLoaded] = useState(true);
+  const [imageLoaded, setImageLoaded] = useState(false);
   const backgroundImageUrl = '/lovable-uploads/36647423-d723-4af9-8807-039add30c418.png';
 
   // Create an image object to check if the image loads
