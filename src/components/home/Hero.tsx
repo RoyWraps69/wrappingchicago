@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
@@ -13,8 +14,7 @@ const Hero = () => {
           alt="Sports car with colorful paint splash wrap design" 
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-white/30 backdrop-blur-[2px]"></div> {/* Light overlay at 30% opacity */}
-        <div className="absolute inset-0 bg-black/30"></div> {/* Darker overlay to ensure text is readable */}
+        <div className="absolute inset-0 bg-black/60"></div> {/* Darker overlay (60% opacity) to ensure text is readable */}
       </div>
       
       <div className="relative z-20 container mx-auto px-4 sm:px-6 lg:px-8 min-h-[80vh] flex items-center">
@@ -49,7 +49,7 @@ const Hero = () => {
               asChild
               variant="outline"
               size="lg"
-              className="border-white bg-white/20 text-white hover:bg-white hover:text-brand-navy text-lg px-8 py-7 h-auto rounded-full shadow-2xl backdrop-blur-sm drop-shadow-[0_4px_4px_rgba(0,0,0,0.3)]"
+              className="border-white bg-black/40 text-white hover:bg-white hover:text-brand-navy text-lg px-8 py-7 h-auto rounded-full shadow-2xl backdrop-blur-sm drop-shadow-[0_4px_4px_rgba(0,0,0,0.3)]"
             >
               <Link to="/ai-wrap-ideas" className="inline-flex items-center">
                 <Sparkles className="mr-2 h-5 w-5" />
@@ -60,25 +60,25 @@ const Hero = () => {
               
           <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4 animate-enter" style={{ animationDelay: "0.8s" }}>
             <div className="flex items-center">
-              <div className="bg-white/20 backdrop-blur-sm rounded-lg p-3 shadow-xl">
+              <div className="bg-black/50 backdrop-blur-sm rounded-lg p-3 shadow-xl">
                 <Award className="h-8 w-8 text-brand-red drop-shadow-[0_2px_3px_rgba(0,0,0,0.5)]" />
               </div>
               <span className="ml-3 text-white font-medium drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)] [text-shadow:_0_1px_1px_#000]">Premium Materials</span>
             </div>
             <div className="flex items-center">
-              <div className="bg-white/20 backdrop-blur-sm rounded-lg p-3 shadow-xl">
+              <div className="bg-black/50 backdrop-blur-sm rounded-lg p-3 shadow-xl">
                 <Shield className="h-8 w-8 text-brand-red drop-shadow-[0_2px_3px_rgba(0,0,0,0.5)]" />
               </div>
               <span className="ml-3 text-white font-medium drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)] [text-shadow:_0_1px_1px_#000]">2-Year Warranty</span>
             </div>
             <div className="flex items-center">
-              <div className="bg-white/20 backdrop-blur-sm rounded-lg p-3 shadow-xl">
+              <div className="bg-black/50 backdrop-blur-sm rounded-lg p-3 shadow-xl">
                 <Wrench className="h-8 w-8 text-brand-red drop-shadow-[0_2px_3px_rgba(0,0,0,0.5)]" />
               </div>
               <span className="ml-3 text-white font-medium drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)] [text-shadow:_0_1px_1px_#000]">Expert Installation</span>
             </div>
             <div className="flex items-center">
-              <div className="bg-white/20 backdrop-blur-sm rounded-lg p-3 shadow-xl">
+              <div className="bg-black/50 backdrop-blur-sm rounded-lg p-3 shadow-xl">
                 <Clock className="h-8 w-8 text-brand-red drop-shadow-[0_2px_3px_rgba(0,0,0,0.5)]" />
               </div>
               <span className="ml-3 text-white font-medium drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)] [text-shadow:_0_1px_1px_#000]">Quick Turnaround</span>
