@@ -1,10 +1,7 @@
-
 import React from 'react';
 import { Building } from 'lucide-react';
-
 const IndustriesServed: React.FC = () => {
-  return (
-    <div className="mb-8">
+  return <div className="mb-8">
       <h3 className="text-xl font-semibold text-brand-navy mb-4 flex items-center">
         <Building className="w-6 h-6 text-brand-red mr-2" />
         Chicago Industries We Serve
@@ -29,11 +26,7 @@ const IndustriesServed: React.FC = () => {
           </div>
         </div>
         <div className="flex items-center justify-center">
-          <img 
-            src="/lovable-uploads/9bb3d94e-589d-4daf-b35e-e19e80610439.png"
-            alt="Service industry van with professional wrap - Chicago business fleet wrapping" 
-            className="rounded-lg shadow-md max-w-full h-auto"
-          />
+          <img alt="Service industry van with professional wrap - Chicago business fleet wrapping" className="rounded-lg shadow-md max-w-full h-auto" src="/lovable-uploads/5f7df3bd-2189-405c-988f-dd79bf034dfb.jpg" />
         </div>
       </div>
       
@@ -41,8 +34,6 @@ const IndustriesServed: React.FC = () => {
         No matter what industry you're in, our expert vehicle wrap designers can create a custom fleet wrap solution 
         that perfectly represents your Chicago business and helps you stand out from the competition.
       </p>
-    </div>
-  );
+    </div>;
 };
-
 export default IndustriesServed;
