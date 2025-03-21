@@ -9,6 +9,41 @@ interface GenerateImageParams {
   samples?: number;
 }
 
+interface BalanceResponse {
+  credits: number;
+}
+
+// Check account balance
+export const checkStabilityBalance = async (): Promise<number | null> => {
+  const apiKey = localStorage.getItem('stability_api_key');
+  
+  if (!apiKey) {
+    return null;
+  }
+  
+  try {
+    const response = await fetch('https://api.stability.ai/v1/user/balance', {
+      method: 'GET',
+      headers: {
+        'Authorization': `Bearer ${apiKey}`,
+        'Content-Type': 'application/json'
+      }
+    });
+
+    if (!response.ok) {
+      console.error("Failed to check balance:", response.status);
+      return null;
+    }
+
+    const data = await response.json() as BalanceResponse;
+    console.log("Account balance retrieved:", data.credits);
+    return data.credits;
+  } catch (error) {
+    console.error("Error checking account balance:", error);
+    return null;
+  }
+}
+
 export const generateImage = async ({ 
   prompt, 
   size = "1024x1024",
@@ -21,6 +56,12 @@ export const generateImage = async ({
   
   if (!apiKey) {
     throw new Error("Stability AI API key is required. Please set your API key in settings.");
+  }
+
+  // Check balance before proceeding
+  const balance = await checkStabilityBalance();
+  if (balance !== null && balance <= 0) {
+    throw new Error("Your Stability AI account has insufficient balance. Please add credits to your account.");
   }
 
   // Parse dimensions from size string

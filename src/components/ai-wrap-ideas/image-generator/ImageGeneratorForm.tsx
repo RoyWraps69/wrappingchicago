@@ -1,11 +1,12 @@
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
-import { ImageIcon, RefreshCw } from 'lucide-react';
+import { ImageIcon, RefreshCw, Wallet, AlertCircle } from 'lucide-react';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Progress } from '@/components/ui/progress';
-import { AlertCircle } from 'lucide-react';
+import { checkStabilityBalance } from '@/services/stability';
+import { Badge } from '@/components/ui/badge';
 
 interface ImageGeneratorFormProps {
   imagePrompt: string;
@@ -24,6 +25,31 @@ export const ImageGeneratorForm: React.FC<ImageGeneratorFormProps> = ({
   errorMessage,
   progress
 }) => {
+  const [balance, setBalance] = useState<number | null>(null);
+  const [isCheckingBalance, setIsCheckingBalance] = useState(false);
+
+  // Check account balance on component mount and when API key changes
+  useEffect(() => {
+    const checkBalance = async () => {
+      setIsCheckingBalance(true);
+      try {
+        const credits = await checkStabilityBalance();
+        setBalance(credits);
+      } catch (error) {
+        console.error("Failed to check balance:", error);
+      } finally {
+        setIsCheckingBalance(false);
+      }
+    };
+
+    const apiKey = localStorage.getItem('stability_api_key');
+    if (apiKey) {
+      checkBalance();
+    } else {
+      setBalance(null);
+    }
+  }, []);
+
   return (
     <>
       {errorMessage && (
@@ -33,6 +59,25 @@ export const ImageGeneratorForm: React.FC<ImageGeneratorFormProps> = ({
             {errorMessage}
           </AlertDescription>
         </Alert>
+      )}
+      
+      {/* Account balance indicator */}
+      {localStorage.getItem('stability_api_key') && (
+        <div className="flex items-center mb-4 text-sm">
+          <Wallet className="h-4 w-4 mr-2 text-gray-500" />
+          {isCheckingBalance ? (
+            <span className="text-gray-500">Checking account balance...</span>
+          ) : balance !== null ? (
+            <div className="flex items-center">
+              <span className="text-gray-700 mr-2">Stability AI Credits:</span>
+              <Badge variant={balance > 0 ? "success" : "destructive"} className="px-2 py-0">
+                {balance.toFixed(2)}
+              </Badge>
+            </div>
+          ) : (
+            <span className="text-gray-500">Unable to check balance</span>
+          )}
+        </div>
       )}
       
       <div className="mb-4">
@@ -51,7 +96,7 @@ export const ImageGeneratorForm: React.FC<ImageGeneratorFormProps> = ({
       
       <Button
         onClick={onGenerateImage}
-        disabled={isGeneratingImage}
+        disabled={isGeneratingImage || (balance !== null && balance <= 0)}
         className="w-full bg-brand-navy hover:bg-blue-800 text-white py-3 h-auto mb-6"
       >
         {isGeneratingImage ? (
@@ -66,6 +111,15 @@ export const ImageGeneratorForm: React.FC<ImageGeneratorFormProps> = ({
           </>
         )}
       </Button>
+      
+      {balance !== null && balance <= 0 && !errorMessage && (
+        <Alert variant="destructive" className="mb-4">
+          <AlertCircle className="h-4 w-4" />
+          <AlertDescription>
+            Your Stability AI account has insufficient credits. Please add credits to continue generating images.
+          </AlertDescription>
+        </Alert>
+      )}
       
       {isGeneratingImage && (
         <ProgressIndicator progress={progress} />

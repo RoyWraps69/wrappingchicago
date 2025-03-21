@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import { toast } from 'sonner';
 import { createImagePrompt, downloadImage } from '@/utils/ai-wrap-utils';
-import { generateImage } from '@/services/image-generation';
+import { generateImage } from '@/services/stability';
 
 export const useImageGeneration = () => {
   const [imagePrompt, setImagePrompt] = useState('');
@@ -72,12 +72,14 @@ export const useImageGeneration = () => {
     } catch (error) {
       console.error("Error generating image:", error);
       
-      // Check for insufficient balance error
+      // Check for specific errors
       let errorMessage = "Failed to generate image";
       
       if (error instanceof Error) {
-        if (error.message.includes("balance") || error.message.includes("insufficient")) {
+        if (error.message.includes("insufficient") || error.message.includes("credits")) {
           errorMessage = "Your Stability AI account has insufficient balance. Using example designs instead.";
+        } else if (error.message.includes("Invalid API key")) {
+          errorMessage = "Invalid Stability AI API key. Please check your API key in settings.";
         } else {
           errorMessage = error.message;
         }
