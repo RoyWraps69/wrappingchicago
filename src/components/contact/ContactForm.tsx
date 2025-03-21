@@ -1,7 +1,13 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Check } from 'lucide-react';
 import { useToast } from "@/components/ui/use-toast";
+import emailjs from 'emailjs-com';
+
+// Constants for EmailJS - you'll need to replace these with your actual values
+const EMAILJS_SERVICE_ID = "service_id"; // Replace with your Service ID
+const EMAILJS_TEMPLATE_ID = "template_id"; // Replace with your Template ID
+const EMAILJS_USER_ID = "user_id"; // Replace with your User ID
 
 const ContactForm = () => {
   const { toast } = useToast();
@@ -14,6 +20,13 @@ const ContactForm = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [emailjsInitialized, setEmailjsInitialized] = useState(false);
+
+  // Initialize EmailJS
+  useEffect(() => {
+    emailjs.init(EMAILJS_USER_ID);
+    setEmailjsInitialized(true);
+  }, []);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { id, value } = e.target;
@@ -24,29 +37,47 @@ const ContactForm = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // In a real implementation, you would send this data to a server
-    // For now, we'll simulate a successful submission
-    setTimeout(() => {
-      console.log('Form submitted to roy@chicagofleetwraps.com');
-      console.log('Form data:', formData);
-      
-      setIsSubmitting(false);
-      setSubmitted(true);
-      
-      toast({
-        title: "Request Submitted",
-        description: "We'll get back to you as soon as possible.",
+    // Prepare the template parameters
+    const templateParams = {
+      from_name: formData.name,
+      from_email: formData.email,
+      from_phone: formData.phone,
+      service: formData.service,
+      message: formData.message,
+      to_email: 'roy@chicagofleetwraps.com'
+    };
+
+    // Send email using EmailJS
+    emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams)
+      .then((response) => {
+        console.log('Email successfully sent!', response);
+        setIsSubmitting(false);
+        setSubmitted(true);
+        
+        toast({
+          title: "Request Submitted",
+          description: "We'll get back to you as soon as possible.",
+        });
+        
+        // Reset form
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          service: '',
+          message: ''
+        });
+      })
+      .catch((error) => {
+        console.error('Email failed to send:', error);
+        setIsSubmitting(false);
+        
+        toast({
+          title: "Request Failed",
+          description: "There was an error sending your request. Please try again.",
+          variant: "destructive"
+        });
       });
-      
-      // Reset form
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        service: '',
-        message: ''
-      });
-    }, 1000);
   };
 
   return (
@@ -122,6 +153,7 @@ const ContactForm = () => {
               <option value="color-change">Color Change Wraps</option>
               <option value="commercial-graphics">Commercial Graphics</option>
               <option value="partial-wraps">Partial Wraps</option>
+              <option value="easy-button-package">Easy Button Package ($3,999)</option>
             </select>
           </div>
           
@@ -141,7 +173,7 @@ const ContactForm = () => {
           <button 
             type="submit" 
             className="bg-brand-red hover:bg-red-700 text-white py-2 px-6 rounded transition-colors"
-            disabled={isSubmitting}
+            disabled={isSubmitting || !emailjsInitialized}
           >
             {isSubmitting ? 'Submitting...' : 'Submit Request'}
           </button>

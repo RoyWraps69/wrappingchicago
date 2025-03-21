@@ -4,23 +4,18 @@ import { Helmet } from 'react-helmet-async';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Breadcrumbs from '@/components/navigation/Breadcrumbs';
-import MXRecordsTable, { MXRecord } from '@/components/email/MXRecordsTable';
+import { Card } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 
 const EmailSetupPage = () => {
-  // Example MX records - you'll replace these with your actual MX records
-  const exampleMXRecords: MXRecord[] = [
-    { priority: 10, host: '@', pointsTo: 'mx1.example.com', ttl: '3600' },
-    { priority: 20, host: '@', pointsTo: 'mx2.example.com', ttl: '3600' },
-    { priority: 30, host: '@', pointsTo: 'mx3.example.com', ttl: '3600' },
-  ];
-
   return (
     <>
       <Helmet>
         <title>Email Setup | Chicago Fleet Wraps</title>
         <meta 
           name="description" 
-          content="Email configuration settings for Chicago Fleet Wraps domain."
+          content="Email configuration settings for Chicago Fleet Wraps contact form."
         />
       </Helmet>
       
@@ -32,32 +27,66 @@ const EmailSetupPage = () => {
             <Breadcrumbs />
             <h1 className="text-4xl font-bold text-brand-navy mb-6">Email Configuration</h1>
             
-            <div className="prose max-w-none mb-8">
-              <p className="text-lg">
-                Configure your email settings using the MX records below. These records 
-                need to be added to your domain's DNS settings to properly route emails.
+            <Card className="p-6 mb-8">
+              <h2 className="text-2xl font-bold text-brand-navy mb-4">EmailJS Setup Instructions</h2>
+              <p className="mb-4">
+                Follow these steps to configure EmailJS for the contact form:
               </p>
-            </div>
+              
+              <ol className="list-decimal ml-6 space-y-3 mb-6">
+                <li>
+                  <p className="font-medium">Create an EmailJS account</p>
+                  <p className="text-gray-600">Go to <a href="https://www.emailjs.com/" target="_blank" rel="noreferrer" className="text-blue-600 hover:underline">EmailJS.com</a> and create a free account.</p>
+                </li>
+                <li>
+                  <p className="font-medium">Create an Email Service</p>
+                  <p className="text-gray-600">Connect your email service provider (Gmail, Outlook, etc.) and note the Service ID.</p>
+                </li>
+                <li>
+                  <p className="font-medium">Create an Email Template</p>
+                  <p className="text-gray-600">Create a template using these variables: {{from_name}}, {{from_email}}, {{from_phone}}, {{service}}, {{message}}. Note the Template ID.</p>
+                </li>
+                <li>
+                  <p className="font-medium">Get your User ID</p>
+                  <p className="text-gray-600">Find your EmailJS User ID in the integration section of your EmailJS dashboard.</p>
+                </li>
+                <li>
+                  <p className="font-medium">Update the Code</p>
+                  <p className="text-gray-600">Replace the placeholder values in the ContactForm.tsx file with your actual IDs:</p>
+                  <pre className="bg-gray-100 p-3 rounded text-sm mt-2 overflow-x-auto">
+                    <code>
+                      const EMAILJS_SERVICE_ID = "your_service_id";<br/>
+                      const EMAILJS_TEMPLATE_ID = "your_template_id";<br/>
+                      const EMAILJS_USER_ID = "your_user_id";
+                    </code>
+                  </pre>
+                </li>
+              </ol>
+              
+              <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6">
+                <div className="flex">
+                  <div className="ml-3">
+                    <p className="text-sm text-yellow-700">
+                      <strong>Note:</strong> The free plan includes 200 emails per month, which should be sufficient for most small businesses. For higher volumes, consider upgrading to a paid plan.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </Card>
             
-            <MXRecordsTable 
-              records={exampleMXRecords}
-              title="Email Server MX Records"
-              description="Add these MX records to your domain's DNS settings to configure your email service."
-            />
-            
-            <div className="mt-12 bg-gray-50 border border-gray-200 rounded-lg p-6">
+            <div className="bg-gray-50 border border-gray-200 rounded-lg p-6">
               <h2 className="text-2xl font-bold text-brand-navy mb-4">Need Help?</h2>
               <p className="mb-4">
-                If you need assistance setting up your email or have questions about the MX records,
+                If you need assistance setting up your email or have questions about EmailJS configuration,
                 please contact our support team.
               </p>
               <div className="flex flex-wrap gap-4 mt-6">
-                <a 
-                  href="/contact" 
-                  className="inline-flex items-center bg-brand-red hover:bg-red-700 text-white py-2 px-6 rounded transition-colors"
-                >
-                  Contact Support
-                </a>
+                <Button asChild>
+                  <Link to="/contact">Contact Support</Link>
+                </Button>
+                <Button variant="outline" asChild>
+                  <a href="https://www.emailjs.com/docs/" target="_blank" rel="noreferrer">EmailJS Documentation</a>
+                </Button>
               </div>
             </div>
           </div>
