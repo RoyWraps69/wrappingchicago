@@ -26,9 +26,19 @@ const LocationsPage = () => {
         <Header />
         
         <main className="flex-grow">
-          {/* Hero Section */}
-          <section className="bg-gradient-to-r from-brand-navy to-blue-900 text-white py-24">
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          {/* Hero Section with Background Image */}
+          <section className="relative bg-gradient-to-r from-brand-navy to-blue-900 text-white py-24">
+            {/* Background image overlay */}
+            <div className="absolute inset-0 z-0">
+              <img 
+                src="https://images.unsplash.com/photo-1549194898-b87383b330c4?auto=format&fit=crop&w=2000&q=80"
+                alt="Chicago skyline with highways and vehicle traffic"
+                className="w-full h-full object-cover opacity-40"
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-brand-navy/90 to-blue-900/90"></div>
+            </div>
+            
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
               <Breadcrumbs />
               <h1 className="text-4xl sm:text-5xl font-bold mb-4">
                 Areas We Serve
