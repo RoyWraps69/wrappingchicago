@@ -28,11 +28,14 @@ const ContactForm = () => {
     setIsSubmitting(true);
     
     try {
-      // Send email using EmailJS public API (no key needed in the code)
+      // Get the form element and properly cast it to HTMLFormElement
+      const formElement = document.getElementById('contact-form') as HTMLFormElement;
+      
+      // Send email using EmailJS
       const result = await emailjs.sendForm(
-        'gmail',                // Just use 'gmail' as the service ID
-        'template_default',     // Use 'template_default' or any template name
-        document.getElementById('contact-form'),
+        'gmail',                // Service ID
+        'template_default',     // Template ID
+        formElement,            // Properly cast form element
         null                    // No user ID required with this approach
       );
       
