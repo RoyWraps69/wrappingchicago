@@ -1,5 +1,6 @@
+
 import React from 'react';
-import { Car } from 'lucide-react';
+import { Car, Truck } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 
@@ -55,6 +56,88 @@ const VehicleTypes: React.FC = () => {
           <div className="col-span-1">
             <img src="/lovable-uploads/bc84c157-8367-4197-9b08-8ef75da53ce3.png" alt="HVAC company fleet wrap example - Professional vehicle wrapping in Chicago" className="rounded-lg shadow-sm max-w-full h-auto" />
           </div>
+        </div>
+      </div>
+      
+      {/* Manufacturer Vehicle Wraps Section */}
+      <div className="mt-12 mb-10">
+        <h3 className="text-xl font-semibold text-brand-navy mb-5 flex items-center">
+          <Truck className="w-6 h-6 text-brand-red mr-2" />
+          Manufacturer Vehicle Wraps
+        </h3>
+        
+        <p className="text-gray-700 mb-6">
+          We specialize in creating custom wraps for new and innovative vehicle manufacturers, including electric vehicles 
+          and specialty trucks. Our design team can create unique, attention-grabbing wraps that complement the 
+          cutting-edge design of modern vehicles.
+        </p>
+        
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+          <div className="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl">
+            <img 
+              src="/lovable-uploads/59f5a326-19ee-4365-8e4f-79619e90ed8c.png" 
+              alt="Modern camouflage style vehicle wrap for electric truck" 
+              className="w-full h-auto object-cover"
+            />
+            <div className="p-4">
+              <h5 className="font-medium text-brand-navy mb-2">Modern Camouflage Design</h5>
+              <p className="text-sm text-gray-600">Contemporary geometric patterns that create a distinctive camouflage effect for electric trucks.</p>
+            </div>
+          </div>
+          
+          <div className="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl">
+            <img 
+              src="/lovable-uploads/e717c3b4-fabd-494e-8ad7-8b8303a22ae8.png" 
+              alt="Artistic floral pattern vehicle wrap for electric pickup" 
+              className="w-full h-auto object-cover"
+            />
+            <div className="p-4">
+              <h5 className="font-medium text-brand-navy mb-2">Artistic Pattern Wraps</h5>
+              <p className="text-sm text-gray-600">Bold, artistic patterns that highlight the unique styling of modern electric vehicles.</p>
+            </div>
+          </div>
+          
+          <div className="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl">
+            <img 
+              src="/lovable-uploads/0d38121f-f8c5-4fea-a95f-68be2fd3281b.png" 
+              alt="Gradient blue custom wrap for electric SUV" 
+              className="w-full h-auto object-cover"
+            />
+            <div className="p-4">
+              <h5 className="font-medium text-brand-navy mb-2">Custom Manufacturer Designs</h5>
+              <p className="text-sm text-gray-600">Special edition wraps designed to showcase the innovative features of next-generation vehicles.</p>
+            </div>
+          </div>
+        </div>
+        
+        <div className="bg-brand-light p-5 rounded-lg border border-brand-navy/10">
+          <h5 className="font-semibold text-brand-navy mb-3">Why Manufacturers Choose Our Wrap Services:</h5>
+          <ul className="grid grid-cols-1 md:grid-cols-2 gap-3 text-gray-700">
+            <li className="flex items-start">
+              <span className="text-brand-red font-bold mr-2">✓</span>
+              <span>Prototype vehicle disguise wraps</span>
+            </li>
+            <li className="flex items-start">
+              <span className="text-brand-red font-bold mr-2">✓</span>
+              <span>Special edition vehicle designs</span>
+            </li>
+            <li className="flex items-start">
+              <span className="text-brand-red font-bold mr-2">✓</span>
+              <span>Auto show and promotional event wraps</span>
+            </li>
+            <li className="flex items-start">
+              <span className="text-brand-red font-bold mr-2">✓</span>
+              <span>Dealer custom wraps for display models</span>
+            </li>
+            <li className="flex items-start">
+              <span className="text-brand-red font-bold mr-2">✓</span>
+              <span>Pre-production vehicle concealment wraps</span>
+            </li>
+            <li className="flex items-start">
+              <span className="text-brand-red font-bold mr-2">✓</span>
+              <span>Brand-consistent dealer fleet wraps</span>
+            </li>
+          </ul>
         </div>
       </div>
       
