@@ -14,17 +14,17 @@ const LocationTestimonials = ({ city }: LocationTestimonialsProps) => {
       {
         name: `John ${city.name.charAt(0)}${city.name.slice(1, 3).toLowerCase()}`,
         business: `${city.name} Plumbing Services`,
-        text: `Chicago Fleet Wraps transformed our entire fleet of service vans, and the results have been incredible. We've seen a notable increase in calls from ${city.name} residents who saw our vans around town. The quality of work is outstanding, and the customer service was excellent. The team was professional from start to finish.`
+        text: `Wrapping Chicago transformed our entire fleet of service vans, and the results have been incredible. We've seen a notable increase in calls from ${city.name} residents who saw our vans around town. The quality of work is outstanding, and the customer service was excellent. The team was professional from start to finish.`
       },
       {
         name: `Sarah ${city.name.charAt(0)}${city.name.slice(1, 3).toLowerCase()}`,
         business: `${city.name} Local Cafe`,
-        text: `As a small business owner in ${city.name}, visibility is everything. The team at Chicago Fleet Wraps designed and installed a beautiful wrap for our delivery car that perfectly captures our brand. It's like having a mobile billboard throughout ${city.county}! The attention to detail and quality of materials used has me recommending them to everyone.`
+        text: `As a small business owner in ${city.name}, visibility is everything. The team at Wrapping Chicago designed and installed a beautiful wrap for our delivery car that perfectly captures our brand. It's like having a mobile billboard throughout ${city.county}! The attention to detail and quality of materials used has me recommending them to everyone.`
       },
       {
         name: `Mike ${city.name.charAt(0)}${city.name.slice(1, 3).toLowerCase()}`,
         business: `Personal Vehicle Owner in ${city.name}`,
-        text: `I wanted to change the color of my car without affecting the resale value. The color change wrap from Chicago Fleet Wraps looks better than I imagined. The matte black finish turns heads everywhere I drive in ${city.name}. Worth every penny! Their customer service was outstanding and they completed the job ahead of schedule.`
+        text: `I wanted to change the color of my car without affecting the resale value. The color change wrap from Wrapping Chicago looks better than I imagined. The matte black finish turns heads everywhere I drive in ${city.name}. Worth every penny! Their customer service was outstanding and they completed the job ahead of schedule.`
       }
     ];
   };

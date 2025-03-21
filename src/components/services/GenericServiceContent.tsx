@@ -9,7 +9,7 @@ const GenericServiceContent: React.FC = () => {
         <div>
           <h2 className="text-2xl font-semibold text-brand-navy mb-3">Professional Installers</h2>
           <p className="mb-3">
-            Our certified installers have years of experience wrapping vehicles of all types.
+            Our in-house trained installers have years of experience wrapping vehicles of all types.
             From compact cars to large commercial trucks, we have the expertise to handle any project.
           </p>
           <img 

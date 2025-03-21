@@ -8,16 +8,16 @@ const WhyChooseUsSection = () => {
       description: "We use only top-quality 3M and Avery vinyl materials for maximum durability and appearance."
     },
     {
-      title: "Expert Installation",
-      description: "Our certified professionals ensure flawless application and attention to detail."
+      title: "In-House Trained Professionals",
+      description: "Our in-house trained professionals ensure flawless application and attention to detail."
     },
     {
       title: "Comprehensive Design",
       description: "From concept to completion, our design team will create eye-catching graphics."
     },
     {
-      title: "5-Year Warranty",
-      description: "We stand behind our work with a comprehensive 5-year warranty on all installations."
+      title: "2-Year \"NO QUESTIONS ASKED\" Warranty",
+      description: "We stand behind our work with a 2-year no questions asked warranty on all installations."
     }
   ];
 

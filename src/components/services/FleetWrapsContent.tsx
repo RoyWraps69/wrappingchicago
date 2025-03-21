@@ -29,7 +29,7 @@ const FleetWrapsContent: React.FC = () => {
             <li>Professional design tailored to your brand</li>
             <li>Vehicle measurement and template creation</li>
             <li>High-quality printing on premium 3M vinyl</li>
-            <li>Expert installation by certified technicians</li>
+            <li>Expert installation by our in-house trained technicians</li>
             <li>Final inspection and quality assurance</li>
           </ol>
         </div>

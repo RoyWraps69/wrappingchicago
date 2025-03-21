@@ -12,11 +12,11 @@ const BusinessBenefits: React.FC<BusinessBenefitsProps> = ({ city }) => {
     <>
       <h3 className="text-2xl font-bold mt-8 mb-4 text-brand-navy flex items-center">
         <Building className="h-6 w-6 mr-2 text-brand-red" />
-        Why {city.name} Businesses Choose Chicago Fleet Wraps
+        Why {city.name} Businesses Choose Wrapping Chicago
       </h3>
       
       <p>
-        When it comes to vehicle wraps in {city.name}, IL, businesses and individuals choose Chicago Fleet Wraps for several key reasons:
+        When it comes to vehicle wraps in {city.name}, IL, businesses and individuals choose Wrapping Chicago for several key reasons:
       </p>
       
       <ul className="list-disc pl-5 space-y-2 my-4">
@@ -33,11 +33,11 @@ const BusinessBenefits: React.FC<BusinessBenefitsProps> = ({ city }) => {
           that effectively communicate your brand message.
         </li>
         <li>
-          <strong>Professional Installation:</strong> Our certified technicians ensure flawless application in our 
+          <strong>Professional Installation:</strong> Our in-house trained technicians ensure flawless application in our 
           climate-controlled facility.
         </li>
         <li>
-          <strong>Comprehensive Warranty:</strong> We stand behind our work with a 5-year warranty on all installations.
+          <strong>2-Year "NO QUESTIONS ASKED" Warranty:</strong> We stand behind our work with a comprehensive warranty on all installations.
         </li>
         <li>
           <strong>Competitive Pricing:</strong> We offer transparent pricing and flexible payment options to fit your budget.

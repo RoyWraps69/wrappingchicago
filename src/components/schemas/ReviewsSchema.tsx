@@ -20,7 +20,7 @@ const ReviewsSchema = () => {
           "name": "John Smith"
         },
         "datePublished": "2022-11-15",
-        "reviewBody": "Chicago Fleet Wraps did an amazing job on our delivery vans. The quality is outstanding and the service was professional from start to finish."
+        "reviewBody": "Wrapping Chicago did an amazing job on our delivery vans. The quality is outstanding and the service was professional from start to finish."
       },
       {
         "@type": "Review",

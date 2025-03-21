@@ -38,9 +38,9 @@ const AboutPage = () => {
         <title>About Wrapping Chicago | Premier Vehicle Wrapping Company</title>
         <meta 
           name="description" 
-          content="Established in 2015, Wrapping Chicago is the leading vehicle wrapping company in the Chicago area with certified 3M installers and premium quality materials."
+          content="Established in 2015, Wrapping Chicago is the leading vehicle wrapping company in the Chicago area with in-house trained installers and premium quality materials."
         />
-        <meta name="keywords" content="vehicle wraps Chicago, car wrapping services, fleet wraps, 3M certified installers, commercial vehicle graphics" />
+        <meta name="keywords" content="vehicle wraps Chicago, car wrapping services, fleet wraps, professional installers, commercial vehicle graphics" />
         <link rel="canonical" href="https://wrappingchicago.com/about" />
         <script type="application/ld+json">
           {JSON.stringify(companySchema)}
@@ -69,7 +69,7 @@ const AboutPage = () => {
                 </p>
                 <p>
                   We take pride in our work and stand behind every wrap we install. Our team of 
-                  certified installers has years of experience and undergoes regular training to 
+                  in-house trained installers has years of experience and undergoes regular training to 
                   stay current with the latest techniques and materials.
                 </p>
               </div>
@@ -81,9 +81,9 @@ const AboutPage = () => {
             <div className="mb-12">
               <h2 className="text-2xl font-semibold text-brand-navy mb-4">Why Choose Us?</h2>
               <ul className="list-disc pl-6 space-y-2">
-                <li><strong>Certified 3M Preferred Installers</strong> - Our technicians are trained and certified by 3M</li>
+                <li><strong>In-house trained installers</strong> - Our technicians receive extensive training in our facility</li>
                 <li><strong>Premium quality materials</strong> - We use only genuine 3M and Avery vinyl that lasts</li>
-                <li><strong>5-year warranty</strong> - All our installations are backed by a comprehensive warranty</li>
+                <li><strong>2-year "NO QUESTIONS ASKED" warranty</strong> - All our installations are backed by a comprehensive warranty</li>
                 <li><strong>Convenient Chicago location</strong> - Centrally located for all Chicagoland customers</li>
                 <li><strong>Fast turnaround times</strong> - We respect your time and business needs</li>
                 <li><strong>Competitive pricing</strong> - Quality work at fair market rates</li>
@@ -108,7 +108,7 @@ const AboutPage = () => {
                 </li>
                 <li>
                   <h3 className="font-semibold">Installation</h3>
-                  <p>Our certified installers carefully apply your wrap, ensuring perfect alignment and a bubble-free finish.</p>
+                  <p>Our trained installers carefully apply your wrap, ensuring perfect alignment and a bubble-free finish.</p>
                 </li>
                 <li>
                   <h3 className="font-semibold">Quality Check</h3>
