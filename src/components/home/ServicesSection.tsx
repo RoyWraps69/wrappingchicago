@@ -44,25 +44,23 @@ const ServicesSection = ({ fleetWrapVan, colorChangeVan, commercialGraphics }: S
           </p>
         </div>
         
-        {/* Featured Service - Fleet Wraps (Larger) */}
+        {/* Featured Service - Fleet Wraps (Larger) with text UNDER the image */}
         <div className="mb-12">
           <div className="bg-brand-light rounded-lg overflow-hidden shadow-md">
-            <div className="md:flex">
-              <div className="md:w-1/2">
-                <div className="h-full">
-                  <img 
-                    src={featuredService.image}
-                    alt={`${featuredService.title} - Chicago Fleet Wraps`}
-                    className="object-cover w-full h-full min-h-[300px]"
-                  />
-                </div>
+            <div className="flex flex-col">
+              <div className="w-full">
+                <img 
+                  src={featuredService.image}
+                  alt={`${featuredService.title} - Chicago Fleet Wraps`}
+                  className="object-cover w-full h-auto"
+                />
               </div>
-              <div className="md:w-1/2 p-8 flex flex-col justify-center">
+              <div className="p-8 flex flex-col justify-center">
                 <h3 className="text-2xl font-bold mb-4 text-brand-navy">{featuredService.title}</h3>
                 <p className="text-gray-700 mb-6 text-lg">{featuredService.description}</p>
                 <Button
                   asChild
-                  className="bg-brand-navy hover:bg-blue-900 text-white w-full md:w-auto"
+                  className="bg-brand-navy hover:bg-blue-900 text-white w-full md:w-auto self-start"
                 >
                   <Link to={featuredService.link}>Learn More</Link>
                 </Button>

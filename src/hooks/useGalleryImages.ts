@@ -14,11 +14,8 @@ export const useGalleryImages = (): GalleryImages => {
     item.description.toLowerCase().includes('van')
   ).slice(0, 3); // Take the first 3 van-related images
   
-  // Get specific van image for fleet wraps section - prioritize Bratcher HVAC
-  const fleetWrapVan = galleryItems.find(item => 
-    item.title.includes('Bratcher HVAC') && 
-    item.category === 'Fleet Wraps'
-  )?.image || "/lovable-uploads/fc2146ab-62aa-4fc9-85aa-3582af7ce980.png";
+  // Use the new uploaded image for fleet wraps section
+  const fleetWrapVan = "/lovable-uploads/bc55562c-aa6e-45ac-86ea-5b2657a3f6d5.png";
   
   // Get specific van image for color change wraps section
   const colorChangeVan = galleryItems.find(item => 
