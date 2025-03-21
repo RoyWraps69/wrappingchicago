@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -7,8 +7,42 @@ import Breadcrumbs from '@/components/navigation/Breadcrumbs';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
+import { Input } from "@/components/ui/input";
+import { useToast } from "@/components/ui/use-toast";
 
 const EmailSetupPage = () => {
+  const { toast } = useToast();
+  const [apiKey, setApiKey] = useState('');
+  const [hasKey, setHasKey] = useState(false);
+
+  useEffect(() => {
+    const storedKey = localStorage.getItem('sendgrid_api_key');
+    setHasKey(!!storedKey);
+    if (storedKey) {
+      // Mask the key for display
+      setApiKey('•'.repeat(20) + storedKey.slice(-5));
+    }
+  }, []);
+
+  const handleSaveApiKey = () => {
+    localStorage.setItem('sendgrid_api_key', apiKey);
+    setHasKey(true);
+    toast({
+      title: "API Key Saved",
+      description: "SendGrid API key has been saved to your browser.",
+    });
+  };
+
+  const handleClearApiKey = () => {
+    localStorage.removeItem('sendgrid_api_key');
+    setApiKey('');
+    setHasKey(false);
+    toast({
+      title: "API Key Removed",
+      description: "SendGrid API key has been removed from your browser.",
+    });
+  };
+
   return (
     <>
       <Helmet>
@@ -33,14 +67,43 @@ const EmailSetupPage = () => {
                 The contact form is configured to forward submissions to: <strong>roy@chicagofleetwraps.com</strong>
               </p>
               
-              <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6">
+              <div className="bg-blue-50 border-l-4 border-blue-400 p-4 mb-6">
                 <div className="flex">
                   <div className="ml-3">
-                    <p className="text-sm text-yellow-700">
-                      <strong>EmailJS Configuration:</strong> The contact form is set up with EmailJS. The service ID, template ID, and user ID are configured in the ContactForm component.
+                    <p className="text-sm text-blue-700">
+                      <strong>SendGrid Configuration:</strong> The contact form uses SendGrid to send emails. You need to provide your SendGrid API key below.
                     </p>
                   </div>
                 </div>
+              </div>
+              
+              <div className="p-4 border border-gray-200 rounded-md mb-6">
+                <h3 className="text-lg font-semibold mb-2">SendGrid API Key</h3>
+                {hasKey ? (
+                  <div>
+                    <p className="mb-2">Current API key: <code className="bg-gray-100 px-2 py-1 rounded">{apiKey}</code></p>
+                    <Button onClick={handleClearApiKey} variant="outline" size="sm">Remove API Key</Button>
+                  </div>
+                ) : (
+                  <div className="flex flex-col space-y-2">
+                    <Input 
+                      type="password" 
+                      value={apiKey} 
+                      onChange={(e) => setApiKey(e.target.value)} 
+                      placeholder="Enter your SendGrid API key"
+                      className="max-w-md"
+                    />
+                    <div>
+                      <Button 
+                        onClick={handleSaveApiKey} 
+                        disabled={!apiKey} 
+                        size="sm"
+                      >
+                        Save API Key
+                      </Button>
+                    </div>
+                  </div>
+                )}
               </div>
               
               <h3 className="text-xl font-bold text-brand-navy mb-2 mt-6">Testing the Form</h3>
@@ -54,28 +117,14 @@ const EmailSetupPage = () => {
                 <li>Check if you receive the email at roy@chicagofleetwraps.com</li>
               </ol>
               
-              <h3 className="text-xl font-bold text-brand-navy mb-2 mt-6">Change Email Recipient</h3>
-              <p className="mb-4">
-                If you need to change where form submissions are sent:
-              </p>
-              <ol className="list-decimal ml-6 space-y-2 mb-6">
-                <li>Open the <code className="bg-gray-100 px-2 py-1 rounded">src/components/contact/ContactForm.tsx</code> file</li>
-                <li>Update the hidden input with <code className="bg-gray-100 px-2 py-1 rounded">name="to_email"</code> to your preferred email address</li>
-                <li>The value should be changed from <code className="bg-gray-100 px-2 py-1 rounded">value="roy@chicagofleetwraps.com"</code> to your email</li>
-              </ol>
-              
-              <h3 className="text-xl font-bold text-brand-navy mb-2 mt-6">EmailJS Settings</h3>
-              <p className="mb-4">
-                The contact form uses EmailJS with the following configuration:
-              </p>
-              <ul className="list-disc ml-6 space-y-2 mb-6">
-                <li>Service ID: <code className="bg-gray-100 px-2 py-1 rounded">service_5f00lkt</code></li>
-                <li>Template ID: <code className="bg-gray-100 px-2 py-1 rounded">template_lznnmhm</code></li>
-                <li>User ID: <code className="bg-gray-100 px-2 py-1 rounded">p4Ac1nNy55x5QUFel</code></li>
-              </ul>
-              <p className="mb-4">
-                If you need to change these settings, update the constants at the top of the ContactForm.tsx file.
-              </p>
+              <h3 className="text-xl font-bold text-brand-navy mb-2 mt-6">Security Notice</h3>
+              <div className="p-4 bg-yellow-50 border-l-4 border-yellow-400 mb-6">
+                <p className="text-sm">
+                  <strong>Important:</strong> The API key is stored only in your browser's local storage. For production use, 
+                  this should be handled server-side or through environment variables for better security. Consider using a backend 
+                  service or serverless function to handle email sending in production.
+                </p>
+              </div>
             </Card>
             
             <div className="bg-gray-50 border border-gray-200 rounded-lg p-6">
