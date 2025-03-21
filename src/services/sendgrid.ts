@@ -23,6 +23,12 @@ export const sendEmail = async (data: EmailData): Promise<void> => {
     formData.append('service', data.service);
     formData.append('message', data.message);
     
+    // Add FormSubmit specific configurations
+    formData.append('_subject', `Chicago Fleet Wraps: Quote Request from ${data.name}`);
+    formData.append('_replyto', data.email);
+    formData.append('_template', 'table');
+    formData.append('_captcha', 'false');
+    
     // Send via fetch API directly to formsubmit.co
     const response = await fetch('https://formsubmit.co/ajax/roy@chicagofleetwraps.com', {
       method: 'POST',
@@ -33,6 +39,8 @@ export const sendEmail = async (data: EmailData): Promise<void> => {
     });
     
     if (!response.ok) {
+      const errorText = await response.text();
+      console.error('Form submission error response:', errorText);
       throw new Error(`Form submission failed with status: ${response.status}`);
     }
     
