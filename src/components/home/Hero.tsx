@@ -17,19 +17,19 @@ const Hero = () => {
         />
       </div>
       
-      <div className="relative z-20 container mx-auto px-4 sm:px-6 lg:px-8 min-h-[90vh] flex items-center">
-        <div className="max-w-3xl py-20">
-          <div className="animate-fade-in mb-6">
+      <div className="relative z-20 container mx-auto px-4 sm:px-6 lg:px-8 min-h-[80vh] flex items-center">
+        <div className="max-w-3xl py-16">
+          <div className="animate-fade-in mb-4">
             <span className="bg-brand-red/90 text-white px-4 py-2 rounded-full text-sm uppercase font-medium tracking-wide">
               Chicago's Premier Vehicle Wrap Specialist
             </span>
           </div>
           
-          <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold text-white leading-tight mb-6 animate-enter" style={{ animationDelay: "0.2s" }}>
+          <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold text-white leading-tight mb-4 animate-enter" style={{ animationDelay: "0.2s" }}>
             Transform Your <span className="text-brand-red">Vehicle</span>. Elevate Your <span className="text-brand-red">Brand</span>.
           </h1>
           
-          <p className="text-xl md:text-2xl text-white/90 mb-10 max-w-2xl animate-enter" style={{ animationDelay: "0.4s" }}>
+          <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-2xl animate-enter" style={{ animationDelay: "0.4s" }}>
             Professional vehicle wraps that turn heads and make your business stand out on every street in Chicago.
           </p>
           
@@ -58,7 +58,7 @@ const Hero = () => {
             </Button>
           </div>
           
-          <div className="mt-12 flex items-center gap-8 animate-enter" style={{ animationDelay: "0.8s" }}>
+          <div className="mt-8 flex items-center gap-8 animate-enter" style={{ animationDelay: "0.8s" }}>
             <div className="flex items-center">
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3">
                 <img src="/lovable-uploads/9de106b5-94cb-4fd1-a7c7-5c75c75b7cbb.png" alt="High-quality materials" className="w-8 h-8" />
@@ -75,10 +75,10 @@ const Hero = () => {
         </div>
       </div>
       
-      {/* Wave divider */}
+      {/* Wave divider - reduced height */}
       <div className="absolute bottom-0 left-0 right-0">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 160">
-          <path fill="#ffffff" fillOpacity="1" d="M0,128L80,117.3C160,107,320,85,480,90.7C640,96,800,128,960,128C1120,128,1280,96,1360,80L1440,64L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 100">
+          <path fill="#ffffff" fillOpacity="1" d="M0,64L80,58.7C160,53,320,43,480,48.3C640,53,800,75,960,75C1120,75,1280,53,1360,42.7L1440,32L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path>
         </svg>
       </div>
     </section>

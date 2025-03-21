@@ -35,29 +35,29 @@ const ServicesSection = ({ fleetWrapVan, colorChangeVan, commercialGraphics }: S
   ];
 
   return (
-    <section className="py-16 bg-white">
+    <section className="py-8 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold mb-4 text-brand-navy">Our Vehicle Wrap Services</h2>
+        <div className="text-center mb-8">
+          <h2 className="text-3xl font-bold mb-3 text-brand-navy">Our Vehicle Wrap Services</h2>
           <p className="text-lg text-gray-700 max-w-3xl mx-auto">
-            Chicago Fleet Wraps offers a comprehensive range of vehicle wrapping services to meet the needs of businesses and individuals throughout Chicago and surrounding areas.
+            Wrapping Chicago offers a comprehensive range of vehicle wrapping services to meet the needs of businesses and individuals throughout Chicago and surrounding areas.
           </p>
         </div>
         
         {/* Featured Service - Fleet Wraps (Larger) with text UNDER the image */}
-        <div className="mb-12">
+        <div className="mb-8">
           <div className="bg-brand-light rounded-lg overflow-hidden shadow-md">
             <div className="flex flex-col">
               <div className="w-full">
                 <img 
                   src={featuredService.image}
-                  alt={`${featuredService.title} - Chicago Fleet Wraps`}
+                  alt={`${featuredService.title} - Wrapping Chicago`}
                   className="object-cover w-full h-auto"
                 />
               </div>
-              <div className="p-8 flex flex-col justify-center">
-                <h3 className="text-2xl font-bold mb-4 text-brand-navy">{featuredService.title}</h3>
-                <p className="text-gray-700 mb-6 text-lg">{featuredService.description}</p>
+              <div className="p-6 flex flex-col justify-center">
+                <h3 className="text-2xl font-bold mb-3 text-brand-navy">{featuredService.title}</h3>
+                <p className="text-gray-700 mb-4 text-lg">{featuredService.description}</p>
                 <Button
                   asChild
                   className="bg-brand-navy hover:bg-blue-900 text-white w-full md:w-auto self-start"
@@ -70,19 +70,19 @@ const ServicesSection = ({ fleetWrapVan, colorChangeVan, commercialGraphics }: S
         </div>
         
         {/* Secondary Services - Evenly spaced below */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {secondaryServices.map((service, index) => (
             <div key={index} className="bg-brand-light rounded-lg overflow-hidden shadow-md h-full">
               <div className="aspect-w-16 aspect-h-9">
                 <img 
                   src={service.image}
-                  alt={`${service.title} - Chicago Fleet Wraps`}
+                  alt={`${service.title} - Wrapping Chicago`}
                   className="object-cover w-full h-full"
                 />
               </div>
-              <div className="p-6">
+              <div className="p-5">
                 <h3 className="text-xl font-bold mb-2 text-brand-navy">{service.title}</h3>
-                <p className="text-gray-700 mb-4">{service.description}</p>
+                <p className="text-gray-700 mb-3">{service.description}</p>
                 <Button
                   asChild
                   variant="outline"

@@ -4,19 +4,19 @@ import { Zap, Clock, DollarSign, LightbulbIcon } from 'lucide-react';
 
 const ValueProposition = () => {
   return (
-    <section className="py-16 bg-white">
+    <section className="py-10 bg-white">
       <div className="container mx-auto px-4 max-w-6xl">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-brand-navy mb-4">Why Use Our AI Wrap Designer?</h2>
+        <div className="text-center mb-8">
+          <h2 className="text-3xl font-bold text-brand-navy mb-3">Why Use Our AI Wrap Designer?</h2>
           <p className="text-lg text-gray-700 max-w-3xl mx-auto">
             The AI generator helps us understand your vision with precision, eliminating the frustration of miscommunications and design revisions.
           </p>
         </div>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          <div className="bg-gray-50 p-6 rounded-lg text-center hover:shadow-md transition-shadow">
-            <div className="bg-brand-navy/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Zap className="h-8 w-8 text-brand-navy" />
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="bg-gray-50 p-5 rounded-lg text-center hover:shadow-md transition-shadow">
+            <div className="bg-brand-navy/10 w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-3">
+              <Zap className="h-7 w-7 text-brand-navy" />
             </div>
             <h3 className="text-xl font-bold text-brand-navy mb-2">Visualize Your Ideas</h3>
             <p className="text-gray-700">
@@ -24,9 +24,9 @@ const ValueProposition = () => {
             </p>
           </div>
           
-          <div className="bg-gray-50 p-6 rounded-lg text-center hover:shadow-md transition-shadow">
-            <div className="bg-brand-navy/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Clock className="h-8 w-8 text-brand-navy" />
+          <div className="bg-gray-50 p-5 rounded-lg text-center hover:shadow-md transition-shadow">
+            <div className="bg-brand-navy/10 w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-3">
+              <Clock className="h-7 w-7 text-brand-navy" />
             </div>
             <h3 className="text-xl font-bold text-brand-navy mb-2">Save Time</h3>
             <p className="text-gray-700">
@@ -34,9 +34,9 @@ const ValueProposition = () => {
             </p>
           </div>
           
-          <div className="bg-gray-50 p-6 rounded-lg text-center hover:shadow-md transition-shadow">
-            <div className="bg-brand-navy/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-              <DollarSign className="h-8 w-8 text-brand-navy" />
+          <div className="bg-gray-50 p-5 rounded-lg text-center hover:shadow-md transition-shadow">
+            <div className="bg-brand-navy/10 w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-3">
+              <DollarSign className="h-7 w-7 text-brand-navy" />
             </div>
             <h3 className="text-xl font-bold text-brand-navy mb-2">Reduce Costs</h3>
             <p className="text-gray-700">
@@ -44,9 +44,9 @@ const ValueProposition = () => {
             </p>
           </div>
           
-          <div className="bg-gray-50 p-6 rounded-lg text-center hover:shadow-md transition-shadow">
-            <div className="bg-brand-navy/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-              <LightbulbIcon className="h-8 w-8 text-brand-navy" />
+          <div className="bg-gray-50 p-5 rounded-lg text-center hover:shadow-md transition-shadow">
+            <div className="bg-brand-navy/10 w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-3">
+              <LightbulbIcon className="h-7 w-7 text-brand-navy" />
             </div>
             <h3 className="text-xl font-bold text-brand-navy mb-2">Spark Inspiration</h3>
             <p className="text-gray-700">
@@ -55,11 +55,11 @@ const ValueProposition = () => {
           </div>
         </div>
         
-        <div className="mt-12 bg-brand-navy/5 p-8 rounded-xl">
+        <div className="mt-8 bg-brand-navy/5 p-6 rounded-xl">
           <div className="flex flex-col md:flex-row items-center">
-            <div className="md:w-2/3 mb-6 md:mb-0 md:pr-8">
-              <h3 className="text-2xl font-bold text-brand-navy mb-4">Bridging the Communication Gap</h3>
-              <p className="text-gray-700 mb-4">
+            <div className="md:w-2/3 mb-4 md:mb-0 md:pr-6">
+              <h3 className="text-2xl font-bold text-brand-navy mb-3">Bridging the Communication Gap</h3>
+              <p className="text-gray-700 mb-3">
                 One of the biggest challenges in vehicle wrap design is translating your vision into reality. Our AI tool bridges that gap by creating visual concepts based on your descriptions.
               </p>
               <p className="text-gray-700">

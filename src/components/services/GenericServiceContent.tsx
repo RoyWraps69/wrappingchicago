@@ -4,11 +4,11 @@ import { Link } from 'react-router-dom';
 
 const GenericServiceContent: React.FC = () => {
   return (
-    <div className="mb-12">
-      <div className="grid md:grid-cols-2 gap-8 mb-12">
+    <div className="mb-8">
+      <div className="grid md:grid-cols-2 gap-6 mb-8">
         <div>
-          <h2 className="text-2xl font-semibold text-brand-navy mb-4">Professional Installers</h2>
-          <p className="mb-4">
+          <h2 className="text-2xl font-semibold text-brand-navy mb-3">Professional Installers</h2>
+          <p className="mb-3">
             Our certified installers have years of experience wrapping vehicles of all types.
             From compact cars to large commercial trucks, we have the expertise to handle any project.
           </p>
@@ -19,8 +19,8 @@ const GenericServiceContent: React.FC = () => {
           />
         </div>
         <div>
-          <h2 className="text-2xl font-semibold text-brand-navy mb-4">Premium Materials</h2>
-          <p className="mb-4">
+          <h2 className="text-2xl font-semibold text-brand-navy mb-3">Premium Materials</h2>
+          <p className="mb-3">
             We use only the highest quality 3M and Avery vinyl wraps, ensuring your vehicle
             wrap will look great and stand up to the harsh Chicago weather for years to come.
           </p>
@@ -32,38 +32,38 @@ const GenericServiceContent: React.FC = () => {
         </div>
       </div>
       
-      <h2 className="text-2xl font-semibold text-brand-navy mb-6">Featured Services</h2>
-      <div className="grid md:grid-cols-3 gap-6 mb-8">
-        <div className="bg-white p-6 rounded-lg shadow hover:shadow-md transition-shadow">
+      <h2 className="text-2xl font-semibold text-brand-navy mb-4">Featured Services</h2>
+      <div className="grid md:grid-cols-3 gap-5 mb-6">
+        <div className="bg-white p-4 rounded-lg shadow hover:shadow-md transition-shadow">
           <img 
             src="/lovable-uploads/efdbc4bf-1f04-42bb-a904-f52dae7bef6c.png" 
             alt="Fleet wraps" 
-            className="w-full h-48 object-cover rounded-md mb-4"
+            className="w-full h-44 object-cover rounded-md mb-3"
           />
           <h3 className="font-semibold text-brand-navy mb-2 text-xl">Fleet Wraps</h3>
-          <p className="text-sm mb-4">Turn your business vehicles into moving billboards with our professional fleet wrapping services.</p>
+          <p className="text-sm mb-3">Turn your business vehicles into moving billboards with our professional fleet wrapping services.</p>
           <Link to="/services/fleet-wraps" className="text-brand-red hover:underline">Learn more →</Link>
         </div>
         
-        <div className="bg-white p-6 rounded-lg shadow hover:shadow-md transition-shadow">
+        <div className="bg-white p-4 rounded-lg shadow hover:shadow-md transition-shadow">
           <img 
             src="/lovable-uploads/f564c255-9ca3-4457-bef5-c940a4a1557a.png" 
             alt="Color change wraps" 
-            className="w-full h-48 object-cover rounded-md mb-4"
+            className="w-full h-44 object-cover rounded-md mb-3"
           />
           <h3 className="font-semibold text-brand-navy mb-2 text-xl">Color Change Wraps</h3>
-          <p className="text-sm mb-4">Transform your vehicle with a complete color change - a perfect alternative to paint.</p>
+          <p className="text-sm mb-3">Transform your vehicle with a complete color change - a perfect alternative to paint.</p>
           <Link to="/services/color-change-wraps" className="text-brand-red hover:underline">Learn more →</Link>
         </div>
         
-        <div className="bg-white p-6 rounded-lg shadow hover:shadow-md transition-shadow">
+        <div className="bg-white p-4 rounded-lg shadow hover:shadow-md transition-shadow">
           <img 
             src="/lovable-uploads/fb7a4b97-4b57-4b2e-8f81-42a1098270df.png" 
             alt="Commercial graphics" 
-            className="w-full h-48 object-cover rounded-md mb-4"
+            className="w-full h-44 object-cover rounded-md mb-3"
           />
           <h3 className="font-semibold text-brand-navy mb-2 text-xl">Commercial Graphics</h3>
-          <p className="text-sm mb-4">Add professional logos, lettering, and graphics to your business vehicles.</p>
+          <p className="text-sm mb-3">Add professional logos, lettering, and graphics to your business vehicles.</p>
           <Link to="/services/commercial-graphics" className="text-brand-red hover:underline">Learn more →</Link>
         </div>
       </div>
