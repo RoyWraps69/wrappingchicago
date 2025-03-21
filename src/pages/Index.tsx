@@ -1,6 +1,5 @@
 
 import React from 'react';
-import { Helmet } from 'react-helmet';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import CallToAction from '@/components/CallToAction';
@@ -10,6 +9,7 @@ import Hero from '@/components/home/Hero';
 import ServicesSection from '@/components/home/ServicesSection';
 import AreasServedSection from '@/components/home/AreasServedSection';
 import WhyChooseUsSection from '@/components/home/WhyChooseUsSection';
+import HomeSEO from '@/components/home/HomeSEO';
 
 const Index = () => {
   // Filter for van images from the gallery
@@ -38,14 +38,7 @@ const Index = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Chicago Fleet Wraps | Professional Vehicle & Fleet Wrapping Services</title>
-        <meta 
-          name="description" 
-          content="Chicago Fleet Wraps provides professional vehicle wrapping services including fleet wraps, color change wraps, and commercial graphics throughout Chicago and surrounding areas." 
-        />
-        <link rel="canonical" href="https://chicagofleetwraps.com" />
-      </Helmet>
+      <HomeSEO />
       
       <div className="flex flex-col min-h-screen">
         <Header />
