@@ -1,6 +1,5 @@
 
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
 import { City } from '@/data/cities';
 import LocalBusinessSchema from './schemas/LocalBusinessSchema';
 import BusinessLocationSchema from './schemas/BusinessLocationSchema';
@@ -102,7 +101,7 @@ const Schema: React.FC<SchemaProps> = ({ city, path, pageTitle, pageDescription 
   ];
 
   return (
-    <Helmet>
+    <>
       {/* LocalBusiness Schema */}
       <LocalBusinessSchema city={city} />
       
@@ -131,7 +130,7 @@ const Schema: React.FC<SchemaProps> = ({ city, path, pageTitle, pageDescription 
       
       {/* Reviews Schema */}
       <ReviewsSchema reviews={reviews} />
-    </Helmet>
+    </>
   );
 };
 

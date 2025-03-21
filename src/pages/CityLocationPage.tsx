@@ -5,11 +5,7 @@ import LocationPage from '@/components/LocationPage';
 import { findCityBySlug, cities } from '@/data/cities';
 import NotFound from './NotFound';
 
-interface CityLocationPageProps {
-  citySlug?: string;
-}
-
-const CityLocationPage = ({ citySlug: propCitySlug }: CityLocationPageProps = {}) => {
+const CityLocationPage = () => {
   const { citySlug: paramCitySlug } = useParams<{ citySlug: string }>();
   const location = useLocation();
   
@@ -18,29 +14,32 @@ const CityLocationPage = ({ citySlug: propCitySlug }: CityLocationPageProps = {}
     console.log("CityLocationPage mounted with path:", location.pathname);
   }, [location.pathname]);
   
-  // Determine the city slug from props or params
-  let slug = propCitySlug || paramCitySlug || '';
-  
-  // Clean up the slug if it has -il suffix
-  slug = slug.replace(/-il$/, '');
-  
-  // If we still don't have a slug, try to extract from pathname
-  if (!slug) {
+  // Extract city slug from URL
+  const extractCitySlug = () => {
+    // First check params
+    if (paramCitySlug) {
+      return paramCitySlug.replace(/-il$/, '');
+    }
+    
+    // If no params, try to extract from pathname
     const pathParts = location.pathname.split('/').filter(Boolean);
     const lastPart = pathParts[pathParts.length - 1];
     
     if (lastPart) {
-      // Handle various formats like "vehicle-wraps-arlington-heights-il"
+      // Handle various formats
       if (lastPart.includes('vehicle-wraps-')) {
-        slug = lastPart.replace('vehicle-wraps-', '').replace(/-il$/, '');
+        return lastPart.replace('vehicle-wraps-', '').replace(/-il$/, '');
       } else if (lastPart.endsWith('-il')) {
-        slug = lastPart.replace(/-il$/, '');
+        return lastPart.replace(/-il$/, '');
       } else {
-        slug = lastPart;
+        return lastPart;
       }
     }
-  }
+    
+    return '';
+  };
   
+  const slug = extractCitySlug();
   console.log(`Looking for city with slug: "${slug}" from path: ${location.pathname}`);
   
   // Find the city by slug

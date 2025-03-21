@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 
 interface MetaTagsProps {
   title: string;
@@ -32,8 +32,15 @@ const MetaTags: React.FC<MetaTagsProps> = ({
       <meta name="description" content={description} />
       {keywords && <meta name="keywords" content={keywords} />}
       <link rel="canonical" href={canonicalUrl} />
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
       
-      {/* Favicon */}
+      {/* Performance optimizations */}
+      <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+      <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+      
+      {/* Favicon - optimized for faster loading */}
       <link rel="icon" type="image/png" href="/lovable-uploads/6ef3b1af-8591-4d36-97c2-9366401115fa.png" />
       <link rel="apple-touch-icon" sizes="180x180" href="/lovable-uploads/6ef3b1af-8591-4d36-97c2-9366401115fa.png" />
       
@@ -75,6 +82,11 @@ const MetaTags: React.FC<MetaTagsProps> = ({
       <meta name="business:contact_data:email" content="roy@chicagofleetwraps.com" />
       <meta name="business:contact_data:phone_number" content="+13125971286" />
       <meta name="business:contact_data:website" content="https://wrappingchicago.com" />
+      
+      {/* Mobile optimization */}
+      <meta name="theme-color" content="#11172D" />
+      <meta name="apple-mobile-web-app-capable" content="yes" />
+      <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
       
       {/* Structured Data */}
       {structuredData && (
