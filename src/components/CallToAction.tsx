@@ -16,7 +16,8 @@ const CallToAction = ({ city = 'your area' }: { city?: string }) => {
         <div className="flex flex-col sm:flex-row justify-center gap-4">
           <Button
             asChild
-            className="bg-white text-brand-red hover:bg-gray-100 text-lg px-8 py-5 h-auto"
+            variant="white"
+            className="text-lg px-8 py-5 h-auto"
           >
             <Link to="/contact" className="inline-flex items-center">
               <Phone className="mr-2 h-5 w-5" />
@@ -25,8 +26,8 @@ const CallToAction = ({ city = 'your area' }: { city?: string }) => {
           </Button>
           <Button
             asChild
-            variant="outline"
-            className="border-white text-white hover:bg-white hover:text-brand-red text-lg px-8 py-5 h-auto"
+            variant="outlineWhite"
+            className="text-lg px-8 py-5 h-auto"
           >
             <Link to="/gallery" className="inline-flex items-center">
               <Camera className="mr-2 h-5 w-5" />

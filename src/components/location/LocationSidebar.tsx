@@ -72,7 +72,8 @@ const LocationSidebar: React.FC<LocationSidebarProps> = ({ city }) => {
         </p>
         <Button
           asChild
-          className="w-full bg-brand-red hover:bg-red-700 text-white"
+          variant="default"
+          className="w-full"
         >
           <Link to="/contact" className="inline-flex items-center">
             Book Appointment

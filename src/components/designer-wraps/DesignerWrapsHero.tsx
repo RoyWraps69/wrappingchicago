@@ -26,13 +26,13 @@ const DesignerWrapsHero = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4">
-            <Button asChild size="lg" className="bg-brand-red hover:bg-red-700 text-white">
+            <Button asChild size="lg" variant="default">
               <Link to="/contact" className="inline-flex items-center">
                 <MessageSquare className="mr-2 h-5 w-5" />
                 Get a Free Consultation
               </Link>
             </Button>
-            <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white/20">
+            <Button asChild size="lg" variant="outlineWhite">
               <a href="tel:3125971286" className="inline-flex items-center">
                 <Phone className="mr-2 h-5 w-5" />
                 Call (312) 597-1286

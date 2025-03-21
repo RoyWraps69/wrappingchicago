@@ -35,14 +35,13 @@ const ContactStudioImage = () => {
           <div className="flex flex-col sm:flex-row gap-3">
             <Button
               asChild
-              className="bg-brand-red hover:bg-red-700 text-white"
+              variant="default"
             >
               <Link to="/contact">Get a Free Quote Today</Link>
             </Button>
             <Button
               asChild
-              variant="outline"
-              className="bg-white/10 backdrop-blur-sm border-white/20 text-white hover:bg-white/20"
+              variant="outlineWhite"
             >
               <a href="tel:3125971286" className="inline-flex items-center">
                 <Phone className="mr-2 h-4 w-4" />

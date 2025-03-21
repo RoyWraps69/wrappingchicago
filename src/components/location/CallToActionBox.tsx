@@ -21,14 +21,13 @@ const CallToActionBox: React.FC<CallToActionBoxProps> = ({ city }) => {
       <div className="flex flex-col sm:flex-row gap-4 mt-6">
         <Button
           asChild
-          className="bg-brand-red hover:bg-red-700 text-white"
+          variant="default"
         >
           <Link to="/contact">Get a Free Quote Today</Link>
         </Button>
         <Button
           asChild
-          variant="outline"
-          className="border-brand-navy text-brand-navy hover:bg-brand-navy hover:text-white"
+          variant="outlineNavy"
         >
           <Link to="/gallery">View Our Portfolio</Link>
         </Button>
