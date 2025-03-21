@@ -28,80 +28,55 @@ const EmailSetupPage = () => {
             <h1 className="text-4xl font-bold text-brand-navy mb-6">Email Configuration</h1>
             
             <Card className="p-6 mb-8">
-              <h2 className="text-2xl font-bold text-brand-navy mb-4">EmailJS Setup Instructions</h2>
+              <h2 className="text-2xl font-bold text-brand-navy mb-4">Contact Form Setup</h2>
               <p className="mb-4">
-                Follow these steps to configure EmailJS for the contact form:
+                The contact form is configured to forward submissions to: <strong>roy@chicagofleetwraps.com</strong>
               </p>
-              
-              <ol className="list-decimal ml-6 space-y-3 mb-6">
-                <li>
-                  <p className="font-medium">Create an EmailJS account</p>
-                  <p className="text-gray-600">Go to <a href="https://www.emailjs.com/" target="_blank" rel="noreferrer" className="text-blue-600 hover:underline">EmailJS.com</a> and create a free account.</p>
-                </li>
-                <li>
-                  <p className="font-medium">Create an Email Service (Using Gmail)</p>
-                  <p className="text-gray-600">
-                    Connect your Gmail account as a service provider:
-                    <ul className="list-disc ml-6 mt-2">
-                      <li>In EmailJS dashboard, go to "Email Services" and click "Add New Service"</li>
-                      <li>Select "Gmail" as your service provider</li>
-                      <li>Follow the prompts to connect your Gmail account</li>
-                      <li>Name your service and note the Service ID</li>
-                    </ul>
-                  </p>
-                </li>
-                <li>
-                  <p className="font-medium">Create an Email Template</p>
-                  <p className="text-gray-600">
-                    Create a template with variables that match our contact form:
-                    <ul className="list-disc ml-6 mt-2">
-                      <li>In EmailJS dashboard, go to "Email Templates" and click "Create New Template"</li>
-                      <li>Design your email template using these variables in double curly braces: from_name, from_email, from_phone, service, message</li>
-                      <li>Example: "New message from &#123;&#123;from_name&#125;&#125; (&#123;&#123;from_email&#125;&#125;)"</li>
-                      <li>Save your template and note the Template ID</li>
-                    </ul>
-                  </p>
-                </li>
-                <li>
-                  <p className="font-medium">Get your User ID</p>
-                  <p className="text-gray-600">Find your EmailJS User ID in the "Integration" section of your EmailJS dashboard.</p>
-                </li>
-                <li>
-                  <p className="font-medium">Update the Code</p>
-                  <p className="text-gray-600">Replace the placeholder values in the ContactForm.tsx file with your actual IDs:</p>
-                  <pre className="bg-gray-100 p-3 rounded text-sm mt-2 overflow-x-auto">
-                    <code>
-                      const EMAILJS_SERVICE_ID = "your_service_id";<br/>
-                      const EMAILJS_TEMPLATE_ID = "your_template_id";<br/>
-                      const EMAILJS_USER_ID = "your_user_id";
-                    </code>
-                  </pre>
-                </li>
-              </ol>
               
               <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6">
                 <div className="flex">
                   <div className="ml-3">
                     <p className="text-sm text-yellow-700">
-                      <strong>Note:</strong> The free plan includes 200 emails per month, which should be sufficient for most small businesses. For higher volumes, consider upgrading to a paid plan.
+                      <strong>Simple Setup:</strong> Our contact form is set up to work directly with minimal configuration. The form will automatically send submissions to the email address you've specified.
                     </p>
                   </div>
                 </div>
               </div>
+              
+              <h3 className="text-xl font-bold text-brand-navy mb-2 mt-6">Testing the Form</h3>
+              <p className="mb-4">
+                To test if your contact form is working correctly:
+              </p>
+              <ol className="list-decimal ml-6 space-y-2 mb-6">
+                <li>Go to your <Link to="/contact" className="text-blue-600 hover:underline">Contact page</Link></li>
+                <li>Fill out the form with test information</li>
+                <li>Submit the form</li>
+                <li>Check if you receive the email at roy@chicagofleetwraps.com</li>
+              </ol>
+              
+              <h3 className="text-xl font-bold text-brand-navy mb-2 mt-6">Change Email Recipient</h3>
+              <p className="mb-4">
+                If you need to change where form submissions are sent:
+              </p>
+              <ol className="list-decimal ml-6 space-y-2 mb-6">
+                <li>Open the <code className="bg-gray-100 px-2 py-1 rounded">src/components/contact/ContactForm.tsx</code> file</li>
+                <li>Find the line with <code className="bg-gray-100 px-2 py-1 rounded">value="roy@chicagofleetwraps.com"</code></li>
+                <li>Change this email address to your preferred recipient</li>
+              </ol>
             </Card>
             
             <div className="bg-gray-50 border border-gray-200 rounded-lg p-6">
               <h2 className="text-2xl font-bold text-brand-navy mb-4">Need Help?</h2>
               <p className="mb-4">
-                If you need assistance setting up your email or have questions about EmailJS configuration,
-                please contact our support team.
+                If you need assistance with your contact form or have any questions,
+                please don't hesitate to reach out.
               </p>
               <div className="flex flex-wrap gap-4 mt-6">
                 <Button asChild>
-                  <Link to="/contact">Contact Support</Link>
+                  <a href="mailto:support@chicagofleetwraps.com">Email Support</a>
                 </Button>
                 <Button variant="outline" asChild>
-                  <a href="https://www.emailjs.com/docs/" target="_blank" rel="noreferrer">EmailJS Documentation</a>
+                  <Link to="/contact">Contact Us</Link>
                 </Button>
               </div>
             </div>

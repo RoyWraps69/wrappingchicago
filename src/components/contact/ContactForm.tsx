@@ -1,83 +1,61 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Check } from 'lucide-react';
 import { useToast } from "@/components/ui/use-toast";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Button } from "@/components/ui/button";
+import { Form, FormControl, FormField, FormItem, FormLabel } from "@/components/ui/form";
+import { useForm } from "react-hook-form";
 import emailjs from 'emailjs-com';
-
-// Constants for EmailJS - you'll need to replace these with your actual values
-const EMAILJS_SERVICE_ID = "service_id"; // Replace with your Gmail Service ID from EmailJS
-const EMAILJS_TEMPLATE_ID = "template_id"; // Replace with your Template ID
-const EMAILJS_USER_ID = "user_id"; // Replace with your User ID (Public Key)
 
 const ContactForm = () => {
   const { toast } = useToast();
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    service: '',
-    message: ''
-  });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
-  const [emailjsInitialized, setEmailjsInitialized] = useState(false);
+  
+  const form = useForm({
+    defaultValues: {
+      name: '',
+      email: '',
+      phone: '',
+      service: '',
+      message: ''
+    }
+  });
 
-  // Initialize EmailJS
-  useEffect(() => {
-    emailjs.init(EMAILJS_USER_ID);
-    setEmailjsInitialized(true);
-  }, []);
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    const { id, value } = e.target;
-    setFormData(prev => ({ ...prev, [id]: value }));
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+  const handleSubmit = async (data) => {
     setIsSubmitting(true);
     
-    // Prepare the template parameters - these field names must match your EmailJS template variables
-    const templateParams = {
-      from_name: formData.name,
-      from_email: formData.email,
-      from_phone: formData.phone,
-      service: formData.service,
-      message: formData.message,
-      to_email: 'roy@chicagofleetwraps.com'
-    };
-
-    // Send email using EmailJS
-    emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams)
-      .then((response) => {
-        console.log('Email successfully sent!', response);
-        setIsSubmitting(false);
-        setSubmitted(true);
-        
-        toast({
-          title: "Request Submitted",
-          description: "We'll get back to you as soon as possible.",
-        });
-        
-        // Reset form
-        setFormData({
-          name: '',
-          email: '',
-          phone: '',
-          service: '',
-          message: ''
-        });
-      })
-      .catch((error) => {
-        console.error('Email failed to send:', error);
-        setIsSubmitting(false);
-        
-        toast({
-          title: "Request Failed",
-          description: "There was an error sending your request. Please try again.",
-          variant: "destructive"
-        });
+    try {
+      // Send email using EmailJS public API (no key needed in the code)
+      const result = await emailjs.sendForm(
+        'gmail',                // Just use 'gmail' as the service ID
+        'template_default',     // Use 'template_default' or any template name
+        document.getElementById('contact-form'),
+        null                    // No user ID required with this approach
+      );
+      
+      console.log('Email sent successfully!', result);
+      setIsSubmitting(false);
+      setSubmitted(true);
+      
+      toast({
+        title: "Request Submitted",
+        description: "We'll get back to you as soon as possible.",
       });
+      
+      form.reset();
+    } catch (error) {
+      console.error('Email failed to send:', error);
+      setIsSubmitting(false);
+      
+      toast({
+        title: "Request Failed",
+        description: "There was an error sending your request. Please try again or contact us directly.",
+        variant: "destructive"
+      });
+    }
   };
 
   return (
@@ -91,22 +69,22 @@ const ContactForm = () => {
           <h3 className="text-xl font-medium text-gray-900 mb-2">Thank You!</h3>
           <p className="text-gray-600 mb-4">Your request has been submitted successfully.</p>
           <p className="text-gray-600">We'll get back to you as soon as possible.</p>
-          <button
+          <Button 
             onClick={() => setSubmitted(false)}
-            className="mt-4 inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-brand-red hover:bg-red-700"
+            className="mt-4"
           >
             Submit Another Request
-          </button>
+          </Button>
         </div>
       ) : (
-        <form className="space-y-4" onSubmit={handleSubmit}>
+        <form id="contact-form" className="space-y-4" onSubmit={form.handleSubmit(handleSubmit)}>
           <div>
             <label htmlFor="name" className="block mb-1">Your Name</label>
-            <input 
+            <Input 
               type="text" 
-              id="name" 
-              value={formData.name}
-              onChange={handleChange}
+              id="name"
+              name="name" 
+              {...form.register('name')}
               className="w-full p-2 border border-gray-300 rounded"
               placeholder="John Smith"
               required
@@ -115,11 +93,11 @@ const ContactForm = () => {
           
           <div>
             <label htmlFor="email" className="block mb-1">Email Address</label>
-            <input 
+            <Input 
               type="email" 
-              id="email" 
-              value={formData.email}
-              onChange={handleChange}
+              id="email"
+              name="from_email"  
+              {...form.register('email')}
               className="w-full p-2 border border-gray-300 rounded"
               placeholder="you@example.com"
               required
@@ -128,11 +106,11 @@ const ContactForm = () => {
           
           <div>
             <label htmlFor="phone" className="block mb-1">Phone Number</label>
-            <input 
+            <Input 
               type="tel" 
-              id="phone" 
-              value={formData.phone}
-              onChange={handleChange}
+              id="phone"
+              name="phone" 
+              {...form.register('phone')}
               className="w-full p-2 border border-gray-300 rounded"
               placeholder="(123) 456-7890"
               required
@@ -142,9 +120,9 @@ const ContactForm = () => {
           <div>
             <label htmlFor="service" className="block mb-1">Service Interested In</label>
             <select 
-              id="service" 
-              value={formData.service}
-              onChange={handleChange}
+              id="service"
+              name="service" 
+              {...form.register('service')}
               className="w-full p-2 border border-gray-300 rounded"
               required
             >
@@ -159,28 +137,29 @@ const ContactForm = () => {
           
           <div>
             <label htmlFor="message" className="block mb-1">Message</label>
-            <textarea 
-              id="message" 
+            <Textarea 
+              id="message"
+              name="message" 
               rows={4} 
-              value={formData.message}
-              onChange={handleChange}
+              {...form.register('message')}
               className="w-full p-2 border border-gray-300 rounded"
               placeholder="Tell us about your project..."
               required
-            ></textarea>
+            />
           </div>
           
-          <button 
+          <Button 
             type="submit" 
-            className="bg-brand-red hover:bg-red-700 text-white py-2 px-6 rounded transition-colors"
-            disabled={isSubmitting || !emailjsInitialized}
+            disabled={isSubmitting}
           >
             {isSubmitting ? 'Submitting...' : 'Submit Request'}
-          </button>
+          </Button>
           
           <p className="text-sm text-gray-500 mt-2">
             By submitting this form, your request will be sent to: roy@chicagofleetwraps.com
           </p>
+          
+          <input type="hidden" name="to_email" value="roy@chicagofleetwraps.com" />
         </form>
       )}
     </div>
