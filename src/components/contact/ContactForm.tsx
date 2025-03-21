@@ -20,18 +20,21 @@ const ContactForm = () => {
     }
   });
 
-  // This is now just used for client-side validation before the form submits
+  // Function to handle form submission - now primarily used for client-side feedback
   const handleSubmit = async (data: FormValues) => {
     setIsSubmitting(true);
     
     try {
-      // Form will be submitted directly via the form action
+      // The form is submitted directly via HTML form action to FormSubmit.co
+      // This client-side handler is mainly for UX and form reset
+      console.log("Form data validated:", data);
+      
       setIsSubmitting(false);
       setSubmitted(true);
       
       toast({
-        title: "Form Submitted",
-        description: "Your form is being processed. Thank you!",
+        title: "Form Submitted Successfully",
+        description: "Your message has been sent. Thank you!",
         variant: "default",
         duration: 5000,
       });
