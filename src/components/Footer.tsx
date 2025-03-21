@@ -2,7 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { cities } from '@/data/cities';
-import { Phone, Mail, MapPin } from 'lucide-react';
+import { Phone, Mail, MapPin, Globe } from 'lucide-react';
 import ContactItem from './location/ContactItem';
 
 const Footer = () => {
@@ -90,7 +90,47 @@ const Footer = () => {
           </div>
         </div>
         
-        <div className="border-t border-gray-700 mt-8 pt-8 text-center">
+        {/* Sister Companies Section */}
+        <div className="border-t border-gray-700 mt-8 pt-8">
+          <h3 className="text-xl font-bold mb-4 text-center">Our Locations Across the US</h3>
+          <div className="flex flex-wrap justify-center gap-6 mb-6">
+            <div className="flex items-center">
+              <Globe className="w-5 h-5 mr-2 text-brand-red" />
+              <a 
+                href="https://bloomingtoncarwraps.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="hover:text-brand-red transition-colors"
+              >
+                Bloomington Car Wraps
+              </a>
+            </div>
+            <div className="flex items-center">
+              <Globe className="w-5 h-5 mr-2 text-brand-red" />
+              <a 
+                href="https://centralimagewraps.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="hover:text-brand-red transition-colors"
+              >
+                Central Image Wraps
+              </a>
+            </div>
+            <div className="flex items-center">
+              <Globe className="w-5 h-5 mr-2 text-brand-red" />
+              <a 
+                href="https://lasvegascarwraps.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="hover:text-brand-red transition-colors"
+              >
+                Las Vegas Car Wraps
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <div className="border-t border-gray-700 mt-4 pt-4 text-center">
           <p>© {new Date().getFullYear()} Chicago Fleet Wraps. All rights reserved.</p>
         </div>
       </div>
