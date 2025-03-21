@@ -70,7 +70,7 @@ export const ImageGeneratorForm: React.FC<ImageGeneratorFormProps> = ({
           ) : balance !== null ? (
             <div className="flex items-center">
               <span className="text-gray-700 mr-2">Stability AI Credits:</span>
-              <Badge variant={balance > 0 ? "success" : "destructive"} className="px-2 py-0">
+              <Badge variant={balance > 0 ? "default" : "destructive"} className="px-2 py-0">
                 {balance.toFixed(2)}
               </Badge>
             </div>

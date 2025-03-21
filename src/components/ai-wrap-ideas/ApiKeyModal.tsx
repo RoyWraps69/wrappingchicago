@@ -136,7 +136,7 @@ const ApiKeyModal: React.FC<ApiKeyModalProps> = ({ isOpen, onClose }) => {
               <div className="flex items-center">
                 <Wallet className="h-4 w-4 mr-2 text-gray-500" />
                 <span className="text-sm text-gray-700 mr-2">Credits:</span>
-                <Badge variant={balance > 0 ? "success" : "destructive"} className="px-2 py-0">
+                <Badge variant={balance > 0 ? "default" : "destructive"} className="px-2 py-0">
                   {balance.toFixed(2)}
                 </Badge>
               </div>
