@@ -12,7 +12,7 @@ const LocalBusinessSchema = ({ city }: LocalBusinessSchemaProps) => {
     "@type": "LocalBusiness",
     "name": "Wrapping Chicago",
     "alternateName": "Chicago Vehicle Wrapping Services",
-    "description": `Premium vehicle wrapping service serving ${city.name}, IL with AI-powered design for fleet wraps, color change wraps, and commercial graphics. With over 16,000 vehicle wraps completed in our 20 years of business, we've transformed vehicles into eye-catching mobile advertisements throughout Chicago and suburbs.`,
+    "description": `Premium vehicle wrapping service serving ${city.name}, IL with professional design for fleet wraps, color change wraps, and commercial graphics. With over 16,000 vehicle wraps completed in our 20 years of business, we've transformed vehicles into eye-catching mobile advertisements throughout Chicago and suburbs.`,
     "url": `https://wrappingchicago.com/vehicle-wraps-${city.slug}-il`,
     "telephone": "(312) 597-1286",
     "email": "roy@wrappingchicago.com",
@@ -65,7 +65,7 @@ const LocalBusinessSchema = ({ city }: LocalBusinessSchemaProps) => {
     },
     "award": [
       "Best Vehicle Wrap Company in Chicago 2023",
-      "3M Certified Installers",
+      "Premium 3M Materials Provider",
       "16,000+ Vehicle Wraps Completed"
     ],
     "areaServed": {

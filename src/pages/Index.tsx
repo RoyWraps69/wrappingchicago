@@ -31,7 +31,7 @@ const Index = () => {
         city={chicagoCity} 
         path="/"
         pageTitle="Vehicle Wraps Chicago | Premium Car, Truck & Van Wrapping Services"
-        pageDescription="Chicago's leading vehicle wrap company offering professional car wraps, truck wraps, van wraps, fleet wraps & commercial graphics with expert 3M certified installation."
+        pageDescription="Chicago's leading vehicle wrap company offering professional car wraps, truck wraps, van wraps, fleet wraps & commercial graphics with expert installation using premium 3M materials."
       />
       <AIWrapSchema />
       
@@ -47,7 +47,7 @@ const Index = () => {
               <div className="flex flex-col md:flex-row justify-between items-center">
                 <div className="flex items-center mb-4 md:mb-0">
                   <CheckCircle2 className="mr-2 h-5 w-5 text-brand-red" />
-                  <span className="text-sm md:text-base">Chicago's #1 Vehicle Wrap Company • 3M Certified • 2-Year Warranty</span>
+                  <span className="text-sm md:text-base">Chicago's #1 Vehicle Wrap Company • Premium 3M Materials • 2-Year Warranty</span>
                 </div>
                 <div className="flex flex-col sm:flex-row gap-3">
                   <Button
@@ -162,7 +162,7 @@ const Index = () => {
                 </h2>
                 <p className="text-gray-700 max-w-3xl mx-auto">
                   From car wraps to truck wraps, van wraps, and fleet graphics, we deliver premium quality
-                  vehicle wraps with 3M certified installation and long-lasting results.
+                  vehicle wraps with experienced installation and long-lasting results.
                 </p>
               </div>
               
@@ -173,10 +173,10 @@ const Index = () => {
                 </div>
                 <div className="bg-gray-50 p-4 rounded-lg shadow-sm">
                   <div className="font-bold text-3xl text-brand-red mb-1">3M</div>
-                  <p className="text-gray-700">Certified Materials</p>
+                  <p className="text-gray-700">Premium Materials</p>
                 </div>
                 <div className="bg-gray-50 p-4 rounded-lg shadow-sm">
-                  <div className="font-bold text-3xl text-brand-red mb-1">400+</div>
+                  <div className="font-bold text-3xl text-brand-red mb-1">16,000+</div>
                   <p className="text-gray-700">Vehicle Wraps Completed</p>
                 </div>
                 <div className="bg-gray-50 p-4 rounded-lg shadow-sm">

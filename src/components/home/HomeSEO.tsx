@@ -10,7 +10,7 @@ const HomeSEO = () => {
         name="description" 
         content="Chicago's leading vehicle wrap company offering professional car wraps, truck wraps, van wraps, fleet wraps & commercial graphics. Premium 3M materials with a 2-year warranty and 3-day installation. Transform your vehicles into mobile billboards with eye-catching designs. Serving all of Chicago and surrounding suburbs." 
       />
-      <meta name="keywords" content="vehicle wraps Chicago, car wraps Chicago, truck wraps Chicago, van wraps Chicago, fleet wraps Chicago, commercial vehicle wraps, custom vehicle wraps, vehicle graphics Chicago, car graphics Chicago, vinyl wraps Chicago, vehicle wrap installation Chicago, car wrap installation Chicago, best vehicle wraps Chicago, vehicle wrap companies Chicago, 3M vehicle wraps, automotive graphics, car wrap prices, full vehicle wrap cost Chicago, custom vehicle wrap design Chicago" />
+      <meta name="keywords" content="vehicle wraps Chicago, car wraps Chicago, truck wraps Chicago, van wraps Chicago, fleet wraps Chicago, commercial vehicle wraps, custom vehicle wraps, vehicle graphics Chicago, car graphics Chicago, vinyl wraps Chicago, vehicle wrap installation Chicago, car wrap installation Chicago, best vehicle wraps Chicago, vehicle wrap companies Chicago, 3M vehicle wraps, automotive graphics, car wrap prices, full vehicle wrap cost Chicago, custom vehicle wrap design Chicago, long lasting vehicle wraps Chicago, business vehicle wraps Chicago, vinyl lettering Chicago, truck lettering Chicago, partial vehicle wraps Chicago" />
       <link rel="canonical" href="https://wrappingchicago.com" />
       
       {/* Schema.org markup for Google */}
@@ -55,7 +55,7 @@ const HomeSEO = () => {
       {/* Twitter Card */}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content="Vehicle Wraps Chicago | Car, Truck & Van Wraps | Premium Fleet Wrapping" />
-      <meta name="twitter:description" content="Chicago's leading vehicle wrap provider. Transform your cars, trucks, vans, and fleet vehicles with professional wrapping services. 3M certified installers with 2-year warranty." />
+      <meta name="twitter:description" content="Chicago's leading vehicle wrap provider. Transform your cars, trucks, vans, and fleet vehicles with professional wrapping services. Premium 3M materials with 2-year warranty." />
       <meta name="twitter:image" content="https://wrappingchicago.com/lovable-uploads/5539b79e-ab54-428d-82a0-e4735ee97a95.png" />
       <meta name="twitter:image:alt" content="Professional vehicle wrap services in Chicago - colorful vehicle design" />
       <meta name="twitter:site" content="@wrappingchicago" />

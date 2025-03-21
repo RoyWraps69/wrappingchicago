@@ -35,7 +35,7 @@ const CityHeader: React.FC<CityHeaderProps> = ({ city }) => {
         </div>
         <div className="inline-flex items-center px-3 py-1 rounded-full bg-brand-navy/10 text-brand-navy text-sm">
           <Shield className="h-4 w-4 mr-1" />
-          3M Certified Installers
+          Premium 3M Materials
         </div>
       </div>
       

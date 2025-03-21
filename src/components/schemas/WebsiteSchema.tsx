@@ -14,7 +14,10 @@ const WebsiteSchema = ({
     "best vehicle wraps Chicago", "vehicle wrap companies Chicago", "3M vehicle wraps",
     "automotive graphics", "car wrap prices", "full vehicle wrap cost Chicago",
     "custom vehicle wrap design Chicago", "long lasting vehicle wraps Chicago",
-    "business vehicle wraps Chicago", "partial vehicle wraps Chicago", "vinyl lettering Chicago"
+    "business vehicle wraps Chicago", "partial vehicle wraps Chicago", "vinyl lettering Chicago",
+    "truck lettering Chicago", "van graphics installation Chicago", "vehicle wrap design Chicago",
+    "vehicle branding Chicago", "mobile advertising wraps Chicago", "commercial wrap ROI Chicago",
+    "wrap advertising Chicago", "vehicle wrap color change Chicago"
   ] 
 }: WebsiteSchemaProps) => {
   const schema = {

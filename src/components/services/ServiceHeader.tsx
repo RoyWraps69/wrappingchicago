@@ -101,7 +101,7 @@ const ServiceHeader: React.FC<ServiceHeaderProps> = ({
           <span className="bg-brand-navy/10 text-brand-navy text-xs font-medium px-2.5 py-1.5 rounded">Custom Vehicle Wraps</span>
           <span className="bg-brand-navy/10 text-brand-navy text-xs font-medium px-2.5 py-1.5 rounded">Vehicle Graphics Chicago</span>
           <span className="bg-brand-navy/10 text-brand-navy text-xs font-medium px-2.5 py-1.5 rounded">Vinyl Vehicle Wraps</span>
-          <span className="bg-brand-navy/10 text-brand-navy text-xs font-medium px-2.5 py-1.5 rounded">3M Certified Installation</span>
+          <span className="bg-brand-navy/10 text-brand-navy text-xs font-medium px-2.5 py-1.5 rounded">Premium 3M Installation</span>
         </div>
       </div>
     </div>
