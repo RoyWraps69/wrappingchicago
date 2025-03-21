@@ -25,11 +25,11 @@ const Hero = () => {
             </span>
           </div>
               
-          <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold text-white leading-tight mb-4 animate-enter drop-shadow-[0_4px_8px_rgba(0,0,0,0.4)]" style={{ animationDelay: "0.2s" }}>
-            Transform Your <span className="text-brand-red">Vehicle</span>. Elevate Your <span className="text-brand-red">Brand</span>.
+          <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold text-white leading-tight mb-4 animate-enter drop-shadow-[0_4px_8px_rgba(0,0,0,0.6)]" style={{ animationDelay: "0.2s" }}>
+            Transform Your <span className="text-brand-red drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">Vehicle</span>. Elevate Your <span className="text-brand-red drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">Brand</span>.
           </h1>
               
-          <p className="text-xl md:text-2xl text-white mb-8 max-w-2xl animate-enter drop-shadow-[0_3px_5px_rgba(0,0,0,0.4)]" style={{ animationDelay: "0.4s" }}>
+          <p className="text-xl md:text-2xl text-white mb-8 max-w-2xl animate-enter drop-shadow-[0_3px_5px_rgba(0,0,0,0.6)]" style={{ animationDelay: "0.4s" }}>
             Professional vehicle wraps that turn heads and make your business stand out on every street in Chicago.
           </p>
               
@@ -37,7 +37,7 @@ const Hero = () => {
             <Button
               asChild
               size="lg"
-              className="bg-brand-red hover:bg-red-700 text-white text-lg px-8 py-7 h-auto rounded-full shadow-2xl"
+              className="bg-brand-red hover:bg-red-700 text-white text-lg px-8 py-7 h-auto rounded-full shadow-2xl drop-shadow-[0_4px_4px_rgba(0,0,0,0.3)]"
             >
               <Link to="/contact" className="inline-flex items-center">
                 Request a Free Quote
@@ -49,7 +49,7 @@ const Hero = () => {
               asChild
               variant="outline"
               size="lg"
-              className="border-white bg-white/20 text-white hover:bg-white hover:text-brand-navy text-lg px-8 py-7 h-auto rounded-full shadow-2xl backdrop-blur-sm"
+              className="border-white bg-white/20 text-white hover:bg-white hover:text-brand-navy text-lg px-8 py-7 h-auto rounded-full shadow-2xl backdrop-blur-sm drop-shadow-[0_4px_4px_rgba(0,0,0,0.3)]"
             >
               <Link to="/ai-wrap-ideas" className="inline-flex items-center">
                 <Sparkles className="mr-2 h-5 w-5" />
@@ -61,27 +61,27 @@ const Hero = () => {
           <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4 animate-enter" style={{ animationDelay: "0.8s" }}>
             <div className="flex items-center">
               <div className="bg-white/20 backdrop-blur-sm rounded-lg p-3 shadow-xl">
-                <Award className="h-8 w-8 text-brand-red drop-shadow-lg" />
+                <Award className="h-8 w-8 text-brand-red drop-shadow-[0_2px_3px_rgba(0,0,0,0.5)]" />
               </div>
-              <span className="ml-3 text-white font-medium drop-shadow-[0_2px_4px_rgba(0,0,0,0.4)]">Premium Materials</span>
+              <span className="ml-3 text-white font-medium drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)]">Premium Materials</span>
             </div>
             <div className="flex items-center">
               <div className="bg-white/20 backdrop-blur-sm rounded-lg p-3 shadow-xl">
-                <Shield className="h-8 w-8 text-brand-red drop-shadow-lg" />
+                <Shield className="h-8 w-8 text-brand-red drop-shadow-[0_2px_3px_rgba(0,0,0,0.5)]" />
               </div>
-              <span className="ml-3 text-white font-medium drop-shadow-[0_2px_4px_rgba(0,0,0,0.4)]">2-Year Warranty</span>
+              <span className="ml-3 text-white font-medium drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)]">2-Year Warranty</span>
             </div>
             <div className="flex items-center">
               <div className="bg-white/20 backdrop-blur-sm rounded-lg p-3 shadow-xl">
-                <Wrench className="h-8 w-8 text-brand-red drop-shadow-lg" />
+                <Wrench className="h-8 w-8 text-brand-red drop-shadow-[0_2px_3px_rgba(0,0,0,0.5)]" />
               </div>
-              <span className="ml-3 text-white font-medium drop-shadow-[0_2px_4px_rgba(0,0,0,0.4)]">Expert Installation</span>
+              <span className="ml-3 text-white font-medium drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)]">Expert Installation</span>
             </div>
             <div className="flex items-center">
               <div className="bg-white/20 backdrop-blur-sm rounded-lg p-3 shadow-xl">
-                <Clock className="h-8 w-8 text-brand-red drop-shadow-lg" />
+                <Clock className="h-8 w-8 text-brand-red drop-shadow-[0_2px_3px_rgba(0,0,0,0.5)]" />
               </div>
-              <span className="ml-3 text-white font-medium drop-shadow-[0_2px_4px_rgba(0,0,0,0.4)]">Quick Turnaround</span>
+              <span className="ml-3 text-white font-medium drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)]">Quick Turnaround</span>
             </div>
           </div>
         </div>
