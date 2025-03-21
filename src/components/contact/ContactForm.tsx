@@ -2,7 +2,6 @@
 import React, { useState, useEffect } from 'react';
 import { useToast } from "@/hooks/use-toast";
 import SubmissionSuccess from './SubmissionSuccess';
-import Airform from 'react-airform';
 
 const ContactForm = () => {
   const { toast } = useToast();
@@ -19,15 +18,6 @@ const ContactForm = () => {
     }
   }, []);
 
-  const handleSubmit = () => {
-    setIsSubmitting(true);
-    toast({
-      title: "Submitting your request...",
-      description: "Please wait while we process your information.",
-    });
-    // Form will be automatically submitted by Airform component
-  };
-
   return (
     <div className="bg-gray-100 p-6 rounded-lg">
       <h2 className="text-2xl font-semibold text-brand-navy mb-4">Request a Quote</h2>
@@ -35,12 +25,27 @@ const ContactForm = () => {
       {submitted ? (
         <SubmissionSuccess onReset={() => setSubmitted(false)} />
       ) : (
-        <Airform 
-          email="roy@chicagofleetwraps.com"
-          onSubmit={handleSubmit}
-          successUrl={`${window.location.origin}/contact?success=true`}
+        <form 
+          action="https://formsubmit.co/roy@chicagofleetwraps.com" 
+          method="POST"
           className="space-y-4"
+          onSubmit={() => {
+            setIsSubmitting(true);
+            toast({
+              title: "Submitting your request...",
+              description: "Please wait while we process your information.",
+            });
+          }}
         >
+          {/* FormSubmit.co specific configuration fields */}
+          <input type="hidden" name="_subject" value="Chicago Fleet Wraps: New Quote Request" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_next" value="https://wrappingchicago.com/contact?success=true" />
+          <input type="hidden" name="_template" value="table" />
+          
+          {/* Honeypot field to prevent spam */}
+          <input type="text" name="_honey" style={{ display: 'none' }} />
+          
           <div className="space-y-4">
             <div>
               <label htmlFor="name" className="block text-sm font-medium">Your Name</label>
@@ -119,9 +124,7 @@ const ContactForm = () => {
           <p className="text-sm text-gray-500 mt-2">
             By submitting this form, your request will be sent to: roy@chicagofleetwraps.com
           </p>
-          
-          <input type="hidden" name="_subject" value="Chicago Fleet Wraps: New Quote Request" />
-        </Airform>
+        </form>
       )}
       
       <p className="text-xs text-gray-500 mt-4">
