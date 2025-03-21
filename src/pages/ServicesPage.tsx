@@ -8,7 +8,7 @@ import CallToAction from '@/components/CallToAction';
 import ServiceHeader from '@/components/services/ServiceHeader';
 import ServiceCatalog from '@/components/services/ServiceCatalog';
 import ServiceContentSelector from '@/components/services/ServiceContentSelector';
-import ServiceSchema from '@/components/services/ServiceSchema';
+import ServiceSchema from '@/components/schemas/ServiceSchema';
 import Breadcrumbs from '@/components/navigation/Breadcrumbs';
 
 const ServicesPage = () => {

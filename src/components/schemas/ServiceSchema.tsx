@@ -8,12 +8,12 @@ interface ServiceSchemaProps {
   includeAI?: boolean;
 }
 
-const ServiceSchema: React.FC<ServiceSchemaProps> = ({ 
+const ServiceSchema = ({ 
   title, 
   description, 
   path,
   includeAI = false 
-}) => {
+}: ServiceSchemaProps) => {
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -68,9 +68,10 @@ const ServiceSchema: React.FC<ServiceSchemaProps> = ({
   }
 
   return (
-    <script type="application/ld+json">
-      {JSON.stringify(serviceSchema)}
-    </script>
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+    />
   );
 };
 
