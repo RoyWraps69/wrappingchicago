@@ -52,7 +52,7 @@ const LocalBusinessSchema = ({ city }: LocalBusinessSchemaProps) => {
       "https://www.instagram.com/wrappingchicago",
       "https://twitter.com/wrappingchicago",
       "https://www.linkedin.com/company/wrappingchicago",
-      "https://www.google.com/maps?cid=YOUR_GOOGLE_BUSINESS_CID" // Replace with your Google Business CID
+      "https://www.google.com/search?q=Wrapping+Chicago"
     ],
     "image": [
       "https://wrappingchicago.com/lovable-uploads/5539b79e-ab54-428d-82a0-e4735ee97a95.png",

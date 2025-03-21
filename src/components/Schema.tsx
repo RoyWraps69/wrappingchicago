@@ -11,6 +11,7 @@ import WebsiteSchema from './schemas/WebsiteSchema';
 import BreadcrumbSchema from './schemas/BreadcrumbSchema';
 import FAQSchema from './schemas/FAQSchema';
 import VehicleWrapServiceSchema from './schemas/VehicleWrapServiceSchema';
+import BusinessLocationSchema from './schemas/BusinessLocationSchema';
 
 interface SchemaProps {
   city: City;
@@ -87,6 +88,7 @@ const Schema = ({
     <>
       <WebsiteSchema keywords={allKeywords} />
       <LocalBusinessSchema city={city} />
+      <BusinessLocationSchema />
       <OfferCatalogSchema city={city} />
       <ReviewsSchema />
       <AIServiceSchema />
