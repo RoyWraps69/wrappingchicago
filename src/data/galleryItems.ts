@@ -109,5 +109,14 @@ export const galleryItems: GalleryItem[] = [
     description: "Custom accent graphics highlighting the vehicle's performance characteristics with precise application.",
     client: 'Automotive Enthusiast',
     location: 'Chicago, IL'
+  },
+  { 
+    id: 13, 
+    title: 'Bratcher HVAC Fleet Vans', 
+    category: 'Fleet Wraps',
+    image: '/lovable-uploads/fc2146ab-62aa-4fc9-85aa-3582af7ce980.png', 
+    description: 'Bold blue and red fleet branding for HVAC service vans, featuring striking company logo and clean design elements.',
+    client: 'Bratcher HVAC',
+    location: 'Chicago, IL'
   }
 ];
