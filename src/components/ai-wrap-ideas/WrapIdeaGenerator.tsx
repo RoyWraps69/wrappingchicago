@@ -4,6 +4,7 @@ import BusinessInfoForm from './BusinessInfoForm';
 import ImageGenerator from './image-generator';
 import { useAIWrap } from '@/contexts/AIWrapContext';
 import { toast } from 'sonner';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 const WrapIdeaGenerator = () => {
   const {
@@ -25,25 +26,30 @@ const WrapIdeaGenerator = () => {
     showResults,
   } = useAIWrap();
 
+  const isMobile = useIsMobile();
+
   // Handle scrolling to results after generation
   const handleAfterGeneration = () => {
     if (showResults) {
       setTimeout(() => {
         const resultsSection = document.getElementById('results-section');
         if (resultsSection) {
-          resultsSection.scrollIntoView({ behavior: 'smooth' });
+          resultsSection.scrollIntoView({ 
+            behavior: isMobile ? 'auto' : 'smooth',
+            block: 'start'
+          });
         } else {
           toast.error("Could not find results section to scroll to");
         }
-      }, 500);
+      }, isMobile ? 300 : 500);
     }
   };
 
   return (
-    <section id="generator-section" className="py-12 px-4 md:px-6 bg-gray-50">
+    <section id="generator-section" className="py-8 md:py-12 px-4 md:px-6 bg-gray-50">
       <div className="container mx-auto max-w-6xl">
-        <div className="bg-white rounded-xl shadow-lg p-6 md:p-8">
-          <div className="flex flex-col md:flex-row gap-6 mb-8">
+        <div className="bg-white rounded-xl shadow-lg p-4 md:p-6 lg:p-8">
+          <div className="flex flex-col md:flex-row gap-6 mb-4 md:mb-8">
             <div className="md:w-1/2">
               <BusinessInfoForm
                 business={business}

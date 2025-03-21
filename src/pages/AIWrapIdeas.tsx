@@ -12,6 +12,7 @@ import { Link } from 'react-router-dom';
 import { MessageSquare, Phone } from 'lucide-react';
 import Schema from '@/components/Schema';
 import { cities } from '@/data/cities';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 // Import components
 import AIWrapHero from '@/components/ai-wrap-ideas/AIWrapHero';
@@ -33,6 +34,8 @@ const AIWrapIdeasContent = () => {
     setIsApiKeyModalOpen,
     hasApiKey
   } = useAIWrap();
+  
+  const isMobile = useIsMobile();
 
   // For Schema component
   const chicagoCity = cities.find(city => city.slug === 'chicago') || cities[0];
@@ -50,6 +53,27 @@ const AIWrapIdeasContent = () => {
       }
     };
   }, []);
+
+  // Schema data specifically for voice search and AI assistants
+  const voiceSearchSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": ["#ai-wrap-hero h1", "#ai-wrap-hero p", ".value-proposition h2", ".value-proposition p"]
+    },
+    "mainEntity": {
+      "@type": "SoftwareApplication",
+      "name": "AI Vehicle Wrap Designer",
+      "applicationCategory": "DesignApplication",
+      "operatingSystem": "Web-based",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+  };
 
   return (
     <>
@@ -71,6 +95,17 @@ const AIWrapIdeasContent = () => {
         <meta name="twitter:title" content="AI Wrap Designer | Chicago Fleet Wraps" />
         <meta name="twitter:description" content="Create unique, professional vehicle wraps using our artificial intelligence design generator. Get instant wrap design ideas for your Chicago business." />
         <meta name="twitter:image" content="/lovable-uploads/efc6c586-8651-43ad-811a-b896a91a1b69.png" />
+        
+        {/* Mobile-specific meta tags */}
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
+        <meta name="theme-color" content="#11172D" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        
+        {/* Voice search and AI assistant schema */}
+        <script type="application/ld+json">
+          {JSON.stringify(voiceSearchSchema)}
+        </script>
       </Helmet>
       
       <Schema 
@@ -84,21 +119,23 @@ const AIWrapIdeasContent = () => {
         <Header />
         
         <main className="flex-grow">
-          <AIWrapHero />
+          <div id="ai-wrap-hero">
+            <AIWrapHero />
+          </div>
           
           {/* Contact Buttons Section after Hero */}
-          <div className="container mx-auto px-4 max-w-5xl py-6">
-            <div className="p-5 bg-gray-900 text-white rounded-lg flex flex-col sm:flex-row items-center justify-between shadow-lg">
+          <div className="container mx-auto px-4 max-w-5xl py-4 md:py-6">
+            <div className="p-4 md:p-5 bg-gray-900 text-white rounded-lg flex flex-col sm:flex-row items-center justify-between shadow-lg">
               <div>
-                <h2 className="text-xl font-bold mb-2">Ready to bring your AI designs to life?</h2>
-                <p className="opacity-90 mb-4 sm:mb-0">Contact our team to implement your generated wrap ideas</p>
+                <h2 className="text-lg md:text-xl font-bold mb-2 text-center sm:text-left">Ready to bring your AI designs to life?</h2>
+                <p className="opacity-90 mb-4 sm:mb-0 text-center sm:text-left text-sm md:text-base">Contact our team to implement your generated wrap ideas</p>
               </div>
-              <div className="flex flex-col sm:flex-row gap-3">
+              <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
                 <Button
                   asChild
-                  className="bg-brand-red hover:bg-red-700 text-white"
+                  className="bg-brand-red hover:bg-red-700 text-white w-full sm:w-auto"
                 >
-                  <Link to="/contact" className="inline-flex items-center">
+                  <Link to="/contact" className="inline-flex items-center justify-center">
                     <MessageSquare className="mr-2 h-4 w-4" />
                     Request a Quote
                   </Link>
@@ -106,9 +143,9 @@ const AIWrapIdeasContent = () => {
                 <Button
                   asChild
                   variant="outline"
-                  className="border-white/20 bg-white/10 text-white hover:bg-white/20"
+                  className="border-white/20 bg-white/10 text-white hover:bg-white/20 w-full sm:w-auto"
                 >
-                  <a href="tel:3125971286" className="inline-flex items-center">
+                  <a href="tel:3125971286" className="inline-flex items-center justify-center">
                     <Phone className="mr-2 h-4 w-4" />
                     (312) 597-1286
                   </a>
@@ -117,24 +154,26 @@ const AIWrapIdeasContent = () => {
             </div>
           </div>
           
-          <ValueProposition />
+          <div className="value-proposition">
+            <ValueProposition />
+          </div>
           
           <WrapIdeaGenerator />
           
           {showResults && generatedIdeas.length > 0 && (
-            <div id="results-section" className="container mx-auto px-4 max-w-6xl py-12">
+            <div id="results-section" className="container mx-auto px-4 max-w-6xl py-8 md:py-12">
               <WrapIdeasResults />
               
               {/* Contact Button after results */}
-              <div className="mt-8 flex justify-center">
+              <div className="mt-6 md:mt-8 flex justify-center">
                 <Button
                   asChild
-                  size="lg"
-                  className="bg-brand-red hover:bg-red-700 text-white"
+                  size={isMobile ? "default" : "lg"}
+                  className="bg-brand-red hover:bg-red-700 text-white w-full sm:w-auto"
                 >
-                  <Link to="/contact" className="inline-flex items-center">
-                    <MessageSquare className="mr-2 h-5 w-5" />
-                    Get a Quote to Make These Designs Reality
+                  <Link to="/contact" className="inline-flex items-center justify-center px-3 py-2 md:px-6 md:py-3">
+                    <MessageSquare className="mr-2 h-4 w-4 md:h-5 md:w-5" />
+                    <span className="text-sm md:text-base">Get a Quote to Make These Designs Reality</span>
                   </Link>
                 </Button>
               </div>
