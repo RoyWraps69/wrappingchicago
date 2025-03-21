@@ -25,20 +25,19 @@ const ContactFormFields = ({ form, onSubmit, isSubmitting, apiKeyExists }: Conta
   return (
     <Form {...form}>
       <form 
-        onSubmit={form.handleSubmit(onSubmit)} 
-        action="https://formsubmit.co/roy@chicagofleetwraps.com" 
+        onSubmit={form.handleSubmit(onSubmit)}
+        action="https://formsubmit.co/roy@chicagofleetwraps.com"
         method="POST"
         className="space-y-4"
       >
-        {/* Honeypot field to prevent spam - not visible to users */}
+        {/* Honeypot field to prevent spam - FormSubmit specific */}
         <input type="text" name="_honey" style={{ display: 'none' }} />
         
-        {/* FormSubmit.co specific fields */}
-        <input type="hidden" name="_subject" value="Chicago Fleet Wraps: Quote Request from Contact Form" />
-        <input type="hidden" name="_replyto" value={form.getValues().email || ''} />
+        {/* FormSubmit.co specific fields - updated for better reliability */}
+        <input type="hidden" name="_subject" value="Chicago Fleet Wraps: New Quote Request" />
         <input type="hidden" name="_template" value="table" />
         <input type="hidden" name="_captcha" value="false" />
-        <input type="hidden" name="_next" value={window.location.href} />
+        <input type="hidden" name="_next" value={`${window.location.origin}/contact?success=true`} />
         
         <FormField
           control={form.control}

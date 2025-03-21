@@ -11,58 +11,20 @@ export interface EmailData {
   message: string;
 }
 
-// This function is kept for backward compatibility but is no longer used
-// since we're using direct form submission to FormSubmit.co
+// FormSubmit.co is used for direct email submission
+// This file is kept for compatibility with existing code
 export const sendEmail = async (data: EmailData): Promise<void> => {
-  try {
-    // Create a FormData object
-    const formData = new FormData();
-    
-    // Add the form fields
-    formData.append('name', data.name);
-    formData.append('email', data.email);
-    formData.append('phone', data.phone);
-    formData.append('service', data.service);
-    formData.append('message', data.message);
-    
-    // Add FormSubmit specific configurations
-    formData.append('_subject', `Chicago Fleet Wraps: Quote Request from ${data.name}`);
-    formData.append('_replyto', data.email);
-    formData.append('_template', 'table');
-    formData.append('_captcha', 'false');
-    
-    // Send via fetch API directly to formsubmit.co
-    const response = await fetch('https://formsubmit.co/ajax/roy@chicagofleetwraps.com', {
-      method: 'POST',
-      headers: {
-        'Accept': 'application/json',
-      },
-      body: formData
-    });
-    
-    if (!response.ok) {
-      const errorText = await response.text();
-      console.error('Form submission error response:', errorText);
-      throw new Error(`Form submission failed with status: ${response.status}`);
-    }
-    
-    const result = await response.json();
-    console.log('Form submission result:', result);
-    
-    return;
-  } catch (error) {
-    console.error('Email submission error:', error);
-    throw error;
-  }
+  console.log('Email would be sent with the following data:', data);
+  // No implementation needed as FormSubmit.co handles the actual sending
+  return Promise.resolve();
 };
 
-// These functions are maintained for backward compatibility
 export const setApiKey = (): void => {
-  // No longer needed
+  // No longer needed with FormSubmit.co
   return;
 };
 
 export const checkApiKeyExists = (): boolean => {
-  // Always return true since we don't need an API key anymore
+  // Always return true since we're using FormSubmit.co which doesn't require an API key
   return true;
 };

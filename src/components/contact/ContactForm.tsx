@@ -1,6 +1,6 @@
 
-import React, { useState } from 'react';
-import { useToast } from "@/components/ui/use-toast";
+import React, { useState, useEffect } from 'react';
+import { useToast } from "@/hooks/use-toast";
 import { useForm } from "react-hook-form";
 import SubmissionSuccess from './SubmissionSuccess';
 import ContactFormFields, { FormValues } from './ContactFormFields';
@@ -20,26 +20,40 @@ const ContactForm = () => {
     }
   });
 
-  // Function to handle form submission - now primarily used for client-side feedback
+  // Check for success parameter in URL to show success message after redirect
+  useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('success') === 'true') {
+      setSubmitted(true);
+      // Clean URL
+      window.history.replaceState({}, document.title, window.location.pathname);
+    }
+  }, []);
+
+  // Function to handle form submission - primarily for form validation and UI feedback
   const handleSubmit = async (data: FormValues) => {
     setIsSubmitting(true);
     
     try {
-      // The form is submitted directly via HTML form action to FormSubmit.co
-      // This client-side handler is mainly for UX and form reset
       console.log("Form data validated:", data);
       
-      setIsSubmitting(false);
-      setSubmitted(true);
+      // The actual form submission happens via the HTML form action attribute
+      // This handler is mainly for client-side validation and UX
       
       toast({
-        title: "Form Submitted Successfully",
-        description: "Your message has been sent. Thank you!",
+        title: "Form Submitted",
+        description: "Processing your request. You'll be redirected shortly.",
         variant: "default",
-        duration: 5000,
+        duration: 3000,
       });
       
-      form.reset();
+      // We don't reset the form here because FormSubmit will handle the actual submission
+      // and redirect back to our page
+      
+      setTimeout(() => {
+        setIsSubmitting(false);
+      }, 3000);
+      
     } catch (error) {
       console.error('Form validation error:', error);
       setIsSubmitting(false);
