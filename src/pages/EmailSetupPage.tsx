@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import Header from '@/components/Header';
@@ -9,6 +8,7 @@ import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { Input } from "@/components/ui/input";
 import { useToast } from "@/components/ui/use-toast";
+import { checkApiKeyExists } from '@/services/sendgrid';
 
 const EmailSetupPage = () => {
   const { toast } = useToast();
@@ -16,10 +16,11 @@ const EmailSetupPage = () => {
   const [hasKey, setHasKey] = useState(false);
 
   useEffect(() => {
-    const storedKey = localStorage.getItem('sendgrid_api_key');
-    setHasKey(!!storedKey);
-    if (storedKey) {
+    const hasApiKey = checkApiKeyExists();
+    setHasKey(hasApiKey);
+    if (hasApiKey) {
       // Mask the key for display
+      const storedKey = localStorage.getItem('sendgrid_api_key') || '';
       setApiKey('•'.repeat(20) + storedKey.slice(-5));
     }
   }, []);
