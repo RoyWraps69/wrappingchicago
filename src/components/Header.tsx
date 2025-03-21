@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
@@ -24,15 +23,6 @@ const Header = () => {
             >
               <Globe className="w-4 h-4 mr-1 text-brand-red" />
               Chicago
-            </a>
-            <a 
-              href="https://bloomingtoncarwraps.com" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="flex items-center hover:text-brand-red transition-colors"
-            >
-              <Globe className="w-4 h-4 mr-1 text-brand-red" />
-              Bloomington
             </a>
             <a 
               href="https://centralimagewraps.com" 

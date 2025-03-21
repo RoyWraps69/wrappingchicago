@@ -238,12 +238,6 @@
   
   <!-- Sister Companies -->
   <url>
-    <loc>https://bloomingtoncarwraps.com</loc>
-    <lastmod>2023-07-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://centralimagewraps.com</loc>
     <lastmod>2023-07-15</lastmod>
     <changefreq>monthly</changefreq>
@@ -256,3 +250,4 @@
     <priority>0.5</priority>
   </url>
 </urlset>
+

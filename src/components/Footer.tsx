@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { cities } from '@/data/cities';
@@ -101,17 +100,6 @@ const Footer = () => {
                 className="hover:text-brand-red transition-colors"
               >
                 Chicago Fleet Wraps
-              </a>
-            </div>
-            <div className="flex items-center">
-              <Globe className="w-5 h-5 mr-2 text-brand-red" />
-              <a 
-                href="https://bloomingtoncarwraps.com" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="hover:text-brand-red transition-colors"
-              >
-                Bloomington Car Wraps
               </a>
             </div>
             <div className="flex items-center">
