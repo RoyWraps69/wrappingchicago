@@ -31,8 +31,8 @@ const LocationsPage = () => {
             {/* Background image without overlay */}
             <div className="absolute inset-0 z-0">
               <img 
-                src="https://images.unsplash.com/photo-1561466273-c13f88329aa0?auto=format&fit=crop&w=2000&q=80"
-                alt="Chicago highway with vehicle traffic"
+                src="/lovable-uploads/15ed5c80-d0f3-416b-aff9-e86391a376b2.png"
+                alt="Chicago highway with skyline at sunset"
                 className="w-full h-full object-cover"
                 loading="eager"
                 fetchPriority="high"
@@ -42,10 +42,10 @@ const LocationsPage = () => {
             
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
               <Breadcrumbs />
-              <h1 className="text-4xl sm:text-5xl font-bold mb-4 text-white drop-shadow-lg">
+              <h1 className="text-4xl sm:text-5xl font-bold mb-4 text-white drop-shadow-xl">
                 Areas We Serve
               </h1>
-              <p className="text-xl mb-8 max-w-3xl mx-auto text-white drop-shadow-md">
+              <p className="text-xl mb-8 max-w-3xl mx-auto text-white drop-shadow-lg">
                 Wrapping Chicago provides premium vehicle wrapping services throughout Chicago
                 and surrounding communities. Find location-specific information for your city below.
               </p>
