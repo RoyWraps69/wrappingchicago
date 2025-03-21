@@ -19,7 +19,13 @@ interface SchemaProps {
   faqs?: Array<{question: string; answer: string}>;
 }
 
-const Schema: React.FC<SchemaProps> = ({ city, path, pageTitle, pageDescription, faqs }) => {
+const Schema: React.FC<SchemaProps> = ({ 
+  city, 
+  path, 
+  pageTitle, 
+  pageDescription, 
+  faqs = [] // Provide default empty array
+}) => {
   // Base URL for the website
   const baseUrl = 'https://wrappingchicago.com';
   

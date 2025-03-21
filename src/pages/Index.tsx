@@ -14,7 +14,7 @@ import Schema from '@/components/Schema';
 import AIWrapSchema from '@/components/ai-wrap-ideas/AIWrapSchema';
 import EasyButtonSection from '@/components/home/EasyButtonSection';
 
-// Import the new components
+// Import the home page components
 import InfoBar from '@/components/home/InfoBar';
 import QuickLinksBar from '@/components/home/QuickLinksBar';
 import StickyContactButtons from '@/components/home/StickyContactButtons';
