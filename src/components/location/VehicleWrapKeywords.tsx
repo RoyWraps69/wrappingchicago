@@ -156,19 +156,21 @@ const VehicleWrapKeywords: React.FC<VehicleWrapKeywordsProps> = ({ city }) => {
         {city.name} and the greater Chicago area, providing custom solutions that meet your specific needs and budget.
       </p>
       
-      <div className="mt-4 text-sm text-gray-500">
-        <p className="mb-1">
-          Serving <strong>{city.name}</strong> and nearby areas including:
-        </p>
-        <div className="flex flex-wrap gap-x-2 gap-y-1">
-          {city.nearbyAreas?.map((area, index) => (
-            <span key={index} className="inline-flex items-center">
-              <ExternalLink className="h-3 w-3 mr-1" /> {area}
-              {index < (city.nearbyAreas?.length || 0) - 1 ? "," : ""}
-            </span>
-          ))}
+      {city.nearbyAreas && city.nearbyAreas.length > 0 && (
+        <div className="mt-4 text-sm text-gray-500">
+          <p className="mb-1">
+            Serving <strong>{city.name}</strong> and nearby areas including:
+          </p>
+          <div className="flex flex-wrap gap-x-2 gap-y-1">
+            {city.nearbyAreas.map((area, index) => (
+              <span key={index} className="inline-flex items-center">
+                <ExternalLink className="h-3 w-3 mr-1" /> {area}
+                {index < (city.nearbyAreas?.length || 0) - 1 ? "," : ""}
+              </span>
+            ))}
+          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 };

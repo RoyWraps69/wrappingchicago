@@ -9,4 +9,5 @@ export interface City {
   distance: string;
   slug: string;
   website: string;
+  nearbyAreas?: string[]; // Added optional nearbyAreas property
 }
