@@ -14,8 +14,12 @@ const HomeSEO = () => {
       <link rel="canonical" href="https://wrappingchicago.com" />
       
       {/* Favicon */}
-      <link rel="icon" type="image/png" href="/lovable-uploads/6ef3b1af-8591-4d36-97c2-9366401115fa.png" />
+      <link rel="icon" type="image/png" sizes="32x32" href="/lovable-uploads/6ef3b1af-8591-4d36-97c2-9366401115fa.png" />
+      <link rel="icon" type="image/png" sizes="16x16" href="/lovable-uploads/6ef3b1af-8591-4d36-97c2-9366401115fa.png" />
       <link rel="apple-touch-icon" sizes="180x180" href="/lovable-uploads/6ef3b1af-8591-4d36-97c2-9366401115fa.png" />
+      <link rel="shortcut icon" href="/lovable-uploads/6ef3b1af-8591-4d36-97c2-9366401115fa.png" />
+      <meta name="msapplication-TileImage" content="/lovable-uploads/6ef3b1af-8591-4d36-97c2-9366401115fa.png" />
+      <meta name="msapplication-TileColor" content="#11172D" />
       
       {/* Schema.org markup for Google */}
       <script type="application/ld+json">
@@ -58,6 +62,8 @@ const HomeSEO = () => {
       <meta property="og:url" content="https://wrappingchicago.com" />
       <meta property="og:type" content="website" />
       <meta property="og:image" content="https://wrappingchicago.com/lovable-uploads/6ef3b1af-8591-4d36-97c2-9366401115fa.png" />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
       <meta property="og:image:alt" content="Professional vehicle wrap with vibrant colors on sports car in Chicago - Wrapping Chicago" />
       <meta property="og:site_name" content="Wrapping Chicago" />
       <meta property="og:locale" content="en_US" />

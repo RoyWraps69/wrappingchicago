@@ -40,9 +40,14 @@ const MetaTags: React.FC<MetaTagsProps> = ({
       <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
       <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
       
-      {/* Favicon - optimized for faster loading */}
-      <link rel="icon" type="image/png" href="/lovable-uploads/6ef3b1af-8591-4d36-97c2-9366401115fa.png" />
+      {/* Favicon - optimized for faster loading and better display in search results */}
+      <link rel="icon" type="image/png" sizes="32x32" href="/lovable-uploads/6ef3b1af-8591-4d36-97c2-9366401115fa.png" />
+      <link rel="icon" type="image/png" sizes="16x16" href="/lovable-uploads/6ef3b1af-8591-4d36-97c2-9366401115fa.png" />
       <link rel="apple-touch-icon" sizes="180x180" href="/lovable-uploads/6ef3b1af-8591-4d36-97c2-9366401115fa.png" />
+      <link rel="shortcut icon" href="/lovable-uploads/6ef3b1af-8591-4d36-97c2-9366401115fa.png" />
+      <meta name="msapplication-TileImage" content="/lovable-uploads/6ef3b1af-8591-4d36-97c2-9366401115fa.png" />
+      <meta name="msapplication-TileColor" content="#11172D" />
+      <meta name="theme-color" content="#11172D" />
       
       {/* Robots Meta Tags */}
       {noIndex ? (
@@ -57,6 +62,8 @@ const MetaTags: React.FC<MetaTagsProps> = ({
       <meta property="og:url" content={canonicalUrl} />
       <meta property="og:type" content={ogType} />
       <meta property="og:image" content={ogImage} />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
       <meta property="og:site_name" content="Wrapping Chicago" />
       <meta property="og:locale" content="en_US" />
       
@@ -84,7 +91,6 @@ const MetaTags: React.FC<MetaTagsProps> = ({
       <meta name="business:contact_data:website" content="https://wrappingchicago.com" />
       
       {/* Mobile optimization */}
-      <meta name="theme-color" content="#11172D" />
       <meta name="apple-mobile-web-app-capable" content="yes" />
       <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
       
