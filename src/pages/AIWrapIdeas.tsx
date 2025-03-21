@@ -46,19 +46,19 @@ const AIWrapIdeasContent = () => {
   return (
     <>
       <Helmet>
-        <title>AI-Powered Vehicle Wrap Design Generator | Chicago Fleet Wraps</title>
+        <title>AI Wrap Designer | Chicago Fleet Wraps</title>
         <meta 
           name="description" 
-          content="Generate custom vehicle wrap designs with our AI-powered tool. Create unique, professional vehicle wraps using artificial intelligence for your Chicago business." 
+          content="Design custom vehicle wraps with our AI-powered tool. Create unique, professional vehicle wraps using artificial intelligence for your Chicago business." 
         />
-        <meta name="keywords" content="AI vehicle wrap design, artificial intelligence wrap generator, Chicago fleet wraps, AI design tool, vehicle wrap ideas, custom AI wrap design" />
-        <meta property="og:title" content="AI-Powered Vehicle Wrap Design Generator | Chicago Fleet Wraps" />
+        <meta name="keywords" content="AI vehicle wrap design, artificial intelligence wrap designer, Chicago fleet wraps, AI design tool, vehicle wrap ideas, custom AI wrap design" />
+        <meta property="og:title" content="AI Wrap Designer | Chicago Fleet Wraps" />
         <meta property="og:description" content="Create unique, professional vehicle wraps using our artificial intelligence design generator. Get instant wrap design ideas for your Chicago business." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://chicagofleetwraps.com/ai-wrap-ideas" />
         <meta property="og:image" content="/lovable-uploads/efc6c586-8651-43ad-811a-b896a91a1b69.png" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="AI-Powered Vehicle Wrap Design Generator | Chicago Fleet Wraps" />
+        <meta name="twitter:title" content="AI Wrap Designer | Chicago Fleet Wraps" />
         <meta name="twitter:description" content="Create unique, professional vehicle wraps using our artificial intelligence design generator. Get instant wrap design ideas for your Chicago business." />
         <meta name="twitter:image" content="/lovable-uploads/efc6c586-8651-43ad-811a-b896a91a1b69.png" />
       </Helmet>

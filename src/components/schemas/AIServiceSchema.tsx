@@ -7,7 +7,7 @@ const AIServiceSchema = () => {
     "@type": "Offer",
     "itemOffered": {
       "@type": "Service",
-      "name": "AI Vehicle Wrap Design Generator",
+      "name": "AI Wrap Designer",
       "url": "https://chicagofleetwraps.com/ai-wrap-ideas"
     },
     "additionalProperty": {

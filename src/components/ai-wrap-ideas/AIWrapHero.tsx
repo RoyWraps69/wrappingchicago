@@ -21,7 +21,7 @@ const AIWrapHero = () => {
             <Sparkles className="h-4 w-4 mr-2 text-brand-red" />
             <span>AI-Powered Design Assistant</span>
           </div>
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">Generate Vehicle Wrap Ideas</h1>
+          <h1 className="text-4xl md:text-6xl font-bold mb-6">AI Wrap Designer</h1>
           <p className="text-xl text-white/80 mb-8">
             Our AI design tool helps bridge the gap between your vision and reality, allowing you to explore concepts before committing to a design.
           </p>

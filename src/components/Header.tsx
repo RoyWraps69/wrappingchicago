@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
@@ -71,7 +72,7 @@ const Header = () => {
             </Link>
             <Link to="/ai-wrap-ideas" className="hover:text-brand-red transition-colors flex items-center">
               <Sparkles className="mr-1 h-4 w-4" />
-              AI Wrap Ideas
+              AI Wrap Designer
             </Link>
             <Link to="/services/fleet-wraps" className="hover:text-brand-red transition-colors">
               Services
@@ -115,7 +116,7 @@ const Header = () => {
               onClick={() => setIsMenuOpen(false)}
             >
               <Sparkles className="mr-1 h-4 w-4" />
-              AI Wrap Ideas
+              AI Wrap Designer
             </Link>
             <Link 
               to="/services/fleet-wraps" 
