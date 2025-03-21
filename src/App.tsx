@@ -13,6 +13,7 @@ import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
 import GalleryPage from "./pages/GalleryPage";
 import AIWrapIdeas from "./pages/AIWrapIdeas";
+import EmailSetupPage from "./pages/EmailSetupPage";
 import { cities } from "./data/cities";
 import { ScrollToTop } from "./components/navigation/ScrollToTop";
 
@@ -34,6 +35,7 @@ const App = () => (
             <Route path="/gallery" element={<GalleryPage />} />
             <Route path="/locations" element={<LocationsPage />} />
             <Route path="/ai-wrap-ideas" element={<AIWrapIdeas />} />
+            <Route path="/email-setup" element={<EmailSetupPage />} />
             
             {/* Services Routes */}
             <Route path="/services" element={<ServicesPage />} />
