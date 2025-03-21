@@ -2,9 +2,43 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const GenericServiceContent: React.FC = () => {
+interface GenericServiceContentProps {
+  serviceType?: string;
+}
+
+const GenericServiceContent: React.FC<GenericServiceContentProps> = ({ serviceType }) => {
+  // Create a title based on serviceType if provided
+  const getServiceTitle = () => {
+    if (!serviceType) return "Our Services";
+    
+    switch (serviceType) {
+      case "car":
+        return "Car Wraps";
+      case "truck":
+        return "Truck Wraps";
+      case "van":
+        return "Van Wraps";
+      case "designer":
+        return "Designer Wraps";
+      case "luxury":
+        return "Luxury & Exotic Vehicle Wraps";
+      default:
+        return "Vehicle Wraps";
+    }
+  };
+  
   return (
     <div className="mb-8">
+      {serviceType && (
+        <div className="mb-6">
+          <h2 className="text-2xl font-semibold text-brand-navy mb-4">{getServiceTitle()}</h2>
+          <p className="mb-4 text-gray-700">
+            Our professional {serviceType} wrapping services combine quality materials with expert installation 
+            to deliver exceptional results tailored to your specific vehicle type.
+          </p>
+        </div>
+      )}
+      
       <div className="grid md:grid-cols-2 gap-6 mb-8">
         <div>
           <h2 className="text-2xl font-semibold text-brand-navy mb-3">Professional Installers</h2>
