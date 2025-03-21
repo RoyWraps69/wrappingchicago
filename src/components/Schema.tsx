@@ -1,22 +1,23 @@
 
 import React from 'react';
-import { City } from '@/data/cities';
+import { City } from '../data/types/city';
 import LocalBusinessSchema from './schemas/LocalBusinessSchema';
-import BusinessLocationSchema from './schemas/BusinessLocationSchema';
-import BreadcrumbSchema from './schemas/BreadcrumbSchema';
 import WebsiteSchema from './schemas/WebsiteSchema';
-import ServiceSchema from './schemas/ServiceSchema';
-import VehicleWrapServiceSchema from './schemas/VehicleWrapServiceSchema';
-import ReviewsSchema from './schemas/ReviewsSchema';
 import FAQSchema from './schemas/FAQSchema';
+import BreadcrumbSchema from './schemas/BreadcrumbSchema';
+import OfferCatalogSchema from './schemas/OfferCatalogSchema';
+
+interface FAQ {
+  question: string;
+  answer: string;
+}
 
 interface SchemaProps {
   city: City;
   path: string;
   pageTitle: string;
   pageDescription: string;
-  keywords?: string[]; 
-  faqs?: Array<{question: string; answer: string}>;
+  faqs?: FAQ[];
 }
 
 const Schema: React.FC<SchemaProps> = ({ 
@@ -24,128 +25,35 @@ const Schema: React.FC<SchemaProps> = ({
   path, 
   pageTitle, 
   pageDescription, 
-  faqs = [] // Provide default empty array
+  faqs = [] // Add default empty array to prevent undefined errors
 }) => {
-  // Base URL for the website
-  const baseUrl = 'https://wrappingchicago.com';
+  const currentDate = new Date().toISOString();
   
-  // Create the URL for the current page
-  const pageUrl = `${baseUrl}${path}`;
-  
-  // Business information
-  const businessName = `Wrapping Chicago - Vehicle Wraps in ${city.name}, IL`;
-  const businessDescription = `Professional vehicle wraps in ${city.name}, IL. Truck wraps, van wraps, color change wraps, commercial fleet graphics, and more.`;
-  
-  // Create breadcrumb list items
-  const breadcrumbItems = [
-    {
-      position: 1,
-      name: 'Home',
-      item: baseUrl
-    }
-  ];
-  
-  // Add city page to breadcrumbs if not home page
-  if (path !== '/') {
-    breadcrumbItems.push({
-      position: 2,
-      name: `Vehicle Wraps ${city.name}`,
-      item: pageUrl
-    });
-  }
-  
-  // Services offered
-  const services = [
-    {
-      name: 'Car Wraps',
-      description: `Professional car wrapping services in ${city.name}, IL.`,
-      url: `${baseUrl}/services/car-wraps`
-    },
-    {
-      name: 'Truck Wraps',
-      description: `Custom truck wraps and graphics for businesses in ${city.name}, IL.`,
-      url: `${baseUrl}/services/truck-wraps`
-    },
-    {
-      name: 'Van Wraps',
-      description: `Commercial van wraps and fleet graphics in ${city.name}, IL.`,
-      url: `${baseUrl}/services/van-wraps`
-    },
-    {
-      name: 'Fleet Wraps',
-      description: `Fleet vehicle wrapping services for businesses in ${city.name}, IL.`,
-      url: `${baseUrl}/services/fleet-wraps`
-    },
-    {
-      name: 'Color Change Wraps',
-      description: `Vehicle color change wraps in ${city.name}, IL.`,
-      url: `${baseUrl}/services/color-change-wraps`
-    }
-  ];
-  
-  // Reviews
-  const reviews = [
-    {
-      author: 'Chicago Business Owner',
-      reviewBody: 'Excellent job on our fleet wraps. The attention to detail was impressive.',
-      reviewRating: {
-        ratingValue: '5'
-      }
-    },
-    {
-      author: 'John D.',
-      reviewBody: 'My color change wrap looks amazing! Professional service from start to finish.',
-      reviewRating: {
-        ratingValue: '5'
-      }
-    },
-    {
-      author: 'Sarah M.',
-      reviewBody: 'Wrapping Chicago transformed our delivery vans into eye-catching mobile billboards.',
-      reviewRating: {
-        ratingValue: '5'
-      }
-    }
-  ];
-
-  // Add current date for freshness signals
-  const currentDate = new Date().toISOString().split('T')[0];
-
   return (
     <>
-      {/* LocalBusiness Schema */}
-      <LocalBusinessSchema city={city} />
-      
-      {/* Business Location Schema */}
-      <BusinessLocationSchema />
-      
-      {/* Breadcrumb Schema */}
-      <BreadcrumbSchema items={breadcrumbItems} />
-      
-      {/* Website Schema */}
-      <WebsiteSchema
-        name={businessName}
-        description={businessDescription}
-        url={baseUrl}
-        lastModified={currentDate}
+      <LocalBusinessSchema 
+        city={city}
+        currentUrl={`https://wrappingchicago.com${path}`}
+        dateModified={currentDate}
       />
-      
-      {/* Service Schema */}
-      <ServiceSchema
-        title={pageTitle}
-        description={pageDescription}
+      <WebsiteSchema 
+        pageUrl={`https://wrappingchicago.com${path}`}
+        dateModified={currentDate}
+      />
+      {faqs && faqs.length > 0 && (
+        <FAQSchema 
+          faqs={faqs}
+          pageUrl={`https://wrappingchicago.com${path}`}
+        />
+      )}
+      <BreadcrumbSchema 
+        city={city}
         path={path}
-        lastModified={currentDate}
+        pageTitle={pageTitle}
       />
-      
-      {/* Vehicle Wrap Service Schema */}
-      <VehicleWrapServiceSchema city={city} />
-      
-      {/* Reviews Schema */}
-      <ReviewsSchema reviews={reviews} />
-      
-      {/* FAQ Schema */}
-      <FAQSchema faqs={faqs} />
+      <OfferCatalogSchema 
+        city={city} 
+      />
     </>
   );
 };
