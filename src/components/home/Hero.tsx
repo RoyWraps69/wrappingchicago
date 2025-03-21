@@ -10,8 +10,8 @@ const Hero = () => {
       {/* Background image */}
       <div className="absolute inset-0 z-0">
         <img 
-          src="/lovable-uploads/33e966e0-f935-4f39-8702-a9ccf53ae49b.png" 
-          alt="Vehicle wrap background" 
+          src="/lovable-uploads/d9fb33e6-6db8-43c8-a845-472dcf16afdb.png" 
+          alt="Colorful vehicle wrap splashing on car" 
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-black/30"></div> {/* Overlay to ensure text is readable */}
