@@ -9,6 +9,7 @@ import ContactPage from './pages/ContactPage';
 import AIWrapIdeas from './pages/AIWrapIdeas';
 import ServicesPage from './pages/ServicesPage';
 import GalleryPage from './pages/GalleryPage';
+import AboutPage from './pages/AboutPage';
 import GoogleTagManager from './components/GoogleTagManager';
 import GoogleSearchConsole from './components/seo/GoogleSearchConsole';
 import NotFound from './pages/NotFound';
@@ -42,6 +43,7 @@ function App() {
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/ai-wrap-ideas" element={<AIWrapIdeas />} />
             <Route path="/gallery" element={<GalleryPage />} />
+            <Route path="/about" element={<AboutPage />} />
             
             {/* Services main route */}
             <Route path="/services" element={<ServicesPage />} />

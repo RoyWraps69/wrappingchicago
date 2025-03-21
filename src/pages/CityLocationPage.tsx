@@ -22,7 +22,7 @@ const SERVICE_ROUTES = [
   'truck-wraps',
   'van-wraps',
   'gallery', // Added gallery to the list of service routes
-  'about',
+  'about', // Already in the list
   'ai-wrap-ideas',
   'contact',
   'locations'
