@@ -15,38 +15,41 @@ interface ServiceContentSelectorProps {
 }
 
 const ServiceContentSelector: React.FC<ServiceContentSelectorProps> = ({ path }) => {
-  // Normalize path by removing /services/ prefix if present
-  const normalizedPath = path.replace(/^\/services\//, '');
+  // Normalize path by removing /services/ prefix if present and removing trailing slashes
+  const normalizedPath = path.replace(/^\/services\//, '').replace(/\/$/, '');
   
-  if (normalizedPath.includes('fleet-wraps')) {
+  // Handle direct routes without the /services/ prefix
+  const servicePath = normalizedPath || 'services';
+  
+  if (servicePath.includes('fleet-wraps')) {
     return <FleetWrapsContent />;
-  } else if (normalizedPath.includes('color-change-wraps')) {
+  } else if (servicePath.includes('color-change-wraps')) {
     return <ColorChangeWrapsContent />;
-  } else if (normalizedPath.includes('commercial-graphics')) {
+  } else if (servicePath.includes('commercial-graphics')) {
     return <CommercialGraphicsContent />;
-  } else if (normalizedPath.includes('partial-wraps')) {
+  } else if (servicePath.includes('partial-wraps')) {
     return <PartialWrapsContent />;
-  } else if (normalizedPath.includes('protective-films')) {
+  } else if (servicePath.includes('protective-films')) {
     return <ProtectiveFilmsContent />;
-  } else if (normalizedPath.includes('vehicle-lettering')) {
+  } else if (servicePath.includes('vehicle-lettering')) {
     return <VehicleLetteringContent />;
-  } else if (normalizedPath.includes('specialty-wraps')) {
+  } else if (servicePath.includes('specialty-wraps')) {
     return <SpecialtyWrapsContent />;
-  } else if (normalizedPath.includes('retail-graphics')) {
+  } else if (servicePath.includes('retail-graphics')) {
     return <RetailGraphicsContent />;
-  } else if (normalizedPath.includes('car-wraps')) {
+  } else if (servicePath.includes('car-wraps')) {
     // For car-specific wraps
     return <GenericServiceContent serviceType="car" />;
-  } else if (normalizedPath.includes('truck-wraps')) {
+  } else if (servicePath.includes('truck-wraps')) {
     // For truck-specific wraps
     return <GenericServiceContent serviceType="truck" />;
-  } else if (normalizedPath.includes('van-wraps')) {
+  } else if (servicePath.includes('van-wraps')) {
     // For van-specific wraps
     return <GenericServiceContent serviceType="van" />;
-  } else if (normalizedPath.includes('designer-wraps')) {
+  } else if (servicePath.includes('designer-wraps')) {
     // For designer wraps
     return <GenericServiceContent serviceType="designer" />;
-  } else if (normalizedPath.includes('luxury-exotic-wraps')) {
+  } else if (servicePath.includes('luxury-exotic-wraps')) {
     // For luxury/exotic vehicle wraps
     return <GenericServiceContent serviceType="luxury" />;
   } else {

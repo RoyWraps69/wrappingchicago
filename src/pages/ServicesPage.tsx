@@ -80,6 +80,14 @@ const ServicesPage = () => {
       serviceTitle = "Van Wraps";
       serviceDescription = "Professional van wrapping services for commercial and personal vans. Maximize visibility for your business with custom van wraps.";
       serviceKeywords = "van wraps, commercial van wraps, delivery van wraps, Chicago van wraps";
+    } else if (path.includes('designer-wraps')) {
+      serviceTitle = "Designer Wraps";
+      serviceDescription = "Stand out with custom designer wraps featuring unique patterns, textures, and artistic elements that transform your vehicle into a personalized masterpiece.";
+      serviceKeywords = "designer vehicle wraps, custom car wraps, artistic vehicle wraps, Chicago designer wraps";
+    } else if (path.includes('luxury-exotic-wraps')) {
+      serviceTitle = "Luxury & Exotic Vehicle Wraps";
+      serviceDescription = "Specialized wrapping services for high-end vehicles including Ferrari, Lamborghini, Porsche, and other luxury and exotic automobiles.";
+      serviceKeywords = "luxury car wraps, exotic vehicle wraps, supercar wraps, Chicago luxury car wraps";
     }
   }
 

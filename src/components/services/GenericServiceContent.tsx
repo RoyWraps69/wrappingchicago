@@ -28,6 +28,24 @@ const GenericServiceContent: React.FC<GenericServiceContentProps> = ({ serviceTy
     }
   };
 
+  // Get specific content based on service type
+  const getServiceDescription = () => {
+    switch (serviceType) {
+      case "car":
+        return "Our professional car wrapping services provide a perfect blend of style and protection. Whether you're looking to change the color of your personal vehicle or add branding to your business car, our expert installers deliver flawless results with premium quality materials.";
+      case "truck":
+        return "Transform your truck with our professional wrapping services. Our truck wraps are perfect for businesses looking to create mobile billboards or individuals wanting to customize their pickup trucks with unique designs or color changes.";
+      case "van":
+        return "Maximize the visual impact of your van with our custom wrapping solutions. We specialize in commercial van wraps that turn your delivery or service vehicle into a powerful advertising tool that generates leads wherever you drive.";
+      case "designer":
+        return "Stand out from the crowd with our exclusive designer wraps. These premium wrapping options include unique patterns, textures, and artistic elements that transform your vehicle into a personalized masterpiece unlike any other on the road.";
+      case "luxury":
+        return "Our specialized luxury and exotic vehicle wrapping services cater to high-end automobiles including Ferrari, Lamborghini, Porsche, and other premium brands. We understand the unique requirements of luxury vehicles and provide wrapping solutions that enhance their exclusive aesthetic.";
+      default:
+        return "Our professional vehicle wrapping services combine quality materials with expert installation to deliver exceptional results tailored to your specific needs.";
+    }
+  };
+
   // Generate schema data for the specific service type
   const generateServiceSchema = () => {
     if (!serviceType) return null;
@@ -87,6 +105,24 @@ const GenericServiceContent: React.FC<GenericServiceContentProps> = ({ serviceTy
       }
     };
   };
+
+  // Get service-specific image based on type
+  const getServiceImage = () => {
+    switch (serviceType) {
+      case "car":
+        return "/lovable-uploads/f564c255-9ca3-4457-bef5-c940a4a1557a.png";
+      case "truck":
+        return "/lovable-uploads/fb7a4b97-4b57-4b2e-8f81-42a1098270df.png";
+      case "van":
+        return "/lovable-uploads/efdbc4bf-1f04-42bb-a904-f52dae7bef6c.png";
+      case "designer":
+        return "/lovable-uploads/676b4902-7b81-4619-90d8-8feb1f986636.png";
+      case "luxury":
+        return "/lovable-uploads/33e966e0-f935-4f39-8702-a9ccf53ae49b.png";
+      default:
+        return "/lovable-uploads/efdbc4bf-1f04-42bb-a904-f52dae7bef6c.png";
+    }
+  };
   
   return (
     <div className="mb-8">
@@ -103,9 +139,18 @@ const GenericServiceContent: React.FC<GenericServiceContentProps> = ({ serviceTy
         <div className="mb-6">
           <h2 className="text-2xl font-semibold text-brand-navy mb-4 service-title">{getServiceTitle()}</h2>
           <p className="mb-4 text-gray-700 service-description">
-            Our professional {serviceType} wrapping services combine quality materials with expert installation 
-            to deliver exceptional results tailored to your specific vehicle type.
+            {getServiceDescription()}
           </p>
+          
+          {/* Service-specific image */}
+          <div className="mb-6 rounded-lg overflow-hidden shadow-md">
+            <img 
+              src={getServiceImage()} 
+              alt={`Professional ${getServiceTitle()} in Chicago`}
+              className="w-full h-auto object-cover"
+              loading="lazy"
+            />
+          </div>
         </div>
       )}
       
