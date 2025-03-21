@@ -1,6 +1,6 @@
 
 # Wrapping Chicago - Chicago's Premier Vehicle Wrap Authority
-# Last Updated: 2024-06-05
+# Last Updated: 2024-06-07
 
 User-agent: *
 Allow: /
@@ -17,6 +17,14 @@ Allow: /contact
 Allow: /about
 Allow: /ai-wrap-ideas
 
+# Service Pages - High Priority
+Allow: /services/car-wraps
+Allow: /services/truck-wraps
+Allow: /services/van-wraps
+Allow: /services/fleet-wraps
+Allow: /services/color-change-wraps
+Allow: /services/commercial-graphics
+
 # Location Pages - High Priority
 Allow: /locations
 Allow: /chicago
@@ -26,8 +34,9 @@ Allow: /naperville
 Allow: /schaumburg
 
 # Service-Specific Pages - High Priority
-Allow: /truck-wraps-chicago
-Allow: /van-wraps-chicago
+Allow: /car-wraps 
+Allow: /truck-wraps
+Allow: /van-wraps
 Allow: /fleet-wraps-chicago
 Allow: /color-change-wraps
 Allow: /designer-wraps

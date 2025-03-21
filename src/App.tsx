@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
@@ -17,6 +16,11 @@ import NotFound from './pages/NotFound';
 import ScrollToTop from './components/navigation/ScrollToTop';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import './App.css';
+
+// Import new pages
+import CarWrapsPage from './pages/CarWrapsPage';
+import TruckWrapsPage from './pages/TruckWrapsPage';
+import VanWrapsPage from './pages/VanWrapsPage';
 
 // Create a client with optimized settings for performance
 const queryClient = new QueryClient({
@@ -51,7 +55,12 @@ function App() {
             {/* Services main route */}
             <Route path="/services" element={<ServicesPage />} />
             
-            {/* Services routes under /services/ path */}
+            {/* New dedicated service pages with full content */}
+            <Route path="/services/car-wraps" element={<CarWrapsPage />} />
+            <Route path="/services/truck-wraps" element={<TruckWrapsPage />} />
+            <Route path="/services/van-wraps" element={<VanWrapsPage />} />
+            
+            {/* Other services routes under /services/ path - using ServicesPage component */}
             <Route path="/services/fleet-wraps" element={<ServicesPage />} />
             <Route path="/services/color-change-wraps" element={<ServicesPage />} />
             <Route path="/services/commercial-graphics" element={<ServicesPage />} />
@@ -60,9 +69,6 @@ function App() {
             <Route path="/services/vehicle-lettering" element={<ServicesPage />} />
             <Route path="/services/specialty-wraps" element={<ServicesPage />} />
             <Route path="/services/retail-graphics" element={<ServicesPage />} />
-            <Route path="/services/car-wraps" element={<ServicesPage />} />
-            <Route path="/services/truck-wraps" element={<ServicesPage />} />
-            <Route path="/services/van-wraps" element={<ServicesPage />} />
             <Route path="/services/designer-wraps" element={<ServicesPage />} />
             <Route path="/services/luxury-exotic-wraps" element={<ServicesPage />} />
             
@@ -75,9 +81,9 @@ function App() {
             <Route path="/vehicle-lettering" element={<ServicesPage />} />
             <Route path="/specialty-wraps" element={<ServicesPage />} />
             <Route path="/retail-graphics" element={<ServicesPage />} />
-            <Route path="/car-wraps" element={<ServicesPage />} />
-            <Route path="/truck-wraps" element={<ServicesPage />} />
-            <Route path="/van-wraps" element={<ServicesPage />} />
+            <Route path="/car-wraps" element={<CarWrapsPage />} />
+            <Route path="/truck-wraps" element={<TruckWrapsPage />} />
+            <Route path="/van-wraps" element={<VanWrapsPage />} />
             <Route path="/designer-wraps" element={<ServicesPage />} />
             <Route path="/luxury-exotic-wraps" element={<ServicesPage />} />
             
