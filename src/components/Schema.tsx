@@ -15,6 +15,7 @@ interface SchemaProps {
   path: string;
   pageTitle: string;
   pageDescription: string;
+  keywords?: string[]; // Added keywords as an optional prop
 }
 
 const Schema: React.FC<SchemaProps> = ({ city, path, pageTitle, pageDescription }) => {
