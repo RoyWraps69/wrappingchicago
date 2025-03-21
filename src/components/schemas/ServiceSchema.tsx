@@ -6,17 +6,20 @@ interface ServiceSchemaProps {
   description: string;
   path: string;
   includeAI?: boolean;
+  lastModified?: string;
 }
 
 const ServiceSchema = ({ 
   title, 
   description, 
   path,
-  includeAI = false 
+  includeAI = false,
+  lastModified = new Date().toISOString().split('T')[0]
 }: ServiceSchemaProps) => {
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
+    "@id": `https://wrappingchicago.com${path}#service`,
     "name": includeAI ? `AI-Powered ${title}` : title,
     "provider": {
       "@type": "LocalBusiness",
@@ -37,10 +40,28 @@ const ServiceSchema = ({
       ? `${description} Designs created with our artificial intelligence design generator.` 
       : description,
     "serviceType": includeAI ? `AI-Enhanced ${title}` : title,
-    "areaServed": {
-      "@type": "City",
-      "name": "Chicago"
-    },
+    "areaServed": [
+      {
+        "@type": "City",
+        "name": "Chicago"
+      },
+      {
+        "@type": "City",
+        "name": "Evanston"
+      },
+      {
+        "@type": "City",
+        "name": "Naperville"
+      },
+      {
+        "@type": "City",
+        "name": "Oak Park"
+      },
+      {
+        "@type": "City",
+        "name": "Schaumburg"
+      }
+    ],
     "offers": {
       "@type": "Offer",
       "availability": "https://schema.org/InStock",
@@ -52,8 +73,53 @@ const ServiceSchema = ({
     },
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "lastReviewed": new Date().toISOString().split('T')[0]
-    }
+      "@id": `https://wrappingchicago.com${path}`,
+      "lastReviewed": lastModified,
+      "dateModified": lastModified,
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": ["h1", "h2", ".speakable"]
+      }
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Vehicle Wrap Services Catalog",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Fleet Vehicle Wraps",
+            "description": "Professional fleet vehicle wrapping services for businesses throughout Chicago and surrounding areas."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Color Change Wraps",
+            "description": "Premium color change vehicle wraps with a variety of finishes including matte, gloss, satin, and custom."
+          }
+        }
+      ]
+    },
+    "isRelatedTo": [
+      {
+        "@type": "Service",
+        "name": "Truck Wraps",
+        "url": "https://wrappingchicago.com/services/truck-wraps"
+      },
+      {
+        "@type": "Service",
+        "name": "Van Wraps",
+        "url": "https://wrappingchicago.com/services/van-wraps"
+      },
+      {
+        "@type": "Service",
+        "name": "Color Change Wraps",
+        "url": "https://wrappingchicago.com/services/color-change-wraps"
+      }
+    ]
   };
 
   // Add AI tool schema if AI is included

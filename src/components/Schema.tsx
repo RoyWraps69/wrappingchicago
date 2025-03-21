@@ -102,6 +102,9 @@ const Schema: React.FC<SchemaProps> = ({ city, path, pageTitle, pageDescription,
     }
   ];
 
+  // Add current date for freshness signals
+  const currentDate = new Date().toISOString().split('T')[0];
+
   return (
     <>
       {/* LocalBusiness Schema */}
@@ -118,6 +121,7 @@ const Schema: React.FC<SchemaProps> = ({ city, path, pageTitle, pageDescription,
         name={businessName}
         description={businessDescription}
         url={baseUrl}
+        lastModified={currentDate}
       />
       
       {/* Service Schema */}
@@ -125,6 +129,7 @@ const Schema: React.FC<SchemaProps> = ({ city, path, pageTitle, pageDescription,
         title={pageTitle}
         description={pageDescription}
         path={path}
+        lastModified={currentDate}
       />
       
       {/* Vehicle Wrap Service Schema */}
@@ -133,7 +138,7 @@ const Schema: React.FC<SchemaProps> = ({ city, path, pageTitle, pageDescription,
       {/* Reviews Schema */}
       <ReviewsSchema reviews={reviews} />
       
-      {/* FAQ Schema if FAQs are provided */}
+      {/* FAQ Schema */}
       <FAQSchema faqs={faqs} />
     </>
   );
