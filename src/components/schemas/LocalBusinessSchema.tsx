@@ -11,8 +11,8 @@ const LocalBusinessSchema = ({ city }: LocalBusinessSchemaProps) => {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "Wrapping Chicago",
-    "alternateName": "Vehicle Wrapping Services",
-    "description": `Premium vehicle wrapping service serving ${city.name}, IL with AI-powered design for fleet wraps, color change wraps, and commercial graphics.`,
+    "alternateName": "Chicago Vehicle Wrapping Services",
+    "description": `Premium vehicle wrapping service serving ${city.name}, IL with AI-powered design for fleet wraps, color change wraps, and commercial graphics. Transform your vehicles into eye-catching mobile advertisements.`,
     "url": `https://wrappingchicago.com/vehicle-wraps-${city.slug}-il`,
     "telephone": "(312) 597-1286",
     "email": "roy@wrappingchicago.com",
@@ -54,9 +54,9 @@ const LocalBusinessSchema = ({ city }: LocalBusinessSchemaProps) => {
       "https://www.linkedin.com/company/wrappingchicago"
     ],
     "image": [
-      "https://wrappingchicago.com/images/vehicle-wrap-chicago.jpg",
-      "https://wrappingchicago.com/images/fleet-wraps-chicago.jpg",
-      "https://wrappingchicago.com/images/color-change-wraps.jpg"
+      "https://wrappingchicago.com/lovable-uploads/5539b79e-ab54-428d-82a0-e4735ee97a95.png",
+      "https://wrappingchicago.com/lovable-uploads/199c2a21-e0b0-4c29-972f-f32d72698382.png",
+      "https://wrappingchicago.com/lovable-uploads/efdbc4bf-1f04-42bb-a904-f52dae7bef6c.png"
     ],
     "logo": "https://wrappingchicago.com/logo.png",
     "areaServed": {
@@ -72,7 +72,8 @@ const LocalBusinessSchema = ({ city }: LocalBusinessSchemaProps) => {
         "longitude": -87.6298
       },
       "geoRadius": "30000"
-    }
+    },
+    "slogan": "Transform Your Vehicle. Elevate Your Brand."
   };
 
   return (

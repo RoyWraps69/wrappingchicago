@@ -12,8 +12,6 @@ import HomeSEO from '@/components/home/HomeSEO';
 import { useGalleryImages } from '@/hooks/useGalleryImages';
 import Schema from '@/components/Schema';
 import AIWrapSchema from '@/components/ai-wrap-ideas/AIWrapSchema';
-import ActionSchema from '@/components/schemas/ActionSchema';
-import AIServiceSchema from '@/components/schemas/AIServiceSchema';
 
 const Index = () => {
   // Use our custom hook to get the images
@@ -27,8 +25,6 @@ const Index = () => {
       <HomeSEO />
       <Schema city={chicagoCity} />
       <AIWrapSchema />
-      <ActionSchema />
-      <AIServiceSchema />
       
       <div className="flex flex-col min-h-screen">
         <Header />

@@ -30,7 +30,8 @@ const ServiceSchema = ({
         "addressCountry": "US"
       },
       "telephone": "(312) 597-1286",
-      "priceRange": "$$"
+      "priceRange": "$$",
+      "slogan": "Transform Your Vehicle. Elevate Your Brand."
     },
     "description": includeAI 
       ? `${description} Designs created with our artificial intelligence design generator.` 
@@ -48,6 +49,10 @@ const ServiceSchema = ({
         "@type": "PriceSpecification",
         "priceCurrency": "USD"
       }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "lastReviewed": new Date().toISOString().split('T')[0]
     }
   };
 
