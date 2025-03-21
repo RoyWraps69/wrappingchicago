@@ -1,3 +1,4 @@
+
 import { GalleryItem } from '@/types/gallery';
 
 export const galleryItems: GalleryItem[] = [
@@ -125,6 +126,15 @@ export const galleryItems: GalleryItem[] = [
     image: '/lovable-uploads/fb7a4b97-4b57-4b2e-8f81-42a1098270df.png', 
     description: 'Professional commercial graphics for service trucks with bold branding and contact information.',
     client: 'Chicago Service Company',
+    location: 'Chicago, IL'
+  },
+  { 
+    id: 15, 
+    title: 'Matte Black SUV Transformation', 
+    category: 'Color Change Wraps',
+    image: '/lovable-uploads/e021924c-a0a1-407c-9d11-13372909975f.png', 
+    description: 'Jeep Grand Cherokee with premium matte black wrap and matching black wheels for a cohesive, stealthy appearance.',
+    client: 'Private Owner',
     location: 'Chicago, IL'
   }
 ];
