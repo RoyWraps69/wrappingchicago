@@ -54,7 +54,7 @@ const WhyChooseUsSection = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-8">
           <h2 className="text-3xl font-bold mb-3 text-white">Why Choose Wrapping Chicago</h2>
-          <p className="text-lg text-gray-300 max-w-3xl mx-auto">
+          <p className="text-lg text-gray-200 max-w-3xl mx-auto">
             When it comes to vehicle wraps in Chicago and surrounding areas, Wrapping Chicago stands apart from the competition.
           </p>
         </div>
@@ -69,7 +69,7 @@ const WhyChooseUsSection = () => {
                 {benefit.icon}
               </div>
               <h3 className="text-xl font-bold mb-2 text-white">{benefit.title}</h3>
-              <p className="text-gray-300 text-center">{benefit.description}</p>
+              <p className="text-gray-200 text-center">{benefit.description}</p>
             </div>
           ))}
         </div>

@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
@@ -60,7 +61,7 @@ const Hero = () => {
         <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4 animate-enter" style={{ animationDelay: "0.8s" }}>
           <div className="flex items-center">
             <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3">
-              <img src="/lovable-uploads/9de106b5-94cb-4fd1-a7c7-5c75c75b7cbb.png" alt="High-quality materials" className="w-8 h-8" />
+              <Award className="h-8 w-8 text-brand-red" />
             </div>
             <span className="ml-3 text-white font-medium">Premium Materials</span>
           </div>
