@@ -12,6 +12,7 @@ import HomeSEO from '@/components/home/HomeSEO';
 import { useGalleryImages } from '@/hooks/useGalleryImages';
 import Schema from '@/components/Schema';
 import AIWrapSchema from '@/components/ai-wrap-ideas/AIWrapSchema';
+import EasyButtonSection from '@/components/home/EasyButtonSection';
 
 // Import the new components
 import InfoBar from '@/components/home/InfoBar';
@@ -43,6 +44,9 @@ const Index = () => {
         <Header />
         
         <main className="flex-grow">
+          {/* Easy Button Section - Added at the top */}
+          <EasyButtonSection />
+          
           <Hero />
           
           {/* Information Bar with Contact Buttons */}
