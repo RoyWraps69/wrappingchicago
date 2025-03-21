@@ -22,6 +22,12 @@ const Index = () => {
     item.category === 'Fleet Wraps'
   )?.image || "/lovable-uploads/9bb3d94e-589d-4daf-b35e-e19e80610439.png";
   
+  // Get specific van image for color change wraps section
+  const colorChangeVan = galleryItems.find(item => 
+    item.title.toLowerCase().includes('van') && 
+    item.category === 'Color Change Wraps'
+  )?.image || vanImages[0]?.image || "/lovable-uploads/230338ed-a8d9-4584-bb4c-ba33c793f7ab.png";
+  
   return (
     <>
       <Helmet>
@@ -113,7 +119,7 @@ const Index = () => {
                   {
                     title: "Color Change Wraps",
                     description: "Want a new look without the permanence of paint? Our color change wraps allow you to transform your vehicle with premium vinyl wraps in any color or finish.",
-                    image: vanImages[1] ? vanImages[1].image : "/lovable-uploads/230338ed-a8d9-4584-bb4c-ba33c793f7ab.png",
+                    image: colorChangeVan,
                     link: "/services/color-change-wraps"
                   },
                   {
