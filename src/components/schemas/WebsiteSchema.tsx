@@ -7,17 +7,34 @@ interface WebsiteSchemaProps {
 
 const WebsiteSchema = ({ 
   keywords = [
+    // Core Vehicle Wrap Keywords
     "vehicle wraps Chicago", "car wraps Chicago", "truck wraps Chicago", 
     "van wraps Chicago", "fleet wraps Chicago", "commercial vehicle wraps Chicago",
     "custom vehicle wraps Chicago", "vehicle graphics Chicago", "car graphics Chicago",
-    "vinyl wraps Chicago", "vehicle wrap installation Chicago", "car wrap installation Chicago",
-    "best vehicle wraps Chicago", "vehicle wrap companies Chicago", "3M vehicle wraps",
-    "automotive graphics", "car wrap prices", "full vehicle wrap cost Chicago",
-    "custom vehicle wrap design Chicago", "long lasting vehicle wraps Chicago",
-    "business vehicle wraps Chicago", "partial vehicle wraps Chicago", "vinyl lettering Chicago",
-    "truck lettering Chicago", "van graphics installation Chicago", "vehicle wrap design Chicago",
-    "vehicle branding Chicago", "mobile advertising wraps Chicago", "commercial wrap ROI Chicago",
-    "wrap advertising Chicago", "vehicle wrap color change Chicago"
+    "vinyl wraps Chicago", "automotive graphics Chicago", "vehicle wrap installation Chicago",
+    
+    // Business-Focused Keywords
+    "business vehicle wraps Chicago", "fleet graphics Chicago", "car wrap advertising Chicago",
+    "commercial fleet wraps Chicago", "mobile advertising wraps Chicago", "commercial wrap ROI Chicago",
+    
+    // Service-Specific Keywords
+    "vehicle wrap design Chicago", "vehicle branding Chicago", "wrap advertising Chicago",
+    "vehicle wrap companies Chicago", "best vehicle wraps Chicago", "long lasting vehicle wraps Chicago",
+    "3M vehicle wraps Chicago", "wrap installation near me", "vehicle wrap near me Chicago",
+    
+    // Product Type Keywords
+    "full vehicle wrap cost Chicago", "partial vehicle wraps Chicago", "vinyl lettering Chicago",
+    "truck lettering Chicago", "van graphics installation Chicago", "window graphics Chicago",
+    "color change wraps Chicago", "matte vehicle wraps Chicago", "gloss vehicle wraps Chicago",
+    
+    // Specialty Keywords
+    "food truck wraps Chicago", "custom car wrap design Chicago", "reflective vehicle wraps Chicago",
+    "vehicle wrap color change Chicago", "perforated window film Chicago", "wrap removal services Chicago",
+    
+    // Long-Tail Keywords
+    "how much do car wraps cost in Chicago", "best place for vehicle wraps in Chicago",
+    "affordable vehicle wraps Chicago", "high-quality car wraps Chicago",
+    "vehicle wrap design and installation Chicago", "car wrap installation services Chicago"
   ] 
 }: WebsiteSchemaProps) => {
   const schema = {
@@ -47,7 +64,29 @@ const WebsiteSchema = ({
         "width": 600,
         "height": 60
       }
-    }
+    },
+    "additionalProperty": [
+      {
+        "@type": "PropertyValue",
+        "name": "yearsInBusiness",
+        "value": "20"
+      },
+      {
+        "@type": "PropertyValue",
+        "name": "projectsCompleted",
+        "value": "16000+"
+      },
+      {
+        "@type": "PropertyValue",
+        "name": "serviceArea",
+        "value": "Chicago and surrounding suburbs"
+      },
+      {
+        "@type": "PropertyValue",
+        "name": "specializations",
+        "value": "Vehicle Wraps, Car Wraps, Truck Wraps, Van Wraps, Fleet Wraps, Commercial Graphics"
+      }
+    ]
   };
 
   return (
