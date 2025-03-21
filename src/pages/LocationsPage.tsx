@@ -28,7 +28,7 @@ const LocationsPage = () => {
         <main className="flex-grow">
           {/* Hero Section with Background Image */}
           <section className="relative text-white py-24">
-            {/* Background image overlay */}
+            {/* Background image without overlay */}
             <div className="absolute inset-0 z-0">
               <img 
                 src="https://images.unsplash.com/photo-1549194898-b87383b330c4?auto=format&fit=crop&w=2000&q=80"
@@ -37,7 +37,7 @@ const LocationsPage = () => {
                 loading="eager"
                 fetchPriority="high"
               />
-              <div className="absolute inset-0 bg-black/30"></div>
+              {/* Removed the overlay div that was here */}
             </div>
             
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
