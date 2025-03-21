@@ -45,7 +45,8 @@ const BusinessLocationSchema: React.FC<BusinessLocationSchemaProps> = ({
 }) => {
   const schema = {
     "@context": "https://schema.org",
-    "@type": "AutoBodyShop", // More specific business type for vehicle wrapping
+    "@type": "ProfessionalService", // More appropriate type for vehicle wrapping
+    "serviceType": "Vehicle Wrapping Service",
     "name": businessName,
     "image": imageUrl,
     "logo": "https://wrappingchicago.com/logo.png",
@@ -73,7 +74,7 @@ const BusinessLocationSchema: React.FC<BusinessLocationSchemaProps> = ({
       "https://www.instagram.com/wrappingchicago",
       "https://twitter.com/wrappingchicago",
       "https://www.linkedin.com/company/wrappingchicago",
-      "https://www.google.com/search?q=Wrapping+Chicago"
+      "https://www.google.com/search?q=Wrapping+Chicago&stick=H4sIAAAAAAAA_-NgU1I1qLCwMEhLTkkzMTEyNbQwSzK2MqhISktJSzM3N080MbA0TjFMXMQqEF6UWFCQmZeu4JyRmZyYng8AeQqmsTwAAAA"
     ],
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
