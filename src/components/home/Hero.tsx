@@ -6,7 +6,7 @@ import { ArrowRight, Sparkles, Shield, Award, Clock, Wrench } from 'lucide-react
 
 const Hero = () => {
   return (
-    <section className="relative w-full overflow-hidden">
+    <section className="relative w-full overflow-hidden bg-brand-navy" style={{ backgroundImage: "url('/lovable-uploads/efc6c586-8651-43ad-811a-b896a91a1b69.png')", backgroundSize: 'cover', backgroundPosition: 'center' }}>
       <div className="relative z-20 container mx-auto px-4 sm:px-6 lg:px-8 min-h-[80vh] flex items-center">
         <div className="max-w-3xl py-16">
           <div className="animate-fade-in mb-4">
