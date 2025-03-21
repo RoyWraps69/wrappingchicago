@@ -5,9 +5,9 @@ import { useToast } from "@/components/ui/use-toast";
 import emailjs from 'emailjs-com';
 
 // Constants for EmailJS - you'll need to replace these with your actual values
-const EMAILJS_SERVICE_ID = "service_id"; // Replace with your Service ID
+const EMAILJS_SERVICE_ID = "service_id"; // Replace with your Gmail Service ID from EmailJS
 const EMAILJS_TEMPLATE_ID = "template_id"; // Replace with your Template ID
-const EMAILJS_USER_ID = "user_id"; // Replace with your User ID
+const EMAILJS_USER_ID = "user_id"; // Replace with your User ID (Public Key)
 
 const ContactForm = () => {
   const { toast } = useToast();
@@ -37,7 +37,7 @@ const ContactForm = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Prepare the template parameters
+    // Prepare the template parameters - these field names must match your EmailJS template variables
     const templateParams = {
       from_name: formData.name,
       from_email: formData.email,

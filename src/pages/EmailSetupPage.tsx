@@ -39,16 +39,32 @@ const EmailSetupPage = () => {
                   <p className="text-gray-600">Go to <a href="https://www.emailjs.com/" target="_blank" rel="noreferrer" className="text-blue-600 hover:underline">EmailJS.com</a> and create a free account.</p>
                 </li>
                 <li>
-                  <p className="font-medium">Create an Email Service</p>
-                  <p className="text-gray-600">Connect your email service provider (Gmail, Outlook, etc.) and note the Service ID.</p>
+                  <p className="font-medium">Create an Email Service (Using Gmail)</p>
+                  <p className="text-gray-600">
+                    Connect your Gmail account as a service provider:
+                    <ul className="list-disc ml-6 mt-2">
+                      <li>In EmailJS dashboard, go to "Email Services" and click "Add New Service"</li>
+                      <li>Select "Gmail" as your service provider</li>
+                      <li>Follow the prompts to connect your Gmail account</li>
+                      <li>Name your service and note the Service ID</li>
+                    </ul>
+                  </p>
                 </li>
                 <li>
                   <p className="font-medium">Create an Email Template</p>
-                  <p className="text-gray-600">Create a template using these variables: {{from_name}}, {{from_email}}, {{from_phone}}, {{service}}, {{message}}. Note the Template ID.</p>
+                  <p className="text-gray-600">
+                    Create a template with variables that match our contact form:
+                    <ul className="list-disc ml-6 mt-2">
+                      <li>In EmailJS dashboard, go to "Email Templates" and click "Create New Template"</li>
+                      <li>Design your email template using these variables in double curly braces: from_name, from_email, from_phone, service, message</li>
+                      <li>Example: "New message from &#123;&#123;from_name&#125;&#125; (&#123;&#123;from_email&#125;&#125;)"</li>
+                      <li>Save your template and note the Template ID</li>
+                    </ul>
+                  </p>
                 </li>
                 <li>
                   <p className="font-medium">Get your User ID</p>
-                  <p className="text-gray-600">Find your EmailJS User ID in the integration section of your EmailJS dashboard.</p>
+                  <p className="text-gray-600">Find your EmailJS User ID in the "Integration" section of your EmailJS dashboard.</p>
                 </li>
                 <li>
                   <p className="font-medium">Update the Code</p>
