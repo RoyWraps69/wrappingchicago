@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -16,6 +15,9 @@ import GalleryPage from "./pages/GalleryPage";
 import AIWrapIdeas from "./pages/AIWrapIdeas";
 import EmailSetupPage from "./pages/EmailSetupPage";
 import TruckWrapsChicago from "./pages/TruckWrapsChicago";
+import ColorChangeWrapsPage from "./pages/ColorChangeWrapsPage";
+import DesignerWrapsPage from "./pages/DesignerWrapsPage";
+import LuxuryExoticWrapsPage from "./pages/LuxuryExoticWrapsPage";
 import { cities } from "./data/cities";
 import { ScrollToTop } from "./components/navigation/ScrollToTop";
 
@@ -50,6 +52,11 @@ const App = () => (
             <Route path="/services/specialty-wraps" element={<ServicesPage />} />
             <Route path="/services/retail-graphics" element={<ServicesPage />} />
             
+            {/* New Specialized Wrap Pages */}
+            <Route path="/color-change-wraps" element={<ColorChangeWrapsPage />} />
+            <Route path="/designer-wraps" element={<DesignerWrapsPage />} />
+            <Route path="/luxury-exotic-wraps" element={<LuxuryExoticWrapsPage />} />
+            
             {/* Keyword-specific pages */}
             <Route path="/truck-wraps-chicago" element={<TruckWrapsChicago />} />
             
@@ -78,7 +85,6 @@ const App = () => (
             
             {/* Legacy redirects for any old URLs */}
             <Route path="/fleet-wraps" element={<Navigate to="/services/fleet-wraps" replace />} />
-            <Route path="/color-change-wraps" element={<Navigate to="/services/color-change-wraps" replace />} />
             <Route path="/commercial-graphics" element={<Navigate to="/services/commercial-graphics" replace />} />
             <Route path="/partial-wraps" element={<Navigate to="/services/partial-wraps" replace />} />
             

@@ -9,7 +9,15 @@ interface GalleryFilterProps {
 
 const GalleryFilter: React.FC<GalleryFilterProps> = ({ activeFilter, setActiveFilter }) => {
   // All available categories
-  const categories: GalleryCategory[] = ['All', 'Fleet Wraps', 'Color Change Wraps', 'Commercial Graphics', 'Partial Wraps'];
+  const categories: GalleryCategory[] = [
+    'All', 
+    'Fleet Wraps', 
+    'Color Change Wraps', 
+    'Commercial Graphics', 
+    'Partial Wraps',
+    'Designer Wraps',
+    'Luxury & Exotic Wraps'
+  ];
   
   return (
     <div className="flex flex-wrap gap-2 mb-8">

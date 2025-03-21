@@ -1,5 +1,5 @@
 
-export type GalleryCategory = 'All' | 'Fleet Wraps' | 'Color Change Wraps' | 'Commercial Graphics' | 'Partial Wraps';
+export type GalleryCategory = 'All' | 'Fleet Wraps' | 'Color Change Wraps' | 'Commercial Graphics' | 'Partial Wraps' | 'Designer Wraps' | 'Luxury & Exotic Wraps';
 
 export type GalleryItem = {
   id: number;
