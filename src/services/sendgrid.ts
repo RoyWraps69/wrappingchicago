@@ -26,18 +26,39 @@ export const sendEmail = async (data: EmailData): Promise<void> => {
     formData.append('_captcha', 'false'); // Disable captcha
     formData.append('_template', 'table'); // Use table template for better readability
     formData.append('_replyto', data.email); // Ensure reply-to is set to sender
-    formData.append('_next', window.location.href); // Current URL for redirect
     
-    // Using the standard endpoint instead of AJAX for more reliable delivery
-    const response = await fetch('https://formsubmit.co/roy@chicagofleetwraps.com', {
-      method: 'POST',
-      body: formData,
-    });
-
-    if (!response.ok) {
-      console.error('FormSubmit error response status:', response.status);
-      throw new Error(`Failed to send email: ${response.status}`);
+    // Using the standard HTML form submission method instead of AJAX
+    // This will open a new tab briefly that redirects back to the site
+    const form = document.createElement('form');
+    form.method = 'POST';
+    form.action = 'https://formsubmit.co/roy@chicagofleetwraps.com';
+    form.target = '_blank'; // Open in new tab to avoid page navigation
+    
+    // Append all form fields
+    for (const [key, value] of formData.entries()) {
+      const input = document.createElement('input');
+      input.type = 'hidden';
+      input.name = key;
+      input.value = String(value);
+      form.appendChild(input);
     }
+    
+    // Add honeypot field to prevent spam
+    const honeyInput = document.createElement('input');
+    honeyInput.type = 'text';
+    honeyInput.name = '_honey';
+    honeyInput.style.display = 'none';
+    form.appendChild(honeyInput);
+    
+    // Add to DOM, submit, and remove
+    document.body.appendChild(form);
+    form.submit();
+    
+    // Short timeout to make sure the form submissions completes
+    // before removing the form
+    setTimeout(() => {
+      document.body.removeChild(form);
+    }, 1000);
     
     return;
   } catch (error) {
