@@ -69,6 +69,13 @@ const ApiKeyModal: React.FC<ApiKeyModalProps> = ({ isOpen, onClose }) => {
     }
   };
 
+  const handleRefreshBalance = () => {
+    if (apiKey) {
+      verifyApiKeyAndBalance(apiKey, true);
+      toast.info("Refreshing Stability AI account balance...");
+    }
+  };
+
   const handleVerify = async () => {
     if (!apiKey) {
       toast.error("Please enter an API key");
@@ -115,22 +122,35 @@ const ApiKeyModal: React.FC<ApiKeyModalProps> = ({ isOpen, onClose }) => {
           
           {/* API Key verification */}
           <div className="flex items-center justify-between">
-            <Button 
-              type="button" 
-              variant="outline" 
-              size="sm"
-              onClick={handleVerify}
-              disabled={!apiKey || isVerifying}
-            >
-              {isVerifying ? (
-                <>
-                  <RefreshCw className="mr-2 h-3 w-3 animate-spin" />
-                  Verifying...
-                </>
-              ) : (
-                "Verify Key"
+            <div className="flex gap-2">
+              <Button 
+                type="button" 
+                variant="outline" 
+                size="sm"
+                onClick={handleVerify}
+                disabled={!apiKey || isVerifying}
+              >
+                {isVerifying ? (
+                  <>
+                    <RefreshCw className="mr-2 h-3 w-3 animate-spin" />
+                    Verifying...
+                  </>
+                ) : (
+                  "Verify Key"
+                )}
+              </Button>
+              
+              {balance !== null && (
+                <Button 
+                  variant="ghost" 
+                  size="sm" 
+                  onClick={handleRefreshBalance}
+                  disabled={isVerifying}
+                >
+                  <RefreshCw className={`h-3 w-3 ${isVerifying ? 'animate-spin' : ''}`} />
+                </Button>
               )}
-            </Button>
+            </div>
             
             {balance !== null && (
               <div className="flex items-center">
@@ -142,6 +162,14 @@ const ApiKeyModal: React.FC<ApiKeyModalProps> = ({ isOpen, onClose }) => {
               </div>
             )}
           </div>
+
+          {balance !== null && balance > 0 && (
+            <div className="text-sm text-green-600 flex items-center">
+              <span className="text-xs bg-green-100 px-2 py-1 rounded">
+                Your account has {balance.toFixed(2)} credits available for generating images!
+              </span>
+            </div>
+          )}
         </div>
 
         <DialogFooter className="flex justify-between items-center pt-4 sm:justify-between">
