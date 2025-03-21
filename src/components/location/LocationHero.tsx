@@ -10,18 +10,7 @@ interface LocationHeroProps {
 
 const LocationHero = ({ cityName }: LocationHeroProps) => {
   return (
-    <section className="relative carbon-fiber overflow-hidden py-32 min-h-[90vh] flex items-center" id="location-hero">
-      {/* Full background image with overlay */}
-      <div className="absolute inset-0 w-full h-full">
-        <div className="absolute inset-0 bg-gradient-to-r from-black/90 to-brand-navy/80 z-10"></div>
-        <img 
-          src="/lovable-uploads/199c2a21-e0b0-4c29-972f-f32d72698382.png" 
-          alt={`Professional vehicle wraps in ${cityName}`}
-          className="w-full h-full object-cover opacity-60"
-        />
-        <div className="absolute inset-0 racing-stripes opacity-20 z-20"></div>
-      </div>
-      
+    <section className="relative overflow-hidden py-32 min-h-[90vh] flex items-center" id="location-hero">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-30">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="animate-fade-in">

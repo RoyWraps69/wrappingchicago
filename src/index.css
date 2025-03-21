@@ -99,61 +99,6 @@
   body {
     @apply bg-background text-foreground;
     background-color: #121212;
-    background-image: 
-      linear-gradient(to right, rgba(20, 20, 20, 0.9), rgba(30, 30, 30, 0.9)),
-      url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15,20 L85,20 C90,20 90,15 85,15 L15,15 C10,15 10,20 15,20 Z' fill='%23333333' fill-opacity='0.15'/%3E%3Cpath d='M15,40 L85,40 C90,40 90,35 85,35 L15,35 C10,35 10,40 15,40 Z' fill='%23333333' fill-opacity='0.15'/%3E%3Cpath d='M15,60 L85,60 C90,60 90,55 85,55 L15,55 C10,55 10,60 15,60 Z' fill='%23333333' fill-opacity='0.15'/%3E%3Cpath d='M15,80 L85,80 C90,80 90,75 85,75 L15,75 C10,75 10,80 15,80 Z' fill='%23333333' fill-opacity='0.15'/%3E%3Cpath d='M0,10 L100,10 M0,30 L100,30 M0,50 L100,50 M0,70 L100,70 M0,90 L100,90' stroke='%23444444' stroke-width='1' stroke-opacity='0.1'/%3E%3Ccircle cx='10' cy='10' r='5' fill='%23FF4A1C' fill-opacity='0.03'/%3E%3Ccircle cx='30' cy='10' r='5' fill='%23FF4A1C' fill-opacity='0.03'/%3E%3Ccircle cx='50' cy='10' r='5' fill='%23FF4A1C' fill-opacity='0.03'/%3E%3Ccircle cx='70' cy='10' r='5' fill='%23FF4A1C' fill-opacity='0.03'/%3E%3Ccircle cx='90' cy='10' r='5' fill='%23FF4A1C' fill-opacity='0.03'/%3E%3Ccircle cx='10' cy='30' r='5' fill='%23FF4A1C' fill-opacity='0.03'/%3E%3Ccircle cx='30' cy='30' r='5' fill='%23FF4A1C' fill-opacity='0.03'/%3E%3Ccircle cx='50' cy='30' r='5' fill='%23FF4A1C' fill-opacity='0.03'/%3E%3Ccircle cx='70' cy='30' r='5' fill='%23FF4A1C' fill-opacity='0.03'/%3E%3Ccircle cx='90' cy='30' r='5' fill='%23FF4A1C' fill-opacity='0.03'/%3E%3C/svg%3E"),
-      radial-gradient(circle at 50% 50%, #1a1a1a 0%, #0f0f0f 100%);
-    background-attachment: fixed;
-    background-size: auto, 100px 100px, cover;
-  }
-  
-  /* Carbon fiber texture for sections */
-  .carbon-fiber {
-    background: 
-      linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px,
-      linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px,
-      linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px,
-      linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px,
-      linear-gradient(90deg, #1b1b1b 10px, transparent 10px),
-      linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
-    background-color: #131313;
-    background-size: 20px 20px;
-  }
-  
-  /* Chrome/metallic section background */
-  .chrome-section {
-    background: 
-      linear-gradient(135deg, #333 22px, #444 22px, #444 24px, transparent 24px, transparent 67px, #444 67px, #444 69px, transparent 69px),
-      linear-gradient(225deg, #333 22px, #444 22px, #444 24px, transparent 24px, transparent 67px, #444 67px, #444 69px, transparent 69px) 0 64px;
-    background-color: #333;
-    background-size: 64px 128px;
-  }
-  
-  /* Tire tread pattern */
-  .tire-tread {
-    background-color: #222;
-    background-image: 
-      linear-gradient(0deg, transparent 79px, rgba(50, 50, 50, .8) 79px, rgba(50, 50, 50, .8) 81px, transparent 81px),
-      linear-gradient(90deg, transparent 79px, rgba(50, 50, 50, .8) 79px, rgba(50, 50, 50, .8) 81px, transparent 81px),
-      linear-gradient(0deg, transparent 39px, rgba(50, 50, 50, .3) 39px, rgba(50, 50, 50, .3) 41px, transparent 41px),
-      linear-gradient(90deg, transparent 39px, rgba(50, 50, 50, .3) 39px, rgba(50, 50, 50, .3) 41px, transparent 41px);
-    background-size: 80px 80px;
-  }
-  
-  /* Dashboard style container */
-  .dashboard-panel {
-    background-color: #222;
-    border: 1px solid #333;
-    box-shadow: 
-      inset 0 0 10px rgba(0,0,0,0.5),
-      0 5px 15px rgba(0,0,0,0.5);
-    border-radius: 10px;
-  }
-  
-  /* Speedometer grid */
-  .speedometer-grid {
-    background-image: radial-gradient(circle at center, transparent 30%, rgba(255, 74, 28, 0.1) 30%);
-    background-size: 30px 30px;
   }
   
   .section-card {
@@ -213,37 +158,3 @@
   animation: fade-in 0.3s ease-out forwards, scale-in 0.3s ease-out forwards;
 }
 
-/* Automotive themed elements */
-.tire-pattern {
-  background-image: 
-    repeating-linear-gradient(45deg, transparent, transparent 5px, rgba(255, 74, 28, 0.1) 5px, rgba(255, 74, 28, 0.1) 10px);
-}
-
-.car-stripes {
-  background: 
-    linear-gradient(45deg, rgba(255, 74, 28, 0.1) 25%, transparent 25%, transparent 50%, rgba(255, 74, 28, 0.1) 50%, rgba(255, 74, 28, 0.1) 75%, transparent 75%, transparent);
-  background-size: 20px 20px;
-}
-
-/* Racing stripe pattern */
-.racing-stripes {
-  background: linear-gradient(to right, 
-    transparent 0px, transparent 20px, 
-    rgba(255, 74, 28, 0.15) 20px, rgba(255, 74, 28, 0.15) 40px,
-    transparent 40px, transparent 60px,
-    rgba(255, 74, 28, 0.15) 60px, rgba(255, 74, 28, 0.15) 80px);
-  background-size: 100px 100%;
-}
-
-/* Carbon fiber texture */
-.carbon-fiber-light {
-  background:
-    linear-gradient(27deg, #333 5px, transparent 5px) 0 5px,
-    linear-gradient(207deg, #333 5px, transparent 5px) 10px 0px,
-    linear-gradient(27deg, #333 5px, transparent 5px) 0px 10px,
-    linear-gradient(207deg, #333 5px, transparent 5px) 10px 5px,
-    linear-gradient(90deg, #333 10px, transparent 10px),
-    linear-gradient(#222 25%, #333 25%, #333 50%, transparent 50%, transparent 75%, #333 75%, #333);
-  background-color: #222;
-  background-size: 20px 20px;
-}

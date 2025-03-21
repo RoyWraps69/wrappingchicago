@@ -47,10 +47,7 @@ const WhyChooseUsSection = () => {
   ];
 
   return (
-    <section className="py-10 relative carbon-fiber">
-      {/* Automotive-themed background pattern - racing stripes overlay */}
-      <div className="absolute inset-0 racing-stripes opacity-20 z-0"></div>
-      
+    <section className="py-10 relative">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-8">
           <h2 className="text-3xl font-bold mb-3 text-white">Why Choose Wrapping Chicago</h2>
