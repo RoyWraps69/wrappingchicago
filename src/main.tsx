@@ -9,7 +9,7 @@ const root = createRoot(document.getElementById("root")!);
 
 root.render(
   <HelmetProvider>
-    <GoogleAnalytics measurementId="G-XXXXXXXXXX" /> {/* Replace with your actual Google Analytics measurement ID */}
+    <GoogleAnalytics measurementId="G-ZTLS3EEGE7" />
     <App />
   </HelmetProvider>
 );

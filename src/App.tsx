@@ -17,7 +17,7 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <HelmetProvider>
-        <GoogleTagManager containerId="GTM-XXXXXXX" /> {/* Replace with your actual GTM ID */}
+        <GoogleTagManager containerId="G-ZTLS3EEGE7" />
         <Router>
           <Routes>
             <Route path="/" element={<Index />} />
