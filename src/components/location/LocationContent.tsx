@@ -8,6 +8,7 @@ import ServiceCards from './ServiceCards';
 import BusinessBenefits from './BusinessBenefits';
 import CallToActionBox from './CallToActionBox';
 import LocationSidebar from './LocationSidebar';
+import VehicleWrapKeywords from './VehicleWrapKeywords';
 
 interface LocationContentProps {
   city: City;
@@ -25,6 +26,7 @@ const LocationContent = ({ city }: LocationContentProps) => {
               <ServicesOverview city={city} />
               <ServiceCards city={city} />
               <BusinessBenefits city={city} />
+              <VehicleWrapKeywords city={city} />
               <CallToActionBox city={city} />
             </div>
           </div>

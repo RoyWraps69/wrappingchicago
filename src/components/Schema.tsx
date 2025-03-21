@@ -27,8 +27,11 @@ const Schema = ({
   pageDescription,
   keywords = [
     "vehicle wraps Chicago", "car wraps Chicago", "truck wraps Chicago", 
-    "van wraps Chicago", "fleet wraps Chicago", "custom vehicle wraps", 
-    "commercial vehicle wraps", "vinyl wraps Chicago"
+    "van wraps Chicago", "fleet wraps Chicago", "custom vehicle wraps Chicago", 
+    "commercial vehicle wraps Chicago", "vinyl wraps Chicago", "vehicle graphics Chicago",
+    "car graphics Chicago", "automotive graphics", "car wrap prices", 
+    "vehicle wrap installation Chicago", "vehicle wrap companies Chicago",
+    "business vehicle wraps Chicago", "3M vehicle wraps", "full vehicle wrap cost Chicago"
   ]
 }: SchemaProps) => {
   return (
@@ -43,7 +46,7 @@ const Schema = ({
       <FAQSchema />
       <ServiceSchema 
         title="Vehicle Wrapping Services" 
-        description={pageDescription || "Premium vehicle wraps for businesses and individuals in Chicago. Transform your vehicle and elevate your brand with expert installation and premium materials. Specializing in car wraps, truck wraps, van wraps, and fleet graphics."}
+        description={pageDescription || "Premium vehicle wraps for businesses and individuals in Chicago with over 16,000 wraps completed in our 20 years of business. Transform your vehicle and elevate your brand with expert installation and premium 3M materials. Specializing in car wraps, truck wraps, van wraps, and fleet graphics throughout Chicago and suburbs."}
         path={path}
       />
       <VehicleWrapServiceSchema city={city} />

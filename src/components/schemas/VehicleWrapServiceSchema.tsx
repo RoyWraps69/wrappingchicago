@@ -12,7 +12,7 @@ const VehicleWrapServiceSchema = ({ city }: VehicleWrapServiceSchemaProps) => {
     "@type": "Service",
     "name": `Vehicle Wraps in ${city.name}, Illinois`,
     "serviceType": "Vehicle Wrapping",
-    "description": `Professional vehicle wraps, car wraps, truck wraps, van wraps, and fleet graphics in ${city.name}, IL. Premium 3M vinyl wraps with expert installation and long-lasting durability. Serving all of ${city.county} and the greater Chicago area.`,
+    "description": `Professional vehicle wraps, car wraps, truck wraps, van wraps, and fleet graphics in ${city.name}, IL. Premium 3M vinyl wraps with expert installation and long-lasting durability. With over 16,000 wraps completed in our 20 years of business, we're the trusted choice for vehicle wrapping in ${city.name} and throughout ${city.county} County.`,
     "provider": {
       "@type": "LocalBusiness",
       "name": "Wrapping Chicago",
@@ -25,7 +25,9 @@ const VehicleWrapServiceSchema = ({ city }: VehicleWrapServiceSchemaProps) => {
         "addressCountry": "US"
       },
       "telephone": "(312) 597-1286",
-      "priceRange": "$$"
+      "priceRange": "$$",
+      "foundingDate": "2003",
+      "slogan": "Transform Your Vehicle. Elevate Your Brand."
     },
     "areaServed": [
       {
@@ -48,7 +50,7 @@ const VehicleWrapServiceSchema = ({ city }: VehicleWrapServiceSchemaProps) => {
           "itemOffered": {
             "@type": "Service",
             "name": "Car Wraps",
-            "description": `High-quality car wraps in ${city.name}, IL with premium 3M vinyl materials and expert installation.`
+            "description": `High-quality car wraps in ${city.name}, IL with premium 3M vinyl materials and expert installation. Transform your personal or business vehicle with custom designs.`
           }
         },
         {
@@ -56,7 +58,7 @@ const VehicleWrapServiceSchema = ({ city }: VehicleWrapServiceSchemaProps) => {
           "itemOffered": {
             "@type": "Service",
             "name": "Truck Wraps",
-            "description": `Custom truck wraps for businesses in ${city.name}, IL. Transform your commercial vehicles into mobile billboards.`
+            "description": `Custom truck wraps for businesses in ${city.name}, IL. Transform your commercial vehicles into mobile billboards with our durable truck wraps.`
           }
         },
         {
@@ -64,7 +66,7 @@ const VehicleWrapServiceSchema = ({ city }: VehicleWrapServiceSchemaProps) => {
           "itemOffered": {
             "@type": "Service",
             "name": "Van Wraps",
-            "description": `Professional van wraps for ${city.name} businesses. Maximize your advertising with high-quality van graphics.`
+            "description": `Professional van wraps for ${city.name} businesses. Maximize your advertising with high-quality van graphics and lettering for commercial fleets.`
           }
         },
         {
@@ -72,7 +74,7 @@ const VehicleWrapServiceSchema = ({ city }: VehicleWrapServiceSchemaProps) => {
           "itemOffered": {
             "@type": "Service",
             "name": "Fleet Wraps",
-            "description": `Comprehensive fleet wrapping services for ${city.name} companies. Consistent branding across your entire vehicle fleet.`
+            "description": `Comprehensive fleet wrapping services for ${city.name} companies. Consistent branding across your entire vehicle fleet with our professional wrap installation.`
           }
         },
         {
@@ -80,7 +82,31 @@ const VehicleWrapServiceSchema = ({ city }: VehicleWrapServiceSchemaProps) => {
           "itemOffered": {
             "@type": "Service",
             "name": "Color Change Wraps",
-            "description": `Vehicle color change wraps in ${city.name}. Transform your car's appearance without permanent paint.`
+            "description": `Vehicle color change wraps in ${city.name}. Transform your car's appearance without permanent paint, with hundreds of colors and finishes available.`
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Commercial Graphics",
+            "description": `Eye-catching commercial graphics for ${city.name} businesses. Vehicle lettering, partial wraps, and vinyl graphics that make your business stand out.`
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Partial Vehicle Wraps",
+            "description": `Cost-effective partial vehicle wraps in ${city.name}. Get maximum impact on a budget with strategic partial wrapping for your business vehicles.`
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Vinyl Lettering",
+            "description": `Professional vehicle lettering services in ${city.name}. Custom vinyl lettering and decals for business vehicles, trucks, and vans.`
           }
         }
       ]

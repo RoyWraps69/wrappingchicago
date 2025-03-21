@@ -1,3 +1,4 @@
+
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -14,6 +15,7 @@ import ContactPage from "./pages/ContactPage";
 import GalleryPage from "./pages/GalleryPage";
 import AIWrapIdeas from "./pages/AIWrapIdeas";
 import EmailSetupPage from "./pages/EmailSetupPage";
+import TruckWrapsChicago from "./pages/TruckWrapsChicago";
 import { cities } from "./data/cities";
 import { ScrollToTop } from "./components/navigation/ScrollToTop";
 
@@ -47,6 +49,9 @@ const App = () => (
             <Route path="/services/vehicle-lettering" element={<ServicesPage />} />
             <Route path="/services/specialty-wraps" element={<ServicesPage />} />
             <Route path="/services/retail-graphics" element={<ServicesPage />} />
+            
+            {/* Keyword-specific pages */}
+            <Route path="/truck-wraps-chicago" element={<TruckWrapsChicago />} />
             
             {/* Individual City Pages - Explicit routes for each city */}
             {cities.map(city => (

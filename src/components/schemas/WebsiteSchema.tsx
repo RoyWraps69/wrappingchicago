@@ -8,8 +8,13 @@ interface WebsiteSchemaProps {
 const WebsiteSchema = ({ 
   keywords = [
     "vehicle wraps Chicago", "car wraps Chicago", "truck wraps Chicago", 
-    "van wraps Chicago", "fleet wraps Chicago", "commercial vehicle wraps", 
-    "vinyl wraps Chicago", "vehicle graphics"
+    "van wraps Chicago", "fleet wraps Chicago", "commercial vehicle wraps Chicago",
+    "custom vehicle wraps Chicago", "vehicle graphics Chicago", "car graphics Chicago",
+    "vinyl wraps Chicago", "vehicle wrap installation Chicago", "car wrap installation Chicago",
+    "best vehicle wraps Chicago", "vehicle wrap companies Chicago", "3M vehicle wraps",
+    "automotive graphics", "car wrap prices", "full vehicle wrap cost Chicago",
+    "custom vehicle wrap design Chicago", "long lasting vehicle wraps Chicago",
+    "business vehicle wraps Chicago", "partial vehicle wraps Chicago", "vinyl lettering Chicago"
   ] 
 }: WebsiteSchemaProps) => {
   const schema = {
@@ -17,7 +22,7 @@ const WebsiteSchema = ({
     "@type": "WebSite",
     "name": "Wrapping Chicago - Premium Vehicle Wraps & Graphics",
     "url": "https://wrappingchicago.com",
-    "description": "Chicago's leading vehicle wrap company offering professional car wraps, truck wraps, van wraps, fleet wraps, and commercial graphics with expert installation and premium 3M materials.",
+    "description": "Chicago's leading vehicle wrap company with over 16,000 wraps completed and 20 years in business. Offering professional car wraps, truck wraps, van wraps, fleet wraps, and commercial graphics with expert installation and premium 3M materials.",
     "keywords": keywords.join(", "),
     "potentialAction": {
       "@type": "SearchAction",
