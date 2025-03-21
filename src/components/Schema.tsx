@@ -134,7 +134,7 @@ const Schema: React.FC<SchemaProps> = ({ city, path, pageTitle, pageDescription,
       <ReviewsSchema reviews={reviews} />
       
       {/* FAQ Schema if FAQs are provided */}
-      {faqs && faqs.length > 0 && <FAQSchema faqs={faqs} />}
+      <FAQSchema faqs={faqs} />
     </>
   );
 };

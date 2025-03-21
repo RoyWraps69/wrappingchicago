@@ -2,10 +2,10 @@
 import React from 'react';
 
 interface FAQSchemaProps {
-  faqs: Array<{question: string; answer: string}>;
+  faqs?: Array<{question: string; answer: string}>;
 }
 
-const FAQSchema: React.FC<FAQSchemaProps> = ({ faqs }) => {
+const FAQSchema: React.FC<FAQSchemaProps> = ({ faqs = [] }) => {
   // Create schema entries from the provided FAQs
   const faqItems = faqs.map(faq => ({
     "@type": "Question",
