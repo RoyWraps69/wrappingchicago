@@ -125,7 +125,7 @@ const AIWrapIdeasContent = () => {
           
           {/* Contact Buttons Section after Hero */}
           <div className="container mx-auto px-4 max-w-5xl py-4 md:py-6">
-            <div className="p-4 md:p-5 bg-brand-black text-white rounded-lg flex flex-col sm:flex-row items-center justify-between shadow-lg border border-brand-gold/20">
+            <div className="p-4 md:p-5 bg-gray-900 text-white rounded-lg flex flex-col sm:flex-row items-center justify-between shadow-lg">
               <div>
                 <h2 className="text-lg md:text-xl font-bold mb-2 text-center sm:text-left">Ready to bring your AI designs to life?</h2>
                 <p className="opacity-90 mb-4 sm:mb-0 text-center sm:text-left text-sm md:text-base">Contact our team to implement your generated wrap ideas</p>
@@ -133,8 +133,7 @@ const AIWrapIdeasContent = () => {
               <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
                 <Button
                   asChild
-                  variant="gold"
-                  className="w-full sm:w-auto"
+                  className="bg-brand-red hover:bg-red-700 text-white w-full sm:w-auto"
                 >
                   <Link to="/contact" className="inline-flex items-center justify-center">
                     <MessageSquare className="mr-2 h-4 w-4" />
@@ -170,8 +169,7 @@ const AIWrapIdeasContent = () => {
                 <Button
                   asChild
                   size={isMobile ? "default" : "lg"}
-                  variant="gold"
-                  className="w-full sm:w-auto"
+                  className="bg-brand-red hover:bg-red-700 text-white w-full sm:w-auto"
                 >
                   <Link to="/contact" className="inline-flex items-center justify-center px-3 py-2 md:px-6 md:py-3">
                     <MessageSquare className="mr-2 h-4 w-4 md:h-5 md:w-5" />

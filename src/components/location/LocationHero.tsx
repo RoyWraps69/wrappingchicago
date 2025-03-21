@@ -22,11 +22,11 @@ const LocationHero = ({ cityName }: LocationHeroProps) => {
       "cssSelector": [".location-hero-title", ".location-hero-description", ".location-service-title"]
     },
     "name": `Premium Vehicle Wraps in ${cityName}`,
-    "description": `Transform your cars, trucks, vans, and fleet vehicles with professional wraps using Avery and 3M materials that make your business stand out on every street in ${cityName}.`,
+    "description": `Transform your cars, trucks, vans, and fleet vehicles with professional wraps that make your business stand out on every street in ${cityName}.`,
     "mainEntity": {
       "@type": "LocalBusiness",
       "name": `Wrapping Chicago - Vehicle Wraps in ${cityName}`,
-      "description": `Professional vehicle wrapping services in ${cityName}, IL. Car wraps, truck wraps, van wraps and fleet graphics with premium Avery and 3M materials.`,
+      "description": `Professional vehicle wrapping services in ${cityName}, IL. Car wraps, truck wraps, van wraps and fleet graphics with premium 3M materials.`,
       "telephone": "(312) 597-1286",
       "areaServed": {
         "@type": "City",
@@ -47,8 +47,8 @@ const LocationHero = ({ cityName }: LocationHeroProps) => {
         {/* Contact Bar - Prominent at the top */}
         <div className="bg-white/90 backdrop-blur-sm shadow-lg rounded-lg p-4 mb-6 md:mb-8 border border-gray-200 flex flex-col sm:flex-row items-center justify-between">
           <div className="mb-4 sm:mb-0 text-center sm:text-left">
-            <h3 className="text-base md:text-lg font-semibold text-gray-900">Need Vehicle Wraps in {cityName}?</h3>
-            <p className="text-sm md:text-base text-gray-700">Premium car wraps, truck wraps, van wraps, and fleet graphics with Avery and 3M materials</p>
+            <h3 className="text-base md:text-lg font-semibold text-brand-navy">Need Vehicle Wraps in {cityName}?</h3>
+            <p className="text-sm md:text-base text-gray-700">Premium car wraps, truck wraps, van wraps, and fleet graphics</p>
           </div>
           <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
             <Button
@@ -63,7 +63,7 @@ const LocationHero = ({ cityName }: LocationHeroProps) => {
             <Button
               asChild
               variant="outline"
-              className="border-gray-700 text-gray-700 hover:bg-gray-700 hover:text-white w-full sm:w-auto"
+              className="border-brand-navy text-brand-navy hover:bg-brand-navy hover:text-white w-full sm:w-auto"
             >
               <a href="tel:3125971286" className="inline-flex items-center justify-center">
                 <Phone className="mr-2 h-4 w-4" />
@@ -85,18 +85,18 @@ const LocationHero = ({ cityName }: LocationHeroProps) => {
             </h1>
             
             <p className="text-base md:text-xl text-gray-700 mb-6 md:mb-8 max-w-lg location-hero-description">
-              Transform your cars, trucks, vans, and fleet vehicles with professional wraps using Avery and 3M materials that make your business stand out on every street in {cityName}.
+              Transform your cars, trucks, vans, and fleet vehicles with professional wraps that make your business stand out on every street in {cityName}.
             </p>
             
             {/* Services Overview Section */}
             <div className="grid grid-cols-2 gap-2 md:gap-3 mb-6 location-service-title">
               <div className="flex items-center gap-2 bg-white rounded-lg p-3 shadow-sm">
                 <Car className="h-4 w-4 md:h-5 md:w-5 text-brand-red" />
-                <span className="text-xs md:text-sm font-medium text-gray-800">Car Wraps</span>
+                <span className="text-xs md:text-sm font-medium">Car Wraps</span>
               </div>
               <div className="flex items-center gap-2 bg-white rounded-lg p-3 shadow-sm">
                 <Truck className="h-4 w-4 md:h-5 md:w-5 text-brand-red" />
-                <span className="text-xs md:text-sm font-medium text-gray-800">Truck Wraps</span>
+                <span className="text-xs md:text-sm font-medium">Truck Wraps</span>
               </div>
               <div className="flex items-center gap-2 bg-white rounded-lg p-3 shadow-sm">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-brand-red md:w-5 md:h-5">
@@ -104,11 +104,11 @@ const LocationHero = ({ cityName }: LocationHeroProps) => {
                   <path d="M2 9v8h10V9c0-4-1.5-5-5-5S2 5 2 9z"/>
                   <path d="M12 9v8h10V9c0-4-1.5-5-5-5s-5 1-5 5z"/>
                 </svg>
-                <span className="text-xs md:text-sm font-medium text-gray-800">Van Wraps</span>
+                <span className="text-xs md:text-sm font-medium">Van Wraps</span>
               </div>
               <div className="flex items-center gap-2 bg-white rounded-lg p-3 shadow-sm">
                 <Shield className="h-4 w-4 md:h-5 md:w-5 text-brand-red" />
-                <span className="text-xs md:text-sm font-medium text-gray-800">Vinyl Wraps</span>
+                <span className="text-xs md:text-sm font-medium">Vinyl Wraps</span>
               </div>
             </div>
             
@@ -173,7 +173,7 @@ const LocationHero = ({ cityName }: LocationHeroProps) => {
               <div className="absolute -inset-4 bg-brand-red/20 rounded-full blur-xl"></div>
               <img 
                 src="/lovable-uploads/199c2a21-e0b0-4c29-972f-f32d72698382.png" 
-                alt={`Professional commercial vehicle wrap installation in ${cityName}, IL - fleet branding services with Avery and 3M vinyl materials`}
+                alt={`Professional commercial vehicle wrap installation in ${cityName}, IL - fleet branding services with 3M vinyl materials`}
                 className="rounded-lg shadow-2xl relative z-10 transform rotate-2"
                 loading="lazy"
               />

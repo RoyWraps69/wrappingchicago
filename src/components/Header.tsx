@@ -14,7 +14,7 @@ const Header = () => {
   };
 
   return (
-    <header className="bg-brand-black text-white">
+    <header className="bg-brand-navy text-white">
       {/* Contact Information Bar */}
       <ContactBar />
       

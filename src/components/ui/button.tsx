@@ -10,23 +10,19 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-brand-gold text-brand-black hover:bg-yellow-600",
+        default: "bg-brand-red text-white hover:bg-red-700",
         destructive:
           "bg-destructive text-destructive-foreground hover:bg-destructive/90",
         outline:
           "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
         secondary:
-          "bg-brand-grey text-white hover:bg-gray-700",
+          "bg-brand-navy text-white hover:bg-blue-900",
         ghost: "hover:bg-accent hover:text-accent-foreground",
-        link: "text-brand-gold underline-offset-4 hover:underline",
-        navy: "bg-brand-black text-white hover:bg-brand-grey",
-        gold: "bg-brand-gold text-brand-black hover:bg-yellow-600",
-        white: "bg-white text-brand-black hover:bg-gray-100 border border-gray-200",
-        black: "bg-brand-black text-white hover:bg-brand-grey",
+        link: "text-brand-red underline-offset-4 hover:underline",
+        navy: "bg-brand-navy text-white hover:bg-blue-900",
+        white: "bg-white text-brand-red hover:bg-gray-100 border border-gray-200",
         outlineWhite: "bg-transparent border border-white text-white hover:bg-white/20",
-        outlineGold: "bg-transparent border border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-brand-black",
-        outlineBlack: "bg-transparent border border-brand-black text-brand-black hover:bg-brand-black hover:text-white",
-        outlineGrey: "bg-transparent border border-brand-grey text-brand-grey hover:bg-brand-grey hover:text-white",
+        outlineNavy: "border border-brand-navy text-brand-navy hover:bg-brand-navy hover:text-white",
       },
       size: {
         default: "h-10 px-4 py-2",

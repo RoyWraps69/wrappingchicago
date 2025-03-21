@@ -12,7 +12,7 @@ const Footer = () => {
   const secondHalf = cities.slice(halfwayThrough);
 
   return (
-    <footer className="bg-brand-black text-white py-12">
+    <footer className="bg-brand-navy text-white py-12">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
@@ -43,12 +43,12 @@ const Footer = () => {
           <div>
             <h3 className="text-xl font-bold mb-4">Our Services</h3>
             <ul className="space-y-2">
-              <li><Link to="/services/fleet-wraps" className="hover:text-brand-gold transition-colors">Fleet Wraps</Link></li>
-              <li><Link to="/services/color-change-wraps" className="hover:text-brand-gold transition-colors">Color Change Wraps</Link></li>
-              <li><Link to="/services/commercial-graphics" className="hover:text-brand-gold transition-colors">Commercial Graphics</Link></li>
-              <li><Link to="/services/partial-wraps" className="hover:text-brand-gold transition-colors">Partial Wraps</Link></li>
-              <li><Link to="/gallery" className="hover:text-brand-gold transition-colors">Gallery</Link></li>
-              <li><Link to="/contact" className="hover:text-brand-gold transition-colors">Get a Quote</Link></li>
+              <li><Link to="/services/fleet-wraps" className="hover:text-brand-red transition-colors">Fleet Wraps</Link></li>
+              <li><Link to="/services/color-change-wraps" className="hover:text-brand-red transition-colors">Color Change Wraps</Link></li>
+              <li><Link to="/services/commercial-graphics" className="hover:text-brand-red transition-colors">Commercial Graphics</Link></li>
+              <li><Link to="/services/partial-wraps" className="hover:text-brand-red transition-colors">Partial Wraps</Link></li>
+              <li><Link to="/gallery" className="hover:text-brand-red transition-colors">Gallery</Link></li>
+              <li><Link to="/contact" className="hover:text-brand-red transition-colors">Get a Quote</Link></li>
             </ul>
           </div>
           
@@ -59,7 +59,7 @@ const Footer = () => {
                 <li key={city.slug}>
                   <Link 
                     to={`/vehicle-wraps-${city.slug}-il`} 
-                    className="hover:text-brand-gold transition-colors"
+                    className="hover:text-brand-red transition-colors"
                   >
                     {city.name}, IL
                   </Link>
@@ -75,14 +75,14 @@ const Footer = () => {
                 <li key={city.slug}>
                   <Link 
                     to={`/vehicle-wraps-${city.slug}-il`} 
-                    className="hover:text-brand-gold transition-colors"
+                    className="hover:text-brand-red transition-colors"
                   >
                     {city.name}, IL
                   </Link>
                 </li>
               ))}
               <li>
-                <Link to="/locations" className="text-brand-gold hover:underline">
+                <Link to="/locations" className="text-brand-red hover:underline">
                   View All Locations
                 </Link>
               </li>
@@ -95,32 +95,32 @@ const Footer = () => {
           <h3 className="text-xl font-bold mb-4 text-center">Our Locations Across the US</h3>
           <div className="flex flex-wrap justify-center gap-6 mb-6">
             <div className="flex items-center">
-              <Globe className="w-5 h-5 mr-2 text-brand-gold" />
+              <Globe className="w-5 h-5 mr-2 text-brand-red" />
               <a 
                 href="https://wrappingchicago.com" 
-                className="hover:text-brand-gold transition-colors"
+                className="hover:text-brand-red transition-colors"
               >
                 Wrapping Chicago
               </a>
             </div>
             <div className="flex items-center">
-              <Globe className="w-5 h-5 mr-2 text-brand-gold" />
+              <Globe className="w-5 h-5 mr-2 text-brand-red" />
               <a 
                 href="https://centralimagewraps.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="hover:text-brand-gold transition-colors"
+                className="hover:text-brand-red transition-colors"
               >
                 Central Image Wraps
               </a>
             </div>
             <div className="flex items-center">
-              <Globe className="w-5 h-5 mr-2 text-brand-gold" />
+              <Globe className="w-5 h-5 mr-2 text-brand-red" />
               <a 
                 href="https://lasvegascarwraps.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="hover:text-brand-gold transition-colors"
+                className="hover:text-brand-red transition-colors"
               >
                 Las Vegas Car Wraps
               </a>
