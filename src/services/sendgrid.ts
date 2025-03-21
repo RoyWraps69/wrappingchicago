@@ -13,52 +13,31 @@ export interface EmailData {
 
 export const sendEmail = async (data: EmailData): Promise<void> => {
   try {
-    // Format the email data for submission
+    // Create a FormData object
     const formData = new FormData();
+    
+    // Add the form fields
     formData.append('name', data.name);
     formData.append('email', data.email);
     formData.append('phone', data.phone);
     formData.append('service', data.service);
     formData.append('message', data.message);
     
-    // Add special FormSubmit configurations
-    formData.append('_subject', `Chicago Fleet Wraps: Quote Request from ${data.name}`);
-    formData.append('_captcha', 'false'); // Disable captcha
-    formData.append('_template', 'table'); // Use table template for better readability
-    formData.append('_replyto', data.email); // Ensure reply-to is set to sender
+    // Send via fetch API directly to formsubmit.co
+    const response = await fetch('https://formsubmit.co/ajax/roy@chicagofleetwraps.com', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+      },
+      body: formData
+    });
     
-    // Using the standard HTML form submission method instead of AJAX
-    // This will open a new tab briefly that redirects back to the site
-    const form = document.createElement('form');
-    form.method = 'POST';
-    form.action = 'https://formsubmit.co/roy@chicagofleetwraps.com';
-    form.target = '_blank'; // Open in new tab to avoid page navigation
-    
-    // Append all form fields
-    for (const [key, value] of formData.entries()) {
-      const input = document.createElement('input');
-      input.type = 'hidden';
-      input.name = key;
-      input.value = String(value);
-      form.appendChild(input);
+    if (!response.ok) {
+      throw new Error(`Form submission failed with status: ${response.status}`);
     }
     
-    // Add honeypot field to prevent spam
-    const honeyInput = document.createElement('input');
-    honeyInput.type = 'text';
-    honeyInput.name = '_honey';
-    honeyInput.style.display = 'none';
-    form.appendChild(honeyInput);
-    
-    // Add to DOM, submit, and remove
-    document.body.appendChild(form);
-    form.submit();
-    
-    // Short timeout to make sure the form submissions completes
-    // before removing the form
-    setTimeout(() => {
-      document.body.removeChild(form);
-    }, 1000);
+    const result = await response.json();
+    console.log('Form submission result:', result);
     
     return;
   } catch (error) {

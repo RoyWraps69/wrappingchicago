@@ -31,7 +31,7 @@ const ContactForm = () => {
       
       toast({
         title: "Request Submitted Successfully",
-        description: "Thank you for your message. A confirmation tab may briefly open and close.",
+        description: "Thank you for your message. We'll get back to you shortly.",
         variant: "default",
         duration: 5000,
       });
@@ -66,7 +66,7 @@ const ContactForm = () => {
       )}
       
       <p className="text-xs text-gray-500 mt-4">
-        * This form submits directly to roy@chicagofleetwraps.com. A new tab may briefly open during submission.
+        * This form submits directly to roy@chicagofleetwraps.com
       </p>
     </div>
   );
