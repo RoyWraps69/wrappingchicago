@@ -1,8 +1,8 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useToast } from "@/components/ui/use-toast";
 import { useForm } from "react-hook-form";
-import { sendEmail, checkApiKeyExists } from '@/services/sendgrid';
+import { sendEmail } from '@/services/sendgrid';
 import ApiKeyNotice from './ApiKeyNotice';
 import SubmissionSuccess from './SubmissionSuccess';
 import ContactFormFields, { FormValues } from './ContactFormFields';
@@ -11,12 +11,7 @@ const ContactForm = () => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
-  const [apiKeyExists, setApiKeyExists] = useState(false);
-  
-  useEffect(() => {
-    // Check if API key exists in localStorage
-    setApiKeyExists(checkApiKeyExists());
-  }, []);
+  const [showNotice, setShowNotice] = useState(true);
   
   const form = useForm<FormValues>({
     defaultValues: {
@@ -32,49 +27,39 @@ const ContactForm = () => {
     setIsSubmitting(true);
     
     try {
-      const response = await sendEmail(data);
-
-      if (!response.ok) {
-        const errorText = await response.text();
-        throw new Error(`SendGrid API error: ${response.status} ${errorText}`);
-      }
+      await sendEmail(data);
       
-      console.log('Email sent successfully!');
+      console.log('Email client opened successfully!');
       setIsSubmitting(false);
       setSubmitted(true);
       
       toast({
-        title: "Request Submitted",
-        description: "We'll get back to you as soon as possible.",
+        title: "Email Client Opened",
+        description: "Complete the process in your email client to send your request.",
       });
       
       form.reset();
     } catch (error) {
-      console.error('Email failed to send:', error);
+      console.error('Failed to open email client:', error);
       setIsSubmitting(false);
       
       toast({
         title: "Request Failed",
-        description: "There was an error sending your request. Please try again or contact us directly.",
+        description: "There was an error opening your email client. Please contact us directly.",
         variant: "destructive"
       });
     }
   };
 
-  const handleApiKeySet = () => {
-    setApiKeyExists(true);
-    
-    toast({
-      title: "API Key Saved",
-      description: "SendGrid API key has been saved to your browser.",
-    });
+  const handleDismissNotice = () => {
+    setShowNotice(false);
   };
 
   return (
     <div className="bg-gray-100 p-6 rounded-lg">
       <h2 className="text-2xl font-semibold text-brand-navy mb-4">Request a Quote</h2>
       
-      {!apiKeyExists && <ApiKeyNotice onApiKeySet={handleApiKeySet} />}
+      {showNotice && <ApiKeyNotice onDismiss={handleDismissNotice} />}
       
       {submitted ? (
         <SubmissionSuccess onReset={() => setSubmitted(false)} />
@@ -83,7 +68,7 @@ const ContactForm = () => {
           form={form} 
           onSubmit={handleSubmit} 
           isSubmitting={isSubmitting} 
-          apiKeyExists={apiKeyExists} 
+          apiKeyExists={true} // Always true now since we don't need API key
         />
       )}
     </div>

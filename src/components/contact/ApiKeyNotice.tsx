@@ -1,25 +1,19 @@
 
 import React from 'react';
 import { Button } from "@/components/ui/button";
-import { setApiKey } from '@/services/sendgrid';
 
 interface ApiKeyNoticeProps {
-  onApiKeySet: () => void;
+  onDismiss: () => void;
 }
 
-const ApiKeyNotice = ({ onApiKeySet }: ApiKeyNoticeProps) => {
-  const handleSetApiKey = () => {
-    setApiKey();
-    onApiKeySet();
-  };
-
+const ApiKeyNotice = ({ onDismiss }: ApiKeyNoticeProps) => {
   return (
-    <div className="mb-6 p-4 border border-yellow-300 bg-yellow-50 rounded-md">
-      <p className="text-sm text-yellow-800 mb-2">
-        SendGrid API key is required to send emails. Click the button below to set up the API key.
+    <div className="mb-6 p-4 border border-blue-300 bg-blue-50 rounded-md">
+      <p className="text-sm text-blue-800 mb-2">
+        The contact form will open your default email client (Gmail or other) to send the message.
       </p>
-      <Button onClick={handleSetApiKey} variant="outline" size="sm">
-        Set SendGrid API Key
+      <Button onClick={onDismiss} variant="outline" size="sm">
+        Got it
       </Button>
     </div>
   );
