@@ -2,11 +2,10 @@
 import React, { useState, useEffect } from 'react';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
-import { ImageIcon, RefreshCw, Wallet, AlertCircle } from 'lucide-react';
+import { ImageIcon, RefreshCw, AlertCircle } from 'lucide-react';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Progress } from '@/components/ui/progress';
 import { checkStabilityBalance } from '@/services/stability';
-import { Badge } from '@/components/ui/badge';
 import { toast } from 'sonner';
 
 interface ImageGeneratorFormProps {
@@ -66,37 +65,6 @@ export const ImageGeneratorForm: React.FC<ImageGeneratorFormProps> = ({
             {errorMessage}
           </AlertDescription>
         </Alert>
-      )}
-      
-      {/* Account balance indicator */}
-      {localStorage.getItem('stability_api_key') && (
-        <div className="flex items-center mb-4 text-sm justify-between">
-          <div className="flex items-center">
-            <Wallet className="h-4 w-4 mr-2 text-gray-500" />
-            {isCheckingBalance ? (
-              <span className="text-gray-500">Checking account balance...</span>
-            ) : balance !== null ? (
-              <div className="flex items-center">
-                <span className="text-gray-700 mr-2">Stability AI Credits:</span>
-                <Badge variant={balance > 0 ? "default" : "destructive"} className="px-2 py-0">
-                  {balance.toFixed(2)}
-                </Badge>
-              </div>
-            ) : (
-              <span className="text-gray-500">Unable to check balance</span>
-            )}
-          </div>
-          
-          <Button 
-            variant="ghost" 
-            size="sm" 
-            onClick={handleRefreshBalance} 
-            disabled={isCheckingBalance}
-            className="h-8 px-2"
-          >
-            <RefreshCw className={`h-4 w-4 ${isCheckingBalance ? 'animate-spin' : ''}`} />
-          </Button>
-        </div>
       )}
       
       <div className="mb-4">
