@@ -13,7 +13,7 @@ const ServicesSection = ({ fleetWrapVan, colorChangeVan, commercialGraphics }: S
   // Main featured service
   const featuredService = {
     title: "Fleet Wraps",
-    description: "Transform your company vehicles into eye-catching mobile billboards. Our fleet wrapping services help businesses maximize their advertising reach across Chicago.",
+    description: "Transform your company vehicles into eye-catching mobile billboards. Our fleet wrapping services help businesses create a unified brand presence across their entire vehicle fleet, from vans and trucks to specialty vehicles.",
     image: fleetWrapVan,
     link: "/services/fleet-wraps"
   };
@@ -75,7 +75,7 @@ const ServicesSection = ({ fleetWrapVan, colorChangeVan, commercialGraphics }: S
               <div className="w-full">
                 <img 
                   src={featuredService.image}
-                  alt="Chicago Fleet Wraps - Professional branding for company vehicles and delivery vans"
+                  alt="Chicago Fleet Wraps - Professional branding for tech company fleet vehicles"
                   className="object-cover w-full h-auto"
                 />
               </div>

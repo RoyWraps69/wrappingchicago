@@ -136,5 +136,14 @@ export const galleryItems: GalleryItem[] = [
     description: 'Jeep Grand Cherokee with premium matte black wrap and matching black wheels for a cohesive, stealthy appearance.',
     client: 'Private Owner',
     location: 'Chicago, IL'
+  },
+  { 
+    id: 16, 
+    title: 'IDG Tech Fleet SUVs', 
+    category: 'Fleet Wraps',
+    image: '/lovable-uploads/a8335462-2c63-40ad-8bd2-2aead73abfb1.png', 
+    description: 'Consistent brand identity across a fleet of technology company SUVs with "think tech" messaging and product imagery.',
+    client: 'IDG Technology',
+    location: 'Chicago, IL'
   }
 ];

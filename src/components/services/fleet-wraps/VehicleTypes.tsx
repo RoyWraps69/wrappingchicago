@@ -1,9 +1,15 @@
+
 import React from 'react';
 import { Car, Truck } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
+import { useGalleryImages } from '@/hooks/useGalleryImages';
+
 const VehicleTypes: React.FC = () => {
-  return <div className="mb-8">
+  const { fleetWrapVan } = useGalleryImages();
+  
+  return (
+    <div className="mb-8">
       <h3 className="text-xl font-semibold text-brand-navy mb-4 flex items-center">
         <Car className="w-6 h-6 text-brand-red mr-2" />
         Types of Fleet Vehicles We Wrap
@@ -26,9 +32,12 @@ const VehicleTypes: React.FC = () => {
           </div>
         </div>
         <div className="flex items-center justify-center h-full">
-          <img alt="Fleet wrap on commercial vehicle - Chicago vehicle wrap solutions" className="w-full h-auto object-cover rounded-lg shadow-md" src="/lovable-uploads/38f1a5ce-45bd-4ebc-83bd-709dc1a2f9ce.jpg" style={{
-          maxHeight: '380px'
-        }} />
+          <img 
+            src={fleetWrapVan} 
+            alt="IDG Tech fleet wrap on SUVs - Chicago vehicle wrap solutions" 
+            className="w-full h-auto object-cover rounded-lg shadow-md" 
+            style={{maxHeight: '380px'}} 
+          />
         </div>
       </div>
       
@@ -42,14 +51,10 @@ const VehicleTypes: React.FC = () => {
         <h4 className="text-lg font-semibold text-brand-navy mb-3">Chicago Fleet Wrap Case Study</h4>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="col-span-1 md:col-span-2">
-            <p className="text-gray-700 mb-3">A Chicago-based HVAC company saw a 32% increase in service 
-calls after wrapping their fleet of 12 service vans with professional 
-graphics. The eye-catching design and clear contact information 
-made their vehicles mobile billboards throughout the Chicago area, 
-resulting in significant business growth within just the first three months.</p>
+            <p className="text-gray-700 mb-3">An IT services company saw a 28% increase in brand recognition and service inquiries after wrapping their fleet of SUVs with professional "think tech" branded graphics. The distinctive blue design with product photography made their vehicles instantly recognizable throughout the Chicago metropolitan area.</p>
           </div>
           <div className="col-span-1">
-            <img src="/lovable-uploads/bc84c157-8367-4197-9b08-8ef75da53ce3.png" alt="HVAC company fleet wrap example - Professional vehicle wrapping in Chicago" className="rounded-lg shadow-sm max-w-full h-auto object-fill" />
+            <img src={fleetWrapVan} alt="IDG tech fleet wrap example - Professional vehicle wrapping in Chicago" className="rounded-lg shadow-sm max-w-full h-auto object-fill" />
           </div>
         </div>
       </div>
@@ -132,6 +137,8 @@ resulting in significant business growth within just the first three months.</p>
           <Link to="/gallery">View Our Fleet Wrap Portfolio</Link>
         </Button>
       </div>
-    </div>;
+    </div>
+  );
 };
+
 export default VehicleTypes;
