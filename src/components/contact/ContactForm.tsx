@@ -30,14 +30,14 @@ const ContactForm = () => {
       await sendEmail(data);
       console.log('Email client opened');
       
-      // We'll show success state even if the email client may not have opened
-      // The user will see their email client open anyway
       setIsSubmitting(false);
       setSubmitted(true);
       
       toast({
-        title: "Email Client Opening",
-        description: "Your default email client should be opening. Please complete sending the email there.",
+        title: "Important - Complete Your Request",
+        description: "Your email client has opened with your message. Please click SEND in your email app to complete your request.",
+        variant: "default",
+        duration: 10000, // Show for 10 seconds to ensure user sees it
       });
       
       form.reset();
@@ -47,7 +47,7 @@ const ContactForm = () => {
       
       toast({
         title: "Request Failed",
-        description: "There was an error opening your email client. Please try again or contact us directly.",
+        description: "There was an error opening your email client. Please try again or contact us directly at roy@chicagofleetwraps.com",
         variant: "destructive"
       });
     }
@@ -70,7 +70,7 @@ const ContactForm = () => {
           form={form} 
           onSubmit={handleSubmit} 
           isSubmitting={isSubmitting} 
-          apiKeyExists={true} // Always true now since we don't need API key
+          apiKeyExists={true}
         />
       )}
     </div>
