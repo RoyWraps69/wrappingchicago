@@ -27,6 +27,17 @@ const Breadcrumbs = () => {
       'contact': 'Contact',
       'gallery': 'Gallery',
       'locations': 'Locations',
+      'ai-wrap-ideas': 'AI Wrap Designer',
+      'protective-films': 'Protective Films',
+      'vehicle-lettering': 'Vehicle Lettering',
+      'specialty-wraps': 'Specialty Wraps',
+      'retail-graphics': 'Retail Graphics',
+      'car-wraps': 'Car Wraps',
+      'truck-wraps': 'Truck Wraps',
+      'van-wraps': 'Van Wraps',
+      'designer-wraps': 'Designer Wraps',
+      'luxury-exotic-wraps': 'Luxury & Exotic Wraps',
+      'email-setup': 'Email Setup',
     };
 
     return routeMap[path] || path.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());

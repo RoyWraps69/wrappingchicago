@@ -34,12 +34,23 @@ const ServiceContentSelector: React.FC<ServiceContentSelectorProps> = ({ path })
     return <SpecialtyWrapsContent />;
   } else if (normalizedPath.includes('retail-graphics')) {
     return <RetailGraphicsContent />;
-  } else if (normalizedPath.includes('car-wraps') || 
-             normalizedPath.includes('truck-wraps') || 
-             normalizedPath.includes('van-wraps')) {
-    // For vehicle-specific wraps, we can either create dedicated components or use the generic one
-    return <GenericServiceContent />;
+  } else if (normalizedPath.includes('car-wraps')) {
+    // For car-specific wraps
+    return <GenericServiceContent serviceType="car" />;
+  } else if (normalizedPath.includes('truck-wraps')) {
+    // For truck-specific wraps
+    return <GenericServiceContent serviceType="truck" />;
+  } else if (normalizedPath.includes('van-wraps')) {
+    // For van-specific wraps
+    return <GenericServiceContent serviceType="van" />;
+  } else if (normalizedPath.includes('designer-wraps')) {
+    // For designer wraps
+    return <GenericServiceContent serviceType="designer" />;
+  } else if (normalizedPath.includes('luxury-exotic-wraps')) {
+    // For luxury/exotic vehicle wraps
+    return <GenericServiceContent serviceType="luxury" />;
   } else {
+    // Default page showing all services
     return <GenericServiceContent />;
   }
 };

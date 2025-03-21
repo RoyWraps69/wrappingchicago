@@ -10,6 +10,7 @@ import AIWrapIdeas from './pages/AIWrapIdeas';
 import ServicesPage from './pages/ServicesPage';
 import GalleryPage from './pages/GalleryPage';
 import AboutPage from './pages/AboutPage';
+import EmailSetupPage from './pages/EmailSetupPage';
 import GoogleTagManager from './components/GoogleTagManager';
 import GoogleSearchConsole from './components/seo/GoogleSearchConsole';
 import NotFound from './pages/NotFound';
@@ -38,12 +39,14 @@ function App() {
         <Router>
           <ScrollToTop />
           <Routes>
+            {/* Main pages */}
             <Route path="/" element={<Index />} />
             <Route path="/locations" element={<LocationsPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/ai-wrap-ideas" element={<AIWrapIdeas />} />
             <Route path="/gallery" element={<GalleryPage />} />
             <Route path="/about" element={<AboutPage />} />
+            <Route path="/email-setup" element={<EmailSetupPage />} />
             
             {/* Services main route */}
             <Route path="/services" element={<ServicesPage />} />

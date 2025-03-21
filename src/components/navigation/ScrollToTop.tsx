@@ -14,7 +14,7 @@ const ScrollToTop = () => {
     window.scrollTo({
       top: 0,
       left: 0,
-      behavior: 'instant'
+      behavior: 'instant' // Using 'instant' instead of 'smooth' to prevent issues
     });
     
     // Cancel any ongoing smooth scrolls

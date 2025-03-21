@@ -21,11 +21,12 @@ const SERVICE_ROUTES = [
   'car-wraps',
   'truck-wraps',
   'van-wraps',
-  'gallery', // Added gallery to the list of service routes
-  'about', // Already in the list
+  'gallery',
+  'about',
   'ai-wrap-ideas',
   'contact',
-  'locations'
+  'locations',
+  'email-setup' // Adding this in case the EmailSetupPage needs to be accessed
 ];
 
 const CityLocationPage = () => {
@@ -70,11 +71,11 @@ const CityLocationPage = () => {
     console.log(`Identified as a service route, not a city: ${slug}`);
     
     // For direct service pages like /partial-wraps, send to the appropriate ServicesPage route
-    if (location.pathname.startsWith('/')) {
-      return <Navigate to={location.pathname} replace />;
+    if (SERVICE_ROUTES.includes(slug)) {
+      return <Navigate to={`/${slug}`} replace />;
     }
     
-    return <Navigate to={`/services/${slug}`} replace />;
+    return <Navigate to={location.pathname} replace />;
   }
   
   // Find the city by slug
