@@ -3,13 +3,12 @@ import React, { useState, useEffect } from 'react';
 import { useToast } from "@/hooks/use-toast";
 import { useForm } from "react-hook-form";
 import SubmissionSuccess from './SubmissionSuccess';
-import ContactFormFields, { FormValues } from './ContactFormFields';
 
 const ContactForm = () => {
   const { toast } = useToast();
   const [submitted, setSubmitted] = useState(false);
   
-  const form = useForm<FormValues>({
+  const form = useForm({
     defaultValues: {
       name: '',
       email: '',
@@ -44,7 +43,7 @@ const ContactForm = () => {
           {/* FormSubmit.co specific configuration fields */}
           <input type="hidden" name="_subject" value="Chicago Fleet Wraps: New Quote Request" />
           <input type="hidden" name="_captcha" value="false" />
-          <input type="hidden" name="_next" value={`${window.location.origin}/contact?success=true`} />
+          <input type="hidden" name="_next" value="https://wrappingchicago.com/contact?success=true" />
           <input type="hidden" name="_template" value="table" />
           
           {/* Honeypot field to prevent spam */}
