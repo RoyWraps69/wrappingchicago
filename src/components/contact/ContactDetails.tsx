@@ -17,8 +17,8 @@ const ContactDetails = () => {
       </ContactItem>
       
       <ContactItem icon={Mail} title="Email">
-        <a href="mailto:roy@chicagofleetwraps.com" className="text-brand-red hover:underline">
-          roy@chicagofleetwraps.com
+        <a href="mailto:roy@wrappingchicago.com" className="text-brand-red hover:underline">
+          roy@wrappingchicago.com
         </a>
       </ContactItem>
       

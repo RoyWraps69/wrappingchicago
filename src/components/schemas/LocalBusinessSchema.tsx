@@ -13,9 +13,9 @@ const LocalBusinessSchema = ({ city }: LocalBusinessSchemaProps) => {
     "name": "Chicago Fleet Wraps",
     "alternateName": "CFW Vehicle Wrapping Services",
     "description": `Premium vehicle wrapping service serving ${city.name}, IL with AI-powered design for fleet wraps, color change wraps, and commercial graphics.`,
-    "url": `https://chicagofleetwraps.com/vehicle-wraps-${city.slug}-il`,
+    "url": `https://wrappingchicago.com/vehicle-wraps-${city.slug}-il`,
     "telephone": "(312) 597-1286",
-    "email": "roy@chicagofleetwraps.com",
+    "email": "roy@wrappingchicago.com",
     "foundingDate": "2015",
     "address": {
       "@type": "PostalAddress",
@@ -54,11 +54,11 @@ const LocalBusinessSchema = ({ city }: LocalBusinessSchemaProps) => {
       "https://www.linkedin.com/company/chicagofleetwraps"
     ],
     "image": [
-      "https://chicagofleetwraps.com/images/vehicle-wrap-chicago.jpg",
-      "https://chicagofleetwraps.com/images/fleet-wraps-chicago.jpg",
-      "https://chicagofleetwraps.com/images/color-change-wraps.jpg"
+      "https://wrappingchicago.com/images/vehicle-wrap-chicago.jpg",
+      "https://wrappingchicago.com/images/fleet-wraps-chicago.jpg",
+      "https://wrappingchicago.com/images/color-change-wraps.jpg"
     ],
-    "logo": "https://chicagofleetwraps.com/logo.png",
+    "logo": "https://wrappingchicago.com/logo.png",
     "areaServed": {
       "@type": "City",
       "name": city.name,

@@ -29,11 +29,11 @@ const LocationPage = ({ city }: LocationPageProps) => {
           name="description" 
           content={`Professional vehicle wraps, fleet wraps & color change wraps in ${city.name}, IL. Chicago Fleet Wraps provides high-quality vehicle wrapping services with free quotes.`} 
         />
-        <link rel="canonical" href={`https://chicagofleetwraps.com/vehicle-wraps-${city.slug}-il`} />
+        <link rel="canonical" href={`https://wrappingchicago.com/vehicle-wraps-${city.slug}-il`} />
         <meta name="robots" content="index, follow" />
         <meta property="og:title" content={`Vehicle Wraps in ${city.name}, IL | Chicago Fleet Wraps`} />
         <meta property="og:description" content={`Professional vehicle wrapping services in ${city.name}, IL. Specializing in fleet wraps, color change wraps, and commercial graphics.`} />
-        <meta property="og:url" content={`https://chicagofleetwraps.com/vehicle-wraps-${city.slug}-il`} />
+        <meta property="og:url" content={`https://wrappingchicago.com/vehicle-wraps-${city.slug}-il`} />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="/og-image.png" />
         <meta name="twitter:card" content="summary_large_image" />
