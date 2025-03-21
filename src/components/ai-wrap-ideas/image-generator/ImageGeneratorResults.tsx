@@ -17,7 +17,7 @@ export const ImageGeneratorResults: React.FC<ImageGeneratorResultsProps> = ({
       <div className="relative bg-gray-100 rounded-lg overflow-hidden">
         <img 
           src={generatedImage} 
-          alt="Generated wrap design" 
+          alt="Custom AI-generated vehicle wrap design - Professional visualized vehicle wrap concept for your business" 
           className="w-full h-auto"
         />
         <Button

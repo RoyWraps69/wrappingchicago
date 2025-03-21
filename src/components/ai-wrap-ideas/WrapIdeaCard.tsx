@@ -25,7 +25,7 @@ const WrapIdeaCard = ({ idea, onLike }: WrapIdeaCardProps) => {
         {idea.imageUrl ? (
           <img 
             src={idea.imageUrl}
-            alt={idea.title}
+            alt={`AI-generated ${idea.vehicleType} wrap design concept: ${idea.title} - ${idea.description.substring(0, 50)}...`}
             className="object-cover w-full h-full"
             loading="lazy"
             onError={(e) => {

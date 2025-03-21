@@ -7,7 +7,13 @@ const AIArticleSchema = () => {
     "@type": "Article",
     "headline": "How AI is Revolutionizing Vehicle Wrap Design in Chicago",
     "description": "Learn how artificial intelligence is transforming the vehicle wrap industry by enabling instant custom design generation and visualization.",
-    "image": "/lovable-uploads/efc6c586-8651-43ad-811a-b896a91a1b69.png",
+    "image": {
+      "@type": "ImageObject",
+      "url": "/lovable-uploads/efc6c586-8651-43ad-811a-b896a91a1b69.png",
+      "height": 800,
+      "width": 1200,
+      "caption": "AI-generated vehicle wrap design on a luxury sedan - metallic blue color change wrap example"
+    },
     "datePublished": "2023-08-15T08:00:00+08:00",
     "dateModified": new Date().toISOString(),
     "author": {

@@ -169,7 +169,7 @@ const LocationProjects = ({ cityName }: LocationProjectsProps) => {
               <div className="aspect-w-16 aspect-h-9 bg-gray-200 overflow-hidden h-56">
                 <img 
                   src={project.image}
-                  alt={`Vehicle wrap in ${cityName}, IL - ${project.title}`}
+                  alt={`Professional ${project.title.toLowerCase()} in ${cityName}, IL - ${project.description.substring(0, 50)}...`}
                   className="object-cover w-full h-full transition-transform duration-500 hover:scale-105"
                 />
               </div>

@@ -11,7 +11,7 @@ const Hero = () => {
       <div className="absolute inset-0 z-0">
         <img 
           src="/lovable-uploads/5539b79e-ab54-428d-82a0-e4735ee97a95.png" 
-          alt="Sports car with colorful paint splash wrap design" 
+          alt="Professional vehicle wrap with colorful paint splash design on sports car in Chicago" 
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-black/60"></div> {/* Darker overlay (60% opacity) to ensure text is readable */}

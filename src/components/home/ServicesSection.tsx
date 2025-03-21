@@ -51,7 +51,7 @@ const ServicesSection = ({ fleetWrapVan, colorChangeVan, commercialGraphics }: S
               <div className="w-full">
                 <img 
                   src={featuredService.image}
-                  alt={`${featuredService.title} - Wrapping Chicago`}
+                  alt="Chicago Fleet Wraps - Professional branding for company vehicles and delivery vans"
                   className="object-cover w-full h-auto"
                 />
               </div>
@@ -76,7 +76,7 @@ const ServicesSection = ({ fleetWrapVan, colorChangeVan, commercialGraphics }: S
               <div className="aspect-w-16 aspect-h-9">
                 <img 
                   src={service.image}
-                  alt={`${service.title} - Wrapping Chicago`}
+                  alt={`${service.title} in Chicago - Professional ${index === 0 ? 'vehicle color transformation services' : 'business vehicle branding solutions'}`}
                   className="object-cover w-full h-full"
                 />
               </div>

@@ -73,7 +73,7 @@ const ImageViewer: React.FC<ImageViewerProps> = ({ item, onClose }) => {
         </div>
         <img 
           src={item.image} 
-          alt={item.title} 
+          alt={`${item.title} - ${item.category} vehicle wrap by Wrapping Chicago${item.client ? ` for ${item.client}` : ''} in ${item.location || 'Chicago'}`} 
           className="w-full h-auto rounded-lg" 
         />
         <div className="bg-white p-4 rounded-b-lg">

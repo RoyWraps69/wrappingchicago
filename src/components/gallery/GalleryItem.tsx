@@ -14,7 +14,7 @@ const GalleryItem: React.FC<GalleryItemProps> = ({ item, onExpand }) => {
       <div className="relative h-64 overflow-hidden group">
         <img 
           src={item.image} 
-          alt={item.title} 
+          alt={`${item.title} - ${item.category} in ${item.location || 'Chicago'} - ${item.client ? `for ${item.client}` : 'Vehicle wrap example'}`}
           className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
         />
         <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
