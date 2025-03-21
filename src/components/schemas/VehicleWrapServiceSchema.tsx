@@ -15,7 +15,7 @@ const VehicleWrapServiceSchema = ({ city }: VehicleWrapServiceSchemaProps) => {
     "url": `https://wrappingchicago.com/vehicle-wraps-${city.slug}-il`,
     "logo": "https://wrappingchicago.com/logo.png",
     "telephone": "(312) 597-1286",
-    "email": "roy@wrappingchicago.com",
+    "email": "roy@chicagofleetwraps.com",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Chicago",

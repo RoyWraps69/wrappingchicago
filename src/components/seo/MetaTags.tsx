@@ -62,6 +62,17 @@ const MetaTags: React.FC<MetaTagsProps> = ({
       <meta name="geo.position" content="41.8781;-87.6298" />
       <meta name="ICBM" content="41.8781, -87.6298" />
       
+      {/* Google Business Profile */}
+      <meta name="google-site-verification" content="ADD_YOUR_VERIFICATION_CODE_HERE" />
+      <meta name="business:contact_data:street_address" content="4711 N. Lamon Ave" />
+      <meta name="business:contact_data:locality" content="Chicago" />
+      <meta name="business:contact_data:region" content="IL" />
+      <meta name="business:contact_data:postal_code" content="60630" />
+      <meta name="business:contact_data:country_name" content="USA" />
+      <meta name="business:contact_data:email" content="roy@chicagofleetwraps.com" />
+      <meta name="business:contact_data:phone_number" content="+13125971286" />
+      <meta name="business:contact_data:website" content="https://wrappingchicago.com" />
+      
       {/* Structured Data */}
       {structuredData && (
         <script type="application/ld+json">

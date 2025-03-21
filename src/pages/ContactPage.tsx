@@ -8,17 +8,31 @@ import ContactIntroduction from '@/components/contact/ContactIntroduction';
 import ContactDetails from '@/components/contact/ContactDetails';
 import ContactStudioImage from '@/components/contact/ContactStudioImage';
 import ContactForm from '@/components/contact/ContactForm';
+import Schema from '@/components/Schema';
+import { cities } from '@/data/cities';
 
 const ContactPage = () => {
   return (
     <>
       <Helmet>
-        <title>Contact Us | Wrapping Chicago</title>
+        <title>Contact Us | Chicago Fleet Wraps | Request a Quote</title>
         <meta 
           name="description" 
-          content="Contact Wrapping Chicago for all your vehicle wrapping needs. Get a free quote for fleet wraps, color change wraps, and commercial graphics."
+          content="Contact Chicago Fleet Wraps for all your vehicle wrapping needs. Get a free quote for fleet wraps, color change wraps, and commercial graphics from Chicago's premier vehicle wrap company."
         />
+        <meta 
+          name="keywords" 
+          content="contact vehicle wrap company Chicago, request vehicle wrap quote Chicago, fleet wrap quote, commercial vehicle graphics Chicago, car wrap consultation, free vehicle wrap estimate Chicago"
+        />
+        <link rel="canonical" href="https://wrappingchicago.com/contact" />
       </Helmet>
+      
+      <Schema 
+        city={cities[0]} 
+        path="/contact" 
+        pageTitle="Contact Us | Chicago Fleet Wraps | Request a Quote" 
+        pageDescription="Contact Chicago Fleet Wraps for all your vehicle wrapping needs. Get a free quote for fleet wraps, color change wraps, and commercial graphics from Chicago's premier vehicle wrap company."
+      />
       
       <div className="flex flex-col min-h-screen">
         <Header />

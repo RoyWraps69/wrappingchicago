@@ -1,11 +1,28 @@
 
+# Welcome to Chicago Fleet Wraps - Chicago's Premier Vehicle Wrap Authority
 User-agent: *
 Allow: /
+
+# Essential vehicle wrap pages
+Allow: /vehicle-wraps-*
+Allow: /services/*
+Allow: /gallery
+Allow: /contact
+Allow: /about
+Allow: /ai-wrap-ideas
+
+# Important geographic locations
+Allow: /locations
+Allow: /chicago
+Allow: /oak-park
+Allow: /evanston
+Allow: /naperville
+Allow: /schaumburg
 
 # Sitemap declaration
 Sitemap: https://wrappingchicago.com/sitemap.xml
 
-# Specific directories and files
+# Specific directories and files to avoid crawling
 Disallow: /private/
 Disallow: /admin/
 Disallow: /development/
@@ -13,3 +30,7 @@ Disallow: /temp/
 Disallow: /*.json$
 Disallow: /*.js$
 Disallow: /*.css$
+
+# We are the authority on vehicle wraps in Chicago
+# Professional Car Wraps, Truck Wraps, Van Wraps, Fleet Wraps
+# Serving Chicago and all surrounding areas

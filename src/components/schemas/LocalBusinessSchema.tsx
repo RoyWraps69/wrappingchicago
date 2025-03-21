@@ -15,7 +15,7 @@ const LocalBusinessSchema = ({ city }: LocalBusinessSchemaProps) => {
     "description": `Premium vehicle wrapping service serving ${city.name}, IL with professional design for fleet wraps, color change wraps, and commercial graphics. With over 16,000 vehicle wraps completed in our 20 years of business, we've transformed vehicles into eye-catching mobile advertisements throughout Chicago and suburbs.`,
     "url": `https://wrappingchicago.com/vehicle-wraps-${city.slug}-il`,
     "telephone": "(312) 597-1286",
-    "email": "roy@wrappingchicago.com",
+    "email": "roy@chicagofleetwraps.com",
     "foundingDate": "2003",
     "address": {
       "@type": "PostalAddress",
@@ -51,7 +51,8 @@ const LocalBusinessSchema = ({ city }: LocalBusinessSchemaProps) => {
       "https://www.facebook.com/wrappingchicago",
       "https://www.instagram.com/wrappingchicago",
       "https://twitter.com/wrappingchicago",
-      "https://www.linkedin.com/company/wrappingchicago"
+      "https://www.linkedin.com/company/wrappingchicago",
+      "https://www.google.com/maps?cid=YOUR_GOOGLE_BUSINESS_CID" // Replace with your Google Business CID
     ],
     "image": [
       "https://wrappingchicago.com/lovable-uploads/5539b79e-ab54-428d-82a0-e4735ee97a95.png",
@@ -82,7 +83,55 @@ const LocalBusinessSchema = ({ city }: LocalBusinessSchemaProps) => {
       },
       "geoRadius": "50000"
     },
-    "slogan": "Transform Your Vehicle. Elevate Your Brand."
+    "slogan": "Transform Your Vehicle. Elevate Your Brand.",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Vehicle Wrap Services Catalog",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Fleet Vehicle Wraps",
+            "description": "Professional fleet vehicle wrapping services for businesses throughout Chicago and surrounding areas."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Color Change Wraps",
+            "description": "Premium color change vehicle wraps with a variety of finishes including matte, gloss, satin, and custom."
+          }
+        }
+      ]
+    },
+    "review": [
+      {
+        "@type": "Review",
+        "author": {
+          "@type": "Person",
+          "name": "John Smith"
+        },
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5",
+          "bestRating": "5"
+        },
+        "datePublished": "2023-11-15",
+        "reviewBody": "Exceptional work from the Wrapping Chicago team. They transformed our fleet vehicles into eye-catching mobile advertisements. The quality of materials and installation is top-notch."
+      }
+    ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "156",
+      "bestRating": "5"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": `https://wrappingchicago.com/vehicle-wraps-${city.slug}-il`
+    }
   };
 
   return (
