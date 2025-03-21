@@ -1,35 +1,12 @@
 
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Sparkles, Shield, Award, Clock, Wrench } from 'lucide-react';
 
 const Hero = () => {
-  const [imageLoaded, setImageLoaded] = useState(false);
-  const backgroundImageUrl = '/lovable-uploads/36647423-d723-4af9-8807-039add30c418.png';
-
-  // Create an image object to check if the image loads
-  React.useEffect(() => {
-    const img = new Image();
-    img.src = backgroundImageUrl;
-    img.onload = () => setImageLoaded(true);
-    img.onerror = () => {
-      console.error('Failed to load hero background image:', backgroundImageUrl);
-      setImageLoaded(false);
-    };
-  }, [backgroundImageUrl]);
-
   return (
-    <section className="relative w-full overflow-hidden bg-brand-navy" 
-      style={{ 
-        backgroundColor: '#0F172A', // Fallback background color
-        backgroundImage: imageLoaded ? `url('${backgroundImageUrl}')` : 'none',
-        backgroundSize: 'cover', 
-        backgroundPosition: 'center' 
-      }}
-    >
-      {/* Removed the dark overlay div */}
-      
+    <section className="relative w-full overflow-hidden bg-gradient-to-br from-gray-900 to-gray-800">
       <div className="relative z-20 container mx-auto px-4 sm:px-6 lg:px-8 min-h-[80vh] flex items-center">
         <div className="max-w-3xl py-16">
           <div className="animate-fade-in mb-4">
