@@ -19,7 +19,7 @@ const MetaTags: React.FC<MetaTagsProps> = ({
   description,
   keywords,
   canonicalUrl,
-  ogImage = '/lovable-uploads/5539b79e-ab54-428d-82a0-e4735ee97a95.png',
+  ogImage = '/lovable-uploads/6ef3b1af-8591-4d36-97c2-9366401115fa.png',
   ogType = 'website',
   twitterCard = 'summary_large_image',
   noIndex = false,
@@ -32,6 +32,10 @@ const MetaTags: React.FC<MetaTagsProps> = ({
       <meta name="description" content={description} />
       {keywords && <meta name="keywords" content={keywords} />}
       <link rel="canonical" href={canonicalUrl} />
+      
+      {/* Favicon */}
+      <link rel="icon" type="image/png" href="/lovable-uploads/6ef3b1af-8591-4d36-97c2-9366401115fa.png" />
+      <link rel="apple-touch-icon" sizes="180x180" href="/lovable-uploads/6ef3b1af-8591-4d36-97c2-9366401115fa.png" />
       
       {/* Robots Meta Tags */}
       {noIndex ? (

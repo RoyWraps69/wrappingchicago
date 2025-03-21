@@ -60,9 +60,9 @@ const WebsiteSchema = ({
       "name": "Wrapping Chicago",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://wrappingchicago.com/logo.png",
+        "url": "https://wrappingchicago.com/lovable-uploads/6ef3b1af-8591-4d36-97c2-9366401115fa.png",
         "width": 600,
-        "height": 60
+        "height": 600
       }
     },
     "additionalProperty": [

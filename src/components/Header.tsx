@@ -59,9 +59,14 @@ const Header = () => {
       {/* Main Header */}
       <div className="container mx-auto py-4 px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
-          <div>
-            <Link to="/" className="text-2xl font-bold">
-              Wrapping Chicago
+          <div className="flex items-center">
+            <Link to="/" className="flex items-center">
+              <img 
+                src="/lovable-uploads/6ef3b1af-8591-4d36-97c2-9366401115fa.png" 
+                alt="Wrapping Chicago Logo" 
+                className="h-12 w-12 mr-3"
+              />
+              <span className="text-2xl font-bold">Wrapping Chicago</span>
             </Link>
           </div>
           

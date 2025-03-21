@@ -84,11 +84,14 @@ const Schema = ({
   // Combine core keywords with city-specific keywords if applicable
   const allKeywords = [...keywords, ...cityKeywords];
 
+  // Logo path for schema
+  const logoUrl = "https://wrappingchicago.com/lovable-uploads/6ef3b1af-8591-4d36-97c2-9366401115fa.png";
+
   return (
     <>
       <WebsiteSchema keywords={allKeywords} />
-      <LocalBusinessSchema city={city} />
-      <BusinessLocationSchema />
+      <LocalBusinessSchema city={city} logoUrl={logoUrl} />
+      <BusinessLocationSchema logoUrl={logoUrl} />
       <OfferCatalogSchema city={city} />
       <ReviewsSchema />
       <AIServiceSchema />
@@ -99,8 +102,9 @@ const Schema = ({
         title="Vehicle Wrapping Services" 
         description={pageDescription || `Premium vehicle wraps for businesses and individuals in ${city.name}, Illinois with over 16,000 wraps completed in our 20 years of business. Transform your vehicle and elevate your brand with expert installation and premium 3M materials. Specializing in car wraps, truck wraps, van wraps, and fleet graphics throughout Chicago and suburbs.`}
         path={path}
+        logoUrl={logoUrl}
       />
-      <VehicleWrapServiceSchema city={city} />
+      <VehicleWrapServiceSchema city={city} logoUrl={logoUrl} />
     </>
   );
 };

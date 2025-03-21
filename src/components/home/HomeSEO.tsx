@@ -13,6 +13,10 @@ const HomeSEO = () => {
       <meta name="keywords" content="vehicle wraps Chicago, car wraps Chicago, truck wraps Chicago, van wraps Chicago, fleet wraps Chicago, commercial vehicle wraps, custom vehicle wraps, vehicle graphics Chicago, car graphics Chicago, vinyl wraps Chicago, vehicle wrap installation Chicago, car wrap installation Chicago, best vehicle wraps Chicago, vehicle wrap companies Chicago, 3M vehicle wraps, automotive graphics, car wrap prices, full vehicle wrap cost Chicago, custom vehicle wrap design Chicago, long lasting vehicle wraps Chicago, business vehicle wraps Chicago, vinyl lettering Chicago, truck lettering Chicago, partial vehicle wraps Chicago" />
       <link rel="canonical" href="https://wrappingchicago.com" />
       
+      {/* Favicon */}
+      <link rel="icon" type="image/png" href="/lovable-uploads/6ef3b1af-8591-4d36-97c2-9366401115fa.png" />
+      <link rel="apple-touch-icon" sizes="180x180" href="/lovable-uploads/6ef3b1af-8591-4d36-97c2-9366401115fa.png" />
+      
       {/* Schema.org markup for Google */}
       <script type="application/ld+json">
         {JSON.stringify({
@@ -38,6 +42,12 @@ const HomeSEO = () => {
                 "sameAs": "https://en.wikipedia.org/wiki/Chicago"
               }
             }
+          },
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://wrappingchicago.com/lovable-uploads/6ef3b1af-8591-4d36-97c2-9366401115fa.png",
+            "width": 600,
+            "height": 600
           }
         })}
       </script>
@@ -47,7 +57,7 @@ const HomeSEO = () => {
       <meta property="og:description" content="Turn heads with professional vehicle wraps, car wraps, truck wraps, and van wraps that make your business stand out on every street in Chicago. Premium 3M materials, expert installation, and quick turnaround." />
       <meta property="og:url" content="https://wrappingchicago.com" />
       <meta property="og:type" content="website" />
-      <meta property="og:image" content="https://wrappingchicago.com/lovable-uploads/5539b79e-ab54-428d-82a0-e4735ee97a95.png" />
+      <meta property="og:image" content="https://wrappingchicago.com/lovable-uploads/6ef3b1af-8591-4d36-97c2-9366401115fa.png" />
       <meta property="og:image:alt" content="Professional vehicle wrap with vibrant colors on sports car in Chicago - Wrapping Chicago" />
       <meta property="og:site_name" content="Wrapping Chicago" />
       <meta property="og:locale" content="en_US" />
@@ -56,7 +66,7 @@ const HomeSEO = () => {
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content="Vehicle Wraps Chicago | Car, Truck & Van Wraps | Premium Fleet Wrapping" />
       <meta name="twitter:description" content="Chicago's leading vehicle wrap provider. Transform your cars, trucks, vans, and fleet vehicles with professional wrapping services. Premium 3M materials with 2-year warranty." />
-      <meta name="twitter:image" content="https://wrappingchicago.com/lovable-uploads/5539b79e-ab54-428d-82a0-e4735ee97a95.png" />
+      <meta name="twitter:image" content="https://wrappingchicago.com/lovable-uploads/6ef3b1af-8591-4d36-97c2-9366401115fa.png" />
       <meta name="twitter:image:alt" content="Professional vehicle wrap services in Chicago - colorful vehicle design" />
       <meta name="twitter:site" content="@wrappingchicago" />
       
