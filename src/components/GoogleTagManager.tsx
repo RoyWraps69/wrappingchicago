@@ -9,7 +9,6 @@ const GoogleTagManager: React.FC<GoogleTagManagerProps> = ({ containerId }) => {
   // Format: If user passed G-XXXXXX (GA4) format, convert to GTM-XXXXXX format
   const formattedId = containerId.startsWith('G-') ? `GTM-${containerId.substring(2)}` : containerId;
   
-  // Add Google Search Console verification script
   return (
     <>
       {/* Google Tag Manager (head) */}
@@ -22,9 +21,6 @@ const GoogleTagManager: React.FC<GoogleTagManagerProps> = ({ containerId }) => {
           })(window,document,'script','dataLayer','${formattedId}');`
         }}
       />
-      
-      {/* Google Search Console Verification */}
-      <meta name="google-site-verification" content="gQnkHgsJ2bOPDWFClspUxA6EZsE-XWnLasqxsqSESvg" />
       
       {/* Google Tag Manager (body) - to be included in the App.tsx file */}
       <noscript

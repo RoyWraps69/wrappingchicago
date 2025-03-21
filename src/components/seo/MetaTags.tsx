@@ -63,7 +63,6 @@ const MetaTags: React.FC<MetaTagsProps> = ({
       <meta name="ICBM" content="41.8781, -87.6298" />
       
       {/* Google Business Profile */}
-      <meta name="google-site-verification" content="G-ZTLS3EEGE7" />
       <meta name="business:contact_data:street_address" content="4711 N. Lamon Ave" />
       <meta name="business:contact_data:locality" content="Chicago" />
       <meta name="business:contact_data:region" content="IL" />

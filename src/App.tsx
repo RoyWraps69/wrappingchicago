@@ -7,6 +7,7 @@ import CityLocationPage from './pages/CityLocationPage';
 import LocationsPage from './pages/LocationsPage';
 import ContactPage from './pages/ContactPage';
 import GoogleTagManager from './components/GoogleTagManager';
+import GoogleSearchConsole from './components/seo/GoogleSearchConsole';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import './App.css';
 
@@ -18,6 +19,7 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <HelmetProvider>
         <GoogleTagManager containerId="GTM-ZTLS3EEGE7" />
+        <GoogleSearchConsole verificationCode="gQnkHgsJ2bOPDWFClspUxA6EZsE-XWnLasqxsqSESvg" />
         <Router>
           <Routes>
             <Route path="/" element={<Index />} />
