@@ -21,8 +21,13 @@ export const sendEmail = async (data: EmailData): Promise<void> => {
     formData.append('service', data.service);
     formData.append('message', data.message);
     
-    // Send a POST request to a serverless function endpoint or email service
-    const response = await fetch('https://formsubmit.co/roy@chicagofleetwraps.com', {
+    // Add special FormSubmit configurations
+    formData.append('_subject', `Chicago Fleet Wraps: Quote Request from ${data.name}`);
+    formData.append('_captcha', 'false'); // Disable captcha
+    formData.append('_template', 'table'); // Use table template for better readability
+    
+    // Send a POST request to FormSubmit.co service with the correct email
+    const response = await fetch('https://formsubmit.co/ajax/roy@chicagofleetwraps.com', {
       method: 'POST',
       body: formData,
       headers: {
@@ -31,7 +36,9 @@ export const sendEmail = async (data: EmailData): Promise<void> => {
     });
 
     if (!response.ok) {
-      throw new Error('Failed to send email');
+      const errorData = await response.json();
+      console.error('FormSubmit error response:', errorData);
+      throw new Error(`Failed to send email: ${response.status}`);
     }
     
     return;

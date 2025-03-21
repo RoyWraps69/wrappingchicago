@@ -14,7 +14,12 @@ const SubmissionSuccess = ({ onReset }: SubmissionSuccessProps) => {
         <Check className="h-6 w-6 text-green-600" />
       </div>
       <h3 className="text-xl font-medium text-gray-900 mb-2">Thank You!</h3>
-      <p className="text-gray-600 mb-4">Your message has been sent successfully. We'll review your request and get back to you as soon as possible.</p>
+      <p className="text-gray-600 mb-4">
+        Your message has been sent to roy@chicagofleetwraps.com. We'll review your request and get back to you as soon as possible.
+      </p>
+      <p className="text-gray-500 text-sm mb-6">
+        If you don't receive a response within 24 hours, please check your spam folder or call us directly at (773) 455-0467.
+      </p>
       <Button 
         onClick={onReset}
         className="mt-4"

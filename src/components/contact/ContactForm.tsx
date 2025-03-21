@@ -33,6 +33,7 @@ const ContactForm = () => {
         title: "Request Submitted Successfully",
         description: "Thank you for your message. We'll get back to you as soon as possible.",
         variant: "default",
+        duration: 5000,
       });
       
       form.reset();
@@ -43,7 +44,8 @@ const ContactForm = () => {
       toast({
         title: "Request Failed",
         description: "There was an error sending your message. Please try again or contact us directly at roy@chicagofleetwraps.com",
-        variant: "destructive"
+        variant: "destructive",
+        duration: 8000,
       });
     }
   };
