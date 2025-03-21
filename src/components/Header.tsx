@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { Phone, Menu, X, Sparkles, Globe } from 'lucide-react';
+import { Phone, Menu, X, Sparkles, Globe, MessageSquare } from 'lucide-react';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -13,36 +13,45 @@ const Header = () => {
 
   return (
     <header className="bg-brand-navy text-white">
-      {/* Sister Companies Bar */}
-      <div className="bg-brand-navy/90 border-b border-white/10">
+      {/* Contact Information Bar */}
+      <div className="bg-brand-red">
         <div className="container mx-auto py-2 px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-wrap justify-center md:justify-end gap-4 md:gap-6 text-sm">
-            <span className="text-white/70">Our Locations Across the US:</span>
-            <a 
-              href="https://wrappingchicago.com" 
-              className="flex items-center hover:text-brand-red transition-colors"
-            >
-              <Globe className="w-4 h-4 mr-1 text-brand-red" />
-              Chicago
-            </a>
-            <a 
-              href="https://centralimagewraps.com" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="flex items-center hover:text-brand-red transition-colors"
-            >
-              <Globe className="w-4 h-4 mr-1 text-brand-red" />
-              Central IL
-            </a>
-            <a 
-              href="https://lasvegascarwraps.com" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="flex items-center hover:text-brand-red transition-colors"
-            >
-              <Globe className="w-4 h-4 mr-1 text-brand-red" />
-              Las Vegas
-            </a>
+          <div className="flex flex-wrap justify-center md:justify-between items-center gap-4">
+            <div className="flex items-center text-white">
+              <Phone className="h-4 w-4 mr-2" />
+              <a href="tel:3125971286" className="text-white hover:underline">(312) 597-1286</a>
+              <span className="mx-3 hidden md:inline">|</span>
+              <MessageSquare className="h-4 w-4 mr-2 hidden md:inline" />
+              <a href="/contact" className="text-white hover:underline hidden md:inline">Get a Free Quote</a>
+            </div>
+            <div className="flex flex-wrap justify-end gap-4 md:gap-6 text-sm">
+              <span className="text-white/70">Our Locations:</span>
+              <a 
+                href="https://wrappingchicago.com" 
+                className="flex items-center hover:text-white/80 transition-colors"
+              >
+                <Globe className="w-4 h-4 mr-1 text-white" />
+                Chicago
+              </a>
+              <a 
+                href="https://centralimagewraps.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center hover:text-white/80 transition-colors"
+              >
+                <Globe className="w-4 h-4 mr-1 text-white" />
+                Central IL
+              </a>
+              <a 
+                href="https://lasvegascarwraps.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center hover:text-white/80 transition-colors"
+              >
+                <Globe className="w-4 h-4 mr-1 text-white" />
+                Las Vegas
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -87,16 +96,29 @@ const Header = () => {
               Contact
             </Link>
             
-            <Button 
-              variant="default" 
-              className="bg-brand-red hover:bg-red-700 text-white"
-              asChild
-            >
-              <a href="tel:3125971286" className="inline-flex items-center">
-                <Phone className="mr-2 h-4 w-4" />
-                (312) 597-1286
-              </a>
-            </Button>
+            <div className="flex gap-2 ml-2">
+              <Button 
+                variant="outline" 
+                className="border-white/20 bg-white/10 text-white hover:bg-white/20"
+                asChild
+              >
+                <Link to="/contact" className="inline-flex items-center">
+                  <MessageSquare className="mr-2 h-4 w-4" />
+                  Get a Quote
+                </Link>
+              </Button>
+              
+              <Button 
+                variant="default" 
+                className="bg-brand-red hover:bg-red-700 text-white"
+                asChild
+              >
+                <a href="tel:3125971286" className="inline-flex items-center">
+                  <Phone className="mr-2 h-4 w-4" />
+                  (312) 597-1286
+                </a>
+              </Button>
+            </div>
           </nav>
         </div>
         
@@ -147,16 +169,29 @@ const Header = () => {
               Contact
             </Link>
             
-            <Button 
-              variant="default" 
-              className="bg-brand-red hover:bg-red-700 text-white w-full justify-center"
-              asChild
-            >
-              <a href="tel:3125971286" className="inline-flex items-center">
-                <Phone className="mr-2 h-4 w-4" />
-                (312) 597-1286
-              </a>
-            </Button>
+            <div className="pt-4 flex flex-col gap-3">
+              <Button 
+                variant="outline" 
+                className="border-white/20 bg-white/10 text-white hover:bg-white/20 w-full justify-center"
+                asChild
+              >
+                <Link to="/contact" className="inline-flex items-center">
+                  <MessageSquare className="mr-2 h-4 w-4" />
+                  Get a Quote
+                </Link>
+              </Button>
+              
+              <Button 
+                variant="default" 
+                className="bg-brand-red hover:bg-red-700 text-white w-full justify-center"
+                asChild
+              >
+                <a href="tel:3125971286" className="inline-flex items-center">
+                  <Phone className="mr-2 h-4 w-4" />
+                  (312) 597-1286
+                </a>
+              </Button>
+            </div>
           </nav>
         )}
       </div>

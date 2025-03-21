@@ -2,7 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { MapPin, Phone, ArrowRight, Sparkles } from 'lucide-react';
+import { MapPin, Phone, ArrowRight, Sparkles, MessageSquare } from 'lucide-react';
 
 interface LocationHeroProps {
   cityName: string;
@@ -27,28 +27,46 @@ const LocationHero = ({ cityName }: LocationHeroProps) => {
               Transform your vehicles with professional wraps that make your business stand out on every street in {cityName}.
             </p>
             
+            {/* Enhanced Contact Buttons Section */}
+            <div className="bg-black/5 backdrop-blur-sm rounded-xl p-4 mb-6 border border-gray-200">
+              <h3 className="text-gray-800 font-semibold mb-3">Ready to transform your vehicle?</h3>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button
+                  asChild
+                  size="lg"
+                  className="bg-brand-red hover:bg-red-700 text-white font-medium px-8 py-6 h-auto rounded-full"
+                >
+                  <Link to="/contact" className="inline-flex items-center">
+                    <MessageSquare className="mr-2 h-5 w-5" />
+                    Request a Free Quote
+                  </Link>
+                </Button>
+                
+                <Button
+                  asChild
+                  variant="outline"
+                  size="lg"
+                  className="border-gray-300 bg-white text-gray-800 hover:bg-gray-100 font-medium px-8 py-6 h-auto rounded-full"
+                >
+                  <a href="tel:3125971286" className="inline-flex items-center">
+                    <Phone className="mr-2 h-5 w-5" />
+                    (312) 597-1286
+                  </a>
+                </Button>
+              </div>
+            </div>
+            
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button
-                asChild
-                size="lg"
-                className="bg-brand-red hover:bg-red-700 text-white font-medium px-8 py-6 h-auto rounded-full"
-              >
-                <Link to="/contact" className="inline-flex items-center">
-                  Request a Free Quote
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
-              
               <Button
                 asChild
                 variant="outline"
                 size="lg"
-                className="border-gray-300 bg-white text-gray-800 hover:bg-gray-100 font-medium px-8 py-6 h-auto rounded-full"
+                className="border-gray-300 bg-white text-gray-800 hover:bg-gray-100 font-medium px-8 py-6 h-auto rounded-full flex items-center"
               >
-                <a href="tel:3125971286" className="inline-flex items-center">
-                  <Phone className="mr-2 h-4 w-4" />
-                  (312) 597-1286
-                </a>
+                <Link to="/gallery" className="inline-flex items-center">
+                  <ArrowRight className="mr-2 h-4 w-4" />
+                  View Our Portfolio
+                </Link>
               </Button>
               
               <Button

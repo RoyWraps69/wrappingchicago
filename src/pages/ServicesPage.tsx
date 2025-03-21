@@ -10,11 +10,19 @@ import ServiceCatalog from '@/components/services/ServiceCatalog';
 import ServiceContentSelector from '@/components/services/ServiceContentSelector';
 import ServiceSchema from '@/components/schemas/ServiceSchema';
 import Breadcrumbs from '@/components/navigation/Breadcrumbs';
+import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
+import { Phone, MessageSquare } from 'lucide-react';
+import Schema from '@/components/Schema';
+import { cities } from '@/data/cities';
 
 const ServicesPage = () => {
   const location = useLocation();
   const path = location.pathname;
   const isSpecificService = path.includes('/services/');
+  
+  // For Schema component
+  const chicagoCity = cities.find(city => city.slug === 'chicago') || cities[0];
   
   // Determine which service to display based on the URL
   let serviceTitle = "Our Services";
@@ -64,7 +72,26 @@ const ServicesPage = () => {
         <meta name="description" content={serviceDescription} />
         <meta name="keywords" content={serviceKeywords} />
         <link rel="canonical" href={`https://wrappingchicago.com${path}`} />
+        <meta property="og:title" content={`${serviceTitle} | Wrapping Chicago`} />
+        <meta property="og:description" content={serviceDescription} />
+        <meta property="og:url" content={`https://wrappingchicago.com${path}`} />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="/lovable-uploads/5539b79e-ab54-428d-82a0-e4735ee97a95.png" />
       </Helmet>
+      
+      <Schema 
+        city={chicagoCity}
+        path={path}
+        pageTitle={`${serviceTitle} | Wrapping Chicago`}
+        pageDescription={serviceDescription}
+      />
+      
+      <ServiceSchema 
+        title={serviceTitle} 
+        description={serviceDescription} 
+        path={path} 
+        includeAI={path.includes('fleet-wraps') || path.includes('commercial-graphics')}
+      />
       
       <div className="flex flex-col min-h-screen">
         <Header />
@@ -72,6 +99,35 @@ const ServicesPage = () => {
         <main className="flex-grow">
           <div className="container mx-auto py-12 px-4">
             <Breadcrumbs />
+            
+            {/* Contact Buttons Section */}
+            <div className="mb-8 p-5 bg-gray-50 rounded-lg border border-gray-200 flex flex-col sm:flex-row items-center justify-between">
+              <div>
+                <h2 className="text-xl font-bold text-brand-navy mb-2">Interested in {serviceTitle.toLowerCase()}?</h2>
+                <p className="text-gray-700 mb-4 sm:mb-0">Contact us today for a free consultation and quote</p>
+              </div>
+              <div className="flex flex-col sm:flex-row gap-3">
+                <Button
+                  asChild
+                  className="bg-brand-red hover:bg-red-700 text-white"
+                >
+                  <Link to="/contact" className="inline-flex items-center">
+                    <MessageSquare className="mr-2 h-4 w-4" />
+                    Request a Quote
+                  </Link>
+                </Button>
+                <Button
+                  asChild
+                  variant="outline"
+                  className="border-brand-navy text-brand-navy hover:bg-brand-navy hover:text-white"
+                >
+                  <a href="tel:3125971286" className="inline-flex items-center">
+                    <Phone className="mr-2 h-4 w-4" />
+                    (312) 597-1286
+                  </a>
+                </Button>
+              </div>
+            </div>
             
             <ServiceHeader 
               title={serviceTitle} 
@@ -89,12 +145,6 @@ const ServicesPage = () => {
         
         <Footer />
       </div>
-      
-      <ServiceSchema 
-        title={serviceTitle} 
-        description={serviceDescription} 
-        path={path} 
-      />
     </>
   );
 };
