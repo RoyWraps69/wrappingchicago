@@ -1,111 +1,136 @@
 
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import { City } from '@/data/cities';
 import LocalBusinessSchema from './schemas/LocalBusinessSchema';
-import ReviewsSchema from './schemas/ReviewsSchema';
-import OfferCatalogSchema from './schemas/OfferCatalogSchema';
-import ActionSchema from './schemas/ActionSchema';
-import AIServiceSchema from './schemas/AIServiceSchema';
-import ServiceSchema from './schemas/ServiceSchema';
-import WebsiteSchema from './schemas/WebsiteSchema';
-import BreadcrumbSchema from './schemas/BreadcrumbSchema';
-import FAQSchema from './schemas/FAQSchema';
-import VehicleWrapServiceSchema from './schemas/VehicleWrapServiceSchema';
 import BusinessLocationSchema from './schemas/BusinessLocationSchema';
+import BreadcrumbSchema from './schemas/BreadcrumbSchema';
+import WebsiteSchema from './schemas/WebsiteSchema';
+import ServiceSchema from './schemas/ServiceSchema';
+import VehicleWrapServiceSchema from './schemas/VehicleWrapServiceSchema';
+import ReviewsSchema from './schemas/ReviewsSchema';
 
 interface SchemaProps {
   city: City;
-  path?: string;
-  pageTitle?: string;
-  pageDescription?: string;
-  keywords?: string[];
+  path: string;
+  pageTitle: string;
+  pageDescription: string;
 }
 
-const Schema = ({ 
-  city, 
-  path = '/', 
-  pageTitle, 
-  pageDescription,
-  keywords = [
-    // Core Vehicle Wrap Keywords
-    "vehicle wraps Chicago", "car wraps Chicago", "truck wraps Chicago", 
-    "van wraps Chicago", "fleet wraps Chicago", "commercial vehicle wraps Chicago",
-    "custom vehicle wraps Chicago", "vehicle graphics Chicago", "car graphics Chicago",
-    "vinyl wraps Chicago", "automotive graphics Chicago", "vehicle wrap installation Chicago",
-    
-    // Business-Focused Keywords
-    "business vehicle wraps Chicago", "fleet graphics Chicago", "car wrap advertising Chicago",
-    "commercial fleet wraps Chicago", "mobile advertising wraps Chicago", "commercial wrap ROI Chicago",
-    
-    // Service-Specific Keywords
-    "vehicle wrap design Chicago", "vehicle branding Chicago", "wrap advertising Chicago",
-    "vehicle wrap companies Chicago", "best vehicle wraps Chicago", "long lasting vehicle wraps Chicago",
-    "3M vehicle wraps Chicago", "wrap installation near me", "vehicle wrap near me Chicago",
-    
-    // Product Type Keywords
-    "full vehicle wrap cost Chicago", "partial vehicle wraps Chicago", "vinyl lettering Chicago",
-    "truck lettering Chicago", "van graphics installation Chicago", "window graphics Chicago",
-    "color change wraps Chicago", "matte vehicle wraps Chicago", "gloss vehicle wraps Chicago",
-    
-    // Specialty Keywords
-    "food truck wraps Chicago", "custom car wrap design Chicago", "reflective vehicle wraps Chicago",
-    "vehicle wrap color change Chicago", "perforated window film Chicago", "wrap removal services Chicago",
-    
-    // Long-Tail Keywords
-    "how much do car wraps cost in Chicago", "best place for vehicle wraps in Chicago",
-    "affordable vehicle wraps Chicago", "high-quality car wraps Chicago",
-    "vehicle wrap design and installation Chicago", "car wrap installation services Chicago"
-  ]
-}: SchemaProps) => {
-  // Add city-specific keywords if we're on a city page
-  const cityKeywords = city.name !== 'Chicago' ? [
-    `vehicle wraps ${city.name}`, 
-    `car wraps ${city.name}`, 
-    `truck wraps ${city.name}`,
-    `van wraps ${city.name}`, 
-    `fleet wraps ${city.name}`, 
-    `commercial vehicle wraps ${city.name}`,
-    `custom vehicle wraps ${city.name}`, 
-    `vehicle graphics ${city.name}`, 
-    `car graphics ${city.name}`,
-    `vinyl wraps ${city.name}`, 
-    `automotive graphics ${city.name}`, 
-    `vehicle wrap installation ${city.name}`,
-    `business vehicle wraps ${city.name}`, 
-    `fleet graphics ${city.name}`, 
-    `car wrap advertising ${city.name}`,
-    `commercial fleet wraps ${city.name}`, 
-    `mobile advertising wraps ${city.name}`,
-    `vehicle wrap companies ${city.name}`,
-    `partial vehicle wraps ${city.name}`,
-    `color change wraps ${city.name}`
-  ] : [];
+const Schema: React.FC<SchemaProps> = ({ city, path, pageTitle, pageDescription }) => {
+  // Base URL for the website
+  const baseUrl = 'https://wrappingchicago.com';
   
-  // Combine core keywords with city-specific keywords if applicable
-  const allKeywords = [...keywords, ...cityKeywords];
-
-  // Logo path for schema
-  const logoUrl = "https://wrappingchicago.com/lovable-uploads/6ef3b1af-8591-4d36-97c2-9366401115fa.png";
+  // Create the URL for the current page
+  const pageUrl = `${baseUrl}${path}`;
+  
+  // Business information
+  const businessName = `Wrapping Chicago - Vehicle Wraps in ${city.name}, IL`;
+  const businessDescription = `Professional vehicle wraps in ${city.name}, IL. Truck wraps, van wraps, color change wraps, commercial fleet graphics, and more.`;
+  
+  // Create breadcrumb list items
+  const breadcrumbItems = [
+    {
+      position: 1,
+      name: 'Home',
+      item: baseUrl
+    }
+  ];
+  
+  // Add city page to breadcrumbs if not home page
+  if (path !== '/') {
+    breadcrumbItems.push({
+      position: 2,
+      name: `Vehicle Wraps ${city.name}`,
+      item: pageUrl
+    });
+  }
+  
+  // Services offered
+  const services = [
+    {
+      name: 'Car Wraps',
+      description: `Professional car wrapping services in ${city.name}, IL.`,
+      url: `${baseUrl}/services/car-wraps`
+    },
+    {
+      name: 'Truck Wraps',
+      description: `Custom truck wraps and graphics for businesses in ${city.name}, IL.`,
+      url: `${baseUrl}/services/truck-wraps`
+    },
+    {
+      name: 'Van Wraps',
+      description: `Commercial van wraps and fleet graphics in ${city.name}, IL.`,
+      url: `${baseUrl}/services/van-wraps`
+    },
+    {
+      name: 'Fleet Wraps',
+      description: `Fleet vehicle wrapping services for businesses in ${city.name}, IL.`,
+      url: `${baseUrl}/services/fleet-wraps`
+    },
+    {
+      name: 'Color Change Wraps',
+      description: `Vehicle color change wraps in ${city.name}, IL.`,
+      url: `${baseUrl}/services/color-change-wraps`
+    }
+  ];
+  
+  // Reviews
+  const reviews = [
+    {
+      author: 'Chicago Business Owner',
+      reviewBody: 'Excellent job on our fleet wraps. The attention to detail was impressive.',
+      reviewRating: {
+        ratingValue: '5'
+      }
+    },
+    {
+      author: 'John D.',
+      reviewBody: 'My color change wrap looks amazing! Professional service from start to finish.',
+      reviewRating: {
+        ratingValue: '5'
+      }
+    },
+    {
+      author: 'Sarah M.',
+      reviewBody: 'Wrapping Chicago transformed our delivery vans into eye-catching mobile billboards.',
+      reviewRating: {
+        ratingValue: '5'
+      }
+    }
+  ];
 
   return (
-    <>
-      <WebsiteSchema keywords={allKeywords} />
-      <LocalBusinessSchema city={city} logoUrl={logoUrl} />
-      <BusinessLocationSchema logoUrl={logoUrl} />
-      <OfferCatalogSchema city={city} />
-      <ReviewsSchema />
-      <AIServiceSchema />
-      <ActionSchema />
-      <BreadcrumbSchema path={path} />
-      <FAQSchema />
-      <ServiceSchema 
-        title="Vehicle Wrapping Services" 
-        description={pageDescription || `Premium vehicle wraps for businesses and individuals in ${city.name}, Illinois with over 16,000 wraps completed in our 20 years of business. Transform your vehicle and elevate your brand with expert installation and premium 3M materials. Specializing in car wraps, truck wraps, van wraps, and fleet graphics throughout Chicago and suburbs.`}
-        path={path}
-        logoUrl={logoUrl}
+    <Helmet>
+      {/* LocalBusiness Schema */}
+      <LocalBusinessSchema city={city} />
+      
+      {/* Business Location Schema */}
+      <BusinessLocationSchema />
+      
+      {/* Breadcrumb Schema */}
+      <BreadcrumbSchema items={breadcrumbItems} />
+      
+      {/* Website Schema */}
+      <WebsiteSchema
+        name={businessName}
+        description={businessDescription}
+        url={baseUrl}
       />
-      <VehicleWrapServiceSchema city={city} logoUrl={logoUrl} />
-    </>
+      
+      {/* Service Schema */}
+      <ServiceSchema
+        title={pageTitle}
+        description={pageDescription}
+        path={path}
+      />
+      
+      {/* Vehicle Wrap Service Schema */}
+      <VehicleWrapServiceSchema city={city} />
+      
+      {/* Reviews Schema */}
+      <ReviewsSchema reviews={reviews} />
+    </Helmet>
   );
 };
 
