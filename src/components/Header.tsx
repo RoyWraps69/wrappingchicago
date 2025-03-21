@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { Phone, Menu, X, Sparkles } from 'lucide-react';
+import { Phone, Menu, X, Sparkles, Globe } from 'lucide-react';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -13,6 +13,43 @@ const Header = () => {
 
   return (
     <header className="bg-brand-navy text-white">
+      {/* Sister Companies Bar */}
+      <div className="bg-brand-navy/90 border-b border-white/10">
+        <div className="container mx-auto py-2 px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-wrap justify-center md:justify-end gap-4 md:gap-6 text-sm">
+            <span className="text-white/70">Our Locations Across the US:</span>
+            <a 
+              href="https://bloomingtoncarwraps.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex items-center hover:text-brand-red transition-colors"
+            >
+              <Globe className="w-4 h-4 mr-1 text-brand-red" />
+              Bloomington
+            </a>
+            <a 
+              href="https://centralimagewraps.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex items-center hover:text-brand-red transition-colors"
+            >
+              <Globe className="w-4 h-4 mr-1 text-brand-red" />
+              Central IL
+            </a>
+            <a 
+              href="https://lasvegascarwraps.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex items-center hover:text-brand-red transition-colors"
+            >
+              <Globe className="w-4 h-4 mr-1 text-brand-red" />
+              Las Vegas
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      {/* Main Header */}
       <div className="container mx-auto py-4 px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           <div>
