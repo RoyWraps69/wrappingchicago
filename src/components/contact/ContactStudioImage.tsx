@@ -14,7 +14,7 @@ const ContactStudioImage = () => {
           className="w-full h-auto object-cover"
         />
         <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-brand-black/90 via-brand-black/70 to-transparent p-6">
-          <h3 className="text-white text-xl font-bold mb-3">Need Vehicle Wraps in Chicago?</h3>
+          <h3 className="text-white text-xl font-bold mb-3 drop-shadow-md">Need Vehicle Wraps in Chicago?</h3>
           
           {/* Service badges */}
           <div className="flex flex-wrap gap-2 mb-4">
@@ -50,8 +50,8 @@ const ContactStudioImage = () => {
             </Button>
           </div>
           
-          <p className="text-white/80 text-sm mt-3">
-            Premium 3M vehicle wraps with expert installation and 2-year warranty
+          <p className="text-white text-sm mt-3 drop-shadow">
+            Premium Avery and 3M vehicle wraps with expert installation and 2-year warranty
           </p>
         </div>
       </div>

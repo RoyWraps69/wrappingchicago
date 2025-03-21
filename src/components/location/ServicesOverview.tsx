@@ -15,14 +15,14 @@ const ServicesOverview: React.FC<ServicesOverviewProps> = ({ city }) => {
         Professional Vehicle Wrapping Services in {city.name}
       </h3>
       
-      <p>
+      <p className="text-gray-700">
         At Chicago Fleet Wraps, we understand that businesses in {city.name} need to stand out in a competitive market. 
         Our vehicle wraps provide an outstanding return on investment by transforming your vehicles into mobile billboards 
         that generate thousands of impressions daily throughout {city.county} and beyond.
       </p>
       
-      <p className="mt-4">
-        We use only premium 3M and Avery vinyl materials, ensuring your vehicle wrap will maintain its vibrant appearance and 
+      <p className="mt-4 text-gray-700">
+        We use only premium Avery and 3M vinyl materials, ensuring your vehicle wrap will maintain its vibrant appearance and 
         professional look for years to come. Our climate-controlled installation facility and certified technicians guarantee 
         flawless application and attention to detail on every project.
       </p>
@@ -32,13 +32,13 @@ const ServicesOverview: React.FC<ServicesOverviewProps> = ({ city }) => {
         Premium Color Change Wraps in {city.name}
       </h3>
       
-      <p>
+      <p className="text-gray-700">
         Looking to transform your vehicle's appearance without permanent paint? Our color change wraps give {city.name} 
         vehicle owners the freedom to customize their cars, trucks, and SUVs with premium vinyl wraps in virtually any color 
         or finish.
       </p>
       
-      <p className="mt-4">
+      <p className="mt-4 text-gray-700">
         From sleek matte black to vibrant gloss colors, color-shifting chameleon wraps, and carbon fiber accents, 
         we offer endless possibilities to make your vehicle unique. Color change wraps not only transform your vehicle's 
         appearance but also protect the original paint, preserving resale value.

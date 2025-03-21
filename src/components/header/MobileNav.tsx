@@ -57,7 +57,7 @@ const MobileNav: React.FC<MobileNavProps> = ({ isOpen, onClose }) => {
         >
           <Link to="/contact" className="inline-flex items-center">
             <MessageSquare className="mr-2 h-5 w-5" />
-            Get a Quote
+            Get a Free Quote
           </Link>
         </Button>
         
