@@ -26,10 +26,10 @@ const ContactForm = () => {
         <SubmissionSuccess onReset={() => setSubmitted(false)} />
       ) : (
         <form 
-          action="https://formsubmit.co/roy@chicagofleetwraps.com" 
-          method="POST"
+          action="https://airform.io/roy@chicagofleetwraps.com" 
+          method="post"
           className="space-y-4"
-          onSubmit={() => {
+          onSubmit={(e) => {
             setIsSubmitting(true);
             toast({
               title: "Submitting your request...",
@@ -37,15 +37,6 @@ const ContactForm = () => {
             });
           }}
         >
-          {/* FormSubmit.co specific configuration fields */}
-          <input type="hidden" name="_subject" value="Chicago Fleet Wraps: New Quote Request" />
-          <input type="hidden" name="_captcha" value="false" />
-          <input type="hidden" name="_next" value="https://wrappingchicago.com/contact?success=true" />
-          <input type="hidden" name="_template" value="table" />
-          
-          {/* Honeypot field to prevent spam */}
-          <input type="text" name="_honey" style={{ display: 'none' }} />
-          
           <div className="space-y-4">
             <div>
               <label htmlFor="name" className="block text-sm font-medium">Your Name</label>
@@ -124,6 +115,8 @@ const ContactForm = () => {
           <p className="text-sm text-gray-500 mt-2">
             By submitting this form, your request will be sent to: roy@chicagofleetwraps.com
           </p>
+          
+          <input type="hidden" name="_subject" value="Chicago Fleet Wraps: New Quote Request" />
         </form>
       )}
       
