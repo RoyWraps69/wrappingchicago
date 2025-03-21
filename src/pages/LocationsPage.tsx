@@ -40,6 +40,23 @@ const LocationsPage = () => {
             </div>
           </section>
           
+          {/* Service Area Map - Moved to top */}
+          <section className="py-16 bg-gray-50">
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="max-w-3xl mx-auto text-center mb-12">
+                <h2 className="text-3xl font-bold mb-6 text-brand-navy">
+                  Our Service Area
+                </h2>
+                <p className="text-lg text-gray-700">
+                  Wrapping Chicago serves businesses and individuals within a 40-mile radius of Chicago.
+                  Our central location allows us to efficiently serve the entire metropolitan area.
+                </p>
+              </div>
+              
+              <ChicagoServiceMap />
+            </div>
+          </section>
+          
           {/* Locations Grid */}
           <section className="py-16 bg-white">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -105,23 +122,6 @@ const LocationsPage = () => {
                   </svg>
                 </Link>
               </div>
-            </div>
-          </section>
-          
-          {/* Service Area Map */}
-          <section className="py-16 bg-gray-50">
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="max-w-3xl mx-auto text-center mb-12">
-                <h2 className="text-3xl font-bold mb-6 text-brand-navy">
-                  Our Service Area
-                </h2>
-                <p className="text-lg text-gray-700">
-                  Wrapping Chicago serves businesses and individuals within a 40-mile radius of Chicago.
-                  Our central location allows us to efficiently serve the entire metropolitan area.
-                </p>
-              </div>
-              
-              <ChicagoServiceMap />
             </div>
           </section>
           
