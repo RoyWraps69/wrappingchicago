@@ -44,9 +44,6 @@ const Index = () => {
         <Header />
         
         <main className="flex-grow">
-          {/* Easy Button Section - Added at the top */}
-          <EasyButtonSection />
-          
           <Hero />
           
           {/* Information Bar with Contact Buttons */}
@@ -80,6 +77,9 @@ const Index = () => {
           
           {/* Vehicle Wrap FAQ */}
           <VehicleWrapFAQ />
+          
+          {/* Easy Button Section - Moved to bottom */}
+          <EasyButtonSection />
           
           <CallToAction />
         </main>
