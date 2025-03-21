@@ -34,5 +34,16 @@ export const northwestCities: City[] = [
     distance: "30 miles",
     slug: "hoffman-estates",
     website: "https://www.hoffmanestates.org"
+  },
+  {
+    name: "McLean County",
+    county: "McLean County",
+    state: "IL",
+    description: "McLean County is the largest county by land area in Illinois, known for its rich agricultural heritage and home to the twin cities of Bloomington-Normal. The county boasts a diverse economy with major employers like State Farm Insurance headquarters, Illinois State University, and Illinois Wesleyan University. With a perfect blend of urban amenities and rural charm, McLean County offers excellent quality of life with its vibrant downtown areas, extensive park systems, and cultural attractions including the McLean County Arts Center and the historic Normal Theater. The county's central location provides convenient access to major metropolitan areas while maintaining its distinct midwestern character and strong sense of community.",
+    population: "170,000",
+    businessAreas: "Bloomington-Normal downtown districts, Veterans Parkway corridor, and Uptown Normal",
+    distance: "120 miles",
+    slug: "mclean-county",
+    website: "https://www.mcleancountyil.gov"
   }
 ];

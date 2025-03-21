@@ -3,12 +3,15 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { City } from '@/data/cities';
+import { Building2, MapPin } from 'lucide-react';
 
 interface AreasServedSectionProps {
   cities: City[];
 }
 
 const AreasServedSection = ({ cities }: AreasServedSectionProps) => {
+  const brickAndMortarLocations = ["mclean-county", "las-vegas"];
+
   return (
     <section className="py-16 bg-gray-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -20,19 +23,29 @@ const AreasServedSection = ({ cities }: AreasServedSectionProps) => {
         </div>
         
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-          {cities.map((city) => (
-            <Link 
-              key={city.slug}
-              to={`/vehicle-wraps-${city.slug}-il`}
-              className="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow"
-            >
-              <div className="text-center">
-                <h3 className="font-bold text-brand-navy hover:text-brand-red transition-colors">
-                  {city.name}, IL
-                </h3>
-              </div>
-            </Link>
-          ))}
+          {cities.map((city) => {
+            const isBrickAndMortar = brickAndMortarLocations.includes(city.slug);
+            
+            return (
+              <Link 
+                key={city.slug}
+                to={`/vehicle-wraps-${city.slug}-il`}
+                className={`${isBrickAndMortar ? 'bg-brand-red/10 border-2 border-brand-red' : 'bg-white'} p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow`}
+              >
+                <div className="text-center">
+                  {isBrickAndMortar && (
+                    <div className="flex items-center justify-center mb-2 text-brand-red">
+                      <Building2 size={18} className="mr-1" />
+                      <span className="text-sm font-semibold">Brick & Mortar Location</span>
+                    </div>
+                  )}
+                  <h3 className={`font-bold ${isBrickAndMortar ? 'text-brand-red' : 'text-brand-navy hover:text-brand-red'} transition-colors`}>
+                    {city.name}, {city.state}
+                  </h3>
+                </div>
+              </Link>
+            );
+          })}
         </div>
         
         <div className="text-center mt-8">

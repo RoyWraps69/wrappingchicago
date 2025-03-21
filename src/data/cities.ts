@@ -4,13 +4,15 @@ import { northCities } from './regions/north';
 import { northwestCities } from './regions/northwest';
 import { westCities } from './regions/west';
 import { southCities } from './regions/south';
+import { westNationalCities } from './regions/west-national';
 
 // Combine all city regions
 export const cities: City[] = [
   ...northCities,
   ...northwestCities,
   ...westCities,
-  ...southCities
+  ...southCities,
+  ...westNationalCities
 ];
 
 export type { City } from './types/city';
