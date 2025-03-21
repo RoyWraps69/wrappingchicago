@@ -32,7 +32,7 @@ const TrustIndicators: React.FC = () => {
     <div className="bg-white py-10 border-y border-gray-200">
       <div className="container mx-auto px-4">
         <div className="text-center mb-8">
-          <h2 className="text-2xl md:text-3xl font-bold text-brand-navy mb-3">
+          <h2 className="text-2xl md:text-3xl font-bold text-brand-black mb-3">
             Chicago's Most Trusted Vehicle Wrap Provider
           </h2>
           <p className="text-gray-700 max-w-3xl mx-auto">

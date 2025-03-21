@@ -135,22 +135,22 @@ const ServiceHeader: React.FC<ServiceHeaderProps> = ({
       )}
       
       <div className="bg-gray-50 p-4 rounded-lg border border-gray-200 mb-8">
-        <h2 className="text-lg font-semibold text-brand-navy mb-3">Chicago's Premium Vehicle Wrap Services:</h2>
+        <h2 className="text-lg font-semibold text-gray-900 mb-3">Chicago's Premium Vehicle Wrap Services:</h2>
         <div className="flex flex-wrap gap-2">
-          <Link to="/car-wraps-chicago" className="bg-brand-navy/10 text-brand-navy text-xs font-medium px-2.5 py-1.5 rounded hover:bg-brand-navy/20">Car Wraps Chicago</Link>
-          <Link to="/truck-wraps-chicago" className="bg-brand-navy/10 text-brand-navy text-xs font-medium px-2.5 py-1.5 rounded hover:bg-brand-navy/20">Truck Wraps Chicago</Link>
-          <Link to="/van-wraps-chicago" className="bg-brand-navy/10 text-brand-navy text-xs font-medium px-2.5 py-1.5 rounded hover:bg-brand-navy/20">Van Wraps Chicago</Link>
-          <Link to="/fleet-wraps-chicago" className="bg-brand-navy/10 text-brand-navy text-xs font-medium px-2.5 py-1.5 rounded hover:bg-brand-navy/20">Fleet Wraps Chicago</Link>
-          <Link to="/commercial-vehicle-wraps-chicago" className="bg-brand-navy/10 text-brand-navy text-xs font-medium px-2.5 py-1.5 rounded hover:bg-brand-navy/20">Commercial Vehicle Wraps</Link>
-          <Link to="/custom-vehicle-wraps-chicago" className="bg-brand-navy/10 text-brand-navy text-xs font-medium px-2.5 py-1.5 rounded hover:bg-brand-navy/20">Custom Vehicle Wraps</Link>
-          <Link to="/vehicle-graphics-chicago" className="bg-brand-navy/10 text-brand-navy text-xs font-medium px-2.5 py-1.5 rounded hover:bg-brand-navy/20">Vehicle Graphics Chicago</Link>
-          <Link to="/vinyl-wraps-chicago" className="bg-brand-navy/10 text-brand-navy text-xs font-medium px-2.5 py-1.5 rounded hover:bg-brand-navy/20">Vinyl Vehicle Wraps</Link>
-          <Link to="/best-vehicle-wraps-chicago" className="bg-brand-navy/10 text-brand-navy text-xs font-medium px-2.5 py-1.5 rounded hover:bg-brand-navy/20">Premium Installation</Link>
-          <Link to="/partial-vehicle-wraps-chicago" className="bg-brand-navy/10 text-brand-navy text-xs font-medium px-2.5 py-1.5 rounded hover:bg-brand-navy/20">Partial Vehicle Wraps</Link>
-          <Link to="/color-change-wraps-chicago" className="bg-brand-navy/10 text-brand-navy text-xs font-medium px-2.5 py-1.5 rounded hover:bg-brand-navy/20">Color Change Wraps</Link>
-          <Link to="/vehicle-wrap-installation-chicago" className="bg-brand-navy/10 text-brand-navy text-xs font-medium px-2.5 py-1.5 rounded hover:bg-brand-navy/20">Professional Installation</Link>
-          <Link to="/vehicle-wrap-design-chicago" className="bg-brand-navy/10 text-brand-navy text-xs font-medium px-2.5 py-1.5 rounded hover:bg-brand-navy/20">Vehicle Wrap Design</Link>
-          <Link to="/business-vehicle-wraps-chicago" className="bg-brand-navy/10 text-brand-navy text-xs font-medium px-2.5 py-1.5 rounded hover:bg-brand-navy/20">Business Vehicle Wraps</Link>
+          <Link to="/car-wraps-chicago" className="bg-brand-black/10 text-gray-800 text-xs font-medium px-2.5 py-1.5 rounded hover:bg-brand-black/20">Car Wraps Chicago</Link>
+          <Link to="/truck-wraps-chicago" className="bg-brand-black/10 text-gray-800 text-xs font-medium px-2.5 py-1.5 rounded hover:bg-brand-black/20">Truck Wraps Chicago</Link>
+          <Link to="/van-wraps-chicago" className="bg-brand-black/10 text-gray-800 text-xs font-medium px-2.5 py-1.5 rounded hover:bg-brand-black/20">Van Wraps Chicago</Link>
+          <Link to="/fleet-wraps-chicago" className="bg-brand-black/10 text-gray-800 text-xs font-medium px-2.5 py-1.5 rounded hover:bg-brand-black/20">Fleet Wraps Chicago</Link>
+          <Link to="/commercial-vehicle-wraps-chicago" className="bg-brand-black/10 text-gray-800 text-xs font-medium px-2.5 py-1.5 rounded hover:bg-brand-black/20">Commercial Vehicle Wraps</Link>
+          <Link to="/custom-vehicle-wraps-chicago" className="bg-brand-black/10 text-gray-800 text-xs font-medium px-2.5 py-1.5 rounded hover:bg-brand-black/20">Custom Vehicle Wraps</Link>
+          <Link to="/vehicle-graphics-chicago" className="bg-brand-black/10 text-gray-800 text-xs font-medium px-2.5 py-1.5 rounded hover:bg-brand-black/20">Vehicle Graphics Chicago</Link>
+          <Link to="/vinyl-wraps-chicago" className="bg-brand-black/10 text-gray-800 text-xs font-medium px-2.5 py-1.5 rounded hover:bg-brand-black/20">Vinyl Vehicle Wraps</Link>
+          <Link to="/best-vehicle-wraps-chicago" className="bg-brand-black/10 text-gray-800 text-xs font-medium px-2.5 py-1.5 rounded hover:bg-brand-black/20">Premium Installation</Link>
+          <Link to="/partial-vehicle-wraps-chicago" className="bg-brand-black/10 text-gray-800 text-xs font-medium px-2.5 py-1.5 rounded hover:bg-brand-black/20">Partial Vehicle Wraps</Link>
+          <Link to="/color-change-wraps-chicago" className="bg-brand-black/10 text-gray-800 text-xs font-medium px-2.5 py-1.5 rounded hover:bg-brand-black/20">Color Change Wraps</Link>
+          <Link to="/vehicle-wrap-installation-chicago" className="bg-brand-black/10 text-gray-800 text-xs font-medium px-2.5 py-1.5 rounded hover:bg-brand-black/20">Professional Installation</Link>
+          <Link to="/vehicle-wrap-design-chicago" className="bg-brand-black/10 text-gray-800 text-xs font-medium px-2.5 py-1.5 rounded hover:bg-brand-black/20">Vehicle Wrap Design</Link>
+          <Link to="/business-vehicle-wraps-chicago" className="bg-brand-black/10 text-gray-800 text-xs font-medium px-2.5 py-1.5 rounded hover:bg-brand-black/20">Business Vehicle Wraps</Link>
         </div>
       </div>
       

@@ -8,7 +8,7 @@ const FleetWrapIntro: React.FC = () => {
   
   return (
     <>
-      <h2 className="text-2xl font-semibold text-brand-navy mb-4">Professional Fleet Vehicle Wrapping Services in Chicago</h2>
+      <h2 className="text-2xl font-semibold text-gray-900 mb-4">Professional Fleet Vehicle Wrapping Services in Chicago</h2>
       
       <div className="float-right ml-6 mb-4 w-full md:w-2/5">
         <img 
@@ -28,12 +28,12 @@ const FleetWrapIntro: React.FC = () => {
       <p className="mb-6 text-gray-700">
         With over 16,000 vehicle wraps completed in our 20 years of business, our team of experienced professionals 
         specializes in fleet vehicle wraps for businesses of all sizes. From small local businesses to large corporations, 
-        we provide expert design, high-quality materials, and meticulous installation to ensure your fleet looks 
+        we provide expert design, high-quality Avery and 3M materials, and meticulous installation to ensure your fleet looks 
         professional and makes a lasting impression on the streets of Chicago.
       </p>
       
       <div className="bg-gray-50 p-5 rounded-lg border border-gray-200 mb-8">
-        <h3 className="text-xl font-semibold text-brand-navy mb-3">Chicago Fleet Wrap Specialists</h3>
+        <h3 className="text-xl font-semibold text-gray-900 mb-3">Chicago Fleet Wrap Specialists</h3>
         <p className="text-gray-700">
           Our Chicago-based vehicle wrap shop has proudly served the Chicagoland area for two decades, establishing 
           ourselves as leaders in the fleet wrapping industry. We understand the unique challenges of Chicago's urban environment, 

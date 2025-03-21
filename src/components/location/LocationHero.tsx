@@ -47,7 +47,7 @@ const LocationHero = ({ cityName }: LocationHeroProps) => {
         {/* Contact Bar - Prominent at the top */}
         <div className="bg-white/90 backdrop-blur-sm shadow-lg rounded-lg p-4 mb-6 md:mb-8 border border-gray-200 flex flex-col sm:flex-row items-center justify-between">
           <div className="mb-4 sm:mb-0 text-center sm:text-left">
-            <h3 className="text-base md:text-lg font-semibold text-brand-navy">Need Vehicle Wraps in {cityName}?</h3>
+            <h3 className="text-base md:text-lg font-semibold text-gray-900">Need Vehicle Wraps in {cityName}?</h3>
             <p className="text-sm md:text-base text-gray-700">Premium car wraps, truck wraps, van wraps, and fleet graphics with Avery and 3M materials</p>
           </div>
           <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
@@ -63,7 +63,7 @@ const LocationHero = ({ cityName }: LocationHeroProps) => {
             <Button
               asChild
               variant="outline"
-              className="border-brand-navy text-brand-navy hover:bg-brand-navy hover:text-white w-full sm:w-auto"
+              className="border-gray-700 text-gray-700 hover:bg-gray-700 hover:text-white w-full sm:w-auto"
             >
               <a href="tel:3125971286" className="inline-flex items-center justify-center">
                 <Phone className="mr-2 h-4 w-4" />
