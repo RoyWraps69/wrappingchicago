@@ -2,7 +2,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { GalleryItem } from '@/types/gallery';
 
 interface ServicesSectionProps {
   fleetWrapVan: string;
@@ -11,13 +10,16 @@ interface ServicesSectionProps {
 }
 
 const ServicesSection = ({ fleetWrapVan, colorChangeVan, commercialGraphics }: ServicesSectionProps) => {
-  const services = [
-    {
-      title: "Fleet Wraps",
-      description: "Transform your company vehicles into eye-catching mobile billboards. Our fleet wrapping services help businesses maximize their advertising reach across Chicago.",
-      image: fleetWrapVan,
-      link: "/services/fleet-wraps"
-    },
+  // Main featured service
+  const featuredService = {
+    title: "Fleet Wraps",
+    description: "Transform your company vehicles into eye-catching mobile billboards. Our fleet wrapping services help businesses maximize their advertising reach across Chicago.",
+    image: fleetWrapVan,
+    link: "/services/fleet-wraps"
+  };
+  
+  // Secondary services
+  const secondaryServices = [
     {
       title: "Color Change Wraps",
       description: "Want a new look without the permanence of paint? Our color change wraps allow you to transform your vehicle with premium vinyl wraps in any color or finish.",
@@ -42,9 +44,37 @@ const ServicesSection = ({ fleetWrapVan, colorChangeVan, commercialGraphics }: S
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {services.map((service, index) => (
-            <div key={index} className="bg-brand-light rounded-lg overflow-hidden shadow-md">
+        {/* Featured Service - Fleet Wraps (Larger) */}
+        <div className="mb-12">
+          <div className="bg-brand-light rounded-lg overflow-hidden shadow-md">
+            <div className="md:flex">
+              <div className="md:w-1/2">
+                <div className="h-full">
+                  <img 
+                    src={featuredService.image}
+                    alt={`${featuredService.title} - Chicago Fleet Wraps`}
+                    className="object-cover w-full h-full min-h-[300px]"
+                  />
+                </div>
+              </div>
+              <div className="md:w-1/2 p-8 flex flex-col justify-center">
+                <h3 className="text-2xl font-bold mb-4 text-brand-navy">{featuredService.title}</h3>
+                <p className="text-gray-700 mb-6 text-lg">{featuredService.description}</p>
+                <Button
+                  asChild
+                  className="bg-brand-navy hover:bg-blue-900 text-white w-full md:w-auto"
+                >
+                  <Link to={featuredService.link}>Learn More</Link>
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        {/* Secondary Services - Evenly spaced below */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {secondaryServices.map((service, index) => (
+            <div key={index} className="bg-brand-light rounded-lg overflow-hidden shadow-md h-full">
               <div className="aspect-w-16 aspect-h-9">
                 <img 
                   src={service.image}
