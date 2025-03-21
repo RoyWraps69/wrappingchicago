@@ -1,9 +1,7 @@
-
 import React from 'react';
 import { Car, Truck } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-
 const VehicleTypes: React.FC = () => {
   return <div className="mb-8">
       <h3 className="text-xl font-semibold text-brand-navy mb-4 flex items-center">
@@ -28,12 +26,9 @@ const VehicleTypes: React.FC = () => {
           </div>
         </div>
         <div className="flex items-center justify-center h-full">
-          <img 
-            alt="Fleet wrap on commercial vehicle - Chicago vehicle wrap solutions" 
-            className="w-full h-auto object-cover rounded-lg shadow-md" 
-            src="/lovable-uploads/38f1a5ce-45bd-4ebc-83bd-709dc1a2f9ce.jpg" 
-            style={{ maxHeight: '380px' }}
-          />
+          <img alt="Fleet wrap on commercial vehicle - Chicago vehicle wrap solutions" className="w-full h-auto object-cover rounded-lg shadow-md" src="/lovable-uploads/38f1a5ce-45bd-4ebc-83bd-709dc1a2f9ce.jpg" style={{
+          maxHeight: '380px'
+        }} />
         </div>
       </div>
       
@@ -47,14 +42,14 @@ const VehicleTypes: React.FC = () => {
         <h4 className="text-lg font-semibold text-brand-navy mb-3">Chicago Fleet Wrap Case Study</h4>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="col-span-1 md:col-span-2">
-            <p className="text-gray-700 mb-3">
-              A Chicago-based HVAC company saw a 32% increase in service calls after wrapping their fleet of 12 service vans with 
-              professional graphics. The eye-catching design and clear contact information made their vehicles mobile billboards 
-              throughout the Chicago area, resulting in significant business growth within just the first three months.
-            </p>
+            <p className="text-gray-700 mb-3">A Chicago-based HVAC company saw a 32% increase in service 
+calls after wrapping their fleet of 12 service vans with professional 
+graphics. The eye-catching design and clear contact information 
+made their vehicles mobile billboards throughout the Chicago area, 
+resulting in significant business growth within just the first three months.</p>
           </div>
           <div className="col-span-1">
-            <img src="/lovable-uploads/bc84c157-8367-4197-9b08-8ef75da53ce3.png" alt="HVAC company fleet wrap example - Professional vehicle wrapping in Chicago" className="rounded-lg shadow-sm max-w-full h-auto" />
+            <img src="/lovable-uploads/bc84c157-8367-4197-9b08-8ef75da53ce3.png" alt="HVAC company fleet wrap example - Professional vehicle wrapping in Chicago" className="rounded-lg shadow-sm max-w-full h-auto object-fill" />
           </div>
         </div>
       </div>
@@ -74,11 +69,7 @@ const VehicleTypes: React.FC = () => {
         
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
           <div className="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl">
-            <img 
-              src="/lovable-uploads/59f5a326-19ee-4365-8e4f-79619e90ed8c.png" 
-              alt="Modern camouflage style vehicle wrap for electric truck" 
-              className="w-full h-auto object-cover"
-            />
+            <img src="/lovable-uploads/59f5a326-19ee-4365-8e4f-79619e90ed8c.png" alt="Modern camouflage style vehicle wrap for electric truck" className="w-full h-auto object-cover" />
             <div className="p-4">
               <h5 className="font-medium text-brand-navy mb-2">Modern Camouflage Design</h5>
               <p className="text-sm text-gray-600">Contemporary geometric patterns that create a distinctive camouflage effect for electric trucks.</p>
@@ -86,11 +77,7 @@ const VehicleTypes: React.FC = () => {
           </div>
           
           <div className="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl">
-            <img 
-              src="/lovable-uploads/e717c3b4-fabd-494e-8ad7-8b8303a22ae8.png" 
-              alt="Artistic floral pattern vehicle wrap for electric pickup" 
-              className="w-full h-auto object-cover"
-            />
+            <img src="/lovable-uploads/e717c3b4-fabd-494e-8ad7-8b8303a22ae8.png" alt="Artistic floral pattern vehicle wrap for electric pickup" className="w-full h-auto object-cover" />
             <div className="p-4">
               <h5 className="font-medium text-brand-navy mb-2">Artistic Pattern Wraps</h5>
               <p className="text-sm text-gray-600">Bold, artistic patterns that highlight the unique styling of modern electric vehicles.</p>
@@ -98,11 +85,7 @@ const VehicleTypes: React.FC = () => {
           </div>
           
           <div className="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl">
-            <img 
-              src="/lovable-uploads/0d38121f-f8c5-4fea-a95f-68be2fd3281b.png" 
-              alt="Gradient blue custom wrap for electric SUV" 
-              className="w-full h-auto object-cover"
-            />
+            <img src="/lovable-uploads/0d38121f-f8c5-4fea-a95f-68be2fd3281b.png" alt="Gradient blue custom wrap for electric SUV" className="w-full h-auto object-cover" />
             <div className="p-4">
               <h5 className="font-medium text-brand-navy mb-2">Custom Manufacturer Designs</h5>
               <p className="text-sm text-gray-600">Special edition wraps designed to showcase the innovative features of next-generation vehicles.</p>
@@ -151,5 +134,4 @@ const VehicleTypes: React.FC = () => {
       </div>
     </div>;
 };
-
 export default VehicleTypes;

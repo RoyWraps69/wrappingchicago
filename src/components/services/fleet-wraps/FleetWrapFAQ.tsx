@@ -1,16 +1,8 @@
-
 import React from 'react';
 import { HelpCircle } from 'lucide-react';
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
-
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 const FleetWrapFAQ: React.FC = () => {
-  return (
-    <div className="mb-8">
+  return <div className="mb-8">
       <h3 className="text-xl font-semibold text-brand-navy mb-4 flex items-center">
         <HelpCircle className="w-6 h-6 text-brand-red mr-2" />
         Frequently Asked Questions About Fleet Wraps
@@ -52,15 +44,9 @@ const FleetWrapFAQ: React.FC = () => {
           </Accordion>
         </div>
         <div className="col-span-1 flex items-center justify-center">
-          <img 
-            src="/lovable-uploads/bc55562c-aa6e-45ac-86ea-5b2657a3f6d5.png"
-            alt="Fleet wrap FAQ - Professional vehicle wrapping service in Chicago" 
-            className="rounded-lg shadow-md max-w-full h-auto"
-          />
+          <img alt="Fleet wrap FAQ - Professional vehicle wrapping service in Chicago" className="rounded-lg shadow-md max-w-full h-auto" src="/lovable-uploads/6e33af20-b7ff-4b01-9314-737ba948a7db.jpg" />
         </div>
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default FleetWrapFAQ;
