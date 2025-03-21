@@ -13,7 +13,7 @@ const ChicagoServiceMap = () => {
             alt="Chicago Fleet Wraps 40-mile service area map"
             className="object-cover w-full h-full"
             onError={(e) => {
-              // Fallback to a high-quality Google Maps screenshot if the image fails to load
+              // Fallback to a high-quality Google Maps iframe if the image fails to load
               const target = e.currentTarget;
               target.style.display = 'none';
               const parent = target.parentElement;
