@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Truck, CheckCircle, ListChecks } from 'lucide-react';
 
 const FleetWrapsContent: React.FC = () => {
   return (
@@ -11,8 +12,11 @@ const FleetWrapsContent: React.FC = () => {
         billboards that generate leads and build brand recognition 24/7.
       </p>
       <div className="grid md:grid-cols-2 gap-6 mb-8">
-        <div className="bg-brand-light p-6 rounded-lg">
-          <h3 className="text-xl font-semibold text-brand-navy mb-3">Benefits of Fleet Wraps</h3>
+        <div className="section-card p-6 rounded-lg">
+          <div className="flex items-center mb-4">
+            <CheckCircle className="w-6 h-6 text-brand-navy mr-2" />
+            <h3 className="text-xl font-semibold text-brand-navy">Benefits of Fleet Wraps</h3>
+          </div>
           <ul className="list-disc pl-5 space-y-2">
             <li>Create thousands of impressions daily</li>
             <li>Lower cost-per-impression than traditional advertising</li>
@@ -22,8 +26,11 @@ const FleetWrapsContent: React.FC = () => {
             <li>Typically lasts 5-7 years with proper care</li>
           </ul>
         </div>
-        <div className="bg-brand-light p-6 rounded-lg">
-          <h3 className="text-xl font-semibold text-brand-navy mb-3">Our Fleet Wrap Process</h3>
+        <div className="section-card p-6 rounded-lg">
+          <div className="flex items-center mb-4">
+            <ListChecks className="w-6 h-6 text-brand-navy mr-2" />
+            <h3 className="text-xl font-semibold text-brand-navy">Our Fleet Wrap Process</h3>
+          </div>
           <ol className="list-decimal pl-5 space-y-2">
             <li>Initial consultation to understand your needs</li>
             <li>Professional design tailored to your brand</li>
