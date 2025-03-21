@@ -6,6 +6,7 @@ import SubmissionSuccess from './SubmissionSuccess';
 const ContactForm = () => {
   const { toast } = useToast();
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   
   // Check for success parameter in URL to show success message after redirect
   useEffect(() => {
@@ -28,6 +29,13 @@ const ContactForm = () => {
           action="https://formsubmit.co/roy@chicagofleetwraps.com" 
           method="POST"
           className="space-y-4"
+          onSubmit={() => {
+            setIsSubmitting(true);
+            toast({
+              title: "Submitting your request...",
+              description: "Please wait while we process your information.",
+            });
+          }}
         >
           {/* FormSubmit.co specific configuration fields */}
           <input type="hidden" name="_subject" value="Chicago Fleet Wraps: New Quote Request" />
@@ -108,8 +116,9 @@ const ContactForm = () => {
           <button 
             type="submit" 
             className="bg-brand-red text-white px-4 py-2 rounded hover:bg-red-700 transition-colors inline-flex items-center justify-center"
+            disabled={isSubmitting}
           >
-            Submit Request
+            {isSubmitting ? 'Submitting...' : 'Submit Request'}
           </button>
           
           <p className="text-sm text-gray-500 mt-2">
