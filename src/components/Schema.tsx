@@ -41,6 +41,7 @@ const Schema: React.FC<SchemaProps> = ({
         description={pageDescription}
         url={`https://wrappingchicago.com${path}`}
         lastModified={currentDate}
+        keywords={keywords}
       />
       {faqs && faqs.length > 0 && (
         <FAQSchema 
