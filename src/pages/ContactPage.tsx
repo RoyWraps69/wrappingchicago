@@ -10,6 +10,7 @@ import ContactStudioImage from '@/components/contact/ContactStudioImage';
 import ContactForm from '@/components/contact/ContactForm';
 import Schema from '@/components/Schema';
 import { cities } from '@/data/cities';
+import { Card } from '@/components/ui/card';
 
 const ContactPage = () => {
   return (
@@ -47,6 +48,16 @@ const ContactPage = () => {
                 <ContactIntroduction />
                 <ContactDetails />
                 <ContactStudioImage />
+                
+                <Card className="p-6 mt-8 bg-gray-50">
+                  <h2 className="text-xl font-bold text-brand-navy mb-3">Contact Form Information</h2>
+                  <p className="mb-3">
+                    Our contact form is configured to open your default email client with a pre-filled message addressed to: <strong>roy@chicagofleetwraps.com</strong>
+                  </p>
+                  <p className="text-sm text-gray-600">
+                    When you submit the form, your default email client will open with all your information pre-filled. Simply click send to complete your request.
+                  </p>
+                </Card>
               </div>
               
               <ContactForm />

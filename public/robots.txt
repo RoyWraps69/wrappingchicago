@@ -9,8 +9,5 @@ Allow: /about/
 Allow: /contact/
 Allow: /locations/
 
-# Prevent duplicate content issues
-Disallow: /email-setup/
-
 # Sitemap location
 Sitemap: https://wrappingchicago.com/sitemap.xml

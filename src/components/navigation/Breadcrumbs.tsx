@@ -37,7 +37,6 @@ const Breadcrumbs = () => {
       'van-wraps': 'Van Wraps',
       'designer-wraps': 'Designer Wraps',
       'luxury-exotic-wraps': 'Luxury & Exotic Wraps',
-      'email-setup': 'Email Setup',
     };
 
     return routeMap[path] || path.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
