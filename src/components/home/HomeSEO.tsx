@@ -10,7 +10,7 @@ const HomeSEO = () => {
       <title>Vehicle Wraps Chicago | Premium Car & Truck Wrapping Services | {currentYear}</title>
       <meta 
         name="description" 
-        content="Chicago's premier vehicle wrap company. Professional car, truck & van wraps with premium 3M materials. Transform your business with mobile advertising." 
+        content="Chicago's premier vehicle wrap company. Professional car & truck wraps with premium 3M materials. Transform your business with effective mobile advertising." 
       />
       <meta name="keywords" content="vehicle wraps Chicago, car wraps Chicago, truck wraps Chicago, van wraps Chicago, fleet wraps Chicago, commercial vehicle wraps, custom vehicle wraps, vehicle graphics Chicago, car graphics Chicago, vinyl wraps Chicago, 3M vehicle wraps" />
       <link rel="canonical" href="https://wrappingchicago.com" />
