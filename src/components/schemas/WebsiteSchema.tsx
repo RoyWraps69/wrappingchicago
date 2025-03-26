@@ -6,13 +6,15 @@ interface WebsiteSchemaProps {
   description: string;
   url: string;
   lastModified?: string;
+  keywords?: string[]; // Add keywords property to the interface
 }
 
 const WebsiteSchema: React.FC<WebsiteSchemaProps> = ({ 
   name, 
   description, 
   url,
-  lastModified = new Date().toISOString().split('T')[0]
+  lastModified = new Date().toISOString().split('T')[0],
+  keywords = [] // Add default value for keywords
 }) => {
   const schema = {
     "@context": "https://schema.org",
@@ -67,7 +69,9 @@ const WebsiteSchema: React.FC<WebsiteSchemaProps> = ({
     ],
     "copyrightYear": new Date().getFullYear(),
     "inLanguage": "en-US",
-    "dateModified": lastModified
+    "dateModified": lastModified,
+    // Add keywords to the schema if they exist
+    ...(keywords && keywords.length > 0 && { "keywords": keywords.join(", ") })
   };
 
   return (
