@@ -1,68 +1,16 @@
 
-# Wrapping Chicago - Chicago's Premier Vehicle Wrap Authority
-# Last Updated: 2024-06-07
-
 User-agent: *
 Allow: /
 
-# Search Engine Crawling Instructions
-Crawl-delay: 10  # Recommended crawl rate for Googlebot
+# Important pages to crawl
+Allow: /services/
+Allow: /gallery/
+Allow: /about/
+Allow: /contact/
+Allow: /locations/
 
-# Essential High-Value Pages - Highest Priority
-Allow: /
-Allow: /vehicle-wraps-*
-Allow: /services/*
-Allow: /gallery
-Allow: /contact
-Allow: /about
-Allow: /ai-wrap-ideas
+# Prevent duplicate content issues
+Disallow: /email-setup/
 
-# Service Pages - High Priority
-Allow: /services/car-wraps
-Allow: /services/truck-wraps
-Allow: /services/van-wraps
-Allow: /services/fleet-wraps
-Allow: /services/color-change-wraps
-Allow: /services/commercial-graphics
-
-# Location Pages - High Priority
-Allow: /locations
-Allow: /chicago
-Allow: /oak-park
-Allow: /evanston
-Allow: /naperville
-Allow: /schaumburg
-
-# Service-Specific Pages - High Priority
-Allow: /car-wraps 
-Allow: /truck-wraps
-Allow: /van-wraps
-Allow: /fleet-wraps-chicago
-Allow: /color-change-wraps
-Allow: /designer-wraps
-Allow: /luxury-exotic-wraps
-
-# Sitemap declaration
+# Sitemap location
 Sitemap: https://wrappingchicago.com/sitemap.xml
-
-# Low Value Pages - Disallow to Optimize Crawl Budget
-Disallow: /private/
-Disallow: /admin/
-Disallow: /development/
-Disallow: /temp/
-Disallow: /*.json$
-Disallow: /*.js$
-Disallow: /*.css$
-Disallow: /*?*
-Disallow: /*/draft-*
-
-# Image files
-Allow: /*.jpg$
-Allow: /*.png$
-Allow: /*.svg$
-Allow: /*.webp$
-
-# Professional vehicle wrap services in Chicago since 2003
-# Specializing in commercial fleet wraps, color change wraps, and custom vehicle graphics
-# Premium 3M certified materials with expert installation
-# Serving Chicago and all surrounding suburbs within a 40-mile radius

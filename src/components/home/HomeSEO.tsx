@@ -7,12 +7,12 @@ const HomeSEO = () => {
   
   return (
     <Helmet>
-      <title>Vehicle Wraps Chicago | Professional Car, Truck & Van Wrapping Services | {currentYear}</title>
+      <title>Vehicle Wraps Chicago | Premium Car & Truck Wrapping Services | {currentYear}</title>
       <meta 
         name="description" 
-        content="Chicago's premier vehicle wrap company offering professional car wraps, truck wraps, van wraps, fleet wraps & commercial graphics. Premium 3M materials with expert installation. Transform your vehicles into mobile billboards with eye-catching designs. Serving Chicago and surrounding suburbs." 
+        content="Chicago's premier vehicle wrap company. Professional car, truck & van wraps with premium 3M materials. Transform your business with mobile advertising." 
       />
-      <meta name="keywords" content="vehicle wraps Chicago, car wraps Chicago, truck wraps Chicago, van wraps Chicago, fleet wraps Chicago, commercial vehicle wraps, custom vehicle wraps, vehicle graphics Chicago, car graphics Chicago, vinyl wraps Chicago, vehicle wrap installation Chicago, best vehicle wraps Chicago, 3M vehicle wraps, business vehicle wraps Chicago" />
+      <meta name="keywords" content="vehicle wraps Chicago, car wraps Chicago, truck wraps Chicago, van wraps Chicago, fleet wraps Chicago, commercial vehicle wraps, custom vehicle wraps, vehicle graphics Chicago, car graphics Chicago, vinyl wraps Chicago, 3M vehicle wraps" />
       <link rel="canonical" href="https://wrappingchicago.com" />
       
       {/* Favicon */}
@@ -61,6 +61,10 @@ const HomeSEO = () => {
       
       {/* Page speed optimizations */}
       <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+      
+      {/* Alternate URL versions */}
+      <link rel="alternate" hreflang="en-us" href="https://wrappingchicago.com" />
+      <link rel="alternate" href="https://www.wrappingchicago.com" />
     </Helmet>
   );
 };

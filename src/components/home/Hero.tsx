@@ -1,149 +1,70 @@
 
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Sparkles, Shield, Award, Clock, Wrench, Zap } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Phone, MessageSquare, ExternalLink } from 'lucide-react';
 
 const Hero = () => {
   return (
-    <section className="relative w-full overflow-hidden">
-      {/* Background image */}
+    <div className="relative bg-brand-navy text-white overflow-hidden">
       <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 bg-gradient-to-r from-brand-navy to-transparent opacity-90 z-10"></div>
         <img 
-          src="/lovable-uploads/5539b79e-ab54-428d-82a0-e4735ee97a95.png" 
-          alt="Professional vehicle wrap with colorful paint splash design on sports car in Chicago" 
+          src="/lovable-uploads/199b8977-07e4-488c-8e27-0ad83b25af33.jpg" 
+          alt="Professional vehicle wrap on sports car in Chicago - premium 3M installation" 
           className="w-full h-full object-cover"
+          loading="lazy"
         />
-        <div className="absolute inset-0 bg-black/60"></div> {/* Darker overlay (60% opacity) to ensure text is readable */}
       </div>
       
-      <div className="relative z-20 container mx-auto px-4 sm:px-6 lg:px-8 min-h-[80vh] flex items-center">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full py-16">
-          {/* Left side: Main hero content */}
-          <div className="max-w-2xl">
-            <div className="animate-fade-in mb-4">
-              <span className="bg-brand-red/90 text-white px-4 py-2 rounded-full text-sm uppercase font-medium tracking-wide shadow-xl">
-                Chicago's Premier Vehicle Wrap Specialist
-              </span>
-            </div>
-                
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white leading-tight mb-4 animate-enter drop-shadow-[0_4px_8px_rgba(0,0,0,0.6)] [text-shadow:_0_1px_2px_#000]" style={{ animationDelay: "0.2s" }}>
-              Transform Your <span className="text-brand-red drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] [text-shadow:_0_1px_2px_#000]">Vehicle</span>. Elevate Your <span className="text-brand-red drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] [text-shadow:_0_1px_2px_#000]">Brand</span>.
-            </h1>
-                
-            <p className="text-lg md:text-xl text-white mb-8 max-w-xl animate-enter drop-shadow-[0_3px_5px_rgba(0,0,0,0.6)] [text-shadow:_0_1px_1px_#000]" style={{ animationDelay: "0.4s" }}>
-              Professional vehicle wraps that turn heads and make your business stand out on every street in Chicago.
-            </p>
-                
-            <div className="mb-8 animate-enter" style={{ animationDelay: "0.6s" }}>
-              <Button
-                asChild
-                size="lg"
-                className="bg-brand-red hover:bg-red-700 text-white text-lg px-8 py-7 h-auto rounded-full shadow-2xl drop-shadow-[0_4px_4px_rgba(0,0,0,0.3)]"
-              >
-                <Link to="/contact" className="inline-flex items-center">
-                  Request a Free Quote
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
-              </Button>
-            </div>
-                
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 animate-enter" style={{ animationDelay: "0.8s" }}>
-              <div className="flex items-center">
-                <div className="bg-black/50 backdrop-blur-sm rounded-lg p-3 shadow-xl">
-                  <Award className="h-8 w-8 text-brand-red drop-shadow-[0_2px_3px_rgba(0,0,0,0.5)]" />
-                </div>
-                <span className="ml-3 text-white font-medium drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)] [text-shadow:_0_1px_1px_#000]">Premium Materials</span>
-              </div>
-              <div className="flex items-center">
-                <div className="bg-black/50 backdrop-blur-sm rounded-lg p-3 shadow-xl">
-                  <Shield className="h-8 w-8 text-brand-red drop-shadow-[0_2px_3px_rgba(0,0,0,0.5)]" />
-                </div>
-                <span className="ml-3 text-white font-medium drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)] [text-shadow:_0_1px_1px_#000]">2-Year Warranty</span>
-              </div>
-              <div className="flex items-center">
-                <div className="bg-black/50 backdrop-blur-sm rounded-lg p-3 shadow-xl">
-                  <Wrench className="h-8 w-8 text-brand-red drop-shadow-[0_2px_3px_rgba(0,0,0,0.5)]" />
-                </div>
-                <span className="ml-3 text-white font-medium drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)] [text-shadow:_0_1px_1px_#000]">Expert Installation</span>
-              </div>
-              <div className="flex items-center">
-                <div className="bg-black/50 backdrop-blur-sm rounded-lg p-3 shadow-xl">
-                  <Clock className="h-8 w-8 text-brand-red drop-shadow-[0_2px_3px_rgba(0,0,0,0.5)]" />
-                </div>
-                <span className="ml-3 text-white font-medium drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)] [text-shadow:_0_1px_1px_#000]">Quick Turnaround</span>
-              </div>
-            </div>
+      <div className="container mx-auto px-4 py-24 md:py-32 relative z-20">
+        <div className="max-w-3xl">
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+            Professional Vehicle Wraps in Chicago, IL
+          </h1>
+          <p className="text-xl mb-8 max-w-xl">
+            Transform your cars, trucks, vans, and fleet vehicles with striking wraps that make your business stand out on every street
+          </p>
+          
+          <div className="flex flex-col sm:flex-row gap-4 mb-10">
+            <Button
+              asChild
+              size="lg"
+              className="bg-brand-red hover:bg-red-700 text-white"
+            >
+              <Link to="/contact" className="inline-flex items-center">
+                <MessageSquare className="mr-2 h-5 w-5" />
+                Get a Free Quote
+              </Link>
+            </Button>
+            <Button
+              asChild
+              variant="outline"
+              size="lg"
+              className="border-white text-white hover:bg-white hover:text-brand-navy"
+            >
+              <a href="tel:3125971286" className="inline-flex items-center">
+                <Phone className="mr-2 h-5 w-5" />
+                (312) 597-1286
+              </a>
+            </Button>
           </div>
-
-          {/* Right side: AI Wrap Designer promotion */}
-          <div className="flex items-center justify-center animate-enter" style={{ animationDelay: "0.7s" }}>
-            <div className="bg-brand-navy/40 backdrop-blur-md border border-white/20 rounded-2xl shadow-2xl p-6 w-full max-w-md transform hover:scale-[1.02] transition-transform duration-300">
-              <div className="relative mb-6">
-                {/* Animated decorative elements */}
-                <div className="absolute -top-6 -right-6 w-20 h-20 bg-brand-red/20 rounded-full blur-xl animate-pulse"></div>
-                <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-brand-navy/40 rounded-full blur-xl animate-pulse delay-700"></div>
-                
-                <div className="flex justify-center">
-                  <div className="bg-gradient-to-br from-brand-red to-brand-navy p-0.5 rounded-full">
-                    <div className="bg-black/50 backdrop-blur-sm rounded-full p-4">
-                      <Sparkles className="h-12 w-12 text-brand-red animate-pulse" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-              
-              <h2 className="text-center text-white text-2xl font-bold mb-3 drop-shadow-[0_2px_3px_rgba(0,0,0,0.5)]">
-                AI-Powered<br />Wrap Designer
-              </h2>
-              
-              <p className="text-white/90 text-center mb-6 drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]">
-                Visualize your vehicle wrap in seconds with our exclusive AI tool. See your design before committing!
-              </p>
-              
-              <div className="space-y-4 mb-8">
-                <div className="flex items-center bg-brand-navy/30 px-4 py-3 rounded-lg">
-                  <Zap className="h-5 w-5 text-brand-red mr-3 flex-shrink-0" />
-                  <span className="text-white/90 text-sm">Generate custom designs instantly</span>
-                </div>
-                <div className="flex items-center bg-brand-navy/30 px-4 py-3 rounded-lg">
-                  <Sparkles className="h-5 w-5 text-brand-red mr-3 flex-shrink-0" />
-                  <span className="text-white/90 text-sm">No design skills required</span>
-                </div>
-                <div className="flex items-center bg-brand-navy/30 px-4 py-3 rounded-lg">
-                  <Clock className="h-5 w-5 text-brand-red mr-3 flex-shrink-0" />
-                  <span className="text-white/90 text-sm">Save weeks in the design process</span>
-                </div>
-              </div>
-              
-              <Button 
-                asChild
-                size="lg"
-                className="relative w-full bg-brand-navy hover:bg-blue-900 text-white text-lg px-8 py-7 h-auto rounded-xl shadow-xl overflow-hidden group"
-              >
-                <Link to="/ai-wrap-ideas" className="inline-flex items-center justify-center">
-                  {/* Animated background effect */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-brand-navy via-brand-red to-brand-navy bg-[length:200%_100%] animate-gradient-x"></div>
-                  
-                  <span className="relative z-10 font-bold flex items-center">
-                    <Sparkles className="mr-2 h-5 w-5 text-white group-hover:animate-ping" />
-                    Design Your Wrap Now
-                    <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                  </span>
-                </Link>
-              </Button>
-            </div>
+          
+          <div className="flex items-center space-x-1 text-gray-200 text-sm">
+            <span>Serving Chicago and All Suburbs</span>
+            <span className="mx-2">•</span>
+            <span>Premium 3M Materials</span>
+            <span className="mx-2">•</span>
+            <span>Expert Installation</span>
+            <span className="mx-2">•</span>
+            <Link to="/gallery" className="flex items-center hover:text-white font-medium">
+              View Gallery
+              <ExternalLink className="ml-1 h-3 w-3" />
+            </Link>
           </div>
         </div>
       </div>
-      
-      {/* Wave divider - reduced height */}
-      <div className="absolute bottom-0 left-0 right-0">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 100">
-          <path fill="#ffffff" fillOpacity="1" d="M0,64L80,58.7C160,53,320,43,480,48.3C640,53,800,75,960,75C1120,75,1280,53,1360,42.7L1440,32L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path>
-        </svg>
-      </div>
-    </section>
+    </div>
   );
 };
 

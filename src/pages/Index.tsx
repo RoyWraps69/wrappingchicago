@@ -21,6 +21,7 @@ import StickyContactButtons from '@/components/home/StickyContactButtons';
 import TrustIndicators from '@/components/home/TrustIndicators';
 import InstallationFacility from '@/components/home/InstallationFacility';
 import VehicleWrapFAQ from '@/components/home/VehicleWrapFAQ';
+import { Link } from 'react-router-dom';
 
 const Index = () => {
   // Use our custom hook to get the images
@@ -49,6 +50,20 @@ const Index = () => {
     }
   ];
 
+  // SEO keywords
+  const keywords = [
+    "vehicle wraps Chicago", 
+    "car wraps Chicago", 
+    "truck wraps Chicago", 
+    "van wraps Chicago", 
+    "fleet wraps Chicago", 
+    "commercial vehicle wraps", 
+    "custom vehicle wraps", 
+    "vehicle graphics Chicago", 
+    "vinyl wraps Chicago", 
+    "3M vehicle wraps"
+  ];
+
   return (
     <>
       <HomeSEO />
@@ -58,6 +73,7 @@ const Index = () => {
         pageTitle="Vehicle Wraps Chicago | Premium Car, Truck & Van Wrapping Services"
         pageDescription="Chicago's leading vehicle wrap company offering professional car wraps, truck wraps, van wraps, fleet wraps & commercial graphics with expert installation using premium 3M materials."
         faqs={faqData}
+        keywords={keywords}
       />
       <AIWrapSchema />
       
@@ -98,6 +114,47 @@ const Index = () => {
           
           {/* Vehicle Wrap FAQ */}
           <VehicleWrapFAQ />
+          
+          {/* Internal Links Section */}
+          <div className="py-8 bg-gray-50">
+            <div className="container mx-auto px-4">
+              <h2 className="text-2xl font-bold text-brand-navy mb-6">Explore Our Vehicle Wrap Services</h2>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <Link to="/services/car-wraps" className="p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                  <h3 className="font-semibold text-brand-navy">Car Wraps</h3>
+                  <p className="text-sm text-gray-600">Professional car wrapping services</p>
+                </Link>
+                <Link to="/services/truck-wraps" className="p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                  <h3 className="font-semibold text-brand-navy">Truck Wraps</h3>
+                  <p className="text-sm text-gray-600">Commercial truck branding solutions</p>
+                </Link>
+                <Link to="/services/van-wraps" className="p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                  <h3 className="font-semibold text-brand-navy">Van Wraps</h3>
+                  <p className="text-sm text-gray-600">Delivery and service van wraps</p>
+                </Link>
+                <Link to="/services/fleet-wraps" className="p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                  <h3 className="font-semibold text-brand-navy">Fleet Wraps</h3>
+                  <p className="text-sm text-gray-600">Consistent branding for vehicle fleets</p>
+                </Link>
+                <Link to="/gallery" className="p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                  <h3 className="font-semibold text-brand-navy">Gallery</h3>
+                  <p className="text-sm text-gray-600">View our completed projects</p>
+                </Link>
+                <Link to="/locations" className="p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                  <h3 className="font-semibold text-brand-navy">Service Areas</h3>
+                  <p className="text-sm text-gray-600">Chicago and surrounding suburbs</p>
+                </Link>
+                <Link to="/about" className="p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                  <h3 className="font-semibold text-brand-navy">About Us</h3>
+                  <p className="text-sm text-gray-600">Our experience and commitment</p>
+                </Link>
+                <Link to="/contact" className="p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                  <h3 className="font-semibold text-brand-navy">Contact</h3>
+                  <p className="text-sm text-gray-600">Request a quote today</p>
+                </Link>
+              </div>
+            </div>
+          </div>
           
           {/* Easy Button Section - Moved to bottom */}
           <EasyButtonSection />

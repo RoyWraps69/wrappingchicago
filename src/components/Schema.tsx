@@ -6,6 +6,7 @@ import WebsiteSchema from './schemas/WebsiteSchema';
 import FAQSchema from './schemas/FAQSchema';
 import BreadcrumbSchema from './schemas/BreadcrumbSchema';
 import OfferCatalogSchema from './schemas/OfferCatalogSchema';
+import WebPageSchema from './schemas/WebPageSchema';
 
 interface FAQ {
   question: string;
@@ -18,7 +19,7 @@ interface SchemaProps {
   pageTitle: string;
   pageDescription: string;
   faqs?: FAQ[];
-  keywords?: string[]; // Add keywords as an optional prop
+  keywords?: string[]; // Keywords prop is already included
 }
 
 const Schema: React.FC<SchemaProps> = ({ 
@@ -26,8 +27,8 @@ const Schema: React.FC<SchemaProps> = ({
   path, 
   pageTitle, 
   pageDescription, 
-  faqs = [], // Add default empty array to prevent undefined errors
-  keywords = [] // Default empty array for keywords
+  faqs = [], 
+  keywords = [] 
 }) => {
   const currentDate = new Date().toISOString();
   
@@ -65,6 +66,13 @@ const Schema: React.FC<SchemaProps> = ({
       />
       <OfferCatalogSchema 
         city={city} 
+      />
+      <WebPageSchema
+        title={pageTitle}
+        description={pageDescription}
+        url={`https://wrappingchicago.com${path}`}
+        lastModified={currentDate}
+        keywords={keywords}
       />
     </>
   );
