@@ -63,7 +63,7 @@ const HomeSEO = () => {
       <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
       
       {/* Alternate URL versions */}
-      <link rel="alternate" hreflang="en-us" href="https://wrappingchicago.com" />
+      <link rel="alternate" hrefLang="en-us" href="https://wrappingchicago.com" />
       <link rel="alternate" href="https://www.wrappingchicago.com" />
     </Helmet>
   );
