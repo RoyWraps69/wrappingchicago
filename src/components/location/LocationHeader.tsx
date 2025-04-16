@@ -13,7 +13,7 @@ const LocationHeader: React.FC<LocationHeaderProps> = ({ city, cityKeywords }) =
   
   return (
     <Helmet>
-      <title>Professional Vehicle Wraps in {city.name}, IL | Car, Truck & Fleet Wraps | {currentYear}</title>
+      <title>{`Professional Vehicle Wraps in ${city.name}, IL | Car, Truck & Fleet Wraps | ${currentYear}`}</title>
       <meta 
         name="description" 
         content={`Chicago's top-rated vehicle wrap provider serving ${city.name}, IL. Professional car wraps, truck wraps, van wraps & fleet wraps with over 16,000 completed projects in our 20 years of business. Free quotes available.`} 

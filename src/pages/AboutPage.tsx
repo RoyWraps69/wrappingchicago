@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import Header from '@/components/Header';
@@ -6,18 +7,25 @@ import Breadcrumbs from '@/components/navigation/Breadcrumbs';
 import Schema from '@/components/Schema';
 import { cities } from '@/data/cities';
 import CallToAction from '@/components/CallToAction';
+
 const AboutPage = () => {
   // For Schema component
   const chicagoCity = cities.find(city => city.slug === 'chicago') || cities[0];
-  return <>
+  return (
+    <>
       <Helmet>
-        <title>About Chicago Fleet Wraps | Professional Vehicle Wrap Company</title>
+        <title>{"About Chicago Fleet Wraps | Professional Vehicle Wrap Company"}</title>
         <meta name="description" content="Learn about Chicago Fleet Wraps, a premier vehicle wrapping company serving Chicago and surrounding areas. Discover our experience, expertise, and commitment to quality." />
         <meta name="keywords" content="about Chicago Fleet Wraps, vehicle wrap company Chicago, professional car wrapping, Chicago wrap installers, vehicle wrapping experts, 3M certified wrap company" />
         <link rel="canonical" href="https://wrappingchicago.com/about" />
       </Helmet>
       
-      <Schema city={chicagoCity} path="/about" pageTitle="About Chicago Fleet Wraps | Professional Vehicle Wrap Company" pageDescription="Learn about Chicago Fleet Wraps, a premier vehicle wrapping company serving Chicago and surrounding areas." />
+      <Schema 
+        city={chicagoCity} 
+        path="/about" 
+        pageTitle="About Chicago Fleet Wraps | Professional Vehicle Wrap Company" 
+        pageDescription="Learn about Chicago Fleet Wraps, a premier vehicle wrapping company serving Chicago and surrounding areas." 
+      />
       
       <div className="flex flex-col min-h-screen">
         <Header />
@@ -185,6 +193,8 @@ const AboutPage = () => {
         
         <Footer />
       </div>
-    </>;
+    </>
+  );
 };
+
 export default AboutPage;

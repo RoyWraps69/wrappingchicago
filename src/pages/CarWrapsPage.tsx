@@ -45,7 +45,7 @@ const CarWrapsPage = () => {
   return (
     <>
       <Helmet>
-        <title>Car Wraps Chicago | Professional Auto Wrap Installation</title>
+        <title>{"Car Wraps Chicago | Professional Auto Wrap Installation"}</title>
         <meta name="description" content="Transform your vehicle with premium car wraps in Chicago. Our professional installation team uses top-quality 3M vinyl for stunning, durable results." />
         <meta name="keywords" content="car wraps, Chicago car wraps, vehicle wraps, auto wraps, car vinyl wrap, custom car wrap, 3M car wrap, Avery car wrap" />
         <link rel="canonical" href={`https://wrappingchicago.com${path}`} />

@@ -21,7 +21,7 @@ const NotFound = () => {
   return (
     <>
       <Helmet>
-        <title>Page Not Found | Chicago Fleet Wraps</title>
+        <title>{"Page Not Found | Chicago Fleet Wraps"}</title>
         <meta name="description" content="The requested page could not be found." />
         <meta name="robots" content="noindex, nofollow" />
       </Helmet>
