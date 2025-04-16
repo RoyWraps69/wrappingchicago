@@ -7,7 +7,7 @@ const HomeSEO = () => {
   
   return (
     <Helmet>
-      <title>Vehicle Wraps Chicago | Premium Car & Truck Wrapping Services | {currentYear}</title>
+      <title>{`Vehicle Wraps Chicago | Premium Car & Truck Wrapping Services | ${currentYear}`}</title>
       <meta 
         name="description" 
         content="Chicago's premier vehicle wrap company. Professional car & truck wraps with premium 3M materials. Transform your business with effective mobile advertising." 
