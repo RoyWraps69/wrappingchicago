@@ -2,6 +2,8 @@
 import React from 'react';
 
 const AIApplicationSchema = () => {
+  const domain = "https://www.wrappingchicago.com";
+  
   const schema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
@@ -24,13 +26,13 @@ const AIApplicationSchema = () => {
     "creator": {
       "@type": "Organization",
       "name": "Wrapping Chicago",
-      "url": "https://wrappingchicago.com"
+      "url": domain
     },
     "potentialAction": {
       "@type": "UseAction",
       "target": {
         "@type": "EntryPoint",
-        "urlTemplate": "https://wrappingchicago.com/ai-wrap-ideas#generator-section"
+        "urlTemplate": `${domain}/ai-wrap-ideas#generator-section`
       },
       "expectsAcceptanceOf": {
         "@type": "Offer",
@@ -72,7 +74,7 @@ const AIApplicationSchema = () => {
     "mainEntityOfPage": {
       "@type": "WebPage",
       "name": "AI Vehicle Wrap Design Generator",
-      "@id": "https://wrappingchicago.com/ai-wrap-ideas"
+      "@id": `${domain}/ai-wrap-ideas`
     }
   };
 

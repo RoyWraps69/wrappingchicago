@@ -20,3 +20,6 @@ Allow: /chicago
 
 # Sitemap location with www subdomain
 Sitemap: https://www.wrappingchicago.com/sitemap.xml
+
+# Prevent duplicate content issues
+Disallow: /*?* 

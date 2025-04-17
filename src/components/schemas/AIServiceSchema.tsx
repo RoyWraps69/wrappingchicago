@@ -2,13 +2,15 @@
 import React from 'react';
 
 const AIServiceSchema = () => {
+  const domain = "https://www.wrappingchicago.com";
+  
   const schema = {
     "@context": "https://schema.org",
     "@type": "Offer",
     "itemOffered": {
       "@type": "Service",
       "name": "AI Wrap Designer",
-      "url": "https://wrappingchicago.com/ai-wrap-ideas"
+      "url": `${domain}/ai-wrap-ideas`
     },
     "additionalProperty": {
       "@type": "PropertyValue",
@@ -18,7 +20,7 @@ const AIServiceSchema = () => {
     "offeredBy": {
       "@type": "LocalBusiness",
       "name": "Wrapping Chicago",
-      "url": "https://wrappingchicago.com",
+      "url": domain,
       "telephone": "(312) 597-1286",
       "email": "roy@wrappingchicago.com"
     }

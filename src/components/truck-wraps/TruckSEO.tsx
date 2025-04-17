@@ -14,7 +14,7 @@ const TruckSEO = () => {
         content="Professional truck wraps in Chicago with over 16,000 wraps completed in our 20 years of business. Serving delivery trucks, box trucks, pickup trucks & commercial fleets with expert installation and premium 3M materials." 
       />
       <link rel="canonical" href={`${domain}/truck-wraps-chicago`} />
-      <meta name="robots" content="index, follow" />
+      <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
       <meta property="og:title" content={`Truck Wraps Chicago | Commercial & Box Truck Wrapping Services | ${currentYear}`} />
       <meta property="og:description" content="Expert truck wrapping services in Chicago. Transform your commercial vehicles with high-impact truck wraps that boost your business visibility." />
       <meta property="og:url" content={`${domain}/truck-wraps-chicago`} />
@@ -61,7 +61,8 @@ const TruckSEO = () => {
             "priceCurrency": "USD",
             "priceValidUntil": `${currentYear}-12-31`,
             "availability": "https://schema.org/InStock"
-          }
+          },
+          "url": `${domain}/truck-wraps-chicago`
         })}
       </script>
     </Helmet>
