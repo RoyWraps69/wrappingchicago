@@ -65,7 +65,7 @@ const HomeSEO = () => {
       
       {/* Alternate URL versions */}
       <link rel="alternate" hrefLang="en-us" href={domain} />
-      <link rel="alternate" href={`https://www.wrappingchicago.com`} />
+      <link rel="alternate" href={domain} />
       
       {/* Structured Data for Website */}
       <script type="application/ld+json">

@@ -31,6 +31,7 @@ const Schema: React.FC<SchemaProps> = ({
   keywords = [] 
 }) => {
   const currentDate = new Date().toISOString();
+  const domain = "https://wrappingchicago.com";
   
   return (
     <>
@@ -40,14 +41,14 @@ const Schema: React.FC<SchemaProps> = ({
       <WebsiteSchema 
         name={pageTitle}
         description={pageDescription}
-        url={`https://wrappingchicago.com${path}`}
+        url={`${domain}${path}`}
         lastModified={currentDate}
         keywords={keywords}
       />
       {faqs && faqs.length > 0 && (
         <FAQSchema 
           faqs={faqs}
-          pageUrl={`https://wrappingchicago.com${path}`}
+          pageUrl={`${domain}${path}`}
         />
       )}
       <BreadcrumbSchema 
@@ -55,12 +56,12 @@ const Schema: React.FC<SchemaProps> = ({
           {
             position: 1,
             name: "Home",
-            item: "https://wrappingchicago.com/"
+            item: domain
           },
           {
             position: 2,
             name: pageTitle,
-            item: `https://wrappingchicago.com${path}`
+            item: `${domain}${path}`
           }
         ]}
       />
@@ -70,7 +71,7 @@ const Schema: React.FC<SchemaProps> = ({
       <WebPageSchema
         title={pageTitle}
         description={pageDescription}
-        url={`https://wrappingchicago.com${path}`}
+        url={`${domain}${path}`}
         lastModified={currentDate}
         keywords={keywords}
       />
