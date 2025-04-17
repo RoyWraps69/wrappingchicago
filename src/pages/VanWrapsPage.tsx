@@ -17,6 +17,7 @@ const VanWrapsPage = () => {
   // For Schema component
   const chicagoCity = cities.find(city => city.slug === 'chicago') || cities[0];
   const path = '/services/van-wraps';
+  const domain = "https://www.wrappingchicago.com";
   
   // FAQ data for schema
   const faqData = [
@@ -48,10 +49,10 @@ const VanWrapsPage = () => {
         <title>Van Wraps Chicago | Commercial & Cargo Van Wrapping Services</title>
         <meta name="description" content="Professional van wraps in Chicago for cargo, transit, and sprinter vans. Turn your commercial vehicles into mobile billboards with custom, high-quality graphics." />
         <meta name="keywords" content="van wraps Chicago, cargo van wraps, transit van wraps, sprinter van wraps, commercial van graphics, Chicago van wraps, delivery van wrapping" />
-        <link rel="canonical" href={`https://wrappingchicago.com${path}`} />
+        <link rel="canonical" href={`${domain}${path}`} />
         <meta property="og:title" content="Van Wraps Chicago | Commercial & Cargo Van Wrapping Services" />
         <meta property="og:description" content="Professional van wraps in Chicago for cargo, transit, and sprinter vans. Turn your commercial vehicles into mobile billboards with custom, high-quality graphics." />
-        <meta property="og:url" content={`https://wrappingchicago.com${path}`} />
+        <meta property="og:url" content={`${domain}${path}`} />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="/lovable-uploads/5539b79e-ab54-428d-82a0-e4735ee97a95.png" />
       </Helmet>

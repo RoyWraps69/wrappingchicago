@@ -16,10 +16,12 @@ const ServiceSchema = ({
   includeAI = false,
   lastModified = new Date().toISOString().split('T')[0]
 }: ServiceSchemaProps) => {
+  const domain = "https://www.wrappingchicago.com";
+  
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
-    "@id": `https://wrappingchicago.com${path}#service`,
+    "@id": `${domain}${path}#service`,
     "name": includeAI ? `AI-Powered ${title}` : title,
     "provider": {
       "@type": "LocalBusiness",
@@ -65,7 +67,7 @@ const ServiceSchema = ({
     "offers": {
       "@type": "Offer",
       "availability": "https://schema.org/InStock",
-      "url": `https://wrappingchicago.com${path}`,
+      "url": `${domain}${path}`,
       "priceSpecification": {
         "@type": "PriceSpecification",
         "priceCurrency": "USD"
@@ -73,7 +75,7 @@ const ServiceSchema = ({
     },
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": `https://wrappingchicago.com${path}`,
+      "@id": `${domain}${path}`,
       "lastReviewed": lastModified,
       "dateModified": lastModified,
       "speakable": {
@@ -107,17 +109,17 @@ const ServiceSchema = ({
       {
         "@type": "Service",
         "name": "Truck Wraps",
-        "url": "https://wrappingchicago.com/services/truck-wraps"
+        "url": `${domain}/services/truck-wraps`
       },
       {
         "@type": "Service",
         "name": "Van Wraps",
-        "url": "https://wrappingchicago.com/services/van-wraps"
+        "url": `${domain}/services/van-wraps`
       },
       {
         "@type": "Service",
         "name": "Color Change Wraps",
-        "url": "https://wrappingchicago.com/services/color-change-wraps"
+        "url": `${domain}/services/color-change-wraps`
       }
     ]
   };
