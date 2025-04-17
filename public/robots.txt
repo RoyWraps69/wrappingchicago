@@ -2,7 +2,7 @@
 User-agent: *
 Allow: /
 
-# Important directories to crawl
+# Consistent www. domain for all allow rules
 Allow: /services/
 Allow: /gallery/
 Allow: /about/
@@ -18,24 +18,5 @@ Allow: /van-wraps/
 Allow: /vehicle-wraps-chicago-il
 Allow: /chicago
 
-# Explicitly allow individual service pages
-Allow: /services/car-wraps
-Allow: /services/truck-wraps
-Allow: /services/van-wraps
-Allow: /services/fleet-wraps
-Allow: /services/color-change-wraps
-Allow: /services/commercial-graphics
-Allow: /services/partial-wraps
-Allow: /services/protective-films
-Allow: /services/vehicle-lettering
-Allow: /services/specialty-wraps
-Allow: /services/retail-graphics
-Allow: /services/designer-wraps
-Allow: /services/luxury-exotic-wraps
-
-# Allow Cloudflare bot
-User-agent: Cloudflare-Workers
-Allow: /
-
-# Sitemap location
+# Sitemap location with www subdomain
 Sitemap: https://www.wrappingchicago.com/sitemap.xml
