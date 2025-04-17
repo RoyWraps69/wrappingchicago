@@ -2,12 +2,32 @@
 User-agent: *
 Allow: /
 
-# Important pages to crawl
+# Important directories to crawl
 Allow: /services/
 Allow: /gallery/
 Allow: /about/
 Allow: /contact/
 Allow: /locations/
+Allow: /ai-wrap-ideas/
+Allow: /fleet-wraps/
+Allow: /truck-wraps/
+Allow: /car-wraps/
+Allow: /van-wraps/
+
+# Explicitly allow individual service pages
+Allow: /services/car-wraps
+Allow: /services/truck-wraps
+Allow: /services/van-wraps
+Allow: /services/fleet-wraps
+Allow: /services/color-change-wraps
+Allow: /services/commercial-graphics
+Allow: /services/partial-wraps
+Allow: /services/protective-films
+Allow: /services/vehicle-lettering
+Allow: /services/specialty-wraps
+Allow: /services/retail-graphics
+Allow: /services/designer-wraps
+Allow: /services/luxury-exotic-wraps
 
 # Sitemap location
 Sitemap: https://wrappingchicago.com/sitemap.xml
