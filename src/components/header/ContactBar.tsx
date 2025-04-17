@@ -18,14 +18,14 @@ const ContactBar = () => {
           <div className="flex flex-wrap justify-end gap-4 md:gap-6 text-sm">
             <span className="text-white/70">Our Locations:</span>
             <a 
-              href="https://wrappingchicago.com" 
+              href="https://www.wrappingchicago.com" 
               className="flex items-center hover:text-white/80 transition-colors"
             >
               <Globe className="w-4 h-4 mr-1 text-white" />
               Chicago
             </a>
             <a 
-              href="https://centralimagewraps.com" 
+              href="https://www.centralimagewraps.com" 
               target="_blank" 
               rel="noopener noreferrer"
               className="flex items-center hover:text-white/80 transition-colors"
@@ -34,7 +34,7 @@ const ContactBar = () => {
               Central IL
             </a>
             <a 
-              href="https://lasvegascarwraps.com" 
+              href="https://www.lasvegascarwraps.com" 
               target="_blank" 
               rel="noopener noreferrer"
               className="flex items-center hover:text-white/80 transition-colors"

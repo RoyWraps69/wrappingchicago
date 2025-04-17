@@ -2,6 +2,8 @@
 import React from 'react';
 
 const AIVoiceSearchSchema = () => {
+  const baseDomain = "https://www.wrappingchicago.com";
+  
   const schema = {
     "@context": "https://schema.org",
     "@type": "WebPage",
@@ -25,7 +27,7 @@ const AIVoiceSearchSchema = () => {
       "@type": "UseAction",
       "target": {
         "@type": "EntryPoint",
-        "urlTemplate": "https://wrappingchicago.com/ai-wrap-ideas#generator-section"
+        "urlTemplate": `${baseDomain}/ai-wrap-ideas#generator-section`
       },
       "expectsAcceptanceOf": {
         "@type": "Offer",

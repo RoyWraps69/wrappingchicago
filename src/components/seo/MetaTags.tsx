@@ -30,7 +30,20 @@ const MetaTags: React.FC<MetaTagsProps> = ({
   const currentYear = new Date().getFullYear();
   const formattedTitle = title.includes(currentYear.toString()) ? title : `${title} | ${currentYear}`;
   const domain = "https://www.wrappingchicago.com";
-  const fullOgImage = ogImage.startsWith('http') ? ogImage : `${domain}${ogImage}`;
+  
+  // Ensure canonical URL uses www subdomain
+  const fullCanonicalUrl = canonicalUrl.startsWith('http') 
+    ? (canonicalUrl.includes('wrappingchicago.com') 
+        ? (canonicalUrl.includes('www.') ? canonicalUrl : canonicalUrl.replace('https://wrappingchicago.com', domain))
+        : canonicalUrl)
+    : `${domain}${canonicalUrl}`;
+  
+  // Ensure OG image URL uses www subdomain
+  const fullOgImage = ogImage.startsWith('http') 
+    ? (ogImage.includes('wrappingchicago.com') 
+        ? (ogImage.includes('www.') ? ogImage : ogImage.replace('https://wrappingchicago.com', domain))
+        : ogImage)
+    : `${domain}${ogImage}`;
   
   return (
     <Helmet>
@@ -38,7 +51,7 @@ const MetaTags: React.FC<MetaTagsProps> = ({
       <title>{formattedTitle}</title>
       <meta name="description" content={description} />
       {keywords && <meta name="keywords" content={keywords} />}
-      <link rel="canonical" href={canonicalUrl} />
+      <link rel="canonical" href={fullCanonicalUrl} />
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
       {lastModified && <meta name="last-modified" content={lastModified} />}
@@ -67,7 +80,7 @@ const MetaTags: React.FC<MetaTagsProps> = ({
       {/* Open Graph / Facebook */}
       <meta property="og:title" content={formattedTitle} />
       <meta property="og:description" content={description} />
-      <meta property="og:url" content={canonicalUrl} />
+      <meta property="og:url" content={fullCanonicalUrl} />
       <meta property="og:type" content={ogType} />
       <meta property="og:image" content={fullOgImage} />
       <meta property="og:image:width" content="1200" />

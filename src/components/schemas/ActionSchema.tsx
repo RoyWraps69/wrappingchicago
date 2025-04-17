@@ -2,12 +2,14 @@
 import React from 'react';
 
 const ActionSchema = () => {
+  const baseDomain = "https://www.wrappingchicago.com";
+  
   const schema = {
     "@context": "https://schema.org",
     "@type": "ReserveAction",
     "target": {
       "@type": "EntryPoint",
-      "urlTemplate": "https://wrappingchicago.com/contact",
+      "urlTemplate": `${baseDomain}/contact`,
       "inLanguage": "en-US",
       "actionPlatform": [
         "http://schema.org/DesktopWebPlatform",
@@ -21,7 +23,7 @@ const ActionSchema = () => {
     "provider": {
       "@type": "LocalBusiness",
       "name": "Wrapping Chicago",
-      "url": "https://wrappingchicago.com"
+      "url": baseDomain
     }
   };
 

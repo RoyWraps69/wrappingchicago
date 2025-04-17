@@ -2,6 +2,8 @@
 import React from 'react';
 
 const AIArticleSchema = () => {
+  const baseDomain = "https://www.wrappingchicago.com";
+  
   const schema = {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -9,7 +11,7 @@ const AIArticleSchema = () => {
     "description": "Learn how artificial intelligence is transforming the vehicle wrap industry by enabling instant custom design generation and visualization.",
     "image": {
       "@type": "ImageObject",
-      "url": "/lovable-uploads/efc6c586-8651-43ad-811a-b896a91a1b69.png",
+      "url": `${baseDomain}/lovable-uploads/efc6c586-8651-43ad-811a-b896a91a1b69.png`,
       "height": 800,
       "width": 1200,
       "caption": "AI-generated vehicle wrap design on a luxury sedan - metallic blue color change wrap example"
@@ -19,19 +21,19 @@ const AIArticleSchema = () => {
     "author": {
       "@type": "Organization",
       "name": "Wrapping Chicago",
-      "url": "https://wrappingchicago.com"
+      "url": baseDomain
     },
     "publisher": {
       "@type": "Organization",
       "name": "Wrapping Chicago",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://wrappingchicago.com/logo.png"
+        "url": `${baseDomain}/logo.png`
       }
     },
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "https://wrappingchicago.com/ai-wrap-ideas"
+      "@id": `${baseDomain}/ai-wrap-ideas`
     },
     "keywords": "AI vehicle wrap design, artificial intelligence wrap generator, vehicle wrap AI, Chicago fleet wraps, Wrapping Chicago"
   };

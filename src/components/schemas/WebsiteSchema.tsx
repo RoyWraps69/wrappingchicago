@@ -17,11 +17,19 @@ const WebsiteSchema: React.FC<WebsiteSchemaProps> = ({
   keywords = [] // Add default value for keywords
 }) => {
   const baseDomain = "https://www.wrappingchicago.com";
+  
+  // Ensure URL uses www subdomain
+  const fullUrl = url.startsWith('http') 
+    ? (url.includes('wrappingchicago.com') 
+        ? (url.includes('www.') ? url : url.replace('https://wrappingchicago.com', baseDomain))
+        : url)
+    : `${baseDomain}${url}`;
+  
   const schema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "@id": `${url}/#website`,
-    "url": url,
+    "@id": `${fullUrl}/#website`,
+    "url": fullUrl,
     "name": name,
     "description": description,
     "publisher": {

@@ -97,7 +97,7 @@ const Footer = () => {
             <div className="flex items-center">
               <Globe className="w-5 h-5 mr-2 text-brand-red" />
               <a 
-                href="https://wrappingchicago.com" 
+                href="https://www.wrappingchicago.com" 
                 className="hover:text-brand-red transition-colors"
               >
                 Wrapping Chicago
@@ -106,7 +106,7 @@ const Footer = () => {
             <div className="flex items-center">
               <Globe className="w-5 h-5 mr-2 text-brand-red" />
               <a 
-                href="https://centralimagewraps.com" 
+                href="https://www.centralimagewraps.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="hover:text-brand-red transition-colors"
@@ -117,7 +117,7 @@ const Footer = () => {
             <div className="flex items-center">
               <Globe className="w-5 h-5 mr-2 text-brand-red" />
               <a 
-                href="https://lasvegascarwraps.com" 
+                href="https://www.lasvegascarwraps.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="hover:text-brand-red transition-colors"
