@@ -1,8 +1,8 @@
 
-# Redirect www to non-www version
+# Redirect non-www to www version (reverse of what was there before)
 RewriteEngine On
-RewriteCond %{HTTP_HOST} ^www\.wrappingchicago\.com [NC]
-RewriteRule ^(.*)$ https://wrappingchicago.com/$1 [L,R=301]
+RewriteCond %{HTTP_HOST} ^wrappingchicago\.com [NC]
+RewriteRule ^(.*)$ https://www.wrappingchicago.com/$1 [L,R=301]
 
 # Redirect removed email-setup page to contact page
 RewriteRule ^email-setup/?$ /contact [R=301,L]

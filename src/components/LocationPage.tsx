@@ -43,6 +43,8 @@ const LocationPage = ({ city }: LocationPageProps) => {
     `partial vehicle wraps ${city.name}`
   ];
 
+  const domain = "https://www.wrappingchicago.com";
+
   return (
     <>
       <LocationHeader city={city} cityKeywords={cityKeywords} />

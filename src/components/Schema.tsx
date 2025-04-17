@@ -31,7 +31,7 @@ const Schema: React.FC<SchemaProps> = ({
   keywords = [] 
 }) => {
   const currentDate = new Date().toISOString();
-  const domain = "https://wrappingchicago.com";
+  const domain = "https://www.wrappingchicago.com";
   
   return (
     <>

@@ -29,7 +29,7 @@ const MetaTags: React.FC<MetaTagsProps> = ({
 }) => {
   const currentYear = new Date().getFullYear();
   const formattedTitle = title.includes(currentYear.toString()) ? title : `${title} | ${currentYear}`;
-  const domain = "https://wrappingchicago.com";
+  const domain = "https://www.wrappingchicago.com";
   const fullOgImage = ogImage.startsWith('http') ? ogImage : `${domain}${ogImage}`;
   
   return (

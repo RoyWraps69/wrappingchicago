@@ -4,7 +4,7 @@ import { Helmet } from 'react-helmet-async';
 
 const TruckSEO = () => {
   const currentYear = new Date().getFullYear();
-  const domain = "https://wrappingchicago.com";
+  const domain = "https://www.wrappingchicago.com";
   
   return (
     <Helmet>

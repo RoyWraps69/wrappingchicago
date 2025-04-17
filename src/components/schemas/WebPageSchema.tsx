@@ -16,7 +16,7 @@ const WebPageSchema: React.FC<WebPageSchemaProps> = ({
   url,
   lastModified = new Date().toISOString(),
   keywords = [],
-  mainImage = "https://wrappingchicago.com/lovable-uploads/6ef3b1af-8591-4d36-97c2-9366401115fa.png"
+  mainImage = "https://www.wrappingchicago.com/lovable-uploads/6ef3b1af-8591-4d36-97c2-9366401115fa.png"
 }) => {
   const schema = {
     "@context": "https://schema.org",
@@ -26,7 +26,7 @@ const WebPageSchema: React.FC<WebPageSchemaProps> = ({
     "name": title,
     "description": description,
     "isPartOf": {
-      "@id": "https://wrappingchicago.com/#website"
+      "@id": "https://www.wrappingchicago.com/#website"
     },
     "inLanguage": "en-US",
     "datePublished": "2020-01-01T00:00:00+00:00",

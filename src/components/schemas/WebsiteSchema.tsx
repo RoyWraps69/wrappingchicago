@@ -16,6 +16,7 @@ const WebsiteSchema: React.FC<WebsiteSchemaProps> = ({
   lastModified = new Date().toISOString().split('T')[0],
   keywords = [] // Add default value for keywords
 }) => {
+  const baseDomain = "https://www.wrappingchicago.com";
   const schema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
@@ -28,7 +29,7 @@ const WebsiteSchema: React.FC<WebsiteSchemaProps> = ({
       "name": "Wrapping Chicago",
       "logo": {
         "@type": "ImageObject",
-        "url": `${url}/lovable-uploads/6ef3b1af-8591-4d36-97c2-9366401115fa.png`,
+        "url": `${baseDomain}/lovable-uploads/6ef3b1af-8591-4d36-97c2-9366401115fa.png`,
         "width": "180",
         "height": "60"
       },
@@ -51,7 +52,7 @@ const WebsiteSchema: React.FC<WebsiteSchemaProps> = ({
         "@type": "SearchAction",
         "target": {
           "@type": "EntryPoint",
-          "urlTemplate": `${url}/search?q={search_term_string}`
+          "urlTemplate": `${baseDomain}/search?q={search_term_string}`
         },
         "query-input": "required name=search_term_string"
       },
@@ -59,7 +60,7 @@ const WebsiteSchema: React.FC<WebsiteSchemaProps> = ({
         "@type": "ReserveAction",
         "target": {
           "@type": "EntryPoint",
-          "urlTemplate": `${url}/contact`
+          "urlTemplate": `${baseDomain}/contact`
         },
         "result": {
           "@type": "Reservation",
