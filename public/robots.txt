@@ -23,3 +23,10 @@ Sitemap: https://www.wrappingchicago.com/sitemap.xml
 
 # Prevent duplicate content issues
 Disallow: /*?* 
+
+# Prevent non-www version
+Disallow: https://wrappingchicago.com/
+
+# Prevent any versioned URLs from being indexed
+Disallow: /*.js$
+Disallow: /*.css$

@@ -15,6 +15,7 @@ import { Link } from 'react-router-dom';
 import { MessageSquare, Phone } from 'lucide-react';
 import Schema from '@/components/Schema';
 import { cities } from '@/data/cities';
+import GoogleSearchConsole from '@/components/seo/GoogleSearchConsole';
 
 const GalleryPage = () => {
   const [activeFilter, setActiveFilter] = useState<GalleryCategory>('All');
@@ -22,6 +23,7 @@ const GalleryPage = () => {
   
   // For Schema component
   const chicagoCity = cities.find(city => city.slug === 'chicago') || cities[0];
+  const domain = "https://www.wrappingchicago.com";
   
   return (
     <>
@@ -32,13 +34,15 @@ const GalleryPage = () => {
           content="Browse our gallery of completed vehicle wrap projects including fleet wraps, color change wraps, and commercial graphics across Chicago and surrounding areas. See real examples of our professional wrapping work."
         />
         <meta name="keywords" content="vehicle wrap gallery, Chicago wrap examples, fleet wrap portfolio, color change wrap photos, commercial graphics examples, car wrap images" />
-        <link rel="canonical" href="https://wrappingchicago.com/gallery" />
+        <link rel="canonical" href={`${domain}/gallery`} />
         <meta property="og:title" content="Vehicle Wrap Gallery | Wrapping Chicago Portfolio" />
         <meta property="og:description" content="Browse our gallery of completed vehicle wrap projects throughout Chicago. See real examples of our professional wrapping work." />
-        <meta property="og:url" content="https://wrappingchicago.com/gallery" />
+        <meta property="og:url" content={`${domain}/gallery`} />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="/lovable-uploads/5539b79e-ab54-428d-82a0-e4735ee97a95.png" />
+        <meta property="og:image" content={`${domain}/lovable-uploads/5539b79e-ab54-428d-82a0-e4735ee97a95.png`} />
       </Helmet>
+      
+      <GoogleSearchConsole verificationCode="gQnkHgsJ2bOPDWFClspUxA6EZsE-XWnLasqxsqSESvg" />
       
       <Schema 
         city={chicagoCity}
@@ -55,7 +59,7 @@ const GalleryPage = () => {
             <Breadcrumbs />
             <h1 className="text-4xl font-bold text-brand-navy mb-6">Our Work</h1>
             
-            {/* Contact Buttons Section */}
+            {/* Contact Buttons Section with improved internal links */}
             <div className="mb-8 p-4 bg-brand-navy/5 rounded-lg border border-brand-navy/10 flex flex-col sm:flex-row items-center justify-between">
               <p className="text-lg mb-4 sm:mb-0 sm:mr-4 text-gray-700">
                 Like what you see? Get in touch for a free quote on your vehicle wrap project.
@@ -88,6 +92,21 @@ const GalleryPage = () => {
               vehicle wraps. From fleet wraps to color change wraps and commercial graphics,
               we've successfully completed hundreds of projects throughout Chicago and surrounding areas.
             </p>
+            
+            {/* Service navigation links for internal linking */}
+            <div className="mb-8 bg-gray-50 p-4 rounded-lg">
+              <h3 className="text-lg font-semibold mb-3">Explore Our Services</h3>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+                <Link to="/services/car-wraps" className="text-brand-navy hover:text-brand-red text-sm transition-colors">Car Wraps</Link>
+                <Link to="/services/truck-wraps" className="text-brand-navy hover:text-brand-red text-sm transition-colors">Truck Wraps</Link>
+                <Link to="/services/van-wraps" className="text-brand-navy hover:text-brand-red text-sm transition-colors">Van Wraps</Link>
+                <Link to="/services/fleet-wraps" className="text-brand-navy hover:text-brand-red text-sm transition-colors">Fleet Wraps</Link>
+                <Link to="/services/color-change-wraps" className="text-brand-navy hover:text-brand-red text-sm transition-colors">Color Change Wraps</Link>
+                <Link to="/services/commercial-graphics" className="text-brand-navy hover:text-brand-red text-sm transition-colors">Commercial Graphics</Link>
+                <Link to="/services/vehicle-lettering" className="text-brand-navy hover:text-brand-red text-sm transition-colors">Vehicle Lettering</Link>
+                <Link to="/ai-wrap-ideas" className="text-brand-navy hover:text-brand-red text-sm transition-colors">AI Wrap Designer</Link>
+              </div>
+            </div>
             
             {/* Gallery Filter */}
             <GalleryFilter 
