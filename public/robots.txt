@@ -18,6 +18,9 @@ Allow: /van-wraps/
 Allow: /vehicle-wraps-chicago-il
 Allow: /chicago
 
+# Allow access to PDF resources
+Allow: /vehicle-wrapping-guide.pdf
+
 # Sitemap location with www subdomain
 Sitemap: https://www.wrappingchicago.com/sitemap.xml
 

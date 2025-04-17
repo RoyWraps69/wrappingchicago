@@ -5,7 +5,7 @@ import { Download, FileText } from 'lucide-react';
 
 const PDFDownloadSection: React.FC = () => {
   const handleDownloadPDF = () => {
-    // When a real PDF is created, replace this with the actual PDF path
+    // Path to the comprehensive vehicle wrapping guide
     const pdfUrl = '/vehicle-wrapping-guide.pdf';
     
     // Create a temporary anchor element to trigger download
@@ -40,6 +40,8 @@ const PDFDownloadSection: React.FC = () => {
             <li>Cost-Benefit Analysis</li>
             <li>Installation Process Insights</li>
             <li>Marketing Impact of Vehicle Wraps</li>
+            <li>Maintenance Tips for Longevity</li>
+            <li>Color & Design Psychology</li>
           </ul>
         </div>
         
