@@ -29,5 +29,9 @@ Allow: /services/retail-graphics
 Allow: /services/designer-wraps
 Allow: /services/luxury-exotic-wraps
 
+# Allow Cloudflare bot
+User-agent: Cloudflare-Workers
+Allow: /
+
 # Sitemap location
 Sitemap: https://wrappingchicago.com/sitemap.xml
