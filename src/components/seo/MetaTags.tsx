@@ -29,6 +29,8 @@ const MetaTags: React.FC<MetaTagsProps> = ({
 }) => {
   const currentYear = new Date().getFullYear();
   const formattedTitle = title.includes(currentYear.toString()) ? title : `${title} | ${currentYear}`;
+  const domain = "https://wrappingchicago.com";
+  const fullOgImage = ogImage.startsWith('http') ? ogImage : `${domain}${ogImage}`;
   
   return (
     <Helmet>
@@ -67,7 +69,7 @@ const MetaTags: React.FC<MetaTagsProps> = ({
       <meta property="og:description" content={description} />
       <meta property="og:url" content={canonicalUrl} />
       <meta property="og:type" content={ogType} />
-      <meta property="og:image" content={ogImage} />
+      <meta property="og:image" content={fullOgImage} />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
       <meta property="og:site_name" content="Wrapping Chicago" />
@@ -77,7 +79,7 @@ const MetaTags: React.FC<MetaTagsProps> = ({
       <meta name="twitter:card" content={twitterCard} />
       <meta name="twitter:title" content={formattedTitle} />
       <meta name="twitter:description" content={description} />
-      <meta name="twitter:image" content={ogImage} />
+      <meta name="twitter:image" content={fullOgImage} />
       <meta name="twitter:site" content="@wrappingchicago" />
       
       {/* Geo Tags */}
@@ -94,7 +96,7 @@ const MetaTags: React.FC<MetaTagsProps> = ({
       <meta name="business:contact_data:country_name" content="USA" />
       <meta name="business:contact_data:email" content="roy@chicagofleetwraps.com" />
       <meta name="business:contact_data:phone_number" content="+13125971286" />
-      <meta name="business:contact_data:website" content="https://wrappingchicago.com" />
+      <meta name="business:contact_data:website" content={domain} />
       
       {/* Mobile optimization */}
       <meta name="apple-mobile-web-app-capable" content="yes" />
