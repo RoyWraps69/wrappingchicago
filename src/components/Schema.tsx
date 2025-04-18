@@ -115,7 +115,7 @@ const Schema: React.FC<SchemaProps> = ({
       {isServicePage && serviceType && (
         <VehicleWrapServiceSchema
           serviceType={serviceType}
-          city={city.name}
+          cityName={city.name}
           url={fullUrl}
         />
       )}

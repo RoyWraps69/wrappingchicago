@@ -9,7 +9,7 @@ import MetaTags from '@/components/seo/MetaTags';
 import WebsiteSchema from '@/components/schemas/WebsiteSchema';
 import WebPageSchema from '@/components/schemas/WebPageSchema';
 import Breadcrumbs from '@/components/navigation/Breadcrumbs';
-import { Sitemap, Map } from 'lucide-react';
+import { FileText, Map } from 'lucide-react';
 
 const SitemapPage = () => {
   const currentYear = new Date().getFullYear();
@@ -54,7 +54,7 @@ const SitemapPage = () => {
           
           <div className="bg-white rounded-lg shadow-sm p-6 md:p-8 mt-6">
             <div className="flex items-center mb-6">
-              <Sitemap className="h-6 w-6 mr-3 text-brand-red" />
+              <FileText className="h-6 w-6 mr-3 text-brand-red" />
               <h1 className="text-2xl md:text-3xl font-bold text-brand-navy">Complete Site Map</h1>
             </div>
             

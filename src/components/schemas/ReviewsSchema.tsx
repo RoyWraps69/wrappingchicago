@@ -1,43 +1,30 @@
 
 import React from 'react';
 
-interface Review {
-  author: string;
-  reviewBody: string;
-  reviewRating: {
-    ratingValue: string;
-  };
+export interface ReviewsSchemaProps {
+  businessName: string;
+  reviewCount: number;
+  ratingValue: number;
 }
 
-interface ReviewsSchemaProps {
-  reviews: Review[];
-}
-
-const ReviewsSchema: React.FC<ReviewsSchemaProps> = ({ reviews }) => {
+const ReviewsSchema: React.FC<ReviewsSchemaProps> = ({ 
+  businessName, 
+  reviewCount, 
+  ratingValue 
+}) => {
   const schema = {
     "@context": "https://schema.org",
-    "@type": "ItemList",
-    "itemListElement": reviews.map((review, index) => ({
-      "@type": "ListItem",
-      "position": index + 1,
-      "item": {
-        "@type": "Review",
-        "author": {
-          "@type": "Person",
-          "name": review.author
-        },
-        "reviewRating": {
-          "@type": "Rating",
-          "ratingValue": review.reviewRating.ratingValue,
-          "bestRating": "5"
-        },
-        "reviewBody": review.reviewBody
-      }
-    }))
+    "@type": "LocalBusiness",
+    "name": businessName,
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": ratingValue,
+      "reviewCount": reviewCount
+    }
   };
 
   return (
-    <script
+    <script 
       type="application/ld+json"
       dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
     />

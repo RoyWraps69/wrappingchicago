@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { City } from '@/data/cities';
+import { City } from '@/data/types/city';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import CallToAction from '@/components/CallToAction';
@@ -85,8 +85,8 @@ const LocationPage = ({ city }: LocationPageProps) => {
       
       <Helmet>
         <link rel="alternate" hrefLang="en-us" href={`${domain}${canonicalUrl}`} />
-        <meta name="geo.position" content={`${city.latitude};${city.longitude}`} />
-        <meta name="ICBM" content={`${city.latitude}, ${city.longitude}`} />
+        <meta name="geo.position" content={`${city.coordinates?.lat || 41.8781};${city.coordinates?.lng || -87.6298}`} />
+        <meta name="ICBM" content={`${city.coordinates?.lat || 41.8781}, ${city.coordinates?.lng || -87.6298}`} />
         <meta name="twitter:label1" content="Location" />
         <meta name="twitter:data1" content={`${city.name}, IL`} />
         <meta name="twitter:label2" content="Service Area" />
