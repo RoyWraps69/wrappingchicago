@@ -25,7 +25,7 @@ const ServicesSection = ({ fleetWrapVan, colorChangeVan, commercialGraphics }: S
     {
       title: "Color Change Wraps",
       description: "Want a new look without the permanence of paint? Our color change wraps allow you to transform your vehicle with premium vinyl wraps in any color or finish.",
-      image: "/lovable-uploads/b8afcc71-d540-4ec1-a3c0-cc4291d89465.png",
+      image: "/lovable-uploads/459b925b-94c6-40c1-92cc-d4112da7ac6c.png",
       link: "/color-change-wraps"
     },
     {
