@@ -1,30 +1,35 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Sparkles, MessageSquare, Phone } from 'lucide-react';
+import { Sparkles, MessageSquare, Phone, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import NavLink from './NavLink';
 import ServiceMenu from './ServiceMenu';
 
 const DesktopNav = () => {
   return (
-    <nav className="hidden md:flex items-center space-x-6">
-      <NavLink to="/">
-        Home
-      </NavLink>
-      <NavLink to="/ai-wrap-ideas" icon={Sparkles}>
-        AI Wrap Designer
-      </NavLink>
-      <ServiceMenu />
-      <NavLink to="/gallery">
-        Gallery
-      </NavLink>
-      <NavLink to="/about">
-        About
-      </NavLink>
-      <NavLink to="/contact">
-        Contact
-      </NavLink>
+    <nav className="hidden md:flex items-center justify-between w-full">
+      <div className="flex items-center space-x-5">
+        <NavLink to="/">
+          Home
+        </NavLink>
+        <NavLink to="/ai-wrap-ideas" icon={Sparkles}>
+          AI Wrap Designer
+        </NavLink>
+        <ServiceMenu />
+        <NavLink to="/gallery">
+          Gallery
+        </NavLink>
+        <NavLink to="/locations" icon={MapPin}>
+          Locations
+        </NavLink>
+        <NavLink to="/about">
+          About
+        </NavLink>
+        <NavLink to="/contact">
+          Contact
+        </NavLink>
+      </div>
       
       <div className="flex gap-2 ml-2">
         <Button 
@@ -32,9 +37,9 @@ const DesktopNav = () => {
           className="border-white/20 bg-white/10 text-white hover:bg-white/20"
           asChild
         >
-          <Link to="/contact" className="inline-flex items-center">
+          <Link to="/contact" className="inline-flex items-center" aria-label="Request a quote for vehicle wraps">
             <MessageSquare className="mr-2 h-4 w-4" />
-            Get a Quote
+            <span className="whitespace-nowrap">Get a Quote</span>
           </Link>
         </Button>
         
@@ -43,9 +48,9 @@ const DesktopNav = () => {
           className="bg-brand-red hover:bg-red-700 text-white"
           asChild
         >
-          <a href="tel:3125971286" className="inline-flex items-center">
+          <a href="tel:3125971286" className="inline-flex items-center" aria-label="Call for vehicle wrap services">
             <Phone className="mr-2 h-4 w-4" />
-            (312) 597-1286
+            <span className="whitespace-nowrap">(312) 597-1286</span>
           </a>
         </Button>
       </div>
