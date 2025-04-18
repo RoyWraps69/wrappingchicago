@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { cities } from '@/data/cities';
@@ -42,36 +41,47 @@ const Footer = () => {
           
           <div>
             <h3 className="text-xl font-bold mb-4">Our Services</h3>
+            <div className="grid grid-cols-2 gap-2">
+              <div>
+                <ul className="space-y-2">
+                  <li><Link to="/services/fleet-wraps" className="hover:text-brand-red transition-colors">Fleet Wraps</Link></li>
+                  <li><Link to="/services/car-wraps" className="hover:text-brand-red transition-colors">Car Wraps</Link></li>
+                  <li><Link to="/services/truck-wraps" className="hover:text-brand-red transition-colors">Truck Wraps</Link></li>
+                  <li><Link to="/services/van-wraps" className="hover:text-brand-red transition-colors">Van Wraps</Link></li>
+                  <li><Link to="/services/color-change-wraps" className="hover:text-brand-red transition-colors">Color Change</Link></li>
+                  <li><Link to="/services/commercial-graphics" className="hover:text-brand-red transition-colors">Commercial Graphics</Link></li>
+                  <li><Link to="/services/partial-wraps" className="hover:text-brand-red transition-colors">Partial Wraps</Link></li>
+                </ul>
+              </div>
+              <div>
+                <ul className="space-y-2">
+                  <li><Link to="/services/protective-films" className="hover:text-brand-red transition-colors">Protective Films</Link></li>
+                  <li><Link to="/services/vehicle-lettering" className="hover:text-brand-red transition-colors">Vehicle Lettering</Link></li>
+                  <li><Link to="/services/specialty-wraps" className="hover:text-brand-red transition-colors">Specialty Wraps</Link></li>
+                  <li><Link to="/services/retail-graphics" className="hover:text-brand-red transition-colors">Retail Graphics</Link></li>
+                  <li><Link to="/services/designer-wraps" className="hover:text-brand-red transition-colors">Designer Wraps</Link></li>
+                  <li><Link to="/services/luxury-exotic-wraps" className="hover:text-brand-red transition-colors">Luxury & Exotic</Link></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+          <div>
+            <h3 className="text-xl font-bold mb-4">Quick Links</h3>
             <ul className="space-y-2">
-              <li><Link to="/services/fleet-wraps" className="hover:text-brand-red transition-colors">Fleet Wraps</Link></li>
-              <li><Link to="/services/color-change-wraps" className="hover:text-brand-red transition-colors">Color Change Wraps</Link></li>
-              <li><Link to="/services/commercial-graphics" className="hover:text-brand-red transition-colors">Commercial Graphics</Link></li>
-              <li><Link to="/services/partial-wraps" className="hover:text-brand-red transition-colors">Partial Wraps</Link></li>
+              <li><Link to="/" className="hover:text-brand-red transition-colors">Home</Link></li>
+              <li><Link to="/about" className="hover:text-brand-red transition-colors">About Us</Link></li>
               <li><Link to="/gallery" className="hover:text-brand-red transition-colors">Gallery</Link></li>
-              <li><Link to="/contact" className="hover:text-brand-red transition-colors">Get a Quote</Link></li>
+              <li><Link to="/contact" className="hover:text-brand-red transition-colors">Contact</Link></li>
+              <li><Link to="/ai-wrap-ideas" className="hover:text-brand-red transition-colors">AI Wrap Designer</Link></li>
+              <li><Link to="/locations" className="hover:text-brand-red transition-colors">Service Areas</Link></li>
             </ul>
           </div>
           
           <div>
-            <h3 className="text-xl font-bold mb-4">Locations We Serve</h3>
+            <h3 className="text-xl font-bold mb-4">Service Areas</h3>
             <ul className="space-y-2">
-              {firstHalf.map((city) => (
-                <li key={city.slug}>
-                  <Link 
-                    to={`/vehicle-wraps-${city.slug}-il`} 
-                    className="hover:text-brand-red transition-colors"
-                  >
-                    {city.name}, IL
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-          
-          <div>
-            <h3 className="text-xl font-bold mb-4">More Locations</h3>
-            <ul className="space-y-2">
-              {secondHalf.map((city) => (
+              {cities.slice(0, 6).map((city) => (
                 <li key={city.slug}>
                   <Link 
                     to={`/vehicle-wraps-${city.slug}-il`} 
@@ -90,7 +100,6 @@ const Footer = () => {
           </div>
         </div>
         
-        {/* Sister Companies Section */}
         <div className="border-t border-gray-700 mt-8 pt-8">
           <h3 className="text-xl font-bold mb-4 text-center">Our Locations Across the US</h3>
           <div className="flex flex-wrap justify-center gap-6 mb-6">
