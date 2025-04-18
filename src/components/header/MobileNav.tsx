@@ -1,9 +1,8 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Sparkles, MessageSquare, Phone, X } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import NavLink from './NavLink';
+import { Car, Truck, Sparkles, Phone, MessageSquare, MapPin, Info, LayoutGrid } from 'lucide-react';
+import { X } from 'lucide-react';
 
 interface MobileNavProps {
   isOpen: boolean;
@@ -12,68 +11,156 @@ interface MobileNavProps {
 
 const MobileNav: React.FC<MobileNavProps> = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
-  
+
   return (
-    <nav 
-      className="md:hidden fixed inset-0 z-50 bg-gray-900/95 backdrop-blur-sm flex flex-col overflow-y-auto pt-16 pb-6 px-4"
-      aria-label="Mobile navigation"
-    >
-      <button 
-        onClick={onClose}
-        className="absolute top-4 right-4 p-2 text-white hover:bg-white/10 rounded-full"
-        aria-label="Close menu"
-      >
-        <X className="h-6 w-6" />
-      </button>
-      
-      <div className="flex flex-col space-y-3 mt-4">
-        <NavLink to="/" onClick={onClose} className="text-white text-lg p-3 hover:bg-white/10 rounded-lg">
-          Home
-        </NavLink>
-        <NavLink to="/ai-wrap-ideas" onClick={onClose} className="text-white text-lg p-3 hover:bg-white/10 rounded-lg flex items-center">
-          <Sparkles className="h-5 w-5 mr-2" />
-          AI Wrap Designer
-        </NavLink>
-        <NavLink to="/services/fleet-wraps" onClick={onClose} className="text-white text-lg p-3 hover:bg-white/10 rounded-lg">
-          Services
-        </NavLink>
-        <NavLink to="/gallery" onClick={onClose} className="text-white text-lg p-3 hover:bg-white/10 rounded-lg">
-          Gallery
-        </NavLink>
-        <NavLink to="/about" onClick={onClose} className="text-white text-lg p-3 hover:bg-white/10 rounded-lg">
-          About
-        </NavLink>
-        <NavLink to="/contact" onClick={onClose} className="text-white text-lg p-3 hover:bg-white/10 rounded-lg">
-          Contact
-        </NavLink>
-      </div>
-      
-      <div className="mt-auto pt-6 flex flex-col gap-3">
-        <Button 
-          variant="outline" 
-          size="lg"
-          className="border-white/20 bg-white/10 text-white hover:bg-white/20 w-full justify-center py-6 rounded-xl text-lg"
-          asChild
-        >
-          <Link to="/contact" className="inline-flex items-center">
-            <MessageSquare className="mr-2 h-5 w-5" />
-            Get a Quote
-          </Link>
-        </Button>
+    <div className="fixed inset-0 z-50 bg-black bg-opacity-70 flex md:hidden">
+      <div className="bg-brand-navy w-[85%] max-w-sm h-full overflow-y-auto animate-slide-in-right">
+        <div className="p-4 flex justify-between items-center border-b border-white/10">
+          <h2 className="text-xl font-bold text-white">Menu</h2>
+          <button 
+            onClick={onClose}
+            className="text-white hover:text-gray-300" 
+            aria-label="Close menu"
+          >
+            <X size={24} />
+          </button>
+        </div>
         
-        <Button 
-          variant="default" 
-          size="lg"
-          className="bg-brand-red hover:bg-red-700 text-white w-full justify-center py-6 rounded-xl text-lg"
-          asChild
-        >
-          <a href="tel:3125971286" className="inline-flex items-center">
-            <Phone className="mr-2 h-5 w-5" />
+        <nav className="p-4">
+          <ul className="space-y-4">
+            <li>
+              <Link 
+                to="/" 
+                className="text-white hover:text-brand-red flex items-center p-2 rounded hover:bg-white/5"
+                onClick={onClose}
+              >
+                <LayoutGrid className="mr-3 h-5 w-5" />
+                Home
+              </Link>
+            </li>
+            
+            <li>
+              <Link 
+                to="/ai-wrap-ideas" 
+                className="text-white hover:text-brand-red flex items-center p-2 rounded hover:bg-white/5"
+                onClick={onClose}
+              >
+                <Sparkles className="mr-3 h-5 w-5" />
+                AI Wrap Designer
+              </Link>
+            </li>
+            
+            <li className="py-2">
+              <div className="text-white font-medium mb-1 border-b border-white/10 pb-1 flex items-center">
+                <Car className="mr-3 h-5 w-5 text-brand-red" />
+                Vehicle Wrap Services
+              </div>
+              <ul className="pl-8 space-y-2 mt-2">
+                <li>
+                  <Link 
+                    to="/services/car-wraps" 
+                    className="text-white hover:text-brand-red block py-1"
+                    onClick={onClose}
+                  >
+                    Car Wraps
+                  </Link>
+                </li>
+                <li>
+                  <Link 
+                    to="/services/truck-wraps" 
+                    className="text-white hover:text-brand-red block py-1"
+                    onClick={onClose}
+                  >
+                    Truck Wraps
+                  </Link>
+                </li>
+                <li>
+                  <Link 
+                    to="/services/van-wraps" 
+                    className="text-white hover:text-brand-red block py-1"
+                    onClick={onClose}
+                  >
+                    Van Wraps
+                  </Link>
+                </li>
+                <li>
+                  <Link 
+                    to="/services/fleet-wraps" 
+                    className="text-white hover:text-brand-red block py-1"
+                    onClick={onClose}
+                  >
+                    Fleet Wraps
+                  </Link>
+                </li>
+                <li>
+                  <Link 
+                    to="/services" 
+                    className="text-white hover:text-brand-red block py-1 font-medium"
+                    onClick={onClose}
+                  >
+                    View All Services →
+                  </Link>
+                </li>
+              </ul>
+            </li>
+            
+            <li>
+              <Link 
+                to="/gallery" 
+                className="text-white hover:text-brand-red flex items-center p-2 rounded hover:bg-white/5"
+                onClick={onClose}
+              >
+                <LayoutGrid className="mr-3 h-5 w-5" />
+                Gallery
+              </Link>
+            </li>
+            
+            <li>
+              <Link 
+                to="/locations" 
+                className="text-white hover:text-brand-red flex items-center p-2 rounded hover:bg-white/5"
+                onClick={onClose}
+              >
+                <MapPin className="mr-3 h-5 w-5" />
+                Locations
+              </Link>
+            </li>
+            
+            <li>
+              <Link 
+                to="/about" 
+                className="text-white hover:text-brand-red flex items-center p-2 rounded hover:bg-white/5"
+                onClick={onClose}
+              >
+                <Info className="mr-3 h-5 w-5" />
+                About
+              </Link>
+            </li>
+            
+            <li>
+              <Link 
+                to="/contact" 
+                className="text-white hover:text-brand-red flex items-center p-2 rounded hover:bg-white/5"
+                onClick={onClose}
+              >
+                <MessageSquare className="mr-3 h-5 w-5" />
+                Contact
+              </Link>
+            </li>
+          </ul>
+        </nav>
+        
+        <div className="absolute bottom-0 left-0 right-0 p-4 border-t border-white/10 bg-brand-navy">
+          <a 
+            href="tel:3125971286" 
+            className="bg-brand-red hover:bg-red-700 text-white py-3 px-4 rounded block text-center font-medium"
+          >
+            <Phone className="inline-block mr-2 h-4 w-4" />
             (312) 597-1286
           </a>
-        </Button>
+        </div>
       </div>
-    </nav>
+    </div>
   );
 };
 

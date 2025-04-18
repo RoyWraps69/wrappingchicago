@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -42,9 +43,9 @@ const ServiceMenu = () => {
     <NavigationMenu>
       <NavigationMenuList>
         <NavigationMenuItem>
-          <NavigationMenuTrigger>Services</NavigationMenuTrigger>
-          <NavigationMenuContent>
-            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[700px]">
+          <NavigationMenuTrigger className="bg-brand-red hover:bg-red-700 text-white font-medium px-3">Services</NavigationMenuTrigger>
+          <NavigationMenuContent className="z-50 bg-white w-[400px] md:w-[500px] lg:w-[700px]">
+            <ul className="grid gap-3 p-4 md:grid-cols-2 lg:w-[700px]">
               <ListItem
                 href="/services/fleet-wraps"
                 title="Fleet Wraps"

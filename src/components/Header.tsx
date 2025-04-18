@@ -28,11 +28,12 @@ const Header = () => {
           
           {/* Mobile menu button */}
           <button 
-            className="md:hidden text-white"
+            className="md:hidden bg-brand-red hover:bg-red-700 text-white px-3 py-2 rounded"
             onClick={toggleMenu}
             aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            <span className="ml-1">Menu</span>
           </button>
           
           {/* Desktop Navigation */}
