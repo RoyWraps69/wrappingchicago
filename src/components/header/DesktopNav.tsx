@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { Sparkles, MessageSquare, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import NavLink from './NavLink';
+import ServiceMenu from './ServiceMenu';
 
 const DesktopNav = () => {
   return (
@@ -14,9 +15,7 @@ const DesktopNav = () => {
       <NavLink to="/ai-wrap-ideas" icon={Sparkles}>
         AI Wrap Designer
       </NavLink>
-      <NavLink to="/services/fleet-wraps">
-        Services
-      </NavLink>
+      <ServiceMenu />
       <NavLink to="/gallery">
         Gallery
       </NavLink>
