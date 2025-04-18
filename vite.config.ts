@@ -1,11 +1,9 @@
-
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import { resolve } from 'path'
 import path from 'path'
 import { componentTagger } from 'lovable-tagger'
 
-// https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
   plugins: [
     react(),
@@ -53,9 +51,21 @@ export default defineConfig(({ mode }) => ({
       }
     },
     cssMinify: true,
+    assetsInlineLimit: 4096,
+    modulePreload: {
+      polyfill: true,
+    },
+    sourcemap: false,
+    target: 'esnext',
+    chunkSizeWarningLimit: 1000,
   },
   server: {
     host: "::",
     port: 8080
-  }
+  },
+  preview: {
+    headers: {
+      'Cache-Control': 'public, max-age=31536000',
+    },
+  },
 }))

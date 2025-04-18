@@ -1,7 +1,7 @@
-
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
+import { useWebVitals } from './utils/webVitals';
 import Index from './pages/Index';
 import CityLocationPage from './pages/CityLocationPage';
 import LocationsPage from './pages/LocationsPage';
@@ -36,6 +36,9 @@ const queryClient = new QueryClient({
 });
 
 function App() {
+  // Initialize Web Vitals monitoring
+  useWebVitals();
+
   return (
     <QueryClientProvider client={queryClient}>
       <HelmetProvider>
