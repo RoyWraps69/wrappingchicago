@@ -1,7 +1,7 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
+import { BeforeAfterSlider } from '@/components/ui/before-after-slider';
 
 interface ServicesSectionProps {
   fleetWrapVan: string;
@@ -12,12 +12,13 @@ interface ServicesSectionProps {
 const ServicesSection = ({ fleetWrapVan, colorChangeVan, commercialGraphics }: ServicesSectionProps) => {
   // Main featured service
   const featuredService = {
-    title: "Fleet Wraps",
-    description: "Transform your company vehicles into eye-catching mobile billboards. Our fleet wrapping services help businesses create a unified brand presence across their entire vehicle fleet, from vans and trucks to specialty vehicles.",
-    image: fleetWrapVan,
-    link: "/services/fleet-wraps"
+    title: "Color Change Wraps",
+    description: "Transform your vehicle's appearance with our premium color change wraps. Slide to see the dramatic before and after transformation from silver to vibrant blue on this Lexus IS.",
+    beforeImage: "/lovable-uploads/60c7cf64-9ac2-4f0b-b567-3b7f87c327c9.png",
+    afterImage: "/lovable-uploads/b6c498ab-7a00-4a2c-957d-9ff9c4f11e8c.png",
+    link: "/services/color-change-wraps"
   };
-  
+
   // Secondary services
   const secondaryServices = [
     {
@@ -68,15 +69,17 @@ const ServicesSection = ({ fleetWrapVan, colorChangeVan, commercialGraphics }: S
           </p>
         </div>
         
-        {/* Featured Service - Fleet Wraps (Larger) with text UNDER the image */}
+        {/* Featured Service - Color Change Wraps with Before/After Slider */}
         <div className="mb-8">
           <div className="bg-brand-light rounded-lg overflow-hidden shadow-md">
             <div className="flex flex-col">
-              <div className="w-full">
-                <img 
-                  src={featuredService.image}
-                  alt="Chicago Fleet Wraps - Professional branding for tech company fleet vehicles"
-                  className="object-cover w-full h-auto"
+              <div className="w-full aspect-[16/9]">
+                <BeforeAfterSlider
+                  beforeImage={featuredService.beforeImage}
+                  afterImage={featuredService.afterImage}
+                  beforeAlt="Silver Lexus IS before color change wrap"
+                  afterAlt="Blue Lexus IS after color change wrap"
+                  className="w-full h-full"
                 />
               </div>
               <div className="p-6 flex flex-col justify-center">
