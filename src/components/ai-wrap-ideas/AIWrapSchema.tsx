@@ -11,7 +11,10 @@ const AIWrapSchema = () => {
       <AIApplicationSchema />
       <AIArticleSchema />
       <AIServiceSchema />
-      <AIVoiceSearchSchema />
+      <AIVoiceSearchSchema 
+        title="AI Vehicle Wrap Ideas Generator"
+        description="Generate custom vehicle wrap ideas using artificial intelligence. Get professional design concepts for your business vehicle wraps instantly."
+      />
     </>
   );
 };
