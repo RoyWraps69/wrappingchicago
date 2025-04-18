@@ -9,7 +9,6 @@ interface GoogleAnalyticsProps {
 const GoogleAnalytics: React.FC<GoogleAnalyticsProps> = ({ measurementId }) => {
   return (
     <Helmet>
-      {/* Global Site Tag (gtag.js) - Google Analytics */}
       <script
         async
         src={`https://www.googletagmanager.com/gtag/js?id=${measurementId}`}
@@ -21,8 +20,10 @@ const GoogleAnalytics: React.FC<GoogleAnalyticsProps> = ({ measurementId }) => {
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
             gtag('config', '${measurementId}', {
-              'page_path': window.location.pathname,
-              'send_page_view': true
+              page_path: window.location.pathname,
+              send_page_view: true,
+              anonymize_ip: true,
+              cookie_flags: 'SameSite=None;Secure'
             });
           `,
         }}

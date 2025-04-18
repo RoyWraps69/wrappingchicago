@@ -25,9 +25,17 @@ Allow: /vehicle-wrapping-guide.pdf
 # Sitemap location with canonical domain
 Sitemap: https://www.wrappingchicago.com/sitemap.xml
 
-# Prevent duplicate content issues but don't block essential content
+# Prevent duplicate content issues
 Disallow: /*?* 
 
-# Prevent any versioned URLs from being indexed
+# Block development files
 Disallow: /*.js$
 Disallow: /*.css$
+Disallow: /*.json$
+Disallow: /*.map$
+
+# Block admin and utility paths
+Disallow: /admin/
+Disallow: /util/
+Disallow: /api/
+Disallow: /cdn-cgi/

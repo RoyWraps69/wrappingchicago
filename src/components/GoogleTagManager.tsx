@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 interface GoogleTagManagerProps {
@@ -6,7 +5,6 @@ interface GoogleTagManagerProps {
 }
 
 const GoogleTagManager: React.FC<GoogleTagManagerProps> = ({ containerId }) => {
-  // Format: If user passed G-XXXXXX (GA4) format, convert to GTM-XXXXXX format
   const formattedId = containerId.startsWith('G-') ? `GTM-${containerId.substring(2)}` : containerId;
   
   return (

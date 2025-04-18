@@ -6,13 +6,13 @@ export const generateSitemap = () => {
   const currentDate = new Date().toISOString().split('T')[0];
   
   const staticPages = [
-    { url: '/', priority: '1.0' },
-    { url: '/about', priority: '0.8' },
-    { url: '/contact', priority: '0.8' },
-    { url: '/gallery', priority: '0.8' },
-    { url: '/locations', priority: '0.8' },
-    { url: '/ai-wrap-ideas', priority: '0.7' },
-    { url: '/services', priority: '0.9' }
+    { url: '/', priority: '1.0', changefreq: 'daily' },
+    { url: '/about', priority: '0.8', changefreq: 'monthly' },
+    { url: '/contact', priority: '0.8', changefreq: 'monthly' },
+    { url: '/gallery', priority: '0.8', changefreq: 'weekly' },
+    { url: '/locations', priority: '0.8', changefreq: 'weekly' },
+    { url: '/ai-wrap-ideas', priority: '0.7', changefreq: 'weekly' },
+    { url: '/services', priority: '0.9', changefreq: 'weekly' }
   ];
 
   const servicePages = [
@@ -29,7 +29,11 @@ export const generateSitemap = () => {
     '/services/retail-graphics',
     '/services/designer-wraps',
     '/services/luxury-exotic-wraps'
-  ].map(url => ({ url, priority: '0.8' }));
+  ].map(url => ({ 
+    url, 
+    priority: '0.8',
+    changefreq: 'weekly'
+  }));
 
   const directServiceUrls = [
     '/car-wraps',
@@ -45,16 +49,22 @@ export const generateSitemap = () => {
     '/retail-graphics',
     '/designer-wraps',
     '/luxury-exotic-wraps'
-  ].map(url => ({ url, priority: '0.7' }));
+  ].map(url => ({ 
+    url, 
+    priority: '0.7',
+    changefreq: 'weekly'
+  }));
 
   const locationPages = cities.map(city => ({
     url: `/vehicle-wraps-${city.slug}-il`,
-    priority: '0.8'
+    priority: '0.8',
+    changefreq: 'weekly'
   }));
 
   const directLocationPages = cities.map(city => ({
     url: `/${city.slug}`,
-    priority: '0.7'
+    priority: '0.7',
+    changefreq: 'weekly'
   }));
 
   const allPages = [
@@ -70,7 +80,7 @@ export const generateSitemap = () => {
 ${allPages.map(page => `  <url>
     <loc>${domain}${page.url}</loc>
     <lastmod>${currentDate}</lastmod>
-    <changefreq>monthly</changefreq>
+    <changefreq>${page.changefreq}</changefreq>
     <priority>${page.priority}</priority>
   </url>`).join('\n')}
 </urlset>`;
