@@ -2,7 +2,7 @@
 User-agent: *
 Allow: /
 
-# Consistent www. domain for all allow rules
+# Explicitly allow all important sections
 Allow: /services/
 Allow: /gallery/
 Allow: /about/
@@ -14,21 +14,19 @@ Allow: /truck-wraps/
 Allow: /car-wraps/
 Allow: /van-wraps/
 
-# Explicitly allow location pages
+# Explicitly allow all location pages
 Allow: /vehicle-wraps-chicago-il
 Allow: /chicago
+Allow: /*-il
 
 # Allow access to PDF resources
 Allow: /vehicle-wrapping-guide.pdf
 
-# Sitemap location with www subdomain
+# Sitemap location with canonical domain
 Sitemap: https://www.wrappingchicago.com/sitemap.xml
 
-# Prevent duplicate content issues
+# Prevent duplicate content issues but don't block essential content
 Disallow: /*?* 
-
-# Prevent non-www version
-Disallow: https://wrappingchicago.com/
 
 # Prevent any versioned URLs from being indexed
 Disallow: /*.js$

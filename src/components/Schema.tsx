@@ -7,6 +7,7 @@ import FAQSchema from './schemas/FAQSchema';
 import BreadcrumbSchema from './schemas/BreadcrumbSchema';
 import OfferCatalogSchema from './schemas/OfferCatalogSchema';
 import WebPageSchema from './schemas/WebPageSchema';
+import ActionSchema from './schemas/ActionSchema';
 
 interface FAQ {
   question: string;
@@ -19,7 +20,7 @@ interface SchemaProps {
   pageTitle: string;
   pageDescription: string;
   faqs?: FAQ[];
-  keywords?: string[]; // Keywords prop is already included
+  keywords?: string[];
 }
 
 const Schema: React.FC<SchemaProps> = ({ 
@@ -75,6 +76,7 @@ const Schema: React.FC<SchemaProps> = ({
         lastModified={currentDate}
         keywords={keywords}
       />
+      <ActionSchema />
     </>
   );
 };
