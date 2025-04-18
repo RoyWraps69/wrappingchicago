@@ -1,7 +1,8 @@
+
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { Button } from '@/components/ui/button';
-import { BeforeAfterSlider } from '@/components/ui/before-after-slider';
+import FeaturedService from './featured-service/FeaturedService';
+import SecondaryService from './secondary-services/SecondaryService';
+import AdditionalService from './additional-services/AdditionalService';
 
 interface ServicesSectionProps {
   fleetWrapVan: string;
@@ -10,7 +11,7 @@ interface ServicesSectionProps {
 }
 
 const ServicesSection = ({ fleetWrapVan, colorChangeVan, commercialGraphics }: ServicesSectionProps) => {
-  // Main featured service
+  // Featured service configuration
   const featuredService = {
     title: "Color Change Wraps",
     description: "Transform your vehicle's appearance with our premium color change wraps. Slide to see the dramatic before and after transformation from silver to vibrant blue on this Lexus IS.",
@@ -19,7 +20,7 @@ const ServicesSection = ({ fleetWrapVan, colorChangeVan, commercialGraphics }: S
     link: "/services/color-change-wraps"
   };
 
-  // Secondary services
+  // Secondary services configuration
   const secondaryServices = [
     {
       title: "Color Change Wraps",
@@ -35,7 +36,7 @@ const ServicesSection = ({ fleetWrapVan, colorChangeVan, commercialGraphics }: S
     }
   ];
 
-  // Additional services
+  // Additional services configuration
   const additionalServices = [
     {
       title: "Designer Wraps",
@@ -69,78 +70,19 @@ const ServicesSection = ({ fleetWrapVan, colorChangeVan, commercialGraphics }: S
           </p>
         </div>
         
-        {/* Featured Service - Color Change Wraps with Before/After Slider */}
-        <div className="mb-8">
-          <div className="bg-brand-light rounded-lg overflow-hidden shadow-md">
-            <div className="flex flex-col">
-              <div className="w-full aspect-[16/9]">
-                <BeforeAfterSlider
-                  beforeImage={featuredService.beforeImage}
-                  afterImage={featuredService.afterImage}
-                  beforeAlt="Silver Lexus IS before color change wrap"
-                  afterAlt="Blue Lexus IS after color change wrap"
-                  className="w-full h-full"
-                />
-              </div>
-              <div className="p-6 flex flex-col justify-center">
-                <h3 className="text-2xl font-bold mb-3 text-brand-navy">{featuredService.title}</h3>
-                <p className="text-gray-700 mb-4 text-lg">{featuredService.description}</p>
-                <Button
-                  asChild
-                  className="bg-brand-navy hover:bg-blue-900 text-white w-full md:w-auto self-start"
-                >
-                  <Link to={featuredService.link}>Learn More</Link>
-                </Button>
-              </div>
-            </div>
-          </div>
-        </div>
+        <FeaturedService {...featuredService} />
         
-        {/* Secondary Services - Evenly spaced below */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
           {secondaryServices.map((service, index) => (
-            <div key={index} className="bg-brand-light rounded-lg overflow-hidden shadow-md h-full">
-              <div className="aspect-w-16 aspect-h-9">
-                <img 
-                  src={service.image}
-                  alt={`${service.title} in Chicago - Professional ${index === 0 ? 'vehicle color transformation services' : 'business vehicle branding solutions'}`}
-                  className="object-cover w-full h-full"
-                />
-              </div>
-              <div className="p-5">
-                <h3 className="text-xl font-bold mb-2 text-brand-navy">{service.title}</h3>
-                <p className="text-gray-700 mb-3">{service.description}</p>
-                <Button
-                  asChild
-                  variant="outline"
-                  className="w-full border-brand-navy text-brand-navy hover:bg-brand-navy hover:text-white"
-                >
-                  <Link to={service.link}>Learn More</Link>
-                </Button>
-              </div>
-            </div>
+            <SecondaryService key={index} {...service} />
           ))}
         </div>
         
-        {/* Additional Services - Smaller cards */}
         <div>
           <h3 className="text-2xl font-bold mb-6 text-brand-navy">Additional Wrapping Services</h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {additionalServices.map((service, index) => (
-              <div key={index} className="bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-shadow">
-                <div className="p-5">
-                  <h4 className="text-lg font-semibold mb-2 text-brand-navy">{service.title}</h4>
-                  <p className="text-gray-700 mb-4 text-sm">{service.description}</p>
-                  <Button
-                    asChild
-                    variant="outline"
-                    size="sm"
-                    className="w-full border-brand-navy text-brand-navy hover:bg-brand-navy hover:text-white"
-                  >
-                    <Link to={service.link}>Learn More</Link>
-                  </Button>
-                </div>
-              </div>
+              <AdditionalService key={index} {...service} />
             ))}
           </div>
         </div>
