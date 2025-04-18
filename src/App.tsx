@@ -89,6 +89,9 @@ function App() {
             <Route path="/vehicle-wraps-:citySlug-il" element={<CityLocationPage />} />
             <Route path="/:citySlug" element={<CityLocationPage />} />
             
+            {/* Add Sitemap route */}
+            <Route path="/sitemap" element={<SitemapPage />} />
+            
             {/* Catch-all route for 404 */}
             <Route path="*" element={<NotFound />} />
           </Routes>

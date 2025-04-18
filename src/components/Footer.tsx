@@ -139,6 +139,9 @@ const Footer = () => {
         
         <div className="border-t border-gray-700 mt-4 pt-4 text-center">
           <p>© {new Date().getFullYear()} Wrapping Chicago. All rights reserved.</p>
+          <div className="mt-2">
+            <Link to="/sitemap" className="text-sm hover:text-brand-red">Sitemap</Link>
+          </div>
         </div>
       </div>
     </footer>
