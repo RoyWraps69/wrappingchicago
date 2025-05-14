@@ -13,6 +13,7 @@ import PDFDownloadSection from '@/components/ai-wrap-ideas/PDFDownloadSection';
 import Breadcrumbs from '@/components/navigation/Breadcrumbs';
 import Schema from '@/components/Schema';
 import { cities } from '@/data/cities';
+import { AIWrapProvider } from '@/contexts/AIWrapContext';
 
 const AIWrapIdeas = () => {
   // For Schema component, choose Chicago as the default city
@@ -57,8 +58,10 @@ const AIWrapIdeas = () => {
             <PDFDownloadSection />
           </div>
           
-          <WrapIdeaGenerator />
-          <WrapIdeasResults />
+          <AIWrapProvider>
+            <WrapIdeaGenerator />
+            <WrapIdeasResults />
+          </AIWrapProvider>
         </main>
         
         <Footer />
