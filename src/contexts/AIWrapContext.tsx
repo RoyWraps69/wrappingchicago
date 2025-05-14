@@ -23,6 +23,7 @@ export const AIWrapProvider: React.FC<{ children: ReactNode }> = ({ children }) 
     isGeneratingImage,
     generatedImage,
     imageGenerationError,
+    generationProgress,
     handleGenerateImage: generateImage,
     handleDownloadImage
   } = useImageGeneration();
@@ -40,9 +41,11 @@ export const AIWrapProvider: React.FC<{ children: ReactNode }> = ({ children }) 
   
   // Validate API key
   const validateApiKey = (): boolean => {
-    const apiKey = localStorage.getItem('stability_api_key');
-    if (!apiKey) {
-      toast.error("Stability AI API key is required for image generation.");
+    const stabilityApiKey = localStorage.getItem('stability_api_key');
+    const fireflyApiKey = localStorage.getItem('firefly_api_key');
+    
+    if (!stabilityApiKey && !fireflyApiKey) {
+      toast.error("An API key is required for image generation. Please add either a Stability AI or Adobe Firefly key in settings.");
       setIsApiKeyModalOpen(true);
       return false;
     }
@@ -102,9 +105,10 @@ export const AIWrapProvider: React.FC<{ children: ReactNode }> = ({ children }) 
       isGeneratingImage,
       showResults,
       ideasCount: generatedIdeas.length,
-      hasGeneratedImage: !!generatedImage
+      hasGeneratedImage: !!generatedImage,
+      progress: generationProgress
     });
-  }, [business, description, selectedVehicleType, isGenerating, isGeneratingImage, showResults, generatedIdeas, generatedImage]);
+  }, [business, description, selectedVehicleType, isGenerating, isGeneratingImage, showResults, generatedIdeas, generatedImage, generationProgress]);
 
   const value: AIWrapContextType = {
     business,
@@ -118,10 +122,11 @@ export const AIWrapProvider: React.FC<{ children: ReactNode }> = ({ children }) 
     isGeneratingImage,
     generatedImage,
     imageGenerationError,
+    generationProgress,
     isGenerating,
     generatedIdeas,
     showResults,
-    hasApiKey: !!localStorage.getItem('stability_api_key'),
+    hasApiKey: !!(localStorage.getItem('stability_api_key') || localStorage.getItem('firefly_api_key')),
     isApiKeyModalOpen,
     setIsApiKeyModalOpen,
     handleGenerateIdeas,

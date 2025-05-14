@@ -14,7 +14,7 @@ interface ImageGeneratorFormProps {
   onGenerateImage: () => void;
   isGeneratingImage: boolean;
   errorMessage?: string;
-  progress: number;
+  progress?: number;
 }
 
 export const ImageGeneratorForm: React.FC<ImageGeneratorFormProps> = ({
@@ -23,7 +23,7 @@ export const ImageGeneratorForm: React.FC<ImageGeneratorFormProps> = ({
   onGenerateImage,
   isGeneratingImage,
   errorMessage,
-  progress
+  progress = 0
 }) => {
   const [balance, setBalance] = useState<number | null>(null);
   const [isCheckingBalance, setIsCheckingBalance] = useState(false);
@@ -56,6 +56,11 @@ export const ImageGeneratorForm: React.FC<ImageGeneratorFormProps> = ({
     toast.info("Refreshing Stability AI account balance...");
   };
 
+  // Check which API keys are available
+  const hasStabilityKey = !!localStorage.getItem('stability_api_key');
+  const hasFireflyKey = !!localStorage.getItem('firefly_api_key');
+  const hasAnyApiKey = hasStabilityKey || hasFireflyKey;
+
   return (
     <>
       {errorMessage && (
@@ -83,8 +88,8 @@ export const ImageGeneratorForm: React.FC<ImageGeneratorFormProps> = ({
       
       <Button
         onClick={onGenerateImage}
-        disabled={isGeneratingImage || (balance !== null && balance <= 0)}
-        className="w-full bg-brand-navy hover:bg-blue-800 text-white py-3 h-auto mb-6"
+        disabled={isGeneratingImage || (hasStabilityKey && balance !== null && balance <= 0 && !hasFireflyKey)}
+        className="w-full bg-brand-navy hover:bg-blue-800 text-white py-3 h-auto mb-4"
       >
         {isGeneratingImage ? (
           <>
@@ -99,7 +104,16 @@ export const ImageGeneratorForm: React.FC<ImageGeneratorFormProps> = ({
         )}
       </Button>
       
-      {balance !== null && balance <= 0 && !errorMessage && (
+      {!hasAnyApiKey && (
+        <Alert variant="destructive" className="mb-4">
+          <AlertCircle className="h-4 w-4" />
+          <AlertDescription>
+            You need to add either a Stability AI or Adobe Firefly API key in settings to generate images.
+          </AlertDescription>
+        </Alert>
+      )}
+      
+      {hasStabilityKey && balance !== null && balance <= 0 && !hasFireflyKey && (
         <div className="space-y-3 mb-4">
           <Alert variant="destructive">
             <AlertCircle className="h-4 w-4" />
@@ -121,7 +135,15 @@ export const ImageGeneratorForm: React.FC<ImageGeneratorFormProps> = ({
         </div>
       )}
       
-      {isGeneratingImage && (
+      {hasFireflyKey && (
+        <Alert className="mb-4">
+          <AlertDescription>
+            Using Adobe Firefly for image generation
+          </AlertDescription>
+        </Alert>
+      )}
+      
+      {isGeneratingImage && progress > 0 && (
         <ProgressIndicator progress={progress} />
       )}
     </>
@@ -140,9 +162,10 @@ const ProgressIndicator: React.FC<{
       </div>
       <Progress value={progress} className="h-2" />
       <p className="text-xs text-gray-500 mt-2">
-        Creating your custom wrap design with Stability AI.
-        This typically takes 5-10 seconds with Stability AI's SDXL model.
+        Creating your custom wrap design. This may take a few seconds...
       </p>
     </div>
   );
 };
+
+export default ImageGeneratorForm;

@@ -24,6 +24,7 @@ const WrapIdeaGenerator = () => {
     handleGenerateImage,
     handleDownloadImage,
     showResults,
+    generationProgress
   } = useAIWrap();
 
   const isMobile = useIsMobile();
@@ -78,6 +79,7 @@ const WrapIdeaGenerator = () => {
                 generatedImage={generatedImage}
                 onDownloadImage={handleDownloadImage}
                 errorMessage={imageGenerationError}
+                progress={generationProgress}
               />
             </div>
           </div>

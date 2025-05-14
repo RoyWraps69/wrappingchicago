@@ -2,10 +2,10 @@
 import { WrapIdea } from '@/types/wrap-idea';
 
 // Define the possible image generation providers
-export type ImageModel = 'stability-sdxl';
+export type ImageModel = 'stability-sdxl' | 'adobe-firefly';
 
 // Define the AI Provider type
-export type AIProvider = 'stability';
+export type AIProvider = 'stability' | 'firefly';
 
 export interface AIWrapContextType {
   // Form state
@@ -22,6 +22,7 @@ export interface AIWrapContextType {
   isGeneratingImage: boolean;
   generatedImage: string | null;
   imageGenerationError: string | undefined;
+  generationProgress: number;
   
   // Ideas generation state
   isGenerating: boolean;
