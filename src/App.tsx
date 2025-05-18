@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import './App.css';
 import { HelmetProvider } from 'react-helmet-async';
 import ScrollToTop from './components/navigation/ScrollToTop';
@@ -16,6 +16,7 @@ import AIWrapIdeas from './pages/AIWrapIdeas';
 import DesignerWrapsPage from './pages/DesignerWrapsPage';
 import SitemapPage from './pages/SitemapPage';
 import Index from './pages/Index';
+import NotFound from './pages/NotFound';
 
 function App() {
   return (
@@ -26,39 +27,38 @@ function App() {
         <GoogleSearchVerification />
         <ScrollToTop />
         <Routes>
+          {/* Main navigation routes */}
           <Route path="/" element={<Index />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/services" element={<ServicesPage />} />
-          <Route path="/services/:serviceType" element={<div className="p-8 text-center">Service Details Coming Soon</div>} />
+          <Route path="/services/:serviceType" element={<ServicesPage />} />
           <Route path="/locations" element={<LocationsPage />} />
-          <Route path="/vehicle-wraps-:citySlug-il" element={<div className="p-8 text-center">Location Details Coming Soon</div>} />
-          <Route path="/:citySlug" element={<div className="p-8 text-center">City Details Coming Soon</div>} />
           <Route path="/gallery" element={<GalleryPage />} />
           <Route path="/ai-wrap-ideas" element={<AIWrapIdeas />} />
           <Route path="/designer-wraps" element={<DesignerWrapsPage />} />
           <Route path="/sitemap" element={<SitemapPage />} />
           
-          {/* Redirect routes for common service URLs */}
-          <Route path="/car-wraps" element={<div className="p-8 text-center">Car Wraps Coming Soon</div>} />
-          <Route path="/truck-wraps" element={<div className="p-8 text-center">Truck Wraps Coming Soon</div>} />
-          <Route path="/van-wraps" element={<div className="p-8 text-center">Van Wraps Coming Soon</div>} />
-          <Route path="/fleet-wraps" element={<div className="p-8 text-center">Fleet Wraps Coming Soon</div>} />
-          <Route path="/color-change-wraps" element={<div className="p-8 text-center">Color Change Wraps Coming Soon</div>} />
-          <Route path="/commercial-graphics" element={<div className="p-8 text-center">Commercial Graphics Coming Soon</div>} />
-          <Route path="/partial-wraps" element={<div className="p-8 text-center">Partial Wraps Coming Soon</div>} />
-          <Route path="/protective-films" element={<div className="p-8 text-center">Protective Films Coming Soon</div>} />
-          <Route path="/vehicle-lettering" element={<div className="p-8 text-center">Vehicle Lettering Coming Soon</div>} />
-          <Route path="/specialty-wraps" element={<div className="p-8 text-center">Specialty Wraps Coming Soon</div>} />
-          <Route path="/retail-graphics" element={<div className="p-8 text-center">Retail Graphics Coming Soon</div>} />
-          <Route path="/luxury-exotic-wraps" element={<div className="p-8 text-center">Luxury Exotic Wraps Coming Soon</div>} />
+          {/* Location-specific routes */}
+          <Route path="/vehicle-wraps-:citySlug-il" element={<LocationsPage />} />
+          <Route path="/:citySlug" element={<LocationsPage />} />
+          
+          {/* Service-specific direct routes */}
+          <Route path="/car-wraps" element={<Navigate to="/services/car-wraps" replace />} />
+          <Route path="/truck-wraps" element={<Navigate to="/services/truck-wraps" replace />} />
+          <Route path="/van-wraps" element={<Navigate to="/services/van-wraps" replace />} />
+          <Route path="/fleet-wraps" element={<Navigate to="/services/fleet-wraps" replace />} />
+          <Route path="/color-change-wraps" element={<Navigate to="/services/color-change-wraps" replace />} />
+          <Route path="/commercial-graphics" element={<Navigate to="/services/commercial-graphics" replace />} />
+          <Route path="/partial-wraps" element={<Navigate to="/services/partial-wraps" replace />} />
+          <Route path="/protective-films" element={<Navigate to="/services/protective-films" replace />} />
+          <Route path="/vehicle-lettering" element={<Navigate to="/services/vehicle-lettering" replace />} />
+          <Route path="/specialty-wraps" element={<Navigate to="/services/specialty-wraps" replace />} />
+          <Route path="/retail-graphics" element={<Navigate to="/services/retail-graphics" replace />} />
+          <Route path="/luxury-exotic-wraps" element={<Navigate to="/services/luxury-exotic-wraps" replace />} />
 
           {/* 404 catch-all route */}
-          <Route path="*" element={<div className="p-8 text-center">
-            <h1 className="text-2xl font-bold mb-4">Page Not Found</h1>
-            <p className="mb-6">The page you are looking for does not exist.</p>
-            <a href="/" className="text-brand-red hover:underline">Return to Home</a>
-          </div>} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
     </HelmetProvider>

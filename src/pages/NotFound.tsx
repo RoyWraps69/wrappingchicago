@@ -1,77 +1,59 @@
 
-import React from "react";
-import { useLocation, Link } from "react-router-dom";
-import { useEffect } from "react";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import { Button } from '@/components/ui/button';
-import { Home, ArrowLeft, Search } from 'lucide-react';
-import { Helmet } from 'react-helmet-async';
 
 const NotFound = () => {
-  const location = useLocation();
-
-  useEffect(() => {
-    console.error(
-      "404 Error: User attempted to access non-existent route:",
-      location.pathname
-    );
-  }, [location.pathname]);
-
   return (
     <>
       <Helmet>
-        <title>{"Page Not Found | Chicago Fleet Wraps"}</title>
-        <meta name="description" content="The requested page could not be found." />
-        <meta name="robots" content="noindex, nofollow" />
+        <title>Page Not Found | Wrapping Chicago</title>
+        <meta name="robots" content="noindex, follow" />
       </Helmet>
-    
+      
       <div className="flex flex-col min-h-screen">
         <Header />
         
-        <main className="flex-grow flex items-center justify-center bg-gray-50">
-          <div className="container mx-auto py-16 px-4 text-center">
-            <h1 className="text-6xl font-bold text-brand-navy mb-4">404</h1>
-            <p className="text-2xl text-gray-600 mb-8">Oops! We couldn't find that page.</p>
-            <p className="text-lg text-gray-500 max-w-md mx-auto mb-8">
-              The page you are looking for might have been removed, had its name changed, 
-              or is temporarily unavailable.
+        <main className="flex-grow flex items-center justify-center py-16 bg-gray-50">
+          <div className="container mx-auto px-4 text-center">
+            <h1 className="text-3xl md:text-4xl font-bold text-brand-navy mb-4">Page Not Found</h1>
+            <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+              We're sorry, the page you are looking for doesn't exist or has been moved.
             </p>
             
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button asChild className="bg-brand-navy hover:bg-brand-navy/90">
-                <Link to="/" className="flex items-center">
-                  <Home className="mr-2 h-4 w-4" />
-                  Back to Home
-                </Link>
-              </Button>
-              <Button asChild variant="outline" className="border-brand-navy text-brand-navy">
-                <Link to="/services" className="flex items-center">
-                  <Search className="mr-2 h-4 w-4" />
-                  Browse Services
-                </Link>
-              </Button>
-              <Button 
-                asChild 
-                variant="ghost" 
-                onClick={() => window.history.back()}
-                className="text-gray-600"
+            <div className="space-y-6">
+              <Link 
+                to="/" 
+                className="inline-block bg-brand-red hover:bg-red-700 text-white py-3 px-6 rounded-md transition-colors"
               >
-                <button className="flex items-center">
-                  <ArrowLeft className="mr-2 h-4 w-4" />
-                  Go Back
-                </button>
-              </Button>
-            </div>
-            
-            <div className="mt-12 text-gray-500">
-              <p>If you believe this is an error, please contact us at:</p>
-              <a 
-                href="mailto:info@wrappingchicago.com" 
-                className="text-brand-red hover:underline"
-              >
-                info@wrappingchicago.com
-              </a>
+                Return to Homepage
+              </Link>
+              
+              <div className="border-t border-gray-200 pt-8 mt-8">
+                <h2 className="text-xl font-semibold mb-4">You might be looking for:</h2>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-4xl mx-auto">
+                  <Link to="/services" className="p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                    Our Services
+                  </Link>
+                  <Link to="/gallery" className="p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                    Project Gallery
+                  </Link>
+                  <Link to="/contact" className="p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                    Contact Us
+                  </Link>
+                  <Link to="/locations" className="p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                    Locations
+                  </Link>
+                  <Link to="/about" className="p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                    About Us
+                  </Link>
+                  <Link to="/sitemap" className="p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                    Sitemap
+                  </Link>
+                </div>
+              </div>
             </div>
           </div>
         </main>

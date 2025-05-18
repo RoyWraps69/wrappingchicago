@@ -2,8 +2,9 @@
 User-agent: *
 Allow: /
 
-# Sitemap location
+# Sitemap locations
 Sitemap: https://www.wrappingchicago.com/sitemap.xml
+Sitemap: https://www.wrappingchicago.com/html-sitemap.html
 
 # Allow access to all important sections
 Allow: /services/
