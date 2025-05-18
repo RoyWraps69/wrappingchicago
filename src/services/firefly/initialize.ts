@@ -29,7 +29,7 @@ export const initializeAndGenerateImage = (
     const options: CCEverywhereOptions = {
       clientId: clientId,
       appName: 'Chicago Fleet Wraps',
-      appVersion: { major: 1, minor: 0 },
+      appVersion: '1.0', // Changed to a string value
       redirectUri: window.location.href,
       onError: (error) => {
         console.error("Adobe Express SDK initialization error:", error);
@@ -38,7 +38,7 @@ export const initializeAndGenerateImage = (
     };
     
     window.CCEverywhere.initialize(options)
-      .then(ccEverywhere => {
+      .then((ccEverywhere: any) => {
         console.log("Adobe Express SDK initialized successfully", ccEverywhere);
         
         // The correct method to use depends on SDK version
