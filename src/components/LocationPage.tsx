@@ -22,9 +22,10 @@ import BusinessLocationSchema from '@/components/schemas/BusinessLocationSchema'
 
 interface LocationPageProps {
   city: City;
+  allCities?: City[]; // Added optional allCities prop
 }
 
-const LocationPage = ({ city }: LocationPageProps) => {
+const LocationPage = ({ city, allCities = [] }: LocationPageProps) => {
   if (!city) {
     return <div>City not found</div>;
   }
@@ -104,6 +105,7 @@ const LocationPage = ({ city }: LocationPageProps) => {
         serviceType="VehicleWrapService"
         includeSpeakable={true}
         mainImage="/lovable-uploads/199c2a21-e0b0-4c29-972f-f32d72698382.png"
+        allCities={allCities} // Pass allCities prop to Schema
       />
       
       <ReviewsSchema 
