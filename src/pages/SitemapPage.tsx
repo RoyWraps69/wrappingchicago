@@ -77,6 +77,7 @@ const SitemapPage = () => {
                   <li><Link to="/gallery" className="text-gray-700 hover:text-brand-red transition-colors">Gallery</Link></li>
                   <li><Link to="/locations" className="text-gray-700 hover:text-brand-red transition-colors">Locations</Link></li>
                   <li><Link to="/ai-wrap-ideas" className="text-gray-700 hover:text-brand-red transition-colors">AI Wrap Designer</Link></li>
+                  <li><Link to="/truck-wraps-chicago" className="text-gray-700 hover:text-brand-red transition-colors">Truck Wraps Chicago</Link></li>
                 </ul>
               </div>
 
@@ -140,13 +141,14 @@ const SitemapPage = () => {
                   <li><Link to="/ai-wrap-ideas" className="text-gray-700 hover:text-brand-red transition-colors">AI Wrap Designer Tool</Link></li>
                   <li><a href="/vehicle-wrapping-guide.pdf" className="text-gray-700 hover:text-brand-red transition-colors">Vehicle Wrapping Guide (PDF)</a></li>
                   <li><Link to="/contact" className="text-gray-700 hover:text-brand-red transition-colors">Request a Quote</Link></li>
+                  <li><Link to="/sitemap" className="text-gray-700 hover:text-brand-red transition-colors">Site Map</Link></li>
                 </ul>
               </div>
               
               <div className="bg-gray-50 p-5 rounded-lg border border-gray-100">
                 <h2 className="text-xl font-semibold mb-4 text-brand-navy flex items-center">
                   <Map className="h-5 w-5 mr-2 text-brand-red" />
-                  Other Pages
+                  Contact Information
                 </h2>
                 <Separator className="mb-4" />
                 <ul className="space-y-3">

@@ -27,6 +27,7 @@ export const useScrollToTop = () => {
         }, 100);
         
         prevPathRef.current = pathname;
+        console.log("ScrollToTop hook executed for path:", pathname);
       }
     };
 

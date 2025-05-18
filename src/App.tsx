@@ -15,8 +15,8 @@ import GalleryPage from './pages/GalleryPage';
 import AIWrapIdeasPage from './pages/AIWrapIdeas';
 import DesignerWrapsPage from './pages/DesignerWrapsPage';
 import SitemapPage from './pages/SitemapPage';
-import HomePage from './pages/Index';
-import NotFoundPage from './pages/NotFound';
+import HomePage from './pages/HomePage';
+import NotFoundPage from './pages/NotFoundPage';
 import CityLocationPage from './pages/CityLocationPage';
 import TruckWrapsChicagoPage from './pages/TruckWrapsChicagoPage';
 
