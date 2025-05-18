@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import { useParams, useLocation, Navigate } from 'react-router-dom';
 import LocationPage from '@/components/LocationPage';
 import { findCityBySlug, cities } from '@/data/cities';
-import NotFound from './NotFound';
+import NotFoundPage from './NotFoundPage';
 
 // List of known service routes to prevent them from being treated as city pages
 const SERVICE_ROUTES = [
@@ -26,7 +26,8 @@ const SERVICE_ROUTES = [
   'ai-wrap-ideas',
   'contact',
   'locations',
-  'email-setup' // Adding this in case the EmailSetupPage needs to be accessed
+  'sitemap',
+  'email-setup'
 ];
 
 const CityLocationPage = () => {
@@ -34,7 +35,6 @@ const CityLocationPage = () => {
   const location = useLocation();
   
   useEffect(() => {
-    window.scrollTo(0, 0);
     console.log("CityLocationPage mounted with path:", location.pathname);
   }, [location.pathname]);
   
@@ -69,12 +69,6 @@ const CityLocationPage = () => {
   // Check if this is actually a service route being mistaken for a city
   if (SERVICE_ROUTES.includes(slug) || location.pathname.includes('/services/')) {
     console.log(`Identified as a service route, not a city: ${slug}`);
-    
-    // For direct service pages like /partial-wraps, send to the appropriate ServicesPage route
-    if (SERVICE_ROUTES.includes(slug)) {
-      return <Navigate to={`/${slug}`} replace />;
-    }
-    
     return <Navigate to={location.pathname} replace />;
   }
   
@@ -84,7 +78,7 @@ const CityLocationPage = () => {
   // If no city is found, return a 404 page
   if (!city) {
     console.error(`City not found for slug: "${slug}"`);
-    return <NotFound />;
+    return <NotFoundPage />;
   }
   
   console.log(`Rendering city page for: ${city.name} (${city.slug})`);

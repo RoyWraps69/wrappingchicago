@@ -19,6 +19,11 @@ import HomePage from './pages/HomePage';
 import NotFoundPage from './pages/NotFoundPage';
 import CityLocationPage from './pages/CityLocationPage';
 import TruckWrapsChicagoPage from './pages/TruckWrapsChicagoPage';
+import CarWrapsPage from './pages/CarWrapsPage';
+import LuxuryExoticWrapsPage from './pages/LuxuryExoticWrapsPage';
+import TruckWrapsPage from './pages/TruckWrapsPage';
+import VanWrapsPage from './pages/VanWrapsPage';
+import ColorChangeWrapsPage from './pages/ColorChangeWrapsPage';
 
 function App() {
   return (
@@ -44,23 +49,25 @@ function App() {
           {/* Special city-specific routes */}
           <Route path="/truck-wraps-chicago" element={<TruckWrapsChicagoPage />} />
           
+          {/* Direct service pages */}
+          <Route path="/car-wraps" element={<CarWrapsPage />} />
+          <Route path="/truck-wraps" element={<TruckWrapsPage />} />
+          <Route path="/van-wraps" element={<VanWrapsPage />} />
+          <Route path="/color-change-wraps" element={<ColorChangeWrapsPage />} />
+          <Route path="/luxury-exotic-wraps" element={<LuxuryExoticWrapsPage />} />
+          
           {/* Location-specific routes */}
           <Route path="/vehicle-wraps-:citySlug-il" element={<CityLocationPage />} />
           <Route path="/:citySlug" element={<CityLocationPage />} />
           
-          {/* Service-specific direct routes */}
-          <Route path="/car-wraps" element={<Navigate to="/services/car-wraps" replace />} />
-          <Route path="/truck-wraps" element={<Navigate to="/services/truck-wraps" replace />} />
-          <Route path="/van-wraps" element={<Navigate to="/services/van-wraps" replace />} />
+          {/* Service-specific redirect routes */}
           <Route path="/fleet-wraps" element={<Navigate to="/services/fleet-wraps" replace />} />
-          <Route path="/color-change-wraps" element={<Navigate to="/services/color-change-wraps" replace />} />
           <Route path="/commercial-graphics" element={<Navigate to="/services/commercial-graphics" replace />} />
           <Route path="/partial-wraps" element={<Navigate to="/services/partial-wraps" replace />} />
           <Route path="/protective-films" element={<Navigate to="/services/protective-films" replace />} />
           <Route path="/vehicle-lettering" element={<Navigate to="/services/vehicle-lettering" replace />} />
           <Route path="/specialty-wraps" element={<Navigate to="/services/specialty-wraps" replace />} />
           <Route path="/retail-graphics" element={<Navigate to="/services/retail-graphics" replace />} />
-          <Route path="/luxury-exotic-wraps" element={<Navigate to="/services/luxury-exotic-wraps" replace />} />
 
           {/* 404 catch-all route */}
           <Route path="*" element={<NotFoundPage />} />
