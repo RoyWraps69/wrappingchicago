@@ -1,108 +1,62 @@
+
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import { HelmetProvider } from 'react-helmet-async';
-import { useWebVitals } from './utils/webVitals';
-import Index from './pages/Index';
-import CityLocationPage from './pages/CityLocationPage';
-import LocationsPage from './pages/LocationsPage';
-import ContactPage from './pages/ContactPage';
-import AIWrapIdeas from './pages/AIWrapIdeas';
-import ServicesPage from './pages/ServicesPage';
-import GalleryPage from './pages/GalleryPage';
-import AboutPage from './pages/AboutPage';
-import GoogleTagManager from './components/GoogleTagManager';
-import GoogleSearchConsole from './components/seo/GoogleSearchConsole';
-import NotFound from './pages/NotFound';
-import ScrollToTop from './components/navigation/ScrollToTop';
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import SitemapPage from './pages/SitemapPage';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
-
-// Import new pages
-import CarWrapsPage from './pages/CarWrapsPage';
-import TruckWrapsPage from './pages/TruckWrapsPage';
-import VanWrapsPage from './pages/VanWrapsPage';
-
-// Create a client with optimized settings for performance
-const queryClient = new QueryClient({
-  defaultOptions: {
-    queries: {
-      staleTime: 60 * 1000, // 1 minute
-      gcTime: 5 * 60 * 1000, // 5 minutes (formerly cacheTime)
-      refetchOnWindowFocus: false,
-      retry: 1,
-    },
-  },
-});
+import HomePage from './pages/HomePage';
+import AboutPage from './pages/AboutPage';
+import ContactPage from './pages/ContactPage';
+import ServicesPage from './pages/ServicesPage';
+import ServiceDetailsPage from './pages/ServiceDetailsPage';
+import LocationsPage from './pages/LocationsPage';
+import LocationPage from './pages/LocationPage';
+import GalleryPage from './pages/GalleryPage';
+import AIWrapIdeas from './pages/AIWrapIdeas';
+import DesignerWrapsPage from './pages/DesignerWrapsPage';
+import SitemapPage from './pages/SitemapPage';
+import { HelmetProvider } from 'react-helmet-async';
+import ScrollToTop from './components/navigation/ScrollToTop';
+import GoogleTagManager from './components/GoogleTagManager';
+import GoogleAnalytics from './components/GoogleAnalytics';
+import GoogleSearchVerification from './components/seo/GoogleSearchVerification';
 
 function App() {
-  // Initialize Web Vitals monitoring
-  useWebVitals();
-
   return (
-    <QueryClientProvider client={queryClient}>
-      <HelmetProvider>
-        <GoogleTagManager containerId="GTM-ZTLS3EEGE7" />
-        <GoogleSearchConsole verificationCode="gQnkHgsJ2bOPDWFClspUxA6EZsE-XWnLasqxsqSESvg" />
-        <Router>
-          <ScrollToTop />
-          <Routes>
-            {/* Main pages */}
-            <Route path="/" element={<Index />} />
-            <Route path="/locations" element={<LocationsPage />} />
-            <Route path="/contact" element={<ContactPage />} />
-            <Route path="/ai-wrap-ideas" element={<AIWrapIdeas />} />
-            <Route path="/gallery" element={<GalleryPage />} />
-            <Route path="/about" element={<AboutPage />} />
-            
-            {/* Services main route */}
-            <Route path="/services" element={<ServicesPage />} />
-            
-            {/* New dedicated service pages with full content */}
-            <Route path="/services/car-wraps" element={<CarWrapsPage />} />
-            <Route path="/services/truck-wraps" element={<TruckWrapsPage />} />
-            <Route path="/services/van-wraps" element={<VanWrapsPage />} />
-            
-            {/* Other services routes under /services/ path - using ServicesPage component */}
-            <Route path="/services/fleet-wraps" element={<ServicesPage />} />
-            <Route path="/services/color-change-wraps" element={<ServicesPage />} />
-            <Route path="/services/commercial-graphics" element={<ServicesPage />} />
-            <Route path="/services/partial-wraps" element={<ServicesPage />} />
-            <Route path="/services/protective-films" element={<ServicesPage />} />
-            <Route path="/services/vehicle-lettering" element={<ServicesPage />} />
-            <Route path="/services/specialty-wraps" element={<ServicesPage />} />
-            <Route path="/services/retail-graphics" element={<ServicesPage />} />
-            <Route path="/services/designer-wraps" element={<ServicesPage />} />
-            <Route path="/services/luxury-exotic-wraps" element={<ServicesPage />} />
-            
-            {/* Direct service routes */}
-            <Route path="/fleet-wraps" element={<ServicesPage />} />
-            <Route path="/partial-wraps" element={<ServicesPage />} />
-            <Route path="/color-change-wraps" element={<ServicesPage />} />
-            <Route path="/commercial-graphics" element={<ServicesPage />} />
-            <Route path="/protective-films" element={<ServicesPage />} />
-            <Route path="/vehicle-lettering" element={<ServicesPage />} />
-            <Route path="/specialty-wraps" element={<ServicesPage />} />
-            <Route path="/retail-graphics" element={<ServicesPage />} />
-            <Route path="/car-wraps" element={<CarWrapsPage />} />
-            <Route path="/truck-wraps" element={<TruckWrapsPage />} />
-            <Route path="/van-wraps" element={<VanWrapsPage />} />
-            <Route path="/designer-wraps" element={<ServicesPage />} />
-            <Route path="/luxury-exotic-wraps" element={<ServicesPage />} />
-            
-            {/* City location routes with various formats */}
-            <Route path="/vehicle-wraps-:citySlug-il" element={<CityLocationPage />} />
-            <Route path="/:citySlug" element={<CityLocationPage />} />
-            
-            {/* Add Sitemap route */}
-            <Route path="/sitemap" element={<SitemapPage />} />
-            
-            {/* Catch-all route for 404 */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </Router>
-      </HelmetProvider>
-    </QueryClientProvider>
+    <HelmetProvider>
+      <BrowserRouter>
+        <GoogleTagManager />
+        <GoogleAnalytics />
+        <GoogleSearchVerification />
+        <ScrollToTop />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/services" element={<ServicesPage />} />
+          <Route path="/services/:serviceType" element={<ServiceDetailsPage />} />
+          <Route path="/locations" element={<LocationsPage />} />
+          <Route path="/vehicle-wraps-:citySlug-il" element={<LocationPage />} />
+          <Route path="/:citySlug" element={<LocationPage />} />
+          <Route path="/gallery" element={<GalleryPage />} />
+          <Route path="/ai-wrap-ideas" element={<AIWrapIdeas />} />
+          <Route path="/designer-wraps" element={<DesignerWrapsPage />} />
+          <Route path="/sitemap" element={<SitemapPage />} />
+          
+          {/* Redirect routes for common service URLs */}
+          <Route path="/car-wraps" element={<ServiceDetailsPage />} />
+          <Route path="/truck-wraps" element={<ServiceDetailsPage />} />
+          <Route path="/van-wraps" element={<ServiceDetailsPage />} />
+          <Route path="/fleet-wraps" element={<ServiceDetailsPage />} />
+          <Route path="/color-change-wraps" element={<ServiceDetailsPage />} />
+          <Route path="/commercial-graphics" element={<ServiceDetailsPage />} />
+          <Route path="/partial-wraps" element={<ServiceDetailsPage />} />
+          <Route path="/protective-films" element={<ServiceDetailsPage />} />
+          <Route path="/vehicle-lettering" element={<ServiceDetailsPage />} />
+          <Route path="/specialty-wraps" element={<ServiceDetailsPage />} />
+          <Route path="/retail-graphics" element={<ServiceDetailsPage />} />
+          <Route path="/luxury-exotic-wraps" element={<ServiceDetailsPage />} />
+        </Routes>
+      </BrowserRouter>
+    </HelmetProvider>
   );
 }
 

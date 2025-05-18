@@ -2,40 +2,18 @@
 User-agent: *
 Allow: /
 
-# Explicitly allow all important sections
+# Sitemap location
+Sitemap: https://www.wrappingchicago.com/sitemap.xml
+
+# Allow access to all important sections
 Allow: /services/
 Allow: /gallery/
 Allow: /about/
 Allow: /contact/
 Allow: /locations/
 Allow: /ai-wrap-ideas/
-Allow: /fleet-wraps/
-Allow: /truck-wraps/
-Allow: /car-wraps/
-Allow: /van-wraps/
-
-# Explicitly allow all location pages
-Allow: /vehicle-wraps-chicago-il
-Allow: /chicago
+Allow: /designer-wraps/
 Allow: /*-il
-
-# Allow access to PDF resources
-Allow: /vehicle-wrapping-guide.pdf
-
-# Sitemap location with canonical domain
-Sitemap: https://www.wrappingchicago.com/sitemap.xml
 
 # Prevent duplicate content issues
 Disallow: /*?* 
-
-# Block development files
-Disallow: /*.js$
-Disallow: /*.css$
-Disallow: /*.json$
-Disallow: /*.map$
-
-# Block admin and utility paths
-Disallow: /admin/
-Disallow: /util/
-Disallow: /api/
-Disallow: /cdn-cgi/

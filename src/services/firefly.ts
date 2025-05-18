@@ -1,7 +1,11 @@
 
 // Adobe Express Embed SDK for image generation
 import { GenerateImageParams } from './firefly/types';
-import { initializeAndGenerateImage } from './firefly/initialize';
+
+interface FireflyResponse {
+  url: string;
+  status: string;
+}
 
 export const generateImage = async ({ 
   prompt,
@@ -9,16 +13,52 @@ export const generateImage = async ({
 }: GenerateImageParams): Promise<string | null> => {
   return new Promise((resolve, reject) => {
     try {
-      // Get client ID from localStorage
-      const clientId = localStorage.getItem('firefly_api_key');
-      if (!clientId) {
-        console.error("Adobe Express client ID not found in localStorage");
-        reject(new Error("Adobe Express client ID not found. Please set your API key in settings."));
+      // Get API key from localStorage
+      const apiKey = localStorage.getItem('firefly_api_key');
+      if (!apiKey) {
+        console.error("Adobe Firefly API key not found in localStorage");
+        reject(new Error("Adobe Firefly API key not found. Please set your API key in settings."));
         return;
       }
 
-      // Initialize Adobe Express SDK and generate image
-      initializeAndGenerateImage(clientId, prompt, size, resolve, reject);
+      console.log("Starting Adobe Firefly image generation with prompt:", prompt);
+      
+      // Create form data for Firefly API request
+      const formData = new FormData();
+      formData.append('prompt', prompt);
+      formData.append('size', size);
+      
+      // Simulate API call with timeout for testing
+      fetch('https://firefly-api.adobe.io/v2/images/generate', {
+        method: 'POST',
+        headers: {
+          'x-api-key': apiKey,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          prompt,
+          size,
+          n: 1,
+        }),
+      })
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`Firefly API error: ${response.status} ${response.statusText}`);
+        }
+        return response.json();
+      })
+      .then((data: FireflyResponse) => {
+        console.log("Firefly API response:", data);
+        if (data && data.url) {
+          resolve(data.url);
+        } else {
+          reject(new Error("No image URL in Firefly response"));
+        }
+      })
+      .catch(error => {
+        console.error("Error in Firefly API call:", error);
+        reject(error);
+      });
       
     } catch (error) {
       console.error("Error in generateImage:", error);
