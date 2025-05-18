@@ -16,6 +16,7 @@ import { MessageSquare, Phone } from 'lucide-react';
 import Schema from '@/components/Schema';
 import { cities } from '@/data/cities';
 import GoogleSearchConsole from '@/components/seo/GoogleSearchConsole';
+import PageFAQ from '@/components/common/PageFAQ';
 
 const GalleryPage = () => {
   const [activeFilter, setActiveFilter] = useState<GalleryCategory>('All');
@@ -24,6 +25,26 @@ const GalleryPage = () => {
   // For Schema component
   const chicagoCity = cities.find(city => city.slug === 'chicago') || cities[0];
   const domain = "https://www.wrappingchicago.com";
+  
+  // Gallery-specific FAQs
+  const galleryFAQs = [
+    {
+      question: "What types of vehicle wraps do you showcase in your gallery?",
+      answer: "Our gallery features a diverse collection of vehicle wrap projects including commercial fleet wraps, color change wraps, partial wraps, truck wraps, van wraps, car wraps, and specialty designer wraps. Each project showcases our premium materials and professional installation quality."
+    },
+    {
+      question: "Can I get the same design I see in your gallery for my vehicle?",
+      answer: "Absolutely! Many of our gallery designs can be adapted for your specific vehicle. We can customize any design concept you see to fit your brand, vehicle type, and marketing goals. Contact us for a consultation to discuss your favorite designs from our portfolio."
+    },
+    {
+      question: "How much does a vehicle wrap like those in your gallery typically cost?",
+      answer: "The vehicle wraps featured in our gallery range from $1,500 for partial wraps to $5,000+ for full commercial wraps. Pricing depends on vehicle size, design complexity, and materials used. We provide free detailed quotes for every project."
+    },
+    {
+      question: "How long does the installation process take for vehicle wraps?",
+      answer: "Most vehicle wrap installations take 3-5 business days to complete. Simple designs on smaller vehicles may take 2-3 days, while complex wraps on larger vehicles could take 5-7 days. We ensure thorough preparation, precise installation, and proper curing time for every project."
+    }
+  ];
   
   return (
     <>
@@ -49,6 +70,7 @@ const GalleryPage = () => {
         path="/gallery"
         pageTitle="Vehicle Wrap Gallery | Wrapping Chicago Portfolio"
         pageDescription="Browse our gallery of completed vehicle wrap projects including fleet wraps, color change wraps, and commercial graphics across Chicago and surrounding areas."
+        faqs={galleryFAQs}
       />
       
       <div className="flex flex-col min-h-screen">
@@ -126,6 +148,12 @@ const GalleryPage = () => {
           <ImageViewer 
             item={expandedImage} 
             onClose={() => setExpandedImage(null)} 
+          />
+          
+          {/* Add FAQ Section */}
+          <PageFAQ 
+            faqs={galleryFAQs}
+            serviceName="Vehicle Wrap Gallery"
           />
           
           <CallToAction city="Chicago" />

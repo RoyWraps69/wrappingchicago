@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { City } from '@/data/types/city';
 import { testSchema } from '@/utils/validateSchema';
@@ -99,12 +100,11 @@ const Schema: React.FC<SchemaProps> = ({
         keywords={keywords}
       />
       
-      {faqs && faqs.length > 0 && (
-        <FAQSchema 
-          faqs={faqs}
-          pageUrl={fullUrl}
-        />
-      )}
+      {/* Always include FAQ schema, even with empty array to ensure proper structure */}
+      <FAQSchema 
+        faqs={faqs}
+        pageUrl={fullUrl}
+      />
       
       <BreadcrumbSchema 
         items={generateBreadcrumbSchema(path)}
@@ -155,7 +155,7 @@ const Schema: React.FC<SchemaProps> = ({
         <ServiceAreaSchema cities={allCities} />
       )}
       
-      {/* New schemas for AI and local search optimization */}
+      {/* New schemas for AI and local search optimization - Always include these */}
       <AISearchSchema 
         pageTitle={pageTitle}
         pageDescription={pageDescription}
@@ -166,12 +166,20 @@ const Schema: React.FC<SchemaProps> = ({
         cityName={city.name}
       />
       
-      {faqs && faqs.length > 0 && (
-        <EnhancedFAQSchema 
-          faqs={faqs}
-          cityName={city.name}
-        />
-      )}
+      {/* Enhanced FAQ Schema - Always include this with proper fallback */}
+      <EnhancedFAQSchema 
+        faqs={faqs.length > 0 ? faqs : [
+          {
+            question: `How much do vehicle wraps cost in ${city.name}?`,
+            answer: `Vehicle wrap costs in ${city.name} typically range from $2,500 to $5,000 for full wraps depending on vehicle size and design complexity.`
+          },
+          {
+            question: `How long do vehicle wraps last in ${city.name}'s climate?`,
+            answer: `With proper care, our premium vehicle wraps typically last 5-7 years in ${city.name}'s climate.`
+          }
+        ]}
+        cityName={city.name}
+      />
       
       <ProductServiceSchema
         description={pageDescription}

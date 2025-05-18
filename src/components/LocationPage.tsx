@@ -19,6 +19,7 @@ import GoogleSearchConsole from '@/components/seo/GoogleSearchConsole';
 import { Helmet } from 'react-helmet-async';
 import ReviewsSchema from '@/components/schemas/ReviewsSchema';
 import BusinessLocationSchema from '@/components/schemas/BusinessLocationSchema';
+import PageFAQ from '@/components/common/PageFAQ';
 
 interface LocationPageProps {
   city: City;
@@ -137,8 +138,11 @@ const LocationPage = ({ city, allCities = [] }: LocationPageProps) => {
           <LocationProjects cityName={city.name} />
           <LocationTestimonials city={city} />
           
-          {/* Vehicle Wrap FAQ Section */}
-          <LocationFAQSection cityName={city.name} />
+          {/* Vehicle Wrap FAQ Section - Comprehensive Google-friendly FAQ */}
+          <PageFAQ
+            faqs={cityFAQs}
+            cityName={city.name}
+          />
           
           {/* Internal links to services - Enhanced for SEO and mobile */}
           <div className="container mx-auto px-4 py-8">

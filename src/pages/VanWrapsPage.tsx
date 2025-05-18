@@ -12,6 +12,7 @@ import Schema from '@/components/Schema';
 import { cities } from '@/data/cities';
 import ServiceSchema from '@/components/schemas/ServiceSchema';
 import VanWrapsContent from '@/components/services/van-wraps/VanWrapsContent';
+import PageFAQ from '@/components/common/PageFAQ';
 
 const VanWrapsPage = () => {
   // For Schema component
@@ -114,6 +115,13 @@ const VanWrapsPage = () => {
             
             <VanWrapsContent />
           </div>
+          
+          {/* Add FAQ Section */}
+          <PageFAQ 
+            faqs={faqData}
+            serviceName="Van Wraps"
+            cityName="Chicago"
+          />
           
           <CallToAction city="Chicago" />
         </main>

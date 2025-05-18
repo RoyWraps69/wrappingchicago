@@ -13,6 +13,7 @@ import TruckBenefits from '@/components/truck-wraps/TruckBenefits';
 import TruckCTA from '@/components/truck-wraps/TruckCTA';
 import TruckFAQs from '@/components/truck-wraps/TruckFAQs';
 import TruckSEO from '@/components/truck-wraps/TruckSEO';
+import PageFAQ from '@/components/common/PageFAQ';
 
 const TruckWrapsChicagoPage = () => {
   // For Schema component
@@ -68,6 +69,13 @@ const TruckWrapsChicagoPage = () => {
               <TruckCTA />
             </div>
           </section>
+          
+          {/* Add the PageFAQ component */}
+          <PageFAQ 
+            faqs={faqData}
+            serviceName="Truck Wraps"
+            cityName="Chicago"
+          />
           
           <CallToAction city="Chicago" />
         </main>
