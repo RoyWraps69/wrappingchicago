@@ -1,6 +1,10 @@
 
-# Redirect non-www to www version (reverse of what was there before)
+# Redirect HTTP to HTTPS
 RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Redirect non-www to www version
 RewriteCond %{HTTP_HOST} ^wrappingchicago\.com [NC]
 RewriteRule ^(.*)$ https://www.wrappingchicago.com/$1 [L,R=301]
 

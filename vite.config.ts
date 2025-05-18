@@ -1,3 +1,4 @@
+
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import { resolve } from 'path'
@@ -61,11 +62,14 @@ export default defineConfig(({ mode }) => ({
   },
   server: {
     host: "::",
-    port: 8080
+    port: 8080,
+    https: true // Enable HTTPS in development
   },
   preview: {
     headers: {
       'Cache-Control': 'public, max-age=31536000',
+      'Strict-Transport-Security': 'max-age=63072000; includeSubDomains; preload' // Add HSTS header
     },
+    https: true // Enable HTTPS in preview mode
   },
 }))

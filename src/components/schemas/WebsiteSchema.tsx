@@ -6,7 +6,7 @@ interface WebsiteSchemaProps {
   description: string;
   url: string;
   lastModified?: string;
-  keywords?: string[]; // Add keywords property to the interface
+  keywords?: string[];
 }
 
 const WebsiteSchema: React.FC<WebsiteSchemaProps> = ({ 
@@ -14,14 +14,14 @@ const WebsiteSchema: React.FC<WebsiteSchemaProps> = ({
   description, 
   url,
   lastModified = new Date().toISOString().split('T')[0],
-  keywords = [] // Add default value for keywords
+  keywords = []
 }) => {
   const baseDomain = "https://www.wrappingchicago.com";
   
-  // Ensure URL uses www subdomain
+  // Ensure URL uses www subdomain and HTTPS
   const fullUrl = url.startsWith('http') 
     ? (url.includes('wrappingchicago.com') 
-        ? (url.includes('www.') ? url : url.replace('https://wrappingchicago.com', baseDomain))
+        ? (url.includes('www.') ? url : url.replace(/http(s)?:\/\/(www\.)?wrappingchicago\.com/, baseDomain))
         : url)
     : `${baseDomain}${url}`;
   
@@ -79,7 +79,6 @@ const WebsiteSchema: React.FC<WebsiteSchemaProps> = ({
     "copyrightYear": new Date().getFullYear(),
     "inLanguage": "en-US",
     "dateModified": lastModified,
-    // Add keywords to the schema if they exist
     ...(keywords && keywords.length > 0 && { "keywords": keywords.join(", ") })
   };
 

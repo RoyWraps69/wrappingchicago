@@ -1,3 +1,4 @@
+
 import React from 'react';
 
 interface WebPageSchemaProps {
@@ -17,17 +18,17 @@ const WebPageSchema: React.FC<WebPageSchemaProps> = ({
   keywords = [],
   mainImage = "https://www.wrappingchicago.com/lovable-uploads/6ef3b1af-8591-4d36-97c2-9366401115fa.png"
 }) => {
-  // Ensure www subdomain is always used
+  // Ensure www subdomain and HTTPS is always used
   const domain = "https://www.wrappingchicago.com";
   const fullUrl = url.startsWith('http') 
     ? (url.includes('wrappingchicago.com') 
-        ? (url.includes('www.') ? url : url.replace('https://wrappingchicago.com', domain))
+        ? (url.includes('www.') ? url : url.replace(/http(s)?:\/\/(www\.)?wrappingchicago\.com/, domain))
         : url)
     : `${domain}${url}`;
   
   const fullImageUrl = mainImage.startsWith('http') 
     ? (mainImage.includes('wrappingchicago.com') 
-        ? (mainImage.includes('www.') ? mainImage : mainImage.replace('https://wrappingchicago.com', domain))
+        ? (mainImage.includes('www.') ? mainImage : mainImage.replace(/http(s)?:\/\/(www\.)?wrappingchicago\.com/, domain))
         : mainImage)
     : `${domain}${mainImage}`;
 
