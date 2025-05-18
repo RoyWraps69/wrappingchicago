@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { City } from '@/data/types/city';
 import { testSchema } from '@/utils/validateSchema';
@@ -23,6 +22,11 @@ import EventSchema from './schemas/EventSchema';
 import OrganizationSchema from './schemas/OrganizationSchema';
 import ServiceAreaSchema from './schemas/ServiceAreaSchema';
 import GoogleBusinessProfileSchema from './schemas/GoogleBusinessProfileSchema';
+import AISearchSchema from './schemas/AISearchSchema';
+import LocalSearchSchema from './schemas/LocalSearchSchema';
+import EnhancedFAQSchema from './schemas/EnhancedFAQSchema';
+import ProductServiceSchema from './schemas/ProductServiceSchema';
+import RichResultSchema from './schemas/RichResultSchema';
 
 interface SchemaProps {
   city: City;
@@ -135,7 +139,7 @@ const Schema: React.FC<SchemaProps> = ({
       
       <ActionSchema />
       
-      {/* New enhanced schemas for local SEO */}
+      {/* Enhanced schemas for local SEO */}
       <LocalGeoSchema city={city} />
       
       <EnhancedBusinessSchema city={city} />
@@ -150,6 +154,36 @@ const Schema: React.FC<SchemaProps> = ({
       {allCities && allCities.length > 0 && (
         <ServiceAreaSchema cities={allCities} />
       )}
+      
+      {/* New schemas for AI and local search optimization */}
+      <AISearchSchema 
+        pageTitle={pageTitle}
+        pageDescription={pageDescription}
+        cityName={city.name}
+      />
+      
+      <LocalSearchSchema 
+        cityName={city.name}
+      />
+      
+      {faqs && faqs.length > 0 && (
+        <EnhancedFAQSchema 
+          faqs={faqs}
+          cityName={city.name}
+        />
+      )}
+      
+      <ProductServiceSchema
+        description={pageDescription}
+        cityName={city.name}
+      />
+      
+      {/* Rich results schema */}
+      <RichResultSchema 
+        city={city}
+        pageTitle={pageTitle}
+        pageDescription={pageDescription}
+      />
     </>
   );
 };
