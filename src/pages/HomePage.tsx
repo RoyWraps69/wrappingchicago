@@ -15,8 +15,13 @@ import HomeSEO from '@/components/home/HomeSEO';
 import EasyButtonSection from '@/components/home/EasyButtonSection';
 import StickyContactButtons from '@/components/home/StickyContactButtons';
 import { Helmet } from 'react-helmet-async';
+import { useGalleryImages } from '@/hooks/useGalleryImages';
+import { cities } from '@/data/cities';
 
 function HomePage() {
+  // Get the required images for ServicesSection
+  const { fleetWrapVan, colorChangeVan, commercialGraphics } = useGalleryImages();
+
   return (
     <>
       <HomeSEO />
@@ -30,10 +35,14 @@ function HomePage() {
           <Hero />
           <InfoBar />
           <QuickLinksBar />
-          <ServicesSection />
+          <ServicesSection 
+            fleetWrapVan={fleetWrapVan} 
+            colorChangeVan={colorChangeVan} 
+            commercialGraphics={commercialGraphics}
+          />
           <InstallationFacility />
           <WhyChooseUsSection />
-          <AreasServedSection />
+          <AreasServedSection cities={cities} />
           <EasyButtonSection />
           <TrustIndicators />
           <VehicleWrapFAQ />
