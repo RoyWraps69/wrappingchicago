@@ -52,6 +52,13 @@ function App() {
           <Route path="/specialty-wraps" element={<div className="p-8 text-center">Specialty Wraps Coming Soon</div>} />
           <Route path="/retail-graphics" element={<div className="p-8 text-center">Retail Graphics Coming Soon</div>} />
           <Route path="/luxury-exotic-wraps" element={<div className="p-8 text-center">Luxury Exotic Wraps Coming Soon</div>} />
+
+          {/* 404 catch-all route */}
+          <Route path="*" element={<div className="p-8 text-center">
+            <h1 className="text-2xl font-bold mb-4">Page Not Found</h1>
+            <p className="mb-6">The page you are looking for does not exist.</p>
+            <a href="/" className="text-brand-red hover:underline">Return to Home</a>
+          </div>} />
         </Routes>
       </BrowserRouter>
     </HelmetProvider>

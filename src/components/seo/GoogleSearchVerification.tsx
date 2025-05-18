@@ -2,10 +2,13 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 
-const GoogleSearchVerification = () => {
-  // Replace this with your actual verification code from Google Search Console
-  const verificationCode = "YOUR_VERIFICATION_CODE";
-  
+interface GoogleSearchVerificationProps {
+  verificationCode?: string;
+}
+
+const GoogleSearchVerification: React.FC<GoogleSearchVerificationProps> = ({ 
+  verificationCode = "gQnkHgsJ2bOPDWFClspUxA6EZsE-XWnLasqxsqSESvg" // Default verification code
+}) => {
   return (
     <Helmet>
       <meta name="google-site-verification" content={verificationCode} />

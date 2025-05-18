@@ -17,3 +17,10 @@ Allow: /*-il
 
 # Prevent duplicate content issues
 Disallow: /*?* 
+
+# Optimize crawl budget
+Disallow: /wp-admin/
+Disallow: /wp-includes/
+Disallow: /search
+Disallow: /*utm_*
+Disallow: /*fbclid=*
