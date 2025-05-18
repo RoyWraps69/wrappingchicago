@@ -12,12 +12,13 @@ import ContactPage from './pages/ContactPage';
 import ServicesPage from './pages/ServicesPage';
 import LocationsPage from './pages/LocationsPage';
 import GalleryPage from './pages/GalleryPage';
-import AIWrapIdeas from './pages/AIWrapIdeas';
+import AIWrapIdeasPage from './pages/AIWrapIdeas';
 import DesignerWrapsPage from './pages/DesignerWrapsPage';
 import SitemapPage from './pages/SitemapPage';
-import Index from './pages/Index';
-import NotFound from './pages/NotFound';
+import HomePage from './pages/Index';
+import NotFoundPage from './pages/NotFound';
 import CityLocationPage from './pages/CityLocationPage';
+import TruckWrapsChicagoPage from './pages/TruckWrapsChicagoPage';
 
 function App() {
   return (
@@ -29,16 +30,19 @@ function App() {
         <ScrollToTop />
         <Routes>
           {/* Main navigation routes */}
-          <Route path="/" element={<Index />} />
+          <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/services/:serviceType" element={<ServicesPage />} />
           <Route path="/locations" element={<LocationsPage />} />
           <Route path="/gallery" element={<GalleryPage />} />
-          <Route path="/ai-wrap-ideas" element={<AIWrapIdeas />} />
+          <Route path="/ai-wrap-ideas" element={<AIWrapIdeasPage />} />
           <Route path="/designer-wraps" element={<DesignerWrapsPage />} />
           <Route path="/sitemap" element={<SitemapPage />} />
+          
+          {/* Special city-specific routes */}
+          <Route path="/truck-wraps-chicago" element={<TruckWrapsChicagoPage />} />
           
           {/* Location-specific routes */}
           <Route path="/vehicle-wraps-:citySlug-il" element={<CityLocationPage />} />
@@ -59,7 +63,7 @@ function App() {
           <Route path="/luxury-exotic-wraps" element={<Navigate to="/services/luxury-exotic-wraps" replace />} />
 
           {/* 404 catch-all route */}
-          <Route path="*" element={<NotFound />} />
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </BrowserRouter>
     </HelmetProvider>
