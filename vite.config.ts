@@ -63,13 +63,17 @@ export default defineConfig(({ mode }) => ({
   server: {
     host: "::",
     port: 8080,
-    https: true // Enable HTTPS in development
+    https: {
+      // Use an empty object for default HTTPS configuration
+    }
   },
   preview: {
     headers: {
       'Cache-Control': 'public, max-age=31536000',
       'Strict-Transport-Security': 'max-age=63072000; includeSubDomains; preload' // Add HSTS header
     },
-    https: true // Enable HTTPS in preview mode
+    https: {
+      // Use an empty object for default HTTPS configuration
+    }
   },
 }))
