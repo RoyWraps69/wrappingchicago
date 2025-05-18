@@ -36,7 +36,56 @@ const CityLocationPage = () => {
   
   useEffect(() => {
     console.log("CityLocationPage mounted with path:", location.pathname);
-  }, [location.pathname]);
+    
+    // Add local schema verification for debugging
+    if (process.env.NODE_ENV === 'development') {
+      console.log("Verifying local schema data for:", paramCitySlug);
+    }
+    
+    // Add local business structured data directly to head for immediate indexing
+    const head = document.querySelector('head');
+    if (head) {
+      const cityName = paramCitySlug ? 
+        paramCitySlug.replace(/-il$/, '').split('-').map(word => 
+          word.charAt(0).toUpperCase() + word.slice(1)
+        ).join(' ') : 
+        'Chicago';
+        
+      const localBusinessScript = document.createElement('script');
+      localBusinessScript.type = 'application/ld+json';
+      localBusinessScript.textContent = JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Wrapping Chicago",
+        "description": `Vehicle wrapping services in ${cityName}, IL. Expert installation of car wraps, truck wraps, van wraps, and fleet wraps with premium 3M materials.`,
+        "url": window.location.href,
+        "telephone": "(312) 597-1286",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "4711 N. Lamon Ave",
+          "addressLocality": "Chicago",
+          "addressRegion": "IL",
+          "postalCode": "60630",
+          "addressCountry": "US"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 41.8781,
+          "longitude": -87.6298
+        },
+        "areaServed": {
+          "@type": "City",
+          "name": cityName
+        }
+      });
+      head.appendChild(localBusinessScript);
+      
+      // Clean up when component unmounts
+      return () => {
+        head.removeChild(localBusinessScript);
+      };
+    }
+  }, [location.pathname, paramCitySlug]);
   
   // Extract city slug from URL
   const extractCitySlug = () => {
@@ -82,7 +131,7 @@ const CityLocationPage = () => {
   }
   
   console.log(`Rendering city page for: ${city.name} (${city.slug})`);
-  return <LocationPage city={city} />;
+  return <LocationPage city={city} allCities={cities} />;
 };
 
 export default CityLocationPage;

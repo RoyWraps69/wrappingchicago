@@ -17,6 +17,12 @@ import WebPageSchema from './schemas/WebPageSchema';
 import ActionSchema from './schemas/ActionSchema';
 import VehicleWrapServiceSchema from './schemas/VehicleWrapServiceSchema';
 import AIVoiceSearchSchema from './schemas/AIVoiceSearchSchema';
+import LocalGeoSchema from './schemas/LocalGeoSchema';
+import EnhancedBusinessSchema from './schemas/EnhancedBusinessSchema';
+import EventSchema from './schemas/EventSchema';
+import OrganizationSchema from './schemas/OrganizationSchema';
+import ServiceAreaSchema from './schemas/ServiceAreaSchema';
+import GoogleBusinessProfileSchema from './schemas/GoogleBusinessProfileSchema';
 
 interface SchemaProps {
   city: City;
@@ -31,6 +37,7 @@ interface SchemaProps {
   mainImage?: string;
   datePublished?: string;
   dateModified?: string;
+  allCities?: City[];
 }
 
 interface FAQ {
@@ -50,7 +57,8 @@ const Schema: React.FC<SchemaProps> = ({
   includeSpeakable = true,
   mainImage = '/lovable-uploads/6ef3b1af-8591-4d36-97c2-9366401115fa.png',
   datePublished = '2022-01-01T00:00:00+00:00',
-  dateModified = new Date().toISOString()
+  dateModified = new Date().toISOString(),
+  allCities = []
 }) => {
   const domain = "https://www.wrappingchicago.com";
   const fullUrl = `${domain}${path}`;
@@ -76,6 +84,7 @@ const Schema: React.FC<SchemaProps> = ({
 
   return (
     <>
+      {/* Original schemas */}
       <LocalBusinessSchema city={city} />
       
       <WebsiteSchema 
@@ -125,6 +134,22 @@ const Schema: React.FC<SchemaProps> = ({
       )}
       
       <ActionSchema />
+      
+      {/* New enhanced schemas for local SEO */}
+      <LocalGeoSchema city={city} />
+      
+      <EnhancedBusinessSchema city={city} />
+      
+      <EventSchema city={city.name} />
+      
+      <OrganizationSchema />
+      
+      {/* Google Business Profile Schema optimized for local SEO */}
+      <GoogleBusinessProfileSchema cityName={city.name} />
+      
+      {allCities && allCities.length > 0 && (
+        <ServiceAreaSchema cities={allCities} />
+      )}
     </>
   );
 };
