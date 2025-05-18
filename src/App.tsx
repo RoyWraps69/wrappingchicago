@@ -15,6 +15,7 @@ import GalleryPage from './pages/GalleryPage';
 import AIWrapIdeas from './pages/AIWrapIdeas';
 import DesignerWrapsPage from './pages/DesignerWrapsPage';
 import SitemapPage from './pages/SitemapPage';
+import Index from './pages/Index';
 
 function App() {
   return (
@@ -25,7 +26,7 @@ function App() {
         <GoogleSearchVerification />
         <ScrollToTop />
         <Routes>
-          <Route path="/" element={<div className="p-8 text-center">Home Page Coming Soon</div>} />
+          <Route path="/" element={<Index />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/services" element={<ServicesPage />} />
