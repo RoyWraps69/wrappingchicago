@@ -17,6 +17,7 @@ import DesignerWrapsPage from './pages/DesignerWrapsPage';
 import SitemapPage from './pages/SitemapPage';
 import Index from './pages/Index';
 import NotFound from './pages/NotFound';
+import CityLocationPage from './pages/CityLocationPage';
 
 function App() {
   return (
@@ -40,8 +41,8 @@ function App() {
           <Route path="/sitemap" element={<SitemapPage />} />
           
           {/* Location-specific routes */}
-          <Route path="/vehicle-wraps-:citySlug-il" element={<LocationsPage />} />
-          <Route path="/:citySlug" element={<LocationsPage />} />
+          <Route path="/vehicle-wraps-:citySlug-il" element={<CityLocationPage />} />
+          <Route path="/:citySlug" element={<CityLocationPage />} />
           
           {/* Service-specific direct routes */}
           <Route path="/car-wraps" element={<Navigate to="/services/car-wraps" replace />} />
