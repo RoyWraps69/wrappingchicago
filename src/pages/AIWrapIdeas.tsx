@@ -14,10 +14,25 @@ import Breadcrumbs from '@/components/navigation/Breadcrumbs';
 import Schema from '@/components/Schema';
 import { cities } from '@/data/cities';
 import { AIWrapProvider } from '@/contexts/AIWrapContext';
+import BreadcrumbSchema from '@/components/schemas/BreadcrumbSchema';
 
 const AIWrapIdeas = () => {
   // For Schema component, choose Chicago as the default city
   const chicagoCity = cities.find(city => city.slug === 'chicago') || cities[0];
+  
+  // Define explicit breadcrumb items for this page
+  const breadcrumbItems = [
+    {
+      position: 1,
+      name: "Home",
+      item: "https://www.wrappingchicago.com/"
+    },
+    {
+      position: 2,
+      name: "AI Wrap Ideas",
+      item: "https://www.wrappingchicago.com/ai-wrap-ideas"
+    }
+  ];
   
   return (
     <>
@@ -32,6 +47,9 @@ const AIWrapIdeas = () => {
       </Helmet>
 
       <AIWrapSchema />
+      
+      {/* Explicit BreadcrumbSchema with itemListElement */}
+      <BreadcrumbSchema items={breadcrumbItems} />
       
       <Schema 
         city={chicagoCity}
