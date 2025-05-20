@@ -147,7 +147,9 @@ function App() {
           <Route path="/specialty-wraps" element={<Navigate to="/services/specialty-wraps" replace />} />
           <Route path="/retail-graphics" element={<Navigate to="/services/retail-graphics" replace />} />
           
-          {/* Location-specific routes */}
+          {/* Location-specific routes - Extra explicit routes for critical city pages */}
+          <Route path="/vehicle-wraps-chicago-il" element={<CityLocationPage />} />
+          <Route path="/chicago" element={<CityLocationPage />} />
           <Route path="/vehicle-wraps-:citySlug-il" element={<CityLocationPage />} />
           <Route path="/:citySlug" element={<CityLocationPage />} />
           

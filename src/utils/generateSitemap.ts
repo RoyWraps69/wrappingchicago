@@ -55,6 +55,20 @@ export const generateSitemap = () => {
     changefreq: 'weekly'
   }));
 
+  // Ensure Chicago page is explicitly included with high priority
+  const chicagoPages = [
+    {
+      url: '/vehicle-wraps-chicago-il',
+      priority: '0.9',
+      changefreq: 'weekly'
+    },
+    {
+      url: '/chicago',
+      priority: '0.9',
+      changefreq: 'weekly'
+    }
+  ];
+
   const locationPages = cities.map(city => ({
     url: `/vehicle-wraps-${city.slug}-il`,
     priority: '0.8',
@@ -71,6 +85,7 @@ export const generateSitemap = () => {
     ...staticPages,
     ...servicePages,
     ...directServiceUrls,
+    ...chicagoPages, // Explicitly add Chicago pages
     ...locationPages,
     ...directLocationPages
   ];

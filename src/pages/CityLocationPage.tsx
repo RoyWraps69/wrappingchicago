@@ -89,7 +89,12 @@ const CityLocationPage = () => {
   
   // Extract city slug from URL
   const extractCitySlug = () => {
-    // First check params
+    // First check if we're directly on the chicago-il path 
+    if (location.pathname === '/vehicle-wraps-chicago-il') {
+      return 'chicago';
+    }
+    
+    // Check params
     if (paramCitySlug) {
       return paramCitySlug.replace(/-il$/, '');
     }
@@ -123,6 +128,13 @@ const CityLocationPage = () => {
   
   // Find the city by slug
   const city = findCityBySlug(slug);
+  
+  // Special handling for Chicago
+  if (slug === 'chicago' || location.pathname === '/vehicle-wraps-chicago-il') {
+    const chicagoCity = cities.find(c => c.slug === 'chicago') || cities[0];
+    console.log('Rendering Chicago page specifically');
+    return <LocationPage city={chicagoCity} allCities={cities} />;
+  }
   
   // If no city is found, return a 404 page
   if (!city) {

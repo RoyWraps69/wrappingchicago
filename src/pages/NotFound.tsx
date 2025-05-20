@@ -1,16 +1,50 @@
 
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
 const NotFound = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
+  
+  useEffect(() => {
+    // Redirect common incorrect city URLs
+    const path = location.pathname.toLowerCase();
+    
+    // Handle possible 404s for Chicago specific page
+    if (
+      path === '/chicago-il' || 
+      path === '/vehicle-wraps-chicago' || 
+      path === '/wraps-chicago-il' ||
+      path === '/chicago-vehicle-wraps'
+    ) {
+      navigate('/vehicle-wraps-chicago-il', { replace: true });
+      return;
+    }
+    
+    // Check if path contains city name patterns
+    const cityPattern = /\/([a-z-]+)(-il)?$/;
+    const match = path.match(cityPattern);
+    
+    if (match && match[1]) {
+      const citySlug = match[1].replace(/-il$/, '');
+      
+      // Check if it might be a city with incorrect format
+      if (!path.includes('vehicle-wraps-') && !path.endsWith('-il')) {
+        navigate(`/vehicle-wraps-${citySlug}-il`, { replace: true });
+        return;
+      }
+    }
+  }, [location, navigate]);
+  
   return (
     <>
       <Helmet>
         <title>Page Not Found | Wrapping Chicago</title>
         <meta name="robots" content="noindex, follow" />
+        <link rel="canonical" href="https://www.wrappingchicago.com" />
       </Helmet>
       
       <div className="flex flex-col min-h-screen">
@@ -37,6 +71,9 @@ const NotFound = () => {
                   <Link to="/services" className="p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
                     Our Services
                   </Link>
+                  <Link to="/vehicle-wraps-chicago-il" className="p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                    Chicago Vehicle Wraps
+                  </Link>
                   <Link to="/gallery" className="p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
                     Project Gallery
                   </Link>
@@ -45,6 +82,9 @@ const NotFound = () => {
                   </Link>
                   <Link to="/locations" className="p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
                     Locations
+                  </Link>
+                  <Link to="/truck-wraps-chicago" className="p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                    Chicago Truck Wraps
                   </Link>
                   <Link to="/about" className="p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
                     About Us
