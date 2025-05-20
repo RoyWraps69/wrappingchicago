@@ -13,26 +13,54 @@ Sitemap: https://www.wrappingchicago.com/html-sitemap.html
 # Special directives for major search engines
 User-agent: Googlebot
 Allow: /
+Allow: /*.js$
+Allow: /*.css$
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.gif$
+Allow: /*.webp$
+Allow: /assets/
 Crawl-delay: 1
 
 User-agent: Bingbot
 Allow: /
+Allow: /*.js$
+Allow: /*.css$
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.gif$
+Allow: /*.webp$
+Allow: /assets/
 Crawl-delay: 1
 
 User-agent: Yandexbot
 Allow: /
+Allow: /*.js$
+Allow: /*.css$
+Allow: /assets/
 Crawl-delay: 2
 
 User-agent: DuckDuckBot
 Allow: /
+Allow: /*.js$
+Allow: /*.css$
+Allow: /assets/
 Crawl-delay: 1
 
 User-agent: Slurp
 Allow: /
+Allow: /*.js$
+Allow: /*.css$
+Allow: /assets/
 Crawl-delay: 2
 
 User-agent: Baiduspider
 Allow: /
+Allow: /*.js$
+Allow: /*.css$
+Allow: /assets/
 Crawl-delay: 2
 
 # Emphasize important sections for indexing
@@ -92,11 +120,6 @@ Allow: /*.jpeg$
 Allow: /*.gif$
 Allow: /*.png$
 Allow: /*.webp$
-
-# Allow Google to index our JavaScript
-User-agent: Googlebot
-Allow: /*.js$
-Allow: /*.css$
 
 # Specify host preference to avoid duplicate content issues
 Host: www.wrappingchicago.com
