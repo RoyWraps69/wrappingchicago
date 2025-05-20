@@ -13,6 +13,7 @@ const BusinessLocationSchema: React.FC<BusinessLocationSchemaProps> = ({ city })
   // Use city coordinates if available, otherwise default to Chicago
   const coordinates = city.coordinates || defaultCoordinates;
   
+  // Create aggregate rating instead of single review
   const schema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
@@ -138,19 +139,11 @@ const BusinessLocationSchema: React.FC<BusinessLocationSchemaProps> = ({ city })
         }
       }
     ],
-    "review": {
-      "@type": "Review",
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": "5",
-        "bestRating": "5"
-      },
-      "author": {
-        "@type": "Person",
-        "name": "Robert S."
-      },
-      "datePublished": "2024-02-15",
-      "reviewBody": `Outstanding vehicle wrap service for our business vehicles. The team at Wrapping Chicago transformed our fleet with eye-catching graphics that have significantly increased our brand visibility in ${city.name}.`
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "156",
+      "bestRating": "5"
     }
   };
   

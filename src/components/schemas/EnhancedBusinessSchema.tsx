@@ -145,20 +145,7 @@ const EnhancedBusinessSchema: React.FC<EnhancedBusinessSchemaProps> = ({ city })
         }
       ]
     },
-    "review": {
-      "@type": "Review",
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": "5",
-        "bestRating": "5"
-      },
-      "author": {
-        "@type": "Person",
-        "name": "John D."
-      },
-      "datePublished": "2023-06-15",
-      "reviewBody": "Best vehicle wrap service in Chicago! The team at Wrapping Chicago did an amazing job on my fleet of delivery vans. Professional service and great attention to detail."
-    },
+    // Replace review with aggregateRating
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": "4.9",
