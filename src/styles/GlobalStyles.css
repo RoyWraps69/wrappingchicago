@@ -1,0 +1,125 @@
+
+/* Global styles to ensure proper styling for Google indexing */
+
+/* Base styles */
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: #333;
+  line-height: 1.5;
+}
+
+/* Ensure links are properly styled */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Make sure headings have proper hierarchy */
+h1 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 1.875rem;
+  font-weight: 600;
+  margin-bottom: 0.875rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+/* List styles */
+ul, ol {
+  margin-left: 1.5rem;
+}
+
+/* Table styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 0.5rem;
+  border: 1px solid #e2e8f0;
+}
+
+th {
+  background-color: #f8fafc;
+  font-weight: 600;
+}
+
+/* Make sure images have proper styling */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* SEO-friendly skip link for accessibility */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #000;
+  color: #fff;
+  padding: 8px;
+  z-index: 100;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* Fix for potential Google rendering issue with flex */
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+/* Additional brand colors to ensure consistent styling */
+:root {
+  --brand-navy: #1e3a8a;
+  --brand-red: #e53e3e;
+}
+
+/* Utility classes for SEO enhancement */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* Ensure content is readable */
+.text-container {
+  max-width: 70ch;
+  margin: 0 auto;
+}
+
+/* Classes to help with semantics */
+.main-content {
+  min-height: 500px;
+}
+
+/* Force visibility of content for crawlers */
+.seo-content {
+  min-height: 1px;
+  visibility: visible !important;
+  display: block !important;
+}

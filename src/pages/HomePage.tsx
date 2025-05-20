@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -22,6 +21,7 @@ import PageFAQ from '@/components/common/PageFAQ';
 import BusinessLocationSchema from '@/components/schemas/BusinessLocationSchema';
 import IndexingPriority from '@/components/seo/IndexingPriority';
 import { Link } from 'react-router-dom';
+import InternalLinksFooter from '@/components/seo/InternalLinksFooter';
 
 function HomePage() {
   // Get the required images for ServicesSection
@@ -65,13 +65,22 @@ function HomePage() {
     // Add special link element to help Google discover more pages
     const head = document.querySelector('head');
     if (head) {
+      // Discovery link for sitemap
       const discoveryLink = document.createElement('link');
       discoveryLink.rel = 'index';
       discoveryLink.href = '/sitemap.xml';
       head.appendChild(discoveryLink);
       
+      // Add XML-XSL discoverable stylesheet for sitemap
+      const xslLink = document.createElement('link');
+      xslLink.rel = 'stylesheet';
+      xslLink.type = 'text/xsl';
+      xslLink.href = '/sitemap.xsl';
+      head.appendChild(xslLink);
+      
       return () => {
         head.removeChild(discoveryLink);
+        if (head.contains(xslLink)) head.removeChild(xslLink);
       };
     }
   }, []);
@@ -84,9 +93,27 @@ function HomePage() {
         <link rel="canonical" href="https://www.wrappingchicago.com/" />
         {/* Add a rel next to ensure Google crawls the services page */}
         <link rel="next" href="https://www.wrappingchicago.com/services" />
-        {/* Add discovery links for key content sections */}
+        {/* Add additional discovery links for key content sections */}
         <link rel="prefetch" href="/services" />
         <link rel="prefetch" href="/gallery" />
+        <link rel="prefetch" href="/locations" />
+        <link rel="prefetch" href="/sitemap" />
+        
+        {/* Add structured data for enhanced visibility */}
+        <script type="application/ld+json">{`
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://www.wrappingchicago.com/"
+              }
+            ]
+          }
+        `}</script>
       </Helmet>
       
       <Schema 
@@ -115,7 +142,7 @@ function HomePage() {
 
       <div className="flex flex-col min-h-screen">
         <Header />
-        <main className="flex-grow">
+        <main id="main-content" className="flex-grow main-content">
           <Hero />
           <InfoBar />
           <QuickLinksBar />
@@ -197,6 +224,9 @@ function HomePage() {
               </div>
             </div>
           </section>
+          
+          {/* Add our new comprehensive internal links footer */}
+          <InternalLinksFooter />
         </main>
         <StickyContactButtons />
         <Footer />

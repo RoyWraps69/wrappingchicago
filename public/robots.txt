@@ -2,11 +2,11 @@
 User-agent: *
 Allow: /
 
-# Sitemap locations
+# Improved sitemap declarations
 Sitemap: https://www.wrappingchicago.com/sitemap.xml
 Sitemap: https://www.wrappingchicago.com/html-sitemap.html
 
-# Allow access to all important sections
+# Allow all search engines to crawl important sections
 Allow: /services/
 Allow: /gallery/
 Allow: /about/
@@ -17,12 +17,36 @@ Allow: /designer-wraps/
 Allow: /truck-wraps-chicago/
 Allow: /*-il
 
+# Make sure search engines can find our key content
+Allow: /car-wraps
+Allow: /truck-wraps
+Allow: /van-wraps
+Allow: /fleet-wraps
+Allow: /color-change-wraps
+Allow: /commercial-graphics
+Allow: /vehicle-lettering
+Allow: /partial-wraps
+Allow: /protective-films
+Allow: /specialty-wraps
+Allow: /retail-graphics
+Allow: /luxury-exotic-wraps
+
 # Prevent duplicate content issues
 Disallow: /*?* 
 
-# Optimize crawl budget
+# Optimize crawl budget by excluding non-essential paths
 Disallow: /wp-admin/
 Disallow: /wp-includes/
 Disallow: /search
 Disallow: /*utm_*
 Disallow: /*fbclid=*
+
+# Special instructions for Google
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+# Special instructions for Bing
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
