@@ -31,10 +31,6 @@ const AIVoiceSearchSchema: React.FC<AIVoiceSearchSchemaProps> = ({
       "https://www.wrappingchicago.com/gallery",
       "https://www.wrappingchicago.com/services"
     ],
-    "speakable": {
-      "@type": "SpeakableSpecification",
-      "cssSelector": ["h1", "h2.speakable", ".speakable"]
-    },
     "mainEntity": {
       "@type": "Service",
       "name": `Vehicle Wraps in ${cityName}`,
