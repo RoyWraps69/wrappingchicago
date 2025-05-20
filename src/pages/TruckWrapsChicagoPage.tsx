@@ -67,6 +67,7 @@ const TruckWrapsChicagoPage = () => {
         pageTitle="Truck Wraps Chicago | Commercial & Box Truck Wrapping Services"
         pageDescription="Professional truck wraps in Chicago with over 16,000 wraps completed in our 20 years of business. Serving delivery trucks, box trucks, pickup trucks & commercial fleets with expert installation and premium 3M materials."
         faqs={faqData}
+        skipFAQSchema={true} // Skip basic FAQ schema since we use PageFAQ component
       />
       
       <div className="flex flex-col min-h-screen">

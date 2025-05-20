@@ -43,6 +43,7 @@ interface SchemaProps {
   datePublished?: string;
   dateModified?: string;
   allCities?: City[];
+  skipFAQSchema?: boolean; // New prop to control FAQ schema rendering
 }
 
 interface FAQ {
@@ -63,7 +64,8 @@ const Schema: React.FC<SchemaProps> = ({
   mainImage = '/lovable-uploads/6ef3b1af-8591-4d36-97c2-9366401115fa.png',
   datePublished = '2022-01-01T00:00:00+00:00',
   dateModified = new Date().toISOString(),
-  allCities = []
+  allCities = [],
+  skipFAQSchema = false // Default to showing basic FAQ schema
 }) => {
   const domain = "https://www.wrappingchicago.com";
   const fullUrl = `${domain}${path}`;
@@ -100,11 +102,13 @@ const Schema: React.FC<SchemaProps> = ({
         keywords={keywords}
       />
       
-      {/* Always include FAQ schema, even with empty array to ensure proper structure */}
-      <FAQSchema 
-        faqs={faqs}
-        pageUrl={fullUrl}
-      />
+      {/* Only include basic FAQ schema if not skipped */}
+      {!skipFAQSchema && faqs.length > 0 && (
+        <FAQSchema 
+          faqs={faqs}
+          pageUrl={fullUrl}
+        />
+      )}
       
       <BreadcrumbSchema 
         items={generateBreadcrumbSchema(path)}
@@ -166,20 +170,13 @@ const Schema: React.FC<SchemaProps> = ({
         cityName={city.name}
       />
       
-      {/* Enhanced FAQ Schema - Always include this with proper fallback */}
-      <EnhancedFAQSchema 
-        faqs={faqs.length > 0 ? faqs : [
-          {
-            question: `How much do vehicle wraps cost in ${city.name}?`,
-            answer: `Vehicle wrap costs in ${city.name} typically range from $2,500 to $5,000 for full wraps depending on vehicle size and design complexity.`
-          },
-          {
-            question: `How long do vehicle wraps last in ${city.name}'s climate?`,
-            answer: `With proper care, our premium vehicle wraps typically last 5-7 years in ${city.name}'s climate.`
-          }
-        ]}
-        cityName={city.name}
-      />
+      {/* Enhanced FAQ Schema - Only include when basic FAQ schema is skipped */}
+      {faqs.length > 0 && (
+        <EnhancedFAQSchema 
+          faqs={faqs}
+          cityName={city.name}
+        />
+      )}
       
       <ProductServiceSchema
         description={pageDescription}

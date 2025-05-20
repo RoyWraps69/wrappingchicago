@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -124,6 +123,7 @@ function HomePage() {
         serviceType="Vehicle Wraps"
         includeSpeakable={true}
         allCities={cities}
+        skipFAQSchema={true} // Skip basic FAQ schema since we use PageFAQ
       />
       
       <BusinessLocationSchema city={chicagoCity} />

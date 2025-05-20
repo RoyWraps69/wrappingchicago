@@ -16,7 +16,7 @@ const HomeHelmetTags: React.FC = () => {
       <link rel="prefetch" href="/locations" />
       <link rel="prefetch" href="/sitemap" />
       
-      {/* Add structured data for enhanced visibility with proper itemListElement */}
+      {/* Add structured data for enhanced visibility with proper itemListElement - but NOT duplicate FAQPage */}
       <script type="application/ld+json">{`
         {
           "@context": "https://schema.org",

@@ -106,7 +106,8 @@ const LocationPage = ({ city, allCities = [] }: LocationPageProps) => {
         serviceType="VehicleWrapService"
         includeSpeakable={true}
         mainImage="/lovable-uploads/199c2a21-e0b0-4c29-972f-f32d72698382.png"
-        allCities={allCities} // Pass allCities prop to Schema
+        allCities={allCities}
+        skipFAQSchema={true} // Skip basic FAQ schema since we use PageFAQ
       />
       
       <ReviewsSchema 
