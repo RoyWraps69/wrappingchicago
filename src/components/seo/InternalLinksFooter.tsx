@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { cities } from '@/data/cities';
@@ -43,6 +42,7 @@ const InternalLinksFooter: React.FC = () => {
       links: [
         { path: "/about", name: "About Us" },
         { path: "/gallery", name: "Gallery" },
+        { path: "/pricing", name: "Pricing" },
         { path: "/contact", name: "Contact" },
         { path: "/locations", name: "Locations" },
         { path: "/sitemap", name: "Sitemap" }

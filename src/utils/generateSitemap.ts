@@ -12,6 +12,7 @@ export const generateSitemap = () => {
     { url: '/gallery', priority: '0.8', changefreq: 'weekly' },
     { url: '/locations', priority: '0.8', changefreq: 'weekly' },
     { url: '/ai-wrap-ideas', priority: '0.7', changefreq: 'weekly' },
+    { url: '/pricing', priority: '0.9', changefreq: 'weekly' },
     { url: '/services', priority: '0.9', changefreq: 'weekly' }
   ];
 

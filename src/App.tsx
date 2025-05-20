@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import './App.css';
@@ -27,6 +26,7 @@ import LuxuryExoticWrapsPage from './pages/LuxuryExoticWrapsPage';
 import TruckWrapsPage from './pages/TruckWrapsPage';
 import VanWrapsPage from './pages/VanWrapsPage';
 import ColorChangeWrapsPage from './pages/ColorChangeWrapsPage';
+import PricingPage from './pages/PricingPage';
 
 function App() {
   // Help search engines discover site resources
@@ -123,6 +123,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/pricing" element={<PricingPage />} />
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/services/:serviceType" element={<ServicesPage />} />
           <Route path="/locations" element={<LocationsPage />} />

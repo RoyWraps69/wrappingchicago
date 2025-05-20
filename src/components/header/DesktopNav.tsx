@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Sparkles, MessageSquare, Phone, MapPin } from 'lucide-react';
+import { Sparkles, MessageSquare, Phone, MapPin, DollarSign } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import NavLink from './NavLink';
 import ServiceMenu from './ServiceMenu';
@@ -19,6 +19,9 @@ const DesktopNav = () => {
         <ServiceMenu />
         <NavLink to="/gallery">
           Gallery
+        </NavLink>
+        <NavLink to="/pricing" icon={DollarSign}>
+          Pricing
         </NavLink>
         <NavLink to="/locations" icon={MapPin}>
           Locations
