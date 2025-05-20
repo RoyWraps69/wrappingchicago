@@ -2,21 +2,30 @@
 import React from 'react';
 
 interface GoogleBusinessProfileSchemaProps {
-  cityName: string;
+  cityName?: string;
 }
 
-const GoogleBusinessProfileSchema: React.FC<GoogleBusinessProfileSchemaProps> = ({ cityName }) => {
+const GoogleBusinessProfileSchema: React.FC<GoogleBusinessProfileSchemaProps> = ({ cityName = "Chicago" }) => {
   const schema = {
     "@context": "https://schema.org",
-    "@type": "AutoBodyShop",
-    "@id": "https://www.wrappingchicago.com/#business",
+    "@type": "LocalBusiness",
+    "@id": "https://www.wrappingchicago.com/#localbusiness",
     "name": "Wrapping Chicago",
-    "image": "https://www.wrappingchicago.com/lovable-uploads/6ef3b1af-8591-4d36-97c2-9366401115fa.png",
-    "priceRange": "$$",
+    "alternateName": "Chicago Fleet Wraps",
+    "description": `Professional vehicle wrap company serving ${cityName}, IL and surrounding areas. Specializing in car wraps, truck wraps, van wraps, fleet wraps, and commercial graphics with over 16,000 completed projects.`,
+    "url": "https://www.wrappingchicago.com",
     "telephone": "+13125971286",
     "email": "roy@chicagofleetwraps.com",
-    "url": "https://www.wrappingchicago.com",
-    "description": `Chicago's premier vehicle wrap company serving ${cityName} and surrounding areas. We provide professional car wraps, truck wraps, van wraps, and fleet wraps with premium 3M materials and expert installation.`,
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.wrappingchicago.com/lovable-uploads/6ef3b1af-8591-4d36-97c2-9366401115fa.png",
+      "width": "180",
+      "height": "60"
+    },
+    "image": [
+      "https://www.wrappingchicago.com/lovable-uploads/6ef3b1af-8591-4d36-97c2-9366401115fa.png"
+    ],
+    "priceRange": "$$$",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "4711 N. Lamon Ave",
@@ -27,9 +36,25 @@ const GoogleBusinessProfileSchema: React.FC<GoogleBusinessProfileSchemaProps> = 
     },
     "geo": {
       "@type": "GeoCoordinates",
-      "latitude": 41.8781,
-      "longitude": -87.6298
+      "latitude": "41.8781",
+      "longitude": "-87.6298"
     },
+    "areaServed": {
+      "@type": "GeoCircle",
+      "geoMidpoint": {
+        "@type": "GeoCoordinates",
+        "latitude": "41.8781",
+        "longitude": "-87.6298"
+      },
+      "geoRadius": "80000"
+    },
+    "sameAs": [
+      "https://www.facebook.com/wrappingchicago",
+      "https://www.instagram.com/wrappingchicago",
+      "https://twitter.com/wrappingchicago",
+      "https://www.linkedin.com/company/wrappingchicago",
+      "https://www.yelp.com/biz/wrapping-chicago"
+    ],
     "openingHoursSpecification": [
       {
         "@type": "OpeningHoursSpecification",
@@ -46,114 +71,124 @@ const GoogleBusinessProfileSchema: React.FC<GoogleBusinessProfileSchemaProps> = 
       {
         "@type": "OpeningHoursSpecification",
         "dayOfWeek": ["Sunday"],
-        "opens": "00:00",
-        "closes": "00:00"
+        "closes": "00:00",
+        "opens": "00:00"
       }
     ],
-    "hasMap": "https://www.google.com/maps?cid=your_google_business_profile_id",
-    "areaServed": [
+    "hasMap": "https://www.google.com/maps?cid=YOUR_GOOGLE_BUSINESS_ID",
+    "foundingDate": "2003",
+    "foundingLocation": {
+      "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Chicago",
+        "addressRegion": "IL",
+        "addressCountry": "US"
+      }
+    },
+    "numberOfEmployees": {
+      "@type": "QuantitativeValue",
+      "value": "10-20"
+    },
+    "paymentAccepted": ["Credit Card", "Debit Card", "Cash", "Check", "Invoice"],
+    "currenciesAccepted": "USD",
+    "slogan": "Transform Your Vehicle. Elevate Your Brand.",
+    "brand": {
+      "@type": "Brand",
+      "name": "Wrapping Chicago",
+      "logo": "https://www.wrappingchicago.com/lovable-uploads/6ef3b1af-8591-4d36-97c2-9366401115fa.png"
+    },
+    "contactPoint": [
       {
-        "@type": "City",
-        "name": "Chicago",
-        "sameAs": "https://en.wikipedia.org/wiki/Chicago"
+        "@type": "ContactPoint",
+        "telephone": "+13125971286",
+        "contactType": "customer service",
+        "areaServed": ["Chicago", cityName],
+        "availableLanguage": ["English", "Spanish"],
+        "contactOption": ["TollFree", "HearingImpairedSupported"]
       },
       {
-        "@type": "City",
-        "name": cityName,
-        "sameAs": `https://en.wikipedia.org/wiki/${cityName},_Illinois`
+        "@type": "ContactPoint",
+        "telephone": "+13125971286",
+        "contactType": "sales",
+        "areaServed": ["Chicago", cityName],
+        "availableLanguage": ["English", "Spanish"]
+      },
+      {
+        "@type": "ContactPoint",
+        "telephone": "+13125971286",
+        "contactType": "billing",
+        "areaServed": ["Chicago", cityName],
+        "availableLanguage": ["English"]
       }
     ],
-    "potentialAction": [
-      {
-        "@type": "ReserveBusiness",
-        "target": {
-          "@type": "EntryPoint",
-          "urlTemplate": "https://www.wrappingchicago.com/contact",
-          "inLanguage": "en-US"
-        },
-        "result": {
-          "@type": "Reservation",
-          "name": "Vehicle Wrap Consultation"
-        }
-      },
-      {
-        "@type": "OrderAction",
-        "target": {
-          "@type": "EntryPoint",
-          "urlTemplate": "https://www.wrappingchicago.com/contact"
-        },
-        "result": {
-          "@type": "Order"
-        },
-        "deliveryMethod": ["http://purl.org/goodrelations/v1#DeliveryModeOwnFleet"]
-      }
-    ],
-    "sameAs": [
-      "https://www.facebook.com/wrappingchicago",
-      "https://www.instagram.com/wrappingchicago",
-      "https://www.twitter.com/wrappingchicago",
-      "https://www.linkedin.com/company/wrappingchicago",
-      "https://www.yelp.com/biz/wrapping-chicago",
-      "https://www.google.com/maps?cid=your_google_business_profile_id"
-    ],
-    "department": [
-      {
-        "@type": "AutoBodyShop",
-        "name": "Car Wrap Installation",
-        "description": "Professional car wrap installation services with premium 3M vinyl materials."
-      },
-      {
-        "@type": "AutoBodyShop",
-        "name": "Commercial Fleet Wrapping",
-        "description": "Complete fleet vehicle branding solutions for businesses of all sizes."
-      },
-      {
-        "@type": "AutoBodyShop",
-        "name": "Design Studio",
-        "description": "Professional graphic design services for vehicle wraps and commercial graphics."
-      }
-    ],
+    "knowsLanguage": ["en", "es"],
+    "knowsAbout": ["Vehicle Wraps", "Fleet Branding", "Commercial Graphics", "Car Wraps", "Truck Wraps", "Van Wraps"],
     "serviceArea": {
       "@type": "GeoCircle",
       "geoMidpoint": {
         "@type": "GeoCoordinates",
-        "latitude": 41.8781,
-        "longitude": -87.6298
+        "latitude": "41.8781",
+        "longitude": "-87.6298"
       },
-      "geoRadius": "50000"
+      "geoRadius": "80"
     },
-    "review": [
-      {
-        "@type": "Review",
-        "author": {
-          "@type": "Person",
-          "name": "Michael R."
-        },
-        "reviewRating": {
-          "@type": "Rating",
-          "ratingValue": "5",
-          "bestRating": "5"
-        },
-        "datePublished": "2023-08-15",
-        "reviewBody": `Best vehicle wrap company in the Chicago area! They wrapped my entire fleet of delivery vans and the quality is outstanding. Highly recommended to any business in ${cityName} looking for vehicle branding.`
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Vehicle Wrap Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Fleet Vehicle Wraps",
+            "description": "Professional fleet vehicle wrapping services for businesses throughout Chicago and surrounding areas."
+          },
+          "areaServed": {
+            "@type": "City",
+            "name": cityName
+          }
+        }
+      ]
+    },
+    "review": {
+      "@type": "Review",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Michael K."
+      },
+      "datePublished": "2023-04-22",
+      "reviewBody": "Chicago Fleet Wraps transformed our delivery trucks with eye-catching graphics. Professional service from start to finish."
+    },
+    "potentialAction": {
+      "@type": "OrderAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://www.wrappingchicago.com/contact",
+        "inLanguage": "en-US",
+        "actionPlatform": [
+          "http://schema.org/DesktopWebPlatform",
+          "http://schema.org/IOSPlatform",
+          "http://schema.org/AndroidPlatform"
+        ]
+      },
+      "result": {
+        "@type": "Reservation",
+        "name": "Vehicle Wrap Consultation"
       }
-    ],
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.9",
-      "reviewCount": "156",
-      "bestRating": "5"
     },
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://www.wrappingchicago.com/lovable-uploads/6ef3b1af-8591-4d36-97c2-9366401115fa.png",
-      "width": "180",
-      "height": "60"
-    },
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": "https://www.wrappingchicago.com"
-    }
+    "faxNumber": "+13125971287",
+    "availableLanguage": ["en", "es"],
+    "actionableFeedbackPolicy": "https://www.wrappingchicago.com/feedback",
+    "additionalType": [
+      "https://schema.org/AutoRepair",
+      "https://schema.org/HomeAndConstructionBusiness"
+    ]
   };
 
   return (

@@ -2,414 +2,150 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HTML Sitemap | Wrapping Chicago - Vehicle Wrap Services</title>
-    <meta name="description" content="Complete HTML sitemap for Wrapping Chicago. Browse all our vehicle wrap services, locations, and resources for car wraps, truck wraps, and fleet wraps in Chicago.">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://www.wrappingchicago.com/html-sitemap.html">
-    <style>
-        /* Base styles */
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-            line-height: 1.6;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-            color: #333;
-        }
-        a {
-            color: #1e3a8a;
-            text-decoration: none;
-        }
-        a:hover {
-            color: #e53e3e;
-            text-decoration: underline;
-        }
-        h1 {
-            color: #1e3a8a;
-            margin-bottom: 30px;
-            font-size: 2.25rem;
-            text-align: center;
-            border-bottom: 2px solid #e53e3e;
-            padding-bottom: 15px;
-        }
-        h2 {
-            color: #1e3a8a;
-            border-bottom: 1px solid #ddd;
-            padding-bottom: 10px;
-            margin-top: 30px;
-            font-size: 1.8rem;
-        }
-        h3 {
-            color: #333;
-            font-size: 1.4rem;
-            margin-top: 20px;
-            border-left: 3px solid #e53e3e;
-            padding-left: 10px;
-        }
-        ul {
-            list-style-type: none;
-            padding-left: 0;
-        }
-        .sitemap-section {
-            margin-bottom: 40px;
-            background-color: #f9fafb;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-        }
-        .sitemap-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 15px;
-        }
-        .sitemap-item {
-            background-color: #ffffff;
-            border: 1px solid #e5e7eb;
-            padding: 15px;
-            border-radius: 5px;
-            transition: all 0.3s ease;
-        }
-        .sitemap-item:hover {
-            background-color: #f3f4f6;
-            border-color: #d1d5db;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-        }
-        .footer {
-            margin-top: 50px;
-            text-align: center;
-            font-size: 0.9em;
-            color: #6b7280;
-            padding-top: 20px;
-            border-top: 1px solid #e5e7eb;
-        }
-        .section-intro {
-            margin-bottom: 20px;
-            color: #4b5563;
-        }
-        .sitemap-priority {
-            display: inline-block;
-            padding: 2px 8px;
-            font-size: 0.7em;
-            border-radius: 20px;
-            margin-left: 8px;
-            vertical-align: middle;
-        }
-        .priority-high {
-            background-color: #dcfce7;
-            color: #166534;
-        }
-        .priority-medium {
-            background-color: #fef9c3;
-            color: #854d0e;
-        }
-        .priority-low {
-            background-color: #fef3c7;
-            color: #9a3412;
-        }
-        .sitemap-header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 2rem;
-        }
-        .banner {
-            background-color: #1e3a8a;
-            color: white;
-            padding: 20px;
-            border-radius: 10px;
-            margin-bottom: 30px;
-            text-align: center;
-        }
-        .banner h2 {
-            color: white;
-            border: none;
-            margin-top: 0;
-        }
-        .banner p {
-            margin-bottom: 0;
-        }
-    </style>
-    <!-- Google Indexing Hints -->
-    <script type="application/ld+json">
-        {
-          "@context": "https://schema.org",
-          "@type": "ItemList",
-          "itemListElement": [
-            {
-              "@type": "ListItem",
-              "position": 1,
-              "name": "Home",
-              "item": "https://www.wrappingchicago.com/"
-            },
-            {
-              "@type": "ListItem",
-              "position": 2,
-              "name": "About Us",
-              "item": "https://www.wrappingchicago.com/about"
-            },
-            {
-              "@type": "ListItem",
-              "position": 3,
-              "name": "Services",
-              "item": "https://www.wrappingchicago.com/services"
-            },
-            {
-              "@type": "ListItem",
-              "position": 4,
-              "name": "Gallery",
-              "item": "https://www.wrappingchicago.com/gallery"
-            },
-            {
-              "@type": "ListItem",
-              "position": 5,
-              "name": "Contact",
-              "item": "https://www.wrappingchicago.com/contact"
-            }
-          ]
-        }
-    </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML Sitemap - Wrapping Chicago</title>
+  <meta name="description" content="Complete sitemap of all pages available on the Wrapping Chicago website.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.wrappingchicago.com/html-sitemap.html">
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+      color: #333;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+    }
+    header {
+      margin-bottom: 2rem;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 1rem;
+    }
+    h1 {
+      color: #11172D;
+      margin-top: 0;
+    }
+    h2 {
+      color: #11172D;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 0.5rem;
+      margin-top: 2rem;
+    }
+    a {
+      color: #d91e18;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .sitemap-section {
+      margin-bottom: 2rem;
+    }
+    .sitemap-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+    .sitemap-grid a {
+      display: block;
+      padding: 0.5rem 0;
+      color: #333;
+    }
+    .sitemap-grid a:hover {
+      color: #d91e18;
+    }
+    footer {
+      margin-top: 3rem;
+      border-top: 1px solid #eee;
+      padding-top: 1rem;
+      color: #666;
+      font-size: 0.9rem;
+    }
+  </style>
 </head>
 <body>
-    <h1>Wrapping Chicago - Complete HTML Sitemap</h1>
-    
-    <div class="banner">
-        <h2>Chicago's Premier Vehicle Wrap Provider</h2>
-        <p>This sitemap provides links to all pages on the Wrapping Chicago website for easy navigation.</p>
+  <div class="container">
+    <header>
+      <h1>Wrapping Chicago Sitemap</h1>
+      <p>A complete index of all pages on the Wrapping Chicago website. This sitemap helps visitors and search engines discover our content.</p>
+    </header>
+
+    <div class="sitemap-section">
+      <h2>Main Pages</h2>
+      <div class="sitemap-grid">
+        <a href="https://www.wrappingchicago.com/">Home</a>
+        <a href="https://www.wrappingchicago.com/about">About Us</a>
+        <a href="https://www.wrappingchicago.com/contact">Contact</a>
+        <a href="https://www.wrappingchicago.com/gallery">Gallery</a>
+        <a href="https://www.wrappingchicago.com/locations">Locations</a>
+        <a href="https://www.wrappingchicago.com/sitemap">Sitemap</a>
+      </div>
     </div>
 
     <div class="sitemap-section">
-        <h2>Main Navigation Pages</h2>
-        <p class="section-intro">Our primary website sections provide information about our company, services, and how to contact us.</p>
-        <div class="sitemap-grid">
-            <div class="sitemap-item">
-                <a href="/">Home <span class="sitemap-priority priority-high">Priority</span></a>
-                <p>Our front page featuring our main services and expertise in vehicle wraps</p>
-            </div>
-            <div class="sitemap-item">
-                <a href="/about">About Us</a>
-                <p>Learn about our company history and expertise in vehicle wraps</p>
-            </div>
-            <div class="sitemap-item">
-                <a href="/contact">Contact Us</a>
-                <p>Get in touch with us for quotes and inquiries</p>
-            </div>
-            <div class="sitemap-item">
-                <a href="/services">Services <span class="sitemap-priority priority-high">Priority</span></a>
-                <p>Overview of all our vehicle wrap services</p>
-            </div>
-            <div class="sitemap-item">
-                <a href="/gallery">Gallery</a>
-                <p>Browse our portfolio of completed vehicle wrap projects</p>
-            </div>
-            <div class="sitemap-item">
-                <a href="/locations">Locations</a>
-                <p>View all areas we serve in the Chicago region</p>
-            </div>
-            <div class="sitemap-item">
-                <a href="/ai-wrap-ideas">AI Wrap Designer</a>
-                <p>Our innovative AI tool for vehicle wrap design concepts</p>
-            </div>
-            <div class="sitemap-item">
-                <a href="/designer-wraps">Designer Wraps</a>
-                <p>Premium custom designer wraps for unique vehicles</p>
-            </div>
-            <div class="sitemap-item">
-                <a href="/truck-wraps-chicago">Truck Wraps Chicago</a>
-                <p>Specialized truck wrapping services in Chicago</p>
-            </div>
-        </div>
+      <h2>Services</h2>
+      <div class="sitemap-grid">
+        <a href="https://www.wrappingchicago.com/services">All Services</a>
+        <a href="https://www.wrappingchicago.com/car-wraps">Car Wraps</a>
+        <a href="https://www.wrappingchicago.com/truck-wraps">Truck Wraps</a>
+        <a href="https://www.wrappingchicago.com/van-wraps">Van Wraps</a>
+        <a href="https://www.wrappingchicago.com/fleet-wraps">Fleet Wraps</a>
+        <a href="https://www.wrappingchicago.com/color-change-wraps">Color Change Wraps</a>
+        <a href="https://www.wrappingchicago.com/commercial-graphics">Commercial Graphics</a>
+        <a href="https://www.wrappingchicago.com/partial-wraps">Partial Wraps</a>
+        <a href="https://www.wrappingchicago.com/protective-films">Protective Films</a>
+        <a href="https://www.wrappingchicago.com/vehicle-lettering">Vehicle Lettering</a>
+        <a href="https://www.wrappingchicago.com/specialty-wraps">Specialty Wraps</a>
+        <a href="https://www.wrappingchicago.com/retail-graphics">Retail Graphics</a>
+        <a href="https://www.wrappingchicago.com/designer-wraps">Designer Wraps</a>
+        <a href="https://www.wrappingchicago.com/luxury-exotic-wraps">Luxury & Exotic Wraps</a>
+        <a href="https://www.wrappingchicago.com/ai-wrap-ideas">AI Wrap Ideas Generator</a>
+        <a href="https://www.wrappingchicago.com/truck-wraps-chicago">Truck Wraps Chicago</a>
+      </div>
     </div>
 
     <div class="sitemap-section">
-        <h2>Vehicle Wrapping Services</h2>
-        <p class="section-intro">Explore our comprehensive range of vehicle wrap services for different vehicle types and applications.</p>
-        
-        <h3>By Vehicle Type</h3>
-        <div class="sitemap-grid">
-            <div class="sitemap-item">
-                <a href="/car-wraps">Car Wraps <span class="sitemap-priority priority-medium">Medium</span></a>
-                <p>Custom car wrapping for personal and business vehicles</p>
-            </div>
-            <div class="sitemap-item">
-                <a href="/truck-wraps">Truck Wraps <span class="sitemap-priority priority-medium">Medium</span></a>
-                <p>Commercial truck branding and advertising solutions</p>
-            </div>
-            <div class="sitemap-item">
-                <a href="/van-wraps">Van Wraps <span class="sitemap-priority priority-medium">Medium</span></a>
-                <p>Professional wraps for delivery and service vans</p>
-            </div>
-            <div class="sitemap-item">
-                <a href="/fleet-wraps">Fleet Wraps <span class="sitemap-priority priority-medium">Medium</span></a>
-                <p>Consistent branding across multiple vehicles in a fleet</p>
-            </div>
-            <div class="sitemap-item">
-                <a href="/luxury-exotic-wraps">Luxury & Exotic Wraps</a>
-                <p>Premium wrapping solutions for high-end vehicles</p>
-            </div>
-        </div>
-        
-        <h3>By Wrap Type</h3>
-        <div class="sitemap-grid">
-            <div class="sitemap-item">
-                <a href="/color-change-wraps">Color Change Wraps</a>
-                <p>Transform your vehicle's appearance with a new color</p>
-            </div>
-            <div class="sitemap-item">
-                <a href="/commercial-graphics">Commercial Graphics</a>
-                <p>Business branding and promotional vehicle graphics</p>
-            </div>
-            <div class="sitemap-item">
-                <a href="/partial-wraps">Partial Wraps</a>
-                <p>Cost-effective partial vehicle coverage options</p>
-            </div>
-            <div class="sitemap-item">
-                <a href="/protective-films">Protective Films</a>
-                <p>Paint protection films and clear bra installation</p>
-            </div>
-            <div class="sitemap-item">
-                <a href="/vehicle-lettering">Vehicle Lettering</a>
-                <p>Custom text and logo applications for vehicles</p>
-            </div>
-            <div class="sitemap-item">
-                <a href="/specialty-wraps">Specialty Wraps</a>
-                <p>Unique finishes including matte, chrome, and textured</p>
-            </div>
-            <div class="sitemap-item">
-                <a href="/retail-graphics">Retail Graphics</a>
-                <p>Store window and signage solutions</p>
-            </div>
-        </div>
-        
-        <h3>Service Pages (Detailed)</h3>
-        <div class="sitemap-grid">
-            <div class="sitemap-item">
-                <a href="/services/car-wraps">Car Wraps (Service Detail) <span class="sitemap-priority priority-medium">Medium</span></a>
-            </div>
-            <div class="sitemap-item">
-                <a href="/services/truck-wraps">Truck Wraps (Service Detail) <span class="sitemap-priority priority-medium">Medium</span></a>
-            </div>
-            <div class="sitemap-item">
-                <a href="/services/van-wraps">Van Wraps (Service Detail) <span class="sitemap-priority priority-medium">Medium</span></a>
-            </div>
-            <div class="sitemap-item">
-                <a href="/services/fleet-wraps">Fleet Wraps (Service Detail) <span class="sitemap-priority priority-medium">Medium</span></a>
-            </div>
-            <div class="sitemap-item">
-                <a href="/services/color-change-wraps">Color Change Wraps (Service Detail)</a>
-            </div>
-            <div class="sitemap-item">
-                <a href="/services/commercial-graphics">Commercial Graphics (Service Detail)</a>
-            </div>
-            <div class="sitemap-item">
-                <a href="/services/partial-wraps">Partial Wraps (Service Detail)</a>
-            </div>
-            <div class="sitemap-item">
-                <a href="/services/protective-films">Protective Films (Service Detail)</a>
-            </div>
-            <div class="sitemap-item">
-                <a href="/services/vehicle-lettering">Vehicle Lettering (Service Detail)</a>
-            </div>
-            <div class="sitemap-item">
-                <a href="/services/specialty-wraps">Specialty Wraps (Service Detail)</a>
-            </div>
-            <div class="sitemap-item">
-                <a href="/services/retail-graphics">Retail Graphics (Service Detail)</a>
-            </div>
-            <div class="sitemap-item">
-                <a href="/services/designer-wraps">Designer Wraps (Service Detail)</a>
-            </div>
-            <div class="sitemap-item">
-                <a href="/services/luxury-exotic-wraps">Luxury & Exotic Wraps (Service Detail)</a>
-            </div>
-        </div>
+      <h2>Service Areas</h2>
+      <div class="sitemap-grid">
+        <a href="https://www.wrappingchicago.com/vehicle-wraps-chicago-il">Chicago, IL Vehicle Wraps</a>
+        <a href="https://www.wrappingchicago.com/vehicle-wraps-evanston-il">Evanston, IL Vehicle Wraps</a>
+        <a href="https://www.wrappingchicago.com/vehicle-wraps-skokie-il">Skokie, IL Vehicle Wraps</a>
+        <a href="https://www.wrappingchicago.com/vehicle-wraps-oak-park-il">Oak Park, IL Vehicle Wraps</a>
+        <a href="https://www.wrappingchicago.com/vehicle-wraps-cicero-il">Cicero, IL Vehicle Wraps</a>
+        <a href="https://www.wrappingchicago.com/vehicle-wraps-berwyn-il">Berwyn, IL Vehicle Wraps</a>
+        <a href="https://www.wrappingchicago.com/vehicle-wraps-elmhurst-il">Elmhurst, IL Vehicle Wraps</a>
+        <a href="https://www.wrappingchicago.com/vehicle-wraps-oak-lawn-il">Oak Lawn, IL Vehicle Wraps</a>
+        <a href="https://www.wrappingchicago.com/vehicle-wraps-naperville-il">Naperville, IL Vehicle Wraps</a>
+        <a href="https://www.wrappingchicago.com/vehicle-wraps-schaumburg-il">Schaumburg, IL Vehicle Wraps</a>
+        <a href="https://www.wrappingchicago.com/locations">All Service Locations</a>
+      </div>
     </div>
 
-    <div class="sitemap-section">
-        <h2>Service Areas</h2>
-        <p class="section-intro">We provide vehicle wrapping services throughout the greater Chicago area. Select your location to learn more.</p>
-        <div class="sitemap-grid">
-            <div class="sitemap-item">
-                <a href="/vehicle-wraps-chicago-il">Chicago, IL <span class="sitemap-priority priority-medium">Medium</span></a>
-                <p>Our primary service area in Chicago</p>
-            </div>
-            <div class="sitemap-item">
-                <a href="/vehicle-wraps-naperville-il">Naperville, IL</a>
-                <p>Vehicle wraps for Naperville businesses and residents</p>
-            </div>
-            <div class="sitemap-item">
-                <a href="/vehicle-wraps-schaumburg-il">Schaumburg, IL</a>
-                <p>Vehicle wraps for Schaumburg businesses and residents</p>
-            </div>
-            <div class="sitemap-item">
-                <a href="/vehicle-wraps-evanston-il">Evanston, IL</a>
-                <p>Vehicle wraps for Evanston businesses and residents</p>
-            </div>
-            <div class="sitemap-item">
-                <a href="/vehicle-wraps-oak-brook-il">Oak Brook, IL</a>
-                <p>Vehicle wraps for Oak Brook businesses and residents</p>
-            </div>
-            <div class="sitemap-item">
-                <a href="/chicago">Chicago (Alternative)</a>
-                <p>Our Chicago vehicle wrap services</p>
-            </div>
-            <div class="sitemap-item">
-                <a href="/naperville">Naperville (Alternative)</a>
-                <p>Our Naperville vehicle wrap services</p>
-            </div>
-            <div class="sitemap-item">
-                <a href="/schaumburg">Schaumburg (Alternative)</a>
-                <p>Our Schaumburg vehicle wrap services</p>
-            </div>
-            <div class="sitemap-item">
-                <a href="/evanston">Evanston (Alternative)</a>
-                <p>Our Evanston vehicle wrap services</p>
-            </div>
-            <div class="sitemap-item">
-                <a href="/oak-brook">Oak Brook (Alternative)</a>
-                <p>Our Oak Brook vehicle wrap services</p>
-            </div>
-            <div class="sitemap-item">
-                <a href="/locations">All Locations</a>
-                <p>View our complete service area</p>
-            </div>
-        </div>
-    </div>
+    <footer>
+      <p>Last Updated: May 20, 2025 | <a href="https://www.wrappingchicago.com/">Wrapping Chicago</a> | <a href="https://www.wrappingchicago.com/sitemap.xml">XML Sitemap</a></p>
+      <p>Address: 4711 N. Lamon Ave, Chicago, IL 60630 | Phone: (312) 597-1286</p>
+    </footer>
+  </div>
 
-    <div class="footer">
-        <p>&copy; 2025 Wrapping Chicago. All rights reserved.</p>
-        <p>4711 N. Lamon Ave, Chicago, IL 60630 | Phone: (312) 597-1286 | Email: roy@wrappingchicago.com</p>
-        <p><a href="/">Return to Home</a> | <a href="/sitemap.xml">View XML Sitemap</a></p>
-    </div>
-    
-    <!-- Internal links for Google crawling -->
-    <div class="visually-hidden seo-content">
-        <h2>Complete Site Navigation</h2>
-        <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/about">About Us</a></li>
-            <li><a href="/contact">Contact</a></li>
-            <li><a href="/services">Services</a></li>
-            <li><a href="/gallery">Gallery</a></li>
-            <li><a href="/locations">Locations</a></li>
-            <li><a href="/ai-wrap-ideas">AI Wrap Designer</a></li>
-            <li><a href="/designer-wraps">Designer Wraps</a></li>
-            <li><a href="/truck-wraps-chicago">Truck Wraps Chicago</a></li>
-            <li><a href="/car-wraps">Car Wraps</a></li>
-            <li><a href="/truck-wraps">Truck Wraps</a></li>
-            <li><a href="/van-wraps">Van Wraps</a></li>
-            <li><a href="/fleet-wraps">Fleet Wraps</a></li>
-            <li><a href="/color-change-wraps">Color Change Wraps</a></li>
-            <li><a href="/commercial-graphics">Commercial Graphics</a></li>
-            <li><a href="/partial-wraps">Partial Wraps</a></li>
-            <li><a href="/protective-films">Protective Films</a></li>
-            <li><a href="/vehicle-lettering">Vehicle Lettering</a></li>
-            <li><a href="/specialty-wraps">Specialty Wraps</a></li>
-            <li><a href="/retail-graphics">Retail Graphics</a></li>
-            <li><a href="/luxury-exotic-wraps">Luxury & Exotic Wraps</a></li>
-        </ul>
-    </div>
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "url": "https://www.wrappingchicago.com/",
+      "name": "Wrapping Chicago",
+      "description": "Chicago's leading vehicle wrap company providing premium car wraps, truck wraps, van wraps and commercial fleet graphics.",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://www.wrappingchicago.com/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+  </script>
 </body>
 </html>

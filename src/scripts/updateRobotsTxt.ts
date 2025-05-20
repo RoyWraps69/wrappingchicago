@@ -1,14 +1,25 @@
 
-# Enhanced robots.txt for Wrapping Chicago
-# Last updated: 2025-05-20
+/**
+ * Script to generate and update an enhanced robots.txt file
+ * This ensures all content is properly indexed while managing crawl budget
+ */
+
+import fs from 'fs';
+import path from 'path';
+
+function generateEnhancedRobotsTxt() {
+  const domain = 'https://www.wrappingchicago.com';
+  
+  const robotsTxt = `# Enhanced robots.txt for Wrapping Chicago
+# Last updated: ${new Date().toISOString().split('T')[0]}
 
 # Allow all user agents full access
 User-agent: *
 Allow: /
 
 # Sitemaps declarations
-Sitemap: https://www.wrappingchicago.com/sitemap.xml
-Sitemap: https://www.wrappingchicago.com/html-sitemap.html
+Sitemap: ${domain}/sitemap.xml
+Sitemap: ${domain}/html-sitemap.html
 
 # Special directives for major search engines
 User-agent: Googlebot
@@ -61,9 +72,12 @@ Allow: /luxury-exotic-wraps
 # Prevent crawling of non-essential resources to optimize crawl budget
 Disallow: /wp-admin/
 Disallow: /wp-includes/
-Disallow: /search
+Disallow: /*?*
 Disallow: /*utm_*
 Disallow: /*fbclid=*
+Disallow: /search
+Disallow: /assets/fonts/
+Disallow: /static/unused/
 Disallow: /*.sql$
 Disallow: /*.sql.gz$
 Disallow: /*.sql.bz2$
@@ -83,6 +97,20 @@ Disallow: /*README
 Disallow: /*webpack.config.js
 Disallow: /*tsconfig.json
 Disallow: /*vite.config.js
+Disallow: /cgi-bin/
+Disallow: /tmp/
+Disallow: /temp/
+
+# Prevent duplicate content issues with trailing slashes
+Allow: /*/$
+Allow: /*.html$
+Allow: /*.php$
+Allow: /*.htm$
+
+# Control crawling rate and optimize for mobile
+User-agent: Googlebot-Mobile
+Allow: /
+Crawl-delay: 1
 
 # Allow Google Images to index all image content
 User-agent: Googlebot-Image
@@ -103,3 +131,20 @@ Host: www.wrappingchicago.com
 
 # Explicitly request indexing all pages
 Clean-param: utm_source&utm_medium&utm_campaign&utm_content&utm_term&fbclid
+`;
+
+  return robotsTxt;
+}
+
+// Write the enhanced robots.txt to the public directory
+function updateRobotsTxt() {
+  const robotsTxtPath = path.join(process.cwd(), 'public', 'robots.txt');
+  const robotsTxtContent = generateEnhancedRobotsTxt();
+  
+  fs.writeFileSync(robotsTxtPath, robotsTxtContent, 'utf8');
+  console.log('Enhanced robots.txt file has been generated and updated!');
+}
+
+updateRobotsTxt();
+
+export { updateRobotsTxt, generateEnhancedRobotsTxt };

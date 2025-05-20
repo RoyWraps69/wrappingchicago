@@ -1,125 +1,242 @@
 
-/* Global styles to ensure proper styling for Google indexing */
+/* ==============================
+   GLOBAL SEMANTIC STYLES
+   - Enhances SEO with proper semantic styling
+   - Improves accessibility
+   - Maintains consistent hierarchy
+   ============================== */
 
-/* Base styles */
-body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  color: #333;
-  line-height: 1.5;
-}
-
-/* Ensure links are properly styled */
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-/* Make sure headings have proper hierarchy */
-h1 {
-  font-size: 2.25rem;
+/* Base typography improvements */
+h1, .h1 {
+  margin-bottom: 0.5em;
   font-weight: 700;
-  margin-bottom: 1rem;
+  line-height: 1.2;
+  color: #11172D;
 }
 
-h2 {
-  font-size: 1.875rem;
+h2, .h2 {
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
   font-weight: 600;
-  margin-bottom: 0.875rem;
+  line-height: 1.3;
+  color: #11172D;
 }
 
-h3 {
-  font-size: 1.5rem;
+h3, .h3 {
+  margin-top: 1.2em;
+  margin-bottom: 0.5em;
   font-weight: 600;
-  margin-bottom: 0.75rem;
+  line-height: 1.4;
+  color: #11172D;
 }
 
-/* List styles */
-ul, ol {
-  margin-left: 1.5rem;
-}
-
-/* Table styles */
-table {
+/* Main content containers */
+main, article, section, .main-content {
   width: 100%;
-  border-collapse: collapse;
-}
-
-th, td {
-  padding: 0.5rem;
-  border: 1px solid #e2e8f0;
-}
-
-th {
-  background-color: #f8fafc;
-  font-weight: 600;
-}
-
-/* Make sure images have proper styling */
-img {
   max-width: 100%;
-  height: auto;
 }
 
-/* SEO-friendly skip link for accessibility */
+/* Speakable content for voice search */
+.speakable {
+  font-weight: 500;
+}
+
+/* Main page sections */
+section {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+/* Skip link for accessibility */
 .skip-link {
   position: absolute;
   top: -40px;
   left: 0;
-  background: #000;
-  color: #fff;
+  background: #d91e18;
+  color: white;
   padding: 8px;
   z-index: 100;
+  transition: top 0.3s;
 }
 
 .skip-link:focus {
   top: 0;
 }
 
-/* Fix for potential Google rendering issue with flex */
-.flex {
+/* Schema.org CSS hooks */
+[itemscope], [itemprop] {
+  box-sizing: border-box;
+}
+
+/* Semantic breadcrumbs */
+.breadcrumb {
+  margin-bottom: 1rem;
+  font-size: 0.875rem;
+}
+
+.breadcrumb ol {
   display: flex;
-}
-
-.flex-col {
-  flex-direction: column;
-}
-
-.flex-row {
-  flex-direction: row;
-}
-
-/* Additional brand colors to ensure consistent styling */
-:root {
-  --brand-navy: #1e3a8a;
-  --brand-red: #e53e3e;
-}
-
-/* Utility classes for SEO enhancement */
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
+  flex-wrap: wrap;
   padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  border: 0;
+  margin: 0;
+  list-style: none;
 }
 
-/* Ensure content is readable */
-.text-container {
-  max-width: 70ch;
-  margin: 0 auto;
+.breadcrumb li {
+  display: flex;
+  align-items: center;
 }
 
-/* Classes to help with semantics */
-.main-content {
-  min-height: 500px;
+.breadcrumb li + li:before {
+  content: "/";
+  padding: 0 0.5rem;
+  color: #6c757d;
 }
 
-/* Force visibility of content for crawlers */
-.seo-content {
-  min-height: 1px;
-  visibility: visible !important;
-  display: block !important;
+/* Rich media optimizations */
+img, video, iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Contact information formatting */
+address {
+  font-style: normal;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+/* Voice search optimizations */
+.voice-search-target {
+  margin-bottom: 1em;
+}
+
+/* Core Web Vitals optimizations */
+.content-visibility-auto {
+  content-visibility: auto;
+  contain-intrinsic-size: auto;
+}
+
+/* Lighthouse optimizations */
+button, a {
+  cursor: pointer;
+}
+
+button:disabled, a:disabled {
+  cursor: not-allowed;
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  h1, .h1 {
+    font-size: 1.75rem;
+  }
+  
+  h2, .h2 {
+    font-size: 1.5rem;
+  }
+  
+  h3, .h3 {
+    font-size: 1.25rem;
+  }
+  
+  section {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+}
+
+/* Structured data visual hooks */
+.location-marker::before {
+  content: "📍";
+  margin-right: 0.25em;
+}
+
+.phone-marker::before {
+  content: "📞";
+  margin-right: 0.25em;
+}
+
+.email-marker::before {
+  content: "📧";
+  margin-right: 0.25em;
+}
+
+/* Rich results optimization */
+.faq-question {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #11172D;
+}
+
+.faq-answer {
+  margin-bottom: 1.5rem;
+}
+
+/* Internal linking optimization */
+.internal-links-section {
+  padding: 2rem 0;
+  border-top: 1px solid #eee;
+}
+
+.internal-links-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+/* Enhanced site navigation */
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* Prevent CLS issues */
+[data-image-container] {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+
+[data-image-container]::before {
+  content: "";
+  display: block;
+  padding-top: var(--aspect-ratio, 56.25%); /* Default 16:9 */
+}
+
+/* Local business schema optimizations */
+.business-name {
+  font-weight: 700;
+}
+
+.business-address {
+  margin-bottom: 0.5rem;
+}
+
+.business-hours {
+  font-size: 0.875rem;
+}
+
+/* Social sharing optimization */
+.social-share-container {
+  display: flex;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+
+/* Print styles for PDF generation */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  body {
+    font-size: 12pt;
+  }
+  
+  a::after {
+    content: " (" attr(href) ")";
+    font-size: 0.8em;
+    font-style: italic;
+  }
 }

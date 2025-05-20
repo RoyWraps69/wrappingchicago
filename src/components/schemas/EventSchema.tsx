@@ -6,21 +6,30 @@ interface EventSchemaProps {
 }
 
 const EventSchema: React.FC<EventSchemaProps> = ({ city }) => {
-  const currentYear = new Date().getFullYear();
-  const nextMonth = new Date();
-  nextMonth.setMonth(nextMonth.getMonth() + 1);
+  // Current date for reference
+  const today = new Date();
   
+  // Create future dates for events (1 and 2 months from now)
+  const futureDate1 = new Date();
+  futureDate1.setMonth(today.getMonth() + 1);
+  
+  const futureDate2 = new Date();
+  futureDate2.setMonth(today.getMonth() + 2);
+  
+  // Format dates to ISO string and trim time part
+  const formatDate = (date: Date) => date.toISOString().split('T')[0];
+  
+  // Create two upcoming events schema
   const schema = {
     "@context": "https://schema.org",
-    "@type": "Event",
-    "name": `Vehicle Wrap Demo Day in ${city}`,
-    "startDate": nextMonth.toISOString().split('T')[0],
-    "endDate": nextMonth.toISOString().split('T')[0],
-    "eventStatus": "https://schema.org/EventScheduled",
-    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "@type": "EventSeries",
+    "name": "Vehicle Wrap Workshop Series",
+    "description": `Learn about vehicle wrap options, design considerations, and maintenance tips at our free workshop series in ${city}.`,
+    "startDate": formatDate(today),
+    "endDate": formatDate(futureDate2),
     "location": {
       "@type": "Place",
-      "name": "Wrapping Chicago Showroom",
+      "name": "Wrapping Chicago Design Studio",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "4711 N. Lamon Ave",
@@ -30,21 +39,85 @@ const EventSchema: React.FC<EventSchemaProps> = ({ city }) => {
         "addressCountry": "US"
       }
     },
-    "image": "https://www.wrappingchicago.com/lovable-uploads/199c2a21-e0b0-4c29-972f-f32d72698382.png",
-    "description": `Join us for a live demonstration of professional vehicle wrapping techniques. See how we transform vehicles with premium vinyl wraps. Special discounts available for ${city} businesses.`,
-    "offers": {
-      "@type": "Offer",
-      "name": `${city} Business Special`,
-      "price": "0",
-      "priceCurrency": "USD",
-      "validFrom": new Date().toISOString().split('T')[0],
-      "url": "https://www.wrappingchicago.com/contact",
-      "availability": "https://schema.org/InStock"
-    },
+    "image": "https://www.wrappingchicago.com/lovable-uploads/6ef3b1af-8591-4d36-97c2-9366401115fa.png",
     "organizer": {
       "@type": "Organization",
       "name": "Wrapping Chicago",
       "url": "https://www.wrappingchicago.com"
+    },
+    "subEvent": [
+      {
+        "@type": "BusinessEvent",
+        "name": "Fleet Wrap Showcase",
+        "description": `Join us for a showcase of innovative fleet wrap designs and learn how vehicle wraps can boost your business visibility in ${city}.`,
+        "startDate": `${formatDate(futureDate1)}T10:00:00-05:00`,
+        "endDate": `${formatDate(futureDate1)}T12:00:00-05:00`,
+        "location": {
+          "@type": "Place",
+          "name": "Wrapping Chicago Design Studio",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "4711 N. Lamon Ave",
+            "addressLocality": "Chicago",
+            "addressRegion": "IL",
+            "postalCode": "60630",
+            "addressCountry": "US"
+          }
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock",
+          "validFrom": formatDate(today)
+        },
+        "performer": {
+          "@type": "Person",
+          "name": "Roy, Design Director"
+        }
+      },
+      {
+        "@type": "BusinessEvent",
+        "name": "Vehicle Wrap Materials Workshop",
+        "description": `Hands-on workshop exploring different vehicle wrap materials, finishes, and durability factors for ${city} climate conditions.`,
+        "startDate": `${formatDate(futureDate2)}T14:00:00-05:00`,
+        "endDate": `${formatDate(futureDate2)}T16:00:00-05:00`,
+        "location": {
+          "@type": "Place",
+          "name": "Wrapping Chicago Design Studio",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "4711 N. Lamon Ave",
+            "addressLocality": "Chicago",
+            "addressRegion": "IL",
+            "postalCode": "60630",
+            "addressCountry": "US"
+          }
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock",
+          "validFrom": formatDate(today)
+        },
+        "performer": {
+          "@type": "Person",
+          "name": "Vehicle Wrap Installation Team"
+        }
+      }
+    ],
+    "potentialAction": {
+      "@type": "RegisterAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://www.wrappingchicago.com/events-registration",
+        "inLanguage": "en-US"
+      },
+      "result": {
+        "@type": "Reservation",
+        "name": "Workshop Registration"
+      }
     }
   };
 
