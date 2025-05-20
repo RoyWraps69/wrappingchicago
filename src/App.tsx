@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import './App.css';
@@ -59,9 +58,8 @@ function App() {
     });
     document.head.appendChild(structuredData);
     
-    // Add preloading for critical resources
+    // Add preloading for critical resources (removed the font preload that wasn't being used)
     const preloadLinks = [
-      { rel: 'preload', as: 'font', href: '/fonts/main-font.woff2', type: 'font/woff2', crossOrigin: 'anonymous' },
       { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
       { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossOrigin: 'anonymous' }
     ];
