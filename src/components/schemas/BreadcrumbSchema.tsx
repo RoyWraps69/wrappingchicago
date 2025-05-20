@@ -12,10 +12,15 @@ interface BreadcrumbSchemaProps {
 }
 
 const BreadcrumbSchema: React.FC<BreadcrumbSchemaProps> = ({ items }) => {
+  // Make sure items is an array and has at least one entry
+  const validItems = Array.isArray(items) && items.length > 0 
+    ? items 
+    : [{ position: 1, name: 'Home', item: 'https://www.wrappingchicago.com/' }];
+  
   const schema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
-    "itemListElement": items.map(item => ({
+    "itemListElement": validItems.map(item => ({
       "@type": "ListItem",
       "position": item.position,
       "name": item.name,

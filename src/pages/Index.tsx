@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -13,6 +12,7 @@ import { useGalleryImages } from '@/hooks/useGalleryImages';
 import Schema from '@/components/Schema';
 import AIWrapSchema from '@/components/ai-wrap-ideas/AIWrapSchema';
 import EasyButtonSection from '@/components/home/EasyButtonSection';
+import BreadcrumbSchema from '@/components/schemas/BreadcrumbSchema';
 
 // Import the home page components
 import InfoBar from '@/components/home/InfoBar';
@@ -64,6 +64,15 @@ const Index = () => {
     "3M vehicle wraps"
   ];
 
+  // Create breadcrumb items for home page
+  const breadcrumbItems = [
+    {
+      position: 1,
+      name: "Home",
+      item: "https://www.wrappingchicago.com/"
+    }
+  ];
+
   return (
     <>
       <HomeSEO />
@@ -76,6 +85,9 @@ const Index = () => {
         keywords={keywords}
       />
       <AIWrapSchema />
+      
+      {/* Add explicit breadcrumb schema with itemListElement */}
+      <BreadcrumbSchema items={breadcrumbItems} />
       
       {/* Add additional link rel tags for key pages */}
       <IndexHelmetTags />

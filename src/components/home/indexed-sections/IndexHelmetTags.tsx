@@ -80,7 +80,7 @@ const IndexHelmetTags: React.FC = () => {
         }
       `}</script>
       
-      {/* Breadcrumb structured data */}
+      {/* Breadcrumb structured data with proper itemListElement */}
       <script type="application/ld+json">{`
         {
           "@context": "https://schema.org",

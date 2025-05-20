@@ -13,6 +13,7 @@ import TruckBenefits from '@/components/truck-wraps/TruckBenefits';
 import TruckCTA from '@/components/truck-wraps/TruckCTA';
 import TruckFAQs from '@/components/truck-wraps/TruckFAQs';
 import TruckSEO from '@/components/truck-wraps/TruckSEO';
+import BreadcrumbSchema from '@/components/schemas/BreadcrumbSchema';
 
 const TruckWrapsChicago = () => {
   // For Schema component
@@ -38,9 +39,26 @@ const TruckWrapsChicago = () => {
     }
   ];
   
+  // Create breadcrumb items for truck wraps page
+  const breadcrumbItems = [
+    {
+      position: 1,
+      name: "Home",
+      item: "https://www.wrappingchicago.com/"
+    },
+    {
+      position: 2,
+      name: "Truck Wraps Chicago",
+      item: "https://www.wrappingchicago.com/truck-wraps-chicago"
+    }
+  ];
+  
   return (
     <>
       <TruckSEO />
+      
+      {/* Add explicit breadcrumb schema with itemListElement */}
+      <BreadcrumbSchema items={breadcrumbItems} />
       
       <Schema 
         city={chicagoCity}

@@ -22,6 +22,7 @@ import BusinessLocationSchema from '@/components/schemas/BusinessLocationSchema'
 import IndexingPriority from '@/components/seo/IndexingPriority';
 import InternalLinksFooter from '@/components/seo/InternalLinksFooter';
 import { HomeHelmetTags, HomeInternalLinks } from '@/components/home/indexed-sections';
+import BreadcrumbSchema from '@/components/schemas/BreadcrumbSchema';
 
 function HomePage() {
   // Get the required images for ServicesSection
@@ -85,11 +86,23 @@ function HomePage() {
     }
   }, []);
 
+  // Create breadcrumb items for home page
+  const breadcrumbItems = [
+    {
+      position: 1,
+      name: "Home",
+      item: "https://www.wrappingchicago.com/"
+    }
+  ];
+
   return (
     <>
       <HomeSEO />
       <IndexingPriority priority="high" />
       <HomeHelmetTags />
+      
+      {/* Add explicit breadcrumb schema with itemListElement */}
+      <BreadcrumbSchema items={breadcrumbItems} />
       
       <Schema 
         city={chicagoCity}
