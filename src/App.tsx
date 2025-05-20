@@ -26,6 +26,19 @@ import VanWrapsPage from './pages/VanWrapsPage';
 import ColorChangeWrapsPage from './pages/ColorChangeWrapsPage';
 
 function App() {
+  // Help Google discover the sitemap
+  React.useEffect(() => {
+    const link = document.createElement('link');
+    link.rel = 'sitemap';
+    link.type = 'application/xml';
+    link.href = '/sitemap.xml';
+    document.head.appendChild(link);
+    
+    return () => {
+      document.head.removeChild(link);
+    };
+  }, []);
+
   return (
     <HelmetProvider>
       <BrowserRouter>
@@ -45,6 +58,8 @@ function App() {
           <Route path="/ai-wrap-ideas" element={<AIWrapIdeasPage />} />
           <Route path="/designer-wraps" element={<DesignerWrapsPage />} />
           <Route path="/sitemap" element={<SitemapPage />} />
+          <Route path="/html-sitemap" element={<SitemapPage />} />
+          <Route path="/html-sitemap.html" element={<SitemapPage />} />
           
           {/* Special city-specific routes */}
           <Route path="/truck-wraps-chicago" element={<TruckWrapsChicagoPage />} />

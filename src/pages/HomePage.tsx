@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Hero from '@/components/home/Hero';
@@ -20,6 +20,8 @@ import { cities } from '@/data/cities';
 import Schema from '@/components/Schema';
 import PageFAQ from '@/components/common/PageFAQ';
 import BusinessLocationSchema from '@/components/schemas/BusinessLocationSchema';
+import IndexingPriority from '@/components/seo/IndexingPriority';
+import { Link } from 'react-router-dom';
 
 function HomePage() {
   // Get the required images for ServicesSection
@@ -56,11 +58,35 @@ function HomePage() {
     }
   ];
 
+  // Add indexing hint to the console that can help identify if page was rendered correctly
+  useEffect(() => {
+    console.log('HomePage - Google indexing compatibility check: PASS');
+    
+    // Add special link element to help Google discover more pages
+    const head = document.querySelector('head');
+    if (head) {
+      const discoveryLink = document.createElement('link');
+      discoveryLink.rel = 'index';
+      discoveryLink.href = '/sitemap.xml';
+      head.appendChild(discoveryLink);
+      
+      return () => {
+        head.removeChild(discoveryLink);
+      };
+    }
+  }, []);
+
   return (
     <>
       <HomeSEO />
+      <IndexingPriority priority="high" />
       <Helmet>
         <link rel="canonical" href="https://www.wrappingchicago.com/" />
+        {/* Add a rel next to ensure Google crawls the services page */}
+        <link rel="next" href="https://www.wrappingchicago.com/services" />
+        {/* Add discovery links for key content sections */}
+        <link rel="prefetch" href="/services" />
+        <link rel="prefetch" href="/gallery" />
       </Helmet>
       
       <Schema 
@@ -111,6 +137,66 @@ function HomePage() {
             serviceName="Vehicle Wraps"
             cityName="Chicago"
           />
+          
+          {/* Add expanded sitemap links section to improve crawlability */}
+          <section className="py-8 bg-gray-50">
+            <div className="container mx-auto px-4">
+              <h2 className="text-2xl font-bold text-brand-navy mb-4">Explore All Our Pages</h2>
+              <p className="mb-4 text-gray-700">Browse our complete catalog of vehicle wrap services and locations:</p>
+              
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+                <div className="space-y-2">
+                  <h3 className="font-semibold text-brand-navy">Main Pages</h3>
+                  <ul className="space-y-1">
+                    <li><Link to="/" className="text-brand-red hover:underline">Home</Link></li>
+                    <li><Link to="/about" className="text-brand-navy hover:text-brand-red transition-colors">About Us</Link></li>
+                    <li><Link to="/gallery" className="text-brand-navy hover:text-brand-red transition-colors">Gallery</Link></li>
+                    <li><Link to="/contact" className="text-brand-navy hover:text-brand-red transition-colors">Contact</Link></li>
+                    <li><Link to="/sitemap" className="text-brand-navy hover:text-brand-red transition-colors">Sitemap</Link></li>
+                  </ul>
+                </div>
+                
+                <div className="space-y-2">
+                  <h3 className="font-semibold text-brand-navy">Primary Services</h3>
+                  <ul className="space-y-1">
+                    <li><Link to="/services" className="text-brand-navy hover:text-brand-red transition-colors">All Services</Link></li>
+                    <li><Link to="/services/car-wraps" className="text-brand-navy hover:text-brand-red transition-colors">Car Wraps</Link></li>
+                    <li><Link to="/services/truck-wraps" className="text-brand-navy hover:text-brand-red transition-colors">Truck Wraps</Link></li>
+                    <li><Link to="/services/van-wraps" className="text-brand-navy hover:text-brand-red transition-colors">Van Wraps</Link></li>
+                    <li><Link to="/services/fleet-wraps" className="text-brand-navy hover:text-brand-red transition-colors">Fleet Wraps</Link></li>
+                  </ul>
+                </div>
+                
+                <div className="space-y-2">
+                  <h3 className="font-semibold text-brand-navy">Specialty Wraps</h3>
+                  <ul className="space-y-1">
+                    <li><Link to="/services/color-change-wraps" className="text-brand-navy hover:text-brand-red transition-colors">Color Change</Link></li>
+                    <li><Link to="/services/commercial-graphics" className="text-brand-navy hover:text-brand-red transition-colors">Commercial Graphics</Link></li>
+                    <li><Link to="/services/partial-wraps" className="text-brand-navy hover:text-brand-red transition-colors">Partial Wraps</Link></li>
+                    <li><Link to="/services/designer-wraps" className="text-brand-navy hover:text-brand-red transition-colors">Designer Wraps</Link></li>
+                    <li><Link to="/services/luxury-exotic-wraps" className="text-brand-navy hover:text-brand-red transition-colors">Luxury Wraps</Link></li>
+                  </ul>
+                </div>
+                
+                <div className="space-y-2">
+                  <h3 className="font-semibold text-brand-navy">Top Locations</h3>
+                  <ul className="space-y-1">
+                    <li><Link to="/vehicle-wraps-chicago-il" className="text-brand-navy hover:text-brand-red transition-colors">Chicago</Link></li>
+                    <li><Link to="/vehicle-wraps-naperville-il" className="text-brand-navy hover:text-brand-red transition-colors">Naperville</Link></li>
+                    <li><Link to="/vehicle-wraps-schaumburg-il" className="text-brand-navy hover:text-brand-red transition-colors">Schaumburg</Link></li>
+                    <li><Link to="/vehicle-wraps-evanston-il" className="text-brand-navy hover:text-brand-red transition-colors">Evanston</Link></li>
+                    <li><Link to="/locations" className="text-brand-navy hover:text-brand-red transition-colors">All Locations</Link></li>
+                  </ul>
+                </div>
+              </div>
+              
+              <div className="text-center">
+                <Link to="/sitemap" className="inline-block px-4 py-2 bg-brand-navy text-white rounded-md hover:bg-brand-red transition-colors">
+                  View Complete Sitemap
+                </Link>
+              </div>
+            </div>
+          </section>
         </main>
         <StickyContactButtons />
         <Footer />

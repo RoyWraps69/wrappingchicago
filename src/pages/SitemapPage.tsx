@@ -1,168 +1,329 @@
 
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { Separator } from "@/components/ui/separator";
+import { Link } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import MetaTags from '@/components/seo/MetaTags';
-import WebsiteSchema from '@/components/schemas/WebsiteSchema';
-import WebPageSchema from '@/components/schemas/WebPageSchema';
 import Breadcrumbs from '@/components/navigation/Breadcrumbs';
-import { FileText, Map } from 'lucide-react';
+import { cities } from '@/data/cities';
 
 const SitemapPage = () => {
-  const currentYear = new Date().getFullYear();
+  // Generate a fresh lastmod date
   const lastModified = new Date().toISOString().split('T')[0];
-  const sitemapKeywords = [
-    'sitemap', 'vehicle wrap services', 'car wraps', 'truck wraps', 
-    'van wraps', 'Chicago wraps', 'commercial vehicle wraps', 
-    'fleet wraps', 'website navigation', 'Wrapping Chicago services'
-  ];
+
+  // For crawler discovery
+  useEffect(() => {
+    // Create a discovery script element
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.text = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "itemListElement": [
+        {
+          "@type": "SiteNavigationElement",
+          "position": 1,
+          "name": "Home",
+          "description": "Chicago's premier vehicle wrap company. Professional car & truck wraps with premium 3M materials.",
+          "url": "https://www.wrappingchicago.com/"
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "position": 2,
+          "name": "Services",
+          "description": "Professional vehicle wrap services including car wraps, truck wraps, van wraps, and fleet wraps.",
+          "url": "https://www.wrappingchicago.com/services"
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "position": 3,
+          "name": "Gallery",
+          "description": "Browse our portfolio of completed vehicle wrap projects in Chicago and surrounding areas.",
+          "url": "https://www.wrappingchicago.com/gallery"
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "position": 4,
+          "name": "About",
+          "description": "Learn about Wrapping Chicago's expertise, history, and commitment to quality vehicle wraps.",
+          "url": "https://www.wrappingchicago.com/about"
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "position": 5,
+          "name": "Contact",
+          "description": "Get in touch with Chicago's leading vehicle wrap company for quotes and consultations.",
+          "url": "https://www.wrappingchicago.com/contact"
+        }
+      ]
+    });
+    
+    document.head.appendChild(script);
+    return () => {
+      document.head.removeChild(script);
+    };
+  }, []);
 
   return (
     <>
-      <MetaTags 
-        title={`Site Map | Wrapping Chicago Vehicle Wraps | ${currentYear}`}
-        description="Complete site map of Wrapping Chicago's vehicle wrap services, locations, and resources. Find all our pages and services in one place."
-        keywords={sitemapKeywords.join(', ')}
-        canonicalUrl="/sitemap"
-        lastModified={lastModified}
-      />
+      <Helmet>
+        <title>Sitemap | Chicago Vehicle Wrap Services | Wrapping Chicago</title>
+        <meta 
+          name="description" 
+          content="Complete sitemap of Wrapping Chicago website. Browse our vehicle wrap services, service areas, gallery, and information pages all in one place." 
+        />
+        <link rel="canonical" href="https://www.wrappingchicago.com/sitemap" />
+        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+        <link rel="alternate" href="https://www.wrappingchicago.com/html-sitemap.html" />
+      </Helmet>
       
-      <WebsiteSchema 
-        name="Wrapping Chicago Sitemap"
-        description="Navigate through Wrapping Chicago's complete service catalog and website structure"
-        url="/sitemap"
-        lastModified={lastModified}
-        keywords={sitemapKeywords}
-      />
-      
-      <WebPageSchema 
-        title="Sitemap | Wrapping Chicago"
-        description="Complete site map of Wrapping Chicago's vehicle wrap services, locations, and resources"
-        url="/sitemap"
-        lastModified={lastModified}
-        keywords={sitemapKeywords}
-      />
-      
-      <Header />
-      
-      <main className="flex-grow bg-gray-50 py-8 md:py-12">
-        <div className="container mx-auto px-4">
-          <Breadcrumbs />
-          
-          <div className="bg-white rounded-lg shadow-sm p-6 md:p-8 mt-6">
-            <div className="flex items-center mb-6">
-              <FileText className="h-6 w-6 mr-3 text-brand-red" />
-              <h1 className="text-2xl md:text-3xl font-bold text-brand-navy">Complete Site Map</h1>
-            </div>
+      <div className="flex flex-col min-h-screen">
+        <Header />
+        
+        <main className="flex-grow">
+          <div className="container mx-auto px-4 py-8">
+            <Breadcrumbs />
             
-            <p className="text-gray-700 mb-8 max-w-3xl">
-              Welcome to the Wrapping Chicago sitemap. Use this page to quickly navigate to any section of our website, 
-              find our vehicle wrapping services, or explore our resource pages.
-            </p>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-              <div className="bg-gray-50 p-5 rounded-lg border border-gray-100">
-                <h2 className="text-xl font-semibold mb-4 text-brand-navy flex items-center">
-                  <Map className="h-5 w-5 mr-2 text-brand-red" />
+            <header className="mb-8 text-center">
+              <h1 className="text-3xl md:text-4xl font-bold text-brand-navy mb-4">Complete Site Map</h1>
+              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                Browse all pages of our website to find information about our vehicle wrap services, 
+                service areas, gallery, and more.
+              </p>
+              <p className="text-sm text-gray-500 mt-2">Last Updated: {lastModified}</p>
+            </header>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+              {/* Main Navigation */}
+              <div className="bg-white p-6 rounded-lg shadow-md">
+                <h2 className="text-xl font-bold text-brand-navy mb-4 pb-2 border-b border-gray-200">
                   Main Pages
                 </h2>
-                <Separator className="mb-4" />
-                <ul className="space-y-3">
-                  <li><Link to="/" className="text-gray-700 hover:text-brand-red transition-colors">Home</Link></li>
-                  <li><Link to="/about" className="text-gray-700 hover:text-brand-red transition-colors">About Us</Link></li>
-                  <li><Link to="/contact" className="text-gray-700 hover:text-brand-red transition-colors">Contact</Link></li>
-                  <li><Link to="/gallery" className="text-gray-700 hover:text-brand-red transition-colors">Gallery</Link></li>
-                  <li><Link to="/locations" className="text-gray-700 hover:text-brand-red transition-colors">Locations</Link></li>
-                  <li><Link to="/ai-wrap-ideas" className="text-gray-700 hover:text-brand-red transition-colors">AI Wrap Designer</Link></li>
-                  <li><Link to="/truck-wraps-chicago" className="text-gray-700 hover:text-brand-red transition-colors">Truck Wraps Chicago</Link></li>
+                <ul className="space-y-2">
+                  <li>
+                    <Link to="/" className="text-brand-navy hover:text-brand-red transition-colors">
+                      Home
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/about" className="text-brand-navy hover:text-brand-red transition-colors">
+                      About Us
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/services" className="text-brand-navy hover:text-brand-red transition-colors">
+                      Services
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/gallery" className="text-brand-navy hover:text-brand-red transition-colors">
+                      Gallery
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/contact" className="text-brand-navy hover:text-brand-red transition-colors">
+                      Contact
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/locations" className="text-brand-navy hover:text-brand-red transition-colors">
+                      Service Areas
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/ai-wrap-ideas" className="text-brand-navy hover:text-brand-red transition-colors">
+                      AI Wrap Designer
+                    </Link>
+                  </li>
                 </ul>
               </div>
-
-              <div className="bg-gray-50 p-5 rounded-lg border border-gray-100">
-                <h2 className="text-xl font-semibold mb-4 text-brand-navy flex items-center">
-                  <Map className="h-5 w-5 mr-2 text-brand-red" />
-                  Vehicle Wrap Services
+              
+              {/* Vehicle Types */}
+              <div className="bg-white p-6 rounded-lg shadow-md">
+                <h2 className="text-xl font-bold text-brand-navy mb-4 pb-2 border-b border-gray-200">
+                  Vehicle Types
                 </h2>
-                <Separator className="mb-4" />
-                <ul className="space-y-3">
-                  <li><Link to="/services/fleet-wraps" className="text-gray-700 hover:text-brand-red transition-colors">Fleet Wraps</Link></li>
-                  <li><Link to="/services/car-wraps" className="text-gray-700 hover:text-brand-red transition-colors">Car Wraps</Link></li>
-                  <li><Link to="/services/truck-wraps" className="text-gray-700 hover:text-brand-red transition-colors">Truck Wraps</Link></li>
-                  <li><Link to="/services/van-wraps" className="text-gray-700 hover:text-brand-red transition-colors">Van Wraps</Link></li>
-                  <li><Link to="/services/color-change-wraps" className="text-gray-700 hover:text-brand-red transition-colors">Color Change Wraps</Link></li>
-                  <li><Link to="/services/partial-wraps" className="text-gray-700 hover:text-brand-red transition-colors">Partial Wraps</Link></li>
+                <ul className="space-y-2">
+                  <li>
+                    <Link to="/services/car-wraps" className="text-brand-navy hover:text-brand-red transition-colors">
+                      Car Wraps
+                    </Link>
+                    {' - '}
+                    <Link to="/car-wraps" className="text-sm text-gray-500 hover:text-brand-red transition-colors">
+                      (Direct Link)
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/services/truck-wraps" className="text-brand-navy hover:text-brand-red transition-colors">
+                      Truck Wraps
+                    </Link>
+                    {' - '}
+                    <Link to="/truck-wraps" className="text-sm text-gray-500 hover:text-brand-red transition-colors">
+                      (Direct Link)
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/services/van-wraps" className="text-brand-navy hover:text-brand-red transition-colors">
+                      Van Wraps
+                    </Link>
+                    {' - '}
+                    <Link to="/van-wraps" className="text-sm text-gray-500 hover:text-brand-red transition-colors">
+                      (Direct Link)
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/services/fleet-wraps" className="text-brand-navy hover:text-brand-red transition-colors">
+                      Fleet Wraps
+                    </Link>
+                    {' - '}
+                    <Link to="/fleet-wraps" className="text-sm text-gray-500 hover:text-brand-red transition-colors">
+                      (Direct Link)
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/truck-wraps-chicago" className="text-brand-navy hover:text-brand-red transition-colors">
+                      Truck Wraps Chicago
+                    </Link>
+                  </li>
                 </ul>
               </div>
-
-              <div className="bg-gray-50 p-5 rounded-lg border border-gray-100">
-                <h2 className="text-xl font-semibold mb-4 text-brand-navy flex items-center">
-                  <Map className="h-5 w-5 mr-2 text-brand-red" />
+              
+              {/* Specialty Services */}
+              <div className="bg-white p-6 rounded-lg shadow-md">
+                <h2 className="text-xl font-bold text-brand-navy mb-4 pb-2 border-b border-gray-200">
                   Specialty Services
                 </h2>
-                <Separator className="mb-4" />
-                <ul className="space-y-3">
-                  <li><Link to="/services/commercial-graphics" className="text-gray-700 hover:text-brand-red transition-colors">Commercial Graphics</Link></li>
-                  <li><Link to="/services/protective-films" className="text-gray-700 hover:text-brand-red transition-colors">Protective Films</Link></li>
-                  <li><Link to="/services/vehicle-lettering" className="text-gray-700 hover:text-brand-red transition-colors">Vehicle Lettering</Link></li>
-                  <li><Link to="/services/specialty-wraps" className="text-gray-700 hover:text-brand-red transition-colors">Specialty Wraps</Link></li>
-                  <li><Link to="/services/designer-wraps" className="text-gray-700 hover:text-brand-red transition-colors">Designer Wraps</Link></li>
-                  <li><Link to="/services/luxury-exotic-wraps" className="text-gray-700 hover:text-brand-red transition-colors">Luxury & Exotic Wraps</Link></li>
-                  <li><Link to="/services/retail-graphics" className="text-gray-700 hover:text-brand-red transition-colors">Retail Graphics</Link></li>
-                </ul>
-              </div>
-              
-              <div className="bg-gray-50 p-5 rounded-lg border border-gray-100">
-                <h2 className="text-xl font-semibold mb-4 text-brand-navy flex items-center">
-                  <Map className="h-5 w-5 mr-2 text-brand-red" />
-                  Popular Service Areas
-                </h2>
-                <Separator className="mb-4" />
-                <ul className="space-y-3">
-                  <li><Link to="/vehicle-wraps-chicago-il" className="text-gray-700 hover:text-brand-red transition-colors">Chicago, IL</Link></li>
-                  <li><Link to="/vehicle-wraps-naperville-il" className="text-gray-700 hover:text-brand-red transition-colors">Naperville, IL</Link></li>
-                  <li><Link to="/vehicle-wraps-schaumburg-il" className="text-gray-700 hover:text-brand-red transition-colors">Schaumburg, IL</Link></li>
-                  <li><Link to="/vehicle-wraps-evanston-il" className="text-gray-700 hover:text-brand-red transition-colors">Evanston, IL</Link></li>
-                  <li><Link to="/vehicle-wraps-oak-brook-il" className="text-gray-700 hover:text-brand-red transition-colors">Oak Brook, IL</Link></li>
-                  <li><Link to="/locations" className="text-brand-red hover:underline text-sm">View All Locations →</Link></li>
-                </ul>
-              </div>
-              
-              <div className="bg-gray-50 p-5 rounded-lg border border-gray-100">
-                <h2 className="text-xl font-semibold mb-4 text-brand-navy flex items-center">
-                  <Map className="h-5 w-5 mr-2 text-brand-red" />
-                  Resources
-                </h2>
-                <Separator className="mb-4" />
-                <ul className="space-y-3">
-                  <li><Link to="/gallery" className="text-gray-700 hover:text-brand-red transition-colors">Project Gallery</Link></li>
-                  <li><Link to="/ai-wrap-ideas" className="text-gray-700 hover:text-brand-red transition-colors">AI Wrap Designer Tool</Link></li>
-                  <li><a href="/vehicle-wrapping-guide.pdf" className="text-gray-700 hover:text-brand-red transition-colors">Vehicle Wrapping Guide (PDF)</a></li>
-                  <li><Link to="/contact" className="text-gray-700 hover:text-brand-red transition-colors">Request a Quote</Link></li>
-                  <li><Link to="/sitemap" className="text-gray-700 hover:text-brand-red transition-colors">Site Map</Link></li>
-                </ul>
-              </div>
-              
-              <div className="bg-gray-50 p-5 rounded-lg border border-gray-100">
-                <h2 className="text-xl font-semibold mb-4 text-brand-navy flex items-center">
-                  <Map className="h-5 w-5 mr-2 text-brand-red" />
-                  Contact Information
-                </h2>
-                <Separator className="mb-4" />
-                <ul className="space-y-3">
-                  <li><a href="tel:3125971286" className="text-gray-700 hover:text-brand-red transition-colors">(312) 597-1286</a></li>
-                  <li><a href="mailto:roy@wrappingchicago.com" className="text-gray-700 hover:text-brand-red transition-colors">roy@wrappingchicago.com</a></li>
-                  <li><address className="text-gray-700 not-italic">4711 N. Lamon Ave<br />Chicago, IL 60630</address></li>
+                <ul className="space-y-2">
+                  <li>
+                    <Link to="/services/color-change-wraps" className="text-brand-navy hover:text-brand-red transition-colors">
+                      Color Change Wraps
+                    </Link>
+                    {' - '}
+                    <Link to="/color-change-wraps" className="text-sm text-gray-500 hover:text-brand-red transition-colors">
+                      (Direct Link)
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/services/commercial-graphics" className="text-brand-navy hover:text-brand-red transition-colors">
+                      Commercial Graphics
+                    </Link>
+                    {' - '}
+                    <Link to="/commercial-graphics" className="text-sm text-gray-500 hover:text-brand-red transition-colors">
+                      (Direct Link)
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/services/partial-wraps" className="text-brand-navy hover:text-brand-red transition-colors">
+                      Partial Wraps
+                    </Link>
+                    {' - '}
+                    <Link to="/partial-wraps" className="text-sm text-gray-500 hover:text-brand-red transition-colors">
+                      (Direct Link)
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/services/protective-films" className="text-brand-navy hover:text-brand-red transition-colors">
+                      Protective Films
+                    </Link>
+                    {' - '}
+                    <Link to="/protective-films" className="text-sm text-gray-500 hover:text-brand-red transition-colors">
+                      (Direct Link)
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/services/vehicle-lettering" className="text-brand-navy hover:text-brand-red transition-colors">
+                      Vehicle Lettering
+                    </Link>
+                    {' - '}
+                    <Link to="/vehicle-lettering" className="text-sm text-gray-500 hover:text-brand-red transition-colors">
+                      (Direct Link)
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/services/specialty-wraps" className="text-brand-navy hover:text-brand-red transition-colors">
+                      Specialty Wraps
+                    </Link>
+                    {' - '}
+                    <Link to="/specialty-wraps" className="text-sm text-gray-500 hover:text-brand-red transition-colors">
+                      (Direct Link)
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/services/retail-graphics" className="text-brand-navy hover:text-brand-red transition-colors">
+                      Retail Graphics
+                    </Link>
+                    {' - '}
+                    <Link to="/retail-graphics" className="text-sm text-gray-500 hover:text-brand-red transition-colors">
+                      (Direct Link)
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/services/designer-wraps" className="text-brand-navy hover:text-brand-red transition-colors">
+                      Designer Wraps
+                    </Link>
+                    {' - '}
+                    <Link to="/designer-wraps" className="text-sm text-gray-500 hover:text-brand-red transition-colors">
+                      (Direct Link)
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/services/luxury-exotic-wraps" className="text-brand-navy hover:text-brand-red transition-colors">
+                      Luxury & Exotic Wraps
+                    </Link>
+                    {' - '}
+                    <Link to="/luxury-exotic-wraps" className="text-sm text-gray-500 hover:text-brand-red transition-colors">
+                      (Direct Link)
+                    </Link>
+                  </li>
                 </ul>
               </div>
             </div>
+
+            {/* Service Locations */}
+            <div className="bg-white p-6 rounded-lg shadow-md mb-12">
+              <h2 className="text-xl font-bold text-brand-navy mb-4 pb-2 border-b border-gray-200">
+                Service Locations
+              </h2>
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                {cities.map((city) => (
+                  <div key={city.slug}>
+                    <Link 
+                      to={`/vehicle-wraps-${city.slug}-il`}
+                      className="text-brand-navy hover:text-brand-red transition-colors"
+                    >
+                      {city.name}, IL
+                    </Link>
+                    {' - '}
+                    <Link 
+                      to={`/${city.slug}`}
+                      className="text-sm text-gray-500 hover:text-brand-red transition-colors"
+                    >
+                      (Direct Link)
+                    </Link>
+                  </div>
+                ))}
+              </div>
+            </div>
+            
+            <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
+              <h2 className="text-xl font-bold text-brand-navy mb-2">Looking for Something Specific?</h2>
+              <p className="text-gray-700 mb-4">
+                If you can't find what you're looking for, please don't hesitate to contact us. 
+                We're always happy to help you find the information you need about our vehicle 
+                wrap services.
+              </p>
+              <Link
+                to="/contact"
+                className="inline-flex items-center px-5 py-2.5 bg-brand-red text-white rounded-md hover:bg-red-700 transition-colors"
+              >
+                Contact Us
+              </Link>
+            </div>
           </div>
-        </div>
-      </main>
-      
-      <Footer />
+        </main>
+        
+        <Footer />
+      </div>
     </>
   );
 };
