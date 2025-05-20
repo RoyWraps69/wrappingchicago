@@ -9,7 +9,7 @@ import ServiceMenu from './ServiceMenu';
 const DesktopNav = () => {
   return (
     <nav className="hidden md:flex items-center justify-between w-full">
-      <div className="flex items-center space-x-5">
+      <div className="flex items-center space-x-7">
         <NavLink to="/">
           Home
         </NavLink>
@@ -31,10 +31,9 @@ const DesktopNav = () => {
         </NavLink>
       </div>
       
-      <div className="flex gap-2 ml-2">
+      <div className="flex gap-3 ml-4">
         <Button 
-          variant="outline" 
-          className="border-white/20 bg-white/10 text-white hover:bg-white/20"
+          variant="outline"
           asChild
         >
           <Link to="/contact" className="inline-flex items-center" aria-label="Request a quote for vehicle wraps">
@@ -44,8 +43,8 @@ const DesktopNav = () => {
         </Button>
         
         <Button 
-          variant="default" 
-          className="bg-brand-red hover:bg-red-700 text-white"
+          variant="gradient"
+          animation="glow"
           asChild
         >
           <a href="tel:3125971286" className="inline-flex items-center" aria-label="Call for vehicle wrap services">

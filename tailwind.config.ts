@@ -63,11 +63,11 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Custom colors for Chicago Fleet Wraps
+				// Custom colors for Chicago Fleet Wraps - Updated to new brand colors
 				brand: {
-					navy: '#0B3954',
-					red: '#FF4A1C',
-					light: '#F5F5F5',
+					navy: '#111111', // Updated from #0B3954 to #111111
+					red: '#FF3131', // Updated from #FF4A1C to #FF3131
+					light: '#FFFFFF', // Updated from #F5F5F5 to #FFFFFF
 				}
 			},
 			borderRadius: {
@@ -99,12 +99,25 @@ export default {
 					'50%': {
 						'background-position': '100% 50%'
 					}
+				},
+				'glow': {
+					'0%, 100%': {
+						'box-shadow': '0 0 10px 0 rgba(255, 49, 49, 0.6)'
+					},
+					'50%': {
+						'box-shadow': '0 0 20px 5px rgba(255, 49, 49, 0.8)'
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
-				'gradient-x': 'gradient-x 10s ease infinite'
+				'gradient-x': 'gradient-x 10s ease infinite',
+				'glow': 'glow 1.5s infinite'
+			},
+			fontFamily: {
+				sans: ['Inter', 'sans-serif'],
+				display: ['Inter', 'sans-serif']
 			}
 		}
 	},

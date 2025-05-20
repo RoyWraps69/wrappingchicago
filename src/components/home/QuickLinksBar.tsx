@@ -1,47 +1,65 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Car, Truck, Shield } from 'lucide-react';
+import { Car, Truck, CircleDollarSign, Palette, Users, Calendar } from 'lucide-react';
 
-const QuickLinksBar: React.FC = () => {
+const QuickLinksBar = () => {
+  const links = [
+    {
+      icon: Car,
+      title: "Car Wraps",
+      description: "Custom designs for any vehicle",
+      url: "/services/car-wraps"
+    },
+    {
+      icon: Truck,
+      title: "Fleet Wraps",
+      description: "Branding for business fleets",
+      url: "/services/fleet-wraps"
+    },
+    {
+      icon: CircleDollarSign,
+      title: "Pricing",
+      description: "Transparent cost breakdown",
+      url: "/pricing"
+    },
+    {
+      icon: Palette,
+      title: "Color Change",
+      description: "Premium vinyl finishes",
+      url: "/services/color-change-wraps"
+    },
+    {
+      icon: Users,
+      title: "About Us",
+      description: "Our expertise & experience",
+      url: "/about"
+    },
+    {
+      icon: Calendar,
+      title: "Book Now",
+      description: "Schedule your installation",
+      url: "/contact"
+    }
+  ];
+
   return (
-    <div className="bg-gray-100 py-3 border-y border-gray-200">
+    <div className="bg-black py-8">
       <div className="container mx-auto px-4">
-        <div className="flex flex-wrap justify-center md:justify-between items-center gap-3 text-sm">
-          <span className="font-medium text-gray-700">Our Vehicle Wrap Services:</span>
-          <div className="flex flex-wrap gap-2">
-            <Link to="/services/car-wraps" className="flex items-center hover:text-brand-red">
-              <Car className="mr-1 h-4 w-4 text-brand-red" />
-              Car Wraps
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+          {links.map((link, index) => (
+            <Link 
+              key={index} 
+              to={link.url}
+              className="bg-white/5 border border-white/10 hover:border-brand-red rounded-2xl p-4 text-center transition-all duration-300 hover:bg-white/10 group"
+            >
+              <div className="bg-brand-red/10 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:bg-brand-red transition-colors duration-300">
+                <link.icon className="h-6 w-6 text-brand-red group-hover:text-white transition-colors duration-300" />
+              </div>
+              <h3 className="font-bold text-white text-lg">{link.title}</h3>
+              <p className="text-white/70 text-sm mt-1">{link.description}</p>
             </Link>
-            <Link to="/services/truck-wraps" className="flex items-center hover:text-brand-red">
-              <Truck className="mr-1 h-4 w-4 text-brand-red" />
-              Truck Wraps
-            </Link>
-            <Link to="/services/van-wraps" className="flex items-center hover:text-brand-red">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-1 text-brand-red">
-                <path d="M10 17h4V8h-4z"/>
-                <path d="M2 9v8h10V9c0-4-1.5-5-5-5S2 5 2 9z"/>
-                <path d="M12 9v8h10V9c0-4-1.5-5-5-5s-5 1-5 5z"/>
-              </svg>
-              Van Wraps
-            </Link>
-            <Link to="/services/fleet-wraps" className="flex items-center hover:text-brand-red">
-              <Shield className="mr-1 h-4 w-4 text-brand-red" />
-              Fleet Wraps
-            </Link>
-            <Link to="/services/color-change-wraps" className="flex items-center hover:text-brand-red">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-1 text-brand-red">
-                <path d="M12 2v8"/>
-                <path d="M4.93 10.93 9.17 15.17"/>
-                <path d="M2 18h12"/>
-                <path d="M19 18h3"/>
-                <circle cx="12" cy="18" r="2"/>
-                <path d="M18 9v9"/>
-              </svg>
-              Color Change Wraps
-            </Link>
-          </div>
+          ))}
         </div>
       </div>
     </div>

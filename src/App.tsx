@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import './App.css';
@@ -36,32 +37,38 @@ function App() {
     structuredData.text = JSON.stringify({
       "@context": "https://schema.org",
       "@type": "WebSite",
-      "@id": "https://www.wrappingchicago.com/#website",
-      "url": "https://www.wrappingchicago.com/",
-      "name": "Wrapping Chicago - Professional Vehicle Wrap Services",
-      "description": "Chicago's premier vehicle wrap company offering professional car wraps, truck wraps, van wraps, fleet wraps & commercial graphics throughout Chicago and surrounding suburbs.",
+      "@id": "https://www.chicagofleetwraps.com/#website",
+      "url": "https://www.chicagofleetwraps.com/",
+      "name": "Chicago Fleet Wraps - Professional Vehicle Wrap Services",
+      "description": "Chicago Fleet Wraps offers high-impact vehicle wraps, fleet branding, and color change services that turn vehicles into rolling billboards.",
       "potentialAction": {
         "@type": "SearchAction",
-        "target": "https://www.wrappingchicago.com/search?q={search_term_string}",
+        "target": "https://www.chicagofleetwraps.com/search?q={search_term_string}",
         "query-input": "required name=search_term_string"
       },
       "publisher": {
         "@type": "Organization",
-        "name": "Wrapping Chicago",
+        "name": "Chicago Fleet Wraps",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.wrappingchicago.com/lovable-uploads/6ef3b1af-8591-4d36-97c2-9366401115fa.png",
+          "url": "https://www.chicagofleetwraps.com/lovable-uploads/6ef3b1af-8591-4d36-97c2-9366401115fa.png",
           "width": "180",
           "height": "60"
-        }
+        },
+        "sameAs": [
+          "https://www.facebook.com/ChicagoFleetWraps",
+          "https://www.instagram.com/chicagofleetwraps",
+          "https://www.tiktok.com/@chicagofleetwraps"
+        ]
       }
     });
     document.head.appendChild(structuredData);
     
-    // Add preloading for critical resources (removed the font preload that wasn't being used)
+    // Add preloading for critical resources
     const preloadLinks = [
       { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
-      { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossOrigin: 'anonymous' }
+      { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossOrigin: 'anonymous' },
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap' }
     ];
     
     preloadLinks.forEach(link => {
@@ -80,7 +87,9 @@ function App() {
     const dnsPrefetchLinks = [
       'https://www.googletagmanager.com',
       'https://www.google-analytics.com',
-      'https://maps.googleapis.com'
+      'https://maps.googleapis.com',
+      'https://fonts.googleapis.com',
+      'https://fonts.gstatic.com'
     ];
     
     dnsPrefetchLinks.forEach(href => {
