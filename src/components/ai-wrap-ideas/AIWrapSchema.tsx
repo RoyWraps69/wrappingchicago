@@ -27,8 +27,8 @@ const AIWrapSchema = () => {
       <AIArticleSchema />
       <AIServiceSchema />
       <AIVoiceSearchSchema 
-        title="AI Vehicle Wrap Ideas Generator"
-        description="Generate custom vehicle wrap ideas using artificial intelligence. Get professional design concepts for your business vehicle wraps instantly."
+        title="AI Wrap Ideas Generator in Chicago IL"
+        description="Get AI Wrap ideas in Chicago IL services to help generate creative vehicle concepts. Inspire unique designs, then let our experts bring them to life in vinyl."
       />
       <BreadcrumbSchema items={breadcrumbItems} />
     </>
