@@ -1,7 +1,8 @@
+
 import React, { useEffect } from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import './App.css';
-import './styles/GlobalStyles.css'; // Enhanced global styles for SEO
+import './styles/GlobalStyles.css';
 import { HelmetProvider } from 'react-helmet-async';
 import ScrollToTop from './components/navigation/ScrollToTop';
 import GoogleTagManager from './components/GoogleTagManager';
@@ -26,6 +27,7 @@ import LuxuryExoticWrapsPage from './pages/LuxuryExoticWrapsPage';
 import TruckWrapsPage from './pages/TruckWrapsPage';
 import VanWrapsPage from './pages/VanWrapsPage';
 import ColorChangeWrapsPage from './pages/ColorChangeWrapsPage';
+import FleetWrapsPage from './pages/FleetWrapsPage';
 import PricingPage from './pages/PricingPage';
 
 function App() {
