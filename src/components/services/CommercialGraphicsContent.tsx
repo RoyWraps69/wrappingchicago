@@ -1,9 +1,11 @@
 
 import React from 'react';
+import CommercialGraphicsSEO from './CommercialGraphicsSEO';
 
 const CommercialGraphicsContent: React.FC = () => {
   return (
     <>
+      <CommercialGraphicsSEO />
       <h2 className="text-2xl font-semibold text-brand-navy mb-4">Professional Commercial Graphics</h2>
       <p className="mb-6">
         From simple lettering to complex designs, our commercial graphics solutions help businesses create 
