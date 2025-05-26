@@ -47,12 +47,12 @@ const VanWrapsPage = () => {
   return (
     <>
       <Helmet>
-        <title>Van Wraps Chicago | Commercial & Cargo Van Wrapping Services</title>
-        <meta name="description" content="Professional van wraps in Chicago for cargo, transit, and sprinter vans. Turn your commercial vehicles into mobile billboards with custom, high-quality graphics." />
+        <title>Van Wraps in Chicago IL | Wrapping Chicago</title>
+        <meta name="description" content="Get van wraps in Chicago IL services to turn your van into a mobile billboard. Custom graphics printed and installed with precision for maximum exposure." />
         <meta name="keywords" content="van wraps Chicago, cargo van wraps, transit van wraps, sprinter van wraps, commercial van graphics, Chicago van wraps, delivery van wrapping" />
         <link rel="canonical" href={`${domain}${path}`} />
-        <meta property="og:title" content="Van Wraps Chicago | Commercial & Cargo Van Wrapping Services" />
-        <meta property="og:description" content="Professional van wraps in Chicago for cargo, transit, and sprinter vans. Turn your commercial vehicles into mobile billboards with custom, high-quality graphics." />
+        <meta property="og:title" content="Van Wraps in Chicago IL | Wrapping Chicago" />
+        <meta property="og:description" content="Get van wraps in Chicago IL services to turn your van into a mobile billboard. Custom graphics printed and installed with precision for maximum exposure." />
         <meta property="og:url" content={`${domain}${path}`} />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="/lovable-uploads/5539b79e-ab54-428d-82a0-e4735ee97a95.png" />
@@ -61,8 +61,8 @@ const VanWrapsPage = () => {
       <Schema 
         city={chicagoCity}
         path={path}
-        pageTitle="Van Wraps Chicago | Commercial & Cargo Van Wrapping Services"
-        pageDescription="Professional van wraps in Chicago for cargo, transit, and sprinter vans. Turn your commercial vehicles into mobile billboards with custom, high-quality graphics."
+        pageTitle="Van Wraps in Chicago IL | Wrapping Chicago"
+        pageDescription="Get van wraps in Chicago IL services to turn your van into a mobile billboard. Custom graphics printed and installed with precision for maximum exposure."
         faqs={faqData}
       />
       

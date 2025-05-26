@@ -28,19 +28,21 @@ const ColorChangeWrapsPage = () => {
     website: "https://www.chicago.gov"
   };
   
+  const domain = "https://www.wrappingchicago.com";
+  
   return (
     <>
       <Helmet>
-        <title>Premium Color Change Wraps Chicago | Matte, Gloss, Satin, Chrome & More</title>
+        <title>Color Change Wraps in Chicago IL | Wrapping Chicago</title>
         <meta 
           name="description" 
-          content="Transform your vehicle with our premium color change wraps in Chicago. Choose from matte, gloss, satin, metallic, chrome, and custom finishes. Professional installation with 3M and Avery vinyl. Same-day quotes, 3-day installation." 
+          content="Get color change wraps in Chicago IL services to refresh your vehicle's hue without paint. Choose bold colors applied seamlessly by wrap specialists." 
         />
         <meta name="keywords" content="color change wraps Chicago, matte wraps Chicago, gloss wraps Chicago, satin wraps Chicago, chrome wraps Chicago, metallic wraps Chicago, custom color wraps, vehicle color transformation Chicago, car color change Chicago, vinyl color wraps, premium vehicle wraps Chicago, 3M vinyl wraps Chicago, Avery vinyl wraps Chicago" />
-        <link rel="canonical" href="https://wrappingchicago.com/color-change-wraps" />
-        <meta property="og:title" content="Premium Color Change Wraps Chicago | Matte, Gloss, Satin, Chrome & More" />
-        <meta property="og:description" content="Transform your vehicle with our premium color change wraps in Chicago. Choose from matte, gloss, satin, metallic, chrome, and custom finishes." />
-        <meta property="og:url" content="https://wrappingchicago.com/color-change-wraps" />
+        <link rel="canonical" href={`${domain}/color-change-wraps`} />
+        <meta property="og:title" content="Color Change Wraps in Chicago IL | Wrapping Chicago" />
+        <meta property="og:description" content="Get color change wraps in Chicago IL services to refresh your vehicle's hue without paint. Choose bold colors applied seamlessly by wrap specialists." />
+        <meta property="og:url" content={`${domain}/color-change-wraps`} />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="/lovable-uploads/676b4902-7b81-4619-90d8-8feb1f986636.png" />
       </Helmet>
@@ -48,8 +50,8 @@ const ColorChangeWrapsPage = () => {
       <Schema 
         city={chicago}
         path="/color-change-wraps"
-        pageTitle="Premium Color Change Wraps Chicago | Matte, Gloss, Satin, Chrome & More"
-        pageDescription="Transform your vehicle with our premium color change wraps in Chicago. Choose from matte, gloss, satin, metallic, chrome, and custom finishes. Professional installation with 3M and Avery vinyl."
+        pageTitle="Color Change Wraps in Chicago IL | Wrapping Chicago"
+        pageDescription="Get color change wraps in Chicago IL services to refresh your vehicle's hue without paint. Choose bold colors applied seamlessly by wrap specialists."
       />
       
       <div className="flex flex-col min-h-screen">

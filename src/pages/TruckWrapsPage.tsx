@@ -18,6 +18,7 @@ const TruckWrapsPage = () => {
   // For Schema component
   const chicagoCity = cities.find(city => city.slug === 'chicago') || cities[0];
   const path = '/services/truck-wraps';
+  const domain = "https://www.wrappingchicago.com";
   
   // FAQ data for schema
   const faqData = [
@@ -46,13 +47,13 @@ const TruckWrapsPage = () => {
   return (
     <>
       <Helmet>
-        <title>Truck Wraps Chicago | Commercial & Pickup Truck Wrapping Services</title>
-        <meta name="description" content="Professional truck wraps in Chicago for commercial fleets, box trucks, and pickup trucks. Maximize your business visibility with high-quality vinyl truck graphics." />
+        <title>Truck Wraps in Chicago IL | Wrapping Chicago</title>
+        <meta name="description" content="Get truck wraps in Chicago IL services for standout advertising or rugged protection. High-quality vinyl graphics installed for lasting impact on the road." />
         <meta name="keywords" content="truck wraps Chicago, commercial truck wraps, box truck wraps, pickup truck wraps, fleet truck graphics, truck lettering, Chicago truck graphics" />
-        <link rel="canonical" href={`https://wrappingchicago.com${path}`} />
-        <meta property="og:title" content="Truck Wraps Chicago | Commercial & Pickup Truck Wrapping Services" />
-        <meta property="og:description" content="Professional truck wraps in Chicago for commercial fleets, box trucks, and pickup trucks. Maximize your business visibility with high-quality vinyl truck graphics." />
-        <meta property="og:url" content={`https://wrappingchicago.com${path}`} />
+        <link rel="canonical" href={`${domain}${path}`} />
+        <meta property="og:title" content="Truck Wraps in Chicago IL | Wrapping Chicago" />
+        <meta property="og:description" content="Get truck wraps in Chicago IL services for standout advertising or rugged protection. High-quality vinyl graphics installed for lasting impact on the road." />
+        <meta property="og:url" content={`${domain}${path}`} />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="/lovable-uploads/5539b79e-ab54-428d-82a0-e4735ee97a95.png" />
       </Helmet>
@@ -60,8 +61,8 @@ const TruckWrapsPage = () => {
       <Schema 
         city={chicagoCity}
         path={path}
-        pageTitle="Truck Wraps Chicago | Commercial & Pickup Truck Wrapping Services"
-        pageDescription="Professional truck wraps in Chicago for commercial fleets, box trucks, and pickup trucks. Maximize your business visibility with high-quality vinyl truck graphics."
+        pageTitle="Truck Wraps in Chicago IL | Wrapping Chicago"
+        pageDescription="Get truck wraps in Chicago IL services for standout advertising or rugged protection. High-quality vinyl graphics installed for lasting impact on the road."
         faqs={faqData}
       />
       

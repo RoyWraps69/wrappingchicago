@@ -28,19 +28,21 @@ const DesignerWrapsPage = () => {
     website: "https://www.chicago.gov"
   };
   
+  const domain = "https://www.wrappingchicago.com";
+  
   return (
     <>
       <Helmet>
-        <title>Custom Designer Vehicle Wraps Chicago | Creative & Unique Car Wraps</title>
+        <title>Designer Wraps in Chicago IL | Wrapping Chicago</title>
         <meta 
           name="description" 
-          content="Stand out with our custom designer vehicle wraps in Chicago. From artistic patterns to color shift effects and textured finishes. Turn your vehicle into a personalized masterpiece with our expert designers and installers." 
+          content="Get designer wraps in Chicago IL services for artistic, bespoke vehicle graphics. Stand out with custom illustrations executed by master installers." 
         />
         <meta name="keywords" content="designer vehicle wraps Chicago, custom car wraps Chicago, artistic vehicle wraps Chicago, creative car wraps, unique vehicle wraps, pattern wraps Chicago, textured vehicle wraps, color shift wraps Chicago, custom vehicle graphics Chicago, personalized car wraps, one-of-a-kind vehicle wrap, statement car wrap Chicago" />
-        <link rel="canonical" href="https://wrappingchicago.com/designer-wraps" />
-        <meta property="og:title" content="Custom Designer Vehicle Wraps Chicago | Creative & Unique Car Wraps" />
-        <meta property="og:description" content="Stand out with our custom designer vehicle wraps in Chicago. From artistic patterns to color shift effects and textured finishes." />
-        <meta property="og:url" content="https://wrappingchicago.com/designer-wraps" />
+        <link rel="canonical" href={`${domain}/designer-wraps`} />
+        <meta property="og:title" content="Designer Wraps in Chicago IL | Wrapping Chicago" />
+        <meta property="og:description" content="Get designer wraps in Chicago IL services for artistic, bespoke vehicle graphics. Stand out with custom illustrations executed by master installers." />
+        <meta property="og:url" content={`${domain}/designer-wraps`} />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="/lovable-uploads/9de106b5-94cb-4fd1-a7c7-5c75c75b7cbb.png" />
       </Helmet>
@@ -48,8 +50,8 @@ const DesignerWrapsPage = () => {
       <Schema 
         city={chicago}
         path="/designer-wraps"
-        pageTitle="Custom Designer Vehicle Wraps Chicago | Creative & Unique Car Wraps"
-        pageDescription="Stand out with our custom designer vehicle wraps in Chicago. From artistic patterns to color shift effects and textured finishes. Turn your vehicle into a personalized masterpiece with our expert designers and installers."
+        pageTitle="Designer Wraps in Chicago IL | Wrapping Chicago"
+        pageDescription="Get designer wraps in Chicago IL services for artistic, bespoke vehicle graphics. Stand out with custom illustrations executed by master installers."
       />
       
       <div className="flex flex-col min-h-screen">

@@ -28,19 +28,21 @@ const LuxuryExoticWrapsPage = () => {
     website: "https://www.chicago.gov"
   };
   
+  const domain = "https://www.wrappingchicago.com";
+  
   return (
     <>
       <Helmet>
-        <title>Exotic & Luxury Car Wraps Chicago | Ferrari, Lamborghini, Porsche Specialists</title>
+        <title>Luxury Vehicle Wraps in Chicago IL | Wrapping Chicago</title>
         <meta 
           name="description" 
-          content="Premium exotic car wrapping services in Chicago for Ferrari, Lamborghini, Porsche, McLaren, Aston Martin, and other luxury vehicles. Expert installers with specialized training for high-end automobiles. Custom color changes, paint protection film, and designer wraps." 
+          content="Get luxury vehicle wraps in Chicago IL services for exotic and high-end cars. Premium films and meticulous craftsmanship deliver showroom-worthy finishes." 
         />
         <meta name="keywords" content="exotic car wraps Chicago, luxury car wraps Chicago, Ferrari wraps, Lamborghini wraps, Porsche wraps, McLaren wraps, Aston Martin wraps, high-end vehicle wraps, supercar wraps Chicago, exotic car color change, luxury vehicle paint protection, premium car wraps Chicago, exotic car protection film, supercar vinyl wraps" />
-        <link rel="canonical" href="https://wrappingchicago.com/luxury-exotic-wraps" />
-        <meta property="og:title" content="Exotic & Luxury Car Wraps Chicago | Ferrari, Lamborghini, Porsche Specialists" />
-        <meta property="og:description" content="Premium exotic car wrapping services in Chicago for Ferrari, Lamborghini, Porsche, McLaren, Aston Martin, and other luxury vehicles." />
-        <meta property="og:url" content="https://wrappingchicago.com/luxury-exotic-wraps" />
+        <link rel="canonical" href={`${domain}/luxury-exotic-wraps`} />
+        <meta property="og:title" content="Luxury Vehicle Wraps in Chicago IL | Wrapping Chicago" />
+        <meta property="og:description" content="Get luxury vehicle wraps in Chicago IL services for exotic and high-end cars. Premium films and meticulous craftsmanship deliver showroom-worthy finishes." />
+        <meta property="og:url" content={`${domain}/luxury-exotic-wraps`} />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="/lovable-uploads/d2a8e418-117f-4bfc-a6a2-efb63dbbce7f.png" />
       </Helmet>
@@ -48,8 +50,8 @@ const LuxuryExoticWrapsPage = () => {
       <Schema 
         city={chicago}
         path="/luxury-exotic-wraps"
-        pageTitle="Exotic & Luxury Car Wraps Chicago | Ferrari, Lamborghini, Porsche Specialists"
-        pageDescription="Premium exotic car wrapping services in Chicago for Ferrari, Lamborghini, Porsche, McLaren, Aston Martin, and other luxury vehicles. Expert installers with specialized training for high-end automobiles."
+        pageTitle="Luxury Vehicle Wraps in Chicago IL | Wrapping Chicago"
+        pageDescription="Get luxury vehicle wraps in Chicago IL services for exotic and high-end cars. Premium films and meticulous craftsmanship deliver showroom-worthy finishes."
       />
       
       <div className="flex flex-col min-h-screen">

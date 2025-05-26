@@ -17,6 +17,7 @@ const CarWrapsPage = () => {
   // For Schema component
   const chicagoCity = cities.find(city => city.slug === 'chicago') || cities[0];
   const path = '/services/car-wraps';
+  const domain = "https://www.wrappingchicago.com";
   
   // FAQ data for schema
   const faqData = [
@@ -45,13 +46,13 @@ const CarWrapsPage = () => {
   return (
     <>
       <Helmet>
-        <title>{"Car Wraps Chicago | Professional Auto Wrap Installation"}</title>
-        <meta name="description" content="Transform your vehicle with premium car wraps in Chicago. Our professional installation team uses top-quality 3M vinyl for stunning, durable results." />
+        <title>Car Wraps in Chicago IL | Wrapping Chicago</title>
+        <meta name="description" content="Get car wraps in Chicago IL services using premium vinyl films. Protect paint and showcase unique designs applied flawlessly by skilled wrap technicians." />
         <meta name="keywords" content="car wraps, Chicago car wraps, vehicle wraps, auto wraps, car vinyl wrap, custom car wrap, 3M car wrap, Avery car wrap" />
-        <link rel="canonical" href={`https://wrappingchicago.com${path}`} />
-        <meta property="og:title" content="Car Wraps Chicago | Professional Auto Wrap Installation" />
-        <meta property="og:description" content="Transform your vehicle with premium car wraps in Chicago. Our professional installation team uses top-quality 3M vinyl for stunning, durable results." />
-        <meta property="og:url" content={`https://wrappingchicago.com${path}`} />
+        <link rel="canonical" href={`${domain}${path}`} />
+        <meta property="og:title" content="Car Wraps in Chicago IL | Wrapping Chicago" />
+        <meta property="og:description" content="Get car wraps in Chicago IL services using premium vinyl films. Protect paint and showcase unique designs applied flawlessly by skilled wrap technicians." />
+        <meta property="og:url" content={`${domain}${path}`} />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="/lovable-uploads/5539b79e-ab54-428d-82a0-e4735ee97a95.png" />
       </Helmet>
@@ -59,8 +60,8 @@ const CarWrapsPage = () => {
       <Schema 
         city={chicagoCity}
         path={path}
-        pageTitle="Car Wraps Chicago | Professional Auto Wrap Installation"
-        pageDescription="Transform your vehicle with premium car wraps in Chicago. Our professional installation team uses top-quality 3M vinyl for stunning, durable results."
+        pageTitle="Car Wraps in Chicago IL | Wrapping Chicago"
+        pageDescription="Get car wraps in Chicago IL services using premium vinyl films. Protect paint and showcase unique designs applied flawlessly by skilled wrap technicians."
         faqs={faqData}
       />
       
