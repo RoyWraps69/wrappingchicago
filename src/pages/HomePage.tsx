@@ -106,8 +106,8 @@ function HomePage() {
       <Schema 
         city={chicagoCity}
         path="/"
-        pageTitle="Vehicle Wraps Chicago | Premium Car & Truck Wrapping Services"
-        pageDescription="Chicago's premier vehicle wrap company. Professional car & truck wraps with premium 3M materials. Transform your business with effective mobile advertising."
+        pageTitle="Vehicle Wraps in Chicago IL | Wrapping Chicago"
+        pageDescription="Get vehicle wraps in Chicago IL services for cars, trucks, vans, and fleets. Boost style or brand visibility with custom vinyl graphics installed by experts."
         faqs={homeFAQs}
         keywords={[
           "vehicle wraps Chicago",
