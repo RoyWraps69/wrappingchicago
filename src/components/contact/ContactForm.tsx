@@ -1,135 +1,113 @@
 
-import React, { useState, useEffect } from 'react';
-import { useToast } from "@/hooks/use-toast";
-import SubmissionSuccess from './SubmissionSuccess';
+import React, { useState } from 'react';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
+import { Label } from '@/components/ui/label';
+import { MessageSquare } from 'lucide-react';
 
 const ContactForm = () => {
-  const { toast } = useToast();
-  const [submitted, setSubmitted] = useState(false);
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  
-  // Check for success parameter in URL to show success message after redirect
-  useEffect(() => {
-    const urlParams = new URLSearchParams(window.location.search);
-    if (urlParams.get('success') === 'true') {
-      setSubmitted(true);
-      // Clean URL
-      window.history.replaceState({}, document.title, window.location.pathname);
-    }
-  }, []);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    service: '',
+    message: ''
+  });
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Form submission logic would go here
+    console.log('Form submitted:', formData);
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
 
   return (
-    <div className="bg-gray-100 p-6 rounded-lg">
-      <h2 className="text-2xl font-semibold text-brand-navy mb-4">Request a Quote</h2>
+    <div>
+      <h2 className="text-2xl font-bold text-brand-navy mb-6">Request a Quote</h2>
       
-      {submitted ? (
-        <SubmissionSuccess onReset={() => setSubmitted(false)} />
-      ) : (
-        <form 
-          action="https://formsubmit.co/roy@chicagofleetwraps.com" 
-          method="POST"
-          className="space-y-4"
-          onSubmit={() => {
-            setIsSubmitting(true);
-            toast({
-              title: "Submitting your request...",
-              description: "Please wait while we process your information.",
-            });
-          }}
-        >
-          {/* FormSubmit.co specific configuration fields */}
-          <input type="hidden" name="_subject" value="Chicago Fleet Wraps: New Quote Request" />
-          <input type="hidden" name="_captcha" value="false" />
-          <input type="hidden" name="_next" value="https://wrappingchicago.com/contact?success=true" />
-          <input type="hidden" name="_template" value="table" />
-          
-          {/* Honeypot field to prevent spam */}
-          <input type="text" name="_honey" style={{ display: 'none' }} />
-          
-          <div className="space-y-4">
-            <div>
-              <label htmlFor="name" className="block text-sm font-medium">Your Name</label>
-              <input 
-                id="name"
-                type="text" 
-                name="name" 
-                placeholder="John Smith"
-                className="w-full p-2 border border-gray-300 rounded mt-1" 
-                required
-              />
-            </div>
-            
-            <div>
-              <label htmlFor="email" className="block text-sm font-medium">Email Address</label>
-              <input 
-                id="email"
-                type="email" 
-                name="email" 
-                placeholder="you@example.com"
-                className="w-full p-2 border border-gray-300 rounded mt-1" 
-                required
-              />
-            </div>
-            
-            <div>
-              <label htmlFor="phone" className="block text-sm font-medium">Phone Number</label>
-              <input 
-                id="phone"
-                type="tel" 
-                name="phone" 
-                placeholder="(123) 456-7890"
-                className="w-full p-2 border border-gray-300 rounded mt-1" 
-                required
-              />
-            </div>
-            
-            <div>
-              <label htmlFor="service" className="block text-sm font-medium">Service Interested In</label>
-              <select 
-                id="service"
-                name="service" 
-                className="w-full p-2 border border-gray-300 rounded mt-1" 
-                required
-              >
-                <option value="">Select a Service</option>
-                <option value="Fleet Wraps">Fleet Wraps</option>
-                <option value="Color Change Wraps">Color Change Wraps</option>
-                <option value="Commercial Graphics">Commercial Graphics</option>
-                <option value="Partial Wraps">Partial Wraps</option>
-                <option value="Easy Button Package">Easy Button Package ($3,999)</option>
-              </select>
-            </div>
-            
-            <div>
-              <label htmlFor="message" className="block text-sm font-medium">Message</label>
-              <textarea 
-                id="message"
-                name="message" 
-                placeholder="Tell us about your project..." 
-                rows={4} 
-                className="w-full p-2 border border-gray-300 rounded mt-1"
-                required
-              ></textarea>
-            </div>
-          </div>
-          
-          <button 
-            type="submit" 
-            className="bg-brand-red text-white px-4 py-2 rounded hover:bg-red-700 transition-colors inline-flex items-center justify-center"
-            disabled={isSubmitting}
+      <form onSubmit={handleSubmit} className="space-y-6">
+        <div>
+          <Label htmlFor="name">Name *</Label>
+          <Input
+            id="name"
+            name="name"
+            type="text"
+            value={formData.name}
+            onChange={handleChange}
+            required
+            className="mt-1"
+          />
+        </div>
+        
+        <div>
+          <Label htmlFor="email">Email *</Label>
+          <Input
+            id="email"
+            name="email"
+            type="email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+            className="mt-1"
+          />
+        </div>
+        
+        <div>
+          <Label htmlFor="phone">Phone</Label>
+          <Input
+            id="phone"
+            name="phone"
+            type="tel"
+            value={formData.phone}
+            onChange={handleChange}
+            className="mt-1"
+          />
+        </div>
+        
+        <div>
+          <Label htmlFor="service">Service Interested In</Label>
+          <select
+            id="service"
+            name="service"
+            value={formData.service}
+            onChange={handleChange}
+            className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-brand-navy"
           >
-            {isSubmitting ? 'Submitting...' : 'Submit Request'}
-          </button>
-          
-          <p className="text-sm text-gray-500 mt-2">
-            By submitting this form, your request will be sent to: roy@chicagofleetwraps.com
-          </p>
-        </form>
-      )}
-      
-      <p className="text-xs text-gray-500 mt-4">
-        * This form submits directly to roy@chicagofleetwraps.com
-      </p>
+            <option value="">Select a service</option>
+            <option value="car-wraps">Car Wraps</option>
+            <option value="truck-wraps">Truck Wraps</option>
+            <option value="van-wraps">Van Wraps</option>
+            <option value="fleet-wraps">Fleet Wraps</option>
+            <option value="color-change">Color Change Wraps</option>
+            <option value="commercial-graphics">Commercial Graphics</option>
+          </select>
+        </div>
+        
+        <div>
+          <Label htmlFor="message">Message</Label>
+          <Textarea
+            id="message"
+            name="message"
+            value={formData.message}
+            onChange={handleChange}
+            rows={4}
+            className="mt-1"
+            placeholder="Tell us about your project..."
+          />
+        </div>
+        
+        <Button type="submit" className="w-full bg-brand-red hover:bg-red-700">
+          <MessageSquare className="mr-2 h-4 w-4" />
+          Send Message
+        </Button>
+      </form>
     </div>
   );
 };
