@@ -16,6 +16,8 @@ const ServicesPage = () => {
   const { serviceType } = useParams();
   const chicagoCity = cities.find(city => city.slug === 'chicago') || cities[0];
   
+  console.log('ServicesPage serviceType:', serviceType);
+  
   // Render appropriate SEO component based on service type
   const renderSEO = () => {
     if (serviceType === 'commercial-graphics') {
@@ -47,7 +49,7 @@ const ServicesPage = () => {
               <p className="text-lg text-gray-700 mb-2">Complete design, print, and installation services for all vehicle types</p>
             </div>
             
-            <ServiceContentSelector path={window.location.pathname} />
+            <ServiceContentSelector path={serviceType || 'services'} />
           </div>
           
           <CallToAction city="Chicago" />
