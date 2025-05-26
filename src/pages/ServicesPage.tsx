@@ -17,13 +17,18 @@ const ServicesPage = () => {
   const chicagoCity = cities.find(city => city.slug === 'chicago') || cities[0];
   
   console.log('ServicesPage serviceType:', serviceType);
+  console.log('ServicesPage window.location.pathname:', window.location.pathname);
   
   // Render appropriate SEO component based on service type
   const renderSEO = () => {
+    console.log('renderSEO - serviceType:', serviceType);
+    console.log('renderSEO - checking if serviceType === commercial-graphics:', serviceType === 'commercial-graphics');
+    
     if (serviceType === 'commercial-graphics') {
+      console.log('Rendering CommercialGraphicsSEO');
       return <CommercialGraphicsSEO />;
     }
-    // Add other service-specific SEO components here as needed
+    console.log('Rendering ServicesSEO (default)');
     return <ServicesSEO />;
   };
   
