@@ -8,15 +8,15 @@ const HomeSEO = () => {
   
   return (
     <Helmet>
-      <title>Vehicle Wraps in Chicago IL | Wrapping Chicago</title>
+      <title>Vehicle Wraps Chicago IL | Premium Car & Truck Wrapping Services {currentYear}</title>
       <meta 
         name="description" 
-        content="Get vehicle wraps in Chicago IL services for cars, trucks, vans, and fleets. Boost style or brand visibility with custom vinyl graphics installed by experts." 
+        content="Chicago's premier vehicle wrap company offering professional car wraps, truck wraps, van wraps, fleet wraps & commercial graphics with expert installation using premium 3M materials." 
       />
       <meta name="keywords" content="vehicle wraps Chicago, car wraps Chicago, truck wraps Chicago, van wraps Chicago, fleet wraps Chicago, commercial vehicle wraps, custom vehicle wraps, vehicle graphics Chicago, car graphics Chicago, vinyl wraps Chicago, 3M vehicle wraps" />
       <link rel="canonical" href={domain} />
       
-      {/* Favicon */}
+      {/* Enhanced favicon setup */}
       <link rel="icon" type="image/png" sizes="32x32" href="/lovable-uploads/6ef3b1af-8591-4d36-97c2-9366401115fa.png" />
       <link rel="icon" type="image/png" sizes="16x16" href="/lovable-uploads/6ef3b1af-8591-4d36-97c2-9366401115fa.png" />
       <link rel="apple-touch-icon" sizes="180x180" href="/lovable-uploads/6ef3b1af-8591-4d36-97c2-9366401115fa.png" />
@@ -24,9 +24,9 @@ const HomeSEO = () => {
       <meta name="msapplication-TileImage" content="/lovable-uploads/6ef3b1af-8591-4d36-97c2-9366401115fa.png" />
       <meta name="msapplication-TileColor" content="#11172D" />
       
-      {/* Open Graph / Social Media Tags */}
-      <meta property="og:title" content="Vehicle Wraps in Chicago IL | Wrapping Chicago" />
-      <meta property="og:description" content="Get vehicle wraps in Chicago IL services for cars, trucks, vans, and fleets. Boost style or brand visibility with custom vinyl graphics installed by experts." />
+      {/* Enhanced Open Graph / Social Media Tags */}
+      <meta property="og:title" content={`Vehicle Wraps Chicago IL | Premium Car & Truck Wrapping Services ${currentYear}`} />
+      <meta property="og:description" content="Chicago's premier vehicle wrap company offering professional car wraps, truck wraps, van wraps, fleet wraps & commercial graphics with expert installation using premium 3M materials." />
       <meta property="og:url" content={domain} />
       <meta property="og:type" content="website" />
       <meta property="og:image" content={`${domain}/lovable-uploads/6ef3b1af-8591-4d36-97c2-9366401115fa.png`} />
@@ -36,27 +36,27 @@ const HomeSEO = () => {
       <meta property="og:site_name" content="Wrapping Chicago" />
       <meta property="og:locale" content="en_US" />
       
-      {/* Twitter Card */}
+      {/* Enhanced Twitter Card */}
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content="Vehicle Wraps in Chicago IL | Wrapping Chicago" />
-      <meta name="twitter:description" content="Get vehicle wraps in Chicago IL services for cars, trucks, vans, and fleets. Boost style or brand visibility with custom vinyl graphics installed by experts." />
+      <meta name="twitter:title" content={`Vehicle Wraps Chicago IL | Premium Services ${currentYear}`} />
+      <meta name="twitter:description" content="Chicago's premier vehicle wrap company offering professional car wraps, truck wraps, van wraps, fleet wraps & commercial graphics with expert installation." />
       <meta name="twitter:image" content={`${domain}/lovable-uploads/6ef3b1af-8591-4d36-97c2-9366401115fa.png`} />
       <meta name="twitter:image:alt" content="Professional vehicle wrap services in Chicago - colorful vehicle design" />
       <meta name="twitter:site" content="@wrappingchicago" />
       
-      {/* Additional SEO meta tags */}
+      {/* Enhanced SEO meta tags */}
       <meta name="author" content="Wrapping Chicago" />
       <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
       <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
       <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
       
-      {/* Local Business SEO */}
+      {/* Enhanced Local Business SEO */}
       <meta name="geo.region" content="US-IL" />
       <meta name="geo.placename" content="Chicago" />
       <meta name="geo.position" content="41.8781;-87.6298" />
       <meta name="ICBM" content="41.8781, -87.6298" />
       
-      {/* Preload critical resources */}
+      {/* Performance optimizations */}
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       
@@ -67,7 +67,7 @@ const HomeSEO = () => {
       <link rel="alternate" hrefLang="en-us" href={domain} />
       <link rel="alternate" href={domain} />
       
-      {/* Structured Data for Website */}
+      {/* Enhanced Structured Data for Website */}
       <script type="application/ld+json">
         {JSON.stringify({
           "@context": "https://schema.org",
@@ -82,7 +82,7 @@ const HomeSEO = () => {
         })}
       </script>
       
-      {/* Structured Data for Business */}
+      {/* Enhanced Structured Data for Business */}
       <script type="application/ld+json">
         {JSON.stringify({
           "@context": "https://schema.org",
@@ -92,6 +92,7 @@ const HomeSEO = () => {
           "@id": domain,
           "url": domain,
           "telephone": "+13125971286",
+          "priceRange": "$$",
           "address": {
             "@type": "PostalAddress",
             "streetAddress": "4711 N. Lamon Ave",
@@ -120,7 +121,7 @@ const HomeSEO = () => {
         })}
       </script>
       
-      {/* Structured Data for Service List */}
+      {/* Enhanced Structured Data for Service List */}
       <script type="application/ld+json">
         {JSON.stringify({
           "@context": "https://schema.org",
@@ -155,6 +156,12 @@ const HomeSEO = () => {
               "position": 5,
               "name": "Color Change Wraps",
               "url": `${domain}/services/color-change-wraps`
+            },
+            {
+              "@type": "ListItem",
+              "position": 6,
+              "name": "Commercial Graphics",
+              "url": `${domain}/services/commercial-graphics`
             }
           ]
         })}

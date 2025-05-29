@@ -18,13 +18,15 @@ const LocationHeader: React.FC<LocationHeaderProps> = ({ city, cityKeywords }) =
   
   return (
     <Helmet>
-      <title>{`Professional Vehicle Wraps in ${city.name}, IL | Car, Truck & Fleet Wraps | ${currentYear}`}</title>
+      <title>Professional Vehicle Wraps in {city.name}, IL | Car, Truck & Fleet Wraps | {currentYear}</title>
       <meta 
         name="description" 
         content={`Chicago's top-rated vehicle wrap provider serving ${city.name}, IL. Professional car wraps, truck wraps, van wraps & fleet wraps with over 16,000 completed projects in our 20 years of business. Free quotes available.`} 
       />
       <link rel="canonical" href={`${domain}/vehicle-wraps-${city.slug}-il`} />
       <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+      
+      {/* Enhanced Open Graph Tags */}
       <meta property="og:title" content={`Professional Vehicle Wraps in ${city.name}, IL | Wrapping Chicago | ${currentYear}`} />
       <meta property="og:description" content={`Expert vehicle wrapping services in ${city.name}, IL. Specializing in fleet wraps, car wraps, truck wraps, and commercial graphics with premium 3M materials and installation.`} />
       <meta property="og:url" content={`${domain}/vehicle-wraps-${city.slug}-il`} />
@@ -34,6 +36,8 @@ const LocationHeader: React.FC<LocationHeaderProps> = ({ city, cityKeywords }) =
       <meta property="og:image:height" content="630" />
       <meta property="og:locale" content="en_US" />
       <meta property="og:site_name" content="Wrapping Chicago" />
+      
+      {/* Enhanced Twitter Card */}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={`Professional Vehicle Wraps in ${city.name}, IL | Wrapping Chicago | ${currentYear}`} />
       <meta name="twitter:description" content={`Expert vehicle wrapping services in ${city.name}, IL. Specializing in fleet wraps, car wraps, truck wraps, and commercial graphics with 20 years of experience.`} />
@@ -74,7 +78,7 @@ const LocationHeader: React.FC<LocationHeaderProps> = ({ city, cityKeywords }) =
       <link rel="preconnect" href="https://maps.googleapis.com" crossOrigin="anonymous" />
       <link rel="dns-prefetch" href="https://maps.googleapis.com" />
       
-      {/* Additional Local Business Data */}
+      {/* Enhanced Local Business Data */}
       <meta property="business:contact_data:street_address" content="4711 N. Lamon Ave" />
       <meta property="business:contact_data:locality" content="Chicago" />
       <meta property="business:contact_data:region" content="IL" />

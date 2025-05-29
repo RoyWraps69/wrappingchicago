@@ -16,19 +16,11 @@ const ServicesPage = () => {
   const { serviceType } = useParams();
   const chicagoCity = cities.find(city => city.slug === 'chicago') || cities[0];
   
-  console.log('ServicesPage serviceType:', serviceType);
-  console.log('ServicesPage window.location.pathname:', window.location.pathname);
-  
   // Render appropriate SEO component based on service type
   const renderSEO = () => {
-    console.log('renderSEO - serviceType:', serviceType);
-    console.log('renderSEO - checking if serviceType === commercial-graphics:', serviceType === 'commercial-graphics');
-    
     if (serviceType === 'commercial-graphics') {
-      console.log('Rendering CommercialGraphicsSEO');
       return <CommercialGraphicsSEO />;
     }
-    console.log('Rendering ServicesSEO (default)');
     return <ServicesSEO />;
   };
   
@@ -49,10 +41,14 @@ const ServicesPage = () => {
           <div className="container mx-auto py-12 px-4">
             <Breadcrumbs />
             
-            <div className="mb-8">
-              <h1 className="text-3xl md:text-4xl font-bold text-brand-navy mb-4">Vehicle Wrap Services Chicago</h1>
-              <p className="text-lg text-gray-700 mb-2">Complete design, print, and installation services for all vehicle types</p>
-            </div>
+            <header className="mb-8">
+              <h1 className="text-3xl md:text-4xl font-bold text-brand-navy mb-4">
+                Professional Vehicle Wrap Services in Chicago
+              </h1>
+              <p className="text-lg text-gray-700 mb-2">
+                Complete design, print, and installation services for all vehicle types
+              </p>
+            </header>
             
             <ServiceContentSelector path={serviceType || 'services'} />
           </div>

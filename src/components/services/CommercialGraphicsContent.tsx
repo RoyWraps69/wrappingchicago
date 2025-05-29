@@ -3,14 +3,19 @@ import React from 'react';
 
 const CommercialGraphicsContent: React.FC = () => {
   return (
-    <>
-      <h2 className="text-2xl font-semibold text-brand-navy mb-4">Professional Commercial Graphics</h2>
-      <p className="mb-6">
-        From simple lettering to complex designs, our commercial graphics solutions help businesses create 
-        professional vehicle identities that stand out on the road and drive brand recognition.
-      </p>
+    <article>
+      <header className="mb-6">
+        <h2 className="text-2xl md:text-3xl font-semibold text-brand-navy mb-4">
+          Professional Commercial Graphics in Chicago
+        </h2>
+        <p className="text-lg mb-6">
+          From simple lettering to complex designs, our commercial graphics solutions help businesses create 
+          professional vehicle identities that stand out on the road and drive brand recognition.
+        </p>
+      </header>
+      
       <div className="grid md:grid-cols-2 gap-6 mb-8">
-        <div className="bg-brand-light p-6 rounded-lg">
+        <section className="bg-brand-light p-6 rounded-lg">
           <h3 className="text-xl font-semibold text-brand-navy mb-3">Commercial Graphics Options</h3>
           <ul className="list-disc pl-5 space-y-2">
             <li>Vehicle lettering and logos</li>
@@ -20,8 +25,9 @@ const CommercialGraphicsContent: React.FC = () => {
             <li>Reflective graphics for increased visibility</li>
             <li>DOT numbers and regulatory markings</li>
           </ul>
-        </div>
-        <div className="bg-brand-light p-6 rounded-lg">
+        </section>
+        
+        <section className="bg-brand-light p-6 rounded-lg">
           <h3 className="text-xl font-semibold text-brand-navy mb-3">Perfect For</h3>
           <ul className="list-disc pl-5 space-y-2">
             <li>Service vehicles and contractor trucks</li>
@@ -31,9 +37,27 @@ const CommercialGraphicsContent: React.FC = () => {
             <li>Small business fleets on a budget</li>
             <li>Temporary or seasonal promotions</li>
           </ul>
-        </div>
+        </section>
       </div>
-    </>
+      
+      <section className="mb-8">
+        <h3 className="text-xl font-semibold text-brand-navy mb-4">Why Choose Our Commercial Graphics?</h3>
+        <div className="grid md:grid-cols-3 gap-4">
+          <div className="text-center p-4 bg-white rounded-lg shadow-sm">
+            <h4 className="font-semibold text-brand-navy mb-2">Premium Materials</h4>
+            <p className="text-sm text-gray-600">High-quality 3M vinyl that lasts 5-7 years</p>
+          </div>
+          <div className="text-center p-4 bg-white rounded-lg shadow-sm">
+            <h4 className="font-semibold text-brand-navy mb-2">Expert Design</h4>
+            <p className="text-sm text-gray-600">Professional designers create impactful graphics</p>
+          </div>
+          <div className="text-center p-4 bg-white rounded-lg shadow-sm">
+            <h4 className="font-semibold text-brand-navy mb-2">Fast Installation</h4>
+            <p className="text-sm text-gray-600">Quick turnaround to get you back on the road</p>
+          </div>
+        </div>
+      </section>
+    </article>
   );
 };
 

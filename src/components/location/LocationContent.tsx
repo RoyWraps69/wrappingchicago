@@ -16,10 +16,10 @@ interface LocationContentProps {
 
 const LocationContent = ({ city }: LocationContentProps) => {
   return (
-    <section className="py-10 bg-white">
+    <main className="py-10 bg-white" id="main-content">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-3 gap-8">
-          <div className="md:col-span-2">
+          <article className="md:col-span-2">
             <CityHeader city={city} />
             <div className="prose max-w-none">
               <CityIntroduction city={city} />
@@ -29,15 +29,15 @@ const LocationContent = ({ city }: LocationContentProps) => {
               <VehicleWrapKeywords city={city} />
               <CallToActionBox city={city} />
             </div>
-          </div>
+          </article>
           
           {/* Sidebar */}
-          <div className="md:col-span-1">
+          <aside className="md:col-span-1">
             <LocationSidebar city={city} />
-          </div>
+          </aside>
         </div>
       </div>
-    </section>
+    </main>
   );
 };
 

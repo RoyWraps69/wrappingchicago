@@ -12,14 +12,16 @@ interface CityInfoProps {
 
 const CityInfo = ({ city }: CityInfoProps) => {
   return (
-    <div className="py-12">
-      <div className="mb-8">
-        <h2 className="text-3xl font-bold text-brand-navy mb-4">
-          Professional Vehicle Wraps in {city.name}
-        </h2>
-        <p className="text-lg text-gray-700 mb-6">
-          {city.description}
-        </p>
+    <section className="py-12">
+      <article className="mb-8">
+        <header>
+          <h2 className="text-3xl font-bold text-brand-navy mb-4">
+            Professional Vehicle Wraps in {city.name}
+          </h2>
+          <p className="text-lg text-gray-700 mb-6">
+            {city.description}
+          </p>
+        </header>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="flex items-start">
@@ -39,8 +41,8 @@ const CityInfo = ({ city }: CityInfoProps) => {
             <span>5-7 year durability</span>
           </div>
         </div>
-      </div>
-    </div>
+      </article>
+    </section>
   );
 };
 
