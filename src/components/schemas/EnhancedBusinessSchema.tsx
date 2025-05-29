@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { City } from '@/data/types/city';
 
@@ -29,7 +28,7 @@ const EnhancedBusinessSchema: React.FC<EnhancedBusinessSchemaProps> = ({ city })
     "foundingDate": "2003",
     "founder": {
       "@type": "Person",
-      "name": "Roy"
+      "name": "Roy Houston"
     },
     "areaServed": [
       {
@@ -45,12 +44,12 @@ const EnhancedBusinessSchema: React.FC<EnhancedBusinessSchemaProps> = ({ city })
     ],
     "geo": {
       "@type": "GeoCoordinates",
-      "latitude": "41.8781",
-      "longitude": "-87.6298"
+      "latitude": "41.9658",
+      "longitude": "-87.7533"
     },
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "4711 N. Lamon Ave",
+      "streetAddress": "4711 N Lamon",
       "addressLocality": "Chicago",
       "addressRegion": "IL",
       "postalCode": "60630",
@@ -59,15 +58,9 @@ const EnhancedBusinessSchema: React.FC<EnhancedBusinessSchemaProps> = ({ city })
     "openingHoursSpecification": [
       {
         "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
         "opens": "09:00",
-        "closes": "17:00"
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Saturday"],
-        "opens": "10:00",
-        "closes": "14:00"
+        "closes": "18:00"
       }
     ],
     "priceRange": "$$$",
@@ -77,8 +70,8 @@ const EnhancedBusinessSchema: React.FC<EnhancedBusinessSchemaProps> = ({ city })
       "@type": "GeoCircle",
       "geoMidpoint": {
         "@type": "GeoCoordinates",
-        "latitude": "41.8781",
-        "longitude": "-87.6298"
+        "latitude": "41.9658",
+        "longitude": "-87.7533"
       },
       "geoRadius": "80000"
     },
@@ -90,22 +83,14 @@ const EnhancedBusinessSchema: React.FC<EnhancedBusinessSchemaProps> = ({ city })
         "email": "roy@chicagofleetwraps.com",
         "areaServed": "Chicago Metropolitan Area",
         "availableLanguage": ["English", "Spanish"]
-      },
-      {
-        "@type": "ContactPoint",
-        "telephone": "+13125971286",
-        "contactType": "sales",
-        "email": "roy@chicagofleetwraps.com",
-        "areaServed": "Chicago Metropolitan Area",
-        "availableLanguage": ["English", "Spanish"]
       }
     ],
     "sameAs": [
       "https://www.facebook.com/wrappingchicago",
       "https://www.instagram.com/wrappingchicago",
-      "https://twitter.com/wrappingchicago",
+      "https://www.tiktok.com/@wrappingchicago",
       "https://www.linkedin.com/company/wrappingchicago",
-      "https://www.yelp.com/biz/wrapping-chicago"
+      "https://www.youtube.com/@wrappingchicago"
     ],
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
@@ -145,7 +130,6 @@ const EnhancedBusinessSchema: React.FC<EnhancedBusinessSchemaProps> = ({ city })
         }
       ]
     },
-    // Replace review with aggregateRating
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": "4.9",

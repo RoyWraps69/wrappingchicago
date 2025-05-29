@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 
@@ -8,10 +7,10 @@ const HomeSEO = () => {
   
   return (
     <Helmet>
-      <title>{`Vehicle Wraps Chicago IL | Premium Car & Truck Wrapping Services ${currentYear}`}</title>
+      <title>{`Vehicle Wraps in Chicago IL | Wrapping Chicago`}</title>
       <meta 
         name="description" 
-        content="Chicago's premier vehicle wrap company offering professional car wraps, truck wraps, van wraps, fleet wraps & commercial graphics with expert installation using premium 3M materials." 
+        content="Get vehicle wraps in Chicago IL services for cars, trucks, vans, and fleets. Boost style or brand visibility with custom vinyl graphics installed by experts." 
       />
       <meta name="keywords" content="vehicle wraps Chicago, car wraps Chicago, truck wraps Chicago, van wraps Chicago, fleet wraps Chicago, commercial vehicle wraps, custom vehicle wraps, vehicle graphics Chicago, car graphics Chicago, vinyl wraps Chicago, 3M vehicle wraps" />
       <link rel="canonical" href={domain} />
@@ -25,8 +24,8 @@ const HomeSEO = () => {
       <meta name="msapplication-TileColor" content="#11172D" />
       
       {/* Enhanced Open Graph / Social Media Tags */}
-      <meta property="og:title" content={`Vehicle Wraps Chicago IL | Premium Car & Truck Wrapping Services ${currentYear}`} />
-      <meta property="og:description" content="Chicago's premier vehicle wrap company offering professional car wraps, truck wraps, van wraps, fleet wraps & commercial graphics with expert installation using premium 3M materials." />
+      <meta property="og:title" content={`Vehicle Wraps in Chicago IL | Wrapping Chicago`} />
+      <meta property="og:description" content="Get vehicle wraps in Chicago IL services for cars, trucks, vans, and fleets. Boost style or brand visibility with custom vinyl graphics installed by experts." />
       <meta property="og:url" content={domain} />
       <meta property="og:type" content="website" />
       <meta property="og:image" content={`${domain}/lovable-uploads/6ef3b1af-8591-4d36-97c2-9366401115fa.png`} />
@@ -38,8 +37,8 @@ const HomeSEO = () => {
       
       {/* Enhanced Twitter Card */}
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content={`Vehicle Wraps Chicago IL | Premium Services ${currentYear}`} />
-      <meta name="twitter:description" content="Chicago's premier vehicle wrap company offering professional car wraps, truck wraps, van wraps, fleet wraps & commercial graphics with expert installation." />
+      <meta name="twitter:title" content={`Vehicle Wraps in Chicago IL | Wrapping Chicago`} />
+      <meta name="twitter:description" content="Get vehicle wraps in Chicago IL services for cars, trucks, vans, and fleets. Boost style or brand visibility with custom vinyl graphics installed by experts." />
       <meta name="twitter:image" content={`${domain}/lovable-uploads/6ef3b1af-8591-4d36-97c2-9366401115fa.png`} />
       <meta name="twitter:image:alt" content="Professional vehicle wrap services in Chicago - colorful vehicle design" />
       <meta name="twitter:site" content="@wrappingchicago" />
@@ -53,8 +52,8 @@ const HomeSEO = () => {
       {/* Enhanced Local Business SEO */}
       <meta name="geo.region" content="US-IL" />
       <meta name="geo.placename" content="Chicago" />
-      <meta name="geo.position" content="41.8781;-87.6298" />
-      <meta name="ICBM" content="41.8781, -87.6298" />
+      <meta name="geo.position" content="41.9658;-87.7533" />
+      <meta name="ICBM" content="41.9658, -87.7533" />
       
       {/* Performance optimizations */}
       <link rel="preconnect" href="https://fonts.googleapis.com" />
