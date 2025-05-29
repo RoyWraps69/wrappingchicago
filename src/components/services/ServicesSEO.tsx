@@ -8,7 +8,7 @@ const ServicesSEO = () => {
   
   return (
     <Helmet>
-      <title>Vehicle Wrap Services in Chicago IL | Complete Design & Installation {currentYear}</title>
+      <title>{`Vehicle Wrap Services in Chicago IL | Complete Design & Installation ${currentYear}`}</title>
       <meta 
         name="description" 
         content="Get professional vehicle wrap services in Chicago IL for complete design, print, and installation. Transform any vehicle with durable vinyl and eye-catching branding using premium 3M materials." 
