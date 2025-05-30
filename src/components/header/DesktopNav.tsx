@@ -31,7 +31,7 @@ const DesktopNav = () => {
         <NavigationMenu>
           <NavigationMenuList>
             <NavigationMenuItem>
-              <NavigationMenuTrigger className="text-white/80 hover:text-white transition-all flex items-center relative font-medium after:content-[''] after:absolute after:bottom-[-2px] after:left-0 after:w-full after:h-0.5 after:bg-brand-red after:scale-x-0 after:origin-left after:transition-transform hover:after:scale-x-100 bg-transparent">
+              <NavigationMenuTrigger className="text-white hover:text-white transition-all flex items-center relative font-medium after:content-[''] after:absolute after:bottom-[-2px] after:left-0 after:w-full after:h-0.5 after:bg-brand-red after:scale-x-0 after:origin-left after:transition-transform hover:after:scale-x-100 bg-transparent">
                 <DollarSign className="mr-1 h-4 w-4" />
                 Pricing
               </NavigationMenuTrigger>
@@ -39,14 +39,14 @@ const DesktopNav = () => {
                 <div className="w-48 p-2 bg-white">
                   <Link 
                     to="/pricing" 
-                    className="block px-3 py-2 text-sm text-brand-navy hover:bg-gray-100 rounded-md"
+                    className="block px-3 py-2 text-sm text-gray-900 hover:bg-gray-100 rounded-md"
                   >
                     <DollarSign className="inline mr-2 h-4 w-4" />
                     Pricing & Packages
                   </Link>
                   <Link 
                     to="/locations" 
-                    className="block px-3 py-2 text-sm text-brand-navy hover:bg-gray-100 rounded-md"
+                    className="block px-3 py-2 text-sm text-gray-900 hover:bg-gray-100 rounded-md"
                   >
                     <MapPin className="inline mr-2 h-4 w-4" />
                     Service Areas
@@ -70,7 +70,7 @@ const DesktopNav = () => {
           variant="outline"
           asChild
         >
-          <Link to="/contact" className="inline-flex items-center" aria-label="Request a quote for vehicle wraps">
+          <Link to="/contact" className="inline-flex items-center text-white border-white hover:bg-white hover:text-gray-900" aria-label="Request a quote for vehicle wraps">
             <MessageSquare className="mr-2 h-4 w-4" />
             <span className="whitespace-nowrap">Get a Quote</span>
           </Link>

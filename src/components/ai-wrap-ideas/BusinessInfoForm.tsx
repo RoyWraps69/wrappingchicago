@@ -56,7 +56,7 @@ const BusinessInfoForm = ({
 
   return (
     <div>
-      <h2 className="text-2xl font-bold text-brand-navy mb-6">AI Wrap Concept Generator</h2>
+      <h2 className="text-2xl font-bold text-gray-900 mb-6">AI Wrap Concept Generator</h2>
       <p className="text-gray-700 mb-6">
         Tell us about your business, and we'll generate wrap design concepts tailored to your needs. 
         This helps us understand your vision more clearly and creates a foundation for our design process.
@@ -64,7 +64,7 @@ const BusinessInfoForm = ({
       
       <form onSubmit={handleSubmit}>
         <div className="mb-4">
-          <label htmlFor="business" className="block text-sm font-medium text-gray-700 mb-1">
+          <label htmlFor="business" className="block text-sm font-medium text-gray-900 mb-1">
             Business Name
           </label>
           <Input
@@ -78,7 +78,7 @@ const BusinessInfoForm = ({
         </div>
         
         <div className="mb-4">
-          <label htmlFor="description" className="block text-sm font-medium text-gray-700 mb-1">
+          <label htmlFor="description" className="block text-sm font-medium text-gray-900 mb-1">
             Tell us about your business (services, brand feel, target audience)
           </label>
           <Textarea

@@ -49,7 +49,7 @@ const ContactForm = () => {
 
   return (
     <div>
-      <h2 className="text-2xl font-bold text-brand-navy mb-6">Request a Quote</h2>
+      <h2 className="text-2xl font-bold text-gray-900 mb-6">Request a Quote</h2>
       
       <form 
         action="https://formsubmit.co/roy@chicagofleetwraps.com"
@@ -64,7 +64,7 @@ const ContactForm = () => {
         <input type="text" name="_honey" style={{ display: 'none' }} />
         
         <div>
-          <Label htmlFor="name">Name *</Label>
+          <Label htmlFor="name" className="text-gray-900">Name *</Label>
           <Input
             id="name"
             name="name"
@@ -76,7 +76,7 @@ const ContactForm = () => {
         </div>
         
         <div>
-          <Label htmlFor="email">Email *</Label>
+          <Label htmlFor="email" className="text-gray-900">Email *</Label>
           <Input
             id="email"
             name="email"
@@ -88,7 +88,7 @@ const ContactForm = () => {
         </div>
         
         <div>
-          <Label htmlFor="phone">Phone *</Label>
+          <Label htmlFor="phone" className="text-gray-900">Phone *</Label>
           <Input
             id="phone"
             name="phone"
@@ -100,12 +100,12 @@ const ContactForm = () => {
         </div>
         
         <div>
-          <Label htmlFor="service">Service Interested In *</Label>
+          <Label htmlFor="service" className="text-gray-900">Service Interested In *</Label>
           <select
             id="service"
             name="service"
             required
-            className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-brand-navy"
+            className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-brand-navy text-gray-900"
           >
             <option value="">Select a Service</option>
             <option value="Fleet Wraps">Fleet Wraps</option>
@@ -117,7 +117,7 @@ const ContactForm = () => {
         </div>
         
         <div>
-          <Label htmlFor="message">Message *</Label>
+          <Label htmlFor="message" className="text-gray-900">Message *</Label>
           <Textarea
             id="message"
             name="message"

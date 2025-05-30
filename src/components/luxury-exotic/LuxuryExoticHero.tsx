@@ -32,7 +32,7 @@ const LuxuryExoticHero = () => {
                 Request a Consultation
               </Link>
             </Button>
-            <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white/20">
+            <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-gray-900">
               <a href="tel:3125971286" className="inline-flex items-center">
                 <Phone className="mr-2 h-5 w-5" />
                 Call (312) 597-1286

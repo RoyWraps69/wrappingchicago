@@ -10,7 +10,7 @@ import FleetWrapFAQ from './fleet-wraps/FleetWrapFAQ';
 
 const FleetWrapsContent: React.FC = () => {
   return (
-    <>
+    <div className="text-gray-900">
       <FleetWrapIntro />
       
       <div className="grid md:grid-cols-2 gap-6 mb-8">
@@ -22,7 +22,7 @@ const FleetWrapsContent: React.FC = () => {
       <IndustriesServed />
       <VehicleTypes />
       <FleetWrapFAQ />
-    </>
+    </div>
   );
 };
 
