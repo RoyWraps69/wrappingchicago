@@ -1,0 +1,28 @@
+
+/* ==============================
+   RESPONSIVE STYLES
+   - Mobile and device-specific optimizations
+   - Accessibility media queries
+   ============================== */
+
+/* Mobile responsive media queries - updated for contrast */
+@media (max-width: 640px) {
+  .container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+  
+  .grid {
+    gap: 1.5rem;
+  }
+  
+  h1, .h1 {
+    font-size: 2rem;
+    font-weight: 800;
+  }
+  
+  h2, .h2 {
+    font-size: 1.75rem;
+    font-weight: 700;
+  }
+}

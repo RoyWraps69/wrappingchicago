@@ -1,0 +1,74 @@
+
+/* ==============================
+   UTILITY STYLES
+   - Animation keyframes and classes
+   - Helper utilities
+   ============================== */
+
+/* Animation keyframes */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 10px 0 rgba(255, 49, 49, 0.6);
+  }
+  50% {
+    box-shadow: 0 0 20px 5px rgba(255, 49, 49, 0.8);
+  }
+}
+
+/* Animation classes */
+.animate-fade-in {
+  animation: fade-in 0.5s ease-out forwards;
+}
+
+.animate-scale-in {
+  animation: scale-in 0.3s ease-out forwards;
+}
+
+.animate-enter {
+  animation: fade-in 0.3s ease-out forwards, scale-in 0.3s ease-out forwards;
+}
+
+.hover-glow:hover {
+  animation: glow 1.5s infinite;
+}
+
+.section-padding {
+  @apply py-16 md:py-24 lg:py-32;
+}
+
+/* SEO and Semantic Classes - updated for contrast */
+.speakable {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+/* Improve accessibility for touch devices */
+@media (hover: none) {
+  button, a, .interactive {
+    @apply p-3;
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
