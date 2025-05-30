@@ -1,64 +1,64 @@
 
-import React, { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
-import ContactBar from './header/ContactBar';
+import React, { useState } from 'react';
+import { Menu, X, Phone, Mail } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import Logo from './header/Logo';
 import DesktopNav from './header/DesktopNav';
 import MobileNav from './header/MobileNav';
+import ContactBar from './header/ContactBar';
 
 const Header = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
+  };
 
   return (
-    <header className={`nav-sticky ${isScrolled ? 'nav-transparent' : 'bg-transparent'}`}>
-      {/* Contact Information Bar - Only visible when not scrolled */}
-      {!isScrolled && <ContactBar />}
+    <header className="relative">
+      <ContactBar />
       
-      {/* Main Header */}
-      <div className="container mx-auto py-4 px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center">
-          {/* Logo */}
-          <div className="flex items-center">
+      <nav className="bg-white shadow-lg relative z-50">
+        <div className="container mx-auto px-4">
+          <div className="flex justify-between items-center h-20">
             <Logo />
+            
+            <DesktopNav />
+            
+            <div className="flex items-center space-x-4">
+              <div className="hidden lg:flex items-center space-x-4">
+                <a 
+                  href="tel:3125971286" 
+                  className="flex items-center text-brand-navy hover:text-brand-red transition-colors"
+                >
+                  <Phone className="h-4 w-4 mr-2" />
+                  <span className="font-medium">(312) 597-1286</span>
+                </a>
+                <Link 
+                  to="/contact" 
+                  className="bg-brand-red text-white px-6 py-2 rounded-lg hover:bg-red-700 transition-colors font-medium"
+                >
+                  Get Quote
+                </Link>
+              </div>
+              
+              <button
+                onClick={toggleMobileMenu}
+                className="md:hidden p-2 text-brand-navy hover:text-brand-red transition-colors"
+                aria-label="Toggle mobile menu"
+              >
+                {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              </button>
+            </div>
           </div>
-          
-          {/* Mobile menu button */}
-          <button 
-            className="md:hidden bg-brand-red hover:bg-red-600 text-white px-3 py-2 rounded-full"
-            onClick={toggleMenu}
-            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-          >
-            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-            <span className="ml-1">Menu</span>
-          </button>
-          
-          {/* Desktop Navigation */}
-          <DesktopNav />
         </div>
         
-        {/* Mobile Navigation */}
-        <MobileNav isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} />
-      </div>
+        <MobileNav isOpen={isMobileMenuOpen} onClose={closeMobileMenu} />
+      </nav>
     </header>
   );
 };

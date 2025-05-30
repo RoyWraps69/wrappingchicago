@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -13,6 +14,10 @@ import TrustIndicators from '@/components/home/TrustIndicators';
 import HomeSEO from '@/components/home/HomeSEO';
 import EasyButtonSection from '@/components/home/EasyButtonSection';
 import StickyContactButtons from '@/components/home/StickyContactButtons';
+import BreadcrumbNavigation from '@/components/seo/BreadcrumbNavigation';
+import VehicleWrapCalculator from '@/components/calculator/VehicleWrapCalculator';
+import CustomerTestimonials from '@/components/testimonials/CustomerTestimonials';
+import TrustSignals from '@/components/trust/TrustSignals';
 import { useGalleryImages } from '@/hooks/useGalleryImages';
 import { cities } from '@/data/cities';
 import Schema from '@/components/Schema';
@@ -99,8 +104,6 @@ function HomePage() {
       <HomeSEO />
       <IndexingPriority priority="high" />
       <HomeHelmetTags />
-      
-      {/* Add explicit breadcrumb schema with itemListElement */}
       <BreadcrumbSchema items={breadcrumbItems} />
       
       <Schema 
@@ -123,13 +126,14 @@ function HomePage() {
         serviceType="Vehicle Wraps"
         includeSpeakable={true}
         allCities={cities}
-        skipFAQSchema={true} // Skip basic FAQ schema since we use PageFAQ
+        skipFAQSchema={true}
       />
       
       <BusinessLocationSchema city={chicagoCity} />
 
       <div className="flex flex-col min-h-screen">
         <Header />
+        <BreadcrumbNavigation />
         <main id="main-content" className="flex-grow main-content">
           <Hero />
           <InfoBar />
@@ -139,6 +143,12 @@ function HomePage() {
             colorChangeVan={colorChangeVan} 
             commercialGraphics={commercialGraphics}
           />
+          
+          {/* Add new components */}
+          <TrustSignals />
+          <VehicleWrapCalculator />
+          <CustomerTestimonials />
+          
           <InstallationFacility />
           <WhyChooseUsSection />
           <AreasServedSection cities={cities} />
@@ -146,17 +156,13 @@ function HomePage() {
           <TrustIndicators />
           <VehicleWrapFAQ />
           
-          {/* Add PageFAQ component to homepage */}
           <PageFAQ 
             faqs={homeFAQs}
             serviceName="Vehicle Wraps"
             cityName="Chicago"
           />
           
-          {/* Add expanded sitemap links section to improve crawlability */}
           <HomeInternalLinks />
-          
-          {/* Add our new comprehensive internal links footer */}
           <InternalLinksFooter />
         </main>
         <StickyContactButtons />

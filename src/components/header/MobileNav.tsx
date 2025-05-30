@@ -1,8 +1,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Sparkles, Phone, MessageSquare, MapPin, DollarSign } from 'lucide-react';
-import NavLink from './NavLink';
+import { Phone, Mail, ChevronRight } from 'lucide-react';
 
 interface MobileNavProps {
   isOpen: boolean;
@@ -10,90 +9,89 @@ interface MobileNavProps {
 }
 
 const MobileNav: React.FC<MobileNavProps> = ({ isOpen, onClose }) => {
-  if (!isOpen) return null;
-  
-  return (
-    <div className="md:hidden fixed inset-0 z-50 bg-black/95 text-white overflow-y-auto">
-      <div className="container mx-auto py-8 px-4">
-        <div className="space-y-6">
-          <NavLink to="/" onClick={onClose} className="text-2xl text-white">
-            Home
-          </NavLink>
-          <NavLink to="/ai-wrap-ideas" onClick={onClose} icon={Sparkles} className="text-2xl text-white">
-            AI Wrap Designer
-          </NavLink>
-          
-          <div>
-            <h3 className="text-lg font-medium text-white mb-2">Services</h3>
-            <div className="grid grid-cols-2 gap-4">
-              <NavLink to="/services/car-wraps" onClick={onClose} className="text-white">
-                Car Wraps
-              </NavLink>
-              <NavLink to="/services/truck-wraps" onClick={onClose} className="text-white">
-                Truck Wraps
-              </NavLink>
-              <NavLink to="/services/van-wraps" onClick={onClose} className="text-white">
-                Van Wraps
-              </NavLink>
-              <NavLink to="/services/fleet-wraps" onClick={onClose} className="text-white">
-                Fleet Wraps
-              </NavLink>
-              <NavLink to="/services/color-change-wraps" onClick={onClose} className="text-white">
-                Color Change
-              </NavLink>
-              <NavLink to="/services/partial-wraps" onClick={onClose} className="text-white">
-                Partial Wraps
-              </NavLink>
-            </div>
-            <Link to="/services" className="block mt-2 text-brand-red underline" onClick={onClose}>
-              View All Services
-            </Link>
-          </div>
-          
-          <NavLink to="/gallery" onClick={onClose} className="text-2xl text-white">
-            Gallery
-          </NavLink>
+  const mainNavItems = [
+    { label: 'Home', path: '/' },
+    { label: 'About', path: '/about' },
+    { label: 'Gallery', path: '/gallery' },
+    { label: 'Pricing', path: '/pricing' },
+    { label: 'FAQ', path: '/faq' },
+    { label: 'Blog', path: '/blog' },
+    { label: 'Locations', path: '/locations' },
+    { label: 'Contact', path: '/contact' }
+  ];
 
-          <div>
-            <h3 className="text-lg font-medium text-white mb-2">Pricing & Locations</h3>
-            <div className="space-y-2">
-              <NavLink to="/pricing" onClick={onClose} icon={DollarSign} className="text-white">
-                Pricing & Packages
-              </NavLink>
-              <NavLink to="/locations" onClick={onClose} icon={MapPin} className="text-white">
-                Service Areas
-              </NavLink>
-            </div>
-          </div>
-          
-          <NavLink to="/about" onClick={onClose} className="text-2xl text-white">
-            About Us
-          </NavLink>
-          
-          <NavLink to="/contact" onClick={onClose} className="text-2xl text-white">
-            Contact
-          </NavLink>
-          
-          <div className="pt-4 border-t border-white/10">
-            <div className="grid grid-cols-2 gap-4">
-              <Link 
-                to="/contact"
+  const serviceItems = [
+    { label: 'Car Wraps', path: '/car-wraps' },
+    { label: 'Truck Wraps', path: '/truck-wraps' },
+    { label: 'Van Wraps', path: '/van-wraps' },
+    { label: 'Fleet Wraps', path: '/services/fleet-wraps' },
+    { label: 'Color Change Wraps', path: '/color-change-wraps' },
+    { label: 'Commercial Graphics', path: '/services/commercial-graphics' }
+  ];
+
+  if (!isOpen) return null;
+
+  return (
+    <div className="md:hidden absolute top-full left-0 w-full bg-white shadow-xl border-t z-40">
+      <div className="px-4 py-6">
+        {/* Main Navigation */}
+        <div className="space-y-4 mb-6">
+          {mainNavItems.map((item) => (
+            <Link
+              key={item.path}
+              to={item.path}
+              onClick={onClose}
+              className="block py-2 text-brand-navy hover:text-brand-red transition-colors font-medium"
+            >
+              {item.label}
+            </Link>
+          ))}
+        </div>
+
+        {/* Services Section */}
+        <div className="border-t pt-6 mb-6">
+          <h3 className="font-semibold text-brand-navy mb-4">Our Services</h3>
+          <div className="space-y-3">
+            {serviceItems.map((service) => (
+              <Link
+                key={service.path}
+                to={service.path}
                 onClick={onClose}
-                className="bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg p-4 text-center transition-colors text-white"
+                className="flex items-center justify-between py-2 text-gray-700 hover:text-brand-red transition-colors"
               >
-                <MessageSquare className="mx-auto mb-2 h-6 w-6 text-brand-red" />
-                <span>Get a Quote</span>
+                {service.label}
+                <ChevronRight className="h-4 w-4" />
               </Link>
-              
-              <a 
-                href="tel:3125971286"
-                className="bg-brand-red hover:bg-red-600 rounded-lg p-4 text-center transition-colors text-white"
-              >
-                <Phone className="mx-auto mb-2 h-6 w-6" />
-                <span>Call Now</span>
-              </a>
-            </div>
+            ))}
           </div>
+        </div>
+
+        {/* Contact Information */}
+        <div className="border-t pt-6">
+          <div className="space-y-4">
+            <a
+              href="tel:3125971286"
+              className="flex items-center text-brand-navy hover:text-brand-red transition-colors"
+            >
+              <Phone className="h-5 w-5 mr-3" />
+              <span className="font-medium">(312) 597-1286</span>
+            </a>
+            <a
+              href="mailto:roy@chicagofleetwraps.com"
+              className="flex items-center text-brand-navy hover:text-brand-red transition-colors"
+            >
+              <Mail className="h-5 w-5 mr-3" />
+              <span>roy@chicagofleetwraps.com</span>
+            </a>
+          </div>
+          
+          <Link
+            to="/contact"
+            onClick={onClose}
+            className="block mt-6 bg-brand-red text-white text-center py-3 px-6 rounded-lg hover:bg-red-700 transition-colors font-medium"
+          >
+            Get Free Quote
+          </Link>
         </div>
       </div>
     </div>

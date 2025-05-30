@@ -29,6 +29,9 @@ import VanWrapsPage from './pages/VanWrapsPage';
 import ColorChangeWrapsPage from './pages/ColorChangeWrapsPage';
 import FleetWrapsPage from './pages/FleetWrapsPage';
 import PricingPage from './pages/PricingPage';
+import FAQPage from './pages/FAQPage';
+import BlogPage from './pages/BlogPage';
+import LiveChatWidget from './components/chat/LiveChatWidget';
 
 function App() {
   // Help search engines discover site resources
@@ -114,10 +117,9 @@ function App() {
         <GoogleTagManager containerId="GTM-XXXXXXX" />
         <GoogleAnalytics measurementId="G-ZTLS3EEGE7" />
         <GoogleSearchVerification />
-        <SitemapIndex /> {/* Global sitemap references */}
+        <SitemapIndex />
         <ScrollToTop />
         
-        {/* Skip link for accessibility and SEO best practices */}
         <a href="#main-content" className="skip-link">Skip to main content</a>
         
         <Routes>
@@ -132,8 +134,10 @@ function App() {
           <Route path="/gallery" element={<GalleryPage />} />
           <Route path="/ai-wrap-ideas" element={<AIWrapIdeasPage />} />
           <Route path="/designer-wraps" element={<DesignerWrapsPage />} />
+          <Route path="/faq" element={<FAQPage />} />
+          <Route path="/blog" element={<BlogPage />} />
           
-          {/* Sitemap routes - both dynamic and static HTML */}
+          {/* Sitemap routes */}
           <Route path="/sitemap" element={<SitemapPage />} />
           <Route path="/html-sitemap" element={<HTMLSitemap />} />
           <Route path="/html-sitemap.html" element={<Navigate to="/html-sitemap" replace />} />
@@ -141,7 +145,7 @@ function App() {
           {/* Special city-specific routes */}
           <Route path="/truck-wraps-chicago" element={<TruckWrapsChicagoPage />} />
           
-          {/* Direct service pages - Improved priority over redirects */}
+          {/* Direct service pages */}
           <Route path="/car-wraps" element={<CarWrapsPage />} />
           <Route path="/truck-wraps" element={<TruckWrapsPage />} />
           <Route path="/van-wraps" element={<VanWrapsPage />} />
@@ -157,7 +161,7 @@ function App() {
           <Route path="/specialty-wraps" element={<Navigate to="/services/specialty-wraps" replace />} />
           <Route path="/retail-graphics" element={<Navigate to="/services/retail-graphics" replace />} />
           
-          {/* Location-specific routes - Extra explicit routes for critical city pages */}
+          {/* Location-specific routes */}
           <Route path="/vehicle-wraps-chicago-il" element={<CityLocationPage />} />
           <Route path="/chicago" element={<CityLocationPage />} />
           <Route path="/vehicle-wraps-:citySlug-il" element={<CityLocationPage />} />
@@ -166,6 +170,9 @@ function App() {
           {/* 404 catch-all route */}
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
+        
+        {/* Add Live Chat Widget */}
+        <LiveChatWidget />
       </BrowserRouter>
     </HelmetProvider>
   );
