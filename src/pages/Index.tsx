@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -78,33 +77,20 @@ const Index = () => {
   return (
     <>
       <HomeSEO />
-      
-      {/* Canonical URL Management - Critical for avoiding duplicate content */}
       <CanonicalManager customCanonical="https://www.wrappingchicago.com/" />
       
+      {/* Simplified Schema to avoid conflicts */}
       <Schema 
         city={chicagoCity} 
         path="/"
         pageTitle="Vehicle Wraps in Chicago IL | Wrapping Chicago"
         pageDescription="Get vehicle wraps in Chicago IL services for cars, trucks, vans, and fleets. Boost style or brand visibility with custom vinyl graphics installed by experts."
         faqs={faqData}
-        keywords={keywords}
         isServicePage={true}
         serviceType="Vehicle Wraps"
-        productName="Vehicle Wraps"
-        includeSpeakable={true}
-        allCities={cities}
-        skipFAQSchema={false}
-        isAIPage={false}
-        minPrice={2500}
-        maxPrice={5000}
       />
-      <AIWrapSchema />
       
-      {/* Add explicit breadcrumb schema with itemListElement */}
       <BreadcrumbSchema items={breadcrumbItems} />
-      
-      {/* Add additional link rel tags for key pages */}
       <IndexHelmetTags />
       
       <div className="flex flex-col min-h-screen">

@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -91,12 +90,19 @@ function HomePage() {
     }
   }, []);
 
-  // Create breadcrumb items for home page
-  const breadcrumbItems = [
+  // Simplified FAQ data
+  const homeFAQs = [
     {
-      position: 1,
-      name: "Home",
-      item: "https://www.wrappingchicago.com/"
+      question: "How much do vehicle wraps cost in Chicago?",
+      answer: "Vehicle wrap costs in Chicago vary by vehicle type and design complexity. Full car wraps typically range from $2,500-$5,000, full truck and van wraps from $3,500-$7,000, and partial wraps start around $1,500."
+    },
+    {
+      question: "How long do vehicle wraps last?",
+      answer: "With proper care and maintenance, our premium vehicle wraps typically last 5-7 years in Chicago's climate. All our wraps come with a 2-year warranty."
+    },
+    {
+      question: "Do vehicle wraps damage paint?",
+      answer: "No, professional vehicle wraps actually protect your paint when properly installed and removed. Our 3M and Avery vinyl wraps act as a shield against minor scratches and UV damage."
     }
   ];
 
@@ -104,37 +110,20 @@ function HomePage() {
     <>
       <HomeSEO />
       <IndexingPriority priority="high" />
-      <HomeHelmetTags />
       
+      {/* Simplified Schema - avoid conflicts */}
       <Schema 
         city={chicagoCity}
         path="/"
         pageTitle="Vehicle Wraps in Chicago IL | Wrapping Chicago"
         pageDescription="Get vehicle wraps in Chicago IL services for cars, trucks, vans, and fleets. Boost style or brand visibility with custom vinyl graphics installed by experts."
         faqs={homeFAQs}
-        keywords={[
-          "vehicle wraps Chicago",
-          "car wraps Chicago", 
-          "truck wraps Chicago",
-          "van wraps Chicago",
-          "fleet wraps Chicago",
-          "commercial vehicle wraps",
-          "color change wraps Chicago",
-          "vehicle graphics Chicago"
-        ]}
         isServicePage={true}
         serviceType="Vehicle Wraps"
-        productName="Vehicle Wraps"
-        includeSpeakable={true}
-        allCities={cities}
-        skipFAQSchema={true}
-        isAIPage={false}
-        minPrice={1500}
-        maxPrice={5000}
       />
       
-      <BusinessLocationSchema city={chicagoCity} />
-
+      {/* Remove duplicate schema components that conflict */}
+      
       <div className="flex flex-col min-h-screen">
         <Header />
         <BreadcrumbNavigation />

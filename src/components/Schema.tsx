@@ -1,30 +1,11 @@
 
 import React from 'react';
 import { City } from '@/data/types/city';
-import { testSchema } from '@/utils/validateSchema';
-import {
-  generateLocalBusinessSchema,
-  generateWebsiteSchema,
-  generateWebPageSchema,
-  generateBreadcrumbSchema
-} from '@/utils/schemaGenerators';
-import UniversalSchema from './schemas/UniversalSchema';
-import WebsiteSchema from './schemas/WebsiteSchema';
-import OfferCatalogSchema from './schemas/OfferCatalogSchema';
-import WebPageSchema from './schemas/WebPageSchema';
-import ActionSchema from './schemas/ActionSchema';
-import VehicleWrapServiceSchema from './schemas/VehicleWrapServiceSchema';
-import AIVoiceSearchSchema from './schemas/AIVoiceSearchSchema';
-import LocalGeoSchema from './schemas/LocalGeoSchema';
-import EnhancedBusinessSchema from './schemas/EnhancedBusinessSchema';
-import EventSchema from './schemas/EventSchema';
-import OrganizationSchema from './schemas/OrganizationSchema';
-import ServiceAreaSchema from './schemas/ServiceAreaSchema';
-import GoogleBusinessProfileSchema from './schemas/GoogleBusinessProfileSchema';
-import AISearchSchema from './schemas/AISearchSchema';
-import LocalSearchSchema from './schemas/LocalSearchSchema';
-import EnhancedFAQSchema from './schemas/EnhancedFAQSchema';
-import RichResultSchema from './schemas/RichResultSchema';
+import IndexingOptimizer from './schemas/IndexingOptimizer';
+import CoreBusinessSchema from './schemas/CoreBusinessSchema';
+import SimpleBreadcrumbSchema from './schemas/SimpleBreadcrumbSchema';
+import CleanFAQSchema from './schemas/CleanFAQSchema';
+import { generateBreadcrumbSchema } from '@/utils/schemaGenerators';
 
 interface SchemaProps {
   city: City;
@@ -45,6 +26,7 @@ interface SchemaProps {
   productName?: string;
   minPrice?: number;
   maxPrice?: number;
+  noIndex?: boolean;
 }
 
 interface FAQ {
@@ -58,142 +40,40 @@ const Schema: React.FC<SchemaProps> = ({
   pageTitle,
   pageDescription,
   faqs = [],
-  keywords = [],
-  isServicePage = false,
-  serviceType = '',
-  includeSpeakable = true,
-  mainImage = '/lovable-uploads/6ef3b1af-8591-4d36-97c2-9366401115fa.png',
-  datePublished = '2022-01-01T00:00:00+00:00',
-  dateModified = new Date().toISOString(),
-  allCities = [],
-  skipFAQSchema = false,
-  isAIPage = false,
-  productName = 'Vehicle Wraps',
-  minPrice = 1500,
-  maxPrice = 5000
+  noIndex = false
 }) => {
   const domain = "https://www.wrappingchicago.com";
   const fullUrl = `${domain}${path}`;
-
-  // Generate breadcrumb items
+  
+  // Generate clean breadcrumb items
   const breadcrumbItems = generateBreadcrumbSchema(path);
-
-  // Run schema validation in development
-  React.useEffect(() => {
-    if (process.env.NODE_ENV === 'development') {
-      const schemas = [
-        { schema: generateLocalBusinessSchema(city), name: 'LocalBusiness' },
-        { schema: generateWebsiteSchema(pageTitle, pageDescription, fullUrl, dateModified), name: 'Website' },
-        { schema: generateWebPageSchema(pageTitle, pageDescription, fullUrl, dateModified, keywords, mainImage), name: 'WebPage' },
-        ...(faqs.length > 0 ? [{ schema: { "@type": "FAQPage", mainEntity: faqs }, name: 'FAQ' }] : []),
-        { schema: { "@type": "BreadcrumbList", itemListElement: breadcrumbItems }, name: 'Breadcrumb' }
-      ];
-
-      console.group('Testing Current Page Schemas');
-      schemas.forEach(({ schema, name }) => {
-        testSchema(schema, name);
-      });
-      console.groupEnd();
-    }
-  }, [city, path, pageTitle, pageDescription, faqs, breadcrumbItems]);
 
   return (
     <>
-      {/* Universal Schema Components - All required schemas for every page */}
-      <UniversalSchema 
-        city={city}
+      {/* Core indexing optimization */}
+      <IndexingOptimizer 
         pageTitle={pageTitle}
         pageDescription={pageDescription}
+        canonicalUrl={fullUrl}
+        noIndex={noIndex}
+      />
+      
+      {/* Essential business schema */}
+      <CoreBusinessSchema 
+        city={city}
         pageUrl={fullUrl}
-        breadcrumbItems={breadcrumbItems}
-        faqs={skipFAQSchema ? [] : faqs}
-        productName={productName}
-        serviceType={serviceType || productName}
-        isAIPage={isAIPage}
-        minPrice={minPrice}
-        maxPrice={maxPrice}
-        datePublished={datePublished}
-        dateModified={dateModified}
       />
       
-      {/* Additional Website and Page Schemas */}
-      <WebsiteSchema 
-        name={pageTitle}
-        description={pageDescription}
-        url={fullUrl}
-        lastModified={dateModified}
-        keywords={keywords}
-      />
+      {/* Clean breadcrumb schema */}
+      <SimpleBreadcrumbSchema items={breadcrumbItems} />
       
-      <OfferCatalogSchema city={city} />
-      
-      <WebPageSchema
-        title={pageTitle}
-        description={pageDescription}
-        url={fullUrl}
-        lastModified={dateModified}
-        keywords={keywords}
-        mainImage={mainImage}
-      />
-      
-      {isServicePage && serviceType && (
-        <VehicleWrapServiceSchema
-          serviceType={serviceType}
-          cityName={city.name}
-          url={fullUrl}
-        />
-      )}
-      
-      {includeSpeakable && (
-        <AIVoiceSearchSchema
-          title={pageTitle}
-          description={pageDescription}
-          cityName={city.name}
-        />
-      )}
-      
-      <ActionSchema />
-      
-      {/* Enhanced schemas for local SEO */}
-      <LocalGeoSchema city={city} />
-      
-      <EnhancedBusinessSchema city={city} />
-      
-      <EventSchema city={city.name} />
-      
-      <OrganizationSchema />
-      
-      <GoogleBusinessProfileSchema cityName={city.name} />
-      
-      {allCities && allCities.length > 0 && (
-        <ServiceAreaSchema cities={allCities} />
-      )}
-      
-      {/* AI and local search optimization schemas */}
-      <AISearchSchema 
-        pageTitle={pageTitle}
-        pageDescription={pageDescription}
-        cityName={city.name}
-      />
-      
-      <LocalSearchSchema 
-        cityName={city.name}
-      />
-      
-      {/* Enhanced FAQ Schema - Only when basic FAQ schema is skipped */}
-      {faqs.length > 0 && skipFAQSchema && (
-        <EnhancedFAQSchema 
+      {/* FAQ schema only if we have FAQs */}
+      {faqs.length > 0 && (
+        <CleanFAQSchema 
           faqs={faqs}
-          cityName={city.name}
+          pageUrl={fullUrl}
         />
       )}
-      
-      {/* Rich results schema */}
-      <RichResultSchema 
-        city={city}
-        pageTitle={pageTitle}
-        pageDescription={pageDescription}
-      />
     </>
   );
 };
