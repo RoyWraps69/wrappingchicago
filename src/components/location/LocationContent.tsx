@@ -21,7 +21,7 @@ const LocationContent = ({ city }: LocationContentProps) => {
         <div className="grid md:grid-cols-3 gap-8">
           <article className="md:col-span-2">
             <CityHeader city={city} />
-            <div className="prose max-w-none">
+            <div className="prose max-w-none prose-headings:text-brand-navy prose-p:text-gray-700 prose-strong:text-brand-navy prose-li:text-gray-700">
               <CityIntroduction city={city} />
               <ServicesOverview city={city} />
               <ServiceCards city={city} />

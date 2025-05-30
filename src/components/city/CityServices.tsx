@@ -46,21 +46,21 @@ const CityServices = ({ city }: CityServicesProps) => {
   ];
 
   return (
-    <div className="py-12">
+    <div className="py-12 bg-white">
       <h2 className="text-3xl font-bold text-brand-navy mb-8 text-center">
         Our Vehicle Wrap Services in {city.name}
       </h2>
       
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {services.map((service, index) => (
-          <div key={index} className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+          <div key={index} className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow border border-gray-200">
             <h3 className="text-xl font-semibold text-brand-navy mb-3">
               {service.title}
             </h3>
             <p className="text-gray-600 mb-4">
               {service.description}
             </p>
-            <Button asChild variant="outline" className="w-full">
+            <Button asChild variant="outline" className="w-full text-brand-navy border-brand-navy hover:bg-brand-navy hover:text-white">
               <Link to={service.link} className="inline-flex items-center justify-center">
                 Learn More
                 <ArrowRight className="ml-2 h-4 w-4" />
