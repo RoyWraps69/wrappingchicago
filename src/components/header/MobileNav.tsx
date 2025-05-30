@@ -11,11 +11,8 @@ interface MobileNavProps {
 const MobileNav: React.FC<MobileNavProps> = ({ isOpen, onClose }) => {
   const mainNavItems = [
     { label: 'Home', path: '/' },
-    { label: 'About', path: '/about' },
     { label: 'Gallery', path: '/gallery' },
-    { label: 'Pricing', path: '/pricing' },
     { label: 'FAQ', path: '/faq' },
-    { label: 'Blog', path: '/blog' },
     { label: 'Locations', path: '/locations' },
     { label: 'Contact', path: '/contact' }
   ];
@@ -27,6 +24,12 @@ const MobileNav: React.FC<MobileNavProps> = ({ isOpen, onClose }) => {
     { label: 'Fleet Wraps', path: '/services/fleet-wraps' },
     { label: 'Color Change Wraps', path: '/color-change-wraps' },
     { label: 'Commercial Graphics', path: '/services/commercial-graphics' }
+  ];
+
+  const pricingItems = [
+    { label: 'Pricing', path: '/pricing' },
+    { label: 'About', path: '/about' },
+    { label: 'Blog', path: '/blog' }
   ];
 
   if (!isOpen) return null;
@@ -60,6 +63,24 @@ const MobileNav: React.FC<MobileNavProps> = ({ isOpen, onClose }) => {
                 className="flex items-center justify-between py-2 text-gray-700 hover:text-brand-red transition-colors"
               >
                 {service.label}
+                <ChevronRight className="h-4 w-4" />
+              </Link>
+            ))}
+          </div>
+        </div>
+
+        {/* Pricing Section */}
+        <div className="border-t pt-6 mb-6">
+          <h3 className="font-semibold text-brand-navy mb-4">Pricing & Info</h3>
+          <div className="space-y-3">
+            {pricingItems.map((item) => (
+              <Link
+                key={item.path}
+                to={item.path}
+                onClick={onClose}
+                className="flex items-center justify-between py-2 text-gray-700 hover:text-brand-red transition-colors"
+              >
+                {item.label}
                 <ChevronRight className="h-4 w-4" />
               </Link>
             ))}
