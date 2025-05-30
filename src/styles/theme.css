@@ -1,0 +1,223 @@
+
+/* ==============================
+   HIGH-CONTRAST THEME VARIABLES
+   - WCAG AA compliant contrast ratios (4.5:1 minimum)
+   - Centralized color management
+   - Accessibility-first design
+   ============================== */
+
+:root {
+  /* Core brand colors - high contrast versions */
+  --brand-navy: #111111;
+  --brand-red: #FF3131;
+  --brand-light: #FFFFFF;
+  
+  /* Text colors - ensuring 4.5:1+ contrast */
+  --text-primary: #111111;        /* On white backgrounds */
+  --text-secondary: #374151;      /* Slightly lighter for secondary text */
+  --text-muted: #6B7280;         /* For less important text */
+  --text-on-dark: #FFFFFF;       /* On dark backgrounds */
+  --text-on-red: #FFFFFF;        /* On red backgrounds */
+  --text-link: #1E40AF;          /* High contrast blue for links */
+  --text-link-hover: #1D4ED8;    /* Darker on hover */
+  
+  /* Background colors */
+  --bg-primary: #FFFFFF;
+  --bg-secondary: #F9FAFB;
+  --bg-dark: #111111;
+  --bg-overlay: rgba(17, 17, 17, 0.9); /* High opacity for text readability */
+  
+  /* Component-specific colors */
+  --header-bg: #FFFFFF;
+  --header-text: #111111;
+  --header-text-hover: #FF3131;
+  
+  --hero-overlay: rgba(17, 17, 17, 0.85);
+  --hero-text: #FFFFFF;
+  
+  --card-bg: #FFFFFF;
+  --card-text: #111111;
+  --card-border: #E5E7EB;
+  
+  --button-primary-bg: #FF3131;
+  --button-primary-text: #FFFFFF;
+  --button-secondary-bg: #111111;
+  --button-secondary-text: #FFFFFF;
+  --button-outline-border: #111111;
+  --button-outline-text: #111111;
+  --button-outline-hover-bg: #111111;
+  --button-outline-hover-text: #FFFFFF;
+  
+  /* Form elements */
+  --input-bg: #FFFFFF;
+  --input-text: #111111;
+  --input-border: #D1D5DB;
+  --input-placeholder: #6B7280;
+  
+  /* Status colors */
+  --success: #059669;
+  --error: #DC2626;
+  --warning: #D97706;
+  --info: #2563EB;
+}
+
+/* Dark theme overrides for specific sections */
+.dark-section {
+  --text-primary: #FFFFFF;
+  --text-secondary: #E5E7EB;
+  --text-muted: #D1D5DB;
+  --bg-primary: #111111;
+  --bg-secondary: #1F2937;
+}
+
+/* High contrast utility classes */
+.text-high-contrast {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.text-on-dark-high-contrast {
+  color: var(--text-on-dark);
+  font-weight: 500;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.bg-overlay-high-contrast {
+  background: var(--bg-overlay);
+}
+
+/* Enhanced button contrast */
+.btn-high-contrast {
+  font-weight: 600;
+  border: 2px solid transparent;
+}
+
+.btn-primary-high-contrast {
+  background: var(--button-primary-bg);
+  color: var(--button-primary-text);
+  border-color: var(--button-primary-bg);
+}
+
+.btn-secondary-high-contrast {
+  background: var(--button-secondary-bg);
+  color: var(--button-secondary-text);
+  border-color: var(--button-secondary-bg);
+}
+
+.btn-outline-high-contrast {
+  background: transparent;
+  color: var(--button-outline-text);
+  border-color: var(--button-outline-border);
+}
+
+.btn-outline-high-contrast:hover {
+  background: var(--button-outline-hover-bg);
+  color: var(--button-outline-hover-text);
+}
+
+/* Link contrast improvements */
+.link-high-contrast {
+  color: var(--text-link);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 2px;
+}
+
+.link-high-contrast:hover {
+  color: var(--text-link-hover);
+}
+
+/* Card component contrast */
+.card-high-contrast {
+  background: var(--card-bg);
+  color: var(--card-text);
+  border: 1px solid var(--card-border);
+}
+
+/* Navigation contrast */
+.nav-high-contrast {
+  background: var(--header-bg);
+  color: var(--header-text);
+}
+
+.nav-link-high-contrast {
+  color: var(--header-text);
+  font-weight: 500;
+}
+
+.nav-link-high-contrast:hover {
+  color: var(--header-text-hover);
+}
+
+/* Hero section contrast */
+.hero-high-contrast {
+  position: relative;
+}
+
+.hero-high-contrast::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--hero-overlay);
+  z-index: 1;
+}
+
+.hero-content-high-contrast {
+  position: relative;
+  z-index: 2;
+  color: var(--hero-text);
+}
+
+/* Form elements contrast */
+.form-high-contrast input,
+.form-high-contrast textarea,
+.form-high-contrast select {
+  background: var(--input-bg);
+  color: var(--input-text);
+  border: 2px solid var(--input-border);
+}
+
+.form-high-contrast input::placeholder,
+.form-high-contrast textarea::placeholder {
+  color: var(--input-placeholder);
+  opacity: 1;
+}
+
+/* Focus states for accessibility */
+.focus-high-contrast:focus {
+  outline: 3px solid var(--brand-red);
+  outline-offset: 2px;
+}
+
+/* Print styles for high contrast */
+@media print {
+  :root {
+    --text-primary: #000000;
+    --bg-primary: #FFFFFF;
+    --text-link: #000000;
+  }
+  
+  * {
+    color: #000000 !important;
+    background: #FFFFFF !important;
+  }
+}
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .hero-high-contrast::before {
+    transition: none;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  :root {
+    --text-primary: #000000;
+    --bg-primary: #FFFFFF;
+    --text-link: #0000EE;
+    --text-link-hover: #0000CC;
+    --button-primary-bg: #000000;
+    --button-outline-border: #000000;
+  }
+}

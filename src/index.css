@@ -1,9 +1,9 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import './styles/theme.css';
 
 @layer base {
   :root {
@@ -48,7 +48,33 @@
   }
 
   .dark {
-    /* // ... keep existing code (dark mode variables) */
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+
+    --secondary: 0 0% 3.9%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 210 40% 4.8%;
+    --muted-foreground: 217.9 10% 64.9%;
+
+    --accent: 0 100% 60%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 215.9 18% 16.9%;
+    --input: 215.9 18% 16.9%;
+    --ring: 216 12.2% 83.9%;
   }
 }
 
@@ -65,52 +91,92 @@
   body {
     @apply bg-background text-foreground;
     font-family: 'Inter', sans-serif;
+    color: var(--text-primary);
+    background-color: var(--bg-primary);
   }
   
-  /* Modern typography adjustments */
+  /* High contrast typography */
   h1, .h1 {
     @apply text-4xl md:text-5xl lg:text-6xl font-extrabold uppercase tracking-wider;
     line-height: 1.1;
+    color: var(--text-primary);
+    font-weight: 800;
   }
   
   h2, .h2 {
     @apply text-3xl md:text-4xl font-bold tracking-wide;
     line-height: 1.2;
+    color: var(--text-primary);
+    font-weight: 700;
   }
   
   h3, .h3 {
     @apply text-xl md:text-2xl font-semibold;
     line-height: 1.3;
+    color: var(--text-primary);
+    font-weight: 600;
   }
   
   p {
     @apply text-base md:text-lg;
     line-height: 1.6;
+    color: var(--text-secondary);
+    font-weight: 400;
   }
 
-  /* Ultra-modern components styling */
+  /* High contrast components */
   .ultra-card {
-    @apply rounded-xl shadow-lg bg-white p-6 md:p-8 transition-all duration-300 hover:shadow-xl;
+    @apply rounded-xl shadow-lg p-6 md:p-8 transition-all duration-300 hover:shadow-xl;
+    background: var(--card-bg);
+    color: var(--card-text);
+    border: 1px solid var(--card-border);
   }
   
   .accent-gradient {
-    background: linear-gradient(135deg, #FF3131 0%, #FF6868 100%);
+    background: linear-gradient(135deg, var(--brand-red) 0%, #FF6868 100%);
   }
   
   .btn-primary {
-    @apply bg-accent text-white font-medium px-8 py-3 rounded-full shadow-lg transition-all duration-300 hover:shadow-xl hover:brightness-110;
+    @apply font-medium px-8 py-3 rounded-full shadow-lg transition-all duration-300 hover:shadow-xl;
+    background: var(--button-primary-bg);
+    color: var(--button-primary-text);
+    font-weight: 600;
+    border: 2px solid var(--button-primary-bg);
   }
   
   .btn-outline {
-    @apply border-2 border-accent text-accent font-medium px-8 py-3 rounded-full transition-all duration-300 hover:bg-accent hover:text-white;
+    @apply font-medium px-8 py-3 rounded-full transition-all duration-300;
+    background: transparent;
+    color: var(--button-outline-text);
+    border: 2px solid var(--button-outline-border);
+    font-weight: 600;
+  }
+  
+  .btn-outline:hover {
+    background: var(--button-outline-hover-bg);
+    color: var(--button-outline-hover-text);
   }
   
   .hero-gradient {
-    background: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.8) 100%);
+    background: var(--hero-overlay);
   }
   
   .section-padding {
     @apply py-16 md:py-24 lg:py-32;
+  }
+
+  /* High contrast links */
+  a:not(.btn-primary):not(.btn-outline) {
+    color: var(--text-link);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+    font-weight: 500;
+  }
+
+  a:not(.btn-primary):not(.btn-outline):hover {
+    color: var(--text-link-hover);
+    text-decoration-thickness: 2px;
   }
 }
 
@@ -163,7 +229,7 @@
   animation: glow 1.5s infinite;
 }
 
-/* Mobile responsive media queries */
+/* Mobile responsive media queries - updated for contrast */
 @media (max-width: 640px) {
   .container {
     padding-left: 1.5rem;
@@ -173,30 +239,45 @@
   .grid {
     gap: 1.5rem;
   }
+  
+  h1, .h1 {
+    font-size: 2rem;
+    font-weight: 800;
+  }
+  
+  h2, .h2 {
+    font-size: 1.75rem;
+    font-weight: 700;
+  }
 }
 
 /* Improve accessibility for touch devices */
 @media (hover: none) {
   button, a, .interactive {
-    @apply p-3; /* Larger tap targets on touch devices */
+    @apply p-3;
+    min-height: 44px;
+    min-width: 44px;
   }
 }
 
-/* SEO and Semantic Classes */
+/* SEO and Semantic Classes - updated for contrast */
 .speakable {
-  font-weight: 500;
+  font-weight: 600;
+  color: var(--text-primary);
 }
 
 /* High contrast elements */
 .high-contrast {
-  @apply bg-primary text-secondary;
+  background: var(--bg-dark);
+  color: var(--text-on-dark);
 }
 
 .high-contrast-reverse {
-  @apply bg-secondary text-primary;
+  background: var(--bg-primary);
+  color: var(--text-primary);
 }
 
-/* Hero specific styles */
+/* Hero specific styles - high contrast */
 .hero-fullscreen {
   @apply relative min-h-screen flex items-center justify-center overflow-hidden;
   padding-top: 120px;
@@ -204,27 +285,41 @@
 }
 
 .hero-overlay {
-  @apply absolute inset-0 bg-gradient-to-b from-black/60 to-black/90 z-10;
+  @apply absolute inset-0 z-10;
+  background: var(--hero-overlay);
 }
 
 .hero-content {
   @apply relative z-20 text-center max-w-5xl mx-auto px-4;
+  color: var(--hero-text);
 }
 
-/* Navigation specific styles */
+/* Navigation specific styles - high contrast */
 .nav-sticky {
   @apply fixed top-0 left-0 right-0 z-50 transition-all duration-300;
+  background: var(--header-bg);
 }
 
 .nav-transparent {
-  @apply bg-black/70 backdrop-blur-md;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
 }
 
-/* Footer specific styles */
+/* Footer specific styles - high contrast */
 .footer-minimal {
-  @apply bg-black text-white py-16;
+  background: var(--bg-dark);
+  color: var(--text-on-dark);
+  @apply py-16;
 }
 
 .social-icon {
-  @apply w-10 h-10 flex items-center justify-center rounded-full border border-white/20 text-white hover:bg-accent hover:border-accent transition-colors;
+  @apply w-10 h-10 flex items-center justify-center rounded-full transition-colors;
+  border: 2px solid var(--text-on-dark);
+  color: var(--text-on-dark);
+}
+
+.social-icon:hover {
+  background: var(--brand-red);
+  border-color: var(--brand-red);
+  color: var(--text-on-red);
 }
