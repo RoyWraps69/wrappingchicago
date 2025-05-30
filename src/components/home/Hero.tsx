@@ -7,12 +7,12 @@ import { ArrowRight, Phone } from 'lucide-react';
 const Hero = () => {
   return (
     <div className="hero-fullscreen bg-black">
-      {/* Background Video or Image */}
+      {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <div className="hero-overlay"></div>
         <img 
-          src="/lovable-uploads/199b8977-07e4-488c-8e27-0ad83b25af33.jpg" 
-          alt="Professional vehicle wrap on sports car in Chicago - premium 3M installation" 
+          src="/lovable-uploads/5fd5eb2e-668b-49dc-adbb-c49462cde0ed.png" 
+          alt="Professional commercial van wrap for Arnold Electric - premium vehicle graphics in Chicago" 
           className="w-full h-full object-cover"
           loading="eager"
         />
