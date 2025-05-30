@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -90,22 +91,6 @@ function HomePage() {
     }
   }, []);
 
-  // Simplified FAQ data
-  const homeFAQs = [
-    {
-      question: "How much do vehicle wraps cost in Chicago?",
-      answer: "Vehicle wrap costs in Chicago vary by vehicle type and design complexity. Full car wraps typically range from $2,500-$5,000, full truck and van wraps from $3,500-$7,000, and partial wraps start around $1,500."
-    },
-    {
-      question: "How long do vehicle wraps last?",
-      answer: "With proper care and maintenance, our premium vehicle wraps typically last 5-7 years in Chicago's climate. All our wraps come with a 2-year warranty."
-    },
-    {
-      question: "Do vehicle wraps damage paint?",
-      answer: "No, professional vehicle wraps actually protect your paint when properly installed and removed. Our 3M and Avery vinyl wraps act as a shield against minor scratches and UV damage."
-    }
-  ];
-
   return (
     <>
       <HomeSEO />
@@ -121,8 +106,6 @@ function HomePage() {
         isServicePage={true}
         serviceType="Vehicle Wraps"
       />
-      
-      {/* Remove duplicate schema components that conflict */}
       
       <div className="flex flex-col min-h-screen">
         <Header />

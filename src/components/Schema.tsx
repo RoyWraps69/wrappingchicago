@@ -5,6 +5,7 @@ import IndexingOptimizer from './schemas/IndexingOptimizer';
 import CoreBusinessSchema from './schemas/CoreBusinessSchema';
 import SimpleBreadcrumbSchema from './schemas/SimpleBreadcrumbSchema';
 import CleanFAQSchema from './schemas/CleanFAQSchema';
+import IndexingEnhancer from './seo/IndexingEnhancer';
 import { generateBreadcrumbSchema } from '@/utils/schemaGenerators';
 
 interface SchemaProps {
@@ -27,6 +28,7 @@ interface SchemaProps {
   minPrice?: number;
   maxPrice?: number;
   noIndex?: boolean;
+  priority?: 'critical' | 'high' | 'normal' | 'low';
 }
 
 interface FAQ {
@@ -40,7 +42,9 @@ const Schema: React.FC<SchemaProps> = ({
   pageTitle,
   pageDescription,
   faqs = [],
-  noIndex = false
+  keywords = [],
+  noIndex = false,
+  priority = 'normal'
 }) => {
   const domain = "https://www.wrappingchicago.com";
   const fullUrl = `${domain}${path}`;
@@ -50,6 +54,14 @@ const Schema: React.FC<SchemaProps> = ({
 
   return (
     <>
+      {/* Enhanced indexing optimization - addresses most common Google indexing issues */}
+      <IndexingEnhancer 
+        pageTitle={pageTitle}
+        pageDescription={pageDescription}
+        keywords={keywords}
+        priority={priority}
+      />
+      
       {/* Core indexing optimization */}
       <IndexingOptimizer 
         pageTitle={pageTitle}
