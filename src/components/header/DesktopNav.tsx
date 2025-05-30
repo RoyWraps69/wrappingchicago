@@ -5,6 +5,13 @@ import { Sparkles, MessageSquare, Phone, MapPin, DollarSign } from 'lucide-react
 import { Button } from '@/components/ui/button';
 import NavLink from './NavLink';
 import ServiceMenu from './ServiceMenu';
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from '@/components/ui/navigation-menu';
 
 const DesktopNav = () => {
   return (
@@ -20,12 +27,36 @@ const DesktopNav = () => {
         <NavLink to="/gallery">
           Gallery
         </NavLink>
-        <NavLink to="/pricing" icon={DollarSign}>
-          Pricing
-        </NavLink>
-        <NavLink to="/locations" icon={MapPin}>
-          Locations
-        </NavLink>
+        
+        <NavigationMenu>
+          <NavigationMenuList>
+            <NavigationMenuItem>
+              <NavigationMenuTrigger className="text-white/80 hover:text-white transition-all flex items-center relative font-medium after:content-[''] after:absolute after:bottom-[-2px] after:left-0 after:w-full after:h-0.5 after:bg-brand-red after:scale-x-0 after:origin-left after:transition-transform hover:after:scale-x-100 bg-transparent">
+                <DollarSign className="mr-1 h-4 w-4" />
+                Pricing
+              </NavigationMenuTrigger>
+              <NavigationMenuContent>
+                <div className="w-48 p-2 bg-white">
+                  <Link 
+                    to="/pricing" 
+                    className="block px-3 py-2 text-sm text-brand-navy hover:bg-gray-100 rounded-md"
+                  >
+                    <DollarSign className="inline mr-2 h-4 w-4" />
+                    Pricing & Packages
+                  </Link>
+                  <Link 
+                    to="/locations" 
+                    className="block px-3 py-2 text-sm text-brand-navy hover:bg-gray-100 rounded-md"
+                  >
+                    <MapPin className="inline mr-2 h-4 w-4" />
+                    Service Areas
+                  </Link>
+                </div>
+              </NavigationMenuContent>
+            </NavigationMenuItem>
+          </NavigationMenuList>
+        </NavigationMenu>
+        
         <NavLink to="/about">
           About
         </NavLink>

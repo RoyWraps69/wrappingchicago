@@ -54,13 +54,17 @@ const MobileNav: React.FC<MobileNavProps> = ({ isOpen, onClose }) => {
             Gallery
           </NavLink>
 
-          <NavLink to="/pricing" onClick={onClose} icon={DollarSign} className="text-2xl">
-            Pricing
-          </NavLink>
-          
-          <NavLink to="/locations" onClick={onClose} icon={MapPin} className="text-2xl">
-            Locations
-          </NavLink>
+          <div>
+            <h3 className="text-lg font-medium text-white/60 mb-2">Pricing & Locations</h3>
+            <div className="space-y-2">
+              <NavLink to="/pricing" onClick={onClose} icon={DollarSign}>
+                Pricing & Packages
+              </NavLink>
+              <NavLink to="/locations" onClick={onClose} icon={MapPin}>
+                Service Areas
+              </NavLink>
+            </div>
+          </div>
           
           <NavLink to="/about" onClick={onClose} className="text-2xl">
             About Us
