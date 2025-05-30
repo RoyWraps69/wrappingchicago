@@ -19,15 +19,12 @@ import VehicleWrapCalculator from '@/components/calculator/VehicleWrapCalculator
 import CustomerTestimonials from '@/components/testimonials/CustomerTestimonials';
 import TrustSignals from '@/components/trust/TrustSignals';
 import PageLinksSection from '@/components/navigation/PageLinksSection';
+import InternalLinksFooter from '@/components/seo/InternalLinksFooter';
+import { HomeInternalLinks } from '@/components/home/indexed-sections';
 import { useGalleryImages } from '@/hooks/useGalleryImages';
 import { cities } from '@/data/cities';
 import Schema from '@/components/Schema';
 import PageFAQ from '@/components/common/PageFAQ';
-import BusinessLocationSchema from '@/components/schemas/BusinessLocationSchema';
-import IndexingPriority from '@/components/seo/IndexingPriority';
-import InternalLinksFooter from '@/components/seo/InternalLinksFooter';
-import { HomeHelmetTags, HomeInternalLinks } from '@/components/home/indexed-sections';
-import BreadcrumbSchema from '@/components/schemas/BreadcrumbSchema';
 
 function HomePage() {
   // Get the required images for ServicesSection
@@ -67,34 +64,11 @@ function HomePage() {
   // Add indexing hint to the console that can help identify if page was rendered correctly
   useEffect(() => {
     console.log('HomePage - Google indexing compatibility check: PASS');
-    
-    // Add special link element to help Google discover more pages
-    const head = document.querySelector('head');
-    if (head) {
-      // Discovery link for sitemap
-      const discoveryLink = document.createElement('link');
-      discoveryLink.rel = 'index';
-      discoveryLink.href = '/sitemap.xml';
-      head.appendChild(discoveryLink);
-      
-      // Add XML-XSL discoverable stylesheet for sitemap
-      const xslLink = document.createElement('link');
-      xslLink.rel = 'stylesheet';
-      xslLink.type = 'text/xsl';
-      xslLink.href = '/sitemap.xsl';
-      head.appendChild(xslLink);
-      
-      return () => {
-        head.removeChild(discoveryLink);
-        if (head.contains(xslLink)) head.removeChild(xslLink);
-      };
-    }
   }, []);
 
   return (
     <>
       <HomeSEO />
-      <IndexingPriority priority="high" />
       
       {/* Simplified Schema - avoid conflicts */}
       <Schema 
@@ -105,6 +79,15 @@ function HomePage() {
         faqs={homeFAQs}
         isServicePage={true}
         serviceType="Vehicle Wraps"
+        priority="high"
+        keywords={[
+          "vehicle wraps Chicago", 
+          "car wraps Chicago", 
+          "truck wraps Chicago", 
+          "van wraps Chicago", 
+          "fleet wraps Chicago", 
+          "commercial vehicle wraps"
+        ]}
       />
       
       <div className="flex flex-col min-h-screen">

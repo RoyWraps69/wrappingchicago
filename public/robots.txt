@@ -1,16 +1,14 @@
 
 # Enhanced robots.txt for Wrapping Chicago
-# Last updated: 2025-05-20
+# Last updated: 2025-05-30
 
-# Allow all user agents full access
 User-agent: *
 Allow: /
 
-# Sitemaps declarations
+# Sitemaps
 Sitemap: https://www.wrappingchicago.com/sitemap.xml
-Sitemap: https://www.wrappingchicago.com/html-sitemap.html
 
-# Special directives for major search engines
+# Enhanced directives for major search engines
 User-agent: Googlebot
 Allow: /
 Allow: /*.js$
@@ -35,34 +33,6 @@ Allow: /*.webp$
 Allow: /assets/
 Crawl-delay: 1
 
-User-agent: Yandexbot
-Allow: /
-Allow: /*.js$
-Allow: /*.css$
-Allow: /assets/
-Crawl-delay: 2
-
-User-agent: DuckDuckBot
-Allow: /
-Allow: /*.js$
-Allow: /*.css$
-Allow: /assets/
-Crawl-delay: 1
-
-User-agent: Slurp
-Allow: /
-Allow: /*.js$
-Allow: /*.css$
-Allow: /assets/
-Crawl-delay: 2
-
-User-agent: Baiduspider
-Allow: /
-Allow: /*.js$
-Allow: /*.css$
-Allow: /assets/
-Crawl-delay: 2
-
 # Emphasize important sections for indexing
 Allow: /services/
 Allow: /gallery/
@@ -76,41 +46,17 @@ Allow: /*-il
 Allow: /car-wraps
 Allow: /truck-wraps
 Allow: /van-wraps
-Allow: /fleet-wraps
 Allow: /color-change-wraps
-Allow: /commercial-graphics
-Allow: /vehicle-lettering
-Allow: /partial-wraps
-Allow: /protective-films
-Allow: /specialty-wraps
-Allow: /retail-graphics
 Allow: /luxury-exotic-wraps
 
-# Prevent crawling of non-essential resources to optimize crawl budget
-Disallow: /wp-admin/
-Disallow: /wp-includes/
+# Prevent crawling of non-essential resources
 Disallow: /search
 Disallow: /*utm_*
 Disallow: /*fbclid=*
 Disallow: /*.sql$
-Disallow: /*.sql.gz$
-Disallow: /*.sql.bz2$
-Disallow: /*.sqlite$
 Disallow: /*.log$
 Disallow: /*node_modules/
-Disallow: /*package.json
-Disallow: /*package-lock.json
-Disallow: /*.md$
-Disallow: /*.lock$
 Disallow: /*.env$
-Disallow: /*.env.*$
-Disallow: /*.git$
-Disallow: /*.git/*
-Disallow: /*LICENSE
-Disallow: /*README
-Disallow: /*webpack.config.js
-Disallow: /*tsconfig.json
-Disallow: /*vite.config.js
 
 # Allow Google Images to index all image content
 User-agent: Googlebot-Image
@@ -121,8 +67,5 @@ Allow: /*.gif$
 Allow: /*.png$
 Allow: /*.webp$
 
-# Specify host preference to avoid duplicate content issues
+# Specify host preference
 Host: www.wrappingchicago.com
-
-# Explicitly request indexing all pages
-Clean-param: utm_source&utm_medium&utm_campaign&utm_content&utm_term&fbclid

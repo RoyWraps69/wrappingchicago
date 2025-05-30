@@ -5,7 +5,6 @@ import IndexingOptimizer from './schemas/IndexingOptimizer';
 import CoreBusinessSchema from './schemas/CoreBusinessSchema';
 import SimpleBreadcrumbSchema from './schemas/SimpleBreadcrumbSchema';
 import CleanFAQSchema from './schemas/CleanFAQSchema';
-import IndexingEnhancer from './seo/IndexingEnhancer';
 import { generateBreadcrumbSchema } from '@/utils/schemaGenerators';
 
 interface SchemaProps {
@@ -54,20 +53,14 @@ const Schema: React.FC<SchemaProps> = ({
 
   return (
     <>
-      {/* Enhanced indexing optimization - addresses most common Google indexing issues */}
-      <IndexingEnhancer 
-        pageTitle={pageTitle}
-        pageDescription={pageDescription}
-        keywords={keywords}
-        priority={priority}
-      />
-      
       {/* Core indexing optimization */}
       <IndexingOptimizer 
         pageTitle={pageTitle}
         pageDescription={pageDescription}
         canonicalUrl={fullUrl}
         noIndex={noIndex}
+        keywords={keywords}
+        priority={priority}
       />
       
       {/* Essential business schema */}
