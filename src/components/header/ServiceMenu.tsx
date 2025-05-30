@@ -22,13 +22,13 @@ const ListItem = React.forwardRef<
         <a
           ref={ref}
           className={cn(
-            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-gray-100 hover:text-brand-red focus:bg-gray-100 focus:text-brand-red",
             className
           )}
           {...props}
         >
-          <div className="text-sm font-medium leading-none">{title}</div>
-          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+          <div className="text-sm font-medium leading-none text-brand-navy">{title}</div>
+          <p className="line-clamp-2 text-sm leading-snug text-gray-600">
             {children}
           </p>
         </a>
@@ -43,8 +43,10 @@ const ServiceMenu = () => {
     <NavigationMenu>
       <NavigationMenuList>
         <NavigationMenuItem>
-          <NavigationMenuTrigger className="bg-brand-red hover:bg-red-700 text-white font-medium px-3">Services</NavigationMenuTrigger>
-          <NavigationMenuContent className="z-50 bg-white w-[400px] md:w-[500px] lg:w-[700px]">
+          <NavigationMenuTrigger className="bg-brand-red hover:bg-red-700 text-white font-medium px-4 py-2 text-sm">
+            Services
+          </NavigationMenuTrigger>
+          <NavigationMenuContent className="z-50 bg-white border shadow-lg w-[400px] md:w-[500px] lg:w-[700px]">
             <ul className="grid gap-3 p-4 md:grid-cols-2 lg:w-[700px]">
               <ListItem
                 href="/car-wraps"
