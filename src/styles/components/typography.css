@@ -1,0 +1,102 @@
+
+/* ==============================
+   TYPOGRAPHY STYLES - HIGH CONTRAST
+   - Enhances SEO with proper semantic styling
+   - Improves accessibility with WCAG AA compliance
+   - Maintains consistent hierarchy
+   ============================== */
+
+/* Base typography improvements - high contrast */
+h1, .h1 {
+  margin-bottom: 0.5em;
+  font-weight: 800;
+  line-height: 1.2;
+  color: var(--text-primary);
+}
+
+h2, .h2 {
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--text-primary);
+}
+
+h3, .h3 {
+  margin-top: 1.2em;
+  margin-bottom: 0.5em;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--text-primary);
+}
+
+/* Speakable content for voice search */
+.speakable {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+/* Voice search optimizations */
+.voice-search-target {
+  margin-bottom: 1em;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+/* Mobile typography adjustments */
+@media (max-width: 768px) {
+  h1, .h1 {
+    font-size: 1.75rem;
+    font-weight: 800;
+  }
+  
+  h2, .h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+  
+  h3, .h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
+}
+
+/* Rich results optimization - high contrast */
+.faq-question {
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+}
+
+.faq-answer {
+  margin-bottom: 1.5rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+/* Contact information formatting - high contrast */
+address {
+  font-style: normal;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+/* Local business schema optimizations - high contrast */
+.business-name {
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.business-address {
+  margin-bottom: 0.5rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.business-hours {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}

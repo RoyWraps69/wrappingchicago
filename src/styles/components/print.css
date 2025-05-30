@@ -1,0 +1,31 @@
+
+/* ==============================
+   PRINT STYLES - HIGH CONTRAST
+   - PDF generation optimizations
+   - Print-specific accessibility
+   ============================== */
+
+/* Print styles for PDF generation - high contrast */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  body {
+    font-size: 12pt;
+    color: #000000 !important;
+    background: #FFFFFF !important;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    color: #000000 !important;
+    font-weight: bold;
+  }
+  
+  a::after {
+    content: " (" attr(href) ")";
+    font-size: 0.8em;
+    font-style: italic;
+    color: #000000;
+  }
+}

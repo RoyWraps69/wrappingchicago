@@ -1,0 +1,74 @@
+
+/* ==============================
+   ACCESSIBILITY STYLES - HIGH CONTRAST
+   - WCAG AA compliance features
+   - Screen reader optimizations
+   ============================== */
+
+/* Skip link for accessibility - high contrast */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--brand-red);
+  color: var(--text-on-red);
+  padding: 8px 16px;
+  z-index: 100;
+  transition: top 0.3s;
+  font-weight: 600;
+  text-decoration: none;
+  border: 2px solid var(--brand-red);
+}
+
+.skip-link:focus {
+  top: 0;
+  outline: 3px solid var(--text-primary);
+  outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  :root {
+    --text-primary: #000000;
+    --text-secondary: #000000;
+    --bg-primary: #FFFFFF;
+    --text-link: #0000EE;
+    --text-link-hover: #0000CC;
+    --button-primary-bg: #000000;
+    --button-primary-text: #FFFFFF;
+    --card-border: #000000;
+  }
+  
+  * {
+    border-color: #000000 !important;
+  }
+  
+  button, a {
+    border: 2px solid #000000 !important;
+  }
+}
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Structured data visual hooks - high contrast */
+.location-marker::before {
+  content: "📍";
+  margin-right: 0.25em;
+}
+
+.phone-marker::before {
+  content: "📞";
+  margin-right: 0.25em;
+}
+
+.email-marker::before {
+  content: "📧";
+  margin-right: 0.25em;
+}

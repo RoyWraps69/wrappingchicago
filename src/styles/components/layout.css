@@ -1,0 +1,82 @@
+
+/* ==============================
+   LAYOUT STYLES - HIGH CONTRAST
+   - Main content containers
+   - Schema.org optimizations
+   ============================== */
+
+/* Main content containers */
+main, article, section, .main-content {
+  width: 100%;
+  max-width: 100%;
+  color: var(--text-primary);
+  background: var(--bg-primary);
+}
+
+/* Main page sections */
+section {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  color: var(--text-primary);
+}
+
+/* Schema.org CSS hooks */
+[itemscope], [itemprop] {
+  box-sizing: border-box;
+}
+
+/* Rich media optimizations */
+img, video, iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Core Web Vitals optimizations */
+.content-visibility-auto {
+  content-visibility: auto;
+  contain-intrinsic-size: auto;
+}
+
+/* Mobile optimizations - high contrast */
+@media (max-width: 768px) {
+  section {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+}
+
+/* Prevent CLS issues */
+[data-image-container] {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+
+[data-image-container]::before {
+  content: "";
+  display: block;
+  padding-top: var(--aspect-ratio, 56.25%);
+}
+
+/* Social sharing optimization - high contrast */
+.social-share-container {
+  display: flex;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+
+.social-share-container a {
+  background: var(--button-secondary-bg);
+  color: var(--button-secondary-text);
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: 2px solid var(--button-secondary-bg);
+}
+
+.social-share-container a:hover {
+  background: var(--brand-red);
+  border-color: var(--brand-red);
+  color: var(--text-on-red);
+}
