@@ -13,6 +13,7 @@ interface MetaTagsProps {
   noIndex?: boolean;
   structuredData?: object;
   lastModified?: string;
+  alternateUrls?: Array<{ url: string; hreflang?: string; }>;
 }
 
 const MetaTags: React.FC<MetaTagsProps> = ({
@@ -26,24 +27,27 @@ const MetaTags: React.FC<MetaTagsProps> = ({
   noIndex = false,
   structuredData,
   lastModified,
+  alternateUrls = [],
 }) => {
   const currentYear = new Date().getFullYear();
   const formattedTitle = title.includes(currentYear.toString()) ? title : `${title} | ${currentYear}`;
   const domain = "https://www.wrappingchicago.com";
   
-  // Ensure canonical URL uses www subdomain
-  const fullCanonicalUrl = canonicalUrl.startsWith('http') 
-    ? (canonicalUrl.includes('wrappingchicago.com') 
-        ? (canonicalUrl.includes('www.') ? canonicalUrl : canonicalUrl.replace('https://wrappingchicago.com', domain))
-        : canonicalUrl)
-    : `${domain}${canonicalUrl}`;
+  // Ensure canonical URL uses www subdomain and is absolute
+  const normalizeUrl = (url: string) => {
+    if (url.startsWith('http')) {
+      // Already absolute URL
+      if (url.includes('wrappingchicago.com') && !url.includes('www.')) {
+        return url.replace('https://wrappingchicago.com', domain);
+      }
+      return url;
+    }
+    // Relative URL
+    return `${domain}${url.startsWith('/') ? url : `/${url}`}`;
+  };
   
-  // Ensure OG image URL uses www subdomain
-  const fullOgImage = ogImage.startsWith('http') 
-    ? (ogImage.includes('wrappingchicago.com') 
-        ? (ogImage.includes('www.') ? ogImage : ogImage.replace('https://wrappingchicago.com', domain))
-        : ogImage)
-    : `${domain}${ogImage}`;
+  const fullCanonicalUrl = normalizeUrl(canonicalUrl);
+  const fullOgImage = normalizeUrl(ogImage);
   
   return (
     <Helmet>
@@ -51,14 +55,28 @@ const MetaTags: React.FC<MetaTagsProps> = ({
       <title>{formattedTitle}</title>
       <meta name="description" content={description} />
       {keywords && <meta name="keywords" content={keywords} />}
+      
+      {/* Canonical URL - Most Important for Duplicate Content */}
       <link rel="canonical" href={fullCanonicalUrl} />
-      <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+      
+      {/* Alternate URLs if provided */}
+      {alternateUrls.map((alt, index) => (
+        <link 
+          key={index}
+          rel="alternate" 
+          href={normalizeUrl(alt.url)} 
+          {...(alt.hreflang && { hrefLang: alt.hreflang })}
+        />
+      ))}
+      
+      {/* Self-referencing alternate */}
+      <link rel="alternate" href={fullCanonicalUrl} hrefLang="en-us" />
+      
       {lastModified && <meta name="last-modified" content={lastModified} />}
       
       {/* Performance optimizations */}
-      <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
-      <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
       <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
       
       {/* Favicon */}
@@ -70,12 +88,13 @@ const MetaTags: React.FC<MetaTagsProps> = ({
       <meta name="msapplication-TileColor" content="#11172D" />
       <meta name="theme-color" content="#11172D" />
       
-      {/* Robots Meta Tags */}
+      {/* Robots Meta Tags - Critical for Indexing */}
       {noIndex ? (
         <meta name="robots" content="noindex, nofollow" />
       ) : (
         <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
       )}
+      <meta name="googlebot" content={noIndex ? "noindex, nofollow" : "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"} />
       
       {/* Open Graph / Facebook */}
       <meta property="og:title" content={formattedTitle} />

@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -13,6 +14,7 @@ import Schema from '@/components/Schema';
 import AIWrapSchema from '@/components/ai-wrap-ideas/AIWrapSchema';
 import EasyButtonSection from '@/components/home/EasyButtonSection';
 import BreadcrumbSchema from '@/components/schemas/BreadcrumbSchema';
+import CanonicalManager from '@/components/seo/CanonicalManager';
 
 // Import the home page components
 import InfoBar from '@/components/home/InfoBar';
@@ -76,6 +78,10 @@ const Index = () => {
   return (
     <>
       <HomeSEO />
+      
+      {/* Canonical URL Management - Critical for avoiding duplicate content */}
+      <CanonicalManager customCanonical="https://www.wrappingchicago.com/" />
+      
       <Schema 
         city={chicagoCity} 
         path="/"

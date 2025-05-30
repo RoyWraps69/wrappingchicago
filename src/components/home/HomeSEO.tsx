@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 
@@ -13,7 +14,13 @@ const HomeSEO = () => {
         content="Get vehicle wraps in Chicago IL services for cars, trucks, vans, and fleets. Boost style or brand visibility with custom vinyl graphics installed by experts." 
       />
       <meta name="keywords" content="vehicle wraps Chicago, car wraps Chicago, truck wraps Chicago, van wraps Chicago, fleet wraps Chicago, commercial vehicle wraps, custom vehicle wraps, vehicle graphics Chicago, car graphics Chicago, vinyl wraps Chicago, 3M vehicle wraps" />
-      <link rel="canonical" href={domain} />
+      
+      {/* Critical: Explicit canonical URL for homepage to prevent duplicates */}
+      <link rel="canonical" href={`${domain}/`} />
+      
+      {/* Prevent common duplicate content issues */}
+      <link rel="alternate" href={`${domain}/`} hrefLang="en-us" />
+      <link rel="alternate" href={`${domain}/`} hrefLang="en" />
       
       {/* Enhanced favicon setup */}
       <link rel="icon" type="image/png" sizes="32x32" href="/lovable-uploads/6ef3b1af-8591-4d36-97c2-9366401115fa.png" />
@@ -26,7 +33,7 @@ const HomeSEO = () => {
       {/* Enhanced Open Graph / Social Media Tags */}
       <meta property="og:title" content={`Vehicle Wraps in Chicago IL | Wrapping Chicago`} />
       <meta property="og:description" content="Get vehicle wraps in Chicago IL services for cars, trucks, vans, and fleets. Boost style or brand visibility with custom vinyl graphics installed by experts." />
-      <meta property="og:url" content={domain} />
+      <meta property="og:url" content={`${domain}/`} />
       <meta property="og:type" content="website" />
       <meta property="og:image" content={`${domain}/lovable-uploads/6ef3b1af-8591-4d36-97c2-9366401115fa.png`} />
       <meta property="og:image:width" content="1200" />
@@ -43,7 +50,7 @@ const HomeSEO = () => {
       <meta name="twitter:image:alt" content="Professional vehicle wrap services in Chicago - colorful vehicle design" />
       <meta name="twitter:site" content="@wrappingchicago" />
       
-      {/* Enhanced SEO meta tags */}
+      {/* Enhanced SEO meta tags - Critical for indexing */}
       <meta name="author" content="Wrapping Chicago" />
       <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
       <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
@@ -62,9 +69,11 @@ const HomeSEO = () => {
       {/* Page speed optimizations */}
       <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
       
-      {/* Alternate URL versions */}
-      <link rel="alternate" hrefLang="en-us" href={domain} />
-      <link rel="alternate" href={domain} />
+      {/* Prevent indexing of URL parameters and session IDs */}
+      <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+      
+      {/* Last modified for better crawl frequency */}
+      <meta name="last-modified" content={new Date().toISOString()} />
       
       {/* Enhanced Structured Data for Website */}
       <script type="application/ld+json">
@@ -72,7 +81,7 @@ const HomeSEO = () => {
           "@context": "https://schema.org",
           "@type": "WebSite",
           "name": "Wrapping Chicago - Vehicle Wraps & Graphics",
-          "url": domain,
+          "url": `${domain}/`,
           "potentialAction": {
             "@type": "SearchAction",
             "target": `${domain}/search?q={search_term_string}`,
@@ -88,8 +97,8 @@ const HomeSEO = () => {
           "@type": "LocalBusiness",
           "name": "Wrapping Chicago",
           "image": `${domain}/lovable-uploads/6ef3b1af-8591-4d36-97c2-9366401115fa.png`,
-          "@id": domain,
-          "url": domain,
+          "@id": `${domain}/#organization`,
+          "url": `${domain}/`,
           "telephone": "+13125971286",
           "priceRange": "$$",
           "address": {
