@@ -105,7 +105,6 @@ function HomePage() {
       <HomeSEO />
       <IndexingPriority priority="high" />
       <HomeHelmetTags />
-      <BreadcrumbSchema items={breadcrumbItems} />
       
       <Schema 
         city={chicagoCity}
@@ -115,7 +114,7 @@ function HomePage() {
         faqs={homeFAQs}
         keywords={[
           "vehicle wraps Chicago",
-          "car wraps Chicago",
+          "car wraps Chicago", 
           "truck wraps Chicago",
           "van wraps Chicago",
           "fleet wraps Chicago",
@@ -125,9 +124,13 @@ function HomePage() {
         ]}
         isServicePage={true}
         serviceType="Vehicle Wraps"
+        productName="Vehicle Wraps"
         includeSpeakable={true}
         allCities={cities}
         skipFAQSchema={true}
+        isAIPage={false}
+        minPrice={1500}
+        maxPrice={5000}
       />
       
       <BusinessLocationSchema city={chicagoCity} />

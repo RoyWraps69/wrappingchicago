@@ -8,10 +8,8 @@ import {
   generateWebPageSchema,
   generateBreadcrumbSchema
 } from '@/utils/schemaGenerators';
-import LocalBusinessSchema from './schemas/LocalBusinessSchema';
+import UniversalSchema from './schemas/UniversalSchema';
 import WebsiteSchema from './schemas/WebsiteSchema';
-import FAQSchema from './schemas/FAQSchema';
-import BreadcrumbSchema from './schemas/BreadcrumbSchema';
 import OfferCatalogSchema from './schemas/OfferCatalogSchema';
 import WebPageSchema from './schemas/WebPageSchema';
 import ActionSchema from './schemas/ActionSchema';
@@ -26,7 +24,6 @@ import GoogleBusinessProfileSchema from './schemas/GoogleBusinessProfileSchema';
 import AISearchSchema from './schemas/AISearchSchema';
 import LocalSearchSchema from './schemas/LocalSearchSchema';
 import EnhancedFAQSchema from './schemas/EnhancedFAQSchema';
-import ProductServiceSchema from './schemas/ProductServiceSchema';
 import RichResultSchema from './schemas/RichResultSchema';
 
 interface SchemaProps {
@@ -43,7 +40,11 @@ interface SchemaProps {
   datePublished?: string;
   dateModified?: string;
   allCities?: City[];
-  skipFAQSchema?: boolean; // New prop to control FAQ schema rendering
+  skipFAQSchema?: boolean;
+  isAIPage?: boolean;
+  productName?: string;
+  minPrice?: number;
+  maxPrice?: number;
 }
 
 interface FAQ {
@@ -65,10 +66,17 @@ const Schema: React.FC<SchemaProps> = ({
   datePublished = '2022-01-01T00:00:00+00:00',
   dateModified = new Date().toISOString(),
   allCities = [],
-  skipFAQSchema = false // Default to showing basic FAQ schema
+  skipFAQSchema = false,
+  isAIPage = false,
+  productName = 'Vehicle Wraps',
+  minPrice = 1500,
+  maxPrice = 5000
 }) => {
   const domain = "https://www.wrappingchicago.com";
   const fullUrl = `${domain}${path}`;
+
+  // Generate breadcrumb items
+  const breadcrumbItems = generateBreadcrumbSchema(path);
 
   // Run schema validation in development
   React.useEffect(() => {
@@ -78,7 +86,7 @@ const Schema: React.FC<SchemaProps> = ({
         { schema: generateWebsiteSchema(pageTitle, pageDescription, fullUrl, dateModified), name: 'Website' },
         { schema: generateWebPageSchema(pageTitle, pageDescription, fullUrl, dateModified, keywords, mainImage), name: 'WebPage' },
         ...(faqs.length > 0 ? [{ schema: { "@type": "FAQPage", mainEntity: faqs }, name: 'FAQ' }] : []),
-        { schema: { "@type": "BreadcrumbList", itemListElement: generateBreadcrumbSchema(path) }, name: 'Breadcrumb' }
+        { schema: { "@type": "BreadcrumbList", itemListElement: breadcrumbItems }, name: 'Breadcrumb' }
       ];
 
       console.group('Testing Current Page Schemas');
@@ -87,31 +95,34 @@ const Schema: React.FC<SchemaProps> = ({
       });
       console.groupEnd();
     }
-  }, [city, path, pageTitle, pageDescription, faqs]);
+  }, [city, path, pageTitle, pageDescription, faqs, breadcrumbItems]);
 
   return (
     <>
-      {/* Original schemas */}
-      <LocalBusinessSchema city={city} />
+      {/* Universal Schema Components - All required schemas for every page */}
+      <UniversalSchema 
+        city={city}
+        pageTitle={pageTitle}
+        pageDescription={pageDescription}
+        pageUrl={fullUrl}
+        breadcrumbItems={breadcrumbItems}
+        faqs={skipFAQSchema ? [] : faqs}
+        productName={productName}
+        serviceType={serviceType || productName}
+        isAIPage={isAIPage}
+        minPrice={minPrice}
+        maxPrice={maxPrice}
+        datePublished={datePublished}
+        dateModified={dateModified}
+      />
       
+      {/* Additional Website and Page Schemas */}
       <WebsiteSchema 
         name={pageTitle}
         description={pageDescription}
         url={fullUrl}
         lastModified={dateModified}
         keywords={keywords}
-      />
-      
-      {/* Only include basic FAQ schema if not skipped */}
-      {!skipFAQSchema && faqs.length > 0 && (
-        <FAQSchema 
-          faqs={faqs}
-          pageUrl={fullUrl}
-        />
-      )}
-      
-      <BreadcrumbSchema 
-        items={generateBreadcrumbSchema(path)}
       />
       
       <OfferCatalogSchema city={city} />
@@ -152,14 +163,13 @@ const Schema: React.FC<SchemaProps> = ({
       
       <OrganizationSchema />
       
-      {/* Google Business Profile Schema optimized for local SEO */}
       <GoogleBusinessProfileSchema cityName={city.name} />
       
       {allCities && allCities.length > 0 && (
         <ServiceAreaSchema cities={allCities} />
       )}
       
-      {/* New schemas for AI and local search optimization - Always include these */}
+      {/* AI and local search optimization schemas */}
       <AISearchSchema 
         pageTitle={pageTitle}
         pageDescription={pageDescription}
@@ -170,18 +180,13 @@ const Schema: React.FC<SchemaProps> = ({
         cityName={city.name}
       />
       
-      {/* Enhanced FAQ Schema - Only include when basic FAQ schema is skipped */}
-      {faqs.length > 0 && (
+      {/* Enhanced FAQ Schema - Only when basic FAQ schema is skipped */}
+      {faqs.length > 0 && skipFAQSchema && (
         <EnhancedFAQSchema 
           faqs={faqs}
           cityName={city.name}
         />
       )}
-      
-      <ProductServiceSchema
-        description={pageDescription}
-        cityName={city.name}
-      />
       
       {/* Rich results schema */}
       <RichResultSchema 

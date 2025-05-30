@@ -89,6 +89,15 @@ const Index = () => {
         pageDescription="Get vehicle wraps in Chicago IL services for cars, trucks, vans, and fleets. Boost style or brand visibility with custom vinyl graphics installed by experts."
         faqs={faqData}
         keywords={keywords}
+        isServicePage={true}
+        serviceType="Vehicle Wraps"
+        productName="Vehicle Wraps"
+        includeSpeakable={true}
+        allCities={cities}
+        skipFAQSchema={false}
+        isAIPage={false}
+        minPrice={2500}
+        maxPrice={5000}
       />
       <AIWrapSchema />
       
