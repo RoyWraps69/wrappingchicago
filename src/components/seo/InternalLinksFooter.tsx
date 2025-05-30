@@ -1,72 +1,79 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { cities } from '@/data/cities';
 
 const InternalLinksFooter: React.FC = () => {
   // Get top cities for linking
-  const topCities = cities.slice(0, 8);
+  const topCities = cities.slice(0, 12);
   
-  // Main service categories for organized linking
-  const serviceCategories = [
+  // Complete service and page categories for comprehensive linking
+  const linkSections = [
+    {
+      title: "Main Pages",
+      links: [
+        { path: "/", name: "Home" },
+        { path: "/about", name: "About Us" },
+        { path: "/contact", name: "Contact" },
+        { path: "/gallery", name: "Gallery" },
+        { path: "/pricing", name: "Pricing" },
+        { path: "/faq", name: "FAQ" },
+        { path: "/blog", name: "Blog" },
+        { path: "/locations", name: "Locations" }
+      ]
+    },
     {
       title: "Vehicle Types",
       links: [
         { path: "/car-wraps", name: "Car Wraps" },
         { path: "/truck-wraps", name: "Truck Wraps" },
         { path: "/van-wraps", name: "Van Wraps" },
-        { path: "/fleet-wraps", name: "Fleet Wraps" },
         { path: "/luxury-exotic-wraps", name: "Luxury & Exotic" }
       ]
     },
     {
-      title: "Wrap Types",
+      title: "Service Types",
       links: [
+        { path: "/services/fleet-wraps", name: "Fleet Wraps" },
         { path: "/color-change-wraps", name: "Color Change" },
-        { path: "/partial-wraps", name: "Partial Wraps" },
-        { path: "/designer-wraps", name: "Designer Wraps" },
-        { path: "/specialty-wraps", name: "Specialty Wraps" },
-        { path: "/commercial-graphics", name: "Commercial Graphics" }
+        { path: "/services/commercial-graphics", name: "Commercial Graphics" },
+        { path: "/services/partial-wraps", name: "Partial Wraps" },
+        { path: "/services/protective-films", name: "Protective Films" },
+        { path: "/services/vehicle-lettering", name: "Vehicle Lettering" },
+        { path: "/services/specialty-wraps", name: "Specialty Wraps" },
+        { path: "/services/retail-graphics", name: "Retail Graphics" },
+        { path: "/designer-wraps", name: "Designer Wraps" }
       ]
     },
     {
-      title: "Additional Services",
+      title: "Special Features",
       links: [
-        { path: "/vehicle-lettering", name: "Vehicle Lettering" },
-        { path: "/retail-graphics", name: "Retail Graphics" },
-        { path: "/protective-films", name: "Protective Films" },
-        { path: "/ai-wrap-ideas", name: "AI Wrap Designer" }
-      ]
-    },
-    {
-      title: "Information",
-      links: [
-        { path: "/about", name: "About Us" },
-        { path: "/gallery", name: "Gallery" },
-        { path: "/pricing", name: "Pricing" },
-        { path: "/contact", name: "Contact" },
-        { path: "/locations", name: "Locations" },
-        { path: "/sitemap", name: "Sitemap" }
+        { path: "/ai-wrap-ideas", name: "AI Wrap Designer" },
+        { path: "/truck-wraps-chicago", name: "Truck Wraps Chicago" },
+        { path: "/services", name: "All Services" },
+        { path: "/sitemap", name: "Sitemap" },
+        { path: "/html-sitemap", name: "HTML Sitemap" }
       ]
     }
   ];
 
   return (
-    <footer className="py-10 bg-gray-50 border-t border-gray-200 mt-auto">
+    <footer className="py-12 bg-gray-50 border-t border-gray-200 mt-auto">
       <div className="container mx-auto px-4">
-        <h2 className="text-xl font-semibold text-brand-navy mb-6 text-center">Complete Guide to Vehicle Wrapping Services</h2>
+        <h2 className="text-2xl font-semibold text-brand-navy mb-8 text-center">Complete Site Navigation</h2>
         
-        {/* Service categories grid */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
-          {serviceCategories.map((category, i) => (
-            <div key={i} className="space-y-3">
-              <h3 className="font-medium text-brand-navy border-b border-gray-200 pb-2">{category.title}</h3>
+        {/* Main link sections grid */}
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-10">
+          {linkSections.map((section, i) => (
+            <div key={i} className="space-y-4">
+              <h3 className="font-semibold text-brand-navy border-b border-gray-200 pb-2">{section.title}</h3>
               <ul className="space-y-2">
-                {category.links.map((link, j) => (
+                {section.links.map((link, j) => (
                   <li key={j}>
                     <Link 
                       to={link.path} 
-                      className="text-gray-600 hover:text-brand-red transition-colors text-sm"
-                      aria-label={`Learn about ${link.name}`}
+                      className="text-gray-600 hover:text-brand-red transition-colors text-sm block py-1"
+                      aria-label={`Visit ${link.name} page`}
                     >
                       {link.name}
                     </Link>
@@ -77,57 +84,35 @@ const InternalLinksFooter: React.FC = () => {
           ))}
         </div>
         
-        {/* City links section */}
-        <div className="mb-8">
-          <h3 className="font-medium text-brand-navy border-b border-gray-200 pb-2 mb-4">Vehicle Wrap Services by Location</h3>
-          <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-8 gap-3 text-sm">
+        {/* City-specific pages */}
+        <div className="mb-10">
+          <h3 className="font-semibold text-brand-navy border-b border-gray-200 pb-2 mb-4">Service Locations</h3>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 text-sm">
             {topCities.map((city) => (
               <Link 
                 key={city.slug}
                 to={`/vehicle-wraps-${city.slug}-il`} 
-                className="bg-white p-2 border border-gray-200 rounded text-center hover:bg-gray-50 hover:border-gray-300 transition-colors"
+                className="bg-white p-3 border border-gray-200 rounded text-center hover:bg-gray-50 hover:border-gray-300 transition-colors text-gray-700 hover:text-brand-red"
                 aria-label={`Vehicle wraps in ${city.name}, IL`}
               >
-                {city.name}, IL
+                {city.name}
               </Link>
             ))}
-            <Link 
-              to="/locations" 
-              className="bg-white p-2 border border-brand-red/20 rounded text-center hover:bg-brand-red/5 text-brand-red transition-colors"
-              aria-label="View all service locations"
-            >
-              View All →
-            </Link>
           </div>
         </div>
         
-        {/* Combined services links section */}
-        <div>
-          <h3 className="font-medium text-brand-navy border-b border-gray-200 pb-2 mb-4">All Vehicle Wrap Services</h3>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-x-4 gap-y-2 text-sm">
-            {serviceCategories.flatMap(category => category.links).map((link, i) => (
-              <Link 
-                key={i}
-                to={link.path} 
-                className="text-gray-600 hover:text-brand-red transition-colors"
-                aria-label={`Learn about ${link.name}`}
-              >
-                {link.name}
-              </Link>
-            ))}
-            <Link 
-              to="/services" 
-              className="text-brand-red font-medium hover:underline"
-              aria-label="View all services"
-            >
-              View All Services →
-            </Link>
+        {/* Cross-linking section for SEO */}
+        <div className="bg-white p-6 rounded-lg border border-gray-200">
+          <h3 className="font-semibold text-brand-navy mb-4">Explore More</h3>
+          <div className="flex flex-wrap gap-2 text-sm">
+            <Link to="/gallery" className="bg-gray-100 hover:bg-gray-200 px-3 py-1 rounded transition-colors">View Gallery</Link>
+            <Link to="/about" className="bg-gray-100 hover:bg-gray-200 px-3 py-1 rounded transition-colors">About Our Team</Link>
+            <Link to="/contact" className="bg-gray-100 hover:bg-gray-200 px-3 py-1 rounded transition-colors">Get Quote</Link>
+            <Link to="/pricing" className="bg-gray-100 hover:bg-gray-200 px-3 py-1 rounded transition-colors">See Pricing</Link>
+            <Link to="/faq" className="bg-gray-100 hover:bg-gray-200 px-3 py-1 rounded transition-colors">Common Questions</Link>
+            <Link to="/blog" className="bg-gray-100 hover:bg-gray-200 px-3 py-1 rounded transition-colors">Read Blog</Link>
+            <Link to="/locations" className="bg-gray-100 hover:bg-gray-200 px-3 py-1 rounded transition-colors">All Locations</Link>
           </div>
-        </div>
-        
-        {/* Added semantic link for good measure */}
-        <div className="text-center mt-8 text-sm text-gray-500">
-          <p>Looking for our <Link to="/html-sitemap" className="text-brand-navy hover:underline">HTML Sitemap</Link>? View a complete list of all our pages.</p>
         </div>
       </div>
     </footer>

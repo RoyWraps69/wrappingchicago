@@ -47,6 +47,39 @@ const ServiceMenu = () => {
           <NavigationMenuContent className="z-50 bg-white w-[400px] md:w-[500px] lg:w-[700px]">
             <ul className="grid gap-3 p-4 md:grid-cols-2 lg:w-[700px]">
               <ListItem
+                href="/car-wraps"
+                title="Car Wraps"
+                className="flex flex-col"
+              >
+                <div className="flex items-center mb-1">
+                  <Car className="w-4 h-4 mr-2 text-brand-red" />
+                  Custom car wraps for personal and commercial vehicles
+                </div>
+              </ListItem>
+              
+              <ListItem
+                href="/truck-wraps"
+                title="Truck Wraps"
+                className="flex flex-col"
+              >
+                <div className="flex items-center mb-1">
+                  <Truck className="w-4 h-4 mr-2 text-brand-red" />
+                  Professional wraps for all types of trucks
+                </div>
+              </ListItem>
+              
+              <ListItem
+                href="/van-wraps"
+                title="Van Wraps"
+                className="flex flex-col"
+              >
+                <div className="flex items-center mb-1">
+                  <Car className="w-4 h-4 mr-2 text-brand-red" />
+                  Custom van wraps for business fleets
+                </div>
+              </ListItem>
+              
+              <ListItem
                 href="/services/fleet-wraps"
                 title="Fleet Wraps"
                 className="flex flex-col"
@@ -58,40 +91,7 @@ const ServiceMenu = () => {
               </ListItem>
               
               <ListItem
-                href="/services/car-wraps"
-                title="Car Wraps"
-                className="flex flex-col"
-              >
-                <div className="flex items-center mb-1">
-                  <Car className="w-4 h-4 mr-2 text-brand-red" />
-                  Custom wraps for personal and commercial vehicles
-                </div>
-              </ListItem>
-              
-              <ListItem
-                href="/services/truck-wraps"
-                title="Truck Wraps"
-                className="flex flex-col"
-              >
-                <div className="flex items-center mb-1">
-                  <Truck className="w-4 h-4 mr-2 text-brand-red" />
-                  Professional wraps for all types of trucks
-                </div>
-              </ListItem>
-              
-              <ListItem
-                href="/services/van-wraps"
-                title="Van Wraps"
-                className="flex flex-col"
-              >
-                <div className="flex items-center mb-1">
-                  <Car className="w-4 h-4 mr-2 text-brand-red" />
-                  Custom van wraps for business fleets
-                </div>
-              </ListItem>
-              
-              <ListItem
-                href="/services/color-change-wraps"
+                href="/color-change-wraps"
                 title="Color Change Wraps"
                 className="flex flex-col"
               >
@@ -146,7 +146,7 @@ const ServiceMenu = () => {
               </ListItem>
               
               <ListItem
-                href="/services/designer-wraps"
+                href="/designer-wraps"
                 title="Designer Wraps"
                 className="flex flex-col"
               >
@@ -157,7 +157,7 @@ const ServiceMenu = () => {
               </ListItem>
               
               <ListItem
-                href="/services/luxury-exotic-wraps"
+                href="/luxury-exotic-wraps"
                 title="Luxury & Exotic Wraps"
                 className="flex flex-col"
               >

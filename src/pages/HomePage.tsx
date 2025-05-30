@@ -18,6 +18,7 @@ import BreadcrumbNavigation from '@/components/seo/BreadcrumbNavigation';
 import VehicleWrapCalculator from '@/components/calculator/VehicleWrapCalculator';
 import CustomerTestimonials from '@/components/testimonials/CustomerTestimonials';
 import TrustSignals from '@/components/trust/TrustSignals';
+import PageLinksSection from '@/components/navigation/PageLinksSection';
 import { useGalleryImages } from '@/hooks/useGalleryImages';
 import { cities } from '@/data/cities';
 import Schema from '@/components/Schema';
@@ -163,6 +164,13 @@ function HomePage() {
           />
           
           <HomeInternalLinks />
+          
+          {/* Add comprehensive page links */}
+          <PageLinksSection 
+            currentPageTitle="Explore Our Complete Website"
+            excludeCurrentPath={true}
+          />
+          
           <InternalLinksFooter />
         </main>
         <StickyContactButtons />
