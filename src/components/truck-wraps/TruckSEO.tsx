@@ -8,21 +8,21 @@ const TruckSEO = () => {
   
   return (
     <Helmet>
-      <title>{`Truck Wraps Chicago | Commercial & Box Truck Wrapping Services | ${currentYear}`}</title>
+      <title>{`Truck Wraps in Chicago IL | Wrapping Chicago`}</title>
       <meta 
         name="description" 
-        content="Professional truck wraps in Chicago with over 16,000 wraps completed in our 20 years of business. Serving delivery trucks, box trucks, pickup trucks & commercial fleets with expert installation and premium 3M materials." 
+        content="Get truck wraps in Chicago IL services for standout advertising or rugged protection. High-quality vinyl graphics installed for lasting impact on the road." 
       />
-      <link rel="canonical" href={`${domain}/truck-wraps-chicago`} />
+      <link rel="canonical" href={`${domain}/services/truck-wraps`} />
       <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-      <meta property="og:title" content={`Truck Wraps Chicago | Commercial & Box Truck Wrapping Services | ${currentYear}`} />
-      <meta property="og:description" content="Expert truck wrapping services in Chicago. Transform your commercial vehicles with high-impact truck wraps that boost your business visibility." />
-      <meta property="og:url" content={`${domain}/truck-wraps-chicago`} />
+      <meta property="og:title" content={`Truck Wraps in Chicago IL | Wrapping Chicago`} />
+      <meta property="og:description" content="Get truck wraps in Chicago IL services for standout advertising or rugged protection. High-quality vinyl graphics installed for lasting impact on the road." />
+      <meta property="og:url" content={`${domain}/services/truck-wraps`} />
       <meta property="og:type" content="website" />
       <meta property="og:image" content={`${domain}/og-image.png`} />
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content={`Truck Wraps Chicago | Commercial & Box Truck Wrapping Services | ${currentYear}`} />
-      <meta name="twitter:description" content="Expert truck wrapping services in Chicago with 20 years of experience. Transform your commercial vehicles with high-impact truck wraps." />
+      <meta name="twitter:title" content={`Truck Wraps in Chicago IL | Wrapping Chicago`} />
+      <meta name="twitter:description" content="Get truck wraps in Chicago IL services for standout advertising or rugged protection. High-quality vinyl graphics installed for lasting impact on the road." />
       <meta name="twitter:image" content={`${domain}/og-image.png`} />
       <meta name="geo.region" content="US-IL" />
       <meta name="geo.placename" content="Chicago" />
@@ -54,7 +54,7 @@ const TruckSEO = () => {
             "name": "Chicago",
             "sameAs": "https://en.wikipedia.org/wiki/Chicago"
           },
-          "description": "Professional truck wraps in Chicago with premium 3M materials and expert installation. Commercial truck wrapping for businesses of all sizes.",
+          "description": "Get truck wraps in Chicago IL services for standout advertising or rugged protection. High-quality vinyl graphics installed for lasting impact on the road.",
           "offers": {
             "@type": "Offer",
             "price": "2500",
@@ -62,7 +62,7 @@ const TruckSEO = () => {
             "priceValidUntil": `${currentYear}-12-31`,
             "availability": "https://schema.org/InStock"
           },
-          "url": `${domain}/truck-wraps-chicago`
+          "url": `${domain}/services/truck-wraps`
         })}
       </script>
     </Helmet>
