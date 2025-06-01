@@ -61,101 +61,105 @@ const VehicleWrapCalculator: React.FC = () => {
   }, [vehicleType, wrapType, designComplexity, urgency]);
 
   return (
-    <Card className="w-full max-w-2xl mx-auto">
-      <CardHeader className="text-center">
-        <CardTitle className="flex items-center justify-center gap-2">
-          <Calculator className="h-6 w-6 text-brand-red" />
-          Vehicle Wrap Cost Calculator
-        </CardTitle>
-        <CardDescription>
-          Get an instant estimate for your vehicle wrap project
-        </CardDescription>
-      </CardHeader>
-      <CardContent className="space-y-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div className="space-y-2">
-            <Label htmlFor="vehicle-type">Vehicle Type</Label>
-            <Select value={vehicleType} onValueChange={setVehicleType}>
-              <SelectTrigger>
-                <SelectValue placeholder="Select vehicle type" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="car">Car/Sedan</SelectItem>
-                <SelectItem value="truck">Truck</SelectItem>
-                <SelectItem value="van">Van</SelectItem>
-                <SelectItem value="suv">SUV</SelectItem>
-                <SelectItem value="motorcycle">Motorcycle</SelectItem>
-                <SelectItem value="trailer">Trailer</SelectItem>
-              </SelectContent>
-            </Select>
-          </div>
+    <section className="py-16 bg-white">
+      <div className="container mx-auto px-4">
+        <Card className="w-full max-w-2xl mx-auto bg-white border-2 border-black shadow-xl">
+          <CardHeader className="text-center bg-white border-b-2 border-black">
+            <CardTitle className="flex items-center justify-center gap-2 text-black">
+              <Calculator className="h-6 w-6 text-brand-red" />
+              <span className="text-2xl font-bold text-black">Vehicle Wrap Cost Calculator</span>
+            </CardTitle>
+            <CardDescription className="text-black font-medium text-lg">
+              Get an instant estimate for your vehicle wrap project
+            </CardDescription>
+          </CardHeader>
+          <CardContent className="space-y-6 p-8 bg-white">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="space-y-3">
+                <Label htmlFor="vehicle-type" className="text-black font-bold text-lg">Vehicle Type</Label>
+                <Select value={vehicleType} onValueChange={setVehicleType}>
+                  <SelectTrigger className="bg-white border-2 border-black text-black font-medium h-12">
+                    <SelectValue placeholder="Select vehicle type" className="text-black" />
+                  </SelectTrigger>
+                  <SelectContent className="bg-white border-2 border-black">
+                    <SelectItem value="car" className="text-black font-medium hover:bg-gray-100">Car/Sedan</SelectItem>
+                    <SelectItem value="truck" className="text-black font-medium hover:bg-gray-100">Truck</SelectItem>
+                    <SelectItem value="van" className="text-black font-medium hover:bg-gray-100">Van</SelectItem>
+                    <SelectItem value="suv" className="text-black font-medium hover:bg-gray-100">SUV</SelectItem>
+                    <SelectItem value="motorcycle" className="text-black font-medium hover:bg-gray-100">Motorcycle</SelectItem>
+                    <SelectItem value="trailer" className="text-black font-medium hover:bg-gray-100">Trailer</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
 
-          <div className="space-y-2">
-            <Label htmlFor="wrap-type">Wrap Type</Label>
-            <Select value={wrapType} onValueChange={setWrapType}>
-              <SelectTrigger>
-                <SelectValue placeholder="Select wrap type" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="full">Full Wrap</SelectItem>
-                <SelectItem value="partial">Partial Wrap</SelectItem>
-                <SelectItem value="color-change">Color Change</SelectItem>
-                <SelectItem value="commercial">Commercial Graphics</SelectItem>
-                <SelectItem value="specialty">Specialty Finish</SelectItem>
-              </SelectContent>
-            </Select>
-          </div>
+              <div className="space-y-3">
+                <Label htmlFor="wrap-type" className="text-black font-bold text-lg">Wrap Type</Label>
+                <Select value={wrapType} onValueChange={setWrapType}>
+                  <SelectTrigger className="bg-white border-2 border-black text-black font-medium h-12">
+                    <SelectValue placeholder="Select wrap type" className="text-black" />
+                  </SelectTrigger>
+                  <SelectContent className="bg-white border-2 border-black">
+                    <SelectItem value="full" className="text-black font-medium hover:bg-gray-100">Full Wrap</SelectItem>
+                    <SelectItem value="partial" className="text-black font-medium hover:bg-gray-100">Partial Wrap</SelectItem>
+                    <SelectItem value="color-change" className="text-black font-medium hover:bg-gray-100">Color Change</SelectItem>
+                    <SelectItem value="commercial" className="text-black font-medium hover:bg-gray-100">Commercial Graphics</SelectItem>
+                    <SelectItem value="specialty" className="text-black font-medium hover:bg-gray-100">Specialty Finish</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
 
-          <div className="space-y-2">
-            <Label htmlFor="design-complexity">Design Complexity</Label>
-            <Select value={designComplexity} onValueChange={setDesignComplexity}>
-              <SelectTrigger>
-                <SelectValue placeholder="Select complexity" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="simple">Simple (Basic colors/text)</SelectItem>
-                <SelectItem value="moderate">Moderate (Some graphics)</SelectItem>
-                <SelectItem value="complex">Complex (Custom design)</SelectItem>
-                <SelectItem value="premium">Premium (Full custom artwork)</SelectItem>
-              </SelectContent>
-            </Select>
-          </div>
+              <div className="space-y-3">
+                <Label htmlFor="design-complexity" className="text-black font-bold text-lg">Design Complexity</Label>
+                <Select value={designComplexity} onValueChange={setDesignComplexity}>
+                  <SelectTrigger className="bg-white border-2 border-black text-black font-medium h-12">
+                    <SelectValue placeholder="Select complexity" className="text-black" />
+                  </SelectTrigger>
+                  <SelectContent className="bg-white border-2 border-black">
+                    <SelectItem value="simple" className="text-black font-medium hover:bg-gray-100">Simple (Basic colors/text)</SelectItem>
+                    <SelectItem value="moderate" className="text-black font-medium hover:bg-gray-100">Moderate (Some graphics)</SelectItem>
+                    <SelectItem value="complex" className="text-black font-medium hover:bg-gray-100">Complex (Custom design)</SelectItem>
+                    <SelectItem value="premium" className="text-black font-medium hover:bg-gray-100">Premium (Full custom artwork)</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
 
-          <div className="space-y-2">
-            <Label htmlFor="urgency">Timeline</Label>
-            <Select value={urgency} onValueChange={setUrgency}>
-              <SelectTrigger>
-                <SelectValue placeholder="Select timeline" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="standard">Standard (7-10 days)</SelectItem>
-                <SelectItem value="rush">Rush (3-5 days)</SelectItem>
-                <SelectItem value="urgent">Urgent (1-2 days)</SelectItem>
-              </SelectContent>
-            </Select>
-          </div>
-        </div>
-
-        {estimatedCost && (
-          <div className="bg-brand-red/5 border border-brand-red/20 rounded-lg p-6 text-center">
-            <div className="flex items-center justify-center gap-2 mb-2">
-              <DollarSign className="h-6 w-6 text-brand-red" />
-              <h3 className="text-xl font-semibold text-brand-navy">Estimated Cost</h3>
+              <div className="space-y-3">
+                <Label htmlFor="urgency" className="text-black font-bold text-lg">Timeline</Label>
+                <Select value={urgency} onValueChange={setUrgency}>
+                  <SelectTrigger className="bg-white border-2 border-black text-black font-medium h-12">
+                    <SelectValue placeholder="Select timeline" className="text-black" />
+                  </SelectTrigger>
+                  <SelectContent className="bg-white border-2 border-black">
+                    <SelectItem value="standard" className="text-black font-medium hover:bg-gray-100">Standard (7-10 days)</SelectItem>
+                    <SelectItem value="rush" className="text-black font-medium hover:bg-gray-100">Rush (3-5 days)</SelectItem>
+                    <SelectItem value="urgent" className="text-black font-medium hover:bg-gray-100">Urgent (1-2 days)</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
             </div>
-            <p className="text-3xl font-bold text-brand-red">${estimatedCost.toLocaleString()}</p>
-            <p className="text-sm text-gray-600 mt-2">
-              *This is an estimate. Final pricing may vary based on specific requirements.
-            </p>
-          </div>
-        )}
 
-        <div className="text-center">
-          <Button asChild className="bg-brand-red hover:bg-red-700 text-white">
-            <a href="/contact">Get Accurate Quote</a>
-          </Button>
-        </div>
-      </CardContent>
-    </Card>
+            {estimatedCost && (
+              <div className="bg-white border-4 border-brand-red rounded-lg p-8 text-center shadow-lg">
+                <div className="flex items-center justify-center gap-2 mb-4">
+                  <DollarSign className="h-8 w-8 text-brand-red" />
+                  <h3 className="text-2xl font-bold text-black">Estimated Cost</h3>
+                </div>
+                <p className="text-4xl font-bold text-brand-red mb-4">${estimatedCost.toLocaleString()}</p>
+                <p className="text-lg font-medium text-black">
+                  *This is an estimate. Final pricing may vary based on specific requirements.
+                </p>
+              </div>
+            )}
+
+            <div className="text-center pt-4">
+              <Button className="bg-brand-red hover:bg-red-700 text-white font-bold text-lg px-8 py-4 border-2 border-brand-red" asChild>
+                <a href="/contact">Get Accurate Quote</a>
+              </Button>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+    </section>
   );
 };
 
