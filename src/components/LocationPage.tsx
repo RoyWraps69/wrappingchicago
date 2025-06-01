@@ -1,6 +1,6 @@
-
 import React from 'react';
 import { City } from '@/data/types/city';
+import { cities } from '@/data/cities'; // Added missing import
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import CallToAction from '@/components/CallToAction';
@@ -23,7 +23,7 @@ import PageFAQ from '@/components/common/PageFAQ';
 
 interface LocationPageProps {
   city: City;
-  allCities?: City[]; // Added optional allCities prop
+  allCities?: City[];
 }
 
 const LocationPage = ({ city, allCities = [] }: LocationPageProps) => {
@@ -31,7 +31,6 @@ const LocationPage = ({ city, allCities = [] }: LocationPageProps) => {
     return <div>City not found</div>;
   }
 
-  // Generate additional keywords specific to this city
   const cityKeywords = [
     `vehicle wraps ${city.name}`, 
     `car wraps ${city.name}`, 
@@ -59,7 +58,6 @@ const LocationPage = ({ city, allCities = [] }: LocationPageProps) => {
   const pageTitle = `Professional Vehicle Wraps in ${city.name}, IL | Car, Truck & Fleet Wraps`;
   const pageDescription = `Chicago's top-rated vehicle wrap provider serving ${city.name}, IL. Professional car wraps, truck wraps, van wraps & fleet wraps with over 16,000 completed projects in our 20 years of business. Free quotes available.`;
 
-  // Sample FAQs for the city
   const cityFAQs = [
     {
       question: `How much does a vehicle wrap cost in ${city.name}?`,
@@ -107,7 +105,7 @@ const LocationPage = ({ city, allCities = [] }: LocationPageProps) => {
         includeSpeakable={true}
         mainImage="/lovable-uploads/199c2a21-e0b0-4c29-972f-f32d72698382.png"
         allCities={allCities}
-        skipFAQSchema={true} // Skip basic FAQ schema since we use PageFAQ
+        skipFAQSchema={true}
       />
       
       <ReviewsSchema 
@@ -128,10 +126,8 @@ const LocationPage = ({ city, allCities = [] }: LocationPageProps) => {
             <Breadcrumbs />
           </div>
           
-          {/* Business Statistics Banner */}
           <BusinessStatsBar cityName={city.name} />
           
-          {/* Service Types Bar */}
           <ServiceTypesBar cityName={city.name} />
           
           <LocationHero cityName={city.name} />
@@ -139,13 +135,11 @@ const LocationPage = ({ city, allCities = [] }: LocationPageProps) => {
           <LocationProjects cityName={city.name} />
           <LocationTestimonials city={city} />
           
-          {/* Vehicle Wrap FAQ Section - Comprehensive Google-friendly FAQ */}
           <PageFAQ
             faqs={cityFAQs}
             cityName={city.name}
           />
           
-          {/* Internal links to services - Enhanced for SEO and mobile */}
           <div className="container mx-auto px-4 py-8">
             <div className="bg-gray-50 p-5 md:p-6 rounded-lg mb-8 shadow-sm border border-gray-100">
               <h3 className="text-xl font-semibold text-brand-navy mb-4">Explore Our Vehicle Wrapping Services in {city.name}</h3>
@@ -168,7 +162,6 @@ const LocationPage = ({ city, allCities = [] }: LocationPageProps) => {
           
           <CallToAction city={city.name} />
           
-          {/* Floating Contact Buttons */}
           <FloatingContactButtons />
         </main>
         
