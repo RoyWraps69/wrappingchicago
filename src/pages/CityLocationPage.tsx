@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
@@ -15,17 +14,38 @@ import CityInfo from '@/components/city/CityInfo';
 const CityLocationPage = () => {
   const { citySlug } = useParams();
   
-  // Handle different URL patterns
-  let currentCity;
+  console.log('CityLocationPage - citySlug from params:', citySlug);
+  console.log('CityLocationPage - current URL path:', window.location.pathname);
+  
+  // Handle different URL patterns to extract city slug
+  let actualCitySlug = citySlug;
+  
+  // If no citySlug parameter, try to extract from URL path
   if (!citySlug) {
-    // Default to Chicago for /chicago route
-    currentCity = cities.find(city => city.slug === 'chicago') || cities[0];
-  } else {
-    currentCity = cities.find(city => city.slug === citySlug) || cities[0];
+    const path = window.location.pathname;
+    if (path === '/chicago') {
+      actualCitySlug = 'chicago';
+    } else if (path.startsWith('/vehicle-wraps-') && path.endsWith('-il')) {
+      // Extract city slug from vehicle-wraps-{city}-il pattern
+      actualCitySlug = path.replace('/vehicle-wraps-', '').replace('-il', '');
+    } else {
+      // Default to Chicago for root path
+      actualCitySlug = 'chicago';
+    }
   }
   
+  console.log('CityLocationPage - extracted actualCitySlug:', actualCitySlug);
+  
+  // Find the city data
+  const currentCity = cities.find(city => city.slug === actualCitySlug);
+  
+  console.log('CityLocationPage - found city:', currentCity);
+  
+  // Fallback to Chicago if city not found
+  const city = currentCity || cities.find(city => city.slug === 'chicago') || cities[0];
+  
   const domain = "https://www.wrappingchicago.com";
-  const cityPath = citySlug ? `/${citySlug}` : '/chicago';
+  const cityPath = city.slug === 'chicago' ? '/chicago' : `/${city.slug}`;
   
   // Generate meta title and description based on city
   const getMetaTitle = (city: any) => {
@@ -89,22 +109,22 @@ const CityLocationPage = () => {
   return (
     <>
       <Helmet>
-        <title>{getMetaTitle(currentCity)}</title>
-        <meta name="description" content={getMetaDescription(currentCity)} />
-        <meta name="keywords" content={`vehicle wraps ${currentCity.name} IL, car wraps ${currentCity.name}, truck wraps ${currentCity.name}, vinyl graphics ${currentCity.name}`} />
+        <title>{getMetaTitle(city)}</title>
+        <meta name="description" content={getMetaDescription(city)} />
+        <meta name="keywords" content={`vehicle wraps ${city.name} IL, car wraps ${city.name}, truck wraps ${city.name}, vinyl graphics ${city.name}`} />
         <link rel="canonical" href={`${domain}${cityPath}`} />
-        <meta property="og:title" content={getMetaTitle(currentCity)} />
-        <meta property="og:description" content={getMetaDescription(currentCity)} />
+        <meta property="og:title" content={getMetaTitle(city)} />
+        <meta property="og:description" content={getMetaDescription(city)} />
         <meta property="og:url" content={`${domain}${cityPath}`} />
         <meta property="og:type" content="website" />
         <meta property="og:image" content={`${domain}/lovable-uploads/6ef3b1af-8591-4d36-97c2-9366401115fa.png`} />
       </Helmet>
 
       <Schema 
-        city={currentCity}
+        city={city}
         path={cityPath}
-        pageTitle={getMetaTitle(currentCity)}
-        pageDescription={getMetaDescription(currentCity)}
+        pageTitle={getMetaTitle(city)}
+        pageDescription={getMetaDescription(city)}
       />
 
       <div className="flex flex-col min-h-screen">
@@ -114,12 +134,12 @@ const CityLocationPage = () => {
           <div className="container mx-auto py-12 px-4">
             <Breadcrumbs />
             
-            <CityHero city={currentCity} />
-            <CityInfo city={currentCity} />
-            <CityServices city={currentCity} />
+            <CityHero city={city} />
+            <CityInfo city={city} />
+            <CityServices city={city} />
           </div>
           
-          <CallToAction city={currentCity.name} />
+          <CallToAction city={city.name} />
         </main>
         
         <Footer />

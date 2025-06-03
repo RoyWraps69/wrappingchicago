@@ -123,7 +123,7 @@ function App() {
         <a href="#main-content" className="skip-link">Skip to main content</a>
         
         <Routes>
-          {/* Main navigation routes */}
+          {/* Main navigation routes - highest priority */}
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
@@ -149,10 +149,6 @@ function App() {
           <Route path="/color-change-wraps" element={<ColorChangeWrapsPage />} />
           <Route path="/luxury-exotic-wraps" element={<LuxuryExoticWrapsPage />} />
           
-          {/* Special city-specific routes - MUST come before generic patterns */}
-          <Route path="/chicago" element={<CityLocationPage />} />
-          <Route path="/truck-wraps-chicago" element={<TruckWrapsChicagoPage />} />
-          
           {/* Service-specific redirect routes */}
           <Route path="/fleet-wraps" element={<Navigate to="/services/fleet-wraps" replace />} />
           <Route path="/commercial-graphics" element={<Navigate to="/services/commercial-graphics" replace />} />
@@ -162,11 +158,65 @@ function App() {
           <Route path="/specialty-wraps" element={<Navigate to="/services/specialty-wraps" replace />} />
           <Route path="/retail-graphics" element={<Navigate to="/services/retail-graphics" replace />} />
           
-          {/* Location-specific routes - more specific patterns first */}
+          {/* Special city-specific routes - must be exact matches */}
+          <Route path="/chicago" element={<CityLocationPage />} />
+          <Route path="/truck-wraps-chicago" element={<TruckWrapsChicagoPage />} />
+          
+          {/* Location-specific routes with vehicle-wraps prefix */}
           <Route path="/vehicle-wraps-chicago-il" element={<CityLocationPage />} />
+          <Route path="/vehicle-wraps-evanston-il" element={<CityLocationPage />} />
+          <Route path="/vehicle-wraps-skokie-il" element={<CityLocationPage />} />
+          <Route path="/vehicle-wraps-arlington-heights-il" element={<CityLocationPage />} />
+          <Route path="/vehicle-wraps-palatine-il" element={<CityLocationPage />} />
+          <Route path="/vehicle-wraps-waukegan-il" element={<CityLocationPage />} />
+          <Route path="/vehicle-wraps-des-plaines-il" element={<CityLocationPage />} />
+          <Route path="/vehicle-wraps-schaumburg-il" element={<CityLocationPage />} />
+          <Route path="/vehicle-wraps-elgin-il" element={<CityLocationPage />} />
+          <Route path="/vehicle-wraps-hoffman-estates-il" element={<CityLocationPage />} />
+          <Route path="/vehicle-wraps-mclean-county-il" element={<CityLocationPage />} />
+          <Route path="/vehicle-wraps-oak-park-il" element={<CityLocationPage />} />
+          <Route path="/vehicle-wraps-naperville-il" element={<CityLocationPage />} />
+          <Route path="/vehicle-wraps-aurora-il" element={<CityLocationPage />} />
+          <Route path="/vehicle-wraps-cicero-il" element={<CityLocationPage />} />
+          <Route path="/vehicle-wraps-berwyn-il" element={<CityLocationPage />} />
+          <Route path="/vehicle-wraps-wheaton-il" element={<CityLocationPage />} />
+          <Route path="/vehicle-wraps-downers-grove-il" element={<CityLocationPage />} />
+          <Route path="/vehicle-wraps-joliet-il" element={<CityLocationPage />} />
+          <Route path="/vehicle-wraps-bolingbrook-il" element={<CityLocationPage />} />
+          <Route path="/vehicle-wraps-orland-park-il" element={<CityLocationPage />} />
+          <Route path="/vehicle-wraps-tinley-park-il" element={<CityLocationPage />} />
+          <Route path="/vehicle-wraps-oak-lawn-il" element={<CityLocationPage />} />
+          <Route path="/vehicle-wraps-las-vegas-il" element={<CityLocationPage />} />
+          
+          {/* Generic pattern for any remaining vehicle-wraps routes */}
           <Route path="/vehicle-wraps-:citySlug-il" element={<CityLocationPage />} />
           
           {/* Generic city routes - MUST come last to avoid conflicts */}
+          <Route path="/evanston" element={<CityLocationPage />} />
+          <Route path="/skokie" element={<CityLocationPage />} />
+          <Route path="/arlington-heights" element={<CityLocationPage />} />
+          <Route path="/palatine" element={<CityLocationPage />} />
+          <Route path="/waukegan" element={<CityLocationPage />} />
+          <Route path="/des-plaines" element={<CityLocationPage />} />
+          <Route path="/schaumburg" element={<CityLocationPage />} />
+          <Route path="/elgin" element={<CityLocationPage />} />
+          <Route path="/hoffman-estates" element={<CityLocationPage />} />
+          <Route path="/mclean-county" element={<CityLocationPage />} />
+          <Route path="/oak-park" element={<CityLocationPage />} />
+          <Route path="/naperville" element={<CityLocationPage />} />
+          <Route path="/aurora" element={<CityLocationPage />} />
+          <Route path="/cicero" element={<CityLocationPage />} />
+          <Route path="/berwyn" element={<CityLocationPage />} />
+          <Route path="/wheaton" element={<CityLocationPage />} />
+          <Route path="/downers-grove" element={<CityLocationPage />} />
+          <Route path="/joliet" element={<CityLocationPage />} />
+          <Route path="/bolingbrook" element={<CityLocationPage />} />
+          <Route path="/orland-park" element={<CityLocationPage />} />
+          <Route path="/tinley-park" element={<CityLocationPage />} />
+          <Route path="/oak-lawn" element={<CityLocationPage />} />
+          <Route path="/las-vegas" element={<CityLocationPage />} />
+          
+          {/* Fallback for any other city slug */}
           <Route path="/:citySlug" element={<CityLocationPage />} />
           
           {/* 404 catch-all route */}
