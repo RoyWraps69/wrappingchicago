@@ -23,7 +23,7 @@ const CallToActionBox: React.FC<CallToActionBoxProps> = ({ city }) => {
           asChild
           variant="default"
         >
-          <Link to="/contact">Get a Free Quote Today</Link>
+          <Link to="/contact">Schedule Perfection Now!</Link>
         </Button>
         <Button
           asChild

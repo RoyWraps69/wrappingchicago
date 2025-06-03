@@ -97,7 +97,7 @@ const CityHeader: React.FC<CityHeaderProps> = ({ city }) => {
         >
           <Link to="/contact" className="inline-flex items-center">
             <MessageSquare className="mr-2 h-5 w-5" />
-            Request a Free Quote
+            Schedule Perfection Now!
           </Link>
         </Button>
         <Button

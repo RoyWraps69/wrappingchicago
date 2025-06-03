@@ -15,7 +15,7 @@ const StickyContactButtons: React.FC = () => {
         >
           <Link to="/contact" className="inline-flex items-center">
             <MessageSquare className="mr-2 h-4 w-4" />
-            Get a Free Quote
+            Schedule Perfection Now!
           </Link>
         </Button>
         <Button

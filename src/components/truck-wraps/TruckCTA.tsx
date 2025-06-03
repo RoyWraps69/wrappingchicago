@@ -23,7 +23,7 @@ const TruckCTA = () => {
         >
           <Link to="/contact" className="inline-flex items-center">
             <MessageSquare className="mr-2 h-5 w-5" />
-            Get a Free Truck Wrap Quote
+            Schedule Perfection Now!
           </Link>
         </Button>
         <Button

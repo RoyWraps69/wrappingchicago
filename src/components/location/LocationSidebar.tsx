@@ -76,7 +76,7 @@ const LocationSidebar: React.FC<LocationSidebarProps> = ({ city }) => {
           className="w-full"
         >
           <Link to="/contact" className="inline-flex items-center">
-            Book Appointment
+            Schedule Perfection Now!
             <ArrowRight className="ml-2 h-4 w-4" />
           </Link>
         </Button>

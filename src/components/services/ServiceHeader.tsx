@@ -41,7 +41,7 @@ const ServiceHeader: React.FC<ServiceHeaderProps> = ({
         >
           <Link to="/contact" className="inline-flex items-center">
             <MessageSquare className="mr-2 h-4 w-4" />
-            Request a Free Quote
+            Schedule Perfection Now!
           </Link>
         </Button>
         <Button

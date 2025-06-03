@@ -57,7 +57,7 @@ const LocationHero = ({ cityName }: LocationHeroProps) => {
             >
               <Link to="/contact" className="inline-flex items-center justify-center">
                 <MessageSquare className="mr-2 h-4 w-4" />
-                Get a Free Quote Today
+                Schedule Perfection Now!
               </Link>
             </Button>
             <Button
@@ -123,7 +123,7 @@ const LocationHero = ({ cityName }: LocationHeroProps) => {
                 >
                   <Link to="/contact" className="inline-flex items-center justify-center">
                     <MessageSquare className="mr-2 h-4 w-4 md:h-5 md:w-5" />
-                    Request a Free Quote
+                    Schedule Perfection Now!
                   </Link>
                 </Button>
                 

@@ -21,7 +21,7 @@ const CallToAction = ({ city = 'your area' }: { city?: string }) => {
           >
             <Link to="/contact" className="inline-flex items-center">
               <Phone className="mr-2 h-5 w-5" />
-              Get a Free Quote
+              Schedule Perfection Now!
             </Link>
           </Button>
           <Button
