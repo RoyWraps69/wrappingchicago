@@ -142,15 +142,16 @@ function App() {
           <Route path="/html-sitemap" element={<HTMLSitemap />} />
           <Route path="/html-sitemap.html" element={<Navigate to="/html-sitemap" replace />} />
           
-          {/* Special city-specific routes */}
-          <Route path="/truck-wraps-chicago" element={<TruckWrapsChicagoPage />} />
-          
           {/* Direct service pages */}
           <Route path="/car-wraps" element={<CarWrapsPage />} />
           <Route path="/truck-wraps" element={<TruckWrapsPage />} />
           <Route path="/van-wraps" element={<VanWrapsPage />} />
           <Route path="/color-change-wraps" element={<ColorChangeWrapsPage />} />
           <Route path="/luxury-exotic-wraps" element={<LuxuryExoticWrapsPage />} />
+          
+          {/* Special city-specific routes - MUST come before generic patterns */}
+          <Route path="/chicago" element={<CityLocationPage />} />
+          <Route path="/truck-wraps-chicago" element={<TruckWrapsChicagoPage />} />
           
           {/* Service-specific redirect routes */}
           <Route path="/fleet-wraps" element={<Navigate to="/services/fleet-wraps" replace />} />
@@ -161,10 +162,11 @@ function App() {
           <Route path="/specialty-wraps" element={<Navigate to="/services/specialty-wraps" replace />} />
           <Route path="/retail-graphics" element={<Navigate to="/services/retail-graphics" replace />} />
           
-          {/* Location-specific routes */}
+          {/* Location-specific routes - more specific patterns first */}
           <Route path="/vehicle-wraps-chicago-il" element={<CityLocationPage />} />
-          <Route path="/chicago" element={<CityLocationPage />} />
           <Route path="/vehicle-wraps-:citySlug-il" element={<CityLocationPage />} />
+          
+          {/* Generic city routes - MUST come last to avoid conflicts */}
           <Route path="/:citySlug" element={<CityLocationPage />} />
           
           {/* 404 catch-all route */}
