@@ -14,7 +14,7 @@
   /* Text colors - maximum contrast */
   --text-primary: #000000;        /* Pure black on white */
   --text-secondary: #000000;      /* Pure black for all text */
-  --text-muted: #333333;         /* Dark gray for less important text */
+  --text-muted: #000000;         /* Black for all text, no gray */
   --text-on-dark: #FFFFFF;       /* Pure white on dark backgrounds */
   --text-on-red: #FFFFFF;        /* Pure white on red backgrounds */
   --text-link: #0000EE;          /* Classic blue for links */
@@ -22,7 +22,7 @@
   
   /* Background colors */
   --bg-primary: #FFFFFF;
-  --bg-secondary: #F5F5F5;
+  --bg-secondary: #FFFFFF;       /* Changed from gray to white */
   --bg-dark: #000000;
   --bg-overlay: rgba(0, 0, 0, 0.95); /* Nearly opaque for text readability */
   
@@ -51,7 +51,7 @@
   --input-bg: #FFFFFF;
   --input-text: #000000;
   --input-border: #000000;
-  --input-placeholder: #666666;
+  --input-placeholder: #000000;  /* Changed from gray to black */
   
   /* Status colors */
   --success: #008000;
@@ -61,30 +61,50 @@
 }
 
 /* Force maximum contrast on all text elements */
-body, p, span, div, h1, h2, h3, h4, h5, h6, a, li, td, th {
+* {
   color: #000000 !important;
 }
 
 /* Dark sections get white text */
-.bg-black, .bg-brand-navy, .dark-section, [class*="bg-gray-"], [class*="bg-slate-"] {
+.bg-black, .bg-black *,
+.bg-brand-navy, .bg-brand-navy *,
+.dark-section, .dark-section *,
+.hero-content, .hero-content *,
+.hero-fullscreen *, 
+.hero-overlay *,
+[class*="bg-gray-8"], [class*="bg-gray-8"] *,
+[class*="bg-gray-9"], [class*="bg-gray-9"] *,
+[class*="bg-slate-8"], [class*="bg-slate-8"] *,
+[class*="bg-slate-9"], [class*="bg-slate-9"] * {
   color: #FFFFFF !important;
 }
 
-.bg-black *, .bg-brand-navy *, .dark-section *, [class*="bg-gray-"] *, [class*="bg-slate-"] * {
-  color: #FFFFFF !important;
-}
-
-/* Ensure hero text is white */
-.hero-content, .hero-content *, .hero-fullscreen *, .text-white {
+/* Ensure hero and overlay text is white */
+.hero-content, .hero-content *, 
+.hero-fullscreen *, 
+.text-white, .text-white *,
+.hero-overlay *, 
+.bg-black/90 *, 
+.bg-brand-navy/90 * {
   color: #FFFFFF !important;
 }
 
 /* Button text contrast */
-.bg-brand-red, .bg-red-600, .bg-red-700, [class*="bg-red-"] {
+.bg-brand-red, .bg-brand-red *,
+.bg-red-600, .bg-red-600 *,
+.bg-red-700, .bg-red-700 *,
+[class*="bg-red-"], [class*="bg-red-"] * {
   color: #FFFFFF !important;
 }
 
-.bg-brand-red *, .bg-red-600 *, .bg-red-700 *, [class*="bg-red-"] * {
+/* Remove all gray text - make it black */
+.text-gray-700, .text-gray-600, .text-gray-500, .text-gray-400, .text-gray-300,
+.text-muted-foreground, .text-muted, .text-slate-600, .text-slate-700 {
+  color: #000000 !important;
+}
+
+/* White/light gray text on dark backgrounds */
+.text-gray-300, .text-gray-200, .text-gray-100, .text-white {
   color: #FFFFFF !important;
 }
 
@@ -109,12 +129,7 @@ a:not(.btn-primary):not(.btn-outline):not([class*="bg-"]):hover {
   color: #000000 !important;
 }
 
-/* Force all text on white backgrounds to be black */
-.text-gray-700, .text-gray-600, .text-gray-500, .text-muted-foreground {
-  color: #000000 !important;
-}
-
-/* Ensure proper contrast for navigation */
+/* Navigation contrast */
 nav, .nav-sticky, header {
   background: #FFFFFF !important;
   border-bottom: 2px solid #000000 !important;
@@ -124,8 +139,22 @@ nav *, .nav-sticky *, header * {
   color: #000000 !important;
 }
 
-/* Contact bar contrast */
-.bg-black .text-white\/80, .bg-black .text-white\/50 {
+/* Contact item contrast fixes */
+.bg-brand-red\/20 {
+  background: rgba(255, 0, 0, 0.1) !important;
+  color: #000000 !important;
+}
+
+.bg-brand-red\/20 * {
+  color: #000000 !important;
+}
+
+.bg-gray-800\/50 {
+  background: #000000 !important;
+  color: #FFFFFF !important;
+}
+
+.bg-gray-800\/50 * {
   color: #FFFFFF !important;
 }
 
@@ -136,22 +165,15 @@ input, textarea, select {
   border: 2px solid #000000 !important;
 }
 
-input::placeholder, textarea::placeholder {
-  color: #666666 !important;
+input::placeholder, textarea::placeholder, select::placeholder {
+  color: #000000 !important;
+  opacity: 0.7;
 }
 
-/* Focus states */
+/* Focus states for accessibility */
 *:focus {
   outline: 3px solid #FF0000 !important;
   outline-offset: 2px !important;
-}
-
-/* Print styles for maximum contrast */
-@media print {
-  * {
-    color: #000000 !important;
-    background: #FFFFFF !important;
-  }
 }
 
 /* High contrast mode enhancement */
