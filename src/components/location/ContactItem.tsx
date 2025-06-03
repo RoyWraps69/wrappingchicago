@@ -19,26 +19,26 @@ const ContactItem: React.FC<ContactItemProps> = ({
 }) => {
   if (darkBackground) {
     return (
-      <div className={`flex items-start p-4 rounded-lg transition-all contact-item-dark ${highlight ? 'bg-brand-red/30 border border-brand-red' : 'hover:bg-gray-700'}`}>
-        <div className={`flex items-center justify-center w-10 h-10 rounded-full mr-4 ${highlight ? 'bg-brand-red text-white' : 'bg-white text-black'}`}>
-          <Icon className="h-5 w-5" />
+      <div className={`flex items-start p-6 rounded-lg transition-all bg-black border-2 border-white ${highlight ? 'bg-brand-red border-brand-red' : ''}`}>
+        <div className={`flex items-center justify-center w-12 h-12 rounded-full mr-4 flex-shrink-0 ${highlight ? 'bg-white text-brand-red' : 'bg-brand-red text-white'}`}>
+          <Icon className="h-6 w-6" />
         </div>
         <div>
-          <p className={`font-semibold text-lg ${highlight ? 'text-brand-red' : 'text-white'}`}>{title}</p>
-          <div className="text-white mt-1">{children}</div>
+          <p className={`font-bold text-xl ${highlight ? 'text-white' : 'text-white'}`}>{title}</p>
+          <div className="text-white mt-2 text-lg">{children}</div>
         </div>
       </div>
     );
   }
 
   return (
-    <div className={`flex items-start p-4 rounded-lg transition-all ${highlight ? 'contact-item-highlight' : 'contact-item-default hover:bg-gray-100'}`}>
-      <div className={`flex items-center justify-center w-10 h-10 rounded-full mr-4 ${highlight ? 'bg-brand-red text-white' : 'bg-black text-white'}`}>
-        <Icon className="h-5 w-5" />
+    <div className={`flex items-start p-6 rounded-lg transition-all bg-white border-2 ${highlight ? 'border-brand-red bg-red-50' : 'border-gray-300 hover:border-gray-400'}`}>
+      <div className={`flex items-center justify-center w-12 h-12 rounded-full mr-4 flex-shrink-0 ${highlight ? 'bg-brand-red text-white' : 'bg-black text-white'}`}>
+        <Icon className="h-6 w-6" />
       </div>
       <div>
-        <p className={`font-semibold text-lg ${highlight ? 'text-brand-red' : 'text-black'}`}>{title}</p>
-        <div className="text-black mt-1">{children}</div>
+        <p className={`font-bold text-xl ${highlight ? 'text-brand-red' : 'text-black'}`}>{title}</p>
+        <div className="text-black mt-2 text-lg">{children}</div>
       </div>
     </div>
   );
