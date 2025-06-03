@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Phone, MessageSquare, Globe } from 'lucide-react';
+import { Phone, MessageSquare, Globe, Facebook } from 'lucide-react';
 
 const ContactBar = () => {
   return (
@@ -18,7 +18,7 @@ const ContactBar = () => {
           
           <div className="flex flex-wrap justify-center sm:justify-end gap-3 md:gap-6 text-xs md:text-sm w-full sm:w-auto">
             <span className="text-white/50 hidden sm:inline">Our Locations:</span>
-            <div className="flex space-x-3 md:space-x-4">
+            <div className="flex items-center space-x-3 md:space-x-4">
               <a 
                 href="https://www.wrappingchicago.com" 
                 className="flex items-center hover:text-brand-red transition-all"
@@ -46,6 +46,29 @@ const ContactBar = () => {
               >
                 <Globe className="w-3 h-3 md:w-4 md:h-4 mr-1 text-brand-red" />
                 <span className="whitespace-nowrap text-white/80 hover:text-white">Las Vegas</span>
+              </a>
+              
+              {/* Social Media Links */}
+              <span className="text-white/50 hidden lg:inline">|</span>
+              <a 
+                href="https://www.facebook.com/chicagofleetwraps" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center hover:text-brand-red transition-all hidden lg:flex"
+                aria-label="Follow us on Facebook"
+              >
+                <Facebook className="w-3 h-3 md:w-4 md:h-4 text-brand-red" />
+              </a>
+              <a 
+                href="https://www.tiktok.com/@chicagofleetwraps" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center hover:text-brand-red transition-all hidden lg:flex"
+                aria-label="Follow us on TikTok"
+              >
+                <svg className="w-3 h-3 md:w-4 md:h-4 text-brand-red" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M19.321 5.562a5.124 5.124 0 0 1-.443-.258 6.228 6.228 0 0 1-1.137-.966c-.849-.849-1.326-1.963-1.326-3.082v-.256h-3.068v14.146c0 1.563-1.27 2.833-2.833 2.833s-2.833-1.27-2.833-2.833 1.27-2.833 2.833-2.833c.31 0 .608.05.887.143v-3.146a5.91 5.91 0 0 0-.887-.067c-3.308 0-5.99 2.682-5.99 5.99s2.682 5.99 5.99 5.99 5.99-2.682 5.99-5.99V9.321a9.305 9.305 0 0 0 5.449 1.748V7.996a6.18 6.18 0 0 1-2.632-2.434z"/>
+                </svg>
               </a>
             </div>
           </div>
