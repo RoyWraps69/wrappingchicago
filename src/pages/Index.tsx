@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -10,7 +11,6 @@ import WhyChooseUsSection from '@/components/home/WhyChooseUsSection';
 import HomeSEO from '@/components/home/HomeSEO';
 import { useGalleryImages } from '@/hooks/useGalleryImages';
 import Schema from '@/components/Schema';
-import AIWrapSchema from '@/components/ai-wrap-ideas/AIWrapSchema';
 import EasyButtonSection from '@/components/home/EasyButtonSection';
 import BreadcrumbSchema from '@/components/schemas/BreadcrumbSchema';
 import CanonicalManager from '@/components/seo/CanonicalManager';
@@ -24,6 +24,13 @@ import TrustIndicators from '@/components/home/TrustIndicators';
 import InstallationFacility from '@/components/home/InstallationFacility';
 import VehicleWrapFAQ from '@/components/home/VehicleWrapFAQ';
 import { ExploreServices, IndexHelmetTags, ServiceAreaLinks } from '@/components/home/indexed-sections';
+
+// Import new Google Algorithm Alignment components
+import GoogleAlgorithmOptimizer from '@/components/seo/GoogleAlgorithmOptimizer';
+import EEATContent from '@/components/content/EEATContent';
+import TopicalAuthorityHub from '@/components/content/TopicalAuthorityHub';
+import CoreWebVitalsOptimizer from '@/components/performance/CoreWebVitalsOptimizer';
+import FeaturedSnippetContent from '@/components/content/FeaturedSnippetContent';
 
 const Index = () => {
   // Use our custom hook to get the images
@@ -52,14 +59,18 @@ const Index = () => {
     }
   ];
 
-  // Enhanced SEO keywords for homepage
+  // Enhanced SEO keywords for homepage with Google Algorithm focus
   const keywords = [
     "vehicle wraps Chicago", "car wraps Chicago", "truck wraps Chicago", "van wraps Chicago", 
     "fleet wraps Chicago", "vinyl wrap Chicago", "custom graphics Chicago", "commercial graphics Chicago",
     "color change wraps Chicago", "luxury wraps Chicago", "3M vehicle wraps", "premium vinyl wraps",
     "car wrap cost Chicago", "vehicle wrap pricing Chicago", "fleet wrap services Chicago",
     "custom car wrap designs Chicago", "professional vehicle wrap consultation",
-    "best truck wrap installers Chicago", "luxury exotic car wraps Chicago"
+    "best truck wrap installers Chicago", "luxury exotic car wraps Chicago",
+    "commercial fleet branding solutions", "vehicle wrap maintenance tips Chicago",
+    "cargo van wrap specialists Chicago", "sprinter van graphics Chicago",
+    "box truck advertising wraps Chicago", "truck wrap lettering Chicago",
+    "business vehicle branding Chicago", "mobile advertising vehicle wraps Chicago"
   ];
 
   // Create breadcrumb items for home page
@@ -76,6 +87,20 @@ const Index = () => {
       <HomeSEO />
       <CanonicalManager customCanonical="https://www.wrappingchicago.com/" />
       
+      {/* Google Algorithm Alignment Optimizer */}
+      <GoogleAlgorithmOptimizer 
+        pageTitle="Vehicle Wraps in Chicago IL | Wrapping Chicago"
+        pageDescription="Get vehicle wraps in Chicago IL services for cars, trucks, vans, and fleets. Boost style or brand visibility with custom vinyl graphics installed by experts."
+        keywords={keywords}
+        contentType="local"
+        authorName="Roy - Master Vehicle Wrap Installer"
+        expertise={["Vehicle Wraps", "20+ Years Experience", "3M Certified Installer", "16,000+ Projects"]}
+        trustSignals={["Licensed & Insured", "Premium 3M Materials", "2-Year Warranty", "98% Customer Satisfaction"]}
+      />
+      
+      {/* Core Web Vitals Performance Optimizer */}
+      <CoreWebVitalsOptimizer />
+      
       {/* Enhanced Schema with comprehensive keywords */}
       <Schema 
         city={chicagoCity} 
@@ -86,6 +111,10 @@ const Index = () => {
         isServicePage={true}
         serviceType="Vehicle Wraps"
         keywords={keywords}
+        priority="critical"
+        includeSpeakable={true}
+        mainImage="/lovable-uploads/6ef3b1af-8591-4d36-97c2-9366401115fa.png"
+        allCities={cities}
       />
       
       <BreadcrumbSchema items={breadcrumbItems} />
@@ -117,6 +146,12 @@ const Index = () => {
           {/* NEW: Keyword-rich content section */}
           <KeywordRichContent />
           
+          {/* NEW: E-E-A-T Content for Authority */}
+          <EEATContent />
+          
+          {/* NEW: Featured Snippet Optimized Content */}
+          <FeaturedSnippetContent />
+          
           {/* Trust Indicators Section */}
           <TrustIndicators />
           
@@ -124,6 +159,9 @@ const Index = () => {
           
           {/* Contact Studio Image */}
           <InstallationFacility />
+          
+          {/* NEW: Topical Authority Hub */}
+          <TopicalAuthorityHub />
           
           <div className="py-12 carbon-fiber-light">
             <AreasServedSection cities={cities} />

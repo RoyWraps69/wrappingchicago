@@ -1,57 +1,106 @@
 
-# Enhanced robots.txt for Wrapping Chicago - Maximum Indexability
-# Last updated: 2025-06-03
+# Enhanced robots.txt for Wrapping Chicago - Google Algorithm Alignment
+# Last updated: 2025-01-08
+# Optimized for Google's 2024+ algorithms and Core Web Vitals
 
 User-agent: *
 Allow: /
 
-# Sitemaps
+# Sitemaps - Critical for Discovery
 Sitemap: https://www.wrappingchicago.com/sitemap.xml
+Sitemap: https://www.wrappingchicago.com/sitemap-images.xml
 
-# Explicitly allow all critical pages for indexing
+# High-priority pages for indexing
 Allow: /about
 Allow: /car-wraps
-Allow: /chicago
+Allow: /truck-wraps
+Allow: /van-wraps
+Allow: /fleet-wraps
 Allow: /color-change-wraps
 Allow: /commercial-graphics
-Allow: /contact
 Allow: /designer-wraps
-Allow: /evanston
-Allow: /fleet-wraps
-Allow: /gallery
 Allow: /luxury-exotic-wraps
-Allow: /naperville
 Allow: /partial-wraps
 Allow: /protective-films
-Allow: /retail-graphics
-Allow: /schaumburg
-Allow: /services
-Allow: /services/
-Allow: /specialty-wraps
-Allow: /truck-wraps
-Allow: /truck-wraps-chicago
-Allow: /van-wraps
 Allow: /vehicle-lettering
+Allow: /specialty-wraps
+Allow: /retail-graphics
+Allow: /services/
+Allow: /gallery
+Allow: /contact
+Allow: /locations
+Allow: /chicago
+Allow: /evanston
+Allow: /naperville
+Allow: /schaumburg
+Allow: /truck-wraps-chicago
 Allow: /vehicle-wraps-*-il
 
-# Optimize crawl budget - prevent unnecessary crawling
-Disallow: /search
-Disallow: /*utm_*
-Disallow: /*fbclid=*
-Disallow: /*.sql$
-Disallow: /*.log$
-
-# Allow all media files
+# Allow all media files for rich snippets
 Allow: /*.jpg$
 Allow: /*.jpeg$
 Allow: /*.png$
-Allow: /*.gif$
 Allow: /*.webp$
+Allow: /*.gif$
+Allow: /*.svg$
 Allow: /*.js$
 Allow: /*.css$
+Allow: /*.woff2$
+Allow: /*.woff$
 
-# Host preference to avoid duplicate content
+# Block low-value pages to optimize crawl budget
+Disallow: /search
+Disallow: /*utm_*
+Disallow: /*fbclid=*
+Disallow: /*gclid=*
+Disallow: /*ref=*
+Disallow: /*.sql$
+Disallow: /*.log$
+Disallow: /tmp/
+Disallow: /temp/
+Disallow: /cache/
+Disallow: /admin/
+Disallow: /wp-admin/
+Disallow: /wp-includes/
+Disallow: /cgi-bin/
+Disallow: /*.cgi$
+Disallow: /*.php$
+Disallow: /*sessionid*
+Disallow: /*PHPSESSID*
+
+# Special directives for major search engines
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Googlebot-Image
+Allow: /
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.png$
+Allow: /*.webp$
+Allow: /*.gif$
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 2
+
+User-agent: Slurp
+Allow: /
+Crawl-delay: 2
+
+User-agent: DuckDuckBot
+Allow: /
+Crawl-delay: 1
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+# Host preference for canonical URLs
 Host: www.wrappingchicago.com
 
-# Crawl-delay for respectful crawling
-Crawl-delay: 1
+# Clean-param directive for Google
+Clean-param: utm_source&utm_medium&utm_campaign&utm_content&utm_term&fbclid&gclid&ref&sessionid&PHPSESSID
