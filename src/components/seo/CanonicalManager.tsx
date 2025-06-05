@@ -5,71 +5,51 @@ import { useLocation } from 'react-router-dom';
 
 interface CanonicalManagerProps {
   customCanonical?: string;
-  alternateUrls?: Array<{ url: string; hreflang?: string; }>;
+  noIndex?: boolean;
 }
 
+/**
+ * Canonical URL Manager Component
+ * Ensures proper canonical URLs to prevent duplicate content issues
+ */
 const CanonicalManager: React.FC<CanonicalManagerProps> = ({ 
-  customCanonical,
-  alternateUrls = []
+  customCanonical, 
+  noIndex = false 
 }) => {
   const location = useLocation();
   const domain = "https://www.wrappingchicago.com";
   
-  // Generate canonical URL based on current location or custom override
+  // Generate canonical URL
   const getCanonicalUrl = () => {
-    if (customCanonical) {
-      return customCanonical.startsWith('http') ? customCanonical : `${domain}${customCanonical}`;
-    }
+    if (customCanonical) return customCanonical;
     
-    // Clean up the current path
+    // Clean up the pathname
     let cleanPath = location.pathname;
     
-    // Remove trailing slash unless it's the homepage
+    // Remove trailing slashes except for homepage
     if (cleanPath !== '/' && cleanPath.endsWith('/')) {
       cleanPath = cleanPath.slice(0, -1);
     }
     
-    // Handle common duplicate content issues
-    const pathMappings: { [key: string]: string } = {
-      '/index': '/',
-      '/index.html': '/',
-      '/home': '/',
-      '/services/': '/services',
-      '/gallery/': '/gallery',
-      '/about/': '/about',
-      '/contact/': '/contact',
-    };
-    
-    const mappedPath = pathMappings[cleanPath] || cleanPath;
-    return `${domain}${mappedPath}`;
+    // Remove query parameters for canonical
+    return `${domain}${cleanPath}`;
   };
   
   const canonicalUrl = getCanonicalUrl();
+  const robotsContent = noIndex ? 'noindex, nofollow' : 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1';
   
   return (
     <Helmet>
-      {/* Primary canonical tag */}
       <link rel="canonical" href={canonicalUrl} />
+      <meta name="robots" content={robotsContent} />
+      <meta name="googlebot" content={robotsContent} />
       
-      {/* Self-referencing alternate for language */}
+      {/* Prevent common duplicate content issues */}
+      <meta property="og:url" content={canonicalUrl} />
+      
+      {/* Additional canonical signals */}
       <link rel="alternate" href={canonicalUrl} hrefLang="en-us" />
       <link rel="alternate" href={canonicalUrl} hrefLang="en" />
-      
-      {/* Additional alternate URLs if provided */}
-      {alternateUrls.map((alt, index) => (
-        <link 
-          key={index}
-          rel="alternate" 
-          href={alt.url.startsWith('http') ? alt.url : `${domain}${alt.url}`}
-          {...(alt.hreflang && { hrefLang: alt.hreflang })}
-        />
-      ))}
-      
-      {/* Prevent duplicate content from URL parameters */}
-      <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-      
-      {/* Add last modified date for better crawling */}
-      <meta name="last-modified" content={new Date().toISOString()} />
     </Helmet>
   );
 };

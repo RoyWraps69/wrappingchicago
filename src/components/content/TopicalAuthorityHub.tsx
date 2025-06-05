@@ -1,155 +1,132 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Car, Truck, Users, Palette, Shield, Wrench, FileText, HelpCircle } from 'lucide-react';
+import { Car, Truck, Building, Palette, Shield, FileText } from 'lucide-react';
 
 /**
  * Topical Authority Hub Component
- * Creates comprehensive content clusters to demonstrate expertise and authority
+ * Creates comprehensive content clusters demonstrating expertise across all vehicle wrap topics
  */
 const TopicalAuthorityHub: React.FC = () => {
-  const topicalClusters = [
+  const topicClusters = [
     {
-      title: "Vehicle Wrap Types & Services",
-      icon: <Car className="h-8 w-8 text-brand-red" />,
-      description: "Complete guide to all vehicle wrap services and applications",
-      mainTopics: [
-        { name: "Car Wraps", link: "/car-wraps", description: "Luxury and standard car wrap solutions" },
-        { name: "Truck Wraps", link: "/truck-wraps", description: "Commercial and personal truck graphics" },
-        { name: "Van Wraps", link: "/van-wraps", description: "Cargo and passenger van branding" },
-        { name: "Fleet Wraps", link: "/fleet-wraps", description: "Large-scale fleet branding solutions" }
-      ],
-      supportingContent: [
-        "Partial vs Full Wrap Comparison",
-        "Color Change Wrap Options",
-        "Protective Film Benefits",
-        "Specialty Vehicle Wraps"
+      title: "Vehicle Types & Applications",
+      icon: Car,
+      description: "Complete coverage of vehicle wrap solutions for every type of vehicle",
+      links: [
+        { title: "Car Wraps Chicago", href: "/car-wraps", description: "Custom car wrap designs and installation" },
+        { title: "Truck Wraps Chicago", href: "/truck-wraps", description: "Commercial truck wrap solutions" },
+        { title: "Van Wraps Chicago", href: "/van-wraps", description: "Cargo and sprinter van graphics" },
+        { title: "Fleet Wraps Chicago", href: "/fleet-wraps", description: "Multi-vehicle fleet branding" }
       ]
     },
     {
-      title: "Design & Customization",
-      icon: <Palette className="h-8 w-8 text-brand-red" />,
-      description: "Expert guidance on wrap design, colors, and customization options",
-      mainTopics: [
-        { name: "Custom Graphics", link: "/custom-graphics", description: "Unique design solutions" },
-        { name: "Color Options", link: "/color-change-wraps", description: "Premium color change wraps" },
-        { name: "Designer Wraps", link: "/designer-wraps", description: "High-end luxury wrap designs" },
-        { name: "Commercial Graphics", link: "/commercial-graphics", description: "Business branding solutions" }
-      ],
-      supportingContent: [
-        "Design Consultation Process",
-        "Color Matching Services",
-        "Brand Guidelines Integration",
-        "Logo and Graphics Optimization"
+      title: "Wrap Services & Specialties",
+      icon: Palette,
+      description: "Specialized vehicle wrap services for unique needs and applications",
+      links: [
+        { title: "Color Change Wraps", href: "/color-change-wraps", description: "Transform your vehicle's color completely" },
+        { title: "Commercial Graphics", href: "/commercial-graphics", description: "Business branding and advertising wraps" },
+        { title: "Luxury & Exotic Wraps", href: "/luxury-exotic-wraps", description: "Premium wraps for high-end vehicles" },
+        { title: "Partial Wraps", href: "/partial-wraps", description: "Targeted wrap coverage for budget-conscious clients" }
       ]
     },
     {
-      title: "Materials & Technology",
-      icon: <Shield className="h-8 w-8 text-brand-red" />,
-      description: "In-depth coverage of wrap materials, durability, and technology",
-      mainTopics: [
-        { name: "3M Vinyl Options", link: "/3m-vinyl-wraps", description: "Premium 3M material selection" },
-        { name: "Avery Dennison", link: "/avery-wraps", description: "Professional grade materials" },
-        { name: "Protective Films", link: "/protective-films", description: "Paint protection solutions" },
-        { name: "Specialty Materials", link: "/specialty-materials", description: "Textured and unique finishes" }
-      ],
-      supportingContent: [
-        "Material Durability Comparison",
-        "Weather Resistance Testing",
-        "Adhesive Technology Guide",
-        "Removal and Residue Information"
+      title: "Materials & Protection",
+      icon: Shield,
+      description: "Advanced materials and protective solutions for vehicle preservation",
+      links: [
+        { title: "Protective Films", href: "/protective-films", description: "Paint protection and clear bra services" },
+        { title: "3M Vinyl Materials", href: "/services", description: "Premium 3M wrap materials and benefits" },
+        { title: "Specialty Wraps", href: "/specialty-wraps", description: "Textured and specialty finish wraps" },
+        { title: "Vehicle Lettering", href: "/vehicle-lettering", description: "Professional vehicle lettering and decals" }
       ]
     },
     {
-      title: "Installation & Maintenance",
-      icon: <Wrench className="h-8 w-8 text-brand-red" />,
-      description: "Professional installation techniques and maintenance guidance",
-      mainTopics: [
-        { name: "Installation Process", link: "/installation-process", description: "Step-by-step wrap installation" },
-        { name: "Maintenance Guide", link: "/wrap-maintenance", description: "Care and cleaning instructions" },
-        { name: "Warranty Information", link: "/warranty", description: "Coverage and protection details" },
-        { name: "Removal Services", link: "/wrap-removal", description: "Safe removal procedures" }
-      ],
-      supportingContent: [
-        "Pre-Installation Preparation",
-        "Quality Control Standards",
-        "Post-Installation Care",
-        "Troubleshooting Common Issues"
+      title: "Business Solutions",
+      icon: Building,
+      description: "Comprehensive vehicle wrap solutions for businesses and organizations",
+      links: [
+        { title: "Fleet Management", href: "/fleet-wraps", description: "Complete fleet branding and management" },
+        { title: "Retail Graphics", href: "/retail-graphics", description: "Retail and storefront vehicle graphics" },
+        { title: "Designer Wraps", href: "/designer-wraps", description: "Custom designer wrap collections" },
+        { title: "Commercial Consulting", href: "/contact", description: "Professional design consultation services" }
       ]
     }
   ];
 
   return (
-    <section className="py-16 bg-white" id="topical-authority">
+    <section className="py-16 bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Complete Vehicle Wrap Knowledge Center
+          <h2 className="text-3xl font-bold text-black mb-4">
+            Complete Vehicle Wrap Solutions in Chicago
           </h2>
-          <p className="text-lg text-gray-700 max-w-3xl mx-auto">
-            Explore our comprehensive guides and expert insights covering every aspect of vehicle wraps. 
-            From material selection to installation techniques, we provide the knowledge you need to make 
-            informed decisions about your vehicle wrap project.
+          <p className="text-lg text-black max-w-3xl mx-auto">
+            Explore our comprehensive range of vehicle wrap services, materials, and expertise. 
+            From simple car wraps to complex fleet graphics, we cover every aspect of vehicle transformation.
           </p>
         </div>
-
-        <div className="grid lg:grid-cols-2 gap-8">
-          {topicalClusters.map((cluster, index) => (
-            <div key={index} className="bg-gray-50 p-8 rounded-lg">
-              <div className="flex items-center mb-6">
-                {cluster.icon}
-                <h3 className="text-2xl font-bold text-gray-900 ml-4">{cluster.title}</h3>
-              </div>
-              
-              <p className="text-gray-700 mb-6">{cluster.description}</p>
-              
-              {/* Main Topics */}
-              <div className="mb-6">
-                <h4 className="text-lg font-semibold text-gray-900 mb-4">Core Services</h4>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                  {cluster.mainTopics.map((topic, topicIndex) => (
-                    <Link 
-                      key={topicIndex}
-                      to={topic.link}
-                      className="block p-3 bg-white rounded border hover:border-brand-red transition-colors"
+        
+        <div className="grid md:grid-cols-2 gap-8">
+          {topicClusters.map((cluster, index) => {
+            const IconComponent = cluster.icon;
+            return (
+              <div key={index} className="bg-white p-8 rounded-lg shadow-lg">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-brand-red rounded-lg flex items-center justify-center mr-4">
+                    <IconComponent className="h-6 w-6 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-black">{cluster.title}</h3>
+                    <p className="text-black text-sm">{cluster.description}</p>
+                  </div>
+                </div>
+                
+                <div className="space-y-3">
+                  {cluster.links.map((link, linkIndex) => (
+                    <Link
+                      key={linkIndex}
+                      to={link.href}
+                      className="block p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
                     >
-                      <div className="font-medium text-gray-900">{topic.name}</div>
-                      <div className="text-sm text-gray-600">{topic.description}</div>
+                      <div className="font-semibold text-black hover:text-brand-red">
+                        {link.title}
+                      </div>
+                      <div className="text-sm text-black">
+                        {link.description}
+                      </div>
                     </Link>
                   ))}
                 </div>
               </div>
-              
-              {/* Supporting Content */}
-              <div>
-                <h4 className="text-lg font-semibold text-gray-900 mb-4">Expert Guides</h4>
-                <ul className="space-y-2">
-                  {cluster.supportingContent.map((content, contentIndex) => (
-                    <li key={contentIndex} className="flex items-center text-gray-700">
-                      <FileText className="h-4 w-4 text-brand-red mr-2" />
-                      {content}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
-
-        {/* FAQ Hub Link */}
+        
         <div className="mt-12 text-center">
-          <div className="bg-brand-navy text-white p-8 rounded-lg">
-            <HelpCircle className="h-12 w-12 text-white mx-auto mb-4" />
-            <h3 className="text-2xl font-bold mb-4">Frequently Asked Questions</h3>
-            <p className="text-lg mb-6">
-              Get instant answers to common vehicle wrap questions from our expert team
+          <div className="bg-white p-8 rounded-lg shadow-lg">
+            <h3 className="text-2xl font-bold text-black mb-4">
+              Need Help Choosing the Right Wrap Solution?
+            </h3>
+            <p className="text-black mb-6">
+              Our experts are here to guide you through the best vehicle wrap options for your specific needs and budget.
             </p>
-            <Link 
-              to="/faq" 
-              className="inline-block bg-brand-red text-white px-8 py-3 rounded-lg font-semibold hover:bg-red-700 transition-colors"
-            >
-              Browse All FAQs
-            </Link>
+            <div className="flex flex-col sm:flex-row justify-center gap-4">
+              <Link
+                to="/contact"
+                className="bg-brand-red hover:bg-red-700 text-white px-6 py-3 rounded-lg font-semibold inline-flex items-center justify-center"
+              >
+                <FileText className="mr-2 h-5 w-5" />
+                Get Expert Consultation
+              </Link>
+              <a
+                href="tel:3125971286"
+                className="border-2 border-black text-black hover:bg-black hover:text-white px-6 py-3 rounded-lg font-semibold inline-flex items-center justify-center"
+              >
+                Call (312) 597-1286
+              </a>
+            </div>
           </div>
         </div>
       </div>

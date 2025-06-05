@@ -1,133 +1,123 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Car, Truck, Palette, Shield, Star, MapPin } from 'lucide-react';
+import { MapPin, Star, Award } from 'lucide-react';
 
+/**
+ * Keyword-Rich Content Component
+ * Natural integration of target keywords while providing genuine value
+ */
 const KeywordRichContent: React.FC = () => {
   return (
-    <section className="py-16 bg-white">
+    <section className="py-16 bg-gray-50">
       <div className="container mx-auto px-4">
-        {/* Main keyword-rich hero content */}
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl font-bold text-black mb-4">
             Chicago's Premier Vehicle Wrap Specialists
           </h2>
-          <p className="text-lg text-gray-700 max-w-4xl mx-auto mb-6">
-            Transform your vehicle with our professional <strong>car wraps</strong>, <strong>truck wraps</strong>, 
-            <strong> van wraps</strong>, and <strong>fleet graphics</strong> in Chicago. We specialize in 
-            <strong> custom graphics</strong>, <strong>color change wraps</strong>, <strong>luxury wraps</strong>, 
-            and <strong>commercial branding solutions</strong> using premium <strong>3M vinyl wraps</strong> and 
-            <strong>Avery materials</strong>.
+          <p className="text-lg text-black max-w-3xl mx-auto">
+            From downtown Chicago to suburban communities, we deliver professional vehicle wraps 
+            that transform cars, trucks, vans, and entire fleets into powerful marketing tools.
           </p>
         </div>
-
-        {/* Service categories with keywords */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-          <div className="bg-gray-50 p-6 rounded-lg">
-            <div className="flex items-center mb-4">
-              <Car className="h-6 w-6 text-brand-red mr-2" />
-              <h3 className="text-xl font-semibold">Car Wraps Chicago</h3>
-            </div>
-            <p className="text-gray-700 mb-4">
-              Professional <strong>car wrap installation</strong> with <strong>custom car wrap designs</strong>. 
-              From <strong>luxury exotic car wraps</strong> to budget-friendly <strong>partial car wraps</strong>, 
-              we deliver premium results with competitive <strong>car wrap cost Chicago</strong> pricing.
+        
+        <div className="grid md:grid-cols-3 gap-8 mb-12">
+          <div className="bg-white p-6 rounded-lg shadow-lg">
+            <h3 className="text-xl font-bold text-black mb-4 flex items-center">
+              <MapPin className="h-6 w-6 mr-2 text-brand-red" />
+              Local Chicago Expertise
+            </h3>
+            <p className="text-black mb-4">
+              As Chicago's leading vehicle wrap company, we understand the unique needs of 
+              local businesses and residents. Our car wraps Chicago services include everything 
+              from luxury vehicle color changes to commercial fleet graphics.
             </p>
-            <Link to="/services/car-wraps" className="text-brand-red font-medium hover:underline">
-              Learn about our car wrap services →
+            <Link 
+              to="/locations" 
+              className="text-brand-red hover:underline font-semibold"
+            >
+              View Service Areas →
             </Link>
           </div>
-
-          <div className="bg-gray-50 p-6 rounded-lg">
-            <div className="flex items-center mb-4">
-              <Truck className="h-6 w-6 text-brand-red mr-2" />
-              <h3 className="text-xl font-semibold">Truck & Van Wraps</h3>
-            </div>
-            <p className="text-gray-700 mb-4">
-              <strong>Best truck wrap installers Chicago</strong> for commercial vehicles. 
-              Specializing in <strong>box truck advertising wraps</strong>, <strong>cargo van wrap specialists</strong>, 
-              <strong>sprinter van graphics</strong>, and <strong>truck wrap lettering Chicago</strong>.
+          
+          <div className="bg-white p-6 rounded-lg shadow-lg">
+            <h3 className="text-xl font-bold text-black mb-4 flex items-center">
+              <Star className="h-6 w-6 mr-2 text-brand-red" />
+              Complete Wrap Solutions
+            </h3>
+            <p className="text-black mb-4">
+              Our truck wraps Chicago and van wraps Chicago services cover all vehicle types. 
+              Whether you need partial wraps, full color change wraps, or custom commercial 
+              graphics, we deliver exceptional results using premium 3M vinyl materials.
             </p>
-            <Link to="/services/truck-wraps" className="text-brand-red font-medium hover:underline">
-              Explore truck wrap options →
+            <Link 
+              to="/services" 
+              className="text-brand-red hover:underline font-semibold"
+            >
+              Explore Services →
             </Link>
           </div>
-
-          <div className="bg-gray-50 p-6 rounded-lg">
-            <div className="flex items-center mb-4">
-              <Shield className="h-6 w-6 text-brand-red mr-2" />
-              <h3 className="text-xl font-semibold">Fleet Branding Solutions</h3>
-            </div>
-            <p className="text-gray-700 mb-4">
-              <strong>Commercial fleet branding solutions</strong> and <strong>fleet wrap services Chicago</strong>. 
-              <strong>Business vehicle branding Chicago</strong> that creates consistent brand recognition with 
-              <strong>mobile advertising vehicle wraps</strong>.
+          
+          <div className="bg-white p-6 rounded-lg shadow-lg">
+            <h3 className="text-xl font-bold text-black mb-4 flex items-center">
+              <Award className="h-6 w-6 mr-2 text-brand-red" />
+              Fleet Wrap Specialists
+            </h3>
+            <p className="text-black mb-4">
+              Our fleet wraps Chicago services help businesses create consistent branding 
+              across their entire vehicle fleet. From delivery vans to service trucks, 
+              we provide comprehensive vehicle graphics solutions that boost brand visibility.
             </p>
-            <Link to="/services/fleet-wraps" className="text-brand-red font-medium hover:underline">
-              View fleet wrap portfolio →
+            <Link 
+              to="/fleet-wraps" 
+              className="text-brand-red hover:underline font-semibold"
+            >
+              Learn About Fleet Wraps →
             </Link>
           </div>
         </div>
-
-        {/* Premium materials and services */}
-        <div className="bg-brand-navy text-white p-8 rounded-lg mb-12">
-          <div className="grid md:grid-cols-2 gap-8 items-center">
-            <div>
-              <h3 className="text-2xl font-bold mb-4">Premium Materials & Expert Installation</h3>
-              <p className="mb-4">
-                We use only the finest <strong>premium 3M vinyl wraps Chicago</strong> and 
-                <strong> Avery car wrap materials</strong> for durability and vibrant colors. 
-                Our <strong>professional vehicle wrap consultation</strong> ensures your vision 
-                becomes reality with <strong>designer vehicle wraps</strong> tailored to your needs.
-              </p>
-              <ul className="space-y-2">
-                <li className="flex items-center">
-                  <Star className="h-4 w-4 mr-2" />
-                  <span><strong>Premium vinyl</strong> materials with warranty</span>
-                </li>
-                <li className="flex items-center">
-                  <Star className="h-4 w-4 mr-2" />
-                  <span><strong>Custom designs</strong> and consultation</span>
-                </li>
-                <li className="flex items-center">
-                  <Star className="h-4 w-4 mr-2" />
-                  <span><strong>Protective paint film</strong> options</span>
-                </li>
-                <li className="flex items-center">
-                  <Star className="h-4 w-4 mr-2" />
-                  <span><strong>Car wrap maintenance tips</strong> included</span>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="text-xl font-semibold mb-3">Our Specialties Include:</h4>
-              <div className="grid grid-cols-2 gap-2 text-sm">
-                <div className="bg-white/10 p-2 rounded">Color Change Wraps</div>
-                <div className="bg-white/10 p-2 rounded">Luxury Wraps</div>
-                <div className="bg-white/10 p-2 rounded">Commercial Graphics</div>
-                <div className="bg-white/10 p-2 rounded">Partial Wraps</div>
-                <div className="bg-white/10 p-2 rounded">Designer Wraps</div>
-                <div className="bg-white/10 p-2 rounded">Supercar Wraps</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Service areas and quotes */}
-        <div className="text-center">
-          <h3 className="text-2xl font-bold text-gray-900 mb-4">
-            Get Professional Vehicle Wrap Services in Chicago
+        
+        <div className="bg-white p-8 rounded-lg shadow-lg">
+          <h3 className="text-2xl font-bold text-black mb-6 text-center">
+            Why Choose Our Vehicle Wrap Services in Chicago?
           </h3>
-          <p className="text-lg text-gray-700 mb-6">
-            Ready to transform your vehicle? <strong>Get a vehicle wrap quote Chicago</strong> today! 
-            Our <strong>high-end car wrap service Chicago</strong> team provides detailed estimates 
-            for all <strong>vehicle wrap pricing Chicago</strong> options. We serve Chicago and 
-            surrounding areas with <strong>wrap installation</strong>, <strong>wrap design</strong>, 
-            and comprehensive <strong>wrap services</strong>.
-          </p>
-          <div className="flex items-center justify-center text-gray-600 mb-4">
-            <MapPin className="h-5 w-5 mr-2" />
-            <span>Serving Chicago, IL and surrounding communities</span>
+          
+          <div className="grid md:grid-cols-2 gap-8">
+            <div>
+              <h4 className="text-lg font-semibold text-black mb-3">Premium Materials & Installation</h4>
+              <p className="text-black mb-4">
+                We exclusively use premium 3M and Avery Dennison vinyl for all our vehicle wraps Chicago projects. 
+                Our certified installers ensure every wrap is applied with precision, from simple car graphics 
+                to complex truck lettering and commercial vehicle branding.
+              </p>
+              
+              <h4 className="text-lg font-semibold text-black mb-3">Custom Design Services</h4>
+              <p className="text-black">
+                Our in-house design team creates custom vehicle graphics that perfectly represent your brand. 
+                Whether you need luxury exotic car wraps or commercial fleet graphics, we bring your vision to life 
+                with stunning visual impact.
+              </p>
+            </div>
+            
+            <div>
+              <h4 className="text-lg font-semibold text-black mb-3">Comprehensive Vehicle Coverage</h4>
+              <p className="text-black mb-4">
+                From compact cars to large commercial trucks, our vehicle wrapping services cover all types:
+              </p>
+              <ul className="text-black space-y-1 mb-4">
+                <li>• Car wraps and color change wraps</li>
+                <li>• Truck wraps and commercial graphics</li>
+                <li>• Van wraps and cargo vehicle graphics</li>
+                <li>• Fleet wraps and multi-vehicle branding</li>
+                <li>• Specialty wraps and custom designs</li>
+              </ul>
+              
+              <h4 className="text-lg font-semibold text-black mb-3">Local Chicago Service</h4>
+              <p className="text-black">
+                Serving all Chicago neighborhoods and surrounding suburbs, we provide convenient 
+                vehicle wrap installation with flexible scheduling to minimize business disruption.
+              </p>
+            </div>
           </div>
         </div>
       </div>
