@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { City } from '@/data/cities';
@@ -16,6 +15,12 @@ interface SchemaProps {
   serviceType?: string;
   priority?: 'critical' | 'high' | 'normal' | 'low';
   keywords?: string[];
+  includeSpeakable?: boolean;
+  mainImage?: string;
+  skipFAQSchema?: boolean;
+  datePublished?: string;
+  dateModified?: string;
+  allCities?: City[];
 }
 
 const Schema: React.FC<SchemaProps> = ({ 
@@ -27,7 +32,13 @@ const Schema: React.FC<SchemaProps> = ({
   isServicePage = false, 
   serviceType = "Vehicle Wraps",
   priority = 'normal',
-  keywords = []
+  keywords = [],
+  includeSpeakable = false,
+  mainImage,
+  skipFAQSchema = false,
+  datePublished,
+  dateModified,
+  allCities = []
 }) => {
   const domain = "https://www.wrappingchicago.com";
   const fullUrl = `${domain}${path}`;
@@ -193,8 +204,8 @@ const Schema: React.FC<SchemaProps> = ({
     "url": fullUrl
   } : null;
 
-  // FAQ Schema
-  const faqSchema = faqs.length > 0 ? {
+  // FAQ Schema - only if not skipped
+  const faqSchema = (faqs.length > 0 && !skipFAQSchema) ? {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": faqs.map(faq => ({
