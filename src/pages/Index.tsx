@@ -14,6 +14,7 @@ import AIWrapSchema from '@/components/ai-wrap-ideas/AIWrapSchema';
 import EasyButtonSection from '@/components/home/EasyButtonSection';
 import BreadcrumbSchema from '@/components/schemas/BreadcrumbSchema';
 import CanonicalManager from '@/components/seo/CanonicalManager';
+import KeywordRichContent from '@/components/home/KeywordRichContent';
 
 // Import the home page components
 import InfoBar from '@/components/home/InfoBar';
@@ -51,18 +52,14 @@ const Index = () => {
     }
   ];
 
-  // SEO keywords
+  // Enhanced SEO keywords for homepage
   const keywords = [
-    "vehicle wraps Chicago", 
-    "car wraps Chicago", 
-    "truck wraps Chicago", 
-    "van wraps Chicago", 
-    "fleet wraps Chicago", 
-    "commercial vehicle wraps", 
-    "custom vehicle wraps", 
-    "vehicle graphics Chicago", 
-    "vinyl wraps Chicago", 
-    "3M vehicle wraps"
+    "vehicle wraps Chicago", "car wraps Chicago", "truck wraps Chicago", "van wraps Chicago", 
+    "fleet wraps Chicago", "vinyl wrap Chicago", "custom graphics Chicago", "commercial graphics Chicago",
+    "color change wraps Chicago", "luxury wraps Chicago", "3M vehicle wraps", "premium vinyl wraps",
+    "car wrap cost Chicago", "vehicle wrap pricing Chicago", "fleet wrap services Chicago",
+    "custom car wrap designs Chicago", "professional vehicle wrap consultation",
+    "best truck wrap installers Chicago", "luxury exotic car wraps Chicago"
   ];
 
   // Create breadcrumb items for home page
@@ -79,7 +76,7 @@ const Index = () => {
       <HomeSEO />
       <CanonicalManager customCanonical="https://www.wrappingchicago.com/" />
       
-      {/* Simplified Schema to avoid conflicts */}
+      {/* Enhanced Schema with comprehensive keywords */}
       <Schema 
         city={chicagoCity} 
         path="/"
@@ -88,6 +85,7 @@ const Index = () => {
         faqs={faqData}
         isServicePage={true}
         serviceType="Vehicle Wraps"
+        keywords={keywords}
       />
       
       <BreadcrumbSchema items={breadcrumbItems} />
@@ -115,6 +113,9 @@ const Index = () => {
               commercialGraphics={commercialGraphics}
             />
           </div>
+          
+          {/* NEW: Keyword-rich content section */}
+          <KeywordRichContent />
           
           {/* Trust Indicators Section */}
           <TrustIndicators />
