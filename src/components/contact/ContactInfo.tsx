@@ -10,7 +10,7 @@ const ContactInfo = () => {
       </header>
       
       <div className="space-y-6">
-        <article className="flex items-start p-4 bg-white border border-gray-300 rounded-lg">
+        <article className="flex items-start p-4 bg-white border-2 border-black rounded-lg hover:border-brand-red transition-colors">
           <div className="w-10 h-10 bg-brand-red text-white rounded-full flex items-center justify-center mr-4 flex-shrink-0">
             <Phone className="h-5 w-5" />
           </div>
@@ -22,7 +22,7 @@ const ContactInfo = () => {
           </div>
         </article>
         
-        <article className="flex items-start p-4 bg-white border border-gray-300 rounded-lg">
+        <article className="flex items-start p-4 bg-white border-2 border-black rounded-lg hover:border-brand-red transition-colors">
           <div className="w-10 h-10 bg-brand-red text-white rounded-full flex items-center justify-center mr-4 flex-shrink-0">
             <Mail className="h-5 w-5" />
           </div>
@@ -34,7 +34,7 @@ const ContactInfo = () => {
           </div>
         </article>
         
-        <article className="flex items-start p-4 bg-white border border-gray-300 rounded-lg">
+        <article className="flex items-start p-4 bg-white border-2 border-black rounded-lg hover:border-brand-red transition-colors">
           <div className="w-10 h-10 bg-brand-red text-white rounded-full flex items-center justify-center mr-4 flex-shrink-0">
             <MapPin className="h-5 w-5" />
           </div>
@@ -47,7 +47,7 @@ const ContactInfo = () => {
           </div>
         </article>
         
-        <article className="flex items-start p-4 bg-white border border-gray-300 rounded-lg">
+        <article className="flex items-start p-4 bg-white border-2 border-black rounded-lg hover:border-brand-red transition-colors">
           <div className="w-10 h-10 bg-brand-red text-white rounded-full flex items-center justify-center mr-4 flex-shrink-0">
             <Clock className="h-5 w-5" />
           </div>

@@ -81,13 +81,13 @@ const VehicleWrapCalculator: React.FC = () => {
                   <SelectTrigger className="bg-white border-2 border-black text-black font-medium h-12 relative z-50">
                     <SelectValue placeholder="Select vehicle type" className="text-black" />
                   </SelectTrigger>
-                  <SelectContent className="bg-white border-2 border-black shadow-lg relative z-[100]">
-                    <SelectItem value="car" className="text-black font-medium hover:bg-gray-100 bg-white">Car/Sedan</SelectItem>
-                    <SelectItem value="truck" className="text-black font-medium hover:bg-gray-100 bg-white">Truck</SelectItem>
-                    <SelectItem value="van" className="text-black font-medium hover:bg-gray-100 bg-white">Van</SelectItem>
-                    <SelectItem value="suv" className="text-black font-medium hover:bg-gray-100 bg-white">SUV</SelectItem>
-                    <SelectItem value="motorcycle" className="text-black font-medium hover:bg-gray-100 bg-white">Motorcycle</SelectItem>
-                    <SelectItem value="trailer" className="text-black font-medium hover:bg-gray-100 bg-white">Trailer</SelectItem>
+                  <SelectContent className="bg-white border-2 border-black shadow-xl relative z-[9999] max-h-60">
+                    <SelectItem value="car" className="text-black font-medium hover:bg-gray-100 bg-white focus:bg-gray-100">Car/Sedan</SelectItem>
+                    <SelectItem value="truck" className="text-black font-medium hover:bg-gray-100 bg-white focus:bg-gray-100">Truck</SelectItem>
+                    <SelectItem value="van" className="text-black font-medium hover:bg-gray-100 bg-white focus:bg-gray-100">Van</SelectItem>
+                    <SelectItem value="suv" className="text-black font-medium hover:bg-gray-100 bg-white focus:bg-gray-100">SUV</SelectItem>
+                    <SelectItem value="motorcycle" className="text-black font-medium hover:bg-gray-100 bg-white focus:bg-gray-100">Motorcycle</SelectItem>
+                    <SelectItem value="trailer" className="text-black font-medium hover:bg-gray-100 bg-white focus:bg-gray-100">Trailer</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
@@ -98,12 +98,12 @@ const VehicleWrapCalculator: React.FC = () => {
                   <SelectTrigger className="bg-white border-2 border-black text-black font-medium h-12 relative z-50">
                     <SelectValue placeholder="Select wrap type" className="text-black" />
                   </SelectTrigger>
-                  <SelectContent className="bg-white border-2 border-black shadow-lg relative z-[100]">
-                    <SelectItem value="full" className="text-black font-medium hover:bg-gray-100 bg-white">Full Wrap</SelectItem>
-                    <SelectItem value="partial" className="text-black font-medium hover:bg-gray-100 bg-white">Partial Wrap</SelectItem>
-                    <SelectItem value="color-change" className="text-black font-medium hover:bg-gray-100 bg-white">Color Change</SelectItem>
-                    <SelectItem value="commercial" className="text-black font-medium hover:bg-gray-100 bg-white">Commercial Graphics</SelectItem>
-                    <SelectItem value="specialty" className="text-black font-medium hover:bg-gray-100 bg-white">Specialty Finish</SelectItem>
+                  <SelectContent className="bg-white border-2 border-black shadow-xl relative z-[9999] max-h-60">
+                    <SelectItem value="full" className="text-black font-medium hover:bg-gray-100 bg-white focus:bg-gray-100">Full Wrap</SelectItem>
+                    <SelectItem value="partial" className="text-black font-medium hover:bg-gray-100 bg-white focus:bg-gray-100">Partial Wrap</SelectItem>
+                    <SelectItem value="color-change" className="text-black font-medium hover:bg-gray-100 bg-white focus:bg-gray-100">Color Change</SelectItem>
+                    <SelectItem value="commercial" className="text-black font-medium hover:bg-gray-100 bg-white focus:bg-gray-100">Commercial Graphics</SelectItem>
+                    <SelectItem value="specialty" className="text-black font-medium hover:bg-gray-100 bg-white focus:bg-gray-100">Specialty Finish</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
@@ -114,11 +114,11 @@ const VehicleWrapCalculator: React.FC = () => {
                   <SelectTrigger className="bg-white border-2 border-black text-black font-medium h-12 relative z-50">
                     <SelectValue placeholder="Select complexity" className="text-black" />
                   </SelectTrigger>
-                  <SelectContent className="bg-white border-2 border-black shadow-lg relative z-[100]">
-                    <SelectItem value="simple" className="text-black font-medium hover:bg-gray-100 bg-white">Simple (Basic colors/text)</SelectItem>
-                    <SelectItem value="moderate" className="text-black font-medium hover:bg-gray-100 bg-white">Moderate (Some graphics)</SelectItem>
-                    <SelectItem value="complex" className="text-black font-medium hover:bg-gray-100 bg-white">Complex (Custom design)</SelectItem>
-                    <SelectItem value="premium" className="text-black font-medium hover:bg-gray-100 bg-white">Premium (Full custom artwork)</SelectItem>
+                  <SelectContent className="bg-white border-2 border-black shadow-xl relative z-[9999] max-h-60">
+                    <SelectItem value="simple" className="text-black font-medium hover:bg-gray-100 bg-white focus:bg-gray-100">Simple (Basic colors/text)</SelectItem>
+                    <SelectItem value="moderate" className="text-black font-medium hover:bg-gray-100 bg-white focus:bg-gray-100">Moderate (Some graphics)</SelectItem>
+                    <SelectItem value="complex" className="text-black font-medium hover:bg-gray-100 bg-white focus:bg-gray-100">Complex (Custom design)</SelectItem>
+                    <SelectItem value="premium" className="text-black font-medium hover:bg-gray-100 bg-white focus:bg-gray-100">Premium (Full custom artwork)</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
@@ -129,10 +129,10 @@ const VehicleWrapCalculator: React.FC = () => {
                   <SelectTrigger className="bg-white border-2 border-black text-black font-medium h-12 relative z-50">
                     <SelectValue placeholder="Select timeline" className="text-black" />
                   </SelectTrigger>
-                  <SelectContent className="bg-white border-2 border-black shadow-lg relative z-[100]">
-                    <SelectItem value="standard" className="text-black font-medium hover:bg-gray-100 bg-white">Standard (7-10 days)</SelectItem>
-                    <SelectItem value="rush" className="text-black font-medium hover:bg-gray-100 bg-white">Rush (3-5 days)</SelectItem>
-                    <SelectItem value="urgent" className="text-black font-medium hover:bg-gray-100 bg-white">Urgent (1-2 days)</SelectItem>
+                  <SelectContent className="bg-white border-2 border-black shadow-xl relative z-[9999] max-h-60">
+                    <SelectItem value="standard" className="text-black font-medium hover:bg-gray-100 bg-white focus:bg-gray-100">Standard (7-10 days)</SelectItem>
+                    <SelectItem value="rush" className="text-black font-medium hover:bg-gray-100 bg-white focus:bg-gray-100">Rush (3-5 days)</SelectItem>
+                    <SelectItem value="urgent" className="text-black font-medium hover:bg-gray-100 bg-white focus:bg-gray-100">Urgent (1-2 days)</SelectItem>
                   </SelectContent>
                 </Select>
               </div>

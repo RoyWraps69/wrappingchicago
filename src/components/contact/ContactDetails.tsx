@@ -11,13 +11,13 @@ const ContactDetails = () => {
       </ContactItem>
       
       <ContactItem icon={Phone} title="Phone" darkBackground={false} highlight={true}>
-        <a href="tel:3125971286" className="text-brand-red hover:underline font-bold text-lg">
+        <a href="tel:3125971286" className="text-brand-red hover:text-red-700 font-bold text-lg">
           (312) 597-1286
         </a>
       </ContactItem>
       
       <ContactItem icon={Mail} title="Email" darkBackground={false}>
-        <a href="mailto:roy@chicagofleetwraps.com" className="text-brand-red hover:underline font-semibold">
+        <a href="mailto:roy@chicagofleetwraps.com" className="text-brand-red hover:text-red-700 font-semibold">
           roy@chicagofleetwraps.com
         </a>
       </ContactItem>

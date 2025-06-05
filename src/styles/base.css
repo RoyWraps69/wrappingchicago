@@ -97,7 +97,7 @@
   }
   
   /* Force maximum contrast on all text */
-  h1, h2, h3, h4, h5, h6, p, span, div, a, li, td, th, label {
+  h1, h2, h3, h4, h5, h6, p, span, div, a, li, td, th, label, strong, em, small {
     color: #000000 !important;
   }
   
@@ -109,41 +109,54 @@
   .hero-overlay, .hero-overlay *,
   .hero-fullscreen .hero-content,
   .hero-fullscreen .hero-content *,
-  [class*="bg-gray-8"], [class*="bg-gray-8"] *,
-  [class*="bg-gray-9"], [class*="bg-gray-9"] *,
-  [class*="bg-slate-8"], [class*="bg-slate-8"] *,
-  [class*="bg-slate-9"], [class*="bg-slate-9"] * {
+  .bg-gray-800, .bg-gray-800 *,
+  .bg-gray-900, .bg-gray-900 *,
+  .bg-slate-800, .bg-slate-800 *,
+  .bg-slate-900, .bg-slate-900 * {
     color: #FFFFFF !important;
   }
 
-  /* Remove gray text colors - make them black or white based on background */
-  .text-gray-700, .text-gray-600, .text-gray-500, .text-gray-400,
-  .text-muted-foreground, .text-slate-600, .text-slate-700 {
+  /* Remove ALL gray text colors - make them black or white based on background */
+  .text-gray-700, .text-gray-600, .text-gray-500, .text-gray-400, .text-gray-300,
+  .text-muted-foreground, .text-muted, .text-slate-600, .text-slate-700,
+  .text-slate-500, .text-slate-400, .text-slate-300 {
     color: #000000 !important;
   }
 
-  /* Light gray text becomes white on dark backgrounds */
+  /* White text on dark backgrounds */
+  .bg-black .text-gray-700,
+  .bg-black .text-gray-600,
+  .bg-black .text-gray-500,
+  .bg-black .text-gray-400,
   .bg-black .text-gray-300,
+  .bg-black .text-muted-foreground,
+  .bg-brand-navy .text-gray-700,
+  .bg-brand-navy .text-gray-600,
+  .bg-brand-navy .text-gray-500,
+  .bg-brand-navy .text-gray-400,
   .bg-brand-navy .text-gray-300,
+  .bg-brand-navy .text-muted-foreground,
   .bg-gray-800 .text-gray-300,
+  .bg-gray-900 .text-gray-300,
   .dark-section .text-gray-300 {
     color: #FFFFFF !important;
   }
 
   /* Links should be visible */
-  a:not(.btn-primary):not(.btn-outline):not(.social-icon) {
+  a:not(.btn-primary):not(.btn-outline):not(.social-icon):not(.nav-link) {
     color: #0000EE !important;
     text-decoration: underline !important;
   }
 
-  a:not(.btn-primary):not(.btn-outline):not(.social-icon):hover {
+  a:not(.btn-primary):not(.btn-outline):not(.social-icon):not(.nav-link):hover {
     color: #0000CC !important;
   }
 
   /* On dark backgrounds, links should be white or red */
-  .bg-black a:not(.btn-primary):not(.btn-outline):not(.social-icon),
-  .bg-brand-navy a:not(.btn-primary):not(.btn-outline):not(.social-icon),
-  .dark-section a:not(.btn-primary):not(.btn-outline):not(.social-icon) {
+  .bg-black a:not(.btn-primary):not(.btn-outline):not(.social-icon):not(.nav-link),
+  .bg-brand-navy a:not(.btn-primary):not(.btn-outline):not(.social-icon):not(.nav-link),
+  .dark-section a:not(.btn-primary):not(.btn-outline):not(.social-icon):not(.nav-link),
+  .hero-content a:not(.btn-primary):not(.btn-outline):not(.social-icon):not(.nav-link) {
     color: #FFFFFF !important;
   }
 
@@ -157,5 +170,12 @@
   input::placeholder, textarea::placeholder {
     color: #000000 !important;
     opacity: 0.7;
+  }
+
+  /* Ensure dropdown content has proper contrast */
+  [role="listbox"], [role="option"], .dropdown-content {
+    background: #FFFFFF !important;
+    color: #000000 !important;
+    border: 2px solid #000000 !important;
   }
 }

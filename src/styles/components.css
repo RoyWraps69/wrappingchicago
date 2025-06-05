@@ -38,19 +38,19 @@ p {
 .bg-black h1, .bg-black .h1,
 .bg-black h2, .bg-black .h2,
 .bg-black h3, .bg-black .h3,
-.bg-black p,
+.bg-black p, .bg-black span, .bg-black div,
 .bg-brand-navy h1, .bg-brand-navy .h1,
 .bg-brand-navy h2, .bg-brand-navy .h2,
 .bg-brand-navy h3, .bg-brand-navy .h3,
-.bg-brand-navy p,
+.bg-brand-navy p, .bg-brand-navy span, .bg-brand-navy div,
 .hero-content h1, .hero-content .h1,
 .hero-content h2, .hero-content .h2,
 .hero-content h3, .hero-content .h3,
-.hero-content p,
+.hero-content p, .hero-content span, .hero-content div,
 .hero-overlay h1, .hero-overlay .h1,
 .hero-overlay h2, .hero-overlay .h2,
 .hero-overlay h3, .hero-overlay .h3,
-.hero-overlay p {
+.hero-overlay p, .hero-overlay span, .hero-overlay div {
   color: #FFFFFF !important;
 }
 
@@ -171,7 +171,7 @@ a:not(.btn-primary):not(.btn-outline):hover {
 /* Contact item specific fixes */
 .contact-item-highlight {
   background: rgba(255, 0, 0, 0.1) !important;
-  border: 2px solid rgba(255, 0, 0, 0.3) !important;
+  border: 2px solid #FF0000 !important;
   color: #000000 !important;
 }
 
@@ -180,8 +180,9 @@ a:not(.btn-primary):not(.btn-outline):hover {
 }
 
 .contact-item-default {
-  background: transparent !important;
+  background: #FFFFFF !important;
   color: #000000 !important;
+  border: 2px solid #000000 !important;
 }
 
 .contact-item-default * {
@@ -192,8 +193,42 @@ a:not(.btn-primary):not(.btn-outline):hover {
 .contact-item-dark {
   background: #000000 !important;
   color: #FFFFFF !important;
+  border: 2px solid #FFFFFF !important;
 }
 
 .contact-item-dark * {
   color: #FFFFFF !important;
+}
+
+/* Quick links and info bars on dark backgrounds */
+.bg-black/5, .bg-white\/5 {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+.bg-black/5 *, .bg-white\/5 * {
+  color: #FFFFFF !important;
+}
+
+/* Text color overrides for all white/light text on dark backgrounds */
+.text-white, .text-white\/70, .text-white\/80, .text-white\/90 {
+  color: #FFFFFF !important;
+}
+
+/* Ensure all form elements have proper contrast */
+.form-group label, .form-group input, .form-group textarea, .form-group select {
+  color: #000000 !important;
+  border: 2px solid #000000 !important;
+}
+
+/* Card hover effects with proper contrast */
+.card-hover {
+  transition: all 0.3s ease;
+  border: 2px solid #000000 !important;
+}
+
+.card-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+  border-color: #FF0000 !important;
 }

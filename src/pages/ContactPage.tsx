@@ -41,13 +41,13 @@ const ContactPage = () => {
       <div className="flex flex-col min-h-screen">
         <Header />
         
-        <main className="flex-grow">
+        <main className="flex-grow bg-white">
           <div className="container mx-auto py-12 px-4">
             <Breadcrumbs />
             
             <div className="mb-8">
-              <h1 className="text-3xl md:text-4xl font-bold text-brand-navy mb-4">Contact Us</h1>
-              <p className="text-lg text-gray-700">Get in touch for quotes, consultations, and scheduling</p>
+              <h1 className="text-3xl md:text-4xl font-bold text-black mb-4">Contact Us</h1>
+              <p className="text-lg text-black font-medium">Get in touch for quotes, consultations, and scheduling</p>
             </div>
             
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">

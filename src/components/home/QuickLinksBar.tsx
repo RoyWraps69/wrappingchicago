@@ -63,13 +63,13 @@ const QuickLinksBar = () => {
             <Link 
               key={index} 
               to={link.url}
-              className="bg-white/5 border border-white/10 hover:border-brand-red rounded-2xl p-4 text-center transition-all duration-300 hover:bg-white/10 group"
+              className="bg-white/10 border-2 border-white/20 hover:border-brand-red rounded-2xl p-4 text-center transition-all duration-300 hover:bg-white/20 group"
             >
-              <div className="bg-brand-red/10 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:bg-brand-red transition-colors duration-300">
+              <div className="bg-brand-red/20 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:bg-brand-red transition-colors duration-300 border-2 border-brand-red">
                 <link.icon className="h-6 w-6 text-brand-red group-hover:text-white transition-colors duration-300" />
               </div>
               <h3 className="font-bold text-white text-sm lg:text-base">{link.title}</h3>
-              <p className="text-white/70 text-xs mt-1">{link.description}</p>
+              <p className="text-white text-xs mt-1">{link.description}</p>
             </Link>
           ))}
         </div>
