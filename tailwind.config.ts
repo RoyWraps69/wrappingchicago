@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -63,7 +62,7 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Custom colors for Chicago Fleet Wraps - Updated to new brand colors
+				// Custom colors for Wrapping Chicago - Updated to new brand colors
 				brand: {
 					navy: '#111111', // Updated from #0B3954 to #111111
 					red: '#FF3131', // Updated from #FF4A1C to #FF3131
