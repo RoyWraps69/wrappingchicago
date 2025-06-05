@@ -3,33 +3,19 @@ import React, { useEffect } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Hero from '@/components/home/Hero';
-import InfoBar from '@/components/home/InfoBar';
-import QuickLinksBar from '@/components/home/QuickLinksBar';
-import ServicesSection from '@/components/home/ServicesSection';
-import InstallationFacility from '@/components/home/InstallationFacility';
-import WhyChooseUsSection from '@/components/home/WhyChooseUsSection';
-import AreasServedSection from '@/components/home/AreasServedSection';
-import VehicleWrapFAQ from '@/components/home/VehicleWrapFAQ';
-import TrustIndicators from '@/components/home/TrustIndicators';
 import HomeSEO from '@/components/home/HomeSEO';
 import EasyButtonSection from '@/components/home/EasyButtonSection';
 import StickyContactButtons from '@/components/home/StickyContactButtons';
 import BreadcrumbNavigation from '@/components/seo/BreadcrumbNavigation';
-import VehicleWrapCalculator from '@/components/calculator/VehicleWrapCalculator';
-import CustomerTestimonials from '@/components/testimonials/CustomerTestimonials';
 import TrustSignals from '@/components/trust/TrustSignals';
-import PageLinksSection from '@/components/navigation/PageLinksSection';
-import InternalLinksFooter from '@/components/seo/InternalLinksFooter';
-import { HomeInternalLinks } from '@/components/home/indexed-sections';
-import { useGalleryImages } from '@/hooks/useGalleryImages';
+import CustomerTestimonials from '@/components/testimonials/CustomerTestimonials';
 import { cities } from '@/data/cities';
 import Schema from '@/components/Schema';
-import PageFAQ from '@/components/common/PageFAQ';
+import { Star, Shield, Award, Clock } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 
 function HomePage() {
-  // Get the required images for ServicesSection
-  const { fleetWrapVan, colorChangeVan, commercialGraphics } = useGalleryImages();
-  
   // Get Chicago city for schema
   const chicagoCity = cities.find(city => city.slug === 'chicago') || cities[0];
   
@@ -42,22 +28,6 @@ function HomePage() {
     {
       question: "How long do vehicle wraps last?",
       answer: "With proper care and maintenance, our premium vehicle wraps typically last 5-7 years in Chicago's climate. All our wraps come with a 2-year warranty and are made with durable 3M and Avery Dennison materials that can withstand weather extremes and regular washing."
-    },
-    {
-      question: "Do vehicle wraps damage paint?",
-      answer: "No, professional vehicle wraps actually protect your paint when properly installed and removed. Our 3M and Avery vinyl wraps act as a shield against minor scratches, stone chips, and UV damage, helping to preserve your vehicle's original finish."
-    },
-    {
-      question: "How long does it take to wrap a vehicle?",
-      answer: "Most vehicle wrap installations take 3-5 business days to complete. Simple designs on smaller vehicles may take 2-3 days, while complex wraps on larger vehicles could take 5-7 days. We ensure thorough preparation, precise installation, and proper curing time."
-    },
-    {
-      question: "Do you provide design services for vehicle wraps?",
-      answer: "Yes, our in-house design team creates custom vehicle wrap designs tailored to your brand and marketing goals. We offer complimentary design consultations and can work from your existing brand assets or create something entirely new based on your vision."
-    },
-    {
-      question: "Can I drive my car through a car wash with a wrap?",
-      answer: "Yes, but we recommend touchless car washes for wrapped vehicles. Traditional brush car washes can potentially damage the edges of the vinyl wrap. Hand washing with non-abrasive cleaners is the best option for maintaining your wrap's appearance and longevity."
     }
   ];
 
@@ -70,7 +40,7 @@ function HomePage() {
     <>
       <HomeSEO />
       
-      {/* Simplified Schema - avoid conflicts */}
+      {/* Simplified Schema */}
       <Schema 
         city={chicagoCity}
         path="/"
@@ -95,41 +65,85 @@ function HomePage() {
         <BreadcrumbNavigation />
         <main id="main-content" className="flex-grow main-content">
           <Hero />
-          <InfoBar />
-          <QuickLinksBar />
-          <ServicesSection 
-            fleetWrapVan={fleetWrapVan} 
-            colorChangeVan={colorChangeVan} 
-            commercialGraphics={commercialGraphics}
-          />
           
-          {/* Add new components */}
-          <TrustSignals />
-          <VehicleWrapCalculator />
+          {/* Simple credibility section */}
+          <section className="py-12 bg-white">
+            <div className="container mx-auto px-4">
+              <div className="text-center mb-8">
+                <h2 className="text-3xl font-bold text-black mb-4">
+                  Why Chicago Businesses Choose Us for Vehicle Wraps
+                </h2>
+                <p className="text-lg text-black max-w-3xl mx-auto">
+                  We make vehicle wraps simple. From cars to trucks to entire fleets, 
+                  we handle everything so you can focus on your business.
+                </p>
+              </div>
+              
+              <div className="grid md:grid-cols-4 gap-6 mb-8">
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-brand-red rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Clock className="h-8 w-8 text-white" />
+                  </div>
+                  <h3 className="font-bold text-black mb-2">20+ Years Experience</h3>
+                  <p className="text-black">Over 16,000 vehicles wrapped in Chicago</p>
+                </div>
+                
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-brand-red rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Shield className="h-8 w-8 text-white" />
+                  </div>
+                  <h3 className="font-bold text-black mb-2">Premium Materials</h3>
+                  <p className="text-black">Only 3M and Avery vinyl with 2-year warranty</p>
+                </div>
+                
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-brand-red rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Award className="h-8 w-8 text-white" />
+                  </div>
+                  <h3 className="font-bold text-black mb-2">Fast Turnaround</h3>
+                  <p className="text-black">Most projects done in 3-5 business days</p>
+                </div>
+                
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-brand-red rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Star className="h-8 w-8 text-white" />
+                  </div>
+                  <h3 className="font-bold text-black mb-2">5-Star Rating</h3>
+                  <p className="text-black">98% customer satisfaction rate</p>
+                </div>
+              </div>
+              
+              <div className="text-center">
+                <div className="flex flex-col sm:flex-row justify-center gap-4">
+                  <Button
+                    asChild
+                    size="lg"
+                    className="bg-brand-red hover:bg-red-700 text-white font-semibold"
+                  >
+                    <Link to="/contact">Get Your Free Quote Today</Link>
+                  </Button>
+                  
+                  <Button
+                    asChild
+                    variant="outline"
+                    size="lg"
+                    className="border-black text-black hover:bg-black hover:text-white"
+                  >
+                    <Link to="/pricing">See Our Pricing</Link>
+                  </Button>
+                </div>
+              </div>
+            </div>
+          </section>
+          
+          {/* Customer testimonials for social proof */}
           <CustomerTestimonials />
           
-          <InstallationFacility />
-          <WhyChooseUsSection />
-          <AreasServedSection cities={cities} />
+          {/* Trust signals */}
+          <TrustSignals />
+          
+          {/* Final call to action */}
           <EasyButtonSection />
-          <TrustIndicators />
-          <VehicleWrapFAQ />
-          
-          <PageFAQ 
-            faqs={homeFAQs}
-            serviceName="Vehicle Wraps"
-            cityName="Chicago"
-          />
-          
-          <HomeInternalLinks />
-          
-          {/* Add comprehensive page links */}
-          <PageLinksSection 
-            currentPageTitle="Explore Our Complete Website"
-            excludeCurrentPath={true}
-          />
-          
-          <InternalLinksFooter />
         </main>
         <StickyContactButtons />
         <Footer />
