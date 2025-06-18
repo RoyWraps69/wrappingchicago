@@ -61,33 +61,57 @@
 }
 
 /* CRITICAL: Force high contrast on ALL text elements */
-body, p, span, div, li, td, th, section, article, aside, header, footer, nav, main {
+* {
   color: #000000 !important;
 }
 
-/* Dark sections get white text - more comprehensive */
+/* Universal text visibility - override everything */
+body, p, span, div, li, td, th, section, article, aside, header, footer, nav, main,
+h1, h2, h3, h4, h5, h6, a, label, strong, em, small, code, pre,
+.text-base, .text-lg, .text-xl, .text-2xl, .text-3xl, .text-4xl, .text-5xl, .text-6xl,
+.content, .container, .wrapper, .card, .component {
+  color: #000000 !important;
+}
+
+/* Dark sections get white text - COMPREHENSIVE */
 .bg-black, .bg-black *,
 .bg-brand-navy, .bg-brand-navy *,
 .dark-section, .dark-section *,
 .hero-content, .hero-content *,
-.hero-fullscreen *, 
 .hero-overlay, .hero-overlay *,
+.hero-fullscreen *, 
+.bg-gray-800, .bg-gray-800 *,
+.bg-gray-900, .bg-gray-900 *,
+.bg-slate-800, .bg-slate-800 *,
+.bg-slate-900, .bg-slate-900 *,
+.bg-gradient-to-r, .bg-gradient-to-r *,
+.bg-gradient-to-l, .bg-gradient-to-l *,
+.bg-gradient-to-t, .bg-gradient-to-t *,
+.bg-gradient-to-b, .bg-gradient-to-b *,
+[class*="bg-gradient"], [class*="bg-gradient"] *,
+[class*="bg-black"], [class*="bg-black"] *,
 [class*="bg-gray-8"], [class*="bg-gray-8"] *,
-[class*="bg-gray-9"], [class*="bg-gray-9"] *,
-[class*="bg-slate-8"], [class*="bg-slate-8"] *,
-[class*="bg-slate-9"], [class*="bg-slate-9"] *,
-.bg-gradient-to-r, .bg-gradient-to-r * {
+[class*="bg-gray-9"], [class*="bg-gray-9"] * {
   color: #FFFFFF !important;
 }
 
-/* Ensure hero and overlay text is white */
-.hero-content, .hero-content *, 
-.hero-fullscreen *, 
-.text-white, .text-white *,
-.hero-overlay, .hero-overlay *, 
-.bg-black\/90 *, 
-.bg-brand-navy\/90 *,
-.bg-gradient-to-r * {
+/* ELIMINATE ALL gray text colors - make them black on light backgrounds */
+.text-gray-700, .text-gray-600, .text-gray-500, .text-gray-400, .text-gray-300, .text-gray-200, .text-gray-100,
+.text-muted-foreground, .text-muted, .text-slate-600, .text-slate-700,
+.text-slate-500, .text-slate-400, .text-slate-300, .text-slate-200, .text-slate-100,
+.text-zinc-600, .text-zinc-700, .text-zinc-500, .text-zinc-400, .text-zinc-300,
+.text-neutral-600, .text-neutral-700, .text-neutral-500, .text-neutral-400, .text-neutral-300 {
+  color: #000000 !important;
+}
+
+/* White text on ALL dark backgrounds - more specific selectors */
+.bg-black .text-gray-700, .bg-black .text-gray-600, .bg-black .text-gray-500, .bg-black .text-gray-400, .bg-black .text-gray-300, .bg-black .text-gray-200, .bg-black .text-muted-foreground,
+.bg-brand-navy .text-gray-700, .bg-brand-navy .text-gray-600, .bg-brand-navy .text-gray-500, .bg-brand-navy .text-gray-400, .bg-brand-navy .text-gray-300, .bg-brand-navy .text-gray-200, .bg-brand-navy .text-muted-foreground,
+.bg-gray-800 .text-gray-300, .bg-gray-900 .text-gray-300,
+.dark-section .text-gray-300, 
+.bg-gradient-to-r .text-gray-300, .bg-gradient-to-r .text-gray-400, .bg-gradient-to-r .text-gray-500,
+[class*="bg-gradient"] .text-gray-300, [class*="bg-gradient"] .text-gray-400, [class*="bg-gradient"] .text-gray-500,
+[class*="bg-black"] .text-gray-300, [class*="bg-black"] .text-gray-400, [class*="bg-black"] .text-gray-500 {
   color: #FFFFFF !important;
 }
 
@@ -99,21 +123,38 @@ body, p, span, div, li, td, th, section, article, aside, header, footer, nav, ma
   color: #FFFFFF !important;
 }
 
-/* CRITICAL: Remove muted gray text - make it black */
-.text-gray-700, .text-gray-600, .text-gray-500, .text-gray-400, .text-gray-300, .text-gray-200, .text-gray-100,
-.text-muted-foreground, .text-muted, .text-slate-600, .text-slate-700, .text-slate-500, .text-slate-400, .text-slate-300,
-.text-zinc-600, .text-zinc-700, .text-zinc-500, .text-zinc-400, .text-zinc-300 {
+/* Card and component contrast - ensure all containers have proper text */
+.card, .card *, 
+[class*="bg-white"], [class*="bg-white"] *, 
+.bg-gray-50, .bg-gray-50 *, 
+.bg-gray-100, .bg-gray-100 *,
+.racing-stripes, .racing-stripes *, 
+.carbon-fiber-light, .carbon-fiber-light *,
+.container, .container *,
+.wrapper, .wrapper *,
+.component, .component *,
+.section, .section * {
   color: #000000 !important;
 }
 
-/* White text on dark backgrounds - more specific */
-.bg-black .text-gray-700, .bg-black .text-gray-600, .bg-black .text-gray-500, .bg-black .text-gray-400, .bg-black .text-gray-300, .bg-black .text-gray-200, .bg-black .text-gray-100,
-.bg-brand-navy .text-gray-700, .bg-brand-navy .text-gray-600, .bg-brand-navy .text-gray-500, .bg-brand-navy .text-gray-400, .bg-brand-navy .text-gray-300, .bg-brand-navy .text-gray-200, .bg-brand-navy .text-gray-100,
-.bg-gray-800 .text-gray-300, .bg-gray-800 .text-gray-200, .bg-gray-800 .text-gray-100,
-.bg-gray-900 .text-gray-300, .bg-gray-900 .text-gray-200, .bg-gray-900 .text-gray-100,
-.dark-section .text-gray-300, .dark-section .text-gray-200, .dark-section .text-gray-100,
-.bg-gradient-to-r .text-gray-300, .bg-gradient-to-r .text-gray-200, .bg-gradient-to-r .text-gray-100 {
-  color: #FFFFFF !important;
+/* Navigation contrast */
+nav, nav *, 
+.nav-sticky, .nav-sticky *, 
+header, header *,
+.navigation, .navigation * {
+  color: #000000 !important;
+}
+
+/* Form input contrast */
+input, textarea, select {
+  background: #FFFFFF !important;
+  color: #000000 !important;
+  border: 2px solid #D1D5DB !important;
+}
+
+input::placeholder, textarea::placeholder, select::placeholder {
+  color: #666666 !important;
+  opacity: 1;
 }
 
 /* Link contrast - improved readability */
@@ -131,41 +172,10 @@ a:not(.btn):not(.button):not([class*="bg-"]):not(.social-icon):not(.nav-link):ho
 .bg-brand-navy a:not(.btn):not(.button):not(.social-icon):not(.nav-link),
 .dark-section a:not(.btn):not(.button):not(.social-icon):not(.nav-link),
 .hero-content a:not(.btn):not(.button):not(.social-icon):not(.nav-link),
-.bg-gradient-to-r a:not(.btn):not(.button):not(.social-icon):not(.nav-link) {
+.bg-gradient-to-r a:not(.btn):not(.button):not(.social-icon):not(.nav-link),
+[class*="bg-gradient"] a:not(.btn):not(.button):not(.social-icon):not(.nav-link),
+[class*="bg-black"] a:not(.btn):not(.button):not(.social-icon):not(.nav-link) {
   color: #87CEEB !important;
-}
-
-/* Card and component contrast */
-.card, [class*="bg-white"], .bg-gray-50, .racing-stripes, .carbon-fiber-light {
-  background: #FFFFFF !important;
-  color: #000000 !important;
-  border: 1px solid #E5E7EB !important;
-}
-
-.card *, [class*="bg-white"] *, .bg-gray-50 *, .racing-stripes *, .carbon-fiber-light * {
-  color: #000000 !important;
-}
-
-/* Navigation contrast */
-nav, .nav-sticky, header {
-  background: #FFFFFF !important;
-  border-bottom: 1px solid #E5E7EB !important;
-}
-
-nav *, .nav-sticky *, header * {
-  color: #000000 !important;
-}
-
-/* Form input contrast */
-input, textarea, select {
-  background: #FFFFFF !important;
-  color: #000000 !important;
-  border: 2px solid #D1D5DB !important;
-}
-
-input::placeholder, textarea::placeholder, select::placeholder {
-  color: #666666 !important;
-  opacity: 1;
 }
 
 /* Focus states for accessibility */
@@ -182,7 +192,8 @@ input::placeholder, textarea::placeholder, select::placeholder {
     border-color: #000000 !important;
   }
   
-  .bg-black, .bg-brand-navy, .dark-section, .bg-gradient-to-r {
+  .bg-black, .bg-brand-navy, .dark-section, .bg-gradient-to-r,
+  [class*="bg-gradient"], [class*="bg-black"] {
     background: #000000 !important;
     color: #FFFFFF !important;
   }
@@ -199,17 +210,60 @@ h1, h2, h3, h4, h5, h6,
 .bg-black h1, .bg-black h2, .bg-black h3, .bg-black h4, .bg-black h5, .bg-black h6,
 .bg-brand-navy h1, .bg-brand-navy h2, .bg-brand-navy h3, .bg-brand-navy h4, .bg-brand-navy h5, .bg-brand-navy h6,
 .hero-content h1, .hero-content h2, .hero-content h3, .hero-content h4, .hero-content h5, .hero-content h6,
-.bg-gradient-to-r h1, .bg-gradient-to-r h2, .bg-gradient-to-r h3, .bg-gradient-to-r h4, .bg-gradient-to-r h5, .bg-gradient-to-r h6 {
+.bg-gradient-to-r h1, .bg-gradient-to-r h2, .bg-gradient-to-r h3, .bg-gradient-to-r h4, .bg-gradient-to-r h5, .bg-gradient-to-r h6,
+[class*="bg-gradient"] h1, [class*="bg-gradient"] h2, [class*="bg-gradient"] h3, [class*="bg-gradient"] h4, [class*="bg-gradient"] h5, [class*="bg-gradient"] h6,
+[class*="bg-black"] h1, [class*="bg-black"] h2, [class*="bg-black"] h3, [class*="bg-black"] h4, [class*="bg-black"] h5, [class*="bg-black"] h6 {
   color: #FFFFFF !important;
 }
 
 /* Additional text visibility fixes */
-main, section, article {
+main, main *, 
+section, section *, 
+article, article *,
+div, div *,
+span,
+p {
   color: #000000 !important;
 }
 
-main *, section *, article * {
-  color: inherit !important;
+/* Override for dark sections */
+.bg-black main, .bg-black main *, 
+.bg-black section, .bg-black section *, 
+.bg-black article, .bg-black article *,
+.bg-black div, .bg-black div *,
+.bg-black span,
+.bg-black p,
+.bg-brand-navy main, .bg-brand-navy main *, 
+.bg-brand-navy section, .bg-brand-navy section *, 
+.bg-brand-navy article, .bg-brand-navy article *,
+.bg-brand-navy div, .bg-brand-navy div *,
+.bg-brand-navy span,
+.bg-brand-navy p,
+.hero-content main, .hero-content main *, 
+.hero-content section, .hero-content section *, 
+.hero-content article, .hero-content article *,
+.hero-content div, .hero-content div *,
+.hero-content span,
+.hero-content p,
+.bg-gradient-to-r main, .bg-gradient-to-r main *, 
+.bg-gradient-to-r section, .bg-gradient-to-r section *, 
+.bg-gradient-to-r article, .bg-gradient-to-r article *,
+.bg-gradient-to-r div, .bg-gradient-to-r div *,
+.bg-gradient-to-r span,
+.bg-gradient-to-r p,
+[class*="bg-gradient"] main, [class*="bg-gradient"] main *, 
+[class*="bg-gradient"] section, [class*="bg-gradient"] section *, 
+[class*="bg-gradient"] article, [class*="bg-gradient"] article *,
+[class*="bg-gradient"] div, [class*="bg-gradient"] div *,
+[class*="bg-gradient"] span,
+[class*="bg-gradient"] p,
+[class*="bg-black"] main, [class*="bg-black"] main *, 
+[class*="bg-black"] section, [class*="bg-black"] section *, 
+[class*="bg-black"] article, [class*="bg-black"] article *,
+[class*="bg-black"] div, [class*="bg-black"] div *,
+[class*="bg-black"] span,
+[class*="bg-black"] p {
+  color: #FFFFFF !important;
 }
 
 /* Specific component fixes */
@@ -218,6 +272,10 @@ main *, section *, article * {
   font-weight: 600 !important;
 }
 
-.bg-gradient-to-r .speakable {
+.bg-gradient-to-r .speakable,
+.bg-black .speakable,
+.bg-brand-navy .speakable,
+[class*="bg-gradient"] .speakable,
+[class*="bg-black"] .speakable {
   color: #FFFFFF !important;
 }
