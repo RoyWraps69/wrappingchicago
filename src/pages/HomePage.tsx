@@ -33,8 +33,13 @@ function HomePage() {
 
   // Add indexing hint to the console that can help identify if page was rendered correctly
   useEffect(() => {
+    console.log('HomePage component mounted and rendering');
     console.log('HomePage - Google indexing compatibility check: PASS');
+    console.log('Current URL:', window.location.href);
+    console.log('Current pathname:', window.location.pathname);
   }, []);
+
+  console.log('HomePage render - About to return JSX');
 
   return (
     <>

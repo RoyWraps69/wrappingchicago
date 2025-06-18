@@ -37,6 +37,7 @@ function App() {
   useEffect(() => {
     // Debug routing
     console.log('App component mounted, current path:', window.location.pathname);
+    console.log('HomePage component:', HomePage);
     
     // Create and add structured data for the website
     const structuredData = document.createElement('script');
@@ -125,8 +126,16 @@ function App() {
         <a href="#main-content" className="skip-link">Skip to main content</a>
         
         <Routes>
-          {/* HOME ROUTE - MUST BE EXACT MATCH */}
-          <Route path="/" element={<HomePage />} />
+          {/* HOME ROUTE - EXPLICIT AND FIRST */}
+          <Route 
+            path="/" 
+            element={
+              <div>
+                {console.log('Rendering HomePage for path:', window.location.pathname)}
+                <HomePage />
+              </div>
+            } 
+          />
           
           {/* Main navigation routes */}
           <Route path="/about" element={<AboutPage />} />
