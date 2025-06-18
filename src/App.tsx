@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import './App.css';
@@ -114,6 +115,11 @@ function App() {
     };
   }, []);
 
+  const HomePageWithDebug = () => {
+    console.log('Rendering HomePage for path:', window.location.pathname);
+    return <HomePage />;
+  };
+
   return (
     <HelmetProvider>
       <BrowserRouter>
@@ -127,15 +133,7 @@ function App() {
         
         <Routes>
           {/* HOME ROUTE - EXPLICIT AND FIRST */}
-          <Route 
-            path="/" 
-            element={
-              <div>
-                {console.log('Rendering HomePage for path:', window.location.pathname)}
-                <HomePage />
-              </div>
-            } 
-          />
+          <Route path="/" element={<HomePageWithDebug />} />
           
           {/* Main navigation routes */}
           <Route path="/about" element={<AboutPage />} />
