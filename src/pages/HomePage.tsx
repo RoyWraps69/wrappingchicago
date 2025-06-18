@@ -37,6 +37,28 @@ function HomePage() {
     console.log('HomePage - Google indexing compatibility check: PASS');
     console.log('Current URL:', window.location.href);
     console.log('Current pathname:', window.location.pathname);
+    console.log('HomePage useEffect running - no redirects should happen here');
+    
+    // Check if there are any programmatic navigations happening
+    const originalPushState = history.pushState;
+    const originalReplaceState = history.replaceState;
+    
+    history.pushState = function(...args) {
+      console.log('History pushState called from HomePage:', args);
+      console.trace('pushState call stack');
+      return originalPushState.apply(this, args);
+    };
+    
+    history.replaceState = function(...args) {
+      console.log('History replaceState called from HomePage:', args);
+      console.trace('replaceState call stack');
+      return originalReplaceState.apply(this, args);
+    };
+    
+    return () => {
+      history.pushState = originalPushState;
+      history.replaceState = originalReplaceState;
+    };
   }, []);
 
   console.log('HomePage render - About to return JSX');

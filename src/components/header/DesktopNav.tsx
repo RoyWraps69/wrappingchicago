@@ -20,7 +20,9 @@ const DesktopNav = () => {
     e.preventDefault();
     console.log('Home link clicked, current location:', location.pathname);
     console.log('Navigating to /');
-    navigate('/', { replace: true });
+    console.log('Preventing any navigation - home link should not cause redirects');
+    // Remove the navigate call that might be causing issues
+    // navigate('/', { replace: true });
   };
 
   return (
@@ -29,7 +31,6 @@ const DesktopNav = () => {
       <div className="relative z-50 mr-8">
         <Link 
           to="/" 
-          onClick={handleHomeClick}
           className="text-brand-navy hover:text-brand-red transition-all duration-300 flex items-center font-medium px-4 py-2 rounded-md hover:bg-gray-50 cursor-pointer"
           style={{ 
             pointerEvents: 'auto',
