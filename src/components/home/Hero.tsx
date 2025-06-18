@@ -8,7 +8,7 @@ const Hero = () => {
   return (
     <div className="hero-fullscreen bg-black relative flex items-center justify-center">
       {/* EMERGENCY: Dark overlay for text visibility */}
-      <div className="absolute inset-0 z-10 bg-black/90"></div>
+      <div className="absolute inset-0 z-10 bg-black/95"></div>
       
       <div className="hero-content relative z-20 text-center max-w-6xl mx-auto px-4">
         <h1 className="text-5xl sm:text-6xl md:text-7xl font-extrabold uppercase tracking-wider text-white mb-6 text-center">
@@ -25,7 +25,7 @@ const Hero = () => {
             size="xl"
             variant="gradient"
             animation="glow"
-            className="font-semibold text-white"
+            className="font-semibold text-white bg-brand-red hover:bg-red-700"
           >
             <Link to="/contact" className="inline-flex items-center text-white">
               Request a Quote
@@ -37,9 +37,9 @@ const Hero = () => {
             asChild
             variant="outline"
             size="xl"
-            className="border-white text-white hover:bg-white/10 hover:text-white"
+            className="border-white text-white hover:bg-white hover:text-black bg-transparent"
           >
-            <a href="tel:3125971286" className="inline-flex items-center text-white">
+            <a href="tel:3125971286" className="inline-flex items-center text-white hover:text-black">
               <Phone className="mr-2 h-5 w-5" />
               (312) 597-1286
             </a>

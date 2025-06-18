@@ -7,7 +7,7 @@ import { MessageSquare, Phone } from 'lucide-react';
 const StickyContactButtons: React.FC = () => {
   return (
     <div className="sticky top-4 z-50 w-full max-w-2xl mx-auto px-4">
-      <div className="flex justify-center gap-4 p-3 bg-black/90 backdrop-blur-sm rounded-full shadow-xl border-2 border-white/20">
+      <div className="flex justify-center gap-4 p-3 bg-black backdrop-blur-sm rounded-full shadow-xl border-2 border-white">
         <Button
           asChild
           size="sm"
@@ -22,7 +22,7 @@ const StickyContactButtons: React.FC = () => {
           asChild
           variant="outline"
           size="sm"
-          className="bg-white/20 border-2 border-white text-white hover:bg-white/30 rounded-full font-bold"
+          className="bg-white border-2 border-white text-black hover:bg-gray-100 rounded-full font-bold"
         >
           <a href="tel:3125971286" className="inline-flex items-center">
             <Phone className="mr-2 h-4 w-4" />

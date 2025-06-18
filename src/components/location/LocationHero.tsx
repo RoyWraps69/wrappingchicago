@@ -45,9 +45,9 @@ const LocationHero = ({ cityName }: LocationHeroProps) => {
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-30">
         {/* Contact Bar - Prominent at the top */}
-        <div className="bg-white/90 backdrop-blur-sm shadow-lg rounded-lg p-4 mb-6 md:mb-8 border border-gray-200 flex flex-col sm:flex-row items-center justify-between">
+        <div className="bg-white shadow-lg rounded-lg p-4 mb-6 md:mb-8 border border-gray-200 flex flex-col sm:flex-row items-center justify-between">
           <div className="mb-4 sm:mb-0 text-center sm:text-left">
-            <h3 className="text-base md:text-lg font-semibold text-brand-navy">Need Vehicle Wraps in {cityName}?</h3>
+            <h3 className="text-base md:text-lg font-semibold text-gray-900">Need Vehicle Wraps in {cityName}?</h3>
             <p className="text-sm md:text-base text-gray-700">Premium car wraps, truck wraps, van wraps, and fleet graphics</p>
           </div>
           <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
@@ -63,7 +63,7 @@ const LocationHero = ({ cityName }: LocationHeroProps) => {
             <Button
               asChild
               variant="outline"
-              className="border-brand-navy text-brand-navy hover:bg-brand-navy hover:text-white w-full sm:w-auto"
+              className="border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white w-full sm:w-auto"
             >
               <a href="tel:3125971286" className="inline-flex items-center justify-center">
                 <Phone className="mr-2 h-4 w-4" />
@@ -75,7 +75,7 @@ const LocationHero = ({ cityName }: LocationHeroProps) => {
         
         <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
           <div className="animate-fade-in">
-            <div className="inline-flex items-center px-3 md:px-4 py-1 md:py-2 rounded-full bg-brand-red/90 text-white mb-4 md:mb-6">
+            <div className="inline-flex items-center px-3 md:px-4 py-1 md:py-2 rounded-full bg-brand-red text-white mb-4 md:mb-6">
               <MapPin className="h-3 w-3 md:h-4 md:w-4 mr-1 md:mr-2" />
               <span className="font-medium text-xs md:text-sm">Serving {cityName}, Illinois</span>
             </div>
@@ -90,31 +90,31 @@ const LocationHero = ({ cityName }: LocationHeroProps) => {
             
             {/* Services Overview Section */}
             <div className="grid grid-cols-2 gap-2 md:gap-3 mb-6 location-service-title">
-              <div className="flex items-center gap-2 bg-white rounded-lg p-3 shadow-sm">
+              <div className="flex items-center gap-2 bg-white rounded-lg p-3 shadow-sm border border-gray-200">
                 <Car className="h-4 w-4 md:h-5 md:w-5 text-brand-red" />
-                <span className="text-xs md:text-sm font-medium">Car Wraps</span>
+                <span className="text-xs md:text-sm font-medium text-gray-900">Car Wraps</span>
               </div>
-              <div className="flex items-center gap-2 bg-white rounded-lg p-3 shadow-sm">
+              <div className="flex items-center gap-2 bg-white rounded-lg p-3 shadow-sm border border-gray-200">
                 <Truck className="h-4 w-4 md:h-5 md:w-5 text-brand-red" />
-                <span className="text-xs md:text-sm font-medium">Truck Wraps</span>
+                <span className="text-xs md:text-sm font-medium text-gray-900">Truck Wraps</span>
               </div>
-              <div className="flex items-center gap-2 bg-white rounded-lg p-3 shadow-sm">
+              <div className="flex items-center gap-2 bg-white rounded-lg p-3 shadow-sm border border-gray-200">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-brand-red md:w-5 md:h-5">
                   <path d="M10 17h4V8h-4z"/>
                   <path d="M2 9v8h10V9c0-4-1.5-5-5-5S2 5 2 9z"/>
                   <path d="M12 9v8h10V9c0-4-1.5-5-5-5s-5 1-5 5z"/>
                 </svg>
-                <span className="text-xs md:text-sm font-medium">Van Wraps</span>
+                <span className="text-xs md:text-sm font-medium text-gray-900">Van Wraps</span>
               </div>
-              <div className="flex items-center gap-2 bg-white rounded-lg p-3 shadow-sm">
+              <div className="flex items-center gap-2 bg-white rounded-lg p-3 shadow-sm border border-gray-200">
                 <Shield className="h-4 w-4 md:h-5 md:w-5 text-brand-red" />
-                <span className="text-xs md:text-sm font-medium">Vinyl Wraps</span>
+                <span className="text-xs md:text-sm font-medium text-gray-900">Vinyl Wraps</span>
               </div>
             </div>
             
             {/* Enhanced Contact Buttons Section */}
-            <div className="bg-black/5 backdrop-blur-sm rounded-xl p-4 mb-6 border border-gray-200">
-              <h3 className="text-gray-800 font-semibold mb-3 text-sm md:text-base">Ready to transform your vehicle in {cityName}?</h3>
+            <div className="bg-gray-100 rounded-xl p-4 mb-6 border border-gray-200">
+              <h3 className="text-gray-900 font-semibold mb-3 text-sm md:text-base">Ready to transform your vehicle in {cityName}?</h3>
               <div className="flex flex-col sm:flex-row gap-3">
                 <Button
                   asChild
@@ -131,7 +131,7 @@ const LocationHero = ({ cityName }: LocationHeroProps) => {
                   asChild
                   variant="outline"
                   size={isMobile ? "default" : "lg"}
-                  className="border-gray-300 bg-white text-gray-800 hover:bg-gray-100 font-medium px-4 md:px-8 py-2 md:py-6 h-auto rounded-full w-full sm:w-auto"
+                  className="border-gray-900 bg-white text-gray-900 hover:bg-gray-900 hover:text-white font-medium px-4 md:px-8 py-2 md:py-6 h-auto rounded-full w-full sm:w-auto"
                 >
                   <a href="tel:3125971286" className="inline-flex items-center justify-center">
                     <Phone className="mr-2 h-4 w-4 md:h-5 md:w-5" />
@@ -146,7 +146,7 @@ const LocationHero = ({ cityName }: LocationHeroProps) => {
                 asChild
                 variant="outline"
                 size={isMobile ? "default" : "lg"}
-                className="border-gray-300 bg-white text-gray-800 hover:bg-gray-100 font-medium px-4 md:px-8 py-2 md:py-6 h-auto rounded-full flex items-center justify-center w-full sm:w-auto"
+                className="border-gray-900 bg-white text-gray-900 hover:bg-gray-900 hover:text-white font-medium px-4 md:px-8 py-2 md:py-6 h-auto rounded-full flex items-center justify-center w-full sm:w-auto"
               >
                 <Link to="/gallery">
                   <ArrowRight className="mr-2 h-4 w-4" />
@@ -158,7 +158,7 @@ const LocationHero = ({ cityName }: LocationHeroProps) => {
                 asChild
                 variant="outline"
                 size={isMobile ? "default" : "lg"}
-                className="border-gray-300 bg-white text-gray-800 hover:bg-gray-100 font-medium px-4 md:px-8 py-2 md:py-6 h-auto rounded-full flex items-center justify-center w-full sm:w-auto"
+                className="border-gray-900 bg-white text-gray-900 hover:bg-gray-900 hover:text-white font-medium px-4 md:px-8 py-2 md:py-6 h-auto rounded-full flex items-center justify-center w-full sm:w-auto"
               >
                 <Link to="/ai-wrap-ideas">
                   <Sparkles className="mr-2 h-4 w-4" />
@@ -177,9 +177,9 @@ const LocationHero = ({ cityName }: LocationHeroProps) => {
                 className="rounded-lg shadow-2xl relative z-10 transform rotate-2"
                 loading="lazy"
               />
-              <div className="absolute -bottom-6 -right-6 bg-white/90 backdrop-blur rounded-lg shadow-xl p-4 transform -rotate-3 z-20 border border-gray-200">
-                <p className="text-gray-800 font-bold">{cityName}'s Most Trusted Vehicle Wrap Provider</p>
-                <p className="text-sm text-gray-600">Car wraps • Truck wraps • Van wraps • Fleet graphics</p>
+              <div className="absolute -bottom-6 -right-6 bg-white backdrop-blur rounded-lg shadow-xl p-4 transform -rotate-3 z-20 border border-gray-200">
+                <p className="text-gray-900 font-bold">{cityName}'s Most Trusted Vehicle Wrap Provider</p>
+                <p className="text-sm text-gray-700">Car wraps • Truck wraps • Van wraps • Fleet graphics</p>
               </div>
             </div>
           </div>

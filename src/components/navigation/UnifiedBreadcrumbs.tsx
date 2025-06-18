@@ -33,16 +33,16 @@ const UnifiedBreadcrumbs: React.FC<UnifiedBreadcrumbsProps> = ({ city }) => {
             <React.Fragment key={`${crumb.position}-${crumb.name}`}>
               {index > 0 && (
                 <BreadcrumbSeparator>
-                  <ChevronRight className="h-4 w-4" />
+                  <ChevronRight className="h-4 w-4 text-gray-600" />
                 </BreadcrumbSeparator>
               )}
               
               <BreadcrumbItem>
                 {isLast ? (
-                  <BreadcrumbPage>{crumb.name}</BreadcrumbPage>
+                  <BreadcrumbPage className="text-gray-900 font-medium">{crumb.name}</BreadcrumbPage>
                 ) : (
                   <BreadcrumbLink asChild>
-                    <Link to={crumb.url || crumb.item} className="flex items-center">
+                    <Link to={crumb.url || crumb.item} className="flex items-center text-blue-600 hover:text-blue-800 font-medium">
                       {index === 0 && <Home className="h-4 w-4 mr-1" />}
                       {crumb.name}
                     </Link>
