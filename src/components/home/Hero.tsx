@@ -6,16 +6,16 @@ import { ArrowRight, Phone } from 'lucide-react';
 
 const Hero = () => {
   return (
-    <div className="hero-fullscreen bg-black relative">
+    <div className="hero-fullscreen bg-black relative flex items-center justify-center">
       {/* EMERGENCY: Dark overlay for text visibility */}
       <div className="absolute inset-0 z-10 bg-black/90"></div>
       
-      <div className="hero-content relative z-20">
-        <h1 className="text-5xl sm:text-6xl md:text-7xl font-extrabold uppercase tracking-wider text-white mb-6">
+      <div className="hero-content relative z-20 text-center max-w-6xl mx-auto px-4">
+        <h1 className="text-5xl sm:text-6xl md:text-7xl font-extrabold uppercase tracking-wider text-white mb-6 text-center">
           Fleet Wraps That Dominate.
         </h1>
         
-        <p className="text-xl md:text-2xl font-medium text-white mb-10 max-w-2xl mx-auto">
+        <p className="text-xl md:text-2xl font-medium text-white mb-10 max-w-2xl mx-auto text-center">
           From box trucks to Corvettes — we make your brand impossible to ignore.
         </p>
         
