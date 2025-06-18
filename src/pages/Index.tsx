@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -15,6 +14,7 @@ import EasyButtonSection from '@/components/home/EasyButtonSection';
 import BreadcrumbSchema from '@/components/schemas/BreadcrumbSchema';
 import CanonicalManager from '@/components/seo/CanonicalManager';
 import KeywordRichContent from '@/components/home/KeywordRichContent';
+import ComprehensiveSEOFix from '@/components/seo/ComprehensiveSEOFix';
 
 // Import the home page components
 import InfoBar from '@/components/home/InfoBar';
@@ -82,8 +82,54 @@ const Index = () => {
     }
   ];
 
+  // Enhanced structured data for homepage
+  const homeStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Wrapping Chicago",
+    "alternateName": "Chicago Vehicle Wraps",
+    "url": "https://www.wrappingchicago.com/",
+    "telephone": "+13125971286",
+    "email": "roy@chicagofleetwraps.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "4711 N. Lamon Ave",
+      "addressLocality": "Chicago",
+      "addressRegion": "IL",
+      "postalCode": "60630",
+      "addressCountry": "US"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 41.8781,
+      "longitude": -87.6298
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "09:00",
+      "closes": "17:00"
+    },
+    "priceRange": "$$",
+    "areaServed": {
+      "@type": "City",
+      "name": "Chicago"
+    }
+  };
+
   return (
     <>
+      {/* FIXED: Comprehensive SEO implementation */}
+      <ComprehensiveSEOFix
+        pageTitle="Vehicle Wraps Chicago | Car Wraps, Truck Wraps & Fleet Graphics"
+        pageDescription="Professional vehicle wraps in Chicago IL. Custom car wraps, truck wraps, van wraps, and fleet graphics with premium 3M vinyl. Get quotes for color change wraps, luxury wraps, and commercial branding solutions."
+        keywords={keywords}
+        canonicalUrl="https://www.wrappingchicago.com/"
+        ogImage="https://www.wrappingchicago.com/lovable-uploads/6ef3b1af-8591-4d36-97c2-9366401115fa.png"
+        structuredData={homeStructuredData}
+        priority="critical"
+      />
+      
       <HomeSEO />
       <CanonicalManager customCanonical="https://www.wrappingchicago.com/" />
       
