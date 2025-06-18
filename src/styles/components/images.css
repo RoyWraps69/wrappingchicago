@@ -1,5 +1,4 @@
 
-
 /* ==============================
    IMAGE RESPONSIVENESS - UNIVERSAL FIX
    - Site-wide image container and responsiveness rules
@@ -16,11 +15,11 @@ img {
 }
 
 /* Image containers - prevent overflow */
-[class*="h-"], .image-container, .relative {
+[class*="aspect-"], .image-container, .relative {
   overflow: hidden;
 }
 
-/* Remove fixed heights and use aspect ratios instead */
+/* Consistent aspect ratios for different use cases */
 .aspect-video {
   aspect-ratio: 16 / 9;
   width: 100%;
@@ -39,10 +38,17 @@ img {
   height: auto;
 }
 
-/* Ensure images fill their aspect ratio containers */
+.aspect-[3/2] {
+  aspect-ratio: 3 / 2;
+  width: 100%;
+  height: auto;
+}
+
+/* Ensure images fill their aspect ratio containers properly */
 .aspect-video img, 
 .aspect-square img, 
-.aspect-[4/3] img {
+.aspect-[4/3] img,
+.aspect-[3/2] img {
   width: 100% !important;
   height: 100% !important;
   object-fit: cover !important;
@@ -57,19 +63,16 @@ img {
 }
 
 .gallery-image img, .showcase-image img, .hero-image img {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
 }
 
-/* Override any remaining fixed height classes */
+/* Override any remaining fixed height classes that cause oversized images */
 .h-64, .h-48, .h-40, .h-32, .h-28, .h-24, .h-20, .h-16 {
   height: auto !important;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 4 / 3;
 }
 
 .h-64 img, .h-48 img, .h-40 img, .h-32 img, .h-28 img, .h-24 img, .h-20 img, .h-16 img {
@@ -82,7 +85,11 @@ img {
 /* Mobile responsive adjustments */
 @media (max-width: 768px) {
   .aspect-video {
-    aspect-ratio: 4 / 3; /* Slightly taller on mobile */
+    aspect-ratio: 4 / 3; /* Slightly taller on mobile for better visibility */
+  }
+  
+  .aspect-[4/3] {
+    aspect-ratio: 1 / 1; /* Square on mobile for consistency */
   }
   
   .grid-cols-2 .aspect-square {
@@ -107,10 +114,11 @@ img {
   left: 0;
 }
 
-/* Prevent image stretching in flexbox */
+/* Prevent image stretching in flexbox and grid */
 .flex img, .grid img {
   flex-shrink: 0;
   min-width: 0;
+  max-width: 100%;
 }
 
 /* Card image containers */
@@ -131,6 +139,7 @@ img:not([src]), img[src=""], img[src*="placeholder"] {
   display: flex;
   align-items: center;
   justify-content: center;
+  min-height: 200px;
 }
 
 img:not([src])::before, img[src=""]::before {
@@ -139,3 +148,14 @@ img:not([src])::before, img[src=""]::before {
   font-size: 0.875rem;
 }
 
+/* Specific fixes for oversized images */
+.container img, .max-w-7xl img, .max-w-6xl img, .max-w-5xl img, .max-w-4xl img {
+  max-width: 100% !important;
+  height: auto !important;
+}
+
+/* Force proper sizing on all image containers */
+[class*="w-full"] img {
+  max-width: 100% !important;
+  height: auto !important;
+}

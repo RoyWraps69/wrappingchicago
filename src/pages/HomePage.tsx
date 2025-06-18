@@ -66,7 +66,7 @@ function HomePage() {
         <main id="main-content" className="flex-grow main-content relative z-10">
           <Hero />
           
-          {/* Simple credibility section */}
+          {/* Simple credibility section with fixed icon sizes */}
           <section className="py-12 bg-white relative z-10">
             <div className="container mx-auto px-4">
               <div className="text-center mb-8">
@@ -81,35 +81,35 @@ function HomePage() {
               
               <div className="grid md:grid-cols-4 gap-6 mb-8">
                 <div className="text-center">
-                  <div className="w-16 h-16 bg-brand-red rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Clock className="h-8 w-8 text-white" />
+                  <div className="w-12 h-12 bg-brand-red rounded-full flex items-center justify-center mx-auto mb-3">
+                    <Clock className="h-6 w-6 text-white" />
                   </div>
-                  <h3 className="font-bold text-black mb-2">20+ Years Experience</h3>
-                  <p className="text-black">Over 16,000 vehicles wrapped in Chicago</p>
+                  <h3 className="font-bold text-black mb-2 text-lg">20+ Years Experience</h3>
+                  <p className="text-black text-sm">Over 16,000 vehicles wrapped in Chicago</p>
                 </div>
                 
                 <div className="text-center">
-                  <div className="w-16 h-16 bg-brand-red rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Shield className="h-8 w-8 text-white" />
+                  <div className="w-12 h-12 bg-brand-red rounded-full flex items-center justify-center mx-auto mb-3">
+                    <Shield className="h-6 w-6 text-white" />
                   </div>
-                  <h3 className="font-bold text-black mb-2">Premium Materials</h3>
-                  <p className="text-black">Only 3M and Avery vinyl with 2-year warranty</p>
+                  <h3 className="font-bold text-black mb-2 text-lg">Premium Materials</h3>
+                  <p className="text-black text-sm">Only 3M and Avery vinyl with 2-year warranty</p>
                 </div>
                 
                 <div className="text-center">
-                  <div className="w-16 h-16 bg-brand-red rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Award className="h-8 w-8 text-white" />
+                  <div className="w-12 h-12 bg-brand-red rounded-full flex items-center justify-center mx-auto mb-3">
+                    <Award className="h-6 w-6 text-white" />
                   </div>
-                  <h3 className="font-bold text-black mb-2">Fast Turnaround</h3>
-                  <p className="text-black">Most projects done in 3-5 business days</p>
+                  <h3 className="font-bold text-black mb-2 text-lg">Fast Turnaround</h3>
+                  <p className="text-black text-sm">Most projects done in 3-5 business days</p>
                 </div>
                 
                 <div className="text-center">
-                  <div className="w-16 h-16 bg-brand-red rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Star className="h-8 w-8 text-white" />
+                  <div className="w-12 h-12 bg-brand-red rounded-full flex items-center justify-center mx-auto mb-3">
+                    <Star className="h-6 w-6 text-white" />
                   </div>
-                  <h3 className="font-bold text-black mb-2">5-Star Rating</h3>
-                  <p className="text-black">98% customer satisfaction rate</p>
+                  <h3 className="font-bold text-black mb-2 text-lg">5-Star Rating</h3>
+                  <p className="text-black text-sm">98% customer satisfaction rate</p>
                 </div>
               </div>
               
