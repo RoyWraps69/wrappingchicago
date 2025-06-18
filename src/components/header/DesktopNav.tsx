@@ -7,7 +7,6 @@ import PricingMenu from './PricingMenu';
 
 const DesktopNav = () => {
   const navItems = [
-    { label: 'Home', path: '/' },
     { label: 'Gallery', path: '/gallery' },
     { label: 'FAQ', path: '/faq' },
     { label: 'Locations', path: '/locations' },
@@ -16,16 +15,14 @@ const DesktopNav = () => {
 
   return (
     <div className="hidden md:flex items-center space-x-2">
-      {navItems.slice(0, 1).map((item) => (
-        <NavLink key={item.path} to={item.path}>
-          {item.label}
-        </NavLink>
-      ))}
+      <NavLink to="/">
+        Home
+      </NavLink>
       
       <ServiceMenu />
       <PricingMenu />
       
-      {navItems.slice(1).map((item) => (
+      {navItems.map((item) => (
         <NavLink key={item.path} to={item.path}>
           {item.label}
         </NavLink>

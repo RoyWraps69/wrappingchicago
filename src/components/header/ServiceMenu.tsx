@@ -8,188 +8,46 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-} from "@/components/ui/navigation-menu";
-import { cn } from "@/lib/utils";
-import { Car, Truck, CircleDollarSign, PaintBucket, Building, Brush, Shield, FileText, Palette, CreditCard } from 'lucide-react';
-
-const ListItem = React.forwardRef<
-  React.ElementRef<"a">,
-  React.ComponentPropsWithoutRef<"a">
->(({ className, title, children, ...props }, ref) => {
-  return (
-    <li>
-      <NavigationMenuLink asChild>
-        <a
-          ref={ref}
-          className={cn(
-            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-gray-100 hover:text-brand-red focus:bg-gray-100 focus:text-brand-red",
-            className
-          )}
-          {...props}
-        >
-          <div className="text-sm font-medium leading-none text-brand-navy">{title}</div>
-          <p className="line-clamp-2 text-sm leading-snug text-gray-600">
-            {children}
-          </p>
-        </a>
-      </NavigationMenuLink>
-    </li>
-  );
-});
-ListItem.displayName = "ListItem";
+} from '@/components/ui/navigation-menu';
 
 const ServiceMenu = () => {
+  const serviceItems = [
+    { label: 'All Services', path: '/services', description: 'Complete vehicle wrap services' },
+    { label: 'Car Wraps', path: '/car-wraps', description: 'Custom wraps for cars and sedans' },
+    { label: 'Truck Wraps', path: '/truck-wraps', description: 'Professional truck and pickup wraps' },
+    { label: 'Van Wraps', path: '/van-wraps', description: 'Commercial van wrap solutions' },
+    { label: 'Fleet Wraps', path: '/services/fleet-wraps', description: 'Complete fleet branding' },
+    { label: 'Color Change', path: '/color-change-wraps', description: 'Transform your vehicle color' },
+    { label: 'Commercial Graphics', path: '/services/commercial-graphics', description: 'Business vehicle graphics' }
+  ];
+
   return (
     <NavigationMenu>
       <NavigationMenuList>
         <NavigationMenuItem>
-          <NavigationMenuTrigger className="bg-brand-red hover:bg-red-700 text-white font-medium px-4 py-2 text-sm">
+          <NavigationMenuTrigger className="text-brand-navy hover:text-brand-red transition-colors font-medium px-3 py-2">
             Services
           </NavigationMenuTrigger>
-          <NavigationMenuContent className="z-50 bg-white border shadow-lg w-[400px] md:w-[500px] lg:w-[700px]">
-            <ul className="grid gap-3 p-4 md:grid-cols-2 lg:w-[700px]">
-              <ListItem
-                href="/car-wraps"
-                title="Car Wraps"
-                className="flex flex-col"
-              >
-                <div className="flex items-center mb-1">
-                  <Car className="w-4 h-4 mr-2 text-brand-red" />
-                  Custom car wraps for personal and commercial vehicles
-                </div>
-              </ListItem>
-              
-              <ListItem
-                href="/truck-wraps"
-                title="Truck Wraps"
-                className="flex flex-col"
-              >
-                <div className="flex items-center mb-1">
-                  <Truck className="w-4 h-4 mr-2 text-brand-red" />
-                  Professional wraps for all types of trucks
-                </div>
-              </ListItem>
-              
-              <ListItem
-                href="/van-wraps"
-                title="Van Wraps"
-                className="flex flex-col"
-              >
-                <div className="flex items-center mb-1">
-                  <Car className="w-4 h-4 mr-2 text-brand-red" />
-                  Custom van wraps for business fleets
-                </div>
-              </ListItem>
-              
-              <ListItem
-                href="/services/fleet-wraps"
-                title="Fleet Wraps"
-                className="flex flex-col"
-              >
-                <div className="flex items-center mb-1">
-                  <Truck className="w-4 h-4 mr-2 text-brand-red" />
-                  Transform your business fleet into mobile billboards
-                </div>
-              </ListItem>
-              
-              <ListItem
-                href="/color-change-wraps"
-                title="Color Change Wraps"
-                className="flex flex-col"
-              >
-                <div className="flex items-center mb-1">
-                  <PaintBucket className="w-4 h-4 mr-2 text-brand-red" />
-                  Transform your vehicle's appearance
-                </div>
-              </ListItem>
-              
-              <ListItem
-                href="/services/commercial-graphics"
-                title="Commercial Graphics"
-                className="flex flex-col"
-              >
-                <div className="flex items-center mb-1">
-                  <Building className="w-4 h-4 mr-2 text-brand-red" />
-                  Business branding and vehicle graphics
-                </div>
-              </ListItem>
-              
-              <ListItem
-                href="/services/protective-films"
-                title="Protective Films"
-                className="flex flex-col"
-              >
-                <div className="flex items-center mb-1">
-                  <Shield className="w-4 h-4 mr-2 text-brand-red" />
-                  Paint protection and clear bra installation
-                </div>
-              </ListItem>
-              
-              <ListItem
-                href="/services/vehicle-lettering"
-                title="Vehicle Lettering"
-                className="flex flex-col"
-              >
-                <div className="flex items-center mb-1">
-                  <FileText className="w-4 h-4 mr-2 text-brand-red" />
-                  Professional vehicle lettering services
-                </div>
-              </ListItem>
-              
-              <ListItem
-                href="/services/specialty-wraps"
-                title="Specialty Wraps"
-                className="flex flex-col"
-              >
-                <div className="flex items-center mb-1">
-                  <Palette className="w-4 h-4 mr-2 text-brand-red" />
-                  Chrome, matte and textured finishes
-                </div>
-              </ListItem>
-              
-              <ListItem
-                href="/designer-wraps"
-                title="Designer Wraps"
-                className="flex flex-col"
-              >
-                <div className="flex items-center mb-1">
-                  <Brush className="w-4 h-4 mr-2 text-brand-red" />
-                  Custom artistic designs for personal vehicles
-                </div>
-              </ListItem>
-              
-              <ListItem
-                href="/luxury-exotic-wraps"
-                title="Luxury & Exotic Wraps"
-                className="flex flex-col"
-              >
-                <div className="flex items-center mb-1">
-                  <CreditCard className="w-4 h-4 mr-2 text-brand-red" />
-                  Specialized wraps for high-end vehicles
-                </div>
-              </ListItem>
-              
-              <ListItem
-                href="/services/retail-graphics"
-                title="Retail Graphics"
-                className="flex flex-col"
-              >
-                <div className="flex items-center mb-1">
-                  <Building className="w-4 h-4 mr-2 text-brand-red" />
-                  Window graphics and store signage
-                </div>
-              </ListItem>
-              
-              <ListItem
-                href="/services"
-                title="View All Services"
-                className="md:col-span-2 text-center bg-gray-50 hover:bg-gray-100"
-              >
-                <div className="flex justify-center items-center">
-                  Explore our complete range of vehicle wrap services
-                </div>
-              </ListItem>
-            </ul>
+          <NavigationMenuContent>
+            <div className="grid w-[600px] gap-3 p-6 bg-white border border-gray-200 shadow-lg">
+              <div className="grid grid-cols-2 gap-4">
+                {serviceItems.map((service) => (
+                  <NavigationMenuLink key={service.path} asChild>
+                    <Link
+                      to={service.path}
+                      className="group block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-gray-50 hover:text-brand-red focus:bg-gray-50 focus:text-brand-red"
+                    >
+                      <div className="text-sm font-medium leading-none text-black group-hover:text-brand-red">
+                        {service.label}
+                      </div>
+                      <p className="line-clamp-2 text-sm leading-snug text-black/70 group-hover:text-black">
+                        {service.description}
+                      </p>
+                    </Link>
+                  </NavigationMenuLink>
+                ))}
+              </div>
+            </div>
           </NavigationMenuContent>
         </NavigationMenuItem>
       </NavigationMenuList>
