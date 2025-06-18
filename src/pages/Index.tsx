@@ -15,6 +15,7 @@ import BreadcrumbSchema from '@/components/schemas/BreadcrumbSchema';
 import CanonicalManager from '@/components/seo/CanonicalManager';
 import KeywordRichContent from '@/components/home/KeywordRichContent';
 import ComprehensiveSEOFix from '@/components/seo/ComprehensiveSEOFix';
+import SitemapIndex from '@/components/seo/SitemapIndex';
 
 // Import the home page components
 import InfoBar from '@/components/home/InfoBar';
@@ -132,6 +133,9 @@ const Index = () => {
       
       <HomeSEO />
       <CanonicalManager customCanonical="https://www.wrappingchicago.com/" />
+      
+      {/* Added: SitemapIndex for proper sitemap handling */}
+      <SitemapIndex />
       
       {/* Google Algorithm Alignment Optimizer */}
       <GoogleAlgorithmOptimizer 

@@ -8,6 +8,12 @@ RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 RewriteCond %{HTTP_HOST} ^wrappingchicago\.com [NC]
 RewriteRule ^(.*)$ https://www.wrappingchicago.com/$1 [L,R=301]
 
+# Special rule for sitemap.xml - serve it directly without redirects
+RewriteRule ^sitemap\.xml$ - [L]
+
+# Special rule for robots.txt - serve it directly without redirects
+RewriteRule ^robots\.txt$ - [L]
+
 # Redirect removed email-setup page to contact page
 RewriteRule ^email-setup/?$ /contact [R=301,L]
 
@@ -38,3 +44,10 @@ RewriteRule ^email-setup/?$ /contact [R=301,L]
 <IfModule mod_deflate.c>
   AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/x-javascript application/json
 </IfModule>
+
+# Force sitemap.xml to be served as XML
+<Files "sitemap.xml">
+  ForceType application/xml
+  Header set Content-Disposition "inline"
+  Header set X-Content-Type-Options "nosniff"
+</Files>
