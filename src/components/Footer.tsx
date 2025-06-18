@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { cities } from '@/data/cities';
@@ -38,7 +39,7 @@ const Footer = () => {
                 alt="Wrapping Chicago Logo" 
                 className="h-12 w-12 mr-3"
               />
-              <h3 className="text-2xl font-bold tracking-tight uppercase">Chicago Fleet<span className="text-brand-red">Wraps</span></h3>
+              <h3 className="text-2xl font-bold tracking-tight uppercase text-white">Chicago Fleet<span className="text-brand-red">Wraps</span></h3>
             </div>
             
             <p className="text-white/70 mb-6">
@@ -85,7 +86,7 @@ const Footer = () => {
           
           {/* Column 2: Quick Links */}
           <div>
-            <h3 className="text-xl font-bold mb-6 uppercase">Quick Links</h3>
+            <h3 className="text-xl font-bold mb-6 uppercase text-white">Quick Links</h3>
             <div className="grid grid-cols-2 gap-x-10 gap-y-2">
               <Link to="/" className="text-white/70 hover:text-white hover:translate-x-1 transition-all">Home</Link>
               <Link to="/about" className="text-white/70 hover:text-white hover:translate-x-1 transition-all">About Us</Link>
@@ -101,7 +102,7 @@ const Footer = () => {
               <Link to="/services/color-change-wraps" className="text-white/70 hover:text-white hover:translate-x-1 transition-all">Color Change</Link>
             </div>
             
-            <h3 className="text-xl font-bold mt-8 mb-4 uppercase">Service Areas</h3>
+            <h3 className="text-xl font-bold mt-8 mb-4 uppercase text-white">Service Areas</h3>
             <div className="flex flex-wrap gap-x-6 gap-y-2">
               {cities.slice(0, 5).map((city) => (
                 <Link 
@@ -120,7 +121,7 @@ const Footer = () => {
           
           {/* Column 3: Newsletter */}
           <div>
-            <h3 className="text-xl font-bold mb-6 uppercase">Updates & Offers</h3>
+            <h3 className="text-xl font-bold mb-6 uppercase text-white">Updates & Offers</h3>
             <p className="text-white/70 mb-4">
               Subscribe to our newsletter for the latest vehicle wrap trends, exclusive offers, and industry insights.
             </p>
@@ -132,7 +133,7 @@ const Footer = () => {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Your email address"
-                  className="bg-white/10 border border-white/20 rounded-full px-4 py-2 text-white w-full focus:outline-none focus:border-brand-red"
+                  className="bg-white/10 border border-white/20 rounded-full px-4 py-2 text-white w-full focus:outline-none focus:border-brand-red placeholder:text-white/50"
                   required
                 />
                 <Button type="submit" variant="gradient" size="icon" disabled={isSubmitting}>
@@ -144,28 +145,28 @@ const Footer = () => {
               )}
             </form>
             
-            <h3 className="text-xl font-bold mb-4 uppercase">Locations</h3>
+            <h3 className="text-xl font-bold mb-4 uppercase text-white">Locations</h3>
             <div className="space-y-3">
-              <div className="flex items-start gap-2">
+              <div className="flex items-start gap-2 bg-gray-800 p-3 rounded-lg">
                 <Globe className="w-5 h-5 text-brand-red flex-shrink-0 mt-1" />
                 <div>
-                  <h4 className="font-medium">Chicago, IL</h4>
+                  <h4 className="font-medium text-white">Chicago, IL</h4>
                   <p className="text-white/70 text-sm">Main Installation Facility</p>
                 </div>
               </div>
               
-              <div className="flex items-start gap-2">
+              <div className="flex items-start gap-2 bg-gray-800 p-3 rounded-lg">
                 <Globe className="w-5 h-5 text-brand-red flex-shrink-0 mt-1" />
                 <div>
-                  <h4 className="font-medium">Las Vegas, NV</h4>
+                  <h4 className="font-medium text-white">Las Vegas, NV</h4>
                   <p className="text-white/70 text-sm">West Coast Installation</p>
                 </div>
               </div>
               
-              <div className="flex items-start gap-2">
+              <div className="flex items-start gap-2 bg-gray-800 p-3 rounded-lg">
                 <Globe className="w-5 h-5 text-brand-red flex-shrink-0 mt-1" />
                 <div>
-                  <h4 className="font-medium">Central Illinois</h4>
+                  <h4 className="font-medium text-white">Central Illinois</h4>
                   <p className="text-white/70 text-sm">Midwest Operations</p>
                 </div>
               </div>
