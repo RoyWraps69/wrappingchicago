@@ -1,8 +1,9 @@
 
 /* ==============================
-   ULTRA HIGH-CONTRAST THEME VARIABLES
+   ULTRA HIGH-CONTRAST THEME VARIABLES - EMERGENCY FIX
    - WCAG AAA compliant contrast ratios (7:1 minimum)
    - Maximum readability focus
+   - Fixed all text visibility issues
    ============================== */
 
 :root {
@@ -11,7 +12,7 @@
   --brand-red: #DC2626;
   --brand-light: #FFFFFF;
   
-  /* Text colors - maximum contrast */
+  /* Text colors - EMERGENCY VISIBILITY FIX */
   --text-primary: #000000;        /* Pure black on white */
   --text-secondary: #000000;      /* Pure black for all text */
   --text-muted: #000000;         /* Black for all text, no gray */
@@ -26,7 +27,7 @@
   --bg-dark: #000000;
   --bg-overlay: rgba(0, 0, 0, 0.95); /* Nearly opaque for text readability */
   
-  /* Component-specific colors */
+  /* Component-specific colors - VISIBILITY EMERGENCY */
   --header-bg: #FFFFFF;
   --header-text: #000000;
   --header-text-hover: #DC2626;
@@ -47,11 +48,17 @@
   --button-outline-hover-bg: #000000;
   --button-outline-hover-text: #FFFFFF;
   
-  /* Form elements */
+  /* Form elements - CRITICAL VISIBILITY */
   --input-bg: #FFFFFF;
   --input-text: #000000;
   --input-border: #000000;
-  --input-placeholder: #666666;  /* Darker gray for better contrast */
+  --input-placeholder: #666666;
+  
+  /* Modal and popup visibility */
+  --modal-bg: #FFFFFF;
+  --modal-text: #000000;
+  --modal-border: #000000;
+  --modal-overlay: rgba(0, 0, 0, 0.8);
   
   /* Status colors */
   --success: #059669;
@@ -60,38 +67,118 @@
   --info: #2563EB;
 }
 
-/* CRITICAL: Force high contrast on ALL text elements */
-body, p, span, div, li, td, th, section, article, aside, header, footer, nav, main {
+/* EMERGENCY: Force maximum contrast on ALL text elements */
+body, p, span, div, li, td, th, section, article, aside, header, footer, nav, main,
+h1, h2, h3, h4, h5, h6, a, label, button, input, textarea, select,
+.text-base, .text-lg, .text-xl, .text-2xl, .text-3xl, .text-4xl, .text-5xl, .text-6xl {
   color: #000000 !important;
+  font-weight: inherit;
 }
 
-/* Dark sections get white text - more comprehensive */
+/* EMERGENCY: Dark sections get white text - COMPREHENSIVE */
 .bg-black, .bg-black *,
 .bg-brand-navy, .bg-brand-navy *,
 .dark-section, .dark-section *,
+.hero-fullscreen, .hero-fullscreen *,
 .hero-content, .hero-content *,
-.hero-fullscreen *, 
 .hero-overlay, .hero-overlay *,
-[class*="bg-gray-8"], [class*="bg-gray-8"] *,
-[class*="bg-gray-9"], [class*="bg-gray-9"] *,
-[class*="bg-slate-8"], [class*="bg-slate-8"] *,
-[class*="bg-slate-9"], [class*="bg-slate-9"] *,
-.bg-gradient-to-r, .bg-gradient-to-r * {
+.bg-gray-800, .bg-gray-800 *,
+.bg-gray-900, .bg-gray-900 *,
+.bg-slate-800, .bg-slate-800 *,
+.bg-slate-900, .bg-slate-900 *,
+.bg-gradient-to-r, .bg-gradient-to-r *,
+.bg-gradient-to-l, .bg-gradient-to-l *,
+.bg-gradient-to-t, .bg-gradient-to-t *,
+.bg-gradient-to-b, .bg-gradient-to-b *,
+[class*="bg-gradient"], [class*="bg-gradient"] *,
+[class*="from-brand-navy"], [class*="from-brand-navy"] *,
+[class*="to-blue-"], [class*="to-blue-"] * {
   color: #FFFFFF !important;
 }
 
-/* Ensure hero and overlay text is white */
-.hero-content, .hero-content *, 
-.hero-fullscreen *, 
-.text-white, .text-white *,
-.hero-overlay, .hero-overlay *, 
-.bg-black\/90 *, 
-.bg-brand-navy\/90 *,
-.bg-gradient-to-r * {
+/* EMERGENCY: Hero section visibility fix */
+.hero-fullscreen {
+  position: relative;
+  background: rgba(0, 0, 0, 0.9) !important;
   color: #FFFFFF !important;
 }
 
-/* Button text contrast */
+.hero-content, .hero-content * {
+  color: #FFFFFF !important;
+  z-index: 20;
+  position: relative;
+}
+
+/* EMERGENCY: Remove ALL gray text - make everything black or white */
+.text-gray-700, .text-gray-600, .text-gray-500, .text-gray-400, .text-gray-300, .text-gray-200, .text-gray-100,
+.text-muted-foreground, .text-muted, .text-slate-600, .text-slate-700,
+.text-slate-500, .text-slate-400, .text-slate-300, .text-slate-200, .text-slate-100,
+.text-zinc-600, .text-zinc-700, .text-zinc-500, .text-zinc-400, .text-zinc-300,
+.text-neutral-600, .text-neutral-700, .text-neutral-500, .text-neutral-400, .text-neutral-300,
+.text-white\/70, .text-white\/80, .text-white\/90 {
+  color: #000000 !important;
+}
+
+/* White text on dark backgrounds - CRITICAL FIX */
+.bg-black .text-gray-700, .bg-black .text-gray-600, .bg-black .text-gray-500, 
+.bg-black .text-gray-400, .bg-black .text-gray-300, .bg-black .text-gray-200, 
+.bg-black .text-muted-foreground, .bg-black .text-white\/70, .bg-black .text-white\/80,
+.bg-brand-navy .text-gray-700, .bg-brand-navy .text-gray-600, .bg-brand-navy .text-gray-500,
+.bg-brand-navy .text-gray-400, .bg-brand-navy .text-gray-300, .bg-brand-navy .text-gray-200,
+.bg-brand-navy .text-muted-foreground, .bg-brand-navy .text-white\/70,
+.bg-gray-800 .text-gray-300, .bg-gray-900 .text-gray-300,
+.dark-section .text-gray-300, .bg-gradient-to-r .text-gray-300,
+.hero-fullscreen .text-white\/70, .hero-fullscreen .text-white\/80, .hero-fullscreen .text-white\/90,
+[class*="bg-gradient"] .text-gray-300, [class*="bg-gradient"] .text-gray-400 {
+  color: #FFFFFF !important;
+}
+
+/* EMERGENCY: Modal and popup visibility */
+.modal, .popup, .dialog, .lightbox,
+[role="dialog"], [role="alertdialog"],
+[data-radix-portal], .radix-dialog-overlay,
+.fixed.inset-0, .absolute.inset-0 {
+  background: #FFFFFF !important;
+  color: #000000 !important;
+  border: 2px solid #000000 !important;
+  z-index: 9999 !important;
+}
+
+.modal *, .popup *, .dialog *, .lightbox *,
+[role="dialog"] *, [role="alertdialog"] *,
+[data-radix-portal] * {
+  color: #000000 !important;
+}
+
+/* EMERGENCY: Form visibility fixes */
+input, textarea, select {
+  background: #FFFFFF !important;
+  color: #000000 !important;
+  border: 2px solid #000000 !important;
+  font-weight: 500 !important;
+}
+
+input::placeholder, textarea::placeholder, select::placeholder {
+  color: #666666 !important;
+  opacity: 1 !important;
+}
+
+label, .label {
+  color: #000000 !important;
+  font-weight: 600 !important;
+}
+
+/* Dark background form fixes */
+.bg-black label, .bg-brand-navy label, .dark-section label,
+.bg-gradient-to-r label, [class*="bg-gradient"] label {
+  color: #FFFFFF !important;
+}
+
+/* EMERGENCY: Button visibility fixes */
+button, .button, .btn {
+  font-weight: 600 !important;
+}
+
 .bg-brand-red, .bg-brand-red *,
 .bg-red-600, .bg-red-600 *,
 .bg-red-700, .bg-red-700 *,
@@ -99,31 +186,18 @@ body, p, span, div, li, td, th, section, article, aside, header, footer, nav, ma
   color: #FFFFFF !important;
 }
 
-/* CRITICAL: Remove muted gray text - make it black */
-.text-gray-700, .text-gray-600, .text-gray-500, .text-gray-400, .text-gray-300, .text-gray-200, .text-gray-100,
-.text-muted-foreground, .text-muted, .text-slate-600, .text-slate-700, .text-slate-500, .text-slate-400, .text-slate-300,
-.text-zinc-600, .text-zinc-700, .text-zinc-500, .text-zinc-400, .text-zinc-300 {
-  color: #000000 !important;
-}
-
-/* White text on dark backgrounds - more specific */
-.bg-black .text-gray-700, .bg-black .text-gray-600, .bg-black .text-gray-500, .bg-black .text-gray-400, .bg-black .text-gray-300, .bg-black .text-gray-200, .bg-black .text-gray-100,
-.bg-brand-navy .text-gray-700, .bg-brand-navy .text-gray-600, .bg-brand-navy .text-gray-500, .bg-brand-navy .text-gray-400, .bg-brand-navy .text-gray-300, .bg-brand-navy .text-gray-200, .bg-brand-navy .text-gray-100,
-.bg-gray-800 .text-gray-300, .bg-gray-800 .text-gray-200, .bg-gray-800 .text-gray-100,
-.bg-gray-900 .text-gray-300, .bg-gray-900 .text-gray-200, .bg-gray-900 .text-gray-100,
-.dark-section .text-gray-300, .dark-section .text-gray-200, .dark-section .text-gray-100,
-.bg-gradient-to-r .text-gray-300, .bg-gradient-to-r .text-gray-200, .bg-gradient-to-r .text-gray-100 {
-  color: #FFFFFF !important;
-}
-
-/* Link contrast - improved readability */
+/* EMERGENCY: Link visibility - maximum contrast */
 a:not(.btn):not(.button):not([class*="bg-"]):not(.social-icon):not(.nav-link) {
   color: #0000EE !important;
   text-decoration: underline !important;
+  text-decoration-thickness: 2px !important;
+  text-underline-offset: 2px !important;
+  font-weight: 500 !important;
 }
 
 a:not(.btn):not(.button):not([class*="bg-"]):not(.social-icon):not(.nav-link):hover {
   color: #0000CC !important;
+  text-decoration-thickness: 3px !important;
 }
 
 /* Dark background links */
@@ -131,64 +205,64 @@ a:not(.btn):not(.button):not([class*="bg-"]):not(.social-icon):not(.nav-link):ho
 .bg-brand-navy a:not(.btn):not(.button):not(.social-icon):not(.nav-link),
 .dark-section a:not(.btn):not(.button):not(.social-icon):not(.nav-link),
 .hero-content a:not(.btn):not(.button):not(.social-icon):not(.nav-link),
-.bg-gradient-to-r a:not(.btn):not(.button):not(.social-icon):not(.nav-link) {
+.bg-gradient-to-r a:not(.btn):not(.button):not(.social-icon):not(.nav-link),
+[class*="bg-gradient"] a:not(.btn):not(.button):not(.social-icon):not(.nav-link) {
   color: #87CEEB !important;
+  text-decoration: underline !important;
 }
 
-/* Card and component contrast */
-.card, [class*="bg-white"], .bg-gray-50, .racing-stripes, .carbon-fiber-light {
-  background: #FFFFFF !important;
-  color: #000000 !important;
-  border: 1px solid #E5E7EB !important;
-}
-
-.card *, [class*="bg-white"] *, .bg-gray-50 *, .racing-stripes *, .carbon-fiber-light * {
-  color: #000000 !important;
-}
-
-/* Navigation contrast */
+/* EMERGENCY: Navigation visibility */
 nav, .nav-sticky, header {
   background: #FFFFFF !important;
-  border-bottom: 1px solid #E5E7EB !important;
+  border-bottom: 2px solid #E5E7EB !important;
 }
 
 nav *, .nav-sticky *, header * {
   color: #000000 !important;
 }
 
-/* Form input contrast */
-input, textarea, select {
+/* EMERGENCY: Dropdown and menu visibility */
+[role="listbox"], [role="option"], [role="menu"], [role="menuitem"],
+.dropdown-content, .menu-content, .dropdown-menu {
   background: #FFFFFF !important;
   color: #000000 !important;
-  border: 2px solid #D1D5DB !important;
+  border: 2px solid #000000 !important;
+  z-index: 9999 !important;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3) !important;
 }
 
-input::placeholder, textarea::placeholder, select::placeholder {
-  color: #666666 !important;
-  opacity: 1;
+[role="listbox"] *, [role="option"] *, [role="menu"] *, [role="menuitem"] *,
+.dropdown-content *, .menu-content *, .dropdown-menu * {
+  color: #000000 !important;
 }
 
-/* Focus states for accessibility */
-*:focus {
+/* EMERGENCY: Hover and focus states */
+*:hover {
+  transition: all 0.2s ease;
+}
+
+*:focus, *:focus-visible {
   outline: 3px solid #DC2626 !important;
   outline-offset: 2px !important;
 }
 
-/* High contrast mode enhancement */
-@media (prefers-contrast: high) {
-  * {
-    color: #000000 !important;
-    background: #FFFFFF !important;
-    border-color: #000000 !important;
-  }
-  
-  .bg-black, .bg-brand-navy, .dark-section, .bg-gradient-to-r {
-    background: #000000 !important;
-    color: #FFFFFF !important;
-  }
+/* EMERGENCY: Text white classes on dark backgrounds */
+.text-white, .text-white * {
+  color: #FFFFFF !important;
 }
 
-/* Ensure readable contrast for all headings */
+/* EMERGENCY: Card and component visibility */
+.card, .component, .section-box {
+  background: #FFFFFF !important;
+  color: #000000 !important;
+  border: 1px solid #E5E7EB !important;
+}
+
+.card *, .component *, .section-box * {
+  color: #000000 !important;
+}
+
+/* EMERGENCY: Ensure all headings are visible */
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
   color: #000000 !important;
@@ -199,25 +273,56 @@ h1, h2, h3, h4, h5, h6,
 .bg-black h1, .bg-black h2, .bg-black h3, .bg-black h4, .bg-black h5, .bg-black h6,
 .bg-brand-navy h1, .bg-brand-navy h2, .bg-brand-navy h3, .bg-brand-navy h4, .bg-brand-navy h5, .bg-brand-navy h6,
 .hero-content h1, .hero-content h2, .hero-content h3, .hero-content h4, .hero-content h5, .hero-content h6,
-.bg-gradient-to-r h1, .bg-gradient-to-r h2, .bg-gradient-to-r h3, .bg-gradient-to-r h4, .bg-gradient-to-r h5, .bg-gradient-to-r h6 {
+.bg-gradient-to-r h1, .bg-gradient-to-r h2, .bg-gradient-to-r h3, .bg-gradient-to-r h4, .bg-gradient-to-r h5, .bg-gradient-to-r h6,
+.hero-fullscreen h1, .hero-fullscreen h2, .hero-fullscreen h3, .hero-fullscreen h4, .hero-fullscreen h5, .hero-fullscreen h6 {
   color: #FFFFFF !important;
 }
 
-/* Additional text visibility fixes */
-main, section, article {
-  color: #000000 !important;
+/* EMERGENCY: Mobile responsiveness - text visibility */
+@media (max-width: 768px) {
+  h1, .h1 {
+    font-size: 2rem !important;
+    line-height: 1.2 !important;
+    color: inherit !important;
+  }
+  
+  .hero-content h1, .hero-fullscreen h1 {
+    color: #FFFFFF !important;
+  }
+  
+  p, span, div {
+    font-size: 1rem !important;
+    line-height: 1.5 !important;
+  }
+  
+  button, .button {
+    font-size: 1rem !important;
+    padding: 0.75rem 1.5rem !important;
+  }
 }
 
-main *, section *, article * {
-  color: inherit !important;
+/* EMERGENCY: High contrast mode override */
+@media (prefers-contrast: high) {
+  * {
+    color: #000000 !important;
+    background: #FFFFFF !important;
+    border-color: #000000 !important;
+  }
+  
+  .bg-black, .bg-brand-navy, .dark-section, .bg-gradient-to-r, .hero-fullscreen {
+    background: #000000 !important;
+    color: #FFFFFF !important;
+  }
+  
+  .bg-black *, .bg-brand-navy *, .dark-section *, .bg-gradient-to-r *, .hero-fullscreen * {
+    color: #FFFFFF !important;
+  }
 }
 
-/* Specific component fixes */
-.speakable {
-  color: #000000 !important;
-  font-weight: 600 !important;
-}
-
-.bg-gradient-to-r .speakable {
-  color: #FFFFFF !important;
+/* EMERGENCY: Print styles for accessibility */
+@media print {
+  * {
+    color: #000000 !important;
+    background: #FFFFFF !important;
+  }
 }

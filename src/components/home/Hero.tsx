@@ -6,13 +6,16 @@ import { ArrowRight, Phone } from 'lucide-react';
 
 const Hero = () => {
   return (
-    <div className="hero-fullscreen">
-      <div className="hero-content">
+    <div className="hero-fullscreen bg-black relative">
+      {/* EMERGENCY: Dark overlay for text visibility */}
+      <div className="absolute inset-0 z-10 bg-black/90"></div>
+      
+      <div className="hero-content relative z-20">
         <h1 className="text-5xl sm:text-6xl md:text-7xl font-extrabold uppercase tracking-wider text-white mb-6">
           Fleet Wraps That Dominate.
         </h1>
         
-        <p className="text-xl md:text-2xl font-medium text-white/90 mb-10 max-w-2xl mx-auto">
+        <p className="text-xl md:text-2xl font-medium text-white mb-10 max-w-2xl mx-auto">
           From box trucks to Corvettes — we make your brand impossible to ignore.
         </p>
         
@@ -22,9 +25,9 @@ const Hero = () => {
             size="xl"
             variant="gradient"
             animation="glow"
-            className="font-semibold"
+            className="font-semibold text-white"
           >
-            <Link to="/contact" className="inline-flex items-center">
+            <Link to="/contact" className="inline-flex items-center text-white">
               Request a Quote
               <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
@@ -34,29 +37,29 @@ const Hero = () => {
             asChild
             variant="outline"
             size="xl"
-            className="border-white text-white hover:bg-white/10"
+            className="border-white text-white hover:bg-white/10 hover:text-white"
           >
-            <a href="tel:3125971286" className="inline-flex items-center">
+            <a href="tel:3125971286" className="inline-flex items-center text-white">
               <Phone className="mr-2 h-5 w-5" />
               (312) 597-1286
             </a>
           </Button>
         </div>
         
-        <div className="flex flex-wrap justify-center gap-x-8 gap-y-2 text-white/70 text-sm">
-          <span className="flex items-center">
+        <div className="flex flex-wrap justify-center gap-x-8 gap-y-2 text-white text-sm">
+          <span className="flex items-center text-white">
             <span className="w-1.5 h-1.5 bg-brand-red rounded-full mr-2"></span>
             Premium 3M Materials
           </span>
-          <span className="flex items-center">
+          <span className="flex items-center text-white">
             <span className="w-1.5 h-1.5 bg-brand-red rounded-full mr-2"></span>
             16,000+ Wraps Completed
           </span>
-          <span className="flex items-center">
+          <span className="flex items-center text-white">
             <span className="w-1.5 h-1.5 bg-brand-red rounded-full mr-2"></span>
             5-Year Warranty
           </span>
-          <span className="flex items-center">
+          <span className="flex items-center text-white">
             <span className="w-1.5 h-1.5 bg-brand-red rounded-full mr-2"></span>
             Serving All of Chicago
           </span>

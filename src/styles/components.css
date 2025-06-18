@@ -1,11 +1,11 @@
 
 /* ==============================
-   COMPONENT STYLES - ULTRA HIGH CONTRAST
+   COMPONENT STYLES - EMERGENCY TEXT VISIBILITY FIX
    - Maximum contrast component definitions
    - WCAG AAA compliance
    ============================== */
 
-/* Ultra high contrast typography */
+/* EMERGENCY: Ultra high contrast typography */
 h1, .h1 {
   @apply text-4xl md:text-5xl lg:text-6xl font-extrabold uppercase tracking-wider;
   line-height: 1.1;
@@ -34,7 +34,7 @@ p {
   font-weight: 400;
 }
 
-/* Dark sections override */
+/* EMERGENCY: Dark sections override */
 .bg-black h1, .bg-black .h1,
 .bg-black h2, .bg-black .h2,
 .bg-black h3, .bg-black .h3,
@@ -50,11 +50,23 @@ p {
 .hero-overlay h1, .hero-overlay .h1,
 .hero-overlay h2, .hero-overlay .h2,
 .hero-overlay h3, .hero-overlay .h3,
-.hero-overlay p, .hero-overlay span, .hero-overlay div {
+.hero-overlay p, .hero-overlay span, .hero-overlay div,
+.hero-fullscreen h1, .hero-fullscreen .h1,
+.hero-fullscreen h2, .hero-fullscreen .h2,
+.hero-fullscreen h3, .hero-fullscreen .h3,
+.hero-fullscreen p, .hero-fullscreen span, .hero-fullscreen div,
+.bg-gradient-to-r h1, .bg-gradient-to-r .h1,
+.bg-gradient-to-r h2, .bg-gradient-to-r .h2,
+.bg-gradient-to-r h3, .bg-gradient-to-r .h3,
+.bg-gradient-to-r p, .bg-gradient-to-r span, .bg-gradient-to-r div,
+[class*="from-brand-navy"] h1, [class*="from-brand-navy"] .h1,
+[class*="from-brand-navy"] h2, [class*="from-brand-navy"] .h2,
+[class*="from-brand-navy"] h3, [class*="from-brand-navy"] .h3,
+[class*="from-brand-navy"] p, [class*="from-brand-navy"] span, [class*="from-brand-navy"] div {
   color: #FFFFFF !important;
 }
 
-/* Ultra high contrast components */
+/* EMERGENCY: Ultra high contrast components */
 .ultra-card {
   @apply rounded-xl shadow-lg p-6 md:p-8 transition-all duration-300 hover:shadow-xl;
   background: #FFFFFF !important;
@@ -91,7 +103,7 @@ p {
   background: rgba(0, 0, 0, 0.9) !important;
 }
 
-/* Ultra high contrast links */
+/* EMERGENCY: Ultra high contrast links */
 a:not(.btn-primary):not(.btn-outline) {
   color: #0000EE !important;
   text-decoration: underline !important;
@@ -116,11 +128,12 @@ a:not(.btn-primary):not(.btn-outline):hover {
   color: #000000 !important;
 }
 
-/* Hero specific styles - ultra high contrast */
+/* EMERGENCY: Hero specific styles - ultra high contrast */
 .hero-fullscreen {
   @apply relative min-h-screen flex items-center justify-center overflow-hidden;
   padding-top: 120px;
   padding-bottom: 120px;
+  background: #000000 !important;
 }
 
 .hero-overlay {
@@ -137,7 +150,7 @@ a:not(.btn-primary):not(.btn-outline):hover {
   color: #FFFFFF !important;
 }
 
-/* Navigation specific styles - ultra high contrast */
+/* EMERGENCY: Navigation specific styles - ultra high contrast */
 .nav-sticky {
   @apply fixed top-0 left-0 right-0 z-50 transition-all duration-300;
   background: #FFFFFF !important;
@@ -149,7 +162,7 @@ a:not(.btn-primary):not(.btn-outline):hover {
   backdrop-filter: blur(10px);
 }
 
-/* Footer specific styles - ultra high contrast */
+/* EMERGENCY: Footer specific styles - ultra high contrast */
 .footer-minimal {
   background: #000000 !important;
   color: #FFFFFF !important;
@@ -168,7 +181,7 @@ a:not(.btn-primary):not(.btn-outline):hover {
   color: #FFFFFF !important;
 }
 
-/* Contact item specific fixes */
+/* EMERGENCY: Contact item specific fixes */
 .contact-item-highlight {
   background: rgba(255, 0, 0, 0.1) !important;
   border: 2px solid #FF0000 !important;
@@ -200,28 +213,28 @@ a:not(.btn-primary):not(.btn-outline):hover {
   color: #FFFFFF !important;
 }
 
-/* Quick links and info bars on dark backgrounds */
-.bg-black/5, .bg-white\/5 {
+/* EMERGENCY: Quick links and info bars on dark backgrounds */
+.bg-black\/5, .bg-white\/5 {
   background: rgba(255, 255, 255, 0.1) !important;
   border: 1px solid rgba(255, 255, 255, 0.2) !important;
 }
 
-.bg-black/5 *, .bg-white\/5 * {
+.bg-black\/5 *, .bg-white\/5 * {
   color: #FFFFFF !important;
 }
 
-/* Text color overrides for all white/light text on dark backgrounds */
+/* EMERGENCY: Text color overrides for all white/light text on dark backgrounds */
 .text-white, .text-white\/70, .text-white\/80, .text-white\/90 {
   color: #FFFFFF !important;
 }
 
-/* Ensure all form elements have proper contrast */
+/* EMERGENCY: Ensure all form elements have proper contrast */
 .form-group label, .form-group input, .form-group textarea, .form-group select {
   color: #000000 !important;
   border: 2px solid #000000 !important;
 }
 
-/* Card hover effects with proper contrast */
+/* EMERGENCY: Card hover effects with proper contrast */
 .card-hover {
   transition: all 0.3s ease;
   border: 2px solid #000000 !important;
@@ -231,4 +244,52 @@ a:not(.btn-primary):not(.btn-outline):hover {
   transform: translateY(-5px);
   box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
   border-color: #FF0000 !important;
+}
+
+/* EMERGENCY: Modal and overlay fixes */
+.modal-overlay, .dialog-overlay, [data-radix-portal] {
+  background: rgba(0, 0, 0, 0.8) !important;
+  z-index: 9998 !important;
+}
+
+.modal-content, .dialog-content {
+  background: #FFFFFF !important;
+  color: #000000 !important;
+  border: 2px solid #000000 !important;
+  z-index: 9999 !important;
+}
+
+.modal-content *, .dialog-content * {
+  color: #000000 !important;
+}
+
+/* EMERGENCY: Dropdown fixes */
+.dropdown-menu, .select-content, .popover-content {
+  background: #FFFFFF !important;
+  color: #000000 !important;
+  border: 2px solid #000000 !important;
+  z-index: 9999 !important;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3) !important;
+}
+
+.dropdown-menu *, .select-content *, .popover-content * {
+  color: #000000 !important;
+}
+
+/* EMERGENCY: Mobile fixes */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2.5rem !important;
+    color: #FFFFFF !important;
+  }
+  
+  .hero-content p {
+    font-size: 1.125rem !important;
+    color: #FFFFFF !important;
+  }
+  
+  .btn-primary, .btn-outline {
+    font-size: 1rem !important;
+    padding: 0.75rem 1.5rem !important;
+  }
 }
