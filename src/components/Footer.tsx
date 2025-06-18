@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { cities } from '@/data/cities';
 import { Phone, Mail, MapPin, Globe, Facebook, Instagram, Twitter, Send, ArrowRight } from 'lucide-react';
-import ContactItem from './location/ContactItem';
 import { Button } from './ui/button';
 
 const Footer = () => {
@@ -48,20 +47,29 @@ const Footer = () => {
             </p>
             
             <ul className="space-y-3">
-              <li>
-                <ContactItem icon={MapPin} title="">
-                  <span className="text-white/70">4711 N. Lamon Ave<br />Chicago, IL 60630</span>
-                </ContactItem>
+              <li className="flex items-start p-3 bg-gray-800 border border-gray-600 rounded-lg">
+                <div className="flex items-center justify-center w-10 h-10 rounded-full mr-3 flex-shrink-0 bg-brand-red text-white">
+                  <MapPin className="h-5 w-5" />
+                </div>
+                <div>
+                  <span className="text-white font-medium">4711 N. Lamon Ave<br />Chicago, IL 60630</span>
+                </div>
               </li>
-              <li>
-                <ContactItem icon={Phone} title="">
-                  <a href="tel:3125971286" className="text-white/70 hover:text-white transition-colors">(312) 597-1286</a>
-                </ContactItem>
+              <li className="flex items-start p-3 bg-gray-800 border border-gray-600 rounded-lg">
+                <div className="flex items-center justify-center w-10 h-10 rounded-full mr-3 flex-shrink-0 bg-brand-red text-white">
+                  <Phone className="h-5 w-5" />
+                </div>
+                <div>
+                  <a href="tel:3125971286" className="text-white font-medium hover:text-brand-red transition-colors">(312) 597-1286</a>
+                </div>
               </li>
-              <li>
-                <ContactItem icon={Mail} title="">
-                  <a href="mailto:roy@chicagofleetwraps.com" className="text-white/70 hover:text-white transition-colors">roy@chicagofleetwraps.com</a>
-                </ContactItem>
+              <li className="flex items-start p-3 bg-gray-800 border border-gray-600 rounded-lg">
+                <div className="flex items-center justify-center w-10 h-10 rounded-full mr-3 flex-shrink-0 bg-brand-red text-white">
+                  <Mail className="h-5 w-5" />
+                </div>
+                <div>
+                  <a href="mailto:roy@chicagofleetwraps.com" className="text-white font-medium hover:text-brand-red transition-colors">roy@chicagofleetwraps.com</a>
+                </div>
               </li>
             </ul>
             
