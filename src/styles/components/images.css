@@ -1,0 +1,126 @@
+
+/* ==============================
+   IMAGE RESPONSIVENESS - UNIVERSAL FIX
+   - Site-wide image container and responsiveness rules
+   - Mobile-first responsive design
+   ============================== */
+
+/* Universal image responsiveness */
+img {
+  max-width: 100% !important;
+  height: auto !important;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Image containers - prevent overflow */
+[class*="h-"], .image-container, .relative {
+  overflow: hidden;
+}
+
+/* Specific height classes for consistent sizing */
+.h-16 img, .h-20 img, .h-24 img, .h-28 img, .h-32 img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center !important;
+}
+
+/* Gallery and showcase image containers */
+.gallery-image, .showcase-image, .hero-image {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.gallery-image img, .showcase-image img, .hero-image img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+  .h-64, .h-48, .h-40, .h-32 {
+    height: 8rem !important; /* 32 on mobile */
+  }
+  
+  .h-28, .h-24, .h-20 {
+    height: 6rem !important; /* 24 on mobile */
+  }
+  
+  .h-16 {
+    height: 4rem !important; /* 16 on mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .h-64, .h-48, .h-40, .h-32, .h-28 {
+    height: 6rem !important; /* Even smaller on small mobile */
+  }
+  
+  .h-24, .h-20, .h-16 {
+    height: 4rem !important;
+  }
+}
+
+/* Hero image specific rules */
+.hero-fullscreen img {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  object-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* Aspect ratio containers */
+.aspect-video {
+  aspect-ratio: 16 / 9;
+}
+
+.aspect-square {
+  aspect-ratio: 1 / 1;
+}
+
+.aspect-[4/3] {
+  aspect-ratio: 4 / 3;
+}
+
+/* Prevent image stretching in flexbox */
+.flex img, .grid img {
+  flex-shrink: 0;
+  min-width: 0;
+}
+
+/* Card image containers */
+.card img, .card-hover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Loading and error states */
+img[loading="lazy"] {
+  transition: opacity 0.3s ease;
+}
+
+img:not([src]), img[src=""], img[src*="placeholder"] {
+  background: #f3f4f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+img:not([src])::before, img[src=""]::before {
+  content: "Loading...";
+  color: #6b7280;
+  font-size: 0.875rem;
+}

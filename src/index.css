@@ -7,5 +7,6 @@
 @import './styles/theme.css';
 @import './styles/base.css';
 @import './styles/components.css';
+@import './styles/components/images.css';
 @import './styles/utilities.css';
 @import './styles/responsive.css';
