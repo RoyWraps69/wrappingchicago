@@ -66,7 +66,7 @@ function HomePage() {
         <main id="main-content" className="flex-grow main-content relative z-10">
           <Hero />
           
-          {/* Simple credibility section with fixed icon sizes */}
+          {/* Simple credibility section */}
           <section className="py-12 bg-white relative z-10">
             <div className="container mx-auto px-4">
               <div className="text-center mb-8">
@@ -136,7 +136,7 @@ function HomePage() {
             </div>
           </section>
 
-          {/* Services section without images */}
+          {/* Services section - text only */}
           <section className="py-16 bg-gray-50">
             <div className="container mx-auto px-4">
               <h2 className="text-4xl font-bold text-center mb-4 text-black">
