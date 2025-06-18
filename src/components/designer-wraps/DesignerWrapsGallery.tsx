@@ -45,11 +45,11 @@ const DesignerWrapsGallery = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
         {galleryItems.map((item, index) => (
           <div key={index} className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
-            <div className="relative w-full h-48 overflow-hidden">
+            <div className="aspect-video">
               <img 
                 src={item.image} 
                 alt={item.alt}
-                className="absolute inset-0 w-full h-full object-cover object-center"
+                className="w-full h-full object-cover"
               />
             </div>
             <div className="p-6">

@@ -5,14 +5,13 @@ import { MapPin, Navigation } from 'lucide-react';
 const ChicagoServiceMap = () => {
   return (
     <div className="relative">
-      <div className="rounded-lg overflow-hidden shadow-md">
-        <div className="relative w-full aspect-video overflow-hidden">
+      <div className="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden shadow-md">
+        <div className="relative w-full h-full">
           {/* Main map image */}
           <img 
             src="/lovable-uploads/chicago-40-mile-radius-map.png" 
             alt="Chicago Fleet Wraps 40-mile service area map"
-            className="w-full h-full object-cover object-center"
-            loading="lazy"
+            className="object-cover w-full h-full"
             onError={(e) => {
               // Fallback to a high-quality Google Maps iframe if the image fails to load
               const target = e.currentTarget;

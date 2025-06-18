@@ -171,14 +171,12 @@ const LocationHero = ({ cityName }: LocationHeroProps) => {
           <div className="hidden md:block animate-scale-in">
             <div className="relative">
               <div className="absolute -inset-4 bg-brand-red/20 rounded-full blur-xl"></div>
-              <div className="relative w-full aspect-video overflow-hidden rounded-lg shadow-2xl transform rotate-2">
-                <img 
-                  src="/lovable-uploads/199c2a21-e0b0-4c29-972f-f32d72698382.png" 
-                  alt={`Professional commercial vehicle wrap installation in ${cityName}, IL - fleet branding services with 3M vinyl materials`}
-                  className="w-full h-full object-cover"
-                  loading="lazy"
-                />
-              </div>
+              <img 
+                src="/lovable-uploads/199c2a21-e0b0-4c29-972f-f32d72698382.png" 
+                alt={`Professional commercial vehicle wrap installation in ${cityName}, IL - fleet branding services with 3M vinyl materials`}
+                className="rounded-lg shadow-2xl relative z-10 transform rotate-2"
+                loading="lazy"
+              />
               <div className="absolute -bottom-6 -right-6 bg-white/90 backdrop-blur rounded-lg shadow-xl p-4 transform -rotate-3 z-20 border border-gray-200">
                 <p className="text-gray-800 font-bold">{cityName}'s Most Trusted Vehicle Wrap Provider</p>
                 <p className="text-sm text-gray-600">Car wraps • Truck wraps • Van wraps • Fleet graphics</p>

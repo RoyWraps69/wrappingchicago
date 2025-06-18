@@ -5,7 +5,7 @@
    - WCAG AAA compliance
    ============================== */
 
-/* Ultra high contrast typography with universal application */
+/* Ultra high contrast typography */
 h1, .h1 {
   @apply text-4xl md:text-5xl lg:text-6xl font-extrabold uppercase tracking-wider;
   line-height: 1.1;
@@ -34,7 +34,7 @@ p {
   font-weight: 400;
 }
 
-/* Dark sections override - comprehensive */
+/* Dark sections override */
 .bg-black h1, .bg-black .h1,
 .bg-black h2, .bg-black .h2,
 .bg-black h3, .bg-black .h3,
@@ -50,15 +50,7 @@ p {
 .hero-overlay h1, .hero-overlay .h1,
 .hero-overlay h2, .hero-overlay .h2,
 .hero-overlay h3, .hero-overlay .h3,
-.hero-overlay p, .hero-overlay span, .hero-overlay div,
-[class*="bg-gradient"] h1, [class*="bg-gradient"] .h1,
-[class*="bg-gradient"] h2, [class*="bg-gradient"] .h2,
-[class*="bg-gradient"] h3, [class*="bg-gradient"] .h3,
-[class*="bg-gradient"] p, [class*="bg-gradient"] span, [class*="bg-gradient"] div,
-[class*="bg-black"] h1, [class*="bg-black"] .h1,
-[class*="bg-black"] h2, [class*="bg-black"] .h2,
-[class*="bg-black"] h3, [class*="bg-black"] .h3,
-[class*="bg-black"] p, [class*="bg-black"] span, [class*="bg-black"] div {
+.hero-overlay p, .hero-overlay span, .hero-overlay div {
   color: #FFFFFF !important;
 }
 
@@ -68,10 +60,6 @@ p {
   background: #FFFFFF !important;
   color: #000000 !important;
   border: 2px solid #000000 !important;
-}
-
-.ultra-card * {
-  color: #000000 !important;
 }
 
 .accent-gradient {
@@ -86,10 +74,6 @@ p {
   border: 2px solid #FF0000 !important;
 }
 
-.btn-primary * {
-  color: #FFFFFF !important;
-}
-
 .btn-outline {
   @apply font-medium px-8 py-3 rounded-full transition-all duration-300;
   background: transparent !important;
@@ -98,16 +82,8 @@ p {
   font-weight: 600;
 }
 
-.btn-outline * {
-  color: #000000 !important;
-}
-
 .btn-outline:hover {
   background: #000000 !important;
-  color: #FFFFFF !important;
-}
-
-.btn-outline:hover * {
   color: #FFFFFF !important;
 }
 
@@ -135,16 +111,8 @@ a:not(.btn-primary):not(.btn-outline):hover {
   color: #FFFFFF !important;
 }
 
-.high-contrast * {
-  color: #FFFFFF !important;
-}
-
 .high-contrast-reverse {
   background: #FFFFFF !important;
-  color: #000000 !important;
-}
-
-.high-contrast-reverse * {
   color: #000000 !important;
 }
 
@@ -176,17 +144,9 @@ a:not(.btn-primary):not(.btn-outline):hover {
   border-bottom: 2px solid #000000 !important;
 }
 
-.nav-sticky * {
-  color: #000000 !important;
-}
-
 .nav-transparent {
   background: #FFFFFF !important;
   backdrop-filter: blur(10px);
-}
-
-.nav-transparent * {
-  color: #000000 !important;
 }
 
 /* Footer specific styles - ultra high contrast */
@@ -194,10 +154,6 @@ a:not(.btn-primary):not(.btn-outline):hover {
   background: #000000 !important;
   color: #FFFFFF !important;
   @apply py-16;
-}
-
-.footer-minimal * {
-  color: #FFFFFF !important;
 }
 
 .social-icon {
@@ -271,68 +227,8 @@ a:not(.btn-primary):not(.btn-outline):hover {
   border: 2px solid #000000 !important;
 }
 
-.card-hover * {
-  color: #000000 !important;
-}
-
 .card-hover:hover {
   transform: translateY(-5px);
   box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
   border-color: #FF0000 !important;
-}
-
-/* Universal container text visibility */
-.container, .container *, 
-.wrapper, .wrapper *,
-.section, .section *,
-.component, .component *,
-.card, .card *,
-.box, .box *,
-.panel, .panel *,
-.widget, .widget * {
-  color: #000000 !important;
-}
-
-/* Dark container overrides */
-.bg-black .container, .bg-black .container *, 
-.bg-black .wrapper, .bg-black .wrapper *,
-.bg-black .section, .bg-black .section *,
-.bg-black .component, .bg-black .component *,
-.bg-black .card, .bg-black .card *,
-.bg-black .box, .bg-black .box *,
-.bg-black .panel, .bg-black .panel *,
-.bg-black .widget, .bg-black .widget *,
-.bg-brand-navy .container, .bg-brand-navy .container *, 
-.bg-brand-navy .wrapper, .bg-brand-navy .wrapper *,
-.bg-brand-navy .section, .bg-brand-navy .section *,
-.bg-brand-navy .component, .bg-brand-navy .component *,
-.bg-brand-navy .card, .bg-brand-navy .card *,
-.bg-brand-navy .box, .bg-brand-navy .box *,
-.bg-brand-navy .panel, .bg-brand-navy .panel *,
-.bg-brand-navy .widget, .bg-brand-navy .widget *,
-.hero-content .container, .hero-content .container *, 
-.hero-content .wrapper, .hero-content .wrapper *,
-.hero-content .section, .hero-content .section *,
-.hero-content .component, .hero-content .component *,
-.hero-content .card, .hero-content .card *,
-.hero-content .box, .hero-content .box *,
-.hero-content .panel, .hero-content .panel *,
-.hero-content .widget, .hero-content .widget *,
-[class*="bg-gradient"] .container, [class*="bg-gradient"] .container *, 
-[class*="bg-gradient"] .wrapper, [class*="bg-gradient"] .wrapper *,
-[class*="bg-gradient"] .section, [class*="bg-gradient"] .section *,
-[class*="bg-gradient"] .component, [class*="bg-gradient"] .component *,
-[class*="bg-gradient"] .card, [class*="bg-gradient"] .card *,
-[class*="bg-gradient"] .box, [class*="bg-gradient"] .box *,
-[class*="bg-gradient"] .panel, [class*="bg-gradient"] .panel *,
-[class*="bg-gradient"] .widget, [class*="bg-gradient"] .widget *,
-[class*="bg-black"] .container, [class*="bg-black"] .container *, 
-[class*="bg-black"] .wrapper, [class*="bg-black"] .wrapper *,
-[class*="bg-black"] .section, [class*="bg-black"] .section *,
-[class*="bg-black"] .component, [class*="bg-black"] .component *,
-[class*="bg-black"] .card, [class*="bg-black"] .card *,
-[class*="bg-black"] .box, [class*="bg-black"] .box *,
-[class*="bg-black"] .panel, [class*="bg-black"] .panel *,
-[class*="bg-black"] .widget, [class*="bg-black"] .widget * {
-  color: #FFFFFF !important;
 }

@@ -7,17 +7,15 @@ import { ArrowRight, Phone } from 'lucide-react';
 const Hero = () => {
   return (
     <div className="hero-fullscreen bg-black">
-      {/* Background Image - Fixed responsive */}
+      {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <div className="hero-overlay"></div>
-        <div className="w-full h-full overflow-hidden">
-          <img 
-            src="/lovable-uploads/5fd5eb2e-668b-49dc-adbb-c49462cde0ed.png" 
-            alt="Professional commercial van wrap for Arnold Electric - premium vehicle graphics in Chicago" 
-            className="w-full h-full object-cover object-center"
-            loading="eager"
-          />
-        </div>
+        <img 
+          src="/lovable-uploads/5fd5eb2e-668b-49dc-adbb-c49462cde0ed.png" 
+          alt="Professional commercial van wrap for Arnold Electric - premium vehicle graphics in Chicago" 
+          className="w-full h-full object-cover"
+          loading="eager"
+        />
       </div>
       
       <div className="hero-content">

@@ -25,14 +25,11 @@ const TruckOverview = () => {
         </p>
       </div>
       <div className="rounded-lg overflow-hidden shadow-lg">
-        <div className="relative w-full aspect-video overflow-hidden">
-          <img 
-            src="/lovable-uploads/5539b79e-ab54-428d-82a0-e4735ee97a95.png" 
-            alt="Professional truck wrap with vibrant graphics and business branding - Commercial vehicle wrap in Chicago" 
-            className="w-full h-full object-cover"
-            loading="lazy"
-          />
-        </div>
+        <img 
+          src="/lovable-uploads/5539b79e-ab54-428d-82a0-e4735ee97a95.png" 
+          alt="Professional truck wrap with vibrant graphics and business branding - Commercial vehicle wrap in Chicago" 
+          className="w-full h-auto"
+        />
       </div>
     </div>
   );

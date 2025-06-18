@@ -11,19 +11,17 @@ interface GalleryItemProps {
 const GalleryItem: React.FC<GalleryItemProps> = ({ item, onExpand }) => {
   return (
     <div className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 animate-fade-in">
-      <div className="relative h-48 overflow-hidden group">
+      <div className="relative h-64 overflow-hidden group">
         <img 
           src={item.image} 
-          alt={`${item.title} - Professional ${item.category.toLowerCase()} service in ${item.location || 'Chicago'} IL - ${item.client ? `Custom vehicle wrap for ${item.client}` : 'Premium vehicle wrap installation'} by Wrapping Chicago`}
-          title={`${item.title} - ${item.category} in ${item.location || 'Chicago'} IL`}
-          loading="lazy"
-          className="w-full h-full object-cover object-center transition-transform duration-300 group-hover:scale-105"
+          alt={`${item.title} - ${item.category} in ${item.location || 'Chicago'} - ${item.client ? `for ${item.client}` : 'Vehicle wrap example'}`}
+          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
         />
         <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
           <button 
             onClick={() => onExpand(item)}
             className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white rounded-full p-2"
-            aria-label={`Expand image of ${item.title} - ${item.category} project`}
+            aria-label="Expand image"
           >
             <Maximize className="h-5 w-5 text-brand-navy" />
           </button>

@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
@@ -165,12 +166,11 @@ const LocationProjects = ({ cityName }: LocationProjectsProps) => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projectsToDisplay.map((project, index) => (
             <div key={index} className="rounded-lg overflow-hidden shadow-md bg-white transition-transform duration-300 hover:-translate-y-1 hover:shadow-lg">
-              <div className="relative w-full aspect-video overflow-hidden">
+              <div className="aspect-w-16 aspect-h-9 bg-gray-200 overflow-hidden h-56">
                 <img 
                   src={project.image}
                   alt={`Professional ${project.title.toLowerCase()} in ${cityName}, IL - ${project.description.substring(0, 50)}...`}
-                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
-                  loading="lazy"
+                  className="object-cover w-full h-full transition-transform duration-500 hover:scale-105"
                 />
               </div>
               <div className="p-6">

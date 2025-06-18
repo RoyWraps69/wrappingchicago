@@ -82,7 +82,6 @@
   * {
     @apply border-border;
     border-color: #000000 !important;
-    color: #000000 !important;
   }
 
   html {
@@ -97,17 +96,16 @@
     background-color: #FFFFFF !important;
   }
   
-  /* CRITICAL: Maximum contrast for ALL text elements - universal override */
+  /* CRITICAL: Maximum contrast for ALL text elements */
   h1, h2, h3, h4, h5, h6, p, span, div, a, li, td, th, label, strong, em, small, 
   .text-base, .text-lg, .text-xl, .text-2xl, .text-3xl, .text-4xl, .text-5xl, .text-6xl,
   main, section, article, aside, header, footer, nav,
-  .content, .container, .wrapper, .card, .component, .btn, .button,
-  ul, ol, dl, dt, dd, blockquote, cite, address, pre, code {
+  .content, .container, .wrapper {
     color: #000000 !important;
     font-weight: inherit;
   }
   
-  /* Dark backgrounds get white text - COMPREHENSIVE and SPECIFIC */
+  /* Dark backgrounds get white text - COMPREHENSIVE */
   .bg-black, .bg-black *, 
   .bg-brand-navy, .bg-brand-navy *,
   .dark-section, .dark-section *,
@@ -123,14 +121,11 @@
   .bg-gradient-to-l, .bg-gradient-to-l *,
   .bg-gradient-to-t, .bg-gradient-to-t *,
   .bg-gradient-to-b, .bg-gradient-to-b *,
-  [class*="bg-gradient"], [class*="bg-gradient"] *,
-  [class*="bg-black"], [class*="bg-black"] *,
-  [class*="bg-gray-8"], [class*="bg-gray-8"] *,
-  [class*="bg-gray-9"], [class*="bg-gray-9"] * {
+  [class*="bg-gradient"], [class*="bg-gradient"] * {
     color: #FFFFFF !important;
   }
 
-  /* ELIMINATE ALL gray text colors - make them black on light backgrounds */
+  /* ELIMINATE ALL gray text colors - make them black */
   .text-gray-700, .text-gray-600, .text-gray-500, .text-gray-400, .text-gray-300, .text-gray-200, .text-gray-100,
   .text-muted-foreground, .text-muted, .text-slate-600, .text-slate-700,
   .text-slate-500, .text-slate-400, .text-slate-300, .text-slate-200, .text-slate-100,
@@ -139,15 +134,12 @@
     color: #000000 !important;
   }
 
-  /* White text on ALL dark backgrounds - comprehensive selectors */
-  .bg-black .text-gray-700, .bg-black .text-gray-600, .bg-black .text-gray-500, .bg-black .text-gray-400, .bg-black .text-gray-300, .bg-black .text-gray-200, .bg-black .text-muted-foreground, .bg-black .text-muted,
-  .bg-brand-navy .text-gray-700, .bg-brand-navy .text-gray-600, .bg-brand-navy .text-gray-500, .bg-brand-navy .text-gray-400, .bg-brand-navy .text-gray-300, .bg-brand-navy .text-gray-200, .bg-brand-navy .text-muted-foreground, .bg-brand-navy .text-muted,
-  .bg-gray-800 .text-gray-300, .bg-gray-800 .text-gray-200, .bg-gray-800 .text-gray-100,
-  .bg-gray-900 .text-gray-300, .bg-gray-900 .text-gray-200, .bg-gray-900 .text-gray-100,
-  .dark-section .text-gray-300, .dark-section .text-gray-200, .dark-section .text-gray-100,
-  .bg-gradient-to-r .text-gray-300, .bg-gradient-to-r .text-gray-400, .bg-gradient-to-r .text-gray-500, .bg-gradient-to-r .text-muted,
-  [class*="bg-gradient"] .text-gray-300, [class*="bg-gradient"] .text-gray-400, [class*="bg-gradient"] .text-gray-500, [class*="bg-gradient"] .text-muted,
-  [class*="bg-black"] .text-gray-300, [class*="bg-black"] .text-gray-400, [class*="bg-black"] .text-gray-500, [class*="bg-black"] .text-muted {
+  /* White text on ALL dark backgrounds */
+  .bg-black .text-gray-700, .bg-black .text-gray-600, .bg-black .text-gray-500, .bg-black .text-gray-400, .bg-black .text-gray-300, .bg-black .text-gray-200, .bg-black .text-muted-foreground,
+  .bg-brand-navy .text-gray-700, .bg-brand-navy .text-gray-600, .bg-brand-navy .text-gray-500, .bg-brand-navy .text-gray-400, .bg-brand-navy .text-gray-300, .bg-brand-navy .text-gray-200, .bg-brand-navy .text-muted-foreground,
+  .bg-gray-800 .text-gray-300, .bg-gray-900 .text-gray-300,
+  .dark-section .text-gray-300, .bg-gradient-to-r .text-gray-300, .bg-gradient-to-r .text-gray-400, .bg-gradient-to-r .text-gray-500,
+  [class*="bg-gradient"] .text-gray-300, [class*="bg-gradient"] .text-gray-400, [class*="bg-gradient"] .text-gray-500 {
     color: #FFFFFF !important;
   }
 
@@ -180,7 +172,7 @@
     color: #FFFFFF !important;
   }
 
-  /* Links visibility - comprehensive with higher specificity */
+  /* Links visibility - comprehensive */
   a:not(.btn-primary):not(.btn-outline):not(.social-icon):not(.nav-link):not(.button):not([class*="bg-"]) {
     color: #0000EE !important;
     text-decoration: underline !important;
@@ -193,14 +185,13 @@
     text-decoration-thickness: 3px !important;
   }
 
-  /* Dark background links - more comprehensive */
+  /* Dark background links */
   .bg-black a:not(.btn-primary):not(.btn-outline):not(.social-icon):not(.nav-link):not(.button),
   .bg-brand-navy a:not(.btn-primary):not(.btn-outline):not(.social-icon):not(.nav-link):not(.button),
   .dark-section a:not(.btn-primary):not(.btn-outline):not(.social-icon):not(.nav-link):not(.button),
   .hero-content a:not(.btn-primary):not(.btn-outline):not(.social-icon):not(.nav-link):not(.button),
   .bg-gradient-to-r a:not(.btn-primary):not(.btn-outline):not(.social-icon):not(.nav-link):not(.button),
-  [class*="bg-gradient"] a:not(.btn-primary):not(.btn-outline):not(.social-icon):not(.nav-link):not(.button),
-  [class*="bg-black"] a:not(.btn-primary):not(.btn-outline):not(.social-icon):not(.nav-link):not(.button) {
+  [class*="bg-gradient"] a:not(.btn-primary):not(.btn-outline):not(.social-icon):not(.nav-link):not(.button) {
     color: #87CEEB !important;
     text-decoration: underline !important;
   }
@@ -217,14 +208,14 @@
     opacity: 1;
   }
 
-  /* Label visibility - comprehensive */
+  /* Label visibility */
   label, .label {
     color: #000000 !important;
     font-weight: 600 !important;
   }
 
   .bg-black label, .bg-brand-navy label, .dark-section label,
-  .bg-gradient-to-r label, [class*="bg-gradient"] label, [class*="bg-black"] label {
+  .bg-gradient-to-r label, [class*="bg-gradient"] label {
     color: #FFFFFF !important;
   }
 
@@ -268,15 +259,13 @@
     color: #000000 !important;
   }
 
-  /* Card and component visibility - universal override */
-  .card, .card *, 
-  .component, .component *, 
-  .section, .section *, 
-  .container-box, .container-box *,
-  .wrapper, .wrapper *,
-  .bg-white, .bg-white *,
-  .bg-gray-50, .bg-gray-50 *,
-  .bg-gray-100, .bg-gray-100 * {
+  /* Card and component visibility */
+  .card, .component, .section, .container-box {
+    background: #FFFFFF !important;
+    color: #000000 !important;
+  }
+
+  .card *, .component *, .section *, .container-box * {
     color: #000000 !important;
   }
 
@@ -329,64 +318,17 @@
     }
   }
 
-  /* Ensure all content below hero is visible - comprehensive */
+  /* Ensure all content below hero is visible */
   main p, main span, main div, main li, main h1, main h2, main h3, main h4, main h5, main h6,
-  section p, section span, section div, section li, section h1, section h2, section h3, section h4, section h5, section h6,
-  article p, article span, article div, article li, article h1, article h2, article h3, article h4, article h5, article h6 {
+  section p, section span, section div, section li, section h1, section h2, section h3, section h4, section h5, section h6 {
     color: #000000 !important;
   }
 
   /* Racing stripes and special sections */
   .racing-stripes, .racing-stripes *,
-  .carbon-fiber-light,
-
-  .carbon-fiber-light * {
+  .carbon-fiber-light, .carbon-fiber-light * {
     background: #FFFFFF !important;
     color: #000000 !important;
-  }
-
-  /* Container-specific overrides for absolute consistency */
-  .container, .container > *,
-  .max-w-7xl, .max-w-7xl > *,
-  .max-w-6xl, .max-w-6xl > *,
-  .max-w-5xl, .max-w-5xl > *,
-  .max-w-4xl, .max-w-4xl > *,
-  .mx-auto, .mx-auto > * {
-    color: #000000 !important;
-  }
-
-  /* Dark container overrides */
-  .bg-black .container, .bg-black .container > *,
-  .bg-black .max-w-7xl, .bg-black .max-w-7xl > *,
-  .bg-black .max-w-6xl, .bg-black .max-w-6xl > *,
-  .bg-black .max-w-5xl, .bg-black .max-w-5xl > *,
-  .bg-black .max-w-4xl, .bg-black .max-w-4xl > *,
-  .bg-black .mx-auto, .bg-black .mx-auto > *,
-  .bg-brand-navy .container, .bg-brand-navy .container > *,
-  .bg-brand-navy .max-w-7xl, .bg-brand-navy .max-w-7xl > *,
-  .bg-brand-navy .max-w-6xl, .bg-brand-navy .max-w-6xl > *,
-  .bg-brand-navy .max-w-5xl, .bg-brand-navy .max-w-5xl > *,
-  .bg-brand-navy .max-w-4xl, .bg-brand-navy .max-w-4xl > *,
-  .bg-brand-navy .mx-auto, .bg-brand-navy .mx-auto > *,
-  .hero-content .container, .hero-content .container > *,
-  .hero-content .max-w-7xl, .hero-content .max-w-7xl > *,
-  .hero-content .max-w-6xl, .hero-content .max-w-6xl > *,
-  .hero-content .max-w-5xl, .hero-content .max-w-5xl > *,
-  .hero-content .max-w-4xl, .hero-content .max-w-4xl > *,
-  .hero-content .mx-auto, .hero-content .mx-auto > *,
-  [class*="bg-gradient"] .container, [class*="bg-gradient"] .container > *,
-  [class*="bg-gradient"] .max-w-7xl, [class*="bg-gradient"] .max-w-7xl > *,
-  [class*="bg-gradient"] .max-w-6xl, [class*="bg-gradient"] .max-w-6xl > *,
-  [class*="bg-gradient"] .max-w-5xl, [class*="bg-gradient"] .max-w-5xl > *,
-  [class*="bg-gradient"] .max-w-4xl, [class*="bg-gradient"] .max-w-4xl > *,
-  [class*="bg-gradient"] .mx-auto, [class*="bg-gradient"] .mx-auto > *,
-  [class*="bg-black"] .container, [class*="bg-black"] .container > *,
-  [class*="bg-black"] .max-w-7xl, [class*="bg-black"] .max-w-7xl > *,
-  [class*="bg-black"] .max-w-6xl, [class*="bg-black"] .max-w-6xl > *,
-  [class*="bg-black"] .max-w-5xl, [class*="bg-black"] .max-w-5xl > *,
-  [class*="bg-black"] .max-w-4xl, [class*="bg-black"] .max-w-4xl > *,
-  [class*="bg-black"] .mx-auto, [class*="bg-black"] .mx-auto > * {
-    color: #FFFFFF !important;
   }
 
   /* Print styles */

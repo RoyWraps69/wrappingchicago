@@ -11,14 +11,11 @@ const FleetWrapProcess: React.FC = () => {
       </div>
       
       <div className="mb-4">
-        <div className="relative w-full aspect-video overflow-hidden rounded-md">
-          <img 
-            src="/lovable-uploads/9bb3d94e-589d-4daf-b35e-e19e80610439.png" 
-            alt="Vehicle wrap installation process - Professional fleet wrapping in Chicago" 
-            className="w-full h-full object-cover"
-            loading="lazy"
-          />
-        </div>
+        <img 
+          src="/lovable-uploads/9bb3d94e-589d-4daf-b35e-e19e80610439.png" 
+          alt="Vehicle wrap installation process - Professional fleet wrapping in Chicago" 
+          className="w-full h-48 object-cover rounded-md mb-3"
+        />
       </div>
       
       <ol className="list-decimal pl-5 space-y-2 text-gray-700">

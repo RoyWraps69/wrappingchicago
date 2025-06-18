@@ -20,26 +20,23 @@ const testimonials: Testimonial[] = [
     location: "Chicago, IL",
     rating: 5,
     text: "Absolutely incredible work! My food truck wrap has increased my business by 40%. The design is eye-catching and the installation was flawless.",
-    vehicle: "Food Truck Wrap",
-    image: "/lovable-uploads/fc2146ab-62aa-4fc9-85aa-3582af7ce980.png"
+    vehicle: "Food Truck Wrap"
   },
   {
     id: 2,
-    name: "Sarah Mitchell", 
+    name: "Sarah Mitchell",
     location: "Naperville, IL",
     rating: 5,
     text: "I wanted a color change for my Tesla and they delivered beyond my expectations. The matte black finish looks amazing and has held up perfectly for 2 years.",
-    vehicle: "Tesla Model S Color Change",
-    image: "/lovable-uploads/676b4902-7b81-4619-90d8-8feb1f986636.png"
+    vehicle: "Tesla Model S Color Change"
   },
   {
     id: 3,
     name: "Chicago Plumbing Co.",
-    location: "Schaumburg, IL", 
+    location: "Schaumburg, IL",
     rating: 5,
     text: "We wrapped our entire fleet of 12 vehicles. Professional service, great pricing, and our phones haven't stopped ringing since! Highly recommend.",
-    vehicle: "Fleet Wraps",
-    image: "/lovable-uploads/230338ed-a8d9-4584-bb4c-ba33c793f7ab.png"
+    vehicle: "Fleet Wraps"
   },
   {
     id: 4,
@@ -47,8 +44,7 @@ const testimonials: Testimonial[] = [
     location: "Oak Park, IL",
     rating: 5,
     text: "The team at Wrapping Chicago made my business van look like a million bucks. Customer inquiries have tripled since getting the wrap installed.",
-    vehicle: "Commercial Van Wrap",
-    image: "/lovable-uploads/efdbc4bf-1f04-42bb-a904-f52dae7bef6c.png"
+    vehicle: "Commercial Van Wrap"
   },
   {
     id: 5,
@@ -56,8 +52,7 @@ const testimonials: Testimonial[] = [
     location: "Evanston, IL",
     rating: 5,
     text: "Partial wrap on my pickup truck for my landscaping business. Great quality materials, reasonable price, and quick turnaround. Very satisfied!",
-    vehicle: "Pickup Truck Partial Wrap",
-    image: "/lovable-uploads/76973c14-ac60-4c81-afa1-555b0f4f5f36.png"
+    vehicle: "Pickup Truck Partial Wrap"
   },
   {
     id: 6,
@@ -65,8 +60,7 @@ const testimonials: Testimonial[] = [
     location: "Arlington Heights, IL",
     rating: 5,
     text: "My BMW looks absolutely stunning with the new wrap. The attention to detail and quality of work is outstanding. Worth every penny!",
-    vehicle: "BMW X5 Full Wrap",
-    image: "/lovable-uploads/9de106b5-94cb-4fd1-a7c7-5c75c75b7cbb.png"
+    vehicle: "BMW X5 Full Wrap"
   }
 ];
 
@@ -96,18 +90,6 @@ const CustomerTestimonials: React.FC = () => {
           {testimonials.map((testimonial) => (
             <Card key={testimonial.id} className="h-full hover:shadow-lg transition-shadow">
               <CardContent className="p-6 h-full flex flex-col">
-                {/* Customer project image - responsive */}
-                {testimonial.image && (
-                  <div className="relative w-full aspect-[4/3] overflow-hidden rounded-lg mb-4">
-                    <img 
-                      src={testimonial.image}
-                      alt={`${testimonial.vehicle} project by Wrapping Chicago`}
-                      className="w-full h-full object-cover object-center"
-                      loading="lazy"
-                    />
-                  </div>
-                )}
-                
                 <div className="flex items-center mb-4">
                   <Quote className="h-8 w-8 text-brand-red mr-3" />
                   <div className="flex">{renderStars(testimonial.rating)}</div>
