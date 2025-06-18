@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import './App.css';
@@ -125,8 +126,7 @@ function App() {
         <a href="#main-content" className="skip-link">Skip to main content</a>
         
         <Routes>
-          {/* HOME ROUTE - ABSOLUTE PRIORITY */}
-          <Route index element={<HomePage />} />
+          {/* HOME ROUTE - SINGLE DEFINITION */}
           <Route path="/" element={<HomePage />} />
           
           {/* Main navigation routes */}
@@ -221,7 +221,7 @@ function App() {
           <Route path="/oak-lawn" element={<CityLocationPage />} />
           <Route path="/las-vegas" element={<CityLocationPage />} />
           
-          {/* Fallback for any other city slug */}
+          {/* Fallback for any other city slug - ABSOLUTE LAST */}
           <Route path="/:citySlug" element={<CityLocationPage />} />
           
           {/* 404 catch-all route */}
