@@ -6,11 +6,7 @@ import { ArrowRight, Phone } from 'lucide-react';
 
 const Hero = () => {
   return (
-    <div className="hero-fullscreen bg-black">
-      {/* Background - solid color only */}
-      <div className="absolute inset-0 z-0 bg-black">
-      </div>
-      
+    <div className="hero-fullscreen">
       <div className="hero-content">
         <h1 className="text-5xl sm:text-6xl md:text-7xl font-extrabold uppercase tracking-wider text-white mb-6">
           Fleet Wraps That Dominate.
