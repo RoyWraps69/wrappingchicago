@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import './App.css';
@@ -35,9 +36,7 @@ import LiveChatWidget from './components/chat/LiveChatWidget';
 function App() {
   // Help search engines discover site resources
   useEffect(() => {
-    // Debug routing
-    console.log('App component mounted, current path:', window.location.pathname);
-    console.log('HomePage component:', HomePage);
+    console.log('App mounted - Current pathname:', window.location.pathname);
     
     // Create and add structured data for the website
     const structuredData = document.createElement('script');
@@ -110,9 +109,10 @@ function App() {
     // Clean up function
     return () => {
       document.head.removeChild(structuredData);
-      // Cleanup other dynamically added elements if needed
     };
   }, []);
+
+  console.log('App rendering - About to return routes');
 
   return (
     <HelmetProvider>
@@ -126,8 +126,7 @@ function App() {
         <a href="#main-content" className="skip-link">Skip to main content</a>
         
         <Routes>
-          {/* HOME ROUTE - MUST BE FIRST AND EXACT */}
-          <Route index element={<HomePage />} />
+          {/* HOME ROUTE - EXACT MATCH */}
           <Route path="/" element={<HomePage />} />
           
           {/* Main navigation routes */}
