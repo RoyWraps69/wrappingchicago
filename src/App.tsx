@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import './App.css';
@@ -126,7 +125,8 @@ function App() {
         <a href="#main-content" className="skip-link">Skip to main content</a>
         
         <Routes>
-          {/* HOME ROUTE - EXACT MATCH */}
+          {/* HOME ROUTES - Both index and root path */}
+          <Route index element={<HomePage />} />
           <Route path="/" element={<HomePage />} />
           
           {/* Main navigation routes */}
