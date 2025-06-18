@@ -1,11 +1,9 @@
 
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Helmet } from 'react-helmet-async';
-import { useLocation, useNavigate } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Hero from '@/components/home/Hero';
-import HomeSEO from '@/components/home/HomeSEO';
 import EasyButtonSection from '@/components/home/EasyButtonSection';
 import StickyContactButtons from '@/components/home/StickyContactButtons';
 import BreadcrumbNavigation from '@/components/seo/BreadcrumbNavigation';
@@ -17,17 +15,7 @@ import { Star, Shield, Award, Clock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 
-// Extend window type for debugging
-declare global {
-  interface Window {
-    debugNavigate?: (to: any, options?: any) => void;
-  }
-}
-
 function HomePage() {
-  const location = useLocation();
-  const navigate = useNavigate();
-  
   // Get Chicago city for schema
   const chicagoCity = cities.find(city => city.slug === 'chicago') || cities[0];
   
@@ -43,60 +31,12 @@ function HomePage() {
     }
   ];
 
-  useEffect(() => {
-    console.log('=== HOMEPAGE MOUNT DEBUG ===');
-    console.log('Current location:', location.pathname);
-    console.log('Current URL:', window.location.href);
-    console.log('HomePage mounted at:', new Date().toISOString());
-    
-    // Check if we're actually on the home page
-    if (location.pathname !== '/') {
-      console.log('WARNING: HomePage component loaded but path is not /');
-      console.log('This might indicate a routing issue');
-    }
-    
-    // Monitor for any navigation attempts
-    const originalPushState = history.pushState;
-    const originalReplaceState = history.replaceState;
-    
-    history.pushState = function(data: any, unused: string, url?: string | URL | null) {
-      console.log('🚨 NAVIGATION DETECTED - pushState called:', { data, unused, url });
-      console.trace('pushState call stack');
-      return originalPushState.call(this, data, unused, url);
-    };
-    
-    history.replaceState = function(data: any, unused: string, url?: string | URL | null) {
-      console.log('🚨 NAVIGATION DETECTED - replaceState called:', { data, unused, url });
-      console.trace('replaceState call stack');
-      return originalReplaceState.call(this, data, unused, url);
-    };
-    
-    // Override navigate function temporarily for debugging
-    const originalNavigate = navigate;
-    window.debugNavigate = function(to: any, options?: any) {
-      console.log('🚨 REACT ROUTER NAVIGATE CALLED:', { to, options });
-      console.trace('navigate call stack');
-      return originalNavigate(to, options);
-    };
-    
-    return () => {
-      history.pushState = originalPushState;
-      history.replaceState = originalReplaceState;
-    };
-  }, [location, navigate]);
-
-  console.log('HomePage rendering - current path:', location.pathname);
-
   return (
     <>
       <Helmet>
         <title>Home - Vehicle Wraps Chicago</title>
       </Helmet>
       
-      {/* Remove HomeSEO temporarily to avoid conflicts */}
-      {/* <HomeSEO /> */}
-      
-      {/* Simplified Schema */}
       <Schema 
         city={chicagoCity}
         path="/"
@@ -122,7 +62,6 @@ function HomePage() {
         <main id="main-content" className="flex-grow main-content">
           <Hero />
           
-          {/* Simple credibility section */}
           <section className="py-12 bg-white">
             <div className="container mx-auto px-4">
               <div className="text-center mb-8">
@@ -192,13 +131,8 @@ function HomePage() {
             </div>
           </section>
           
-          {/* Customer testimonials for social proof */}
           <CustomerTestimonials />
-          
-          {/* Trust signals */}
           <TrustSignals />
-          
-          {/* Final call to action */}
           <EasyButtonSection />
         </main>
         <StickyContactButtons />
