@@ -1,6 +1,7 @@
 
 import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
+import { useLocation, useNavigate } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Hero from '@/components/home/Hero';
@@ -17,6 +18,9 @@ import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 
 function HomePage() {
+  const location = useLocation();
+  const navigate = useNavigate();
+  
   // Get Chicago city for schema
   const chicagoCity = cities.find(city => city.slug === 'chicago') || cities[0];
   
@@ -32,45 +36,58 @@ function HomePage() {
     }
   ];
 
-  // Add indexing hint to the console that can help identify if page was rendered correctly
   useEffect(() => {
-    console.log('HomePage component mounted and rendering');
-    console.log('HomePage - Google indexing compatibility check: PASS');
+    console.log('=== HOMEPAGE MOUNT DEBUG ===');
+    console.log('Current location:', location.pathname);
     console.log('Current URL:', window.location.href);
-    console.log('Current pathname:', window.location.pathname);
-    console.log('HomePage useEffect running - no redirects should happen here');
+    console.log('HomePage mounted at:', new Date().toISOString());
     
-    // Check if there are any programmatic navigations happening
+    // Check if we're actually on the home page
+    if (location.pathname !== '/') {
+      console.log('WARNING: HomePage component loaded but path is not /');
+      console.log('This might indicate a routing issue');
+    }
+    
+    // Monitor for any navigation attempts
     const originalPushState = history.pushState;
     const originalReplaceState = history.replaceState;
     
     history.pushState = function(...args) {
-      console.log('History pushState called from HomePage:', args);
+      console.log('🚨 NAVIGATION DETECTED - pushState called:', args);
       console.trace('pushState call stack');
       return originalPushState.apply(this, args);
     };
     
     history.replaceState = function(...args) {
-      console.log('History replaceState called from HomePage:', args);
+      console.log('🚨 NAVIGATION DETECTED - replaceState called:', args);
       console.trace('replaceState call stack');
       return originalReplaceState.apply(this, args);
+    };
+    
+    // Override navigate function temporarily for debugging
+    const originalNavigate = navigate;
+    window.debugNavigate = function(...args) {
+      console.log('🚨 REACT ROUTER NAVIGATE CALLED:', args);
+      console.trace('navigate call stack');
+      return originalNavigate(...args);
     };
     
     return () => {
       history.pushState = originalPushState;
       history.replaceState = originalReplaceState;
     };
-  }, []);
+  }, [location, navigate]);
 
-  console.log('HomePage render - About to return JSX');
+  console.log('HomePage rendering - current path:', location.pathname);
 
   return (
     <>
       <Helmet>
-        <title>Home</title>
+        <title>Home - Vehicle Wraps Chicago</title>
       </Helmet>
       
-      <HomeSEO />
+      {/* Remove HomeSEO temporarily to avoid conflicts */}
+      {/* <HomeSEO /> */}
       
       {/* Simplified Schema */}
       <Schema 
