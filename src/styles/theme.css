@@ -60,22 +60,23 @@
   --info: #2563EB;
 }
 
-/* Force high contrast on all text elements */
-body, p, span, div, li, td, th {
+/* CRITICAL: Force high contrast on ALL text elements */
+body, p, span, div, li, td, th, section, article, aside, header, footer, nav, main {
   color: #000000 !important;
 }
 
-/* Dark sections get white text */
+/* Dark sections get white text - more comprehensive */
 .bg-black, .bg-black *,
 .bg-brand-navy, .bg-brand-navy *,
 .dark-section, .dark-section *,
 .hero-content, .hero-content *,
 .hero-fullscreen *, 
-.hero-overlay *,
+.hero-overlay, .hero-overlay *,
 [class*="bg-gray-8"], [class*="bg-gray-8"] *,
 [class*="bg-gray-9"], [class*="bg-gray-9"] *,
 [class*="bg-slate-8"], [class*="bg-slate-8"] *,
-[class*="bg-slate-9"], [class*="bg-slate-9"] * {
+[class*="bg-slate-9"], [class*="bg-slate-9"] *,
+.bg-gradient-to-r, .bg-gradient-to-r * {
   color: #FFFFFF !important;
 }
 
@@ -83,9 +84,10 @@ body, p, span, div, li, td, th {
 .hero-content, .hero-content *, 
 .hero-fullscreen *, 
 .text-white, .text-white *,
-.hero-overlay *, 
-.bg-black/90 *, 
-.bg-brand-navy/90 * {
+.hero-overlay, .hero-overlay *, 
+.bg-black\/90 *, 
+.bg-brand-navy\/90 *,
+.bg-gradient-to-r * {
   color: #FFFFFF !important;
 }
 
@@ -97,35 +99,50 @@ body, p, span, div, li, td, th {
   color: #FFFFFF !important;
 }
 
-/* Remove muted gray text - make it black */
-.text-gray-700, .text-gray-600, .text-gray-500, .text-gray-400, .text-gray-300,
-.text-muted-foreground, .text-muted, .text-slate-600, .text-slate-700 {
+/* CRITICAL: Remove muted gray text - make it black */
+.text-gray-700, .text-gray-600, .text-gray-500, .text-gray-400, .text-gray-300, .text-gray-200, .text-gray-100,
+.text-muted-foreground, .text-muted, .text-slate-600, .text-slate-700, .text-slate-500, .text-slate-400, .text-slate-300,
+.text-zinc-600, .text-zinc-700, .text-zinc-500, .text-zinc-400, .text-zinc-300 {
   color: #000000 !important;
 }
 
-/* White text on dark backgrounds */
-.text-gray-300, .text-gray-200, .text-gray-100, .text-white {
+/* White text on dark backgrounds - more specific */
+.bg-black .text-gray-700, .bg-black .text-gray-600, .bg-black .text-gray-500, .bg-black .text-gray-400, .bg-black .text-gray-300, .bg-black .text-gray-200, .bg-black .text-gray-100,
+.bg-brand-navy .text-gray-700, .bg-brand-navy .text-gray-600, .bg-brand-navy .text-gray-500, .bg-brand-navy .text-gray-400, .bg-brand-navy .text-gray-300, .bg-brand-navy .text-gray-200, .bg-brand-navy .text-gray-100,
+.bg-gray-800 .text-gray-300, .bg-gray-800 .text-gray-200, .bg-gray-800 .text-gray-100,
+.bg-gray-900 .text-gray-300, .bg-gray-900 .text-gray-200, .bg-gray-900 .text-gray-100,
+.dark-section .text-gray-300, .dark-section .text-gray-200, .dark-section .text-gray-100,
+.bg-gradient-to-r .text-gray-300, .bg-gradient-to-r .text-gray-200, .bg-gradient-to-r .text-gray-100 {
   color: #FFFFFF !important;
 }
 
 /* Link contrast - improved readability */
-a:not(.btn):not(.button):not([class*="bg-"]) {
+a:not(.btn):not(.button):not([class*="bg-"]):not(.social-icon):not(.nav-link) {
   color: #0000EE !important;
   text-decoration: underline !important;
 }
 
-a:not(.btn):not(.button):not([class*="bg-"]):hover {
+a:not(.btn):not(.button):not([class*="bg-"]):not(.social-icon):not(.nav-link):hover {
   color: #0000CC !important;
 }
 
+/* Dark background links */
+.bg-black a:not(.btn):not(.button):not(.social-icon):not(.nav-link),
+.bg-brand-navy a:not(.btn):not(.button):not(.social-icon):not(.nav-link),
+.dark-section a:not(.btn):not(.button):not(.social-icon):not(.nav-link),
+.hero-content a:not(.btn):not(.button):not(.social-icon):not(.nav-link),
+.bg-gradient-to-r a:not(.btn):not(.button):not(.social-icon):not(.nav-link) {
+  color: #87CEEB !important;
+}
+
 /* Card and component contrast */
-.card, [class*="bg-white"], .bg-gray-50 {
+.card, [class*="bg-white"], .bg-gray-50, .racing-stripes, .carbon-fiber-light {
   background: #FFFFFF !important;
   color: #000000 !important;
   border: 1px solid #E5E7EB !important;
 }
 
-.card *, [class*="bg-white"] *, .bg-gray-50 * {
+.card *, [class*="bg-white"] *, .bg-gray-50 *, .racing-stripes *, .carbon-fiber-light * {
   color: #000000 !important;
 }
 
@@ -165,7 +182,7 @@ input::placeholder, textarea::placeholder, select::placeholder {
     border-color: #000000 !important;
   }
   
-  .bg-black, .bg-brand-navy, .dark-section {
+  .bg-black, .bg-brand-navy, .dark-section, .bg-gradient-to-r {
     background: #000000 !important;
     color: #FFFFFF !important;
   }
@@ -181,6 +198,26 @@ h1, h2, h3, h4, h5, h6,
 /* Dark section headings */
 .bg-black h1, .bg-black h2, .bg-black h3, .bg-black h4, .bg-black h5, .bg-black h6,
 .bg-brand-navy h1, .bg-brand-navy h2, .bg-brand-navy h3, .bg-brand-navy h4, .bg-brand-navy h5, .bg-brand-navy h6,
-.hero-content h1, .hero-content h2, .hero-content h3, .hero-content h4, .hero-content h5, .hero-content h6 {
+.hero-content h1, .hero-content h2, .hero-content h3, .hero-content h4, .hero-content h5, .hero-content h6,
+.bg-gradient-to-r h1, .bg-gradient-to-r h2, .bg-gradient-to-r h3, .bg-gradient-to-r h4, .bg-gradient-to-r h5, .bg-gradient-to-r h6 {
+  color: #FFFFFF !important;
+}
+
+/* Additional text visibility fixes */
+main, section, article {
+  color: #000000 !important;
+}
+
+main *, section *, article * {
+  color: inherit !important;
+}
+
+/* Specific component fixes */
+.speakable {
+  color: #000000 !important;
+  font-weight: 600 !important;
+}
+
+.bg-gradient-to-r .speakable {
   color: #FFFFFF !important;
 }

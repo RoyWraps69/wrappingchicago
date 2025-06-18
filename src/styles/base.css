@@ -96,9 +96,11 @@
     background-color: #FFFFFF !important;
   }
   
-  /* Force maximum contrast on all text */
-  h1, h2, h3, h4, h5, h6, p, span, div, a, li, td, th, label, strong, em, small {
+  /* Force maximum contrast on all text elements */
+  h1, h2, h3, h4, h5, h6, p, span, div, a, li, td, th, label, strong, em, small, 
+  .text-base, .text-lg, .text-xl, .text-2xl, .text-3xl, .text-4xl, .text-5xl, .text-6xl {
     color: #000000 !important;
+    font-weight: inherit;
   }
   
   /* Dark backgrounds get white text */
@@ -112,14 +114,16 @@
   .bg-gray-800, .bg-gray-800 *,
   .bg-gray-900, .bg-gray-900 *,
   .bg-slate-800, .bg-slate-800 *,
-  .bg-slate-900, .bg-slate-900 * {
+  .bg-slate-900, .bg-slate-900 *,
+  .bg-gradient-to-r, .bg-gradient-to-r * {
     color: #FFFFFF !important;
   }
 
-  /* Remove ALL gray text colors - make them black or white based on background */
-  .text-gray-700, .text-gray-600, .text-gray-500, .text-gray-400, .text-gray-300,
+  /* CRITICAL: Remove ALL gray text colors - make them black */
+  .text-gray-700, .text-gray-600, .text-gray-500, .text-gray-400, .text-gray-300, .text-gray-200, .text-gray-100,
   .text-muted-foreground, .text-muted, .text-slate-600, .text-slate-700,
-  .text-slate-500, .text-slate-400, .text-slate-300 {
+  .text-slate-500, .text-slate-400, .text-slate-300, .text-slate-200, .text-slate-100,
+  .text-zinc-600, .text-zinc-700, .text-zinc-500, .text-zinc-400, .text-zinc-300 {
     color: #000000 !important;
   }
 
@@ -129,35 +133,46 @@
   .bg-black .text-gray-500,
   .bg-black .text-gray-400,
   .bg-black .text-gray-300,
+  .bg-black .text-gray-200,
   .bg-black .text-muted-foreground,
   .bg-brand-navy .text-gray-700,
   .bg-brand-navy .text-gray-600,
   .bg-brand-navy .text-gray-500,
   .bg-brand-navy .text-gray-400,
   .bg-brand-navy .text-gray-300,
+  .bg-brand-navy .text-gray-200,
   .bg-brand-navy .text-muted-foreground,
   .bg-gray-800 .text-gray-300,
   .bg-gray-900 .text-gray-300,
-  .dark-section .text-gray-300 {
+  .dark-section .text-gray-300,
+  .bg-gradient-to-r .text-gray-300,
+  .bg-gradient-to-r .text-gray-400,
+  .bg-gradient-to-r .text-gray-500 {
     color: #FFFFFF !important;
   }
 
+  /* Ensure text below hero is visible */
+  main p, main span, main div, main li {
+    color: #000000 !important;
+  }
+
   /* Links should be visible */
-  a:not(.btn-primary):not(.btn-outline):not(.social-icon):not(.nav-link) {
+  a:not(.btn-primary):not(.btn-outline):not(.social-icon):not(.nav-link):not(.button) {
     color: #0000EE !important;
     text-decoration: underline !important;
   }
 
-  a:not(.btn-primary):not(.btn-outline):not(.social-icon):not(.nav-link):hover {
+  a:not(.btn-primary):not(.btn-outline):not(.social-icon):not(.nav-link):not(.button):hover {
     color: #0000CC !important;
   }
 
-  /* On dark backgrounds, links should be white or red */
-  .bg-black a:not(.btn-primary):not(.btn-outline):not(.social-icon):not(.nav-link),
-  .bg-brand-navy a:not(.btn-primary):not(.btn-outline):not(.social-icon):not(.nav-link),
-  .dark-section a:not(.btn-primary):not(.btn-outline):not(.social-icon):not(.nav-link),
-  .hero-content a:not(.btn-primary):not(.btn-outline):not(.social-icon):not(.nav-link) {
-    color: #FFFFFF !important;
+  /* On dark backgrounds, links should be white or light blue */
+  .bg-black a:not(.btn-primary):not(.btn-outline):not(.social-icon):not(.nav-link):not(.button),
+  .bg-brand-navy a:not(.btn-primary):not(.btn-outline):not(.social-icon):not(.nav-link):not(.button),
+  .dark-section a:not(.btn-primary):not(.btn-outline):not(.social-icon):not(.nav-link):not(.button),
+  .hero-content a:not(.btn-primary):not(.btn-outline):not(.social-icon):not(.nav-link):not(.button),
+  .bg-gradient-to-r a:not(.btn-primary):not(.btn-outline):not(.social-icon):not(.nav-link):not(.button) {
+    color: #87CEEB !important;
   }
 
   /* Input elements */
@@ -168,8 +183,8 @@
   }
 
   input::placeholder, textarea::placeholder {
-    color: #000000 !important;
-    opacity: 0.7;
+    color: #666666 !important;
+    opacity: 1;
   }
 
   /* Ensure dropdown content has proper contrast */
@@ -177,5 +192,22 @@
     background: #FFFFFF !important;
     color: #000000 !important;
     border: 2px solid #000000 !important;
+  }
+
+  /* Fix specific component text visibility */
+  .racing-stripes, .racing-stripes *,
+  .carbon-fiber-light, .carbon-fiber-light * {
+    color: #000000 !important;
+  }
+
+  /* Ensure buttons have proper text color */
+  button, .button {
+    color: inherit;
+  }
+
+  .bg-brand-red, .bg-brand-red *,
+  .bg-red-600, .bg-red-600 *,
+  .bg-red-700, .bg-red-700 * {
+    color: #FFFFFF !important;
   }
 }
