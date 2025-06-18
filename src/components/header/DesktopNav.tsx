@@ -1,11 +1,12 @@
 
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import NavLink from './NavLink';
 import ServiceMenu from './ServiceMenu';
 import PricingMenu from './PricingMenu';
 
 const DesktopNav = () => {
+  const navigate = useNavigate();
   const navItems = [
     { label: 'Gallery', path: '/gallery' },
     { label: 'FAQ', path: '/faq' },
@@ -16,7 +17,7 @@ const DesktopNav = () => {
   const handleHomeClick = (e) => {
     e.preventDefault();
     console.log('Home link clicked, navigating to /');
-    window.location.href = '/';
+    navigate('/');
   };
 
   return (
