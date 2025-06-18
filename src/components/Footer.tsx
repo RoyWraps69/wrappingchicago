@@ -147,27 +147,27 @@ const Footer = () => {
             
             <h3 className="text-xl font-bold mb-4 uppercase text-white">Locations</h3>
             <div className="space-y-3">
-              <div className="flex items-start gap-2 bg-gray-800 p-3 rounded-lg">
+              <div className="flex items-start gap-2 bg-gray-900 border border-gray-700 p-3 rounded-lg">
                 <Globe className="w-5 h-5 text-brand-red flex-shrink-0 mt-1" />
                 <div>
                   <h4 className="font-medium text-white">Chicago, IL</h4>
-                  <p className="text-white/70 text-sm">Main Installation Facility</p>
+                  <p className="text-gray-300 text-sm">Main Installation Facility</p>
                 </div>
               </div>
               
-              <div className="flex items-start gap-2 bg-gray-800 p-3 rounded-lg">
+              <div className="flex items-start gap-2 bg-gray-900 border border-gray-700 p-3 rounded-lg">
                 <Globe className="w-5 h-5 text-brand-red flex-shrink-0 mt-1" />
                 <div>
                   <h4 className="font-medium text-white">Las Vegas, NV</h4>
-                  <p className="text-white/70 text-sm">West Coast Installation</p>
+                  <p className="text-gray-300 text-sm">West Coast Installation</p>
                 </div>
               </div>
               
-              <div className="flex items-start gap-2 bg-gray-800 p-3 rounded-lg">
+              <div className="flex items-start gap-2 bg-gray-900 border border-gray-700 p-3 rounded-lg">
                 <Globe className="w-5 h-5 text-brand-red flex-shrink-0 mt-1" />
                 <div>
                   <h4 className="font-medium text-white">Central Illinois</h4>
-                  <p className="text-white/70 text-sm">Midwest Operations</p>
+                  <p className="text-gray-300 text-sm">Midwest Operations</p>
                 </div>
               </div>
             </div>
