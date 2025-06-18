@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import './App.css';
@@ -115,11 +114,6 @@ function App() {
     };
   }, []);
 
-  const HomePageWithDebug = () => {
-    console.log('Rendering HomePage for path:', window.location.pathname);
-    return <HomePage />;
-  };
-
   return (
     <HelmetProvider>
       <BrowserRouter>
@@ -132,8 +126,9 @@ function App() {
         <a href="#main-content" className="skip-link">Skip to main content</a>
         
         <Routes>
-          {/* HOME ROUTE - EXPLICIT AND FIRST */}
-          <Route path="/" element={<HomePageWithDebug />} />
+          {/* HOME ROUTE - MUST BE FIRST AND EXACT */}
+          <Route index element={<HomePage />} />
+          <Route path="/" element={<HomePage />} />
           
           {/* Main navigation routes */}
           <Route path="/about" element={<AboutPage />} />
@@ -148,17 +143,17 @@ function App() {
           <Route path="/faq" element={<FAQPage />} />
           <Route path="/blog" element={<BlogPage />} />
           
-          {/* Sitemap routes */}
-          <Route path="/sitemap" element={<SitemapPage />} />
-          <Route path="/html-sitemap" element={<HTMLSitemap />} />
-          <Route path="/html-sitemap.html" element={<Navigate to="/html-sitemap" replace />} />
-          
           {/* Direct service pages */}
           <Route path="/car-wraps" element={<CarWrapsPage />} />
           <Route path="/truck-wraps" element={<TruckWrapsPage />} />
           <Route path="/van-wraps" element={<VanWrapsPage />} />
           <Route path="/color-change-wraps" element={<ColorChangeWrapsPage />} />
           <Route path="/luxury-exotic-wraps" element={<LuxuryExoticWrapsPage />} />
+          
+          {/* Sitemap routes */}
+          <Route path="/sitemap" element={<SitemapPage />} />
+          <Route path="/html-sitemap" element={<HTMLSitemap />} />
+          <Route path="/html-sitemap.html" element={<Navigate to="/html-sitemap" replace />} />
           
           {/* Service-specific redirect routes */}
           <Route path="/fleet-wraps" element={<Navigate to="/services/fleet-wraps" replace />} />
@@ -169,7 +164,7 @@ function App() {
           <Route path="/specialty-wraps" element={<Navigate to="/services/specialty-wraps" replace />} />
           <Route path="/retail-graphics" element={<Navigate to="/services/retail-graphics" replace />} />
           
-          {/* Special city-specific routes - must be exact matches */}
+          {/* Special city-specific routes */}
           <Route path="/chicago" element={<CityLocationPage />} />
           <Route path="/truck-wraps-chicago" element={<TruckWrapsChicagoPage />} />
           
@@ -199,10 +194,7 @@ function App() {
           <Route path="/vehicle-wraps-oak-lawn-il" element={<CityLocationPage />} />
           <Route path="/vehicle-wraps-las-vegas-il" element={<CityLocationPage />} />
           
-          {/* Generic pattern for any remaining vehicle-wraps routes */}
-          <Route path="/vehicle-wraps-:citySlug-il" element={<CityLocationPage />} />
-          
-          {/* Generic city routes - MUST come last to avoid conflicts */}
+          {/* Generic city routes - MUST come after specific routes */}
           <Route path="/evanston" element={<CityLocationPage />} />
           <Route path="/skokie" element={<CityLocationPage />} />
           <Route path="/arlington-heights" element={<CityLocationPage />} />
@@ -227,7 +219,7 @@ function App() {
           <Route path="/oak-lawn" element={<CityLocationPage />} />
           <Route path="/las-vegas" element={<CityLocationPage />} />
           
-          {/* 404 catch-all route - NO MORE CITYSLUG FALLBACK */}
+          {/* 404 catch-all route */}
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
         
