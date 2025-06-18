@@ -1,4 +1,5 @@
 
+
 /* ==============================
    IMAGE RESPONSIVENESS - UNIVERSAL FIX
    - Site-wide image container and responsiveness rules
@@ -19,8 +20,29 @@ img {
   overflow: hidden;
 }
 
-/* Specific height classes for consistent sizing */
-.h-16 img, .h-20 img, .h-24 img, .h-28 img, .h-32 img {
+/* Remove fixed heights and use aspect ratios instead */
+.aspect-video {
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  height: auto;
+}
+
+.aspect-square {
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  height: auto;
+}
+
+.aspect-[4/3] {
+  aspect-ratio: 4 / 3;
+  width: 100%;
+  height: auto;
+}
+
+/* Ensure images fill their aspect ratio containers */
+.aspect-video img, 
+.aspect-square img, 
+.aspect-[4/3] img {
   width: 100% !important;
   height: 100% !important;
   object-fit: cover !important;
@@ -44,28 +66,33 @@ img {
   object-position: center;
 }
 
+/* Override any remaining fixed height classes */
+.h-64, .h-48, .h-40, .h-32, .h-28, .h-24, .h-20, .h-16 {
+  height: auto !important;
+  aspect-ratio: 16 / 9;
+}
+
+.h-64 img, .h-48 img, .h-40 img, .h-32 img, .h-28 img, .h-24 img, .h-20 img, .h-16 img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center !important;
+}
+
 /* Mobile responsive adjustments */
 @media (max-width: 768px) {
-  .h-64, .h-48, .h-40, .h-32 {
-    height: 8rem !important; /* 32 on mobile */
+  .aspect-video {
+    aspect-ratio: 4 / 3; /* Slightly taller on mobile */
   }
   
-  .h-28, .h-24, .h-20 {
-    height: 6rem !important; /* 24 on mobile */
-  }
-  
-  .h-16 {
-    height: 4rem !important; /* 16 on mobile */
+  .grid-cols-2 .aspect-square {
+    aspect-ratio: 1 / 1; /* Keep square on mobile grid */
   }
 }
 
 @media (max-width: 480px) {
-  .h-64, .h-48, .h-40, .h-32, .h-28 {
-    height: 6rem !important; /* Even smaller on small mobile */
-  }
-  
-  .h-24, .h-20, .h-16 {
-    height: 4rem !important;
+  .aspect-video {
+    aspect-ratio: 1 / 1; /* Square on very small screens */
   }
 }
 
@@ -78,19 +105,6 @@ img {
   position: absolute;
   top: 0;
   left: 0;
-}
-
-/* Aspect ratio containers */
-.aspect-video {
-  aspect-ratio: 16 / 9;
-}
-
-.aspect-square {
-  aspect-ratio: 1 / 1;
-}
-
-.aspect-[4/3] {
-  aspect-ratio: 4 / 3;
 }
 
 /* Prevent image stretching in flexbox */
@@ -124,3 +138,4 @@ img:not([src])::before, img[src=""]::before {
   color: #6b7280;
   font-size: 0.875rem;
 }
+
