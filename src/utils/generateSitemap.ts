@@ -1,94 +1,58 @@
 
-import { cities } from '@/data/cities';
-
-export const generateSitemap = () => {
-  const domain = "https://www.wrappingchicago.com";
+export const generateSitemap = (): string => {
+  const domain = 'https://www.wrappingchicago.com';
   const currentDate = new Date().toISOString().split('T')[0];
   
-  const staticPages = [
-    { url: '/', priority: '1.0', changefreq: 'daily' },
-    { url: '/about', priority: '0.8', changefreq: 'monthly' },
-    { url: '/contact', priority: '0.8', changefreq: 'monthly' },
-    { url: '/gallery', priority: '0.8', changefreq: 'weekly' },
-    { url: '/locations', priority: '0.8', changefreq: 'weekly' },
-    { url: '/pricing', priority: '0.9', changefreq: 'weekly' },
-    { url: '/services', priority: '0.9', changefreq: 'weekly' },
-    { url: '/ai-wrap-ideas', priority: '0.7', changefreq: 'weekly' },
-    { url: '/designer-wraps', priority: '0.7', changefreq: 'weekly' },
-    { url: '/faq', priority: '0.6', changefreq: 'monthly' },
-    { url: '/blog', priority: '0.7', changefreq: 'weekly' },
-    { url: '/sitemap', priority: '0.5', changefreq: 'monthly' }
+  const urls = [
+    // Core pages
+    { loc: '/', priority: '1.0', changefreq: 'weekly' },
+    { loc: '/about', priority: '0.8', changefreq: 'monthly' },
+    { loc: '/contact', priority: '0.9', changefreq: 'monthly' },
+    { loc: '/services', priority: '0.9', changefreq: 'weekly' },
+    { loc: '/gallery', priority: '0.8', changefreq: 'weekly' },
+    { loc: '/locations', priority: '0.9', changefreq: 'weekly' },
+    { loc: '/faq', priority: '0.7', changefreq: 'monthly' },
+    { loc: '/pricing', priority: '0.8', changefreq: 'monthly' },
+    { loc: '/ai-wrap-ideas', priority: '0.7', changefreq: 'weekly' },
+    
+    // Service pages
+    { loc: '/car-wraps', priority: '0.9', changefreq: 'weekly' },
+    { loc: '/truck-wraps', priority: '0.9', changefreq: 'weekly' },
+    { loc: '/van-wraps', priority: '0.9', changefreq: 'weekly' },
+    { loc: '/fleet-wraps', priority: '0.9', changefreq: 'weekly' },
+    { loc: '/color-change-wraps', priority: '0.8', changefreq: 'weekly' },
+    { loc: '/commercial-graphics', priority: '0.8', changefreq: 'weekly' },
+    { loc: '/partial-wraps', priority: '0.8', changefreq: 'weekly' },
+    { loc: '/protective-films', priority: '0.7', changefreq: 'monthly' },
+    { loc: '/vehicle-lettering', priority: '0.7', changefreq: 'monthly' },
+    { loc: '/specialty-wraps', priority: '0.7', changefreq: 'monthly' },
+    { loc: '/retail-graphics', priority: '0.7', changefreq: 'monthly' },
+    { loc: '/luxury-exotic-wraps', priority: '0.8', changefreq: 'weekly' },
+    { loc: '/designer-wraps', priority: '0.8', changefreq: 'weekly' },
+    
+    // Location pages - both formats
+    { loc: '/chicago', priority: '0.9', changefreq: 'weekly' },
+    { loc: '/vehicle-wraps-chicago-il', priority: '0.9', changefreq: 'weekly' },
+    { loc: '/vehicle-wraps-evanston-il', priority: '0.8', changefreq: 'weekly' },
+    { loc: '/vehicle-wraps-naperville-il', priority: '0.8', changefreq: 'weekly' },
+    { loc: '/vehicle-wraps-schaumburg-il', priority: '0.8', changefreq: 'weekly' },
+    { loc: '/truck-wraps-chicago', priority: '0.8', changefreq: 'weekly' },
+    
+    // Sitemap and utility pages
+    { loc: '/sitemap', priority: '0.5', changefreq: 'monthly' },
+    { loc: '/html-sitemap', priority: '0.5', changefreq: 'monthly' }
   ];
 
-  const servicePages = [
-    '/services/car-wraps',
-    '/services/truck-wraps', 
-    '/services/van-wraps',
-    '/services/fleet-wraps',
-    '/services/color-change-wraps',
-    '/services/commercial-graphics',
-    '/services/partial-wraps',
-    '/services/protective-films',
-    '/services/vehicle-lettering',
-    '/services/specialty-wraps',
-    '/services/retail-graphics',
-    '/services/luxury-exotic-wraps'
-  ].map(url => ({ 
-    url, 
-    priority: '0.7',
-    changefreq: 'weekly'
-  }));
-
-  const directServiceUrls = [
-    '/car-wraps',
-    '/truck-wraps',
-    '/van-wraps',
-    '/color-change-wraps',
-    '/luxury-exotic-wraps'
-  ].map(url => ({ 
-    url, 
-    priority: '0.8',
-    changefreq: 'weekly'
-  }));
-
-  // Chicago pages with high priority
-  const chicagoPages = [
-    { url: '/chicago', priority: '0.9', changefreq: 'weekly' },
-    { url: '/vehicle-wraps-chicago-il', priority: '0.9', changefreq: 'weekly' },
-    { url: '/truck-wraps-chicago', priority: '0.8', changefreq: 'weekly' }
-  ];
-
-  const locationPages = cities.map(city => ({
-    url: `/vehicle-wraps-${city.slug}-il`,
-    priority: '0.7',
-    changefreq: 'weekly'
-  }));
-
-  const directLocationPages = cities.slice(0, 10).map(city => ({
-    url: `/${city.slug}`,
-    priority: '0.6',
-    changefreq: 'weekly'
-  }));
-
-  const allPages = [
-    ...staticPages,
-    ...servicePages,
-    ...directServiceUrls,
-    ...chicagoPages,
-    ...locationPages,
-    ...directLocationPages
-  ];
-
-  const xml = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
-${allPages.map(page => `  <url>
-    <loc>${domain}${page.url}</loc>
+  const urlElements = urls.map(url => `
+  <url>
+    <loc>${domain}${url.loc}</loc>
     <lastmod>${currentDate}</lastmod>
-    <changefreq>${page.changefreq}</changefreq>
-    <priority>${page.priority}</priority>
-  </url>`).join('\n')}
-</urlset>`;
+    <changefreq>${url.changefreq}</changefreq>
+    <priority>${url.priority}</priority>
+  </url>`).join('');
 
-  return xml;
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${urlElements}
+</urlset>`;
 };

@@ -4,7 +4,8 @@ import { Helmet } from 'react-helmet-async';
 import { City } from '@/data/cities';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import Breadcrumbs from '@/components/navigation/Breadcrumbs';
+import UnifiedBreadcrumbs from '@/components/navigation/UnifiedBreadcrumbs';
+import UnifiedBreadcrumbSchema from '@/components/schemas/UnifiedBreadcrumbSchema';
 import EnhancedLocationHero from './EnhancedLocationHero';
 import ComprehensiveLocationContent from './ComprehensiveLocationContent';
 import PageFAQ from '@/components/common/PageFAQ';
@@ -94,6 +95,8 @@ const EnhancedLocationPage = ({ city }: EnhancedLocationPageProps) => {
       
       <GoogleSearchConsole verificationCode="gQnkHgsJ2bOPDWFClspUxA6EZsE-XWnLasqxsqSESvg" />
       
+      <UnifiedBreadcrumbSchema city={city} />
+      
       <Schema 
         city={city}
         path={canonicalUrl}
@@ -121,7 +124,7 @@ const EnhancedLocationPage = ({ city }: EnhancedLocationPageProps) => {
         
         <main className="flex-grow">
           <div className="container mx-auto px-4 py-4">
-            <Breadcrumbs />
+            <UnifiedBreadcrumbs city={city} />
           </div>
           
           <EnhancedLocationHero city={city} />
