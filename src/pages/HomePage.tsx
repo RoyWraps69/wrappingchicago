@@ -17,6 +17,13 @@ import { Star, Shield, Award, Clock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 
+// Extend window type for debugging
+declare global {
+  interface Window {
+    debugNavigate?: (...args: any[]) => void;
+  }
+}
+
 function HomePage() {
   const location = useLocation();
   const navigate = useNavigate();
@@ -52,21 +59,21 @@ function HomePage() {
     const originalPushState = history.pushState;
     const originalReplaceState = history.replaceState;
     
-    history.pushState = function(...args) {
-      console.log('🚨 NAVIGATION DETECTED - pushState called:', args);
+    history.pushState = function(data: any, unused: string, url?: string | URL | null) {
+      console.log('🚨 NAVIGATION DETECTED - pushState called:', { data, unused, url });
       console.trace('pushState call stack');
-      return originalPushState.apply(this, args);
+      return originalPushState.call(this, data, unused, url);
     };
     
-    history.replaceState = function(...args) {
-      console.log('🚨 NAVIGATION DETECTED - replaceState called:', args);
+    history.replaceState = function(data: any, unused: string, url?: string | URL | null) {
+      console.log('🚨 NAVIGATION DETECTED - replaceState called:', { data, unused, url });
       console.trace('replaceState call stack');
-      return originalReplaceState.apply(this, args);
+      return originalReplaceState.call(this, data, unused, url);
     };
     
     // Override navigate function temporarily for debugging
     const originalNavigate = navigate;
-    window.debugNavigate = function(...args) {
+    window.debugNavigate = function(...args: any[]) {
       console.log('🚨 REACT ROUTER NAVIGATE CALLED:', args);
       console.trace('navigate call stack');
       return originalNavigate(...args);
