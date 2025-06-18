@@ -33,9 +33,9 @@ import BlogPage from './pages/BlogPage';
 import LiveChatWidget from './components/chat/LiveChatWidget';
 
 function App() {
-  // Help search engines discover site resources
   useEffect(() => {
     console.log('App mounted - Current pathname:', window.location.pathname);
+    console.log('App component rendering with routes');
     
     // Create and add structured data for the website
     const structuredData = document.createElement('script');
@@ -125,9 +125,9 @@ function App() {
         <a href="#main-content" className="skip-link">Skip to main content</a>
         
         <Routes>
-          {/* HOME ROUTES - Both index and root path */}
+          {/* HOME ROUTES - MUST BE FIRST AND EXACT */}
           <Route index element={<HomePage />} />
-          <Route path="/" element={<HomePage />} />
+          <Route path="/" exact element={<HomePage />} />
           
           {/* Main navigation routes */}
           <Route path="/about" element={<AboutPage />} />
@@ -222,7 +222,6 @@ function App() {
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
         
-        {/* Add Live Chat Widget */}
         <LiveChatWidget />
       </BrowserRouter>
     </HelmetProvider>
