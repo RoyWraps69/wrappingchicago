@@ -8,7 +8,7 @@ const Hero = () => {
   return (
     <div className="hero-fullscreen bg-black">
       {/* Background - solid color only */}
-      <div className="absolute inset-0 z-0 bg-gradient-to-r from-brand-navy to-blue-900">
+      <div className="absolute inset-0 z-0 bg-black">
       </div>
       
       <div className="hero-content">
