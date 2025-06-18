@@ -20,7 +20,7 @@ import { Link } from 'react-router-dom';
 // Extend window type for debugging
 declare global {
   interface Window {
-    debugNavigate?: (...args: any[]) => void;
+    debugNavigate?: (to: any, options?: any) => void;
   }
 }
 
@@ -73,10 +73,10 @@ function HomePage() {
     
     // Override navigate function temporarily for debugging
     const originalNavigate = navigate;
-    window.debugNavigate = function(...args: any[]) {
-      console.log('🚨 REACT ROUTER NAVIGATE CALLED:', args);
+    window.debugNavigate = function(to: any, options?: any) {
+      console.log('🚨 REACT ROUTER NAVIGATE CALLED:', { to, options });
       console.trace('navigate call stack');
-      return originalNavigate(...args);
+      return originalNavigate(to, options);
     };
     
     return () => {
