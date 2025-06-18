@@ -45,11 +45,11 @@ const ColorChangeGallery = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
         {galleryItems.map((item, index) => (
           <div key={index} className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
-            <div className="aspect-video">
+            <div className="relative w-full h-48 overflow-hidden">
               <img 
                 src={item.image} 
                 alt={item.alt}
-                className="w-full h-full object-cover"
+                className="absolute inset-0 w-full h-full object-cover object-center"
               />
             </div>
             <div className="p-6">

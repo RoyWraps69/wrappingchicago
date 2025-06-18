@@ -8,11 +8,13 @@ const ColorChangeHero = () => {
   return (
     <div className="relative bg-black overflow-hidden">
       <div className="absolute inset-0 z-0">
-        <img 
-          src="https://images.unsplash.com/photo-1493462725285-20ede53a8133?auto=format&fit=crop&w=2000&q=80"
-          alt="Sleek black matte wrapped sports car"
-          className="w-full h-full object-cover opacity-60"
-        />
+        <div className="relative w-full h-full">
+          <img 
+            src="https://images.unsplash.com/photo-1493462725285-20ede53a8133?auto=format&fit=crop&w=2000&q=80"
+            alt="Sleek black matte wrapped sports car"
+            className="w-full h-full object-cover opacity-60"
+          />
+        </div>
       </div>
       
       <div className="relative z-10 container mx-auto px-4 py-20 md:py-28">

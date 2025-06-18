@@ -8,11 +8,13 @@ const ContactStudioImage = () => {
   return (
     <div className="rounded-lg overflow-hidden shadow-md">
       <div className="relative">
-        <img 
-          src="/lovable-uploads/efdbc4bf-1f04-42bb-a904-f52dae7bef6c.png" 
-          alt="Wrapping Chicago installation facility - Professional vehicle wrap, car wrap, truck wrap, and van wrap installation shop in Chicago" 
-          className="w-full h-auto object-cover"
-        />
+        <div className="relative w-full h-64 overflow-hidden">
+          <img 
+            src="/lovable-uploads/efdbc4bf-1f04-42bb-a904-f52dae7bef6c.png" 
+            alt="Wrapping Chicago installation facility - Professional vehicle wrap, car wrap, truck wrap, and van wrap installation shop in Chicago" 
+            className="absolute inset-0 w-full h-full object-cover object-center"
+          />
+        </div>
         <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 via-black/70 to-transparent p-6">
           <h3 className="text-white text-xl font-bold mb-3">Need Vehicle Wraps in Chicago?</h3>
           
