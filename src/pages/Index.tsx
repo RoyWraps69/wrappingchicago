@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -27,12 +28,21 @@ const Index = () => {
   // Use our custom hook to get the images
   const { fleetWrapVan, colorChangeVan, commercialGraphics } = useGalleryImages();
   
-  // For breadcrumbs, just homepage - fix the structure to match BreadcrumbItem interface
+  // For breadcrumbs, create proper structure for both schema and SEO optimization
   const breadcrumbItems = [
     {
       position: 1,
       name: "Home",
       item: "https://www.wrappingchicago.com/"
+    }
+  ];
+
+  // For SEO optimization component that expects url property
+  const seoOptimizationBreadcrumbs = [
+    {
+      position: 1,
+      name: "Home",
+      url: "https://www.wrappingchicago.com/"
     }
   ];
   
@@ -149,7 +159,7 @@ const Index = () => {
         h1Text="Professional Vehicle Wraps in Chicago"
         canonicalUrl="https://www.wrappingchicago.com/"
         structuredData={additionalSchemas}
-        breadcrumbs={breadcrumbItems}
+        breadcrumbs={seoOptimizationBreadcrumbs}
         images={[
           {
             url: "https://www.wrappingchicago.com/lovable-uploads/6ef3b1af-8591-4d36-97c2-9366401115fa.png",
