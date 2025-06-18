@@ -60,14 +60,14 @@ function HomePage() {
         ]}
       />
       
-      <div className="flex flex-col min-h-screen relative z-10">
+      <div className="flex flex-col min-h-screen">
         <Header />
         <BreadcrumbNavigation />
-        <main id="main-content" className="flex-grow main-content relative z-10">
+        <main id="main-content" className="flex-grow main-content">
           <Hero />
           
           {/* Simple credibility section */}
-          <section className="py-12 bg-white relative z-10">
+          <section className="py-12 bg-white">
             <div className="container mx-auto px-4">
               <div className="text-center mb-8">
                 <h2 className="text-3xl font-bold text-black mb-4">

@@ -19,10 +19,10 @@ const Header = () => {
   };
 
   return (
-    <header className="relative z-50">
+    <header className="relative">
       <ContactBar />
       
-      <nav className="bg-white shadow-lg relative z-40">
+      <nav className="bg-white shadow-lg relative z-50">
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center h-20">
             <Logo />
@@ -48,7 +48,7 @@ const Header = () => {
               
               <button
                 onClick={toggleMobileMenu}
-                className="md:hidden p-2 text-brand-navy hover:text-brand-red transition-colors z-50"
+                className="md:hidden p-2 text-brand-navy hover:text-brand-red transition-colors"
                 aria-label="Toggle mobile menu"
               >
                 {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
