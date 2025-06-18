@@ -16,18 +16,22 @@ const DesktopNav = () => {
 
   return (
     <div className="hidden md:flex items-center space-x-1">
-      {/* Home link first - separate from other items */}
-      <NavLink key="/" to="/" className="mr-2">
+      {/* Home link first - separate from other items with higher z-index */}
+      <NavLink key="/" to="/" className="mr-4 relative z-50">
         Home
       </NavLink>
       
-      {/* Service and Pricing menus */}
-      <ServiceMenu />
-      <PricingMenu />
+      {/* Service and Pricing menus with lower z-index */}
+      <div className="relative z-40">
+        <ServiceMenu />
+      </div>
+      <div className="relative z-40">
+        <PricingMenu />
+      </div>
       
       {/* Rest of navigation items */}
       {navItems.slice(1).map((item) => (
-        <NavLink key={item.path} to={item.path}>
+        <NavLink key={item.path} to={item.path} className="relative z-30">
           {item.label}
         </NavLink>
       ))}
