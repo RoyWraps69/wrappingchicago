@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
@@ -7,13 +6,8 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Alert, AlertTitle, AlertDescription } from '@/components/ui/alert';
 
 const EasyButtonSection = () => {
-  // Calculate end date for the offer (7 days from now)
-  const endDate = new Date();
-  endDate.setDate(endDate.getDate() + 7);
-  const formattedEndDate = endDate.toLocaleDateString('en-US', { 
-    month: 'long', 
-    day: 'numeric' 
-  });
+  // Set specific end date for the offer
+  const formattedEndDate = "December 31st";
 
   return (
     <section className="bg-gradient-to-r from-brand-navy to-blue-900 py-8 relative overflow-hidden">
