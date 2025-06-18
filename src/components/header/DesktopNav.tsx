@@ -16,10 +16,12 @@ const DesktopNav = () => {
 
   return (
     <div className="hidden md:flex items-center space-x-1">
-      {/* Home link first - separate from other items with higher z-index */}
-      <NavLink key="/" to="/" className="mr-4 relative z-50">
-        Home
-      </NavLink>
+      {/* Home link first - completely separate with guaranteed clickability */}
+      <div className="relative z-50 mr-6">
+        <NavLink key="/" to="/" className="bg-transparent hover:bg-gray-50">
+          Home
+        </NavLink>
+      </div>
       
       {/* Service and Pricing menus with lower z-index */}
       <div className="relative z-40">

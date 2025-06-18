@@ -123,8 +123,10 @@ function App() {
         <a href="#main-content" className="skip-link">Skip to main content</a>
         
         <Routes>
-          {/* Main navigation routes - highest priority */}
+          {/* Main home route - must be exact and first */}
           <Route path="/" element={<HomePage />} />
+          
+          {/* Main navigation routes */}
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/pricing" element={<PricingPage />} />

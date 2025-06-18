@@ -17,10 +17,11 @@ const NavLink: React.FC<NavLinkProps> = ({ to, children, icon: Icon, onClick, cl
     <Link 
       to={to} 
       className={cn(
-        "text-brand-navy hover:text-brand-red transition-all duration-300 flex items-center font-medium px-3 py-2 rounded-md hover:bg-gray-50",
+        "text-brand-navy hover:text-brand-red transition-all duration-300 flex items-center font-medium px-3 py-2 rounded-md hover:bg-gray-50 cursor-pointer pointer-events-auto",
         className
       )}
       onClick={onClick}
+      style={{ pointerEvents: 'auto' }}
     >
       {Icon && <Icon className="mr-1 h-4 w-4" />}
       {children}
