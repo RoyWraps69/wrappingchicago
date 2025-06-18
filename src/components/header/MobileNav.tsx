@@ -35,7 +35,7 @@ const MobileNav: React.FC<MobileNavProps> = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
 
   return (
-    <div className="md:hidden absolute top-full left-0 w-full bg-white shadow-xl border-t z-40">
+    <div className="md:hidden absolute top-full left-0 w-full bg-white shadow-xl border-t z-50">
       <div className="px-4 py-6">
         {/* Main Navigation */}
         <div className="space-y-4 mb-6">
@@ -44,7 +44,7 @@ const MobileNav: React.FC<MobileNavProps> = ({ isOpen, onClose }) => {
               key={item.path}
               to={item.path}
               onClick={onClose}
-              className="block py-2 text-brand-navy hover:text-brand-red transition-colors font-medium"
+              className="block py-2 text-brand-navy hover:text-brand-red transition-colors font-medium text-lg"
             >
               {item.label}
             </Link>
@@ -53,7 +53,7 @@ const MobileNav: React.FC<MobileNavProps> = ({ isOpen, onClose }) => {
 
         {/* Services Section */}
         <div className="border-t pt-6 mb-6">
-          <h3 className="font-semibold text-brand-navy mb-4">Our Services</h3>
+          <h3 className="font-semibold text-brand-navy mb-4 text-lg">Our Services</h3>
           <div className="space-y-3">
             {serviceItems.map((service) => (
               <Link
@@ -71,7 +71,7 @@ const MobileNav: React.FC<MobileNavProps> = ({ isOpen, onClose }) => {
 
         {/* Pricing Section */}
         <div className="border-t pt-6 mb-6">
-          <h3 className="font-semibold text-brand-navy mb-4">Pricing & Info</h3>
+          <h3 className="font-semibold text-brand-navy mb-4 text-lg">More Info</h3>
           <div className="space-y-3">
             {pricingItems.map((item) => (
               <Link
