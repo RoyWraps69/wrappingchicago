@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -28,12 +27,12 @@ const Index = () => {
   // Use our custom hook to get the images
   const { fleetWrapVan, colorChangeVan, commercialGraphics } = useGalleryImages();
   
-  // For breadcrumbs, just homepage
+  // For breadcrumbs, just homepage - fix the structure to match BreadcrumbItem interface
   const breadcrumbItems = [
     {
       position: 1,
       name: "Home",
-      url: "https://www.wrappingchicago.com/"
+      item: "https://www.wrappingchicago.com/"
     }
   ];
   
