@@ -16,7 +16,7 @@ const ContactInfo = () => {
           </div>
           <div>
             <h3 className="font-bold text-black text-lg">Phone</h3>
-            <a href="tel:3125971286" className="text-brand-red hover:text-red-700 font-semibold text-lg">
+            <a href="tel:3125971286" className="text-black hover:text-brand-red font-semibold text-lg">
               (312) 597-1286
             </a>
           </div>
@@ -28,7 +28,7 @@ const ContactInfo = () => {
           </div>
           <div>
             <h3 className="font-bold text-black text-lg">Email</h3>
-            <a href="mailto:roy@chicagofleetwraps.com" className="text-brand-red hover:text-red-700 font-semibold">
+            <a href="mailto:roy@chicagofleetwraps.com" className="text-black hover:text-brand-red font-semibold">
               roy@chicagofleetwraps.com
             </a>
           </div>
