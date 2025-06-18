@@ -38,7 +38,7 @@ const HomePageSections = () => {
       {/* Fixed Contact Buttons */}
       <StickyContactButtons />
       
-      {/* Featured Work Gallery - NEW SECTION */}
+      {/* Featured Work Gallery - FIXED IMAGE SIZING */}
       <section className="py-16 bg-white" aria-labelledby="featured-work-heading">
         <div className="container mx-auto px-4">
           <h2 id="featured-work-heading" className="text-4xl font-bold text-center mb-4 text-black">
@@ -50,11 +50,13 @@ const HomePageSections = () => {
           
           <div className="grid md:grid-cols-3 gap-8 mb-12">
             <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-              <img 
-                src="/lovable-uploads/fc2146ab-62aa-4fc9-85aa-3582af7ce980.png"
-                alt="Bratcher HVAC fleet van wrap - professional commercial vehicle branding in Chicago"
-                className="w-full h-64 object-cover"
-              />
+              <div className="relative w-full h-48 overflow-hidden">
+                <img 
+                  src="/lovable-uploads/fc2146ab-62aa-4fc9-85aa-3582af7ce980.png"
+                  alt="Bratcher HVAC fleet van wrap - professional commercial vehicle branding in Chicago"
+                  className="absolute inset-0 w-full h-full object-cover object-center"
+                />
+              </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold text-black mb-2">HVAC Fleet Branding</h3>
                 <p className="text-black mb-4">Professional fleet wrap for Bratcher HVAC featuring bold branding and contact information.</p>
@@ -63,11 +65,13 @@ const HomePageSections = () => {
             </div>
             
             <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-              <img 
-                src="/lovable-uploads/9de106b5-94cb-4fd1-a7c7-5c75c75b7cbb.png"
-                alt="Metallic blue sports car color change wrap - luxury vehicle transformation in Chicago"
-                className="w-full h-64 object-cover"
-              />
+              <div className="relative w-full h-48 overflow-hidden">
+                <img 
+                  src="/lovable-uploads/9de106b5-94cb-4fd1-a7c7-5c75c75b7cbb.png"
+                  alt="Metallic blue sports car color change wrap - luxury vehicle transformation in Chicago"
+                  className="absolute inset-0 w-full h-full object-cover object-center"
+                />
+              </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold text-black mb-2">Luxury Color Change</h3>
                 <p className="text-black mb-4">Stunning metallic blue transformation showcasing premium vinyl and expert installation.</p>
@@ -76,11 +80,13 @@ const HomePageSections = () => {
             </div>
             
             <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-              <img 
-                src="/lovable-uploads/efdbc4bf-1f04-42bb-a904-f52dae7bef6c.png"
-                alt="Commercial delivery van wrap - professional fleet branding for Urban Delivery Co in Chicago"
-                className="w-full h-64 object-cover"
-              />
+              <div className="relative w-full h-48 overflow-hidden">
+                <img 
+                  src="/lovable-uploads/efdbc4bf-1f04-42bb-a904-f52dae7bef6c.png"
+                  alt="Commercial delivery van wrap - professional fleet branding for Urban Delivery Co in Chicago"
+                  className="absolute inset-0 w-full h-full object-cover object-center"
+                />
+              </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold text-black mb-2">Delivery Fleet</h3>
                 <p className="text-black mb-4">Clean, professional branding for Urban Delivery Co. maximizing brand visibility.</p>
@@ -115,7 +121,7 @@ const HomePageSections = () => {
         </div>
       </section>
       
-      {/* Before & After Showcase - NEW SECTION */}
+      {/* Before & After Showcase - FIXED IMAGE SIZING */}
       <section className="py-16 bg-gray-50" aria-labelledby="before-after-heading">
         <div className="container mx-auto px-4">
           <h2 id="before-after-heading" className="text-4xl font-bold text-center mb-4 text-black">
@@ -127,11 +133,13 @@ const HomePageSections = () => {
           
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <img 
-                src="/lovable-uploads/676b4902-7b81-4619-90d8-8feb1f986636.png"
-                alt="Matte black vehicle wrap transformation - sleek color change wrap in Chicago"
-                className="w-full rounded-lg shadow-xl"
-              />
+              <div className="relative w-full h-64 md:h-80 overflow-hidden rounded-lg shadow-xl">
+                <img 
+                  src="/lovable-uploads/676b4902-7b81-4619-90d8-8feb1f986636.png"
+                  alt="Matte black vehicle wrap transformation - sleek color change wrap in Chicago"
+                  className="absolute inset-0 w-full h-full object-cover object-center"
+                />
+              </div>
               <div className="mt-6 text-center">
                 <h3 className="text-2xl font-bold text-black mb-2">Matte Black Transformation</h3>
                 <p className="text-black">Complete vehicle makeover with premium matte vinyl</p>
@@ -139,11 +147,13 @@ const HomePageSections = () => {
             </div>
             
             <div>
-              <img 
-                src="/lovable-uploads/230338ed-a8d9-4584-bb4c-ba33c793f7ab.png"
-                alt="Corporate van fleet branding - professional business vehicle wraps in Chicago"
-                className="w-full rounded-lg shadow-xl"
-              />
+              <div className="relative w-full h-64 md:h-80 overflow-hidden rounded-lg shadow-xl">
+                <img 
+                  src="/lovable-uploads/230338ed-a8d9-4584-bb4c-ba33c793f7ab.png"
+                  alt="Corporate van fleet branding - professional business vehicle wraps in Chicago"
+                  className="absolute inset-0 w-full h-full object-cover object-center"
+                />
+              </div>
               <div className="mt-6 text-center">
                 <h3 className="text-2xl font-bold text-black mb-2">Fleet Branding Success</h3>
                 <p className="text-black">Consistent corporate identity across service vehicles</p>
@@ -164,7 +174,7 @@ const HomePageSections = () => {
         <WhyChooseUsSection />
       </section>
       
-      {/* Vehicle Types Showcase - NEW SECTION */}
+      {/* Vehicle Types Showcase - FIXED IMAGE SIZING */}
       <section className="py-16 bg-white" aria-labelledby="vehicle-types-heading">
         <div className="container mx-auto px-4">
           <h2 id="vehicle-types-heading" className="text-4xl font-bold text-center mb-4 text-black">
@@ -176,38 +186,46 @@ const HomePageSections = () => {
           
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             <div className="text-center">
-              <img 
-                src="/lovable-uploads/77a1f4b1-efe3-4779-8646-f92e01667a29.png"
-                alt="Sports car with custom racing stripes - performance vehicle wraps in Chicago"
-                className="w-full h-40 object-cover rounded-lg shadow-md mb-4"
-              />
+              <div className="relative w-full h-32 overflow-hidden rounded-lg shadow-md mb-4">
+                <img 
+                  src="/lovable-uploads/77a1f4b1-efe3-4779-8646-f92e01667a29.png"
+                  alt="Sports car with custom racing stripes - performance vehicle wraps in Chicago"
+                  className="absolute inset-0 w-full h-full object-cover object-center"
+                />
+              </div>
               <h3 className="font-bold text-black">Sports Cars</h3>
             </div>
             
             <div className="text-center">
-              <img 
-                src="/lovable-uploads/76973c14-ac60-4c81-afa1-555b0f4f5f36.png"
-                alt="Corporate pickup truck fleet wrap - commercial vehicle branding in Chicago"
-                className="w-full h-40 object-cover rounded-lg shadow-md mb-4"
-              />
+              <div className="relative w-full h-32 overflow-hidden rounded-lg shadow-md mb-4">
+                <img 
+                  src="/lovable-uploads/76973c14-ac60-4c81-afa1-555b0f4f5f36.png"
+                  alt="Corporate pickup truck fleet wrap - commercial vehicle branding in Chicago"
+                  className="absolute inset-0 w-full h-full object-cover object-center"
+                />
+              </div>
               <h3 className="font-bold text-black">Pickup Trucks</h3>
             </div>
             
             <div className="text-center">
-              <img 
-                src="/lovable-uploads/9bb3d94e-589d-4daf-b35e-e19e80610439.png"
-                alt="Service van with professional branding - commercial vehicle wraps in Chicago"
-                className="w-full h-40 object-cover rounded-lg shadow-md mb-4"
-              />
+              <div className="relative w-full h-32 overflow-hidden rounded-lg shadow-md mb-4">
+                <img 
+                  src="/lovable-uploads/9bb3d94e-589d-4daf-b35e-e19e80610439.png"
+                  alt="Service van with professional branding - commercial vehicle wraps in Chicago"
+                  className="absolute inset-0 w-full h-full object-cover object-center"
+                />
+              </div>
               <h3 className="font-bold text-black">Service Vans</h3>
             </div>
             
             <div className="text-center">
-              <img 
-                src="/lovable-uploads/0ec34598-bcc3-486d-9021-dd527bafe83a.png"
-                alt="Heavy-duty truck with commercial graphics - large vehicle wraps in Chicago"
-                className="w-full h-40 object-cover rounded-lg shadow-md mb-4"
-              />
+              <div className="relative w-full h-32 overflow-hidden rounded-lg shadow-md mb-4">
+                <img 
+                  src="/lovable-uploads/0ec34598-bcc3-486d-9021-dd527bafe83a.png"
+                  alt="Heavy-duty truck with commercial graphics - large vehicle wraps in Chicago"
+                  className="absolute inset-0 w-full h-full object-cover object-center"
+                />
+              </div>
               <h3 className="font-bold text-black">Heavy Trucks</h3>
             </div>
           </div>

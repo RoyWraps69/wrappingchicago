@@ -52,11 +52,11 @@ const WrapShowcase = () => {
         <div className="grid md:grid-cols-2 gap-12 mb-16">
           {showcaseItems.map((item, index) => (
             <div key={index} className="group bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300">
-              <div className="aspect-video overflow-hidden">
+              <div className="relative w-full h-64 overflow-hidden">
                 <img 
                   src={item.image}
                   alt={`${item.title} - Professional vehicle wrap project in Chicago`}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
               <div className="p-8">
