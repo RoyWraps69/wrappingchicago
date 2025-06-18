@@ -136,7 +136,7 @@ function HomePage() {
             </div>
           </section>
 
-          {/* Featured Work Gallery with properly rendered images */}
+          {/* Featured Work Gallery with smaller image containers */}
           <section className="py-16 bg-white">
             <div className="container mx-auto px-4">
               <h2 className="text-4xl font-bold text-center mb-4 text-black">
@@ -148,7 +148,7 @@ function HomePage() {
               
               <div className="grid md:grid-cols-3 gap-8 mb-12">
                 <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-                  <div className="relative w-full h-64 overflow-hidden">
+                  <div className="relative w-full h-40 overflow-hidden">
                     <img 
                       src="/lovable-uploads/fc2146ab-62aa-4fc9-85aa-3582af7ce980.png"
                       alt="Bratcher HVAC fleet van wrap Chicago IL - professional commercial vehicle branding and graphics by Wrapping Chicago"
@@ -165,7 +165,7 @@ function HomePage() {
                 </div>
                 
                 <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-                  <div className="relative w-full h-64 overflow-hidden">
+                  <div className="relative w-full h-40 overflow-hidden">
                     <img 
                       src="/lovable-uploads/9de106b5-94cb-4fd1-a7c7-5c75c75b7cbb.png"
                       alt="Metallic blue sports car color change wrap Chicago IL - luxury vehicle transformation and custom vinyl wraps by Wrapping Chicago"
@@ -182,7 +182,7 @@ function HomePage() {
                 </div>
                 
                 <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-                  <div className="relative w-full h-64 overflow-hidden">
+                  <div className="relative w-full h-40 overflow-hidden">
                     <img 
                       src="/lovable-uploads/efdbc4bf-1f04-42bb-a904-f52dae7bef6c.png"
                       alt="Commercial delivery van wrap Chicago IL - professional fleet branding for Urban Delivery Company by Wrapping Chicago"
@@ -211,7 +211,7 @@ function HomePage() {
             </div>
           </section>
 
-          {/* Services section with images */}
+          {/* Services section with smaller images */}
           <section className="py-16 bg-gray-50">
             <div className="container mx-auto px-4">
               <h2 className="text-4xl font-bold text-center mb-4 text-black">
@@ -223,7 +223,7 @@ function HomePage() {
               
               <div className="grid md:grid-cols-3 gap-8 mb-12">
                 <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-                  <div className="relative w-full h-48 overflow-hidden">
+                  <div className="relative w-full h-32 overflow-hidden">
                     <img 
                       src="/lovable-uploads/230338ed-a8d9-4584-bb4c-ba33c793f7ab.png"
                       alt="Corporate van fleet branding Chicago IL - professional business vehicle wraps and commercial graphics by Wrapping Chicago"
@@ -242,7 +242,7 @@ function HomePage() {
                 </div>
                 
                 <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-                  <div className="relative w-full h-48 overflow-hidden">
+                  <div className="relative w-full h-32 overflow-hidden">
                     <img 
                       src="/lovable-uploads/676b4902-7b81-4619-90d8-8feb1f986636.png"
                       alt="Matte black vehicle wrap transformation Chicago IL - sleek color change wrap and paint protection by Wrapping Chicago"
@@ -261,7 +261,7 @@ function HomePage() {
                 </div>
                 
                 <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-                  <div className="relative w-full h-48 overflow-hidden">
+                  <div className="relative w-full h-32 overflow-hidden">
                     <img 
                       src="/lovable-uploads/bc84c157-8367-4197-9b08-8ef75da53ce3.png"
                       alt="Commercial van with professional graphics and branding in Chicago"
