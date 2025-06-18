@@ -136,63 +136,39 @@ function HomePage() {
             </div>
           </section>
 
-          {/* Featured Work Gallery with properly sized containers */}
+          {/* Services section without images */}
           <section className="py-16 bg-gray-50">
             <div className="container mx-auto px-4">
               <h2 className="text-4xl font-bold text-center mb-4 text-black">
-                Recent Vehicle Wrap Projects in Chicago
+                Our Vehicle Wrap Services
               </h2>
               <p className="text-xl text-center text-black mb-12 max-w-3xl mx-auto">
-                From fleet branding to luxury color changes, see the quality and craftsmanship that sets us apart.
+                Professional vehicle wrapping services for businesses and individuals throughout Chicago.
               </p>
               
               <div className="grid md:grid-cols-3 gap-8 mb-12">
-                <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-                  <div className="w-full h-64 overflow-hidden">
-                    <img 
-                      src="/lovable-uploads/fc2146ab-62aa-4fc9-85aa-3582af7ce980.png"
-                      alt="Bratcher HVAC fleet van wrap Chicago IL - professional commercial vehicle branding and graphics"
-                      className="w-full h-full object-cover"
-                      loading="lazy"
-                    />
-                  </div>
-                  <div className="p-6">
-                    <h3 className="text-xl font-bold text-black mb-2">HVAC Fleet Branding</h3>
-                    <p className="text-black mb-4">Professional fleet wrap for Bratcher HVAC featuring bold branding and contact information.</p>
-                    <span className="inline-block bg-brand-red text-white px-3 py-1 rounded-full text-sm font-medium">Fleet Wraps</span>
-                  </div>
+                <div className="bg-white rounded-lg shadow-lg p-8">
+                  <h3 className="text-2xl font-bold text-black mb-4">Fleet Wraps</h3>
+                  <p className="text-black mb-6">Professional fleet branding solutions that create consistent brand identity across your entire vehicle fleet.</p>
+                  <Button asChild className="bg-brand-red hover:bg-red-700 text-white">
+                    <Link to="/services/fleet-wraps">Learn More</Link>
+                  </Button>
                 </div>
                 
-                <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-                  <div className="w-full h-64 overflow-hidden">
-                    <img 
-                      src="/lovable-uploads/9de106b5-94cb-4fd1-a7c7-5c75c75b7cbb.png"
-                      alt="Metallic blue sports car color change wrap Chicago IL - luxury vehicle transformation"
-                      className="w-full h-full object-cover"
-                      loading="lazy"
-                    />
-                  </div>
-                  <div className="p-6">
-                    <h3 className="text-xl font-bold text-black mb-2">Luxury Color Change</h3>
-                    <p className="text-black mb-4">Stunning metallic blue transformation showcasing premium vinyl and expert installation.</p>
-                    <span className="inline-block bg-brand-red text-white px-3 py-1 rounded-full text-sm font-medium">Color Change</span>
-                  </div>
+                <div className="bg-white rounded-lg shadow-lg p-8">
+                  <h3 className="text-2xl font-bold text-black mb-4">Color Change Wraps</h3>
+                  <p className="text-black mb-6">Transform your vehicle's appearance with premium color change wraps in any color or finish you desire.</p>
+                  <Button asChild className="bg-brand-red hover:bg-red-700 text-white">
+                    <Link to="/color-change-wraps">Learn More</Link>
+                  </Button>
                 </div>
                 
-                <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-                  <div className="w-full h-64 overflow-hidden">
-                    <img 
-                      src="/lovable-uploads/efdbc4bf-1f04-42bb-a904-f52dae7bef6c.png"
-                      alt="Commercial delivery van wrap Chicago IL - professional fleet branding"
-                      className="w-full h-full object-cover"
-                      loading="lazy"
-                    />
-                  </div>
-                  <div className="p-6">
-                    <h3 className="text-xl font-bold text-black mb-2">Delivery Fleet</h3>
-                    <p className="text-black mb-4">Clean, professional branding for Urban Delivery Co. maximizing brand visibility.</p>
-                    <span className="inline-block bg-brand-red text-white px-3 py-1 rounded-full text-sm font-medium">Commercial Graphics</span>
-                  </div>
+                <div className="bg-white rounded-lg shadow-lg p-8">
+                  <h3 className="text-2xl font-bold text-black mb-4">Commercial Graphics</h3>
+                  <p className="text-black mb-6">Professional commercial vehicle graphics that help your business stand out and attract more customers.</p>
+                  <Button asChild className="bg-brand-red hover:bg-red-700 text-white">
+                    <Link to="/services/commercial-graphics">Learn More</Link>
+                  </Button>
                 </div>
               </div>
               
@@ -202,52 +178,8 @@ function HomePage() {
                   size="lg"
                   className="bg-brand-red hover:bg-red-700 text-white font-semibold"
                 >
-                  <Link to="/gallery">View Complete Gallery</Link>
+                  <Link to="/gallery">View Our Work</Link>
                 </Button>
-              </div>
-            </div>
-          </section>
-
-          {/* Before & After Showcase with fixed containers */}
-          <section className="py-16 bg-white">
-            <div className="container mx-auto px-4">
-              <h2 className="text-4xl font-bold text-center mb-4 text-black">
-                Transformations That Speak for Themselves
-              </h2>
-              <p className="text-xl text-center text-black mb-12 max-w-3xl mx-auto">
-                See the dramatic difference professional vehicle wraps make for businesses and personal vehicles.
-              </p>
-              
-              <div className="grid md:grid-cols-2 gap-12 items-center">
-                <div>
-                  <div className="w-full h-80 overflow-hidden rounded-lg shadow-xl">
-                    <img 
-                      src="/lovable-uploads/676b4902-7b81-4619-90d8-8feb1f986636.png"
-                      alt="Matte black vehicle wrap transformation Chicago IL - sleek color change wrap"
-                      className="w-full h-full object-cover"
-                      loading="lazy"
-                    />
-                  </div>
-                  <div className="mt-6 text-center">
-                    <h3 className="text-2xl font-bold text-black mb-2">Matte Black Transformation</h3>
-                    <p className="text-black">Complete vehicle makeover with premium matte vinyl</p>
-                  </div>
-                </div>
-                
-                <div>
-                  <div className="w-full h-80 overflow-hidden rounded-lg shadow-xl">
-                    <img 
-                      src="/lovable-uploads/230338ed-a8d9-4584-bb4c-ba33c793f7ab.png"
-                      alt="Corporate van fleet branding Chicago IL - professional business vehicle wraps"
-                      className="w-full h-full object-cover"
-                      loading="lazy"
-                    />
-                  </div>
-                  <div className="mt-6 text-center">
-                    <h3 className="text-2xl font-bold text-black mb-2">Fleet Branding Success</h3>
-                    <p className="text-black">Consistent corporate identity across service vehicles</p>
-                  </div>
-                </div>
               </div>
             </div>
           </section>
