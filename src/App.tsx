@@ -127,7 +127,7 @@ function App() {
         <Routes>
           {/* HOME ROUTES - MUST BE FIRST AND EXACT */}
           <Route index element={<HomePage />} />
-          <Route path="/" exact element={<HomePage />} />
+          <Route path="/" element={<HomePage />} />
           
           {/* Main navigation routes */}
           <Route path="/about" element={<AboutPage />} />
