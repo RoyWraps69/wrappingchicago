@@ -64,9 +64,9 @@ Allow: /gallery
 Allow: /contact
 Allow: /locations
 Allow: /chicago
-Allow: /evanston
-Allow: /naperville
-Allow: /schaumburg
+Allow: /vehicle-wraps-evanston-il
+Allow: /vehicle-wraps-naperville-il
+Allow: /vehicle-wraps-schaumburg-il
 
 # Block low-value pages
 Disallow: /search

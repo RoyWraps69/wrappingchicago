@@ -109,7 +109,7 @@ export function generateSitemapUrls(): SitemapURL[] {
       priority: PRIORITIES.MEDIUM_HIGH
     },
     
-    // Location Pages
+    // Location Pages - Fixed to use correct URL format
     {
       url: `${domain}/locations`,
       lastmod: currentDate,
@@ -123,19 +123,19 @@ export function generateSitemapUrls(): SitemapURL[] {
       priority: PRIORITIES.MEDIUM_HIGH
     },
     {
-      url: `${domain}/evanston`,
+      url: `${domain}/vehicle-wraps-evanston-il`,
       lastmod: currentDate,
       changefreq: CHANGE_FREQUENCIES.MONTHLY,
       priority: PRIORITIES.MEDIUM
     },
     {
-      url: `${domain}/naperville`,
+      url: `${domain}/vehicle-wraps-naperville-il`,
       lastmod: currentDate,
       changefreq: CHANGE_FREQUENCIES.MONTHLY,
       priority: PRIORITIES.MEDIUM
     },
     {
-      url: `${domain}/schaumburg`,
+      url: `${domain}/vehicle-wraps-schaumburg-il`,
       lastmod: currentDate,
       changefreq: CHANGE_FREQUENCIES.MONTHLY,
       priority: PRIORITIES.MEDIUM
