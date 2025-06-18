@@ -15,44 +15,33 @@ img {
 }
 
 /* Image containers - prevent overflow */
-[class*="aspect-"], .image-container, .relative {
-  overflow: hidden;
+.overflow-hidden {
+  overflow: hidden !important;
 }
 
-/* Consistent aspect ratios for different use cases */
-.aspect-video {
-  aspect-ratio: 16 / 9;
-  width: 100%;
-  height: auto;
+/* Fixed height containers for consistent layout */
+.h-64 {
+  height: 16rem !important; /* 256px */
 }
 
-.aspect-square {
-  aspect-ratio: 1 / 1;
-  width: 100%;
-  height: auto;
+.h-80 {
+  height: 20rem !important; /* 320px */
 }
 
-.aspect-[4/3] {
-  aspect-ratio: 4 / 3;
-  width: 100%;
-  height: auto;
-}
-
-.aspect-[3/2] {
-  aspect-ratio: 3 / 2;
-  width: 100%;
-  height: auto;
-}
-
-/* Ensure images fill their aspect ratio containers properly */
-.aspect-video img, 
-.aspect-square img, 
-.aspect-[4/3] img,
-.aspect-[3/2] img {
+/* Ensure images fill their containers properly */
+.h-64 img, .h-80 img {
   width: 100% !important;
   height: 100% !important;
   object-fit: cover !important;
   object-position: center !important;
+}
+
+/* Card image containers */
+.card img, .card-hover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 /* Gallery and showcase image containers */
@@ -69,37 +58,14 @@ img {
   object-position: center;
 }
 
-/* Override any remaining fixed height classes that cause oversized images */
-.h-64, .h-48, .h-40, .h-32, .h-28, .h-24, .h-20, .h-16 {
-  height: auto !important;
-  aspect-ratio: 4 / 3;
-}
-
-.h-64 img, .h-48 img, .h-40 img, .h-32 img, .h-28 img, .h-24 img, .h-20 img, .h-16 img {
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover !important;
-  object-position: center !important;
-}
-
 /* Mobile responsive adjustments */
 @media (max-width: 768px) {
-  .aspect-video {
-    aspect-ratio: 4 / 3; /* Slightly taller on mobile for better visibility */
+  .h-64 {
+    height: 12rem !important; /* Smaller on mobile */
   }
   
-  .aspect-[4/3] {
-    aspect-ratio: 1 / 1; /* Square on mobile for consistency */
-  }
-  
-  .grid-cols-2 .aspect-square {
-    aspect-ratio: 1 / 1; /* Keep square on mobile grid */
-  }
-}
-
-@media (max-width: 480px) {
-  .aspect-video {
-    aspect-ratio: 1 / 1; /* Square on very small screens */
+  .h-80 {
+    height: 16rem !important; /* Smaller on mobile */
   }
 }
 
@@ -112,21 +78,6 @@ img {
   position: absolute;
   top: 0;
   left: 0;
-}
-
-/* Prevent image stretching in flexbox and grid */
-.flex img, .grid img {
-  flex-shrink: 0;
-  min-width: 0;
-  max-width: 100%;
-}
-
-/* Card image containers */
-.card img, .card-hover img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
 }
 
 /* Loading and error states */
@@ -148,14 +99,18 @@ img:not([src])::before, img[src=""]::before {
   font-size: 0.875rem;
 }
 
-/* Specific fixes for oversized images */
-.container img, .max-w-7xl img, .max-w-6xl img, .max-w-5xl img, .max-w-4xl img {
-  max-width: 100% !important;
-  height: auto !important;
+/* Prevent image stretching in flexbox and grid */
+.flex img, .grid img {
+  flex-shrink: 0;
+  min-width: 0;
 }
 
 /* Force proper sizing on all image containers */
 [class*="w-full"] img {
   max-width: 100% !important;
   height: auto !important;
+}
+
+.container img, .max-w-7xl img, .max-w-6xl img, .max-w-5xl img, .max-w-4xl img {
+  max-width: 100% !important;
 }
