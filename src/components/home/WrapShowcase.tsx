@@ -52,7 +52,7 @@ const WrapShowcase = () => {
         <div className="grid md:grid-cols-2 gap-12 mb-16">
           {showcaseItems.map((item, index) => (
             <div key={index} className="group bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300">
-              <div className="relative w-full h-48 overflow-hidden">
+              <div className="relative w-full h-40 overflow-hidden">
                 <img 
                   src={item.image}
                   alt={`${item.title} - Professional vehicle wrap project in Chicago`}
