@@ -7,20 +7,34 @@ import PricingMenu from './PricingMenu';
 
 const DesktopNav = () => {
   const navItems = [
-    { label: 'Home', path: '/' },
     { label: 'Gallery', path: '/gallery' },
     { label: 'FAQ', path: '/faq' },
     { label: 'Locations', path: '/locations' },
     { label: 'Contact', path: '/contact' }
   ];
 
+  const handleHomeClick = (e) => {
+    e.preventDefault();
+    console.log('Home link clicked, navigating to /');
+    window.location.href = '/';
+  };
+
   return (
     <div className="hidden md:flex items-center space-x-1">
-      {/* Home link first - completely separate with guaranteed clickability */}
-      <div className="relative z-50 mr-6">
-        <NavLink key="/" to="/" className="bg-transparent hover:bg-gray-50">
+      {/* Home link first - completely isolated and forced navigation */}
+      <div className="relative z-50 mr-8">
+        <Link 
+          to="/" 
+          onClick={handleHomeClick}
+          className="text-brand-navy hover:text-brand-red transition-all duration-300 flex items-center font-medium px-4 py-2 rounded-md hover:bg-gray-50 cursor-pointer"
+          style={{ 
+            pointerEvents: 'auto',
+            position: 'relative',
+            zIndex: 9999
+          }}
+        >
           Home
-        </NavLink>
+        </Link>
       </div>
       
       {/* Service and Pricing menus with lower z-index */}
@@ -32,7 +46,7 @@ const DesktopNav = () => {
       </div>
       
       {/* Rest of navigation items */}
-      {navItems.slice(1).map((item) => (
+      {navItems.map((item) => (
         <NavLink key={item.path} to={item.path} className="relative z-30">
           {item.label}
         </NavLink>

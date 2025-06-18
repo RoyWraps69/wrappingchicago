@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import './App.css';
@@ -36,6 +35,9 @@ import LiveChatWidget from './components/chat/LiveChatWidget';
 function App() {
   // Help search engines discover site resources
   useEffect(() => {
+    // Debug routing
+    console.log('App component mounted, current path:', window.location.pathname);
+    
     // Create and add structured data for the website
     const structuredData = document.createElement('script');
     structuredData.type = 'application/ld+json';
@@ -123,7 +125,8 @@ function App() {
         <a href="#main-content" className="skip-link">Skip to main content</a>
         
         <Routes>
-          {/* Main home route - must be exact and first */}
+          {/* HOME ROUTE - ABSOLUTE PRIORITY */}
+          <Route index element={<HomePage />} />
           <Route path="/" element={<HomePage />} />
           
           {/* Main navigation routes */}
