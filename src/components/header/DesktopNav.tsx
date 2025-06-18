@@ -15,16 +15,17 @@ const DesktopNav = () => {
   ];
 
   return (
-    <div className="hidden md:flex items-center space-x-2">
-      {navItems.slice(0, 1).map((item) => (
-        <NavLink key={item.path} to={item.path}>
-          {item.label}
-        </NavLink>
-      ))}
+    <div className="hidden md:flex items-center space-x-1">
+      {/* Home link first - separate from other items */}
+      <NavLink key="/" to="/" className="mr-2">
+        Home
+      </NavLink>
       
+      {/* Service and Pricing menus */}
       <ServiceMenu />
       <PricingMenu />
       
+      {/* Rest of navigation items */}
       {navItems.slice(1).map((item) => (
         <NavLink key={item.path} to={item.path}>
           {item.label}
