@@ -1,4 +1,3 @@
-
 import React from 'react';
 import {
   Carousel,
@@ -129,13 +128,83 @@ const CertificationsGallery: React.FC = () => {
       src: "/lovable-uploads/86446105-a575-48cb-929d-693790516ced.png",
       alt: "Blue Camaro color change wrap",
       title: "Sports Car Wraps"
+    },
+    {
+      id: 21,
+      src: "/lovable-uploads/b49fa5b0-4768-44fe-847b-64093d35ae76.png",
+      alt: "Blue Lexus IS sedan with premium gloss vinyl wrap installation Chicago - professional automotive color change",
+      title: "Luxury Sedan Wraps",
+      description: "Premium blue vinyl wrap on Lexus IS sedan showcasing high-gloss finish and precision installation"
+    },
+    {
+      id: 22,
+      src: "/lovable-uploads/3bbad1a4-d07f-465c-971c-8906f2951749.png",
+      alt: "Golden Tixx SUV wrap with Chicago skyline graphics - custom commercial vehicle branding design",
+      title: "SUV Commercial Graphics",
+      description: "Eye-catching SUV wrap featuring Golden Tixx branding with vibrant Chicago skyline design elements"
+    },
+    {
+      id: 23,
+      src: "/lovable-uploads/9e7fe95a-3f43-4143-884d-ef09c8a913bb.png",
+      alt: "Blue Chevrolet Camaro SS color change wrap - sports car vinyl wrapping Chicago Illinois",
+      title: "Performance Car Wraps",
+      description: "Stunning blue Chevrolet Camaro SS with full-body color change wrap showcasing automotive excellence"
+    },
+    {
+      id: 24,
+      src: "/lovable-uploads/ee58e6c2-cf73-4d4f-936f-e8b82aca712d.png",
+      alt: "D.P. Dough delivery van wrap - commercial vehicle graphics for food delivery business Chicago",
+      title: "Food Delivery Van Wraps",
+      description: "Professional food delivery van wrap for D.P. Dough featuring bright green branding and contact information"
+    },
+    {
+      id: 25,
+      src: "/lovable-uploads/364a385b-9d84-494e-b7fd-95b2808071a7.png",
+      alt: "BMW X6 color change wrap demonstration - before and after vehicle transformation Chicago",
+      title: "Color Change Showcase",
+      description: "BMW X6 color change wrap demonstration showing red to blue transformation with Avery Dennison materials"
+    },
+    {
+      id: 26,
+      src: "/lovable-uploads/f4bc3875-8088-4f08-aac7-dcb3f33e37d8.png",
+      alt: "Blue Dodge Charger with carbon fiber hood wrap - partial vehicle wrap installation Chicago shop",
+      title: "Partial Wrap Installation",
+      description: "Blue Dodge Charger featuring carbon fiber hood wrap installation in professional Chicago wrap facility"
+    },
+    {
+      id: 27,
+      src: "/lovable-uploads/02a278d3-28fd-49a8-886a-65964281b81c.png",
+      alt: "State Farm commercial trailer wrap - large format vehicle graphics for insurance company branding",
+      title: "Commercial Trailer Wraps",
+      description: "State Farm branded commercial trailer wrap showcasing large-format vehicle graphics and corporate branding"
+    },
+    {
+      id: 28,
+      src: "/lovable-uploads/7ddb7eff-51b6-4a23-8f20-b1249d22e300.png",
+      alt: "Professional vehicle wrap installer applying vinyl graphics - expert installation process Chicago",
+      title: "Professional Installation",
+      description: "Skilled technician applying vehicle wrap vinyl with precision tools in climate-controlled installation bay"
+    },
+    {
+      id: 29,
+      src: "/lovable-uploads/7483b609-5383-4d0c-885f-c09e998f2957.png",
+      alt: "Pink Chevrolet Avalanche truck wrap - custom color change pickup truck vinyl Chicago Illinois",
+      title: "Custom Truck Wraps",
+      description: "Eye-catching pink Chevrolet Avalanche pickup truck with full color change wrap installation"
+    },
+    {
+      id: 30,
+      src: "/lovable-uploads/1e0abb47-68ea-4705-a9fe-a497ffb25342.png",
+      alt: "Oakbros tree service truck wrap - commercial vehicle branding for landscaping business Chicago",
+      title: "Service Truck Graphics",
+      description: "Oakbros tree care service truck featuring professional commercial graphics with contact information and services"
     }
   ];
 
   return (
     <div className="bg-brand-navy rounded-lg p-8">
       <h3 className="text-2xl font-bold text-white text-center mb-8">
-        Our Work Gallery
+        Our Work Gallery - Professional Vehicle Wraps Chicago
       </h3>
       
       <Carousel className="w-full max-w-5xl mx-auto">
@@ -146,12 +215,17 @@ const CertificationsGallery: React.FC = () => {
                 <img
                   src={image.src}
                   alt={image.alt}
+                  title={image.title}
                   className="w-full h-48 object-cover rounded-lg shadow-lg transition-transform duration-300 group-hover:scale-105"
                   loading="lazy"
+                  itemProp="image"
                 />
                 <div className="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-center justify-center">
-                  <h4 className="text-white font-semibold text-lg">{image.title}</h4>
+                  <h4 className="text-white font-semibold text-lg text-center px-2">{image.title}</h4>
                 </div>
+                {image.description && (
+                  <meta itemProp="description" content={image.description} />
+                )}
               </div>
             </CarouselItem>
           ))}
@@ -159,6 +233,29 @@ const CertificationsGallery: React.FC = () => {
         <CarouselPrevious className="left-2" />
         <CarouselNext className="right-2" />
       </Carousel>
+      
+      {/* SEO Schema markup for image gallery */}
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "ImageGallery",
+          "name": "Vehicle Wrap Gallery - Chicago Fleet Wraps",
+          "description": "Professional vehicle wrap installation gallery showcasing car wraps, truck wraps, van wraps, and commercial graphics in Chicago IL",
+          "url": "https://www.wrappingchicago.com/#gallery",
+          "image": galleryImages.map(img => ({
+            "@type": "ImageObject",
+            "url": `https://www.wrappingchicago.com${img.src}`,
+            "description": img.alt,
+            "name": img.title,
+            "caption": img.description || img.title
+          })),
+          "provider": {
+            "@type": "Organization",
+            "name": "Wrapping Chicago",
+            "url": "https://www.wrappingchicago.com"
+          }
+        })}
+      </script>
     </div>
   );
 };
