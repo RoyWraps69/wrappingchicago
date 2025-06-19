@@ -29,14 +29,16 @@ const OrganizationSchema: React.FC = () => {
         "telephone": "+13125971286",
         "contactType": "customer service",
         "areaServed": "Chicago Metropolitan Area",
-        "availableLanguage": ["English", "Spanish"]
+        "availableLanguage": ["English", "Spanish"],
+        "email": "roy@chicagofleetwraps.com"
       },
       {
         "@type": "ContactPoint",
         "telephone": "+13125971286",
         "contactType": "sales",
         "areaServed": "Chicago Metropolitan Area",
-        "availableLanguage": ["English", "Spanish"]
+        "availableLanguage": ["English", "Spanish"],
+        "email": "roy@chicagofleetwraps.com"
       }
     ],
     "sameAs": [

@@ -68,7 +68,7 @@ const Footer = () => {
                   <Mail className="h-5 w-5" />
                 </div>
                 <div>
-                  <a href="mailto:info@wrappingchicago.com" className="text-white font-medium hover:text-brand-red transition-colors">info@wrappingchicago.com</a>
+                  <a href="mailto:roy@chicagofleetwraps.com" className="text-white font-medium hover:text-brand-red transition-colors">roy@chicagofleetwraps.com</a>
                 </div>
               </li>
             </ul>

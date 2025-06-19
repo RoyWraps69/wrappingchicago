@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useLocation } from 'react-router-dom';
@@ -116,7 +115,7 @@ const UltimateSEOOptimizer: React.FC<UltimateSEOOptimizerProps> = ({
       "height": img.height || 630
     })) : `${domain}/lovable-uploads/6ef3b1af-8591-4d36-97c2-9366401115fa.png`,
     "telephone": "+13125971286",
-    "email": "info@wrappingchicago.com",
+    "email": "roy@chicagofleetwraps.com",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "4711 N. Lamon Ave",
