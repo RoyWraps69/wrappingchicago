@@ -69,6 +69,66 @@ const CertificationsGallery: React.FC = () => {
       src: "/lovable-uploads/9bb3d94e-589d-4daf-b35e-e19e80610439.png",
       alt: "Vehicle wrap portfolio",
       title: "Our Portfolio"
+    },
+    {
+      id: 11,
+      src: "/lovable-uploads/d692f69d-0110-48db-811b-8f8a2f114307.png",
+      alt: "Patrón Tequila boat wrap",
+      title: "Boat Wraps"
+    },
+    {
+      id: 12,
+      src: "/lovable-uploads/7d075956-9d0f-4be0-8a78-fe64b0952431.png",
+      alt: "Patrón Tequila yacht graphics",
+      title: "Yacht Graphics"
+    },
+    {
+      id: 13,
+      src: "/lovable-uploads/4861ebf1-5cb2-4c4d-976b-4ff6b8a62232.png",
+      alt: "Arnold Electric commercial van wrap",
+      title: "Electric Company Van"
+    },
+    {
+      id: 14,
+      src: "/lovable-uploads/8b9ddef7-09ff-401b-a08b-20482822230e.png",
+      alt: "1800 World's Most Awarded Tequila boat wrap",
+      title: "Premium Boat Branding"
+    },
+    {
+      id: 15,
+      src: "/lovable-uploads/8183a9cc-d104-4f96-8aa6-6054f27f9d8e.png",
+      alt: "ProAir HVAC vehicle wrap with couple",
+      title: "HVAC Fleet Wraps"
+    },
+    {
+      id: 16,
+      src: "/lovable-uploads/665da141-5142-492a-bc18-f4ae66bc8863.png",
+      alt: "Corvette luxury car wrap",
+      title: "Performance Cars"
+    },
+    {
+      id: 17,
+      src: "/lovable-uploads/743dfb71-2e90-4308-bc18-0f1e3443c9eb.png",
+      alt: "Improovy Painters van wrap",
+      title: "Painter Services"
+    },
+    {
+      id: 18,
+      src: "/lovable-uploads/4abcc3c2-a901-488b-b858-f98c7f604138.png",
+      alt: "MH Equipment service van wrap",
+      title: "Equipment Services"
+    },
+    {
+      id: 19,
+      src: "/lovable-uploads/21259122-ad77-4f57-afa1-d97c6654b1ce.png",
+      alt: "Golden Tixx vehicle wrap with city skyline",
+      title: "Creative Designs"
+    },
+    {
+      id: 20,
+      src: "/lovable-uploads/86446105-a575-48cb-929d-693790516ced.png",
+      alt: "Blue Camaro color change wrap",
+      title: "Sports Car Wraps"
     }
   ];
 
