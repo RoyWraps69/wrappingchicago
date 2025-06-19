@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { Shield, Award, Users, Clock, CheckCircle, Star } from 'lucide-react';
+import CertificationsGallery from '@/components/home/CertificationsGallery';
 
 const TrustSignals: React.FC = () => {
   const stats = [
@@ -30,29 +31,6 @@ const TrustSignals: React.FC = () => {
     }
   ];
 
-  const certifications = [
-    {
-      name: "3M Certified",
-      description: "Authorized 3M Graphics Installer",
-      icon: Shield
-    },
-    {
-      name: "Avery Dennison",
-      description: "Certified Installation Partner",
-      icon: Award
-    },
-    {
-      name: "PDAA Member",
-      description: "Professional Decal Applicators Alliance",
-      icon: CheckCircle
-    },
-    {
-      name: "BBB A+ Rating",
-      description: "Better Business Bureau Accredited",
-      icon: Star
-    }
-  ];
-
   return (
     <section className="py-16 bg-white">
       <div className="container mx-auto px-4">
@@ -77,21 +55,8 @@ const TrustSignals: React.FC = () => {
           ))}
         </div>
 
-        {/* Certifications */}
-        <div className="bg-brand-navy rounded-lg p-8">
-          <h3 className="text-2xl font-bold text-white text-center mb-8">
-            Industry Certifications & Partnerships
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {certifications.map((cert, index) => (
-              <div key={index} className="text-center text-white">
-                <cert.icon className="h-12 w-12 mx-auto mb-3 text-brand-red" />
-                <div className="font-bold mb-2">{cert.name}</div>
-                <div className="text-sm opacity-90">{cert.description}</div>
-              </div>
-            ))}
-          </div>
-        </div>
+        {/* Gallery Section - replaces certifications */}
+        <CertificationsGallery />
 
         {/* Warranty Information */}
         <div className="mt-12 bg-gradient-to-r from-brand-red to-red-600 rounded-lg p-8 text-white text-center">
