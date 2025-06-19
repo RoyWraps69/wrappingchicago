@@ -1,16 +1,15 @@
 
 # Enhanced robots.txt for Wrapping Chicago - Google Algorithm Alignment
-# Last updated: 2025-01-08
-# Optimized for Google's 2024+ algorithms and Core Web Vitals
+# Last updated: 2025-06-19
+# Optimized for Google's 2025+ algorithms and maximum crawlability
 
 User-agent: *
 Allow: /
 
 # Sitemaps - Critical for Discovery
 Sitemap: https://www.wrappingchicago.com/sitemap.xml
-Sitemap: https://www.wrappingchicago.com/sitemap-images.xml
 
-# High-priority pages for indexing
+# Explicitly allow all important pages for maximum indexing
 Allow: /about
 Allow: /car-wraps
 Allow: /truck-wraps
@@ -30,13 +29,13 @@ Allow: /gallery
 Allow: /contact
 Allow: /locations
 Allow: /chicago
-Allow: /evanston
-Allow: /naperville
-Allow: /schaumburg
-Allow: /truck-wraps-chicago
 Allow: /vehicle-wraps-*-il
+Allow: /truck-wraps-chicago
+Allow: /pricing
+Allow: /faq
+Allow: /ai-wrap-ideas
 
-# Allow all media files for rich snippets
+# Allow all media files for rich snippets and better ranking
 Allow: /*.jpg$
 Allow: /*.jpeg$
 Allow: /*.png$
@@ -47,8 +46,9 @@ Allow: /*.js$
 Allow: /*.css$
 Allow: /*.woff2$
 Allow: /*.woff$
+Allow: /*.pdf$
 
-# Block low-value pages to optimize crawl budget
+# Minimal blocking - only block true waste of crawl budget
 Disallow: /search
 Disallow: /*utm_*
 Disallow: /*fbclid=*
@@ -64,11 +64,10 @@ Disallow: /wp-admin/
 Disallow: /wp-includes/
 Disallow: /cgi-bin/
 Disallow: /*.cgi$
-Disallow: /*.php$
 Disallow: /*sessionid*
 Disallow: /*PHPSESSID*
 
-# Special directives for major search engines
+# Enhanced crawl directives for major search engines
 User-agent: Googlebot
 Allow: /
 Crawl-delay: 1
@@ -83,11 +82,11 @@ Allow: /*.gif$
 
 User-agent: Bingbot
 Allow: /
-Crawl-delay: 2
+Crawl-delay: 1
 
 User-agent: Slurp
 Allow: /
-Crawl-delay: 2
+Crawl-delay: 1
 
 User-agent: DuckDuckBot
 Allow: /
@@ -99,8 +98,13 @@ Allow: /
 User-agent: Twitterbot
 Allow: /
 
+# Yelp crawler support
+User-agent: YelpBot
+Allow: /
+Crawl-delay: 1
+
 # Host preference for canonical URLs
 Host: www.wrappingchicago.com
 
-# Clean-param directive for Google
+# Clean-param directive for Google to handle URL parameters
 Clean-param: utm_source&utm_medium&utm_campaign&utm_content&utm_term&fbclid&gclid&ref&sessionid&PHPSESSID
