@@ -37,7 +37,7 @@ const HomeStructuredData: React.FC = () => {
           "@id": `${domain}/#organization`,
           "url": `${domain}/`,
           "telephone": "+13125971286",
-          "email": "roy@chicagofleetwraps.com",
+          "email": "info@wrappingchicago.com",
           "priceRange": "$$",
           "address": {
             "@type": "PostalAddress",

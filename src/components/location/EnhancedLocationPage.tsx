@@ -14,6 +14,7 @@ import Schema from '@/components/Schema';
 import GoogleSearchConsole from '@/components/seo/GoogleSearchConsole';
 import ReviewsSchema from '@/components/schemas/ReviewsSchema';
 import BusinessLocationSchema from '@/components/schemas/BusinessLocationSchema';
+import PerfectLocationSEO from './PerfectLocationSEO';
 
 interface EnhancedLocationPageProps {
   city: City;
@@ -63,35 +64,8 @@ const EnhancedLocationPage = ({ city }: EnhancedLocationPageProps) => {
 
   return (
     <>
-      <Helmet>
-        <title>{pageTitle}</title>
-        <meta name="description" content={pageDescription} />
-        <meta name="keywords" content={cityKeywords.join(', ')} />
-        <link rel="canonical" href={`${domain}${canonicalUrl}`} />
-        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-        
-        {/* Enhanced Open Graph */}
-        <meta property="og:title" content={pageTitle} />
-        <meta property="og:description" content={pageDescription} />
-        <meta property="og:url" content={`${domain}${canonicalUrl}`} />
-        <meta property="og:type" content="website" />
-        <meta property="og:image" content={`${domain}/lovable-uploads/6ef3b1af-8591-4d36-97c2-9366401115fa.png`} />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
-        <meta property="og:site_name" content="Wrapping Chicago" />
-        
-        {/* Twitter Card */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={pageTitle} />
-        <meta name="twitter:description" content={pageDescription} />
-        <meta name="twitter:image" content={`${domain}/lovable-uploads/6ef3b1af-8591-4d36-97c2-9366401115fa.png`} />
-        
-        {/* Local SEO */}
-        <meta name="geo.region" content="US-IL" />
-        <meta name="geo.placename" content={city.name} />
-        <meta name="geo.position" content={`${city.coordinates?.lat || 41.8781};${city.coordinates?.lng || -87.6298}`} />
-        <meta name="ICBM" content={`${city.coordinates?.lat || 41.8781}, ${city.coordinates?.lng || -87.6298}`} />
-      </Helmet>
+      {/* Perfect SEO Optimization */}
+      <PerfectLocationSEO city={city} serviceType="Fleet Wraps" />
       
       <GoogleSearchConsole verificationCode="gQnkHgsJ2bOPDWFClspUxA6EZsE-XWnLasqxsqSESvg" />
       
