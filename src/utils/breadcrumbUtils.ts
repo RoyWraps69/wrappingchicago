@@ -19,10 +19,20 @@ export const generateBreadcrumbs = (pathname: string, city?: City): BreadcrumbIt
     }
   ];
 
-  // Handle city-specific vehicle wrap pages
+  // Handle city-specific vehicle wrap pages including Chicago
   if (pathname.match(/^\/vehicle-wraps-(.+)-il$/)) {
     const citySlug = pathname.replace('/vehicle-wraps-', '').replace('-il', '');
-    const cityName = city?.name || citySlug.charAt(0).toUpperCase() + citySlug.slice(1);
+    let cityName = city?.name;
+    
+    // Special handling for Chicago
+    if (citySlug === 'chicago') {
+      cityName = 'Chicago';
+    } else if (!cityName) {
+      // Fallback: convert slug to proper case
+      cityName = citySlug.split('-').map(word => 
+        word.charAt(0).toUpperCase() + word.slice(1)
+      ).join(' ');
+    }
     
     breadcrumbs.push({
       position: 2,
