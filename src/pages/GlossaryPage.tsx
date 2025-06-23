@@ -141,20 +141,20 @@ const GlossaryPage = () => {
                   </div>
                 )}
 
-                {/* Category Filters */}
-                <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-2 mb-6">
+                {/* Category Filters - Updated to 2 rows */}
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6">
                   {glossaryData.map((category) => (
                     <Button
                       key={category.id}
                       variant={selectedCategory === category.id ? "default" : "outline"}
-                      size="sm"
+                      size="default"
                       onClick={() => setSelectedCategory(
                         selectedCategory === category.id ? null : category.id
                       )}
-                      className="text-xs"
+                      className="text-sm px-4 py-3 h-auto whitespace-normal text-center min-h-[3rem] flex flex-col items-center justify-center gap-1"
                     >
-                      {category.name}
-                      <Badge variant="secondary" className="ml-1 text-xs">
+                      <span className="font-medium">{category.name}</span>
+                      <Badge variant="secondary" className="text-xs">
                         {category.terms.length}
                       </Badge>
                     </Button>
