@@ -2,19 +2,33 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Download, FileText } from 'lucide-react';
+import { toast } from 'sonner';
 
 const PDFDownloadSection: React.FC = () => {
   const handleDownloadPDF = () => {
     // Path to the comprehensive vehicle wrapping guide
     const pdfUrl = '/vehicle-wrapping-guide.pdf';
     
-    // Create a temporary anchor element to trigger download
-    const link = document.createElement('a');
-    link.href = pdfUrl;
-    link.download = 'Vehicle_Wrapping_Guide.pdf';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    try {
+      // Create a temporary anchor element to trigger download
+      const link = document.createElement('a');
+      link.href = pdfUrl;
+      link.download = 'Vehicle_Wrapping_Guide.pdf';
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+      
+      // Append to body, click, and remove
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      
+      toast.success('PDF download started!');
+    } catch (error) {
+      console.error('Download error:', error);
+      // Fallback: open in new tab
+      window.open(pdfUrl, '_blank', 'noopener,noreferrer');
+      toast.info('PDF opened in new tab');
+    }
   };
 
   return (
