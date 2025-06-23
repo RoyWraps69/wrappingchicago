@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Index from '@/pages/Index';
@@ -25,6 +24,8 @@ import CityLocationPage from '@/pages/CityLocationPage';
 import ChicagoLocationPage from '@/pages/ChicagoLocationPage';
 import ReturnPolicyPage from '@/pages/ReturnPolicyPage';
 import ShippingPage from '@/pages/ShippingPage';
+import PrivacyPolicyPage from '@/pages/PrivacyPolicyPage';
+import TermsOfServicePage from '@/pages/TermsOfServicePage';
 
 const AppRoutes = () => {
   return (
@@ -43,6 +44,8 @@ const AppRoutes = () => {
       <Route path="/stats" element={<StatsPage />} />
       <Route path="/return-policy" element={<ReturnPolicyPage />} />
       <Route path="/shipping" element={<ShippingPage />} />
+      <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+      <Route path="/terms" element={<TermsOfServicePage />} />
       
       {/* Service Routes */}
       <Route path="/car-wraps" element={<CarWrapsPage />} />
