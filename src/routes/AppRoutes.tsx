@@ -12,6 +12,7 @@ import FAQPage from '@/pages/FAQPage';
 import AIWrapIdeas from '@/pages/AIWrapIdeas';
 import SitemapPage from '@/pages/SitemapPage';
 import GlossaryPage from '@/pages/GlossaryPage';
+import StatsPage from '@/pages/StatsPage';
 import CarWrapsPage from '@/pages/CarWrapsPage';
 import TruckWrapsPage from '@/pages/TruckWrapsPage';
 import VanWrapsPage from '@/pages/VanWrapsPage';
@@ -37,6 +38,7 @@ const AppRoutes = () => {
       <Route path="/ai-wrap-ideas" element={<AIWrapIdeas />} />
       <Route path="/sitemap" element={<SitemapPage />} />
       <Route path="/glossary" element={<GlossaryPage />} />
+      <Route path="/stats" element={<StatsPage />} />
       
       {/* Service Routes */}
       <Route path="/car-wraps" element={<CarWrapsPage />} />
