@@ -1,33 +1,71 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Download, FileText } from 'lucide-react';
 import { toast } from 'sonner';
 
 const PDFDownloadSection: React.FC = () => {
-  const handleDownloadPDF = () => {
-    // Path to the comprehensive vehicle wrapping guide
+  const handleDownloadPDF = async () => {
     const pdfUrl = '/vehicle-wrapping-guide.pdf';
     
     try {
-      // Create a temporary anchor element to trigger download
+      // First, let's check if the PDF exists and is accessible
+      console.log('Attempting to fetch PDF from:', pdfUrl);
+      
+      const response = await fetch(pdfUrl);
+      console.log('PDF fetch response status:', response.status);
+      console.log('PDF fetch response headers:', Object.fromEntries(response.headers.entries()));
+      
+      if (!response.ok) {
+        throw new Error(`Failed to fetch PDF: ${response.status} ${response.statusText}`);
+      }
+      
+      // Check if it's actually a PDF
+      const contentType = response.headers.get('content-type');
+      console.log('PDF content type:', contentType);
+      
+      if (!contentType || !contentType.includes('pdf')) {
+        console.warn('Warning: Content type is not PDF:', contentType);
+      }
+      
+      // Get the blob and check its size
+      const blob = await response.blob();
+      console.log('PDF blob size:', blob.size, 'bytes');
+      console.log('PDF blob type:', blob.type);
+      
+      if (blob.size === 0) {
+        throw new Error('PDF file is empty');
+      }
+      
+      // Create download link with the blob
+      const blobUrl = window.URL.createObjectURL(blob);
       const link = document.createElement('a');
-      link.href = pdfUrl;
+      link.href = blobUrl;
       link.download = 'Vehicle_Wrapping_Guide.pdf';
       link.target = '_blank';
       link.rel = 'noopener noreferrer';
       
-      // Append to body, click, and remove
+      // Trigger download
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
       
+      // Clean up the blob URL
+      setTimeout(() => window.URL.revokeObjectURL(blobUrl), 100);
+      
       toast.success('PDF download started!');
+      
     } catch (error) {
-      console.error('Download error:', error);
-      // Fallback: open in new tab
-      window.open(pdfUrl, '_blank', 'noopener,noreferrer');
-      toast.info('PDF opened in new tab');
+      console.error('PDF download error:', error);
+      toast.error(`Failed to download PDF: ${error.message}`);
+      
+      // Fallback: try direct link
+      try {
+        window.open(pdfUrl, '_blank', 'noopener,noreferrer');
+        toast.info('Opened PDF in new tab as fallback');
+      } catch (fallbackError) {
+        console.error('Fallback also failed:', fallbackError);
+        toast.error('Unable to open PDF. Please contact support.');
+      }
     }
   };
 
