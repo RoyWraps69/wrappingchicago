@@ -139,7 +139,8 @@ const getRouteName = (path: string): string => {
     'luxury-exotic-wraps': 'Luxury & Exotic Wraps',
     'pricing': 'Pricing',
     'faq': 'FAQ',
-    'sitemap': 'Sitemap'
+    'sitemap': 'Sitemap',
+    'glossary': 'Vehicle Wrap Glossary'
   };
 
   return routeMap[path] || path.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());

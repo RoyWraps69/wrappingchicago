@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
@@ -24,6 +23,7 @@ import LuxuryExoticWrapsPage from './pages/LuxuryExoticWrapsPage';
 import TruckWrapsChicago from './pages/TruckWrapsChicago';
 import CityLocationPage from './pages/CityLocationPage';
 import ChicagoLocationPage from './pages/ChicagoLocationPage';
+import GlossaryPage from './pages/GlossaryPage';
 import { Toaster } from '@/components/ui/toaster';
 
 const queryClient = new QueryClient();
@@ -46,6 +46,7 @@ function App() {
             <Route path="/faq" element={<FAQPage />} />
             <Route path="/ai-wrap-ideas" element={<AIWrapIdeas />} />
             <Route path="/sitemap" element={<SitemapPage />} />
+            <Route path="/glossary" element={<GlossaryPage />} />
             
             {/* Service-specific routes */}
             <Route path="/car-wraps" element={<CarWrapsPage />} />
