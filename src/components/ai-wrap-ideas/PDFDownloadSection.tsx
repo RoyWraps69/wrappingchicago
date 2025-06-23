@@ -1,72 +1,70 @@
+
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Download, FileText } from 'lucide-react';
 import { toast } from 'sonner';
 
 const PDFDownloadSection: React.FC = () => {
-  const handleDownloadPDF = async () => {
-    const pdfUrl = '/vehicle-wrapping-guide.pdf';
+  const handleDownloadPDF = () => {
+    // Create PDF content as a simple text file for now
+    const pdfContent = `
+VEHICLE WRAPPING GUIDE
+======================
+
+1. DESIGN PRINCIPLES
+   - Keep it simple and readable
+   - Use high contrast colors
+   - Consider viewing distance
+   - Brand consistency is key
+
+2. MATERIAL SELECTION
+   - 3M vinyl for durability
+   - Cast vs calendered vinyl
+   - Lamination for protection
+   - Specialty finishes available
+
+3. COST-BENEFIT ANALYSIS
+   - Mobile advertising reach
+   - Cost per impression
+   - Brand awareness increase
+   - Professional appearance
+
+4. INSTALLATION PROCESS
+   - Surface preparation critical
+   - Temperature control important
+   - Professional tools required
+   - Quality control checkpoints
+
+5. MARKETING IMPACT
+   - 24/7 advertising
+   - Local market penetration
+   - Brand recognition boost
+   - Professional credibility
+
+6. MAINTENANCE TIPS
+   - Regular cleaning schedule
+   - Avoid harsh chemicals
+   - Inspect for damage
+   - Professional repairs
+
+Contact Wrapping Chicago for professional vehicle wrap services!
+Phone: (312) 597-1286
+Email: roy@chicagofleetwraps.com
+    `;
+
+    // Create blob and download
+    const blob = new Blob([pdfContent], { type: 'text/plain' });
+    const url = window.URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = 'Vehicle_Wrapping_Guide.txt';
     
-    try {
-      // First, let's check if the PDF exists and is accessible
-      console.log('Attempting to fetch PDF from:', pdfUrl);
-      
-      const response = await fetch(pdfUrl);
-      console.log('PDF fetch response status:', response.status);
-      console.log('PDF fetch response headers:', Object.fromEntries(response.headers.entries()));
-      
-      if (!response.ok) {
-        throw new Error(`Failed to fetch PDF: ${response.status} ${response.statusText}`);
-      }
-      
-      // Check if it's actually a PDF
-      const contentType = response.headers.get('content-type');
-      console.log('PDF content type:', contentType);
-      
-      if (!contentType || !contentType.includes('pdf')) {
-        console.warn('Warning: Content type is not PDF:', contentType);
-      }
-      
-      // Get the blob and check its size
-      const blob = await response.blob();
-      console.log('PDF blob size:', blob.size, 'bytes');
-      console.log('PDF blob type:', blob.type);
-      
-      if (blob.size === 0) {
-        throw new Error('PDF file is empty');
-      }
-      
-      // Create download link with the blob
-      const blobUrl = window.URL.createObjectURL(blob);
-      const link = document.createElement('a');
-      link.href = blobUrl;
-      link.download = 'Vehicle_Wrapping_Guide.pdf';
-      link.target = '_blank';
-      link.rel = 'noopener noreferrer';
-      
-      // Trigger download
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-      
-      // Clean up the blob URL
-      setTimeout(() => window.URL.revokeObjectURL(blobUrl), 100);
-      
-      toast.success('PDF download started!');
-      
-    } catch (error) {
-      console.error('PDF download error:', error);
-      toast.error(`Failed to download PDF: ${error.message}`);
-      
-      // Fallback: try direct link
-      try {
-        window.open(pdfUrl, '_blank', 'noopener,noreferrer');
-        toast.info('Opened PDF in new tab as fallback');
-      } catch (fallbackError) {
-        console.error('Fallback also failed:', fallbackError);
-        toast.error('Unable to open PDF. Please contact support.');
-      }
-    }
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    
+    window.URL.revokeObjectURL(url);
+    toast.success('Vehicle Wrapping Guide downloaded!');
   };
 
   return (
@@ -103,7 +101,7 @@ const PDFDownloadSection: React.FC = () => {
             className="bg-brand-red hover:bg-red-700 text-white"
           >
             <Download className="mr-2 h-4 w-4" />
-            Download PDF Guide
+            Download Guide
           </Button>
         </div>
       </div>
