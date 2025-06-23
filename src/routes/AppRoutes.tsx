@@ -23,6 +23,8 @@ import LuxuryExoticWrapsPage from '@/pages/LuxuryExoticWrapsPage';
 import TruckWrapsChicago from '@/pages/TruckWrapsChicago';
 import CityLocationPage from '@/pages/CityLocationPage';
 import ChicagoLocationPage from '@/pages/ChicagoLocationPage';
+import ReturnPolicyPage from '@/pages/ReturnPolicyPage';
+import ShippingPage from '@/pages/ShippingPage';
 
 const AppRoutes = () => {
   return (
@@ -39,6 +41,8 @@ const AppRoutes = () => {
       <Route path="/sitemap" element={<SitemapPage />} />
       <Route path="/glossary" element={<GlossaryPage />} />
       <Route path="/stats" element={<StatsPage />} />
+      <Route path="/return-policy" element={<ReturnPolicyPage />} />
+      <Route path="/shipping" element={<ShippingPage />} />
       
       {/* Service Routes */}
       <Route path="/car-wraps" element={<CarWrapsPage />} />

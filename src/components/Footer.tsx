@@ -187,6 +187,8 @@ const Footer = () => {
           <p className="text-white/50 text-sm mb-4 md:mb-0">© {new Date().getFullYear()} Wrapping Chicago. All rights reserved.</p>
           <div className="flex gap-4 text-sm">
             <Link to="/sitemap" className="text-white/50 hover:text-white transition-colors">Sitemap</Link>
+            <Link to="/return-policy" className="text-white/50 hover:text-white transition-colors">Return Policy</Link>
+            <Link to="/shipping" className="text-white/50 hover:text-white transition-colors">Shipping</Link>
             <Link to="/privacy-policy" className="text-white/50 hover:text-white transition-colors">Privacy Policy</Link>
             <Link to="/terms" className="text-white/50 hover:text-white transition-colors">Terms of Service</Link>
           </div>
