@@ -36,7 +36,7 @@ const HomeSEO = () => {
         
         {/* Enhanced Open Graph / Social Media Tags */}
         <meta property="og:title" content={`Vehicle Wraps Chicago | Premium Car Wraps, Truck Wraps & Fleet Graphics | ${currentYear}`} />
-        <meta property="og:description" content="Chicago's premier vehicle wrap specialists. Custom car wraps, truck wraps, van wraps, and fleet graphics with premium 3M vinyl. Professional installation, design consultation, and competitive pricing." />
+        <meta property="og:description" content="Wrapping Chicago - Premier vehicle wrap specialists. Custom car wraps, truck wraps, van wraps, and fleet graphics with premium 3M vinyl. Professional installation, design consultation, and competitive pricing." />
         <meta property="og:url" content={`${domain}/`} />
         <meta property="og:type" content="website" />
         <meta property="og:image" content={`${domain}/lovable-uploads/6ef3b1af-8591-4d36-97c2-9366401115fa.png`} />

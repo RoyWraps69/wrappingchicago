@@ -61,7 +61,7 @@ const IndexHelmetTags: React.FC = () => {
           "@id": "${domain}/#webpage",
           "url": "${domain}/",
           "name": "Vehicle Wraps Chicago | Premium Car & Truck Wrapping Services",
-          "description": "Chicago's premier vehicle wrap company offering professional car wraps, truck wraps, van wraps, fleet wraps & commercial graphics with expert installation using premium 3M materials.",
+          "description": "Wrapping Chicago - Premier vehicle wrap company offering professional car wraps, truck wraps, van wraps, fleet wraps & commercial graphics with expert installation using premium 3M materials.",
           "speakable": {
             "@type": "SpeakableSpecification",
             "cssSelector": ["h1", "h2.speakable", ".speakable"]
