@@ -16,6 +16,7 @@ import LocationFAQSchema from '@/components/schemas/LocationFAQSchema';
 import LocationReviewSchema from '@/components/schemas/LocationReviewSchema';
 import BusinessLocationSchema from '@/components/schemas/BusinessLocationSchema';
 import PerfectLocationSEO from './PerfectLocationSEO';
+import SearchableGlossary from '@/components/glossary/SearchableGlossary';
 
 interface EnhancedLocationPageProps {
   city: City;
@@ -96,6 +97,15 @@ const EnhancedLocationPage = ({ city }: EnhancedLocationPageProps) => {
           
           <EnhancedLocationHero city={city} />
           <ComprehensiveLocationContent city={city} />
+          
+          {/* Add Glossary Component */}
+          <section className="py-8 bg-gray-50">
+            <div className="container mx-auto px-4">
+              <div className="max-w-4xl mx-auto">
+                <SearchableGlossary compact={true} />
+              </div>
+            </div>
+          </section>
           
           <PageFAQ
             faqs={cityFAQs}

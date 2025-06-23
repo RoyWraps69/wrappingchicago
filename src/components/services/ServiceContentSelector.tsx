@@ -9,6 +9,7 @@ import VehicleLetteringContent from './VehicleLetteringContent';
 import SpecialtyWrapsContent from './SpecialtyWrapsContent';
 import RetailGraphicsContent from './RetailGraphicsContent';
 import GenericServiceContent from './GenericServiceContent';
+import SearchableGlossary from '@/components/glossary/SearchableGlossary';
 
 interface ServiceContentSelectorProps {
   path: string;
@@ -26,39 +27,131 @@ const ServiceContentSelector: React.FC<ServiceContentSelectorProps> = ({ path })
   console.log("ServiceContentSelector using normalized path:", servicePath);
   
   if (servicePath === 'fleet-wraps') {
-    return <FleetWrapsContent />;
+    return (
+      <>
+        <FleetWrapsContent />
+        <div className="container mx-auto px-4 py-8">
+          <SearchableGlossary compact={true} />
+        </div>
+      </>
+    );
   } else if (servicePath === 'color-change-wraps') {
-    return <ColorChangeWrapsContent />;
+    return (
+      <>
+        <ColorChangeWrapsContent />
+        <div className="container mx-auto px-4 py-8">
+          <SearchableGlossary compact={true} />
+        </div>
+      </>
+    );
   } else if (servicePath === 'commercial-graphics') {
-    return <CommercialGraphicsContent />;
+    return (
+      <>
+        <CommercialGraphicsContent />
+        <div className="container mx-auto px-4 py-8">
+          <SearchableGlossary compact={true} />
+        </div>
+      </>
+    );
   } else if (servicePath === 'partial-wraps') {
-    return <PartialWrapsContent />;
+    return (
+      <>
+        <PartialWrapsContent />
+        <div className="container mx-auto px-4 py-8">
+          <SearchableGlossary compact={true} />
+        </div>
+      </>
+    );
   } else if (servicePath === 'protective-films') {
-    return <ProtectiveFilmsContent />;
+    return (
+      <>
+        <ProtectiveFilmsContent />
+        <div className="container mx-auto px-4 py-8">
+          <SearchableGlossary compact={true} />
+        </div>
+      </>
+    );
   } else if (servicePath === 'vehicle-lettering') {
-    return <VehicleLetteringContent />;
+    return (
+      <>
+        <VehicleLetteringContent />
+        <div className="container mx-auto px-4 py-8">
+          <SearchableGlossary compact={true} />
+        </div>
+      </>
+    );
   } else if (servicePath === 'specialty-wraps') {
-    return <SpecialtyWrapsContent />;
+    return (
+      <>
+        <SpecialtyWrapsContent />
+        <div className="container mx-auto px-4 py-8">
+          <SearchableGlossary compact={true} />
+        </div>
+      </>
+    );
   } else if (servicePath === 'retail-graphics') {
-    return <RetailGraphicsContent />;
+    return (
+      <>
+        <RetailGraphicsContent />
+        <div className="container mx-auto px-4 py-8">
+          <SearchableGlossary compact={true} />
+        </div>
+      </>
+    );
   } else if (servicePath === 'car-wraps') {
-    // For car-specific wraps
-    return <GenericServiceContent serviceType="car" />;
+    return (
+      <>
+        <GenericServiceContent serviceType="car" />
+        <div className="container mx-auto px-4 py-8">
+          <SearchableGlossary compact={true} />
+        </div>
+      </>
+    );
   } else if (servicePath === 'truck-wraps') {
-    // For truck-specific wraps
-    return <GenericServiceContent serviceType="truck" />;
+    return (
+      <>
+        <GenericServiceContent serviceType="truck" />
+        <div className="container mx-auto px-4 py-8">
+          <SearchableGlossary compact={true} />
+        </div>
+      </>
+    );
   } else if (servicePath === 'van-wraps') {
-    // For van-specific wraps
-    return <GenericServiceContent serviceType="van" />;
+    return (
+      <>
+        <GenericServiceContent serviceType="van" />
+        <div className="container mx-auto px-4 py-8">
+          <SearchableGlossary compact={true} />
+        </div>
+      </>
+    );
   } else if (servicePath === 'designer-wraps') {
-    // For designer wraps
-    return <GenericServiceContent serviceType="designer" />;
+    return (
+      <>
+        <GenericServiceContent serviceType="designer" />
+        <div className="container mx-auto px-4 py-8">
+          <SearchableGlossary compact={true} />
+        </div>
+      </>
+    );
   } else if (servicePath === 'luxury-exotic-wraps') {
-    // For luxury/exotic vehicle wraps
-    return <GenericServiceContent serviceType="luxury" />;
+    return (
+      <>
+        <GenericServiceContent serviceType="luxury" />
+        <div className="container mx-auto px-4 py-8">
+          <SearchableGlossary compact={true} />
+        </div>
+      </>
+    );
   } else {
-    // Default page showing all services
-    return <GenericServiceContent />;
+    return (
+      <>
+        <GenericServiceContent />
+        <div className="container mx-auto px-4 py-8">
+          <SearchableGlossary maxResults={8} />
+        </div>
+      </>
+    );
   }
 };
 
