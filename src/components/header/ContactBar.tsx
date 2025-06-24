@@ -51,7 +51,7 @@ const ContactBar = () => {
               {/* Social Media Links */}
               <span className="text-white/50 hidden lg:inline">|</span>
               <a 
-                href="https://www.facebook.com/chicagofleetwraps" 
+                href="https://www.facebook.com/wrappingchicago" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="flex items-center hover:text-brand-red transition-all hidden lg:flex"
@@ -60,7 +60,7 @@ const ContactBar = () => {
                 <Facebook className="w-3 h-3 md:w-4 md:h-4 text-brand-red" />
               </a>
               <a 
-                href="https://www.tiktok.com/@chicagofleetwraps" 
+                href="https://www.tiktok.com/@wrappingchicago" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="flex items-center hover:text-brand-red transition-all hidden lg:flex"

@@ -37,7 +37,7 @@ const Header = () => {
                   className="h-12 w-12 mr-3"
                 />
                 <span className="text-2xl font-extrabold tracking-tight text-brand-navy uppercase">
-                  Chicago Fleet<span className="text-brand-red">Wraps</span>
+                  Wrapping<span className="text-brand-red">Chicago</span>
                 </span>
               </Link>
             </div>
