@@ -7,69 +7,60 @@ import CallToAction from '@/components/CallToAction';
 import Breadcrumbs from '@/components/navigation/Breadcrumbs';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-import { Phone, MessageSquare } from 'lucide-react';
+import { Phone, MessageSquare, CheckCircle2, Truck } from 'lucide-react';
 import Schema from '@/components/Schema';
 import { cities } from '@/data/cities';
-import ServiceSchema from '@/components/schemas/ServiceSchema';
-import TruckWrapsContent from '@/components/services/truck-wraps/TruckWrapsContent';
-import PageFAQ from '@/components/common/PageFAQ';
 
 const TruckWrapsPage = () => {
-  // For Schema component
   const chicagoCity = cities.find(city => city.slug === 'chicago') || cities[0];
-  const path = '/services/truck-wraps';
   const domain = "https://www.wrappingchicago.com";
   
-  // FAQ data for schema
   const faqData = [
     {
-      question: "How much does it cost to wrap a truck in Chicago?",
-      answer: "Truck wrap costs in Chicago range from $3,000 to $6,500+ depending on the size of your truck, design complexity, and coverage area. Box trucks and commercial vehicles typically cost more than pickup trucks due to their larger surface area."
+      question: "How much does a truck wrap cost in Chicago?",
+      answer: "Truck wrap costs in Chicago typically range from $3,500 to $7,000 for a full wrap, depending on truck size and design complexity. Partial wraps start around $2,000."
     },
     {
-      question: "How long do truck wraps last in Chicago's climate?",
-      answer: "Professional truck wraps in Chicago typically last 5-7 years with proper maintenance. Our premium materials are designed to withstand Chicago's harsh winters and hot summers."
+      question: "How long does it take to wrap a truck?",
+      answer: "Most truck wraps can be completed in 4-6 days, including design, preparation, installation, and final quality checks. Large commercial trucks may take slightly longer."
     },
     {
-      question: "Can I wrap my truck if it has rust or damage?",
-      answer: "Surface imperfections like rust or damage must be repaired before wrapping, as vinyl conforms to the surface underneath. Minor scratches can be covered, but significant damage should be addressed for best results."
+      question: "Will a truck wrap damage my vehicle's paint?",
+      answer: "No, professional truck wraps actually protect your paint. When properly installed and removed, wraps preserve the original paint underneath."
     },
     {
-      question: "How long does it take to wrap a commercial truck?",
-      answer: "Most commercial truck wraps take 3-7 days to complete, depending on the size and complexity. Box trucks and larger commercial vehicles typically require more time than pickup trucks."
+      question: "Can I wrap a leased truck?",
+      answer: "Yes, truck wraps are perfect for leased vehicles since they're completely removable and don't permanently alter the vehicle."
     },
     {
-      question: "What kind of maintenance do truck wraps require?",
-      answer: "Truck wraps require regular hand washing with mild soap and water. Avoid harsh chemicals and high-pressure washers. We recommend cleaning every 2-3 weeks and keeping wrapped trucks out of prolonged direct sunlight when possible."
+      question: "What materials do you use for truck wraps?",
+      answer: "We use only premium 3M and Avery Dennison vinyl materials designed specifically for vehicle wrapping, ensuring durability and longevity."
     }
   ];
-
+  
   return (
     <>
       <Helmet>
-        <title>Truck Wraps in Chicago IL | Wrapping Chicago</title>
-        <meta name="description" content="Get truck wraps in Chicago IL services for standout advertising or rugged protection. High-quality vinyl graphics installed for lasting impact on the road." />
-        <meta name="keywords" content="truck wraps Chicago, commercial truck wraps, box truck wraps, pickup truck wraps, fleet truck graphics, truck lettering, Chicago truck graphics" />
-        <link rel="canonical" href={`${domain}${path}`} />
-        <meta property="og:title" content="Truck Wraps in Chicago IL | Wrapping Chicago" />
-        <meta property="og:description" content="Get truck wraps in Chicago IL services for standout advertising or rugged protection. High-quality vinyl graphics installed for lasting impact on the road." />
-        <meta property="og:url" content={`${domain}${path}`} />
+        <title>Truck Wraps in Chicago IL | Commercial Vehicle Graphics | Wrapping Chicago</title>
+        <meta 
+          name="description" 
+          content="Professional truck wraps in Chicago IL. Transform your commercial truck into a mobile billboard with custom graphics. Expert installation, premium materials, competitive pricing." 
+        />
+        <meta name="keywords" content="truck wraps Chicago, commercial truck wraps, truck graphics Chicago, truck advertising, commercial vehicle wraps, fleet graphics Chicago, truck lettering" />
+        <link rel="canonical" href={`${domain}/truck-wraps`} />
+        <meta property="og:title" content="Truck Wraps in Chicago IL | Commercial Vehicle Graphics | Wrapping Chicago" />
+        <meta property="og:description" content="Professional truck wraps in Chicago IL. Transform your commercial truck into a mobile billboard with custom graphics. Expert installation, premium materials, competitive pricing." />
+        <meta property="og:url" content={`${domain}/truck-wraps`} />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="/lovable-uploads/5539b79e-ab54-428d-82a0-e4735ee97a95.png" />
       </Helmet>
       
       <Schema 
         city={chicagoCity}
-        path={path}
-        pageTitle="Truck Wraps in Chicago IL | Wrapping Chicago"
-        pageDescription="Get truck wraps in Chicago IL services for standout advertising or rugged protection. High-quality vinyl graphics installed for lasting impact on the road."
+        path="/truck-wraps"
+        pageTitle="Truck Wraps in Chicago IL | Commercial Vehicle Graphics | Wrapping Chicago"
+        pageDescription="Professional truck wraps in Chicago IL. Transform your commercial truck into a mobile billboard with custom graphics. Expert installation, premium materials, competitive pricing."
         faqs={faqData}
-      />
-      
-      <ServiceSchema 
-        title="Truck Wraps" 
-        description="Professional truck wrapping services in Chicago for commercial fleets, box trucks, and pickup trucks. Transform your trucks into powerful mobile advertisements." 
-        path={path} 
       />
       
       <div className="flex flex-col min-h-screen">
@@ -82,24 +73,17 @@ const TruckWrapsPage = () => {
             {/* Contact Buttons Section */}
             <div className="mb-8 p-5 bg-gray-50 rounded-lg border border-gray-200 flex flex-col sm:flex-row items-center justify-between">
               <div>
-                <h2 className="text-xl font-bold text-brand-navy mb-2">Interested in truck wraps?</h2>
+                <h2 className="text-xl font-bold text-brand-navy mb-2">Ready to wrap your truck?</h2>
                 <p className="text-gray-700 mb-4 sm:mb-0">Contact us today for a free consultation and quote</p>
               </div>
               <div className="flex flex-col sm:flex-row gap-3">
-                <Button
-                  asChild
-                  className="bg-brand-red hover:bg-red-700 text-white"
-                >
+                <Button asChild className="bg-brand-red hover:bg-red-700 text-white">
                   <Link to="/contact" className="inline-flex items-center">
                     <MessageSquare className="mr-2 h-4 w-4" />
                     Request a Quote
                   </Link>
                 </Button>
-                <Button
-                  asChild
-                  variant="outline"
-                  className="border-brand-navy text-brand-navy hover:bg-brand-navy hover:text-white"
-                >
+                <Button asChild variant="outline" className="border-brand-navy text-brand-navy hover:bg-brand-navy hover:text-white">
                   <a href="tel:3125971286" className="inline-flex items-center">
                     <Phone className="mr-2 h-4 w-4" />
                     (312) 597-1286
@@ -108,20 +92,140 @@ const TruckWrapsPage = () => {
               </div>
             </div>
             
-            <div className="mb-8">
-              <h1 className="text-3xl md:text-4xl font-bold text-brand-navy mb-4">Truck Wraps Chicago</h1>
-              <p className="text-lg text-gray-700 mb-2">Professional truck wrapping services for commercial vehicles</p>
+            <div className="mb-12">
+              <h1 className="text-4xl font-bold text-brand-navy mb-6 flex items-center">
+                <Truck className="mr-3 h-10 w-10 text-brand-red" />
+                Professional Truck Wraps in Chicago
+              </h1>
+              <p className="text-lg text-gray-700 mb-6">
+                Transform your commercial truck into a powerful mobile billboard with our premium truck wrap services. 
+                Whether you have a box truck, pickup truck, semi-trailer, or delivery van, we'll help you maximize 
+                your advertising impact while protecting your vehicle's original paint.
+              </p>
             </div>
             
-            <TruckWrapsContent />
+            {/* Truck Wrap Benefits */}
+            <section className="mb-12">
+              <h2 className="text-3xl font-bold text-brand-navy mb-6">Why Choose Truck Wraps?</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="bg-white p-6 rounded-lg shadow-md">
+                  <h3 className="text-xl font-semibold mb-4 text-brand-navy">Maximum Advertising Impact</h3>
+                  <ul className="space-y-2">
+                    <li className="flex items-start">
+                      <CheckCircle2 className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
+                      <span>Reach thousands of potential customers daily</span>
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle2 className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
+                      <span>24/7 mobile advertising wherever you drive</span>
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle2 className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
+                      <span>Cost-effective compared to traditional advertising</span>
+                    </li>
+                  </ul>
+                </div>
+                
+                <div className="bg-white p-6 rounded-lg shadow-md">
+                  <h3 className="text-xl font-semibold mb-4 text-brand-navy">Professional Appearance</h3>
+                  <ul className="space-y-2">
+                    <li className="flex items-start">
+                      <CheckCircle2 className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
+                      <span>Establish credibility and professionalism</span>
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle2 className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
+                      <span>Create consistent brand identity across your fleet</span>
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle2 className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
+                      <span>Stand out from competitors</span>
+                    </li>
+                  </ul>
+                </div>
+                
+                <div className="bg-white p-6 rounded-lg shadow-md">
+                  <h3 className="text-xl font-semibold mb-4 text-brand-navy">Paint Protection</h3>
+                  <ul className="space-y-2">
+                    <li className="flex items-start">
+                      <CheckCircle2 className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
+                      <span>Shield paint from UV damage and weathering</span>
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle2 className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
+                      <span>Protect against minor scratches and chips</span>
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle2 className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
+                      <span>Maintain higher resale value</span>
+                    </li>
+                  </ul>
+                </div>
+                
+                <div className="bg-white p-6 rounded-lg shadow-md">
+                  <h3 className="text-xl font-semibold mb-4 text-brand-navy">Flexibility & Value</h3>
+                  <ul className="space-y-2">
+                    <li className="flex items-start">
+                      <CheckCircle2 className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
+                      <span>Change designs when your business evolves</span>
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle2 className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
+                      <span>Removable without damaging original paint</span>
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle2 className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
+                      <span>One-time investment with years of advertising</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </section>
+            
+            {/* Truck Types We Wrap */}
+            <section className="mb-12">
+              <h2 className="text-3xl font-bold text-brand-navy mb-6">Types of Trucks We Wrap</h2>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className="bg-white p-6 rounded-lg shadow-md text-center">
+                  <h3 className="text-xl font-semibold mb-3 text-brand-navy">Box Trucks</h3>
+                  <p className="text-gray-600">Perfect for delivery services, moving companies, and retail businesses</p>
+                </div>
+                <div className="bg-white p-6 rounded-lg shadow-md text-center">
+                  <h3 className="text-xl font-semibold mb-3 text-brand-navy">Pickup Trucks</h3>
+                  <p className="text-gray-600">Ideal for contractors, landscapers, and service professionals</p>
+                </div>
+                <div className="bg-white p-6 rounded-lg shadow-md text-center">
+                  <h3 className="text-xl font-semibent mb-3 text-brand-navy">Semi-Trailers</h3>
+                  <p className="text-gray-600">Maximum impact for long-haul and regional transportation</p>
+                </div>
+                <div className="bg-white p-6 rounded-lg shadow-md text-center">
+                  <h3 className="text-xl font-semibold mb-3 text-brand-navy">Delivery Vans</h3>
+                  <p className="text-gray-600">Transform cargo vans into mobile advertising machines</p>
+                </div>
+                <div className="bg-white p-6 rounded-lg shadow-md text-center">
+                  <h3 className="text-xl font-semibold mb-3 text-brand-navy">Food Trucks</h3>
+                  <p className="text-gray-600">Eye-catching designs that draw customers to your mobile kitchen</p>
+                </div>
+                <div className="bg-white p-6 rounded-lg shadow-md text-center">
+                  <h3 className="text-xl font-semibold mb-3 text-brand-navy">Service Trucks</h3>
+                  <p className="text-gray-600">HVAC, plumbing, electrical, and other service vehicle wraps</p>
+                </div>
+              </div>
+            </section>
+            
+            {/* FAQ Section */}
+            <section className="mb-12">
+              <h2 className="text-3xl font-bold text-brand-navy mb-6">Truck Wrap FAQ</h2>
+              <div className="space-y-4">
+                {faqData.map((faq, index) => (
+                  <div key={index} className="bg-white p-6 rounded-lg shadow-md">
+                    <h3 className="text-lg font-semibold mb-3 text-brand-navy">{faq.question}</h3>
+                    <p className="text-gray-700">{faq.answer}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
           </div>
-          
-          {/* Add FAQ Section */}
-          <PageFAQ 
-            faqs={faqData}
-            serviceName="Truck Wraps"
-            cityName="Chicago"
-          />
           
           <CallToAction city="Chicago" />
         </main>
