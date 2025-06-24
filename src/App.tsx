@@ -33,20 +33,24 @@ function App() {
           <Sonner />
           <BrowserRouter>
             <div className="min-h-screen flex flex-col">
-              <Routes>
-                <Route path="/" element={<Index />} />
-                <Route path="/services" element={<ServicesPage />} />
-                <Route path="/services/:service" element={<ServicesPage />} />
-                <Route path="/car-wraps" element={<CarWrapsPage />} />
-                <Route path="/truck-wraps" element={<TruckWrapsPage />} />
-                <Route path="/van-wraps" element={<VanWrapsPage />} />
-                <Route path="/fleet-wraps" element={<FleetWrapsPage />} />
-                <Route path="/color-change-wraps" element={<ColorChangeWrapsPage />} />
-                <Route path="/luxury-exotic-wraps" element={<LuxuryExoticWrapsPage />} />
-                <Route path="/designer-wraps" element={<DesignerWrapsPage />} />
-                <Route path="/service-areas" element={<ServiceAreasPage />} />
-                <Route path="/faq" element={<FAQPage />} />
-              </Routes>
+              <Header />
+              <main className="flex-grow">
+                <Routes>
+                  <Route path="/" element={<Index />} />
+                  <Route path="/services" element={<ServicesPage />} />
+                  <Route path="/services/:service" element={<ServicesPage />} />
+                  <Route path="/car-wraps" element={<CarWrapsPage />} />
+                  <Route path="/truck-wraps" element={<TruckWrapsPage />} />
+                  <Route path="/van-wraps" element={<VanWrapsPage />} />
+                  <Route path="/fleet-wraps" element={<FleetWrapsPage />} />
+                  <Route path="/color-change-wraps" element={<ColorChangeWrapsPage />} />
+                  <Route path="/luxury-exotic-wraps" element={<LuxuryExoticWrapsPage />} />
+                  <Route path="/designer-wraps" element={<DesignerWrapsPage />} />
+                  <Route path="/service-areas" element={<ServiceAreasPage />} />
+                  <Route path="/faq" element={<FAQPage />} />
+                </Routes>
+              </main>
+              <Footer />
             </div>
             <CoreWebVitalsOptimizer />
             <SchemaValidator />
