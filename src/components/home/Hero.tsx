@@ -6,18 +6,24 @@ import { ArrowRight, Phone } from 'lucide-react';
 
 const Hero = () => {
   return (
-    <div className="hero-fullscreen bg-black relative flex items-center justify-center">
+    <div className="hero-fullscreen bg-black relative flex items-center justify-center min-h-screen">
       {/* Hero background image */}
       <div className="absolute inset-0 z-0">
         <img 
           src="/lovable-uploads/99d82949-5568-4a29-8a3a-72ff2ee6836e.png"
           alt="Professional vehicle wraps in Chicago - fleet of wrapped cars, trucks, and commercial vehicles"
           className="w-full h-full object-cover"
+          onError={(e) => {
+            console.log('Hero image failed to load:', e.target.src);
+          }}
+          onLoad={() => {
+            console.log('Hero image loaded successfully');
+          }}
         />
       </div>
       
       {/* Dark overlay for text visibility */}
-      <div className="absolute inset-0 z-10 bg-black/70"></div>
+      <div className="absolute inset-0 z-10 bg-black/50"></div>
       
       <div className="hero-content relative z-20 text-center max-w-6xl mx-auto px-4">
         <h1 className="text-5xl sm:text-6xl md:text-7xl font-extrabold uppercase tracking-wider text-white mb-6 text-center">
