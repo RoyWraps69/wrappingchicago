@@ -1,14 +1,16 @@
 
 import Hero from '@/components/home/Hero';
-import Services from '@/components/home/Services';
-import WhyChooseUs from '@/components/home/WhyChooseUs';
-import Gallery from '@/components/home/Gallery';
-import Testimonials from '@/components/home/Testimonials';
-import CallToAction from '@/components/home/CallToAction';
+import ServicesSection from '@/components/home/ServicesSection';
+import WhyChooseUsSection from '@/components/home/WhyChooseUsSection';
+import CustomerTestimonials from '@/components/testimonials/CustomerTestimonials';
+import CallToAction from '@/components/CallToAction';
 import SEOMaster from '@/components/seo/SEOMaster';
 import EEATContent from '@/components/content/EEATContent';
+import { useGalleryImages } from '@/hooks/useGalleryImages';
 
 const Index = () => {
+  const { fleetWrapVan, colorChangeVan, commercialGraphics } = useGalleryImages();
+  
   const homeKeywords = [
     'vehicle wraps Chicago',
     'car wraps Chicago',
@@ -71,11 +73,14 @@ const Index = () => {
           </div>
         </section>
         
-        <Services />
-        <WhyChooseUs />
+        <ServicesSection 
+          fleetWrapVan={fleetWrapVan}
+          colorChangeVan={colorChangeVan}
+          commercialGraphics={commercialGraphics}
+        />
+        <WhyChooseUsSection />
         <EEATContent />
-        <Gallery />
-        <Testimonials />
+        <CustomerTestimonials />
         <CallToAction />
       </main>
     </>

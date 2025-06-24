@@ -109,13 +109,13 @@ const SEOHealthChecker: React.FC = () => {
       const externalLinks = document.querySelectorAll('a[href^="http"]:not([href*="wrappingchicago.com"])');
       console.log('🌍 External Links:', externalLinks.length);
       
-      // Performance checks
+      // Performance checks with correct properties
       const performanceEntries = performance.getEntriesByType('navigation');
       if (performanceEntries.length > 0) {
         const navigation = performanceEntries[0] as PerformanceNavigationTiming;
         console.log('⚡ Performance:');
-        console.log('  DOM Content Loaded:', Math.round(navigation.domContentLoadedEventEnd - navigation.navigationStart), 'ms');
-        console.log('  Page Load Complete:', Math.round(navigation.loadEventEnd - navigation.navigationStart), 'ms');
+        console.log('  DOM Content Loaded:', Math.round(navigation.domContentLoadedEventEnd - navigation.domContentLoadedEventStart), 'ms');
+        console.log('  Page Load Complete:', Math.round(navigation.loadEventEnd - navigation.loadEventStart), 'ms');
       }
       
       console.log('✅ SEO HEALTH CHECK COMPLETE - READY TO DOMINATE GOOGLE!');
