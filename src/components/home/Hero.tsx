@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
@@ -6,13 +5,13 @@ import { ArrowRight, Phone } from 'lucide-react';
 
 const Hero = () => {
   return (
-    <div className="hero-fullscreen bg-black relative flex items-center justify-center min-h-screen">
+    <div className="hero-fullscreen bg-black relative flex items-center justify-center min-h-screen overflow-hidden">
       {/* Hero background image */}
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0 flex items-center justify-center">
         <img 
           src="/lovable-uploads/99d82949-5568-4a29-8a3a-72ff2ee6836e.png"
           alt="Professional vehicle wraps in Chicago - fleet of wrapped cars, trucks, and commercial vehicles"
-          className="w-full h-full object-cover"
+          className="max-w-full max-h-full object-contain"
           onError={(e) => {
             console.log('Hero image failed to load:', (e.target as HTMLImageElement).src);
           }}
