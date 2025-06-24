@@ -1,7 +1,9 @@
 
 export const SITEMAP_CONFIG = {
   domain: 'https://www.wrappingchicago.com',
-  getCurrentDate: () => new Date().toISOString().split('T')[0]
+  getCurrentDate: () => new Date().toISOString().split('T')[0],
+  defaultChangeFreq: 'weekly' as const,
+  defaultPriority: 0.8
 };
 
 export const CHANGE_FREQUENCIES = {

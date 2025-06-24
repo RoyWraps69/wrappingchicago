@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
@@ -10,7 +11,7 @@ const Hero = () => {
       <div className="absolute inset-0 z-0 flex items-center justify-center">
         <img 
           src="/lovable-uploads/99d82949-5568-4a29-8a3a-72ff2ee6836e.png"
-          alt="Professional vehicle wraps in Chicago - fleet of wrapped cars, trucks, and commercial vehicles"
+          alt="Professional vehicle wraps in Chicago - fleet of wrapped cars, trucks, and commercial vehicles showcasing premium 3M vinyl materials and expert installation"
           className="max-w-full max-h-full object-contain"
           onError={(e) => {
             console.log('Hero image failed to load:', (e.target as HTMLImageElement).src);
@@ -22,16 +23,18 @@ const Hero = () => {
       </div>
       
       {/* Dark overlay for text visibility */}
-      <div className="absolute inset-0 z-10 bg-black/50"></div>
+      <div className="absolute inset-0 z-10 bg-black/40"></div>
       
       <div className="hero-content relative z-20 text-center max-w-6xl mx-auto px-4">
-        <h1 className="text-5xl sm:text-6xl md:text-7xl font-extrabold uppercase tracking-wider text-white mb-6 text-center">
-          Fleet Wraps That Dominate.
+        {/* H1 - Primary SEO Target */}
+        <h1 className="text-5xl sm:text-6xl md:text-7xl font-extrabold uppercase tracking-wider text-white mb-6 text-center speakable">
+          Fleet Wraps That Dominate Chicago.
         </h1>
         
-        <p className="text-xl md:text-2xl font-medium text-white mb-10 max-w-2xl mx-auto text-center">
-          From box trucks to Corvettes — we make your brand impossible to ignore.
-        </p>
+        {/* H2 - Supporting SEO Content */}
+        <h2 className="text-xl md:text-2xl font-medium text-white mb-10 max-w-2xl mx-auto text-center speakable">
+          From Box Trucks to Corvettes — Premium 3M Vehicle Wraps That Make Your Brand Impossible to Ignore
+        </h2>
         
         <div className="flex flex-col sm:flex-row justify-center gap-4 mb-10">
           <Button
@@ -60,20 +63,21 @@ const Hero = () => {
           </Button>
         </div>
         
+        {/* Trust Signals with proper semantic markup */}
         <div className="flex flex-wrap justify-center gap-x-8 gap-y-2 text-white text-sm">
-          <span className="flex items-center text-white">
+          <span className="flex items-center text-white speakable">
             <span className="w-1.5 h-1.5 bg-brand-red rounded-full mr-2"></span>
             Premium 3M Materials
           </span>
-          <span className="flex items-center text-white">
+          <span className="flex items-center text-white speakable">
             <span className="w-1.5 h-1.5 bg-brand-red rounded-full mr-2"></span>
             16,000+ Wraps Completed
           </span>
-          <span className="flex items-center text-white">
+          <span className="flex items-center text-white speakable">
             <span className="w-1.5 h-1.5 bg-brand-red rounded-full mr-2"></span>
             5-Year Warranty
           </span>
-          <span className="flex items-center text-white">
+          <span className="flex items-center text-white speakable">
             <span className="w-1.5 h-1.5 bg-brand-red rounded-full mr-2"></span>
             Serving All of Chicago
           </span>

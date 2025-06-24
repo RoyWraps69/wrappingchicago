@@ -1,593 +1,223 @@
 
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
-  <!-- Homepage - Maximum Priority -->
   <url>
     <loc>https://www.wrappingchicago.com/</loc>
-    <lastmod>2025-06-19</lastmod>
-    <changefreq>daily</changefreq>
+    <lastmod>2024-06-24</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <image:image>
-      <image:loc>https://www.wrappingchicago.com/lovable-uploads/6ef3b1af-8591-4d36-97c2-9366401115fa.png</image:loc>
-      <image:caption>Professional vehicle wraps in Chicago - Wrapping Chicago logo</image:caption>
-      <image:title>Wrapping Chicago - Vehicle Wrap Services</image:title>
-    </image:image>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wrappingchicago.com/" />
   </url>
   
-  <!-- Core Business Pages -->
-  <url>
-    <loc>https://www.wrappingchicago.com/about</loc>
-    <lastmod>2025-06-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.wrappingchicago.com/contact</loc>
-    <lastmod>2025-06-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
   <url>
     <loc>https://www.wrappingchicago.com/services</loc>
-    <lastmod>2025-06-19</lastmod>
+    <lastmod>2024-06-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.wrappingchicago.com/gallery</loc>
-    <lastmod>2025-06-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.wrappingchicago.com/pricing</loc>
-    <lastmod>2025-06-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.wrappingchicago.com/faq</loc>
-    <lastmod>2025-06-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.wrappingchicago.com/ai-wrap-ideas</loc>
-    <lastmod>2025-06-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wrappingchicago.com/services" />
   </url>
   
-  <!-- Primary Service Pages - Maximum Priority for Business -->
   <url>
     <loc>https://www.wrappingchicago.com/car-wraps</loc>
-    <lastmod>2025-06-19</lastmod>
+    <lastmod>2024-06-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wrappingchicago.com/car-wraps" />
   </url>
+  
   <url>
     <loc>https://www.wrappingchicago.com/truck-wraps</loc>
-    <lastmod>2025-06-19</lastmod>
+    <lastmod>2024-06-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wrappingchicago.com/truck-wraps" />
   </url>
+  
   <url>
     <loc>https://www.wrappingchicago.com/van-wraps</loc>
-    <lastmod>2025-06-19</lastmod>
+    <lastmod>2024-06-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wrappingchicago.com/van-wraps" />
   </url>
+  
   <url>
     <loc>https://www.wrappingchicago.com/fleet-wraps</loc>
-    <lastmod>2025-06-19</lastmod>
+    <lastmod>2024-06-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wrappingchicago.com/fleet-wraps" />
   </url>
+  
   <url>
     <loc>https://www.wrappingchicago.com/color-change-wraps</loc>
-    <lastmod>2025-06-19</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2024-06-24</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wrappingchicago.com/color-change-wraps" />
   </url>
+  
   <url>
     <loc>https://www.wrappingchicago.com/commercial-graphics</loc>
-    <lastmod>2025-06-19</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2024-06-24</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wrappingchicago.com/commercial-graphics" />
   </url>
-  <url>
-    <loc>https://www.wrappingchicago.com/partial-wraps</loc>
-    <lastmod>2025-06-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.wrappingchicago.com/protective-films</loc>
-    <lastmod>2025-06-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.wrappingchicago.com/vehicle-lettering</loc>
-    <lastmod>2025-06-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.wrappingchicago.com/specialty-wraps</loc>
-    <lastmod>2025-06-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.wrappingchicago.com/retail-graphics</loc>
-    <lastmod>2025-06-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
+  
   <url>
     <loc>https://www.wrappingchicago.com/luxury-exotic-wraps</loc>
-    <lastmod>2025-06-19</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2024-06-24</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wrappingchicago.com/luxury-exotic-wraps" />
   </url>
+  
+  <url>
+    <loc>https://www.wrappingchicago.com/partial-wraps</loc>
+    <lastmod>2024-06-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wrappingchicago.com/partial-wraps" />
+  </url>
+  
+  <url>
+    <loc>https://www.wrappingchicago.com/protective-films</loc>
+    <lastmod>2024-06-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wrappingchicago.com/protective-films" />
+  </url>
+  
+  <url>
+    <loc>https://www.wrappingchicago.com/vehicle-lettering</loc>
+    <lastmod>2024-06-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wrappingchicago.com/vehicle-lettering" />
+  </url>
+  
+  <url>
+    <loc>https://www.wrappingchicago.com/specialty-wraps</loc>
+    <lastmod>2024-06-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wrappingchicago.com/specialty-wraps" />
+  </url>
+  
+  <url>
+    <loc>https://www.wrappingchicago.com/retail-graphics</loc>
+    <lastmod>2024-06-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wrappingchicago.com/retail-graphics" />
+  </url>
+  
   <url>
     <loc>https://www.wrappingchicago.com/designer-wraps</loc>
-    <lastmod>2025-06-19</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2024-06-24</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wrappingchicago.com/designer-wraps" />
   </url>
   
-  <!-- Service Pages Under /services/ Directory -->
-  <url>
-    <loc>https://www.wrappingchicago.com/services/car-wraps</loc>
-    <lastmod>2025-06-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.wrappingchicago.com/services/truck-wraps</loc>
-    <lastmod>2025-06-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.wrappingchicago.com/services/van-wraps</loc>
-    <lastmod>2025-06-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.wrappingchicago.com/services/fleet-wraps</loc>
-    <lastmod>2025-06-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.wrappingchicago.com/services/color-change-wraps</loc>
-    <lastmod>2025-06-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.wrappingchicago.com/services/commercial-graphics</loc>
-    <lastmod>2025-06-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.wrappingchicago.com/services/partial-wraps</loc>
-    <lastmod>2025-06-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.wrappingchicago.com/services/protective-films</loc>
-    <lastmod>2025-06-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.wrappingchicago.com/services/vehicle-lettering</loc>
-    <lastmod>2025-06-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.wrappingchicago.com/services/specialty-wraps</loc>
-    <lastmod>2025-06-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.wrappingchicago.com/services/retail-graphics</loc>
-    <lastmod>2025-06-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.wrappingchicago.com/services/luxury-exotic-wraps</loc>
-    <lastmod>2025-06-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.wrappingchicago.com/services/designer-wraps</loc>
-    <lastmod>2025-06-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <!-- Location Landing Pages - High Priority -->
-  <url>
-    <loc>https://www.wrappingchicago.com/locations</loc>
-    <lastmod>2025-06-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
   <url>
     <loc>https://www.wrappingchicago.com/chicago</loc>
-    <lastmod>2025-06-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <lastmod>2024-06-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wrappingchicago.com/chicago" />
   </url>
   
-  <!-- Major Suburban Location Pages - High Priority -->
   <url>
     <loc>https://www.wrappingchicago.com/vehicle-wraps-evanston-il</loc>
-    <lastmod>2025-06-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2024-06-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wrappingchicago.com/vehicle-wraps-evanston-il" />
   </url>
+  
   <url>
     <loc>https://www.wrappingchicago.com/vehicle-wraps-naperville-il</loc>
-    <lastmod>2025-06-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2024-06-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wrappingchicago.com/vehicle-wraps-naperville-il" />
   </url>
+  
   <url>
     <loc>https://www.wrappingchicago.com/vehicle-wraps-schaumburg-il</loc>
-    <lastmod>2025-06-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.wrappingchicago.com/vehicle-wraps-aurora-il</loc>
-    <lastmod>2025-06-19</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2024-06-24</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.wrappingchicago.com/vehicle-wraps-joliet-il</loc>
-    <lastmod>2025-06-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.wrappingchicago.com/vehicle-wraps-elgin-il</loc>
-    <lastmod>2025-06-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.wrappingchicago.com/vehicle-wraps-waukegan-il</loc>
-    <lastmod>2025-06-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wrappingchicago.com/vehicle-wraps-schaumburg-il" />
   </url>
   
-  <!-- All Other Illinois Location Pages -->
-  <url>
-    <loc>https://www.wrappingchicago.com/vehicle-wraps-addison-il</loc>
-    <lastmod>2025-06-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.wrappingchicago.com/vehicle-wraps-algonquin-il</loc>
-    <lastmod>2025-06-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.wrappingchicago.com/vehicle-wraps-arlington-heights-il</loc>
-    <lastmod>2025-06-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.wrappingchicago.com/vehicle-wraps-bartlett-il</loc>
-    <lastmod>2025-06-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.wrappingchicago.com/vehicle-wraps-batavia-il</loc>
-    <lastmod>2025-06-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.wrappingchicago.com/vehicle-wraps-bloomingdale-il</loc>
-    <lastmod>2025-06-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.wrappingchicago.com/vehicle-wraps-bolingbrook-il</loc>
-    <lastmod>2025-06-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.wrappingchicago.com/vehicle-wraps-buffalo-grove-il</loc>
-    <lastmod>2025-06-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.wrappingchicago.com/vehicle-wraps-carpentersville-il</loc>
-    <lastmod>2025-06-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.wrappingchicago.com/vehicle-wraps-carol-stream-il</loc>
-    <lastmod>2025-06-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.wrappingchicago.com/vehicle-wraps-cicero-il</loc>
-    <lastmod>2025-06-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.wrappingchicago.com/vehicle-wraps-crystal-lake-il</loc>
-    <lastmod>2025-06-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.wrappingchicago.com/vehicle-wraps-deerfield-il</loc>
-    <lastmod>2025-06-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.wrappingchicago.com/vehicle-wraps-des-plaines-il</loc>
-    <lastmod>2025-06-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.wrappingchicago.com/vehicle-wraps-downers-grove-il</loc>
-    <lastmod>2025-06-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.wrappingchicago.com/vehicle-wraps-elk-grove-village-il</loc>
-    <lastmod>2025-06-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.wrappingchicago.com/vehicle-wraps-elmhurst-il</loc>
-    <lastmod>2025-06-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.wrappingchicago.com/vehicle-wraps-glendale-heights-il</loc>
-    <lastmod>2025-06-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.wrappingchicago.com/vehicle-wraps-glenview-il</loc>
-    <lastmod>2025-06-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.wrappingchicago.com/vehicle-wraps-hanover-park-il</loc>
-    <lastmod>2025-06-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.wrappingchicago.com/vehicle-wraps-hoffman-estates-il</loc>
-    <lastmod>2025-06-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.wrappingchicago.com/vehicle-wraps-itasca-il</loc>
-    <lastmod>2025-06-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.wrappingchicago.com/vehicle-wraps-lake-zurich-il</loc>
-    <lastmod>2025-06-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.wrappingchicago.com/vehicle-wraps-libertyville-il</loc>
-    <lastmod>2025-06-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.wrappingchicago.com/vehicle-wraps-lombard-il</loc>
-    <lastmod>2025-06-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.wrappingchicago.com/vehicle-wraps-mount-prospect-il</loc>
-    <lastmod>2025-06-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.wrappingchicago.com/vehicle-wraps-niles-il</loc>
-    <lastmod>2025-06-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.wrappingchicago.com/vehicle-wraps-northbrook-il</loc>
-    <lastmod>2025-06-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.wrappingchicago.com/vehicle-wraps-oak-brook-il</loc>
-    <lastmod>2025-06-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.wrappingchicago.com/vehicle-wraps-oak-park-il</loc>
-    <lastmod>2025-06-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.wrappingchicago.com/vehicle-wraps-orland-park-il</loc>
-    <lastmod>2025-06-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.wrappingchicago.com/vehicle-wraps-palatine-il</loc>
-    <lastmod>2025-06-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.wrappingchicago.com/vehicle-wraps-park-ridge-il</loc>
-    <lastmod>2025-06-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.wrappingchicago.com/vehicle-wraps-plainfield-il</loc>
-    <lastmod>2025-06-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.wrappingchicago.com/vehicle-wraps-rolling-meadows-il</loc>
-    <lastmod>2025-06-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.wrappingchicago.com/vehicle-wraps-roselle-il</loc>
-    <lastmod>2025-06-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.wrappingchicago.com/vehicle-wraps-round-lake-il</loc>
-    <lastmod>2025-06-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.wrappingchicago.com/vehicle-wraps-skokie-il</loc>
-    <lastmod>2025-06-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.wrappingchicago.com/vehicle-wraps-streamwood-il</loc>
-    <lastmod>2025-06-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.wrappingchicago.com/vehicle-wraps-tinley-park-il</loc>
-    <lastmod>2025-06-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.wrappingchicago.com/vehicle-wraps-vernon-hills-il</loc>
-    <lastmod>2025-06-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.wrappingchicago.com/vehicle-wraps-villa-park-il</loc>
-    <lastmod>2025-06-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.wrappingchicago.com/vehicle-wraps-west-chicago-il</loc>
-    <lastmod>2025-06-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.wrappingchicago.com/vehicle-wraps-wheaton-il</loc>
-    <lastmod>2025-06-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.wrappingchicago.com/vehicle-wraps-wheeling-il</loc>
-    <lastmod>2025-06-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.wrappingchicago.com/vehicle-wraps-wilmette-il</loc>
-    <lastmod>2025-06-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.wrappingchicago.com/vehicle-wraps-wood-dale-il</loc>
-    <lastmod>2025-06-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.wrappingchicago.com/vehicle-wraps-woodridge-il</loc>
-    <lastmod>2025-06-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <!-- Special Featured Pages -->
   <url>
     <loc>https://www.wrappingchicago.com/truck-wraps-chicago</loc>
-    <lastmod>2025-06-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2024-06-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wrappingchicago.com/truck-wraps-chicago" />
   </url>
   
-  <!-- Utility and Discovery Pages -->
   <url>
-    <loc>https://www.wrappingchicago.com/sitemap</loc>
-    <lastmod>2025-06-19</lastmod>
+    <loc>https://www.wrappingchicago.com/about</loc>
+    <lastmod>2024-06-24</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.3</priority>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wrappingchicago.com/about" />
   </url>
+  
   <url>
-    <loc>https://www.wrappingchicago.com/html-sitemap</loc>
-    <lastmod>2025-06-19</lastmod>
+    <loc>https://www.wrappingchicago.com/contact</loc>
+    <lastmod>2024-06-24</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.3</priority>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wrappingchicago.com/contact"    />
+  </url>
+  
+  <url>
+    <loc>https://www.wrappingchicago.com/gallery</loc>
+    <lastmod>2024-06-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wrappingchicago.com/gallery" />
+  </url>
+  
+  <url>
+    <loc>https://www.wrappingchicago.com/locations</loc>
+    <lastmod>2024-06-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wrappingchicago.com/locations" />
+  </url>
+  
+  <url>
+    <loc>https://www.wrappingchicago.com/faq</loc>
+    <lastmod>2024-06-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wrappingchicago.com/faq" />
+  </url>
+  
+  <url>
+    <loc>https://www.wrappingchicago.com/pricing</loc>
+    <lastmod>2024-06-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wrappingchicago.com/pricing" />
+  </url>
+  
+  <url>
+    <loc>https://www.wrappingchicago.com/ai-wrap-ideas</loc>
+    <lastmod>2024-06-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wrappingchicago.com/ai-wrap-ideas" />
   </url>
   
 </urlset>
