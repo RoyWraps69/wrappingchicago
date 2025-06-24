@@ -14,7 +14,7 @@ const Hero = () => {
           alt="Professional vehicle wraps in Chicago - fleet of wrapped cars, trucks, and commercial vehicles"
           className="w-full h-full object-cover"
           onError={(e) => {
-            console.log('Hero image failed to load:', e.target.src);
+            console.log('Hero image failed to load:', (e.target as HTMLImageElement).src);
           }}
           onLoad={() => {
             console.log('Hero image loaded successfully');
