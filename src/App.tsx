@@ -20,6 +20,12 @@ import ServiceAreasPage from "./pages/ServiceAreasPage";
 import FAQPage from "./pages/FAQPage";
 import SitemapPage from "./pages/SitemapPage";
 import LocationPage from "./pages/LocationPage";
+import GalleryPage from "./pages/GalleryPage";
+import AboutPage from "./pages/AboutPage";
+import PricingPage from "./pages/PricingPage";
+import ContactPage from "./pages/ContactPage";
+import BlogPage from "./pages/BlogPage";
+import NotFoundPage from "./pages/NotFoundPage";
 import SchemaValidator from "./components/seo/SchemaValidator";
 import SEOHealthChecker from "./components/seo/SEOHealthChecker";
 import CoreWebVitalsOptimizer from "./components/performance/CoreWebVitalsOptimizer";
@@ -55,7 +61,13 @@ function App() {
                   <Route path="/service-areas" element={<ServiceAreasPage />} />
                   <Route path="/faq" element={<FAQPage />} />
                   <Route path="/sitemap" element={<SitemapPage />} />
+                  <Route path="/gallery" element={<GalleryPage />} />
+                  <Route path="/about" element={<AboutPage />} />
+                  <Route path="/pricing" element={<PricingPage />} />
+                  <Route path="/contact" element={<ContactPage />} />
+                  <Route path="/blog" element={<BlogPage />} />
                   <Route path="/locations/:locationSlug" element={<LocationPage />} />
+                  <Route path="*" element={<NotFoundPage />} />
                 </Routes>
               </main>
               <Footer />
