@@ -18,6 +18,7 @@ import LuxuryExoticWrapsPage from "./pages/LuxuryExoticWrapsPage";
 import DesignerWrapsPage from "./pages/DesignerWrapsPage";
 import ServiceAreasPage from "./pages/ServiceAreasPage";
 import FAQPage from "./pages/FAQPage";
+import LocationPage from "./pages/LocationPage";
 import SchemaValidator from "./components/seo/SchemaValidator";
 import SEOHealthChecker from "./components/seo/SEOHealthChecker";
 import CoreWebVitalsOptimizer from "./components/performance/CoreWebVitalsOptimizer";
@@ -48,6 +49,7 @@ function App() {
                   <Route path="/designer-wraps" element={<DesignerWrapsPage />} />
                   <Route path="/service-areas" element={<ServiceAreasPage />} />
                   <Route path="/faq" element={<FAQPage />} />
+                  <Route path="/locations/:locationSlug" element={<LocationPage />} />
                 </Routes>
               </main>
               <Footer />
