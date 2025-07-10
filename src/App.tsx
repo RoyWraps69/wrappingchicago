@@ -18,6 +18,7 @@ import LuxuryExoticWrapsPage from "./pages/LuxuryExoticWrapsPage";
 import DesignerWrapsPage from "./pages/DesignerWrapsPage";
 import ServiceAreasPage from "./pages/ServiceAreasPage";
 import FAQPage from "./pages/FAQPage";
+import SitemapPage from "./pages/SitemapPage";
 import LocationPage from "./pages/LocationPage";
 import SchemaValidator from "./components/seo/SchemaValidator";
 import SEOHealthChecker from "./components/seo/SEOHealthChecker";
@@ -25,6 +26,7 @@ import CoreWebVitalsOptimizer from "./components/performance/CoreWebVitalsOptimi
 import AdvancedSEOOptimizer from './components/seo/AdvancedSEOOptimizer';
 import CompetitorDominationSEO from './components/seo/CompetitorDominationSEO';
 import TechnicalSEOEnhancer from './components/seo/TechnicalSEOEnhancer';
+import XMLSitemapGenerator from './components/seo/XMLSitemapGenerator';
 
 const queryClient = new QueryClient();
 
@@ -52,6 +54,7 @@ function App() {
                   <Route path="/designer-wraps" element={<DesignerWrapsPage />} />
                   <Route path="/service-areas" element={<ServiceAreasPage />} />
                   <Route path="/faq" element={<FAQPage />} />
+                  <Route path="/sitemap" element={<SitemapPage />} />
                   <Route path="/locations/:locationSlug" element={<LocationPage />} />
                 </Routes>
               </main>
@@ -62,6 +65,7 @@ function App() {
             <AdvancedSEOOptimizer />
             <CompetitorDominationSEO />
             <TechnicalSEOEnhancer />
+            <XMLSitemapGenerator />
             <SEOHealthChecker />
           </BrowserRouter>
         </TooltipProvider>
