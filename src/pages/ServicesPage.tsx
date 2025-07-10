@@ -25,15 +25,14 @@ const ServicesPage = () => {
       </Helmet>
       
       <div className="flex flex-col min-h-screen">
-        
         <main className="flex-grow">
           <div className="container mx-auto py-12 px-4">
             <Breadcrumbs />
             <ServiceContentSelector path={servicePath} />
           </div>
+          <CallToAction />
         </main>
-        
-        </div>
+      </div>
     </>
   );
 };
