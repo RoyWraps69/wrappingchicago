@@ -2,8 +2,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { City } from '@/data/cities';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
 import UnifiedBreadcrumbs from '@/components/navigation/UnifiedBreadcrumbs';
 import UnifiedBreadcrumbSchema from '@/components/schemas/UnifiedBreadcrumbSchema';
 import EnhancedLocationHero from './EnhancedLocationHero';
@@ -88,7 +86,6 @@ const EnhancedLocationPage = ({ city }: EnhancedLocationPageProps) => {
       />
       
       <div className="flex flex-col min-h-screen">
-        <Header />
         
         <main className="flex-grow">
           <div className="container mx-auto px-4 py-4">
@@ -116,8 +113,7 @@ const EnhancedLocationPage = ({ city }: EnhancedLocationPageProps) => {
           <CallToAction city={city.name} />
         </main>
         
-        <Footer />
-      </div>
+        </div>
     </>
   );
 };
