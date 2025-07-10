@@ -1,8 +1,6 @@
 
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
 import AIWrapHero from '@/components/ai-wrap-ideas/AIWrapHero';
 import AIWrapSchema from '@/components/ai-wrap-ideas/AIWrapSchema';
 import ProcessSection from '@/components/ai-wrap-ideas/ProcessSection';
@@ -60,7 +58,6 @@ const AIWrapIdeas = () => {
       />
       
       <div className="flex flex-col min-h-screen">
-        <Header />
         
         <main className="flex-grow">
           <div className="container mx-auto px-4 py-4">
@@ -81,8 +78,6 @@ const AIWrapIdeas = () => {
             <WrapIdeasResults />
           </AIWrapProvider>
         </main>
-        
-        <Footer />
       </div>
     </>
   );

@@ -1,8 +1,6 @@
 
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
 import CallToAction from '@/components/CallToAction';
 import Breadcrumbs from '@/components/navigation/Breadcrumbs';
 import MetaTags from '@/components/seo/MetaTags';
@@ -126,7 +124,6 @@ const PricingPage = () => {
       <IndexingPriority priority="high" />
       
       <div className="flex flex-col min-h-screen">
-        <Header />
         
         <main className="flex-grow">
           {/* Hero Section */}
@@ -353,7 +350,6 @@ const PricingPage = () => {
         </main>
         
         <InternalLinksFooter />
-        <Footer />
       </div>
     </>
   );

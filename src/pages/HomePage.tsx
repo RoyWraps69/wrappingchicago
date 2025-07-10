@@ -1,8 +1,6 @@
 
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
 import Hero from '@/components/home/Hero';
 import EasyButtonSection from '@/components/home/EasyButtonSection';
 import StickyContactButtons from '@/components/home/StickyContactButtons';
@@ -57,7 +55,6 @@ function HomePage() {
       />
       
       <div className="flex flex-col min-h-screen">
-        <Header />
         <BreadcrumbNavigation />
         <main id="main-content" className="flex-grow main-content">
           <Hero />
@@ -136,7 +133,6 @@ function HomePage() {
           <EasyButtonSection />
         </main>
         <StickyContactButtons />
-        <Footer />
       </div>
     </>
   );

@@ -1,8 +1,6 @@
 
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
 import CallToAction from '@/components/CallToAction';
 import Breadcrumbs from '@/components/navigation/Breadcrumbs';
 import { ChevronDown, ChevronUp } from 'lucide-react';
@@ -116,7 +114,6 @@ const FAQPage = () => {
       </Helmet>
       
       <div className="flex flex-col min-h-screen">
-        <Header />
         
         <main className="flex-grow">
           <div className="container mx-auto py-12 px-4">
@@ -188,8 +185,6 @@ const FAQPage = () => {
           
           <CallToAction city="Chicago" />
         </main>
-        
-        <Footer />
       </div>
     </>
   );

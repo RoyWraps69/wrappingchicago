@@ -188,8 +188,6 @@ const AboutPage = () => {
           
           <CallToAction />
         </main>
-        
-        <Footer />
       </div>
     </>
   );

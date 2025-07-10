@@ -1,7 +1,5 @@
 
 import React from 'react';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
 import BreadcrumbNavigation from '@/components/seo/BreadcrumbNavigation';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Calendar, User, ArrowRight, Tag } from 'lucide-react';
@@ -95,7 +93,6 @@ const BlogPage: React.FC = () => {
       />
       
       <div className="flex flex-col min-h-screen">
-        <Header />
         <BreadcrumbNavigation />
         
         <main className="flex-grow">
@@ -194,8 +191,6 @@ const BlogPage: React.FC = () => {
             </div>
           </section>
         </main>
-        
-        <Footer />
       </div>
     </>
   );
