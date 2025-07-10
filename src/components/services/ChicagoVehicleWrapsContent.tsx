@@ -84,7 +84,7 @@ const ChicagoVehicleWrapsContent = () => {
               <Button asChild size="lg" className="bg-brand-red hover:bg-red-700 text-white text-lg px-8 py-4">
                 <Link to="/contact" className="inline-flex items-center">
                   <MessageSquare className="mr-2 h-5 w-5" />
-                  Get Free Quote
+                  Schedule Perfection Now!
                 </Link>
               </Button>
               <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-brand-navy text-lg px-8 py-4">
@@ -255,7 +255,7 @@ const ChicagoVehicleWrapsContent = () => {
               </div>
               
               <Button asChild className="w-full mt-6 bg-brand-red hover:bg-red-700">
-                <Link to="/contact">Schedule Consultation</Link>
+                <Link to="/contact">Schedule Perfection Now!</Link>
               </Button>
             </div>
           </div>

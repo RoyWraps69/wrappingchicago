@@ -13,7 +13,7 @@ const ContactBar = () => {
             <a href="tel:3125971286" className="text-white hover:text-brand-red transition-all whitespace-nowrap font-medium">(312) 597-1286</a>
             <span className="mx-2 hidden sm:inline text-white/50">|</span>
             <MessageSquare className="h-3 w-3 md:h-4 md:w-4 mr-1 sm:mr-2 hidden sm:inline text-brand-red" />
-            <Link to="/contact" className="text-white hover:text-brand-red transition-all hidden sm:inline font-medium">Get a Free Quote</Link>
+            <Link to="/contact" className="text-white hover:text-brand-red transition-all hidden sm:inline font-medium">Schedule Perfection Now!</Link>
           </div>
           
           <div className="flex flex-wrap justify-center sm:justify-end gap-3 md:gap-6 text-xs md:text-sm w-full sm:w-auto">

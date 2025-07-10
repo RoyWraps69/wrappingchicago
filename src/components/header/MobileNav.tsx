@@ -111,7 +111,7 @@ const MobileNav: React.FC<MobileNavProps> = ({ isOpen, onClose }) => {
             onClick={onClose}
             className="block mt-6 bg-brand-red text-white text-center py-3 px-6 rounded-lg hover:bg-red-700 transition-colors font-medium"
           >
-            Get Free Quote
+            Schedule Perfection Now!
           </Link>
         </div>
       </div>

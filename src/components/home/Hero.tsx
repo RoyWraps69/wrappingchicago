@@ -45,7 +45,7 @@ const Hero = () => {
             className="font-semibold text-white bg-brand-red hover:bg-red-700"
           >
             <Link to="/contact" className="inline-flex items-center text-white">
-              Request a Quote
+              Schedule Perfection Now!
               <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
           </Button>
