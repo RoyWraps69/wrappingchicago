@@ -11,7 +11,7 @@ const ServicesSEO = () => {
       <title>{`Vehicle Wrap Services in Chicago IL | Wrapping Chicago`}</title>
       <meta 
         name="description" 
-        content="Get vehicle wrap services in Chicago IL for complete design, print, and installation. Transform any vehicle with durable vinyl and eye-catching branding." 
+        content="Chicago's complete vehicle transformation headquarters! Full-service wrap solutions from concept to installation. Cars, trucks, vans, fleets - we handle every project with precision across the greater Chicagoland area."
       />
       <meta name="keywords" content="vehicle wrap services Chicago, car wrap services, truck wrap services, van wrap services, fleet wrap services, commercial vehicle graphics, custom vehicle wraps Chicago, vehicle branding services, professional vehicle wraps" />
       <link rel="canonical" href={`${domain}/services`} />

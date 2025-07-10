@@ -11,7 +11,7 @@ const PartialWrapsSEO = () => {
       <title>{`Partial Wraps in Chicago IL | Wrapping Chicago`}</title>
       <meta 
         name="description" 
-        content="Get partial wraps in Chicago IL services for budget-friendly graphics and accents. Highlight key areas with quality vinyl and creative design work." 
+        content="Maximize impact, minimize cost! Partial vehicle wraps in Chicago deliver stunning visual punch with strategic placement. Perfect for businesses from River North to Schaumburg wanting professional branding without full coverage."
       />
       <meta name="keywords" content="partial wraps Chicago, partial vehicle wraps, budget vehicle wraps, vehicle graphics Chicago, vinyl accents, car decals Chicago" />
       <link rel="canonical" href={`${domain}/services/partial-wraps`} />

@@ -11,7 +11,7 @@ const SpecialtyWrapsSEO = () => {
       <title>{`Specialty Wraps in Chicago IL | Wrapping Chicago`}</title>
       <meta 
         name="description" 
-        content="Get specialty wraps in Chicago IL services like chrome, matte, carbon fiber, or textured finishes. Achieve unique looks with professional vinyl application." 
+        content="Stand out in Chicago traffic with exotic finishes! Chrome wraps, matte black, carbon fiber textures, and chameleon films transform ordinary vehicles into head-turning masterpieces from Gold Coast to Naperville."
       />
       <meta name="keywords" content="specialty wraps Chicago, chrome wraps Chicago, matte wraps Chicago, carbon fiber wraps, textured wraps, unique vehicle wraps Chicago" />
       <link rel="canonical" href={`${domain}/services/specialty-wraps`} />

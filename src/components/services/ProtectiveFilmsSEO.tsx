@@ -11,7 +11,7 @@ const ProtectiveFilmsSEO = () => {
       <title>{`Protective Films in Chicago IL | Wrapping Chicago`}</title>
       <meta 
         name="description" 
-        content="Get protective films in Chicago IL services to shield paint or wraps from chips and scratches. Clear PPF installed flawlessly for lasting defense." 
+        content="Shield your investment from Chicago's harsh elements! Premium paint protection film (PPF) installation guards against road salt, construction debris, and city driving hazards. Invisible armor for luxury and exotic vehicles."
       />
       <meta name="keywords" content="protective films Chicago, PPF Chicago, paint protection film, clear bra Chicago, vehicle protection film, scratch protection Chicago" />
       <link rel="canonical" href={`${domain}/services/protective-films`} />

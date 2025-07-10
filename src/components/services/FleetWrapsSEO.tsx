@@ -11,7 +11,7 @@ const FleetWrapsSEO = () => {
       <title>{`Fleet Wraps in Chicago IL | Wrapping Chicago`}</title>
       <meta 
         name="description" 
-        content="Get fleet wraps in Chicago IL services for consistent company branding. Uniform graphics across all vehicles, installed quickly by experienced pros." 
+        content="Transform your Chicago fleet into mobile billboards with premium vinyl wraps. Expert installation across Chicagoland ensures consistent branding that drives ROI and builds recognition from Lincoln Park to Oak Brook."
       />
       <meta name="keywords" content="fleet wraps Chicago, commercial fleet wraps, fleet graphics Chicago, fleet branding, fleet vehicle wraps, business fleet wraps Chicago" />
       <link rel="canonical" href={`${domain}/services/fleet-wraps`} />

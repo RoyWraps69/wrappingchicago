@@ -11,7 +11,7 @@ const RetailGraphicsSEO = () => {
       <title>{`Retail Graphics in Chicago IL | Wrapping Chicago`}</title>
       <meta 
         name="description" 
-        content="Get retail graphics in Chicago IL services for storefront windows, walls, and floors. Draw customers with vibrant prints and expert installation." 
+        content="Chicago storefront makeovers that stop traffic! From Magnificent Mile to neighborhood shops, our retail graphics boost foot traffic with window displays, wall murals, and floor graphics that convert browsers to buyers."
       />
       <meta name="keywords" content="retail graphics Chicago, storefront graphics, window graphics Chicago, retail signage, store graphics, commercial signage Chicago" />
       <link rel="canonical" href={`${domain}/services/retail-graphics`} />

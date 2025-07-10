@@ -11,7 +11,7 @@ const LuxuryExoticWrapsSEO = () => {
       <title>{`Luxury Vehicle Wraps in Chicago IL | Wrapping Chicago`}</title>
       <meta 
         name="description" 
-        content="Get luxury vehicle wraps in Chicago IL services for exotic and high-end cars. Premium films and meticulous craftsmanship deliver showroom-worthy finishes." 
+        content="Concours-quality wraps for Chicago's finest automobiles! Specialized in Ferrari, Lamborghini, McLaren, and luxury vehicle transformations using premium films and master-level installation techniques that preserve resale value."
       />
       <meta name="keywords" content="luxury vehicle wraps Chicago, exotic car wraps, high-end car wraps, premium vehicle wraps, luxury car graphics Chicago, supercar wraps" />
       <link rel="canonical" href={`${domain}/services/luxury-exotic-wraps`} />

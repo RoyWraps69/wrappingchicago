@@ -11,7 +11,7 @@ const CarWrapsSEO = () => {
       <title>{`Car Wraps in Chicago IL | Wrapping Chicago`}</title>
       <meta 
         name="description" 
-        content="Get car wraps in Chicago IL services using premium vinyl films. Protect paint and showcase unique designs applied flawlessly by skilled wrap technicians." 
+        content="Chicago's premier car wrap destination! From stunning color changes to custom graphics, our certified technicians use 3M and Avery films to transform vehicles across the Loop, Wicker Park, and surrounding suburbs."
       />
       <meta name="keywords" content="car wraps Chicago, vehicle wraps Chicago, auto wraps Chicago, custom car wraps, car vinyl wraps, car graphics Chicago, car wrap installation" />
       <link rel="canonical" href={`${domain}/services/car-wraps`} />

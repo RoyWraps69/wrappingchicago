@@ -11,7 +11,7 @@ const VehicleLettereringSEO = () => {
       <title>{`Vehicle Lettering in Chicago IL | Wrapping Chicago`}</title>
       <meta 
         name="description" 
-        content="Get vehicle lettering in Chicago IL services for logos, DOT numbers, and contact info. Precise vinyl lettering applied cleanly for professional results." 
+        content="Professional vehicle lettering that builds trust! Chicago businesses rely on our precision vinyl lettering for DOT compliance, company branding, and contact information that stays sharp through city wear and tear."
       />
       <meta name="keywords" content="vehicle lettering Chicago, car lettering Chicago, truck lettering, vinyl lettering, DOT numbers, commercial lettering Chicago" />
       <link rel="canonical" href={`${domain}/services/vehicle-lettering`} />

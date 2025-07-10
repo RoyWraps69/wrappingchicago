@@ -11,7 +11,7 @@ const CommercialGraphicsSEO = () => {
       <title>{`Commercial Graphics in Chicago IL | Wrapping Chicago`}</title>
       <meta 
         name="description" 
-        content="Get commercial graphics in Chicago IL services for vehicles, windows, and signage. Elevate brand presence with vivid prints and expert installation." 
+        content="Elevate your Chicago business visibility! Commercial vehicle graphics, storefront signage, and branded displays that work 24/7 across Chicagoland. From startups to Fortune 500 companies, we amplify your message."
       />
       <meta name="keywords" content="commercial graphics Chicago, vehicle lettering Chicago, business vehicle graphics, fleet graphics, commercial vehicle branding, professional signage, custom vehicle lettering" />
       <link rel="canonical" href={`${domain}/services/commercial-graphics`} />

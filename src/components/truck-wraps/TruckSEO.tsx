@@ -11,7 +11,7 @@ const TruckSEO = () => {
       <title>{`Truck Wraps in Chicago IL | Wrapping Chicago`}</title>
       <meta 
         name="description" 
-        content="Get truck wraps in Chicago IL services for standout advertising or rugged protection. High-quality vinyl graphics installed for lasting impact on the road." 
+        content="Chicago truck wraps that command attention! From pickup trucks to semi-trailers, our heavy-duty vinyl graphics withstand Illinois weather while delivering maximum advertising impact across Chicagoland highways."
       />
       <link rel="canonical" href={`${domain}/services/truck-wraps`} />
       <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />

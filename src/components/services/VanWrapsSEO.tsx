@@ -11,7 +11,7 @@ const VanWrapsSEO = () => {
       <title>{`Van Wraps in Chicago IL | Wrapping Chicago`}</title>
       <meta 
         name="description" 
-        content="Get van wraps in Chicago IL services to turn your van into a mobile billboard. Custom graphics printed and installed with precision for maximum exposure." 
+        content="Turn cargo vans into revenue generators! Chicago van wraps deliver 24/7 advertising power from Michigan Avenue to the suburbs. Professional installation ensures your mobile billboard withstands Midwest weather."
       />
       <meta name="keywords" content="van wraps Chicago, commercial van wraps, cargo van wraps, van graphics Chicago, van lettering Chicago, van advertising, mobile billboard Chicago" />
       <link rel="canonical" href={`${domain}/services/van-wraps`} />
