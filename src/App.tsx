@@ -14,6 +14,8 @@ import FAQPage from "./pages/FAQPage";
 import SitemapPage from "./pages/SitemapPage";
 import LocationPage from "./pages/LocationPage";
 import LocationsPage from "./pages/LocationsPage";
+import ChicagoLocationPage from "./pages/ChicagoLocationPage";
+import CityLocationPage from "./pages/CityLocationPage";
 import GalleryPage from "./pages/GalleryPage";
 import AboutPage from "./pages/AboutPage";
 import PricingPage from "./pages/PricingPage";
@@ -61,6 +63,12 @@ function App() {
                   <Route path="/locations" element={<LocationsPage />} />
                   <Route path="/blog" element={<BlogPage />} />
                   <Route path="/locations/:locationSlug" element={<LocationPage />} />
+                  
+                  {/* Location Routes */}
+                  <Route path="/vehicle-wraps-chicago-il" element={<ChicagoLocationPage />} />
+                  <Route path="/chicago" element={<ChicagoLocationPage />} />
+                  <Route path="/vehicle-wraps-:citySlug-il" element={<CityLocationPage />} />
+                  <Route path="/:citySlug" element={<CityLocationPage />} />
                   <Route path="*" element={<NotFoundPage />} />
                 </Routes>
               </main>
