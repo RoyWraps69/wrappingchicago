@@ -28,7 +28,6 @@ const LocationsPage = () => {
       />
       
       <div className="flex flex-col min-h-screen">
-        <Header />
         
         <main className="flex-grow">
           <div className="container mx-auto py-12 px-4">
@@ -85,8 +84,7 @@ const LocationsPage = () => {
           <CallToAction city="Chicago" />
         </main>
         
-        <Footer />
-      </div>
+        </div>
     </>
   );
 };

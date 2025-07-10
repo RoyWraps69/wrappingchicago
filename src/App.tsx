@@ -13,6 +13,7 @@ import ServiceAreasPage from "./pages/ServiceAreasPage";
 import FAQPage from "./pages/FAQPage";
 import SitemapPage from "./pages/SitemapPage";
 import LocationPage from "./pages/LocationPage";
+import LocationsPage from "./pages/LocationsPage";
 import GalleryPage from "./pages/GalleryPage";
 import AboutPage from "./pages/AboutPage";
 import PricingPage from "./pages/PricingPage";
@@ -57,7 +58,7 @@ function App() {
                   <Route path="/gallery" element={<GalleryPage />} />
                   <Route path="/about" element={<AboutPage />} />
                   <Route path="/pricing" element={<PricingPage />} />
-                  <Route path="/contact" element={<ContactPage />} />
+                  <Route path="/locations" element={<LocationsPage />} />
                   <Route path="/blog" element={<BlogPage />} />
                   <Route path="/locations/:locationSlug" element={<LocationPage />} />
                   <Route path="*" element={<NotFoundPage />} />

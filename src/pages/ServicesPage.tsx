@@ -25,7 +25,6 @@ const ServicesPage = () => {
       </Helmet>
       
       <div className="flex flex-col min-h-screen">
-        <Header />
         
         <main className="flex-grow">
           <div className="container mx-auto py-12 px-4">
@@ -34,8 +33,7 @@ const ServicesPage = () => {
           </div>
         </main>
         
-        <Footer />
-      </div>
+        </div>
     </>
   );
 };
