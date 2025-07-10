@@ -22,6 +22,9 @@ import LocationPage from "./pages/LocationPage";
 import SchemaValidator from "./components/seo/SchemaValidator";
 import SEOHealthChecker from "./components/seo/SEOHealthChecker";
 import CoreWebVitalsOptimizer from "./components/performance/CoreWebVitalsOptimizer";
+import AdvancedSEOOptimizer from './components/seo/AdvancedSEOOptimizer';
+import CompetitorDominationSEO from './components/seo/CompetitorDominationSEO';
+import TechnicalSEOEnhancer from './components/seo/TechnicalSEOEnhancer';
 
 const queryClient = new QueryClient();
 
@@ -56,6 +59,9 @@ function App() {
             </div>
             <CoreWebVitalsOptimizer />
             <SchemaValidator />
+            <AdvancedSEOOptimizer />
+            <CompetitorDominationSEO />
+            <TechnicalSEOEnhancer />
             <SEOHealthChecker />
           </BrowserRouter>
         </TooltipProvider>
