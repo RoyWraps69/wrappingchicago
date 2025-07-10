@@ -32,8 +32,10 @@ const PageSEO: React.FC<PageSEOProps> = ({
 }) => {
   const currentYear = new Date().getFullYear();
   const domain = "https://www.wrappingchicago.com";
-  const currentUrl = canonicalUrl || `${domain}${window.location.pathname}`;
+  const currentUrl = canonicalUrl || `${domain}`;
   
+  // Use React Router for current path
+  const location = typeof window !== 'undefined' ? window.location : { pathname: '/' };
   // Ensure meta description is optimal length (150-160 chars)
   const optimizedDescription = description.length > 160 
     ? description.substring(0, 157) + "..."
