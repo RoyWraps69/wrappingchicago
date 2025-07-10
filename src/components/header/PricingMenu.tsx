@@ -13,14 +13,17 @@ import { cn } from "@/lib/utils";
 import { DollarSign, Info, FileText } from 'lucide-react';
 
 const ListItem = React.forwardRef<
-  React.ElementRef<"a">,
-  React.ComponentPropsWithoutRef<"a">
->(({ className, title, children, ...props }, ref) => {
+  React.ElementRef<typeof Link>,
+  React.ComponentPropsWithoutRef<typeof Link> & {
+    title?: string;
+  }
+>(({ className, title, children, to, ...props }, ref) => {
   return (
     <li>
       <NavigationMenuLink asChild>
-        <a
+        <Link
           ref={ref}
+          to={to}
           className={cn(
             "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-gray-100 hover:text-brand-red focus:bg-gray-100 focus:text-brand-red",
             className
@@ -31,7 +34,7 @@ const ListItem = React.forwardRef<
           <p className="line-clamp-2 text-sm leading-snug text-gray-600">
             {children}
           </p>
-        </a>
+        </Link>
       </NavigationMenuLink>
     </li>
   );
@@ -49,7 +52,7 @@ const PricingMenu = () => {
           <NavigationMenuContent className="z-50 bg-white border shadow-lg w-[300px]">
             <ul className="grid gap-3 p-4">
               <ListItem
-                href="/pricing"
+                to="/pricing"
                 title="Vehicle Wrap Pricing"
                 className="flex flex-col"
               >
@@ -60,7 +63,7 @@ const PricingMenu = () => {
               </ListItem>
               
               <ListItem
-                href="/about"
+                to="/about"
                 title="About Us"
                 className="flex flex-col"
               >
@@ -71,7 +74,7 @@ const PricingMenu = () => {
               </ListItem>
               
               <ListItem
-                href="/blog"
+                to="/blog"
                 title="Blog"
                 className="flex flex-col"
               >

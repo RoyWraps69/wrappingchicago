@@ -13,14 +13,17 @@ import { cn } from "@/lib/utils";
 import { Car, Truck, CircleDollarSign, PaintBucket, Building, Brush, Shield, FileText, Palette, CreditCard } from 'lucide-react';
 
 const ListItem = React.forwardRef<
-  React.ElementRef<"a">,
-  React.ComponentPropsWithoutRef<"a">
->(({ className, title, children, ...props }, ref) => {
+  React.ElementRef<typeof Link>,
+  React.ComponentPropsWithoutRef<typeof Link> & {
+    title?: string;
+  }
+>(({ className, title, children, to, ...props }, ref) => {
   return (
     <li>
       <NavigationMenuLink asChild>
-        <a
+        <Link
           ref={ref}
+          to={to}
           className={cn(
             "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-gray-100 hover:text-brand-red focus:bg-gray-100 focus:text-brand-red",
             className
@@ -31,7 +34,7 @@ const ListItem = React.forwardRef<
           <p className="line-clamp-2 text-sm leading-snug text-gray-600">
             {children}
           </p>
-        </a>
+        </Link>
       </NavigationMenuLink>
     </li>
   );
@@ -49,7 +52,7 @@ const ServiceMenu = () => {
           <NavigationMenuContent className="z-50 bg-white border shadow-lg w-[400px] md:w-[500px] lg:w-[700px]">
             <ul className="grid gap-3 p-4 md:grid-cols-2 lg:w-[700px]">
               <ListItem
-                href="/car-wraps"
+                to="/car-wraps"
                 title="Car Wraps"
                 className="flex flex-col"
               >
@@ -60,7 +63,7 @@ const ServiceMenu = () => {
               </ListItem>
               
               <ListItem
-                href="/truck-wraps"
+                to="/truck-wraps"
                 title="Truck Wraps"
                 className="flex flex-col"
               >
@@ -71,7 +74,7 @@ const ServiceMenu = () => {
               </ListItem>
               
               <ListItem
-                href="/van-wraps"
+                to="/van-wraps"
                 title="Van Wraps"
                 className="flex flex-col"
               >
@@ -82,7 +85,7 @@ const ServiceMenu = () => {
               </ListItem>
               
               <ListItem
-                href="/services/fleet-wraps"
+                to="/fleet-wraps"
                 title="Fleet Wraps"
                 className="flex flex-col"
               >
@@ -93,7 +96,7 @@ const ServiceMenu = () => {
               </ListItem>
               
               <ListItem
-                href="/color-change-wraps"
+                to="/color-change-wraps"
                 title="Color Change Wraps"
                 className="flex flex-col"
               >
@@ -104,7 +107,7 @@ const ServiceMenu = () => {
               </ListItem>
               
               <ListItem
-                href="/services/commercial-graphics"
+                to="/services/commercial-graphics"
                 title="Commercial Graphics"
                 className="flex flex-col"
               >
@@ -115,7 +118,7 @@ const ServiceMenu = () => {
               </ListItem>
               
               <ListItem
-                href="/services/protective-films"
+                to="/services/protective-films"
                 title="Protective Films"
                 className="flex flex-col"
               >
@@ -126,7 +129,7 @@ const ServiceMenu = () => {
               </ListItem>
               
               <ListItem
-                href="/services/vehicle-lettering"
+                to="/services/vehicle-lettering"
                 title="Vehicle Lettering"
                 className="flex flex-col"
               >
@@ -137,7 +140,7 @@ const ServiceMenu = () => {
               </ListItem>
               
               <ListItem
-                href="/services/specialty-wraps"
+                to="/services/specialty-wraps"
                 title="Specialty Wraps"
                 className="flex flex-col"
               >
@@ -148,7 +151,7 @@ const ServiceMenu = () => {
               </ListItem>
               
               <ListItem
-                href="/designer-wraps"
+                to="/designer-wraps"
                 title="Designer Wraps"
                 className="flex flex-col"
               >
@@ -159,7 +162,7 @@ const ServiceMenu = () => {
               </ListItem>
               
               <ListItem
-                href="/luxury-exotic-wraps"
+                to="/luxury-exotic-wraps"
                 title="Luxury & Exotic Wraps"
                 className="flex flex-col"
               >
@@ -170,7 +173,7 @@ const ServiceMenu = () => {
               </ListItem>
               
               <ListItem
-                href="/services/retail-graphics"
+                to="/services/retail-graphics"
                 title="Retail Graphics"
                 className="flex flex-col"
               >
@@ -181,7 +184,7 @@ const ServiceMenu = () => {
               </ListItem>
               
               <ListItem
-                href="/services"
+                to="/services"
                 title="View All Services"
                 className="md:col-span-2 text-center bg-gray-50 hover:bg-gray-100"
               >
