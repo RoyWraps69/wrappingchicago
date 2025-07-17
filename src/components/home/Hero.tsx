@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Phone } from 'lucide-react';
 
 const Hero = () => {
-  console.log('Hero component rendering...');
+  
   return (
     <div className="hero-fullscreen bg-black relative flex items-center justify-center min-h-screen overflow-hidden">
       {/* Hero background image */}
@@ -15,10 +15,7 @@ const Hero = () => {
           alt="Professional vehicle wraps in Chicago - fleet of wrapped cars, trucks, and commercial vehicles showcasing premium 3M vinyl materials and expert installation"
           className="max-w-full max-h-full object-contain"
           onError={(e) => {
-            console.log('Hero image failed to load:', (e.target as HTMLImageElement).src);
-          }}
-          onLoad={() => {
-            console.log('Hero image loaded successfully');
+            (e.target as HTMLImageElement).src = '/placeholder.svg';
           }}
         />
       </div>

@@ -2,7 +2,7 @@
 import React from 'react';
 import InfoBar from '@/components/home/InfoBar';
 import QuickLinksBar from '@/components/home/QuickLinksBar';
-import StickyContactButtons from '@/components/home/StickyContactButtons';
+
 import TrustIndicators from '@/components/home/TrustIndicators';
 import WhyChooseUsSection from '@/components/home/WhyChooseUsSection';
 import InstallationFacility from '@/components/home/InstallationFacility';
