@@ -10,7 +10,7 @@ const MoversWrapsPage = () => {
         <title>Moving Company Vehicle Wraps Chicago | Movers Fleet Graphics</title>
         <meta name="description" content="Professional moving company vehicle wraps in Chicago. Custom movers truck graphics, van wraps, and fleet branding that builds trust and drives bookings." />
         <meta name="keywords" content="moving company vehicle wraps chicago, movers truck graphics, moving van wraps, movers fleet branding, chicago moving advertising" />
-        <link rel="canonical" href="https://chicagofleetwraps.com/movers-wraps" />
+        <link rel="canonical" href="https://www.wrappingchicago.com/movers-wraps" />
       </Helmet>
 
       {/* Hero Section */}

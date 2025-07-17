@@ -10,7 +10,7 @@ const LogisticsWrapsPage = () => {
         <title>Logistics Vehicle Wraps Chicago | Fleet & Supply Chain Graphics</title>
         <meta name="description" content="Professional logistics vehicle wraps in Chicago. Custom fleet graphics for supply chain, freight, and logistics companies that build brand recognition." />
         <meta name="keywords" content="logistics vehicle wraps chicago, supply chain fleet graphics, freight truck wraps, logistics branding, chicago logistics advertising" />
-        <link rel="canonical" href="https://chicagofleetwraps.com/logistics-wraps" />
+        <link rel="canonical" href="https://www.wrappingchicago.com/logistics-wraps" />
       </Helmet>
 
       {/* Hero Section */}

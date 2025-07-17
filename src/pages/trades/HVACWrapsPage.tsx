@@ -10,7 +10,7 @@ const HVACWrapsPage = () => {
         <title>HVAC Vehicle Wraps Chicago | Heating & Cooling Fleet Graphics</title>
         <meta name="description" content="Professional HVAC vehicle wraps in Chicago. Custom heating & cooling truck graphics, van wraps, and fleet branding for year-round business growth." />
         <meta name="keywords" content="hvac vehicle wraps chicago, heating cooling truck graphics, hvac van wraps, hvac fleet branding, chicago hvac advertising" />
-        <link rel="canonical" href="https://chicagofleetwraps.com/hvac-wraps" />
+        <link rel="canonical" href="https://www.wrappingchicago.com/hvac-wraps" />
       </Helmet>
 
       {/* Hero Section */}

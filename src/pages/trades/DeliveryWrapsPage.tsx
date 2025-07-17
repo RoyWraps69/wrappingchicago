@@ -10,7 +10,7 @@ const DeliveryWrapsPage = () => {
         <title>Delivery Vehicle Wraps Chicago | Food & Package Delivery Graphics</title>
         <meta name="description" content="Professional delivery vehicle wraps in Chicago. Custom graphics for food delivery, package delivery, and courier services that drive customer recognition." />
         <meta name="keywords" content="delivery vehicle wraps chicago, food delivery van wraps, package delivery graphics, courier vehicle branding, chicago delivery advertising" />
-        <link rel="canonical" href="https://chicagofleetwraps.com/delivery-wraps" />
+        <link rel="canonical" href="https://www.wrappingchicago.com/delivery-wraps" />
       </Helmet>
 
       {/* Hero Section */}

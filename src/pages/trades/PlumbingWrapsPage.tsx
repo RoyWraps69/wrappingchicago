@@ -10,7 +10,7 @@ const PlumbingWrapsPage = () => {
         <title>Plumbing Vehicle Wraps Chicago | Professional Plumber Fleet Graphics</title>
         <meta name="description" content="Professional plumbing vehicle wraps in Chicago. Custom plumber truck graphics, van wraps, and fleet branding that builds trust and drives business growth." />
         <meta name="keywords" content="plumbing vehicle wraps chicago, plumber truck graphics, plumbing van wraps, plumber fleet branding, chicago plumbing advertising" />
-        <link rel="canonical" href="https://chicagofleetwraps.com/plumbing-wraps" />
+        <link rel="canonical" href="https://www.wrappingchicago.com/plumbing-wraps" />
       </Helmet>
 
       {/* Hero Section */}

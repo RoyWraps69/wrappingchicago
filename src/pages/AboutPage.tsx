@@ -16,7 +16,7 @@ const AboutPage = () => {
         <title>About Wrapping Chicago | Real People Who Get Trade Businesses</title>
         <meta name="description" content="We're Chicago locals who understand trade businesses. Been wrapping plumber trucks, electrician vans, and HVAC vehicles for over 10 years. Your success is our business." />
         <meta name="keywords" content="Chicago vehicle wrap company, trade business wraps, local wrap installers, plumber truck wraps, electrician van graphics, HVAC vehicle advertising" />
-        <link rel="canonical" href="https://wrappingchicago.com/about" />
+        <link rel="canonical" href="https://www.wrappingchicago.com/about" />
       </Helmet>
       
       <Schema 

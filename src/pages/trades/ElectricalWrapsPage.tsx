@@ -10,7 +10,7 @@ const ElectricalWrapsPage = () => {
         <title>Electrical Vehicle Wraps Chicago | Electrician Fleet Graphics</title>
         <meta name="description" content="Professional electrical vehicle wraps in Chicago. Custom electrician truck graphics, van wraps, and fleet branding that showcases your electrical expertise." />
         <meta name="keywords" content="electrical vehicle wraps chicago, electrician truck graphics, electrical van wraps, electrician fleet branding, chicago electrical advertising" />
-        <link rel="canonical" href="https://chicagofleetwraps.com/electrical-wraps" />
+        <link rel="canonical" href="https://www.wrappingchicago.com/electrical-wraps" />
       </Helmet>
 
       {/* Hero Section */}
