@@ -54,6 +54,58 @@ const HomePageSections = () => {
         <VehicleWrapFAQ />
       </section>
       
+      <section aria-labelledby="gallery-heading" className="py-12">
+        <div className="container mx-auto px-4">
+          <h2 id="gallery-heading" className="text-3xl font-bold text-center mb-8 text-brand-navy">
+            Our Work Gallery
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            <div className="aspect-video bg-gray-200 rounded-lg overflow-hidden">
+              <img 
+                src="https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=400&h=300&fit=crop" 
+                alt="Professional vehicle wrap installation"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+            <div className="aspect-video bg-gray-200 rounded-lg overflow-hidden">
+              <img 
+                src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=400&h=300&fit=crop" 
+                alt="Custom car wrap design"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+            <div className="aspect-video bg-gray-200 rounded-lg overflow-hidden">
+              <img 
+                src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=300&fit=crop" 
+                alt="Fleet vehicle wrap project"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+            <div className="aspect-video bg-gray-200 rounded-lg overflow-hidden">
+              <img 
+                src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=400&h=300&fit=crop" 
+                alt="Commercial truck wrap design"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+            <div className="aspect-video bg-gray-200 rounded-lg overflow-hidden">
+              <img 
+                src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=400&h=300&fit=crop" 
+                alt="Vehicle wrap installation process"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+            <div className="aspect-video bg-gray-200 rounded-lg overflow-hidden">
+              <img 
+                src="https://images.unsplash.com/photo-1721322800607-8c38375eef04?w=400&h=300&fit=crop" 
+                alt="Finished vehicle wrap showcase"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+      
       <section aria-labelledby="explore-heading">
         <ExploreServices />
       </section>
