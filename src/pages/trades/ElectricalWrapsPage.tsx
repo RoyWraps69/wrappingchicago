@@ -14,8 +14,14 @@ const ElectricalWrapsPage = () => {
       </Helmet>
 
       {/* Hero Section */}
-      <section className="relative min-h-[600px] flex items-center justify-center bg-gradient-to-br from-yellow-900 via-yellow-800 to-orange-700 text-white overflow-hidden">
-        <div className="absolute inset-0 bg-black/20"></div>
+      <section className="relative min-h-[600px] flex items-center justify-center text-white overflow-hidden">
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: `url('/lovable-uploads/6e8f56a7-4c78-4861-a723-2e894c821a8f.png')`
+          }}
+        ></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/70"></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <div className="flex justify-center mb-6">
