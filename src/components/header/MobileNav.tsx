@@ -21,9 +21,17 @@ const MobileNav: React.FC<MobileNavProps> = ({ isOpen, onClose }) => {
     { label: 'Car Wraps', path: '/car-wraps' },
     { label: 'Truck Wraps', path: '/truck-wraps' },
     { label: 'Van Wraps', path: '/van-wraps' },
-    { label: 'Fleet Wraps', path: '/services/fleet-wraps' },
-    { label: 'Color Change Wraps', path: '/color-change-wraps' },
-    { label: 'Commercial Graphics', path: '/services/commercial-graphics' }
+    { label: 'Fleet Wraps', path: '/fleet-wraps' },
+    { label: 'Color Change Wraps', path: '/color-change-wraps' }
+  ];
+
+  const tradeItems = [
+    { label: 'Plumbing Wraps', path: '/plumbing-wraps', badge: 'HOT' },
+    { label: 'HVAC Wraps', path: '/hvac-wraps', badge: 'NEW' },
+    { label: 'Electrical Wraps', path: '/electrical-wraps' },
+    { label: 'Moving Companies', path: '/movers-wraps' },
+    { label: 'Logistics & Delivery', path: '/logistics-wraps' },
+    { label: 'Food Delivery', path: '/delivery-wraps' }
   ];
 
   const pricingItems = [
@@ -63,6 +71,35 @@ const MobileNav: React.FC<MobileNavProps> = ({ isOpen, onClose }) => {
                 className="flex items-center justify-between py-2 text-gray-700 hover:text-brand-red transition-colors"
               >
                 {service.label}
+                <ChevronRight className="h-4 w-4" />
+              </Link>
+            ))}
+          </div>
+        </div>
+
+        {/* Trade Specialties Section - NEW */}
+        <div className="border-t pt-6 mb-6">
+          <h3 className="font-semibold text-brand-navy mb-2 text-lg flex items-center">
+            Trade Specialists 
+            <span className="ml-2 bg-brand-red text-white text-xs px-2 py-1 rounded-full">NEW</span>
+          </h3>
+          <p className="text-sm text-gray-600 mb-4">3-5x ROI for trade contractors</p>
+          <div className="space-y-3">
+            {tradeItems.map((trade) => (
+              <Link
+                key={trade.path}
+                to={trade.path}
+                onClick={onClose}
+                className="flex items-center justify-between py-2 text-gray-700 hover:text-brand-red transition-colors"
+              >
+                <span className="flex items-center">
+                  {trade.label}
+                  {trade.badge && (
+                    <span className="ml-2 bg-orange-500 text-white text-xs px-2 py-0.5 rounded-full">
+                      {trade.badge}
+                    </span>
+                  )}
+                </span>
                 <ChevronRight className="h-4 w-4" />
               </Link>
             ))}
@@ -109,10 +146,14 @@ const MobileNav: React.FC<MobileNavProps> = ({ isOpen, onClose }) => {
           <Link
             to="/contact"
             onClick={onClose}
-            className="block mt-6 bg-brand-red text-white text-center py-3 px-6 rounded-lg hover:bg-red-700 transition-colors font-medium"
+            className="block mt-6 bg-brand-red text-white text-center py-3 px-6 rounded-lg hover:bg-red-700 transition-colors font-medium shadow-lg"
           >
-            Schedule Perfection Now!
+            Get Quote in 30 Seconds
           </Link>
+          
+          <div className="mt-4 text-center">
+            <p className="text-sm text-gray-600">70,000+ daily impressions guaranteed</p>
+          </div>
         </div>
       </div>
     </div>

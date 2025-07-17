@@ -3,6 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import ServiceMenu from './ServiceMenu';
 import PricingMenu from './PricingMenu';
+import TradeMenu from './TradeMenu';
 
 const DesktopNav = () => {
   const navItems = [
@@ -28,6 +29,9 @@ const DesktopNav = () => {
       
       {/* Service menu */}
       <ServiceMenu />
+      
+      {/* Trade Specialists menu */}
+      <TradeMenu />
       
       {/* Pricing menu */}
       <PricingMenu />
