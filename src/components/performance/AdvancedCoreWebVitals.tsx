@@ -174,29 +174,31 @@ const CoreWebVitalsOptimizer: React.FC = () => {
           // Performance monitoring
           window.addEventListener('load', () => {
             // LCP monitoring
-            new PerformanceObserver((list) => {
-              list.getEntries().forEach((entry) => {
-                if (entry.entryType === 'largest-contentful-paint') {
-                  console.log('LCP:', entry.startTime);
-                  if (entry.startTime > 2500) {
-                    console.warn('LCP exceeds 2.5s threshold');
+            if ('PerformanceObserver' in window) {
+              new PerformanceObserver((list) => {
+                list.getEntries().forEach((entry) => {
+                  if (entry.entryType === 'largest-contentful-paint') {
+                    console.log('LCP:', entry.startTime);
+                    if (entry.startTime > 2500) {
+                      console.warn('LCP exceeds 2.5s threshold');
+                    }
                   }
-                }
-              });
-            }).observe({ entryTypes: ['largest-contentful-paint'] });
-            
-            // CLS monitoring
-            let clsValue = 0;
-            new PerformanceObserver((list) => {
-              list.getEntries().forEach((entry) => {
-                if (!entry.hadRecentInput) {
-                  clsValue += entry.value;
-                  if (clsValue > 0.1) {
-                    console.warn('CLS exceeds 0.1 threshold:', clsValue);
+                });
+              }).observe({ entryTypes: ['largest-contentful-paint'] });
+              
+              // CLS monitoring
+              let clsValue = 0;
+              new PerformanceObserver((list) => {
+                list.getEntries().forEach((entry) => {
+                  if (!entry.hadRecentInput) {
+                    clsValue += entry.value;
+                    if (clsValue > 0.1) {
+                      console.warn('CLS exceeds 0.1 threshold:', clsValue);
+                    }
                   }
-                }
-              });
-            }).observe({ entryTypes: ['layout-shift'] });
+                });
+              }).observe({ entryTypes: ['layout-shift'] });
+            }
           });
         `}
       </script>
