@@ -49,7 +49,7 @@ import ShippingPage from "./pages/ShippingPage";
 import TruckWrapsChicagoPage from "./pages/TruckWrapsChicagoPage";
 import SchemaValidator from "./components/seo/SchemaValidator";
 import SEOHealthChecker from "./components/seo/SEOHealthChecker";
-import CoreWebVitalsOptimizer from "./components/performance/CoreWebVitalsOptimizer";
+// import CoreWebVitalsOptimizer from "./components/performance/CoreWebVitalsOptimizer";
 import AdvancedSEOOptimizer from './components/seo/AdvancedSEOOptimizer';
 import CompetitorDominationSEO from './components/seo/CompetitorDominationSEO';
 import TechnicalSEOEnhancer from './components/seo/TechnicalSEOEnhancer';
@@ -130,7 +130,7 @@ function App() {
               </main>
               <Footer />
             </div>
-            <CoreWebVitalsOptimizer />
+            {/* Removed CoreWebVitalsOptimizer - causing conflicts */}
             <SchemaValidator />
             <AdvancedSEOOptimizer />
             <CompetitorDominationSEO />

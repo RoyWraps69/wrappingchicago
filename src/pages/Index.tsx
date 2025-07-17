@@ -5,7 +5,7 @@ import InternalLinkingSection from "@/components/seo/InternalLinkingSection";
 import Google2025SEOOptimizer from "@/components/seo/Google2025SEOOptimizer";
 import AEOOptimizer from "@/components/seo/AEOOptimizer";
 import LocalSEOBooster from "@/components/seo/LocalSEOBooster";
-import CoreWebVitalsOptimizer from "@/components/seo/CoreWebVitalsOptimizer";
+{/* Removed CoreWebVitalsOptimizer import - causing conflicts */}
 import { getAllKeywords } from "@/components/home/seo/HomeKeywords";
 import Hero from "@/components/home/Hero";
 
@@ -58,7 +58,7 @@ const Index = () => {
         neighboringCities={['Evanston', 'Naperville', 'Schaumburg', 'Oak Park', 'Cicero']}
       />
       
-      <CoreWebVitalsOptimizer />
+      {/* Removed CoreWebVitalsOptimizer - causing conflicts */}
       
       {/* Legacy SEO components */}
       <HomeSEO />
