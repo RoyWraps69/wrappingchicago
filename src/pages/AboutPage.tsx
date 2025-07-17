@@ -13,9 +13,9 @@ const AboutPage = () => {
   return (
     <>
       <Helmet>
-        <title>{"About Chicago Fleet Wraps | Professional Vehicle Wrap Company"}</title>
-        <meta name="description" content="Learn about Chicago Fleet Wraps, a premier vehicle wrapping company serving Chicago and surrounding areas. Discover our experience, expertise, and commitment to quality." />
-        <meta name="keywords" content="about Chicago Fleet Wraps, vehicle wrap company Chicago, professional car wrapping, Chicago wrap installers, vehicle wrapping experts, 3M certified wrap company" />
+        <title>About Wrapping Chicago | Real People Who Get Trade Businesses</title>
+        <meta name="description" content="We're Chicago locals who understand trade businesses. Been wrapping plumber trucks, electrician vans, and HVAC vehicles for over 10 years. Your success is our business." />
+        <meta name="keywords" content="Chicago vehicle wrap company, trade business wraps, local wrap installers, plumber truck wraps, electrician van graphics, HVAC vehicle advertising" />
         <link rel="canonical" href="https://wrappingchicago.com/about" />
       </Helmet>
       
@@ -31,21 +31,21 @@ const AboutPage = () => {
         <main className="flex-grow">
           <div className="container mx-auto py-12 px-4">
             <Breadcrumbs />
-            <h1 className="text-4xl font-bold text-brand-navy mb-6">About Chicago Fleet Wraps</h1>
+            <h1 className="text-4xl font-bold text-brand-navy mb-6">We Get Trade Businesses</h1>
             
             <div className="grid md:grid-cols-2 gap-12 mb-12">
               <div>
                 <div className="prose max-w-none">
                   <p className="text-lg mb-6">
-                    Chicago Fleet Wraps is a premier vehicle wrap installation company serving businesses 
-                    and individuals throughout Chicago and the surrounding areas.
+                    Hey there! We're not some fancy corporate wrap shop. We're Chicago locals who understand 
+                    that your truck is more than transportation - it's your mobile office, your tool storage, 
+                    and your best advertising all rolled into one.
                   </p>
                   
                   <p className="mb-6">
-                    Founded with a passion for transforming vehicles into mobile marketing assets, 
-                    our team brings together years of experience in the vehicle wrap industry. We 
-                    are dedicated to providing exceptional quality and service to every client,
-                    from small business owners to large corporations.
+                    For over 10 years, we've been helping plumbers, electricians, HVAC techs, and other trade 
+                    pros turn their work vehicles into customer magnets. We know you need wraps that look 
+                    professional but can handle the real world - job sites, weather, and daily wear.
                   </p>
                   
                   <h2 className="text-2xl font-semibold text-brand-navy mt-8 mb-4">Our Expertise</h2>

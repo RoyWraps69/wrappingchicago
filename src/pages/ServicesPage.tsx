@@ -15,12 +15,12 @@ const ServicesPage = () => {
   return (
     <>
       <Helmet>
-        <title>Vehicle Wrap Services Chicago | Professional Installation | Wrapping Chicago</title>
+        <title>Vehicle Wraps for Chicago Trade Businesses | Plumbers, Electricians, HVAC</title>
         <meta 
           name="description" 
-          content="Complete vehicle wrap services in Chicago. Car wraps, truck wraps, van wraps, fleet graphics, color change wraps, and protective films. Expert installation with premium materials." 
+          content="Turn your work truck into your best salesperson. Chicago trade professionals choose us for vehicle wraps that get noticed and bring in more customers. Same week service, won't hurt your paint." 
         />
-        <meta name="keywords" content="vehicle wrap services Chicago, car wraps, truck wraps, van wraps, fleet graphics, commercial vehicle wraps, color change wraps, protective films Chicago" />
+        <meta name="keywords" content="plumber truck wraps Chicago, electrician van wraps, HVAC vehicle graphics, contractor truck lettering, trade vehicle wraps Chicago, service truck advertising" />
         <link rel="canonical" href="https://www.wrappingchicago.com/services" />
       </Helmet>
       

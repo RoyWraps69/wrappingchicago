@@ -16,12 +16,12 @@ const ContactPage = () => {
   return (
     <>
       <Helmet>
-        <title>Contact Wrapping Chicago</title>
+        <title>Get Your Quote | Chicago Vehicle Wraps That Actually Work</title>
         <meta 
           name="description" 
-          content="Get contact Wrapping Chicago services for quotes, consultations, and scheduling. Speak with our vehicle wrap experts and start your project today." 
+          content="Ready to get more customers? Call us at (312) 597-1286 or fill out our form. We'll give you a straight answer about what your truck wrap will cost and how fast we can get it done." 
         />
-        <meta name="keywords" content="contact Wrapping Chicago, vehicle wrap quotes, consultation, scheduling, wrap experts Chicago" />
+        <meta name="keywords" content="vehicle wrap quote Chicago, truck wrap cost, plumber van wrap price, electrician truck graphics quote, HVAC vehicle wrap estimate" />
         <link rel="canonical" href={`${domain}/contact`} />
         <meta property="og:title" content="Contact Wrapping Chicago" />
         <meta property="og:description" content="Get contact Wrapping Chicago services for quotes, consultations, and scheduling. Speak with our vehicle wrap experts and start your project today." />
@@ -44,8 +44,8 @@ const ContactPage = () => {
             <Breadcrumbs />
             
             <div className="mb-8">
-              <h1 className="text-3xl md:text-4xl font-bold text-black mb-4">Contact Us</h1>
-              <p className="text-lg text-black font-medium">Get in touch for quotes, consultations, and scheduling</p>
+              <h1 className="text-3xl md:text-4xl font-bold text-black mb-4">Let's Talk About Your Truck</h1>
+              <p className="text-lg text-black font-medium">Call us at (312) 597-1286 or fill out the form. We'll give you a straight answer about cost and timing.</p>
             </div>
             
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
