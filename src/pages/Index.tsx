@@ -41,15 +41,19 @@ const Index = () => {
       <LocalSEOBooster... />
       <HomeSEO /> */}
       
-      {/* DEBUGGING: Testing Hero component only */}
+      {/* DEBUGGING: Testing Hero step by step */}
       <div style={{padding: '20px', backgroundColor: 'red', color: 'white'}}>
         <h1>TEST - Before Hero</h1>
       </div>
       
-      <Hero />
+      {/* Simple Hero replacement */}
+      <div style={{padding: '50px', backgroundColor: 'black', color: 'white'}}>
+        <h1>SIMPLE HERO TEST</h1>
+        <p>This replaces the broken Hero component</p>
+      </div>
       
       <div style={{padding: '20px', backgroundColor: 'blue', color: 'white'}}>
-        <h1>TEST - After Hero</h1>
+        <h1>TEST - After Hero Replacement</h1>
       </div>
     </>
   );
