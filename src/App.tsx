@@ -29,6 +29,11 @@ import McLeanCountyLocationPage from "./pages/locations/McLeanCountyLocationPage
 import OakParkLocationPage from "./pages/locations/OakParkLocationPage";
 import AuroraLocationPage from "./pages/locations/AuroraLocationPage";
 import JolietLocationPage from "./pages/locations/JolietLocationPage";
+import CiceroLocationPage from "./pages/locations/CiceroLocationPage";
+import BerwynLocationPage from "./pages/locations/BerwynLocationPage";
+import WheatonLocationPage from "./pages/locations/WheatonLocationPage";
+import DownersGroveLocationPage from "./pages/locations/DownersGroveLocationPage";
+import BolingbrookLocationPage from "./pages/locations/BolingbrookLocationPage";
 import CityLocationPage from "./pages/CityLocationPage";
 import GalleryPage from "./pages/GalleryPage";
 import AboutPage from "./pages/AboutPage";
@@ -150,6 +155,11 @@ function App() {
           <Route path="/oak-park" element={<OakParkLocationPage />} />
           <Route path="/aurora" element={<AuroraLocationPage />} />
           <Route path="/joliet" element={<JolietLocationPage />} />
+          <Route path="/cicero" element={<CiceroLocationPage />} />
+          <Route path="/berwyn" element={<BerwynLocationPage />} />
+          <Route path="/wheaton" element={<WheatonLocationPage />} />
+          <Route path="/downers-grove" element={<DownersGroveLocationPage />} />
+          <Route path="/bolingbrook" element={<BolingbrookLocationPage />} />
           <Route path="/truck-wraps-chicago" element={<TruckWrapsChicagoPage />} />
                   
                   {/* Dynamic city routes - MUST be after specific routes */}

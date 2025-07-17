@@ -4,13 +4,13 @@ import { Link } from 'react-router-dom';
 import ServiceMenu from './ServiceMenu';
 import PricingMenu from './PricingMenu';
 import TradeMenu from './TradeMenu';
+import LocationsMenu from './LocationsMenu';
 
 const DesktopNav = () => {
   const navItems = [
     { label: 'Home', path: '/' },
     { label: 'Gallery', path: '/gallery' },
     { label: 'FAQ', path: '/faq' },
-    { label: 'Locations', path: '/locations' },
     { label: 'Contact', path: '/contact' }
   ];
 
@@ -29,6 +29,9 @@ const DesktopNav = () => {
       
       {/* Service menu */}
       <ServiceMenu />
+      
+      {/* Locations menu */}
+      <LocationsMenu />
       
       {/* Trade Specialists menu */}
       <TradeMenu />
