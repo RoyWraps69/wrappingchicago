@@ -17,6 +17,7 @@ import { cities } from '@/data/cities';
 import { HeroSection, ServicesMainSection } from './sections';
 
 const HomePageSections = () => {
+  console.log('HomePageSections rendering...');
   const { fleetWrapVan, colorChangeVan, commercialGraphics } = useGalleryImages();
 
   return (

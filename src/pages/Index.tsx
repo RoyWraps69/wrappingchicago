@@ -35,35 +35,11 @@ const Index = () => {
   
   return (
     <>
-      {/* Enhanced SEO Stack for Google 2025 */}
-      <Google2025SEOOptimizer
-        pageTitle="Chicago Vehicle Wraps for Plumbers, Electricians & HVAC | Get More Calls"
-        pageDescription="Turn your work truck into a customer magnet! Chicago's trade professionals trust us for vehicle wraps that get noticed. Same week service, won't hurt your paint."
-        businessType="general"
-        serviceArea={['Chicago', 'Evanston', 'Naperville', 'Schaumburg', 'Oak Park']}
-        primaryKeywords={tradeKeywords}
-        faqData={tradeFAQs}
-        reviewCount={247}
-        averageRating={4.9}
-      />
-      
-      <AEOOptimizer
-        businessType="general"
-        location="Chicago"
-        serviceKeywords={tradeKeywords}
-      />
-      
-      <LocalSEOBooster
-        cityName="Chicago"
-        businessType="general"
-        serviceRadius={35}
-        neighboringCities={['Evanston', 'Naperville', 'Schaumburg', 'Oak Park', 'Cicero']}
-      />
-      
-      {/* Removed CoreWebVitalsOptimizer - causing conflicts */}
-      
-      {/* Legacy SEO components */}
-      <HomeSEO />
+      {/* ALL SEO COMPONENTS DISABLED FOR DEBUGGING */}
+      {/* <Google2025SEOOptimizer... />
+      <AEOOptimizer... />
+      <LocalSEOBooster... />
+      <HomeSEO /> */}
       
       {/* Page Content */}
       <HomePageSections />
