@@ -23,6 +23,11 @@ import ArlingtonHeightsLocationPage from "./pages/locations/ArlingtonHeightsLoca
 import PalatineLocationPage from "./pages/locations/PalatineLocationPage";
 import WaukeganLocationPage from "./pages/locations/WaukeganLocationPage";
 import DesPlainesLocationPage from "./pages/locations/DesPlainesLocationPage";
+import ElginLocationPage from "./pages/locations/ElginLocationPage";
+import HoffmanEstatesLocationPage from "./pages/locations/HoffmanEstatesLocationPage";
+import McLeanCountyLocationPage from "./pages/locations/McLeanCountyLocationPage";
+import OakParkLocationPage from "./pages/locations/OakParkLocationPage";
+import AuroraLocationPage from "./pages/locations/AuroraLocationPage";
 import CityLocationPage from "./pages/CityLocationPage";
 import GalleryPage from "./pages/GalleryPage";
 import AboutPage from "./pages/AboutPage";
@@ -138,6 +143,11 @@ function App() {
                   <Route path="/palatine" element={<PalatineLocationPage />} />
                   <Route path="/waukegan" element={<WaukeganLocationPage />} />
                   <Route path="/des-plaines" element={<DesPlainesLocationPage />} />
+                  <Route path="/elgin" element={<ElginLocationPage />} />
+                  <Route path="/hoffman-estates" element={<HoffmanEstatesLocationPage />} />
+                  <Route path="/mclean-county" element={<McLeanCountyLocationPage />} />
+                  <Route path="/oak-park" element={<OakParkLocationPage />} />
+                  <Route path="/aurora" element={<AuroraLocationPage />} />
                   <Route path="/truck-wraps-chicago" element={<TruckWrapsChicagoPage />} />
                   
                   {/* Dynamic city routes - MUST be after specific routes */}
