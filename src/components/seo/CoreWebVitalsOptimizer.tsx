@@ -120,16 +120,19 @@ const CoreWebVitalsOptimizer: React.FC = () => {
       {/* Performance monitoring */}
       <script>
         {`
-          // Monitor Core Web Vitals
+          // Monitor Core Web Vitals safely
           window.addEventListener('load', () => {
             if ('requestIdleCallback' in window) {
               requestIdleCallback(() => {
-                import('/js/web-vitals.js').then(({ getCLS, getFID, getFCP, getLCP, getTTFB }) => {
-                  getCLS(sendToAnalytics);
-                  getFID(sendToAnalytics);
-                  getFCP(sendToAnalytics);
-                  getLCP(sendToAnalytics);
-                  getTTFB(sendToAnalytics);
+                // Use the npm package instead of non-existent file
+                import('web-vitals').then(({ onCLS, onFID, onFCP, onLCP, onTTFB }) => {
+                  onCLS(sendToAnalytics);
+                  onFID(sendToAnalytics);
+                  onFCP(sendToAnalytics);
+                  onLCP(sendToAnalytics);
+                  onTTFB(sendToAnalytics);
+                }).catch((error) => {
+                  console.log('Web Vitals not available:', error);
                 });
               });
             }
@@ -137,12 +140,14 @@ const CoreWebVitalsOptimizer: React.FC = () => {
           
           function sendToAnalytics({name, value, id}) {
             // Send to your analytics
-            gtag('event', name, {
-              value: Math.round(name === 'CLS' ? value * 1000 : value),
-              event_category: 'Web Vitals',
-              event_label: id,
-              non_interaction: true,
-            });
+            if (typeof gtag !== 'undefined') {
+              gtag('event', name, {
+                value: Math.round(name === 'CLS' ? value * 1000 : value),
+                event_category: 'Web Vitals',
+                event_label: id,
+                non_interaction: true,
+              });
+            }
           }
         `}
       </script>
