@@ -246,8 +246,8 @@ a:not(.btn-primary):not(.btn-outline):hover {
   border-color: #FF0000 !important;
 }
 
-/* EMERGENCY: Modal and overlay fixes */
-.modal-overlay, .dialog-overlay, [data-radix-portal] {
+/* EMERGENCY: Modal and overlay fixes - More specific selectors */
+.modal-overlay, .dialog-overlay, [data-radix-portal][data-state="open"] {
   background: rgba(0, 0, 0, 0.8) !important;
   z-index: 9998 !important;
 }

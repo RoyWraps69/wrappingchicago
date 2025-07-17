@@ -133,11 +133,11 @@ h1, h2, h3, h4, h5, h6, a, label, button, input, textarea, select,
   color: #FFFFFF !important;
 }
 
-/* EMERGENCY: Modal and popup visibility */
+/* EMERGENCY: Modal and popup visibility - More specific selectors */
 .modal, .popup, .dialog, .lightbox,
 [role="dialog"], [role="alertdialog"],
-[data-radix-portal], .radix-dialog-overlay,
-.fixed.inset-0, .absolute.inset-0 {
+[data-radix-portal]:not([data-state]),
+.radix-dialog-overlay {
   background: #FFFFFF !important;
   color: #000000 !important;
   border: 2px solid #000000 !important;
