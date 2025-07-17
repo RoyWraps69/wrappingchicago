@@ -62,11 +62,11 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Custom colors for Wrapping Chicago - Fixed to HSL format
+				// Custom colors for Wrapping Chicago - Back to hex format for direct usage
 				brand: {
-					navy: '0 0% 7%', // Dark navy as HSL
-					red: '0 100% 59%', // Brand red as HSL  
-					light: '0 0% 100%', // Pure white as HSL
+					navy: '#111111', // Dark navy
+					red: '#FF3131', // Brand red
+					light: '#FFFFFF', // Pure white
 				}
 			},
 			borderRadius: {
