@@ -1,5 +1,8 @@
 import React from 'react';
 import PageSEO from '@/components/seo/PageSEO';
+import Google2025SEOOptimizer from '@/components/seo/Google2025SEOOptimizer';
+import AEOOptimizer from '@/components/seo/AEOOptimizer';
+import LocalSEOBooster from '@/components/seo/LocalSEOBooster';
 import InternalLinkingSection from '@/components/seo/InternalLinkingSection';
 import CarWrapsContent from '@/components/services/car-wraps/CarWrapsContent';
 import { Helmet } from 'react-helmet-async';
@@ -7,30 +10,43 @@ import { Helmet } from 'react-helmet-async';
 const CarWrapsPage = () => {
   const domain = "https://www.wrappingchicago.com";
   
+  const carWrapKeywords = [
+    'personal car wraps Chicago', 'color change wraps', 'custom car graphics',
+    'vehicle personalization Chicago', 'automotive vinyl wraps', 'car wrap design'
+  ];
+
+  const carWrapFAQs = [
+    {
+      question: "How much does a car wrap cost in Chicago?",
+      answer: "Car wraps in Chicago typically cost $2,500-$4,500 for a full wrap depending on vehicle size and design complexity. Partial wraps start around $1,200."
+    },
+    {
+      question: "Will a wrap damage my car's paint?",
+      answer: "No, professional car wraps actually protect your original paint. Quality vinyl can be removed without damage when done properly."
+    }
+  ];
+  
   return (
     <>
-      <PageSEO 
-        title="Car Wraps Chicago | Premium Vehicle Wraps & Color Changes"
-        description="Professional car wraps in Chicago using premium 3M and Avery vinyl films. Complete color changes, custom graphics, and paint protection. Free quotes, certified installation, 5-year warranty on all car wrap services."
-        keywords={[
-          "car wraps chicago",
-          "vehicle wraps chicago", 
-          "color change wraps chicago",
-          "custom car wraps",
-          "3m car wraps chicago",
-          "avery car wraps",
-          "car wrap installation chicago",
-          "automotive vinyl wraps",
-          "chicago car graphics",
-          "professional car wraps"
-        ]}
-        canonicalUrl={`${domain}/car-wraps`}
-        h1="Professional Car Wraps Chicago"
-        h2={["Premium Vinyl Materials", "Expert Installation", "Custom Design Services"]}
-        h3={["3M Certified Installation", "5-Year Material Warranty", "Free Design Consultation"]}
-        pageType="service"
-        businessSchema={true}
-        serviceSchema={true}
+      <Google2025SEOOptimizer
+        pageTitle="Car Wraps Chicago | Make Your Ride Stand Out"
+        pageDescription="Want your car to turn heads? Our Chicago car wraps are perfect for personal vehicles. Custom colors, designs, and graphics that protect your paint while looking amazing."
+        businessType="general"
+        serviceArea={['Chicago', 'Evanston', 'Naperville', 'Schaumburg']}
+        primaryKeywords={carWrapKeywords}
+        faqData={carWrapFAQs}
+      />
+      
+      <AEOOptimizer
+        businessType="general"
+        location="Chicago"
+        serviceKeywords={carWrapKeywords}
+      />
+      
+      <LocalSEOBooster
+        cityName="Chicago"
+        businessType="general"
+        serviceRadius={30}
       />
       
       {/* Enhanced Schema for Car Wraps */}
@@ -72,10 +88,10 @@ const CarWrapsPage = () => {
         <section className="py-20 px-4 bg-gradient-to-br from-background via-background/80 to-primary/5">
           <div className="container mx-auto max-w-4xl text-center">
             <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary via-primary/80 to-accent bg-clip-text text-transparent">
-              Professional Car Wraps Chicago
+              Make Your Ride Stand Out
             </h1>
             <p className="text-xl text-muted-foreground mb-8">
-              Transform your vehicle with premium vinyl wraps. Expert installation, custom designs, and guaranteed results across Chicagoland.
+              Want your car to turn heads? We wrap personal vehicles with amazing colors and custom designs. Protect your paint while looking incredible on Chicago streets.
             </p>
           </div>
         </section>

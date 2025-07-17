@@ -12,24 +12,22 @@ const TruckWrapsPage = () => {
   return (
     <>
       <PageSEO 
-        title="Truck Wraps Chicago | Commercial Vehicle Graphics & Advertising"
-        description="Professional truck wraps in Chicago for commercial advertising and business branding. Custom graphics, fleet solutions, and durable vinyl installations. Transform pickup trucks, box trucks, and commercial vehicles with premium materials and expert craftsmanship."
+        title="Plumber & Contractor Truck Wraps Chicago | Turn Your Truck Into a Billboard"
+        description="Your work truck is driving around all day anyway - make it work for your business! Chicago plumbers, electricians, and contractors trust us for truck wraps that actually bring in more customers."
         keywords={[
-          "truck wraps chicago",
-          "commercial truck wraps",
-          "pickup truck wraps chicago",
-          "box truck graphics",
-          "commercial vehicle wraps",
-          "truck advertising chicago",
-          "fleet truck wraps",
-          "business truck graphics",
-          "truck lettering chicago",
-          "semi truck wraps"
+          "plumber truck wraps chicago",
+          "contractor truck graphics",
+          "electrician pickup truck wraps",
+          "HVAC truck lettering chicago",
+          "work truck advertising",
+          "service truck wraps",
+          "trade business vehicle graphics",
+          "chicago contractor truck wraps"
         ]}
         canonicalUrl={`${domain}/truck-wraps`}
-        h1="Professional Truck Wraps Chicago"
-        h2={["Commercial Vehicle Graphics", "Fleet Branding Solutions", "Durable Installation"]}
-        h3={["Heavy-Duty Materials", "Business Advertising", "Professional Results"]}
+        h1="Chicago Truck Wraps for Trade Professionals"
+        h2={["Work Truck Graphics That Get Results", "Professional Installation You Can Trust", "Won't Damage Your Paint"]}
+        h3={["Same Week Service", "Real Customer Stories", "All Chicago Suburbs"]}
         pageType="service"
         businessSchema={true}
         serviceSchema={true}
@@ -76,11 +74,11 @@ const TruckWrapsPage = () => {
             <div className="flex items-center justify-center mb-6">
               <Truck className="w-12 h-12 text-primary mr-4" />
               <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-primary via-primary/80 to-accent bg-clip-text text-transparent">
-                Professional Truck Wraps Chicago
+                Your Work Truck Should Work Harder
               </h1>
             </div>
             <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-              Transform your commercial trucks into powerful mobile billboards. Expert installation of durable vinyl graphics for maximum advertising impact across Chicagoland.
+              Chicago plumbers, electricians, and HVAC guys - your truck is already driving around all day. Make it bring in more customers with professional vehicle wraps that actually work.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="text-lg px-8">

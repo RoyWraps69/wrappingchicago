@@ -1,13 +1,9 @@
 
 import React from 'react';
-import { cities } from '@/data/cities';
-import EnhancedLocationPage from '@/components/location/EnhancedLocationPage';
+import TradeLocationPage from '@/components/location/TradeLocationPage';
 
 const ChicagoLocationPage = () => {
-  // Get Chicago city data
-  const chicagoCity = cities.find(city => city.slug === 'chicago') || cities[0];
-  
-  return <EnhancedLocationPage city={chicagoCity} />;
+  return <TradeLocationPage citySlug="chicago" businessType="general" />;
 };
 
 export default ChicagoLocationPage;

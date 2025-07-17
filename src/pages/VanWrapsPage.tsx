@@ -1,5 +1,8 @@
 import React from 'react';
 import PageSEO from '@/components/seo/PageSEO';
+import Google2025SEOOptimizer from '@/components/seo/Google2025SEOOptimizer';
+import AEOOptimizer from '@/components/seo/AEOOptimizer';
+import LocalSEOBooster from '@/components/seo/LocalSEOBooster';
 import InternalLinkingSection from '@/components/seo/InternalLinkingSection';
 import { Helmet } from 'react-helmet-async';
 import { Button } from '@/components/ui/button';
@@ -9,30 +12,43 @@ import { Phone, CheckCircle2, Truck, MessageSquare } from 'lucide-react';
 const VanWrapsPage = () => {
   const domain = "https://www.wrappingchicago.com";
   
+  const vanWrapKeywords = [
+    'electrician van wraps Chicago', 'plumber van graphics', 'service van wraps',
+    'cargo van advertising', 'delivery van lettering', 'contractor van graphics'
+  ];
+
+  const vanWrapFAQs = [
+    {
+      question: "How much do electrician van wraps cost?",
+      answer: "Electrician van wraps in Chicago typically cost $2,800-$4,200 depending on van size. Most electricians see increased calls within the first month."
+    },
+    {
+      question: "Can you wrap a work van that gets heavy daily use?",
+      answer: "Absolutely! We use commercial-grade vinyl that's designed for work vehicles. It handles job sites, loading, and daily wear better than regular wraps."
+    }
+  ];
+  
   return (
     <>
-      <PageSEO 
-        title="Van Wraps Chicago | Business Van Graphics & Mobile Advertising"
-        description="Professional van wraps in Chicago for business advertising and mobile marketing. Custom graphics for cargo vans, delivery vehicles, and service vans. Premium vinyl installation with expert design services across Chicagoland for maximum business visibility."
-        keywords={[
-          "van wraps chicago",
-          "cargo van wraps",
-          "delivery van graphics chicago",
-          "business van wraps",
-          "service van graphics",
-          "commercial van advertising",
-          "van lettering chicago",
-          "mobile advertising vans",
-          "transit van wraps",
-          "sprinter van graphics"
-        ]}
-        canonicalUrl={`${domain}/van-wraps`}
-        h1="Professional Van Wraps Chicago"
-        h2={["Business Van Graphics", "Mobile Advertising Solutions", "Custom Design Services"]}
-        h3={["Cargo Van Specialists", "Service Vehicle Branding", "Premium Materials"]}
-        pageType="service"
-        businessSchema={true}
-        serviceSchema={true}
+      <Google2025SEOOptimizer
+        pageTitle="Electrician & Plumber Van Wraps Chicago | Your Van is Your Billboard"
+        pageDescription="Turn your work van into a customer magnet! Chicago electricians and plumbers choose us for van wraps that actually work. Durable materials, professional look, more service calls."
+        businessType="electrician"
+        serviceArea={['Chicago', 'Evanston', 'Naperville', 'Schaumburg']}
+        primaryKeywords={vanWrapKeywords}
+        faqData={vanWrapFAQs}
+      />
+      
+      <AEOOptimizer
+        businessType="electrician"
+        location="Chicago"
+        serviceKeywords={vanWrapKeywords}
+      />
+      
+      <LocalSEOBooster
+        cityName="Chicago"
+        businessType="electrician"
+        serviceRadius={35}
       />
       
       {/* Enhanced Schema for Van Wraps */}
@@ -74,10 +90,10 @@ const VanWrapsPage = () => {
         <section className="py-20 px-4 bg-gradient-to-br from-background via-background/80 to-primary/5">
           <div className="container mx-auto max-w-4xl text-center">
             <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary via-primary/80 to-accent bg-clip-text text-transparent">
-              Professional Van Wraps Chicago
+              Your Van is Your Best Employee
             </h1>
             <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-              Transform your commercial van into a mobile billboard. Expert van wrap installation for maximum business exposure across Chicago and suburbs.
+              Chicago electricians and plumbers - your van is already out there every day. Make it bring in more customers with professional graphics that show you mean business.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="text-lg px-8">

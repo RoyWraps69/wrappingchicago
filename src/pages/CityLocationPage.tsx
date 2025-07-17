@@ -2,7 +2,7 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import { cities, findCityBySlug } from '@/data/cities';
-import EnhancedLocationPage from '@/components/location/EnhancedLocationPage';
+import TradeLocationPage from '@/components/location/TradeLocationPage';
 
 const CityLocationPage = () => {
   const { citySlug } = useParams();
@@ -41,7 +41,7 @@ const CityLocationPage = () => {
     return <div>City not found</div>;
   }
 
-  return <EnhancedLocationPage city={city} />;
+  return <TradeLocationPage citySlug={city.slug} businessType="general" />;
 };
 
 export default CityLocationPage;
