@@ -23,7 +23,8 @@ const HomePageSections = () => {
       
       <InfoBar />
       <QuickLinksBar />
-      <StickyContactButtons />
+      {/* Temporarily disabled StickyContactButtons - testing for white screen issue */}
+      {/* <StickyContactButtons /> */}
       
       <ServicesMainSection 
         fleetWrapVan={fleetWrapVan}
