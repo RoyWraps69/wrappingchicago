@@ -7,7 +7,7 @@ import AEOOptimizer from "@/components/seo/AEOOptimizer";
 import LocalSEOBooster from "@/components/seo/LocalSEOBooster";
 {/* Removed CoreWebVitalsOptimizer import - causing conflicts */}
 import { getAllKeywords } from "@/components/home/seo/HomeKeywords";
-import HomePageSections from "@/components/home/HomePageSections";
+import Hero from "@/components/home/Hero";
 
 const Index = () => {
   const tradeKeywords = [
@@ -41,10 +41,15 @@ const Index = () => {
       <LocalSEOBooster... />
       <HomeSEO /> */}
       
-      {/* DEBUGGING: Simple test component */}
+      {/* DEBUGGING: Testing Hero component only */}
       <div style={{padding: '20px', backgroundColor: 'red', color: 'white'}}>
-        <h1>TEST - If you see this, the page is working</h1>
-        <p>Current time: {new Date().toISOString()}</p>
+        <h1>TEST - Before Hero</h1>
+      </div>
+      
+      <Hero />
+      
+      <div style={{padding: '20px', backgroundColor: 'blue', color: 'white'}}>
+        <h1>TEST - After Hero</h1>
       </div>
     </>
   );
