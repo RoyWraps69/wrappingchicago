@@ -95,16 +95,20 @@ export const AIWrapProvider: React.FC<{ children: ReactNode }> = ({ children }) 
     }
   };
   
-  // Debug logging for context values - simplified to prevent infinite loops
+  // Debug logging for context values
   useEffect(() => {
-    // Only log when essential values change
     console.log("AIWrapContext values updated:", {
-      business: business.slice(0, 20) + (business.length > 20 ? '...' : ''),
-      ideasCount: generatedIdeas.length,
+      business,
+      description,
+      selectedVehicleType,
       isGenerating,
-      showResults
+      isGeneratingImage,
+      showResults,
+      ideasCount: generatedIdeas.length,
+      hasGeneratedImage: !!generatedImage,
+      progress: generationProgress
     });
-  }, [business, isGenerating, showResults, generatedIdeas.length]);
+  }, [business, description, selectedVehicleType, isGenerating, isGeneratingImage, showResults, generatedIdeas, generatedImage, generationProgress]);
 
   const value: AIWrapContextType = {
     business,

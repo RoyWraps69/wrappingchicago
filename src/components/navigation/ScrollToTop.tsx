@@ -13,7 +13,7 @@ const ScrollToTop = () => {
       behavior: 'auto' // Using 'auto' for immediate scrolling
     });
     
-    
+    console.log("ScrollToTop executed for path:", pathname);
     
     // Force focus to the top of the page for accessibility
     const main = document.querySelector('main');

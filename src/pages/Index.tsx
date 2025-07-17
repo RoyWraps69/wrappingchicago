@@ -31,29 +31,55 @@ const Index = () => {
     }
   ];
 
-  
+  console.log('Index component rendering...');
   
   return (
     <>
-      {/* ALL SEO COMPONENTS DISABLED FOR DEBUGGING */}
-      {/* <Google2025SEOOptimizer... />
-      <AEOOptimizer... />
-      <LocalSEOBooster... />
-      <HomeSEO /> */}
+      {/* Enhanced SEO Stack for Google 2025 */}
+      <Google2025SEOOptimizer
+        pageTitle="Chicago Vehicle Wraps for Plumbers, Electricians & HVAC | Get More Calls"
+        pageDescription="Turn your work truck into a customer magnet! Chicago's trade professionals trust us for vehicle wraps that get noticed. Same week service, won't hurt your paint."
+        businessType="general"
+        serviceArea={['Chicago', 'Evanston', 'Naperville', 'Schaumburg', 'Oak Park']}
+        primaryKeywords={tradeKeywords}
+        faqData={tradeFAQs}
+        reviewCount={247}
+        averageRating={4.9}
+      />
       
-      {/* DEBUGGING: Testing Hero step by step */}
-      <div style={{padding: '20px', backgroundColor: 'red', color: 'white'}}>
-        <h1>TEST - Before Hero</h1>
-      </div>
+      <AEOOptimizer
+        businessType="general"
+        location="Chicago"
+        serviceKeywords={tradeKeywords}
+      />
       
-      {/* Simple Hero replacement */}
-      <div style={{padding: '50px', backgroundColor: 'black', color: 'white'}}>
-        <h1>SIMPLE HERO TEST</h1>
-        <p>This replaces the broken Hero component</p>
-      </div>
+      <LocalSEOBooster
+        cityName="Chicago"
+        businessType="general"
+        serviceRadius={35}
+        neighboringCities={['Evanston', 'Naperville', 'Schaumburg', 'Oak Park', 'Cicero']}
+      />
       
-      <div style={{padding: '20px', backgroundColor: 'blue', color: 'white'}}>
-        <h1>TEST - After Hero Replacement</h1>
+      {/* Removed CoreWebVitalsOptimizer - causing conflicts */}
+      
+      {/* Legacy SEO components */}
+      <HomeSEO />
+      
+      {/* Page Content with Proper Heading Structure */}
+      <div className="min-h-screen">
+        {/* H1 is handled in Hero component */}
+        <Hero />
+        
+        {/* Internal Linking for SEO */}
+        <InternalLinkingSection />
+        
+        {/* Core sections with proper SEO structure */}
+        <section className="py-16">
+          <div className="container mx-auto">
+            <h2 className="text-3xl font-bold mb-8">Professional Vehicle Wrap Services</h2>
+            <p className="text-lg text-muted-foreground">Complete vehicle transformation solutions</p>
+          </div>
+        </section>
       </div>
     </>
   );

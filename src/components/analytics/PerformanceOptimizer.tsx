@@ -126,13 +126,22 @@ const PerformanceOptimizer: React.FC = () => {
       }
     };
 
-    // Optimize third-party scripts - simplified to prevent performance issues
+    // Optimize third-party scripts
     const optimizeThirdPartyScripts = () => {
-      // Reduced script loading that was causing white screen
-      // Only load essential scripts with longer delay
+      // Delay non-critical scripts
+      const delayedScripts = [
+        '//www.googletagmanager.com/gtag/js',
+        '//connect.facebook.net/en_US/fbevents.js'
+      ];
+      
       setTimeout(() => {
-        // Minimal script loading to prevent browser freeze
-      }, 5000); // Increased delay
+        delayedScripts.forEach(src => {
+          const script = document.createElement('script');
+          script.src = src;
+          script.async = true;
+          document.head.appendChild(script);
+        });
+      }, 3000); // Delay by 3 seconds
     };
 
     // Execute optimizations
@@ -141,17 +150,72 @@ const PerformanceOptimizer: React.FC = () => {
     optimizeCSS();
     optimizeThirdPartyScripts();
 
-    // Web Vitals monitoring - disabled to prevent performance issues
-    // The dynamic import was causing white screen issues
-    /*
+    // Web Vitals monitoring
     if (typeof window !== 'undefined') {
       import('web-vitals').then((webVitals) => {
-        // Web vitals tracking code...
+        if (webVitals.onCLS) {
+          webVitals.onCLS((metric) => {
+            if (window.gtag) {
+              window.gtag('event', 'web_vitals', {
+                event_category: 'Web Vitals',
+                event_label: 'CLS',
+                value: Math.round(metric.value * 1000)
+              });
+            }
+          });
+        }
+        
+        if (webVitals.onFID) {
+          webVitals.onFID((metric) => {
+            if (window.gtag) {
+              window.gtag('event', 'web_vitals', {
+                event_category: 'Web Vitals',
+                event_label: 'FID',
+                value: Math.round(metric.value)
+              });
+            }
+          });
+        }
+        
+        if (webVitals.onFCP) {
+          webVitals.onFCP((metric) => {
+            if (window.gtag) {
+              window.gtag('event', 'web_vitals', {
+                event_category: 'Web Vitals',
+                event_label: 'FCP',
+                value: Math.round(metric.value)
+              });
+            }
+          });
+        }
+        
+        if (webVitals.onLCP) {
+          webVitals.onLCP((metric) => {
+            if (window.gtag) {
+              window.gtag('event', 'web_vitals', {
+                event_category: 'Web Vitals',
+                event_label: 'LCP',
+                value: Math.round(metric.value)
+              });
+            }
+          });
+        }
+        
+        if (webVitals.onTTFB) {
+          webVitals.onTTFB((metric) => {
+            if (window.gtag) {
+              window.gtag('event', 'web_vitals', {
+                event_category: 'Web Vitals',
+                event_label: 'TTFB',
+                value: Math.round(metric.value)
+              });
+            }
+          });
+        }
       }).catch(error => {
         console.warn('Web Vitals not available:', error);
       });
     }
-    */
 
     // Resource hints for better performance
     const addResourceHints = () => {

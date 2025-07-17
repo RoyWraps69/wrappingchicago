@@ -174,8 +174,8 @@ function App() {
               </main>
               <Footer />
             </div>
-            {/* ALL SEO AND ANALYTICS DISABLED FOR DEBUGGING */}
-            {/* <SchemaValidator />
+            {/* Removed CoreWebVitalsOptimizer - causing conflicts */}
+            <SchemaValidator />
             <AdvancedSEOOptimizer />
             <CompetitorDominationSEO />
             <TechnicalSEOEnhancer />
@@ -184,7 +184,7 @@ function App() {
             <PerformanceOptimizer />
             <ConversionTracking />
             <GoogleAnalytics />
-            <FacebookPixel /> */}
+            <FacebookPixel />
           </BrowserRouter>
         </TooltipProvider>
       </QueryClientProvider>
