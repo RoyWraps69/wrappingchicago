@@ -4,6 +4,7 @@ import Google2025SEOOptimizer from '@/components/seo/Google2025SEOOptimizer';
 import AEOOptimizer from '@/components/seo/AEOOptimizer';
 import LocalSEOBooster from '@/components/seo/LocalSEOBooster';
 import { cities } from '@/data/cities';
+import { ChicagoKeywordStrategy, GeographicKeywords } from '@/data/ChicagoKeywordStrategy';
 
 interface TradeLocationPageProps {
   citySlug: string;
@@ -11,8 +12,8 @@ interface TradeLocationPageProps {
 }
 
 /**
- * Enhanced Trade-Focused Location Page
- * Optimized for Google 2025 algorithms with local SEO and trade targeting
+ * ULTIMATE Location Page for Maximum Google Domination
+ * Unique content per city with comprehensive keyword targeting
  */
 const TradeLocationPage: React.FC<TradeLocationPageProps> = ({
   citySlug,
@@ -21,23 +22,35 @@ const TradeLocationPage: React.FC<TradeLocationPageProps> = ({
   const city = cities.find(c => c.slug === citySlug) || cities[0];
   const domain = "https://www.wrappingchicago.com";
   
-  // Trade-specific content generation
-  const generateTradeContent = () => {
-    const tradeServices = {
-      plumber: 'plumbing trucks and vans',
-      electrician: 'electrical service vehicles and vans', 
-      hvac: 'heating and cooling trucks',
-      contractor: 'construction and contractor vehicles',
-      general: 'work trucks and commercial vehicles'
+  // Generate UNIQUE content per city + trade combination
+  const generateUniqueContent = () => {
+    const geoKeywords = GeographicKeywords[citySlug as keyof typeof GeographicKeywords] || GeographicKeywords.chicago;
+    const tradeKeywords = ChicagoKeywordStrategy.tradeSpecific[businessType] || ChicagoKeywordStrategy.primaryLongTail;
+    
+    // Unique city characteristics for authentic content
+    const cityCharacteristics = {
+      chicago: "bustling downtown area, diverse neighborhoods, heavy traffic for maximum vehicle exposure",
+      evanston: "Northwestern University community, educated demographics, tree-lined streets",
+      naperville: "family-oriented suburb, corporate headquarters, high-income professionals",
+      schaumburg: "major business district, Woodfield Mall traffic, corporate campuses"
     };
 
-    const tradeKeywords = [
-      `${businessType} vehicle wraps ${city.name}`,
-      `${businessType} truck graphics ${city.name} Illinois`,
-      `commercial vehicle wraps ${city.name}`,
-      `${businessType} van wraps near ${city.name}`,
-      `work truck advertising ${city.name}`
+    const combinedKeywords = [
+      ...tradeKeywords.slice(0, 3),
+      ...ChicagoKeywordStrategy.primaryLongTail.slice(0, 2),
+      geoKeywords.primary,
+      geoKeywords.longtail,
+      `vehicle wrap installation ${city.name} Illinois`,
+      `professional ${businessType} vehicle graphics ${city.name}`,
+      `commercial vehicle wraps ${city.name} area businesses`
     ];
+
+    return {
+      uniqueCharacteristics: cityCharacteristics[citySlug as keyof typeof cityCharacteristics] || cityCharacteristics.chicago,
+      keywords: combinedKeywords,
+      demographics: geoKeywords.demographics || "professional business community"
+    };
+  };
 
     const tradeFAQs = [
       {
