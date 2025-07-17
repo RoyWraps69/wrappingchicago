@@ -21,6 +21,7 @@ import AboutPage from "./pages/AboutPage";
 import PricingPage from "./pages/PricingPage";
 import ContactPage from "./pages/ContactPage";
 import BlogPage from "./pages/BlogPage";
+import BlogPostPage from "./pages/blog/BlogPostPage";
 import NotFound from "./pages/NotFound";
 import CarWrapsPage from "./pages/CarWrapsPage";
 import TruckWrapsPage from "./pages/TruckWrapsPage";
@@ -54,6 +55,10 @@ import AdvancedSEOOptimizer from './components/seo/AdvancedSEOOptimizer';
 import CompetitorDominationSEO from './components/seo/CompetitorDominationSEO';
 import TechnicalSEOEnhancer from './components/seo/TechnicalSEOEnhancer';
 import XMLSitemapGenerator from './components/seo/XMLSitemapGenerator';
+import PerformanceOptimizer from './components/analytics/PerformanceOptimizer';
+import ConversionTracking from './components/analytics/ConversionTracking';
+import GoogleAnalytics from './components/analytics/GoogleAnalytics';
+import FacebookPixel from './components/analytics/FacebookPixel';
 
 const queryClient = new QueryClient();
 
@@ -80,6 +85,7 @@ function App() {
                   <Route path="/faq" element={<FAQPage />} />
                   <Route path="/sitemap" element={<SitemapPage />} />
                   <Route path="/blog" element={<BlogPage />} />
+                  <Route path="/blog/:slug" element={<BlogPostPage />} />
                   <Route path="/service-areas" element={<ServiceAreasPage />} />
                   <Route path="/ai-wrap-ideas" element={<AIWrapIdeasPage />} />
                   <Route path="/glossary" element={<GlossaryPage />} />
@@ -137,6 +143,10 @@ function App() {
             <TechnicalSEOEnhancer />
             <XMLSitemapGenerator />
             <SEOHealthChecker />
+            <PerformanceOptimizer />
+            <ConversionTracking />
+            <GoogleAnalytics />
+            <FacebookPixel />
           </BrowserRouter>
         </TooltipProvider>
       </QueryClientProvider>

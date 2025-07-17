@@ -169,39 +169,36 @@ const PerformanceOptimizer: React.FC = () => {
           webVitals.onFID((metric) => {
             if (window.gtag) {
               window.gtag('event', 'web_vitals', {
-              event_category: 'Web Vitals',
-              event_label: 'FID',
-              value: Math.round(metric.value)
-            });
-          }
-        });
-
+                event_category: 'Web Vitals',
+                event_label: 'FID',
+                value: Math.round(metric.value)
+              });
+            }
+          });
         }
         
         if (webVitals.onFCP) {
           webVitals.onFCP((metric) => {
             if (window.gtag) {
               window.gtag('event', 'web_vitals', {
-              event_category: 'Web Vitals',
-              event_label: 'FCP',
-              value: Math.round(metric.value)
-            });
-          }
-        });
-
+                event_category: 'Web Vitals',
+                event_label: 'FCP',
+                value: Math.round(metric.value)
+              });
+            }
+          });
         }
         
         if (webVitals.onLCP) {
           webVitals.onLCP((metric) => {
             if (window.gtag) {
               window.gtag('event', 'web_vitals', {
-              event_category: 'Web Vitals',
-              event_label: 'LCP',
-              value: Math.round(metric.value)
-            });
-          }
-        });
-
+                event_category: 'Web Vitals',
+                event_label: 'LCP',
+                value: Math.round(metric.value)
+              });
+            }
+          });
         }
         
         if (webVitals.onTTFB) {
