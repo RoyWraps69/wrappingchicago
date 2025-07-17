@@ -30,7 +30,8 @@ const CoreWebVitalsOptimizer: React.FC = () => {
         if ('requestIdleCallback' in window) {
           requestIdleCallback(() => {
             const newScript = document.createElement('script');
-            newScript.src = script.dataset.src || '';
+            const htmlScript = script as HTMLScriptElement;
+            newScript.src = htmlScript.dataset.src || '';
             newScript.async = true;
             document.body.appendChild(newScript);
           });
@@ -65,9 +66,10 @@ const CoreWebVitalsOptimizer: React.FC = () => {
         interactionTimeout = setTimeout(() => {
           // Batch DOM updates
           if (e.target instanceof HTMLElement) {
-            e.target.style.transform = 'scale(0.98)';
+            const target = e.target as HTMLElement;
+            target.style.transform = 'scale(0.98)';
             requestAnimationFrame(() => {
-              e.target!.style.transform = '';
+              target.style.transform = '';
             });
           }
         }, 16); // 60fps target
@@ -102,32 +104,30 @@ const CoreWebVitalsOptimizer: React.FC = () => {
     }
 
     // Core Web Vitals monitoring
-    if ('web-vitals' in window || window.webVitals) {
-      import('web-vitals').then(({ getCLS, getFID, getFCP, getLCP, getTTFB }) => {
-        const sendToAnalytics = ({ name, value, id }: any) => {
-          // Enhanced analytics tracking
-          if (typeof gtag !== 'undefined') {
-            gtag('event', name, {
-              custom_parameter_1: Math.round(name === 'CLS' ? value * 1000 : value),
-              custom_parameter_2: id,
-              event_category: 'Core Web Vitals',
-              non_interaction: true,
-            });
-          }
-          
-          // Console logging for development
-          console.log(`${name}: ${value} (ID: ${id})`);
-        };
+    import('web-vitals').then((webVitals) => {
+      const sendToAnalytics = ({ name, value, id }: any) => {
+        // Enhanced analytics tracking
+        if (typeof (window as any).gtag !== 'undefined') {
+          (window as any).gtag('event', name, {
+            custom_parameter_1: Math.round(name === 'CLS' ? value * 1000 : value),
+            custom_parameter_2: id,
+            event_category: 'Core Web Vitals',
+            non_interaction: true,
+          });
+        }
+        
+        // Console logging for development
+        console.log(`${name}: ${value} (ID: ${id})`);
+      };
 
-        getCLS(sendToAnalytics);
-        getFID && getFID(sendToAnalytics); // FID monitoring
-        getFCP(sendToAnalytics);
-        getLCP(sendToAnalytics);
-        getTTFB(sendToAnalytics);
-      }).catch(() => {
-        console.log('Web Vitals library not available');
-      });
-    }
+      if (webVitals.onCLS) webVitals.onCLS(sendToAnalytics);
+      if (webVitals.onFID) webVitals.onFID(sendToAnalytics);
+      if (webVitals.onFCP) webVitals.onFCP(sendToAnalytics);
+      if (webVitals.onLCP) webVitals.onLCP(sendToAnalytics);
+      if (webVitals.onTTFB) webVitals.onTTFB(sendToAnalytics);
+    }).catch(() => {
+      console.log('Web Vitals library not available');
+    });
 
   }, []);
 
