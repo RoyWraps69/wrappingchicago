@@ -200,13 +200,13 @@ const LocationProjects = ({ cityName }: LocationProjectsProps) => {
             asChild
             className="bg-brand-navy hover:bg-blue-900 text-white mr-4"
           >
-            <Link to="/services/commercial-graphics">Commercial Wraps</Link>
+            <Link to="/services">Commercial Wraps</Link>
           </Button>
           <Button
             asChild
             className="bg-brand-navy hover:bg-blue-900 text-white"
           >
-            <Link to="/services/color-change-wraps">Color Change Wraps</Link>
+            <Link to="/color-change-wraps">Color Change Wraps</Link>
           </Button>
         </div>
       </div>

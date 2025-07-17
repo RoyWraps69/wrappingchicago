@@ -15,11 +15,11 @@ const QuickLinks = () => {
         <Link to="/contact" className="text-white/70 hover:text-white hover:translate-x-1 transition-all">Contact</Link>
         <Link to="/ai-wrap-ideas" className="text-white/70 hover:text-white hover:translate-x-1 transition-all">AI Wrap Designer</Link>
         <Link to="/locations" className="text-white/70 hover:text-white hover:translate-x-1 transition-all">Service Areas</Link>
-        <Link to="/services/fleet-wraps" className="text-white/70 hover:text-white hover:translate-x-1 transition-all">Fleet Wraps</Link>
-        <Link to="/services/car-wraps" className="text-white/70 hover:text-white hover:translate-x-1 transition-all">Car Wraps</Link>
-        <Link to="/services/truck-wraps" className="text-white/70 hover:text-white hover:translate-x-1 transition-all">Truck Wraps</Link>
-        <Link to="/services/van-wraps" className="text-white/70 hover:text-white hover:translate-x-1 transition-all">Van Wraps</Link>
-        <Link to="/services/color-change-wraps" className="text-white/70 hover:text-white hover:translate-x-1 transition-all">Color Change</Link>
+        <Link to="/fleet-wraps" className="text-white/70 hover:text-white hover:translate-x-1 transition-all">Fleet Wraps</Link>
+        <Link to="/car-wraps" className="text-white/70 hover:text-white hover:translate-x-1 transition-all">Car Wraps</Link>
+        <Link to="/truck-wraps" className="text-white/70 hover:text-white hover:translate-x-1 transition-all">Truck Wraps</Link>
+        <Link to="/van-wraps" className="text-white/70 hover:text-white hover:translate-x-1 transition-all">Van Wraps</Link>
+        <Link to="/color-change-wraps" className="text-white/70 hover:text-white hover:translate-x-1 transition-all">Color Change</Link>
       </div>
       
       <h3 className="text-xl font-bold mt-8 mb-4 uppercase text-white">Service Areas</h3>

@@ -107,7 +107,7 @@ const ServiceMenu = () => {
               </ListItem>
               
               <ListItem
-                to="/services/commercial-graphics"
+                to="/services"
                 title="Commercial Graphics"
                 className="flex flex-col"
               >
@@ -118,7 +118,7 @@ const ServiceMenu = () => {
               </ListItem>
               
               <ListItem
-                to="/services/protective-films"
+                to="/services"
                 title="Protective Films"
                 className="flex flex-col"
               >
@@ -129,7 +129,7 @@ const ServiceMenu = () => {
               </ListItem>
               
               <ListItem
-                to="/services/vehicle-lettering"
+                to="/services"
                 title="Vehicle Lettering"
                 className="flex flex-col"
               >
@@ -140,7 +140,7 @@ const ServiceMenu = () => {
               </ListItem>
               
               <ListItem
-                to="/services/specialty-wraps"
+                to="/services"
                 title="Specialty Wraps"
                 className="flex flex-col"
               >
@@ -173,7 +173,7 @@ const ServiceMenu = () => {
               </ListItem>
               
               <ListItem
-                to="/services/retail-graphics"
+                to="/services"
                 title="Retail Graphics"
                 className="flex flex-col"
               >
