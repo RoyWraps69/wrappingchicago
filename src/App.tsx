@@ -32,6 +32,16 @@ import LuxuryExoticWrapsPage from "./pages/LuxuryExoticWrapsPage";
 import AIWrapIdeasPage from "./pages/AIWrapIdeasPage";
 import GlossaryPage from "./pages/GlossaryPage";
 import StatsPage from "./pages/StatsPage";
+
+// Trade-specific pages
+import PlumbingWrapsPage from "./pages/trades/PlumbingWrapsPage";
+import HVACWrapsPage from "./pages/trades/HVACWrapsPage";
+import ElectricalWrapsPage from "./pages/trades/ElectricalWrapsPage";
+import MoversWrapsPage from "./pages/trades/MoversWrapsPage";
+import LogisticsWrapsPage from "./pages/trades/LogisticsWrapsPage";
+import DeliveryWrapsPage from "./pages/trades/DeliveryWrapsPage";
+
+// Legal and other pages
 import PrivacyPolicyPage from "./pages/PrivacyPolicyPage";
 import TermsOfServicePage from "./pages/TermsOfServicePage";
 import ReturnPolicyPage from "./pages/ReturnPolicyPage";
@@ -90,6 +100,14 @@ function App() {
                   <Route path="/color-change-wraps" element={<ColorChangeWrapsPage />} />
                   <Route path="/luxury-exotic-wraps" element={<LuxuryExoticWrapsPage />} />
                   <Route path="/designer-wraps" element={<DesignerWrapsPage />} />
+                  
+                  {/* Trade-specific pages */}
+                  <Route path="/plumbing-wraps" element={<PlumbingWrapsPage />} />
+                  <Route path="/hvac-wraps" element={<HVACWrapsPage />} />
+                  <Route path="/electrical-wraps" element={<ElectricalWrapsPage />} />
+                  <Route path="/movers-wraps" element={<MoversWrapsPage />} />
+                  <Route path="/logistics-wraps" element={<LogisticsWrapsPage />} />
+                  <Route path="/delivery-wraps" element={<DeliveryWrapsPage />} />
                   
                   {/* Location pages */}
                   <Route path="/locations" element={<LocationsPage />} />
