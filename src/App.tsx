@@ -136,8 +136,8 @@ function App() {
               </main>
               <Footer />
             </div>
-            {/* Temporarily disabled components to fix blank screen */}
-            {/* <SchemaValidator />
+            {/* Removed CoreWebVitalsOptimizer - causing conflicts */}
+            <SchemaValidator />
             <AdvancedSEOOptimizer />
             <CompetitorDominationSEO />
             <TechnicalSEOEnhancer />
@@ -146,7 +146,7 @@ function App() {
             <PerformanceOptimizer />
             <ConversionTracking />
             <GoogleAnalytics />
-            <FacebookPixel /> */}
+            <FacebookPixel />
           </BrowserRouter>
         </TooltipProvider>
       </QueryClientProvider>

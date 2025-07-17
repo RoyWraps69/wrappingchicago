@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Phone } from 'lucide-react';
 
 const Hero = () => {
+  console.log('Hero component rendering...');
   return (
     <div className="hero-fullscreen bg-black relative flex items-center justify-center min-h-screen overflow-hidden">
       {/* Hero background image */}

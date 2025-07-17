@@ -31,6 +31,8 @@ const Index = () => {
     }
   ];
 
+  console.log('Index component rendering...');
+  
   return (
     <>
       {/* Enhanced SEO Stack for Google 2025 */}
