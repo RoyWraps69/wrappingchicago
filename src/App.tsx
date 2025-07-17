@@ -14,7 +14,10 @@ import FAQPage from "./pages/FAQPage";
 import SitemapPage from "./pages/SitemapPage";
 import LocationPage from "./pages/LocationPage";
 import LocationsPage from "./pages/LocationsPage";
-import ChicagoLocationPage from "./pages/ChicagoLocationPage";
+import ChicagoLocationPage from "./pages/locations/ChicagoLocationPage";
+import EvanstonLocationPage from "./pages/locations/EvanstonLocationPage";
+import NapervilleLocationPage from "./pages/locations/NapervilleLocationPage";
+import SchaumburgLocationPage from "./pages/locations/SchaumburgLocationPage";
 import CityLocationPage from "./pages/CityLocationPage";
 import GalleryPage from "./pages/GalleryPage";
 import AboutPage from "./pages/AboutPage";
@@ -122,6 +125,9 @@ function App() {
                   {/* Specific city routes - MUST come before dynamic routes */}
                   <Route path="/vehicle-wraps-chicago-il" element={<ChicagoLocationPage />} />
                   <Route path="/chicago" element={<ChicagoLocationPage />} />
+                  <Route path="/evanston" element={<EvanstonLocationPage />} />
+                  <Route path="/naperville" element={<NapervilleLocationPage />} />
+                  <Route path="/schaumburg" element={<SchaumburgLocationPage />} />
                   <Route path="/truck-wraps-chicago" element={<TruckWrapsChicagoPage />} />
                   
                   {/* Dynamic city routes - MUST be after specific routes */}
