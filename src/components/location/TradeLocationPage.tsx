@@ -48,31 +48,31 @@ const TradeLocationPage: React.FC<TradeLocationPageProps> = ({
     return {
       uniqueCharacteristics: cityCharacteristics[citySlug as keyof typeof cityCharacteristics] || cityCharacteristics.chicago,
       keywords: combinedKeywords,
-      demographics: geoKeywords.demographics || "professional business community"
+      demographics: (geoKeywords as any).demographics || "professional business community"
     };
   };
 
-    const tradeFAQs = [
-      {
-        question: `How much do ${businessType} vehicle wraps cost in ${city.name}?`,
-        answer: `${businessType.charAt(0).toUpperCase() + businessType.slice(1)} vehicle wraps in ${city.name} typically cost $2,500-$4,500 depending on vehicle size. Most ${businessType}s see increased calls within the first month of installation.`
-      },
-      {
-        question: `Do you service ${businessType}s in ${city.name} and surrounding areas?`,
-        answer: `Yes! We regularly work with ${businessType}s throughout ${city.name} and all surrounding communities. Same week installation available with free quotes.`
-      }
-    ];
+  const uniqueContent = generateUniqueContent();
+  
+  const tradeFAQs = [
+    {
+      question: `How much do ${businessType} vehicle wraps cost in ${city.name}?`,
+      answer: `${businessType.charAt(0).toUpperCase() + businessType.slice(1)} vehicle wraps in ${city.name} typically cost $2,500-$4,500 depending on vehicle size. Most ${businessType}s see increased calls within the first month of installation.`
+    },
+    {
+      question: `Do you service ${businessType}s in ${city.name} and surrounding areas?`,
+      answer: `Yes! We regularly work with ${businessType}s throughout ${city.name} and all surrounding communities. Same week installation available with free quotes.`
+    }
+  ];
 
-    return {
-      title: `${businessType.charAt(0).toUpperCase() + businessType.slice(1)} Vehicle Wraps ${city.name} IL | Get More Customers`,
-      description: `${city.name} ${businessType}s trust us for vehicle wraps that actually work. Turn your work truck into a customer magnet. Professional installation, won't hurt your paint, real results.`,
-      services: tradeServices[businessType],
-      keywords: tradeKeywords,
-      faqs: tradeFAQs
-    };
+  const content = {
+    title: `${businessType.charAt(0).toUpperCase() + businessType.slice(1)} Vehicle Wraps ${city.name} IL | Get More Customers`,
+    description: `${city.name} ${businessType}s trust us for vehicle wraps that actually work. Turn your work truck into a customer magnet. Professional installation, won't hurt your paint, real results.`,
+    keywords: uniqueContent.keywords,
+    faqs: tradeFAQs,
+    uniqueCharacteristics: uniqueContent.uniqueCharacteristics,
+    demographics: uniqueContent.demographics
   };
-
-  const content = generateTradeContent();
 
   return (
     <>
@@ -155,9 +155,9 @@ const TradeLocationPage: React.FC<TradeLocationPageProps> = ({
             </h2>
             
             <div className="grid md:grid-cols-3 gap-8">
-              <div className="text-center p-6 bg-white rounded-lg shadow-md">
+               <div className="text-center p-6 bg-white rounded-lg shadow-md">
                 <h3 className="text-xl font-semibold mb-4 text-brand-navy">Work Truck Wraps</h3>
-                <p className="text-gray-600">Complete wraps for {content.services} that handle daily job site use and weather.</p>
+                <p className="text-gray-600">Complete wraps for work trucks and commercial vehicles that handle daily job site use and weather.</p>
               </div>
               <div className="text-center p-6 bg-white rounded-lg shadow-md">
                 <h3 className="text-xl font-semibold mb-4 text-brand-navy">Professional Lettering</h3>
