@@ -28,6 +28,7 @@ import HoffmanEstatesLocationPage from "./pages/locations/HoffmanEstatesLocation
 import McLeanCountyLocationPage from "./pages/locations/McLeanCountyLocationPage";
 import OakParkLocationPage from "./pages/locations/OakParkLocationPage";
 import AuroraLocationPage from "./pages/locations/AuroraLocationPage";
+import JolietLocationPage from "./pages/locations/JolietLocationPage";
 import CityLocationPage from "./pages/CityLocationPage";
 import GalleryPage from "./pages/GalleryPage";
 import AboutPage from "./pages/AboutPage";
@@ -146,9 +147,10 @@ function App() {
                   <Route path="/elgin" element={<ElginLocationPage />} />
                   <Route path="/hoffman-estates" element={<HoffmanEstatesLocationPage />} />
                   <Route path="/mclean-county" element={<McLeanCountyLocationPage />} />
-                  <Route path="/oak-park" element={<OakParkLocationPage />} />
-                  <Route path="/aurora" element={<AuroraLocationPage />} />
-                  <Route path="/truck-wraps-chicago" element={<TruckWrapsChicagoPage />} />
+          <Route path="/oak-park" element={<OakParkLocationPage />} />
+          <Route path="/aurora" element={<AuroraLocationPage />} />
+          <Route path="/joliet" element={<JolietLocationPage />} />
+          <Route path="/truck-wraps-chicago" element={<TruckWrapsChicagoPage />} />
                   
                   {/* Dynamic city routes - MUST be after specific routes */}
                   <Route path="/vehicle-wraps-:citySlug-il" element={<CityLocationPage />} />
