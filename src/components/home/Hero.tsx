@@ -28,12 +28,12 @@ const Hero = () => {
       <div className="hero-content relative z-20 text-center max-w-6xl mx-auto px-4">
         {/* H1 - Primary SEO Target */}
         <h1 className="text-5xl sm:text-6xl md:text-7xl font-extrabold uppercase tracking-wider text-white mb-6 text-center speakable">
-          Fleet Wraps That Dominate Chicago.
+          Your Truck is Your Best Billboard
         </h1>
         
         {/* H2 - Supporting SEO Content */}
         <h2 className="text-xl md:text-2xl font-medium text-white mb-10 max-w-2xl mx-auto text-center speakable">
-          From Box Trucks to Corvettes — Premium 3M Vehicle Wraps That Make Your Brand Impossible to Ignore
+          Chicago Plumbers, Electricians & HVAC Guys: Get More Calls with Professional Vehicle Wraps That Actually Work
         </h2>
         
         <div className="flex flex-col sm:flex-row justify-center gap-4 mb-10">
@@ -67,19 +67,19 @@ const Hero = () => {
         <div className="flex flex-wrap justify-center gap-x-8 gap-y-2 text-white text-sm">
           <span className="flex items-center text-white speakable">
             <span className="w-1.5 h-1.5 bg-brand-red rounded-full mr-2"></span>
-            Premium 3M Materials
+            800+ Trade Vehicles Wrapped
           </span>
           <span className="flex items-center text-white speakable">
             <span className="w-1.5 h-1.5 bg-brand-red rounded-full mr-2"></span>
-            16,000+ Wraps Completed
+            Same Week Installation
           </span>
           <span className="flex items-center text-white speakable">
             <span className="w-1.5 h-1.5 bg-brand-red rounded-full mr-2"></span>
-            5-Year Warranty
+            Won't Damage Your Paint
           </span>
           <span className="flex items-center text-white speakable">
             <span className="w-1.5 h-1.5 bg-brand-red rounded-full mr-2"></span>
-            Serving All of Chicago
+            All Chicago Suburbs
           </span>
         </div>
       </div>

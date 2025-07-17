@@ -12,12 +12,12 @@ const Index = () => {
       {/* Enhanced SEO for Homepage */}
       <HomeSEO />
       <PageSEO 
-        title="Vehicle Wraps Chicago | Car Wraps, Truck Wraps & Fleet Graphics 2024"
-        description="Chicago's premier vehicle wrap specialists serving the entire metropolitan area with custom car wraps, truck wraps, van wraps, and fleet graphics using premium 3M vinyl. Professional installation and design consultation across Chicagoland with certified technicians."
+        title="Chicago Vehicle Wraps for Plumbers, Electricians & HVAC | Get More Calls"
+        description="Turn your work truck into a customer magnet! Chicago's trade professionals trust us for vehicle wraps that get noticed. Plumbers, electricians, HVAC techs - we wrap your trucks so they work harder for your business."
         keywords={getAllKeywords()}
-        h1="Vehicle Wraps Chicago - Premium Car Wraps & Fleet Graphics"
-        h2={["Professional Vehicle Wrap Services", "Premium Materials & Installation", "Chicago Metro Coverage"]}
-        h3={["3M Certified Installers", "Free Design Consultation", "5-Year Warranty"]}
+        h1="Chicago Vehicle Wraps That Get You More Jobs"
+        h2={["Trade Vehicle Wraps That Work", "Professional Installation You Can Trust", "All Chicago Area Coverage"]}
+        h3={["Won't Hurt Your Paint", "Same Week Service", "Real Business Results"]}
         pageType="homepage"
         businessSchema={true}
         serviceSchema={true}
