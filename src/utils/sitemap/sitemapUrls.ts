@@ -61,43 +61,7 @@ export function generateSitemapUrls(): SitemapURL[] {
       priority: PRIORITIES.MEDIUM_HIGH
     },
     {
-      url: `${domain}/commercial-graphics`,
-      lastmod: currentDate,
-      changefreq: CHANGE_FREQUENCIES.MONTHLY,
-      priority: PRIORITIES.MEDIUM_HIGH
-    },
-    {
       url: `${domain}/luxury-exotic-wraps`,
-      lastmod: currentDate,
-      changefreq: CHANGE_FREQUENCIES.MONTHLY,
-      priority: PRIORITIES.MEDIUM_HIGH
-    },
-    {
-      url: `${domain}/partial-wraps`,
-      lastmod: currentDate,
-      changefreq: CHANGE_FREQUENCIES.MONTHLY,
-      priority: PRIORITIES.MEDIUM_HIGH
-    },
-    {
-      url: `${domain}/protective-films`,
-      lastmod: currentDate,
-      changefreq: CHANGE_FREQUENCIES.MONTHLY,
-      priority: PRIORITIES.MEDIUM_HIGH
-    },
-    {
-      url: `${domain}/vehicle-lettering`,
-      lastmod: currentDate,
-      changefreq: CHANGE_FREQUENCIES.MONTHLY,
-      priority: PRIORITIES.MEDIUM_HIGH
-    },
-    {
-      url: `${domain}/specialty-wraps`,
-      lastmod: currentDate,
-      changefreq: CHANGE_FREQUENCIES.MONTHLY,
-      priority: PRIORITIES.MEDIUM_HIGH
-    },
-    {
-      url: `${domain}/retail-graphics`,
       lastmod: currentDate,
       changefreq: CHANGE_FREQUENCIES.MONTHLY,
       priority: PRIORITIES.MEDIUM_HIGH
@@ -183,6 +147,62 @@ export function generateSitemapUrls(): SitemapURL[] {
       lastmod: currentDate,
       changefreq: CHANGE_FREQUENCIES.WEEKLY,
       priority: PRIORITIES.LOW_MEDIUM
+    },
+    {
+      url: `${domain}/blog`,
+      lastmod: currentDate,
+      changefreq: CHANGE_FREQUENCIES.WEEKLY,
+      priority: PRIORITIES.LOW_MEDIUM
+    },
+    {
+      url: `${domain}/service-areas`,
+      lastmod: currentDate,
+      changefreq: CHANGE_FREQUENCIES.MONTHLY,
+      priority: PRIORITIES.MEDIUM
+    },
+    {
+      url: `${domain}/glossary`,
+      lastmod: currentDate,
+      changefreq: CHANGE_FREQUENCIES.MONTHLY,
+      priority: PRIORITIES.LOW_MEDIUM
+    },
+    {
+      url: `${domain}/stats`,
+      lastmod: currentDate,
+      changefreq: CHANGE_FREQUENCIES.MONTHLY,
+      priority: PRIORITIES.LOW
+    },
+    {
+      url: `${domain}/sitemap`,
+      lastmod: currentDate,
+      changefreq: CHANGE_FREQUENCIES.MONTHLY,
+      priority: PRIORITIES.LOW
+    },
+    
+    // Legal pages
+    {
+      url: `${domain}/privacy-policy`,
+      lastmod: currentDate,
+      changefreq: CHANGE_FREQUENCIES.YEARLY,
+      priority: PRIORITIES.LOW
+    },
+    {
+      url: `${domain}/terms`,
+      lastmod: currentDate,
+      changefreq: CHANGE_FREQUENCIES.YEARLY,
+      priority: PRIORITIES.LOW
+    },
+    {
+      url: `${domain}/return-policy`,
+      lastmod: currentDate,
+      changefreq: CHANGE_FREQUENCIES.YEARLY,
+      priority: PRIORITIES.LOW
+    },
+    {
+      url: `${domain}/shipping`,
+      lastmod: currentDate,
+      changefreq: CHANGE_FREQUENCIES.YEARLY,
+      priority: PRIORITIES.LOW
     }
   ];
 }

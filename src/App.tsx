@@ -21,7 +21,22 @@ import AboutPage from "./pages/AboutPage";
 import PricingPage from "./pages/PricingPage";
 import ContactPage from "./pages/ContactPage";
 import BlogPage from "./pages/BlogPage";
-import NotFoundPage from "./pages/NotFoundPage";
+import NotFound from "./pages/NotFound";
+import CarWrapsPage from "./pages/CarWrapsPage";
+import TruckWrapsPage from "./pages/TruckWrapsPage";
+import VanWrapsPage from "./pages/VanWrapsPage";
+import FleetWrapsPage from "./pages/FleetWrapsPage";
+import ColorChangeWrapsPage from "./pages/ColorChangeWrapsPage";
+import DesignerWrapsPage from "./pages/DesignerWrapsPage";
+import LuxuryExoticWrapsPage from "./pages/LuxuryExoticWrapsPage";
+import AIWrapIdeasPage from "./pages/AIWrapIdeasPage";
+import GlossaryPage from "./pages/GlossaryPage";
+import StatsPage from "./pages/StatsPage";
+import PrivacyPolicyPage from "./pages/PrivacyPolicyPage";
+import TermsOfServicePage from "./pages/TermsOfServicePage";
+import ReturnPolicyPage from "./pages/ReturnPolicyPage";
+import ShippingPage from "./pages/ShippingPage";
+import TruckWrapsChicagoPage from "./pages/TruckWrapsChicagoPage";
 import SchemaValidator from "./components/seo/SchemaValidator";
 import SEOHealthChecker from "./components/seo/SEOHealthChecker";
 import CoreWebVitalsOptimizer from "./components/performance/CoreWebVitalsOptimizer";
@@ -44,33 +59,55 @@ function App() {
               <Header />
               <main className="flex-grow">
                 <Routes>
+                  {/* Homepage */}
                   <Route path="/" element={<Index />} />
+                  
+                  {/* Core pages - HIGH PRIORITY ROUTES FIRST */}
                   <Route path="/contact" element={<ContactPage />} />
-                  <Route path="/services" element={<ServicesPage />} />
-                  <Route path="/services/:service" element={<ServicesPage />} />
-                  <Route path="/car-wraps" element={<ServicesPage />} />
-                  <Route path="/truck-wraps" element={<ServicesPage />} />
-                  <Route path="/van-wraps" element={<ServicesPage />} />
-                  <Route path="/fleet-wraps" element={<ServicesPage />} />
-                  <Route path="/color-change-wraps" element={<ServicesPage />} />
-                  <Route path="/luxury-exotic-wraps" element={<ServicesPage />} />
-                  <Route path="/designer-wraps" element={<ServicesPage />} />
-                  <Route path="/service-areas" element={<ServiceAreasPage />} />
+                  <Route path="/about" element={<AboutPage />} />
+                  <Route path="/gallery" element={<GalleryPage />} />
+                  <Route path="/pricing" element={<PricingPage />} />
                   <Route path="/faq" element={<FAQPage />} />
                   <Route path="/sitemap" element={<SitemapPage />} />
-                  <Route path="/gallery" element={<GalleryPage />} />
-                  <Route path="/about" element={<AboutPage />} />
-                  <Route path="/pricing" element={<PricingPage />} />
-                  <Route path="/locations" element={<LocationsPage />} />
                   <Route path="/blog" element={<BlogPage />} />
+                  <Route path="/service-areas" element={<ServiceAreasPage />} />
+                  <Route path="/ai-wrap-ideas" element={<AIWrapIdeasPage />} />
+                  <Route path="/glossary" element={<GlossaryPage />} />
+                  <Route path="/stats" element={<StatsPage />} />
+                  
+                  {/* Legal pages */}
+                  <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+                  <Route path="/terms" element={<TermsOfServicePage />} />
+                  <Route path="/return-policy" element={<ReturnPolicyPage />} />
+                  <Route path="/shipping" element={<ShippingPage />} />
+                  
+                  {/* Service pages */}
+                  <Route path="/services" element={<ServicesPage />} />
+                  <Route path="/car-wraps" element={<CarWrapsPage />} />
+                  <Route path="/truck-wraps" element={<TruckWrapsPage />} />
+                  <Route path="/van-wraps" element={<VanWrapsPage />} />
+                  <Route path="/fleet-wraps" element={<FleetWrapsPage />} />
+                  <Route path="/color-change-wraps" element={<ColorChangeWrapsPage />} />
+                  <Route path="/luxury-exotic-wraps" element={<LuxuryExoticWrapsPage />} />
+                  <Route path="/designer-wraps" element={<DesignerWrapsPage />} />
+                  
+                  {/* Location pages */}
+                  <Route path="/locations" element={<LocationsPage />} />
                   <Route path="/locations/:locationSlug" element={<LocationPage />} />
                   
-                  {/* Location Routes */}
+                  {/* Specific city routes - MUST come before dynamic routes */}
                   <Route path="/vehicle-wraps-chicago-il" element={<ChicagoLocationPage />} />
                   <Route path="/chicago" element={<ChicagoLocationPage />} />
+                  <Route path="/truck-wraps-chicago" element={<TruckWrapsChicagoPage />} />
+                  
+                  {/* Dynamic city routes - MUST be after specific routes */}
                   <Route path="/vehicle-wraps-:citySlug-il" element={<CityLocationPage />} />
+                  
+                  {/* Catch-all city route - MUST be last before 404 */}
                   <Route path="/:citySlug" element={<CityLocationPage />} />
-                  <Route path="*" element={<NotFoundPage />} />
+                  
+                  {/* 404 - MUST be absolute last */}
+                  <Route path="*" element={<NotFound />} />
                 </Routes>
               </main>
               <Footer />

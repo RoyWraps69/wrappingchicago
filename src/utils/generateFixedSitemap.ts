@@ -51,7 +51,7 @@ Allow: /
 # Sitemaps
 Sitemap: ${domain}/sitemap.xml
 
-# High-priority content
+# High-priority content - All service pages
 Allow: /about
 Allow: /services/
 Allow: /car-wraps
@@ -59,14 +59,35 @@ Allow: /truck-wraps
 Allow: /van-wraps
 Allow: /fleet-wraps
 Allow: /color-change-wraps
-Allow: /commercial-graphics
+Allow: /luxury-exotic-wraps
+Allow: /designer-wraps
 Allow: /gallery
 Allow: /contact
+Allow: /pricing
+Allow: /faq
+Allow: /blog
+Allow: /ai-wrap-ideas
+
+# Location pages
 Allow: /locations
 Allow: /chicago
+Allow: /truck-wraps-chicago
+Allow: /vehicle-wraps-chicago-il
 Allow: /vehicle-wraps-evanston-il
 Allow: /vehicle-wraps-naperville-il
 Allow: /vehicle-wraps-schaumburg-il
+Allow: /service-areas
+
+# Utility pages
+Allow: /sitemap
+Allow: /glossary
+Allow: /stats
+
+# Legal pages
+Allow: /privacy-policy
+Allow: /terms
+Allow: /return-policy
+Allow: /shipping
 
 # Block low-value pages
 Disallow: /search
