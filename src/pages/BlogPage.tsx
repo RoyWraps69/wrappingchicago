@@ -1,9 +1,11 @@
 
-import React from 'react';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import BreadcrumbNavigation from '@/components/seo/BreadcrumbNavigation';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Calendar, User, ArrowRight, Tag } from 'lucide-react';
+import { Calendar, User, ArrowRight, Tag, Search } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
 import MetaTags from '@/components/seo/MetaTags';
 
 interface BlogPost {
@@ -18,6 +20,9 @@ interface BlogPost {
 }
 
 const BlogPage: React.FC = () => {
+  const [selectedCategory, setSelectedCategory] = useState("All");
+  const [searchTerm, setSearchTerm] = useState("");
+  
   const blogPosts: BlogPost[] = [
     {
       id: 1,
@@ -83,13 +88,59 @@ const BlogPage: React.FC = () => {
 
   const categories = ["All", "Trends", "Maintenance", "Business", "Education", "Design"];
 
+  // Filter posts based on category and search term
+  const filteredPosts = blogPosts.filter(post => {
+    const matchesCategory = selectedCategory === "All" || post.category === selectedCategory;
+    const matchesSearch = searchTerm === "" || 
+      post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      post.excerpt.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      post.category.toLowerCase().includes(searchTerm.toLowerCase());
+    return matchesCategory && matchesSearch;
+  });
+
+  // Enhanced SEO structured data
+  const blogStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "@id": "https://www.wrappingchicago.com/blog#blog",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.wrappingchicago.com/blog"
+    },
+    "name": "Vehicle Wrap Blog - Wrapping Chicago",
+    "description": "Expert insights, trends, and tips from Chicago's premier vehicle wrap professionals",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Wrapping Chicago",
+      "@id": "https://www.wrappingchicago.com/#organization"
+    },
+    "blogPost": blogPosts.map(post => ({
+      "@type": "BlogPosting",
+      "@id": `https://www.wrappingchicago.com/blog/${post.slug}`,
+      "headline": post.title,
+      "description": post.excerpt,
+      "image": `https://www.wrappingchicago.com${post.image}`,
+      "datePublished": post.date,
+      "author": {
+        "@type": "Person",
+        "name": post.author
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Wrapping Chicago"
+      },
+      "url": `https://www.wrappingchicago.com/blog/${post.slug}`
+    }))
+  };
+
   return (
     <>
       <MetaTags
         title="Vehicle Wrap Blog - Tips, Trends & Insights | Wrapping Chicago"
         description="Stay updated with the latest vehicle wrap trends, maintenance tips, business insights, and design ideas from Chicago's premier wrap experts."
-        keywords="vehicle wrap blog, wrap trends, car wrap tips, truck wrap maintenance, fleet wrap ROI, vehicle wrap design"
+        keywords="vehicle wrap blog, wrap trends, car wrap tips, truck wrap maintenance, fleet wrap ROI, vehicle wrap design, Chicago vehicle wraps, wrap care tips"
         canonicalUrl="/blog"
+        structuredData={blogStructuredData}
       />
       
       <div className="flex flex-col min-h-screen">
@@ -111,13 +162,28 @@ const BlogPage: React.FC = () => {
           {/* Blog Content */}
           <section className="py-16">
             <div className="container mx-auto px-4">
+              {/* Search Bar */}
+              <div className="max-w-md mx-auto mb-8">
+                <div className="relative">
+                  <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
+                  <Input
+                    type="text"
+                    placeholder="Search articles..."
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                    className="pl-10"
+                  />
+                </div>
+              </div>
+
               {/* Category Filter */}
               <div className="flex flex-wrap justify-center gap-3 mb-12">
                 {categories.map((category) => (
                   <Button
                     key={category}
-                    variant={category === "All" ? "default" : "outline"}
-                    className={category === "All" ? "bg-brand-red hover:bg-red-700" : ""}
+                    variant={category === selectedCategory ? "default" : "outline"}
+                    className={category === selectedCategory ? "bg-brand-red hover:bg-red-700" : ""}
+                    onClick={() => setSelectedCategory(category)}
                   >
                     <Tag className="h-4 w-4 mr-2" />
                     {category}
@@ -125,9 +191,18 @@ const BlogPage: React.FC = () => {
                 ))}
               </div>
 
+              {/* Results Count */}
+              <div className="text-center mb-8">
+                <p className="text-gray-600">
+                  Showing {filteredPosts.length} of {blogPosts.length} articles
+                  {selectedCategory !== "All" && ` in ${selectedCategory}`}
+                  {searchTerm && ` matching "${searchTerm}"`}
+                </p>
+              </div>
+
               {/* Blog Posts Grid */}
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {blogPosts.map((post) => (
+                {filteredPosts.map((post) => (
                   <Card key={post.id} className="hover:shadow-lg transition-shadow group">
                     <div className="aspect-video overflow-hidden rounded-t-lg">
                       <img
@@ -156,10 +231,12 @@ const BlogPage: React.FC = () => {
                     </CardHeader>
                     <CardContent>
                       <p className="text-gray-600 mb-4">{post.excerpt}</p>
-                      <Button variant="outline" className="group/btn">
-                        Read More
-                        <ArrowRight className="h-4 w-4 ml-2 group-hover/btn:translate-x-1 transition-transform" />
-                      </Button>
+                      <Link to={`/blog/${post.slug}`}>
+                        <Button variant="outline" className="group/btn">
+                          Read More
+                          <ArrowRight className="h-4 w-4 ml-2 group-hover/btn:translate-x-1 transition-transform" />
+                        </Button>
+                      </Link>
                     </CardContent>
                   </Card>
                 ))}
