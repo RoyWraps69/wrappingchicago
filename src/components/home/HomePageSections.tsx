@@ -27,11 +27,36 @@ const HomePageSections = () => {
       {/* Temporarily disabled StickyContactButtons - testing for white screen issue */}
       {/* <StickyContactButtons /> */}
       
-      <ServicesMainSection 
-        fleetWrapVan={fleetWrapVan}
-        colorChangeVan={colorChangeVan}
-        commercialGraphics={commercialGraphics}
-      />
+      <section aria-labelledby="services-gallery-heading" className="py-12">
+        <div className="container mx-auto px-4">
+          <h2 id="services-gallery-heading" className="text-3xl font-bold text-center mb-8 text-brand-navy">
+            Our Services Gallery
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            <div className="aspect-video bg-gray-200 rounded-lg overflow-hidden">
+              <img 
+                src="https://images.unsplash.com/photo-1619767886558-efdc259cde1a?w=400&h=300&fit=crop" 
+                alt="Fleet wrap services"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+            <div className="aspect-video bg-gray-200 rounded-lg overflow-hidden">
+              <img 
+                src="https://images.unsplash.com/photo-1502877338535-766e1452684a?w=400&h=300&fit=crop" 
+                alt="Color change vehicle wrap"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+            <div className="aspect-video bg-gray-200 rounded-lg overflow-hidden">
+              <img 
+                src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop" 
+                alt="Commercial graphics installation"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
       
       <section aria-labelledby="trust-heading">
         <h2 id="trust-heading" className="sr-only">Why Choose Wrapping Chicago</h2>
