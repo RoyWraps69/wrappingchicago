@@ -41,8 +41,11 @@ const Index = () => {
       <LocalSEOBooster... />
       <HomeSEO /> */}
       
-      {/* Page Content */}
-      <HomePageSections />
+      {/* DEBUGGING: Simple test component */}
+      <div style={{padding: '20px', backgroundColor: 'red', color: 'white'}}>
+        <h1>TEST - If you see this, the page is working</h1>
+        <p>Current time: {new Date().toISOString()}</p>
+      </div>
     </>
   );
 };
