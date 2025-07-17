@@ -20,10 +20,6 @@ export type { City } from './types/city';
 export const findCityBySlug = (slug: string): City | undefined => {
   if (!slug) return undefined;
   
-  // Log all available cities for debugging
-  console.log("Looking for city with slug:", slug);
-  console.log("Available slugs:", cities.map(c => c.slug).join(', '));
-  
   // Normalize the slug
   const normalizedSlug = slug.toLowerCase().trim();
   

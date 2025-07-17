@@ -2,6 +2,7 @@
 import React from 'react';
 import InfoBar from '@/components/home/InfoBar';
 import QuickLinksBar from '@/components/home/QuickLinksBar';
+import StickyContactButtons from '@/components/home/StickyContactButtons';
 
 import TrustIndicators from '@/components/home/TrustIndicators';
 import WhyChooseUsSection from '@/components/home/WhyChooseUsSection';
@@ -24,8 +25,7 @@ const HomePageSections = () => {
       
       <InfoBar />
       <QuickLinksBar />
-      {/* Temporarily disabled StickyContactButtons - testing for white screen issue */}
-      {/* <StickyContactButtons /> */}
+      <StickyContactButtons />
       
       <section aria-labelledby="services-gallery-heading" className="py-12">
         <div className="container mx-auto px-4">

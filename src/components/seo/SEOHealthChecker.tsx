@@ -122,8 +122,9 @@ const SEOHealthChecker: React.FC = () => {
       console.groupEnd();
     };
 
-    // Run after page load
-    setTimeout(runSEOHealthCheck, 2000);
+    // Run after page load - only once
+    const timer = setTimeout(runSEOHealthCheck, 5000);
+    return () => clearTimeout(timer);
   }, []);
 
   return null;
