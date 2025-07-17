@@ -7,12 +7,13 @@ import TrustIndicators from '@/components/home/TrustIndicators';
 import WhyChooseUsSection from '@/components/home/WhyChooseUsSection';
 import InstallationFacility from '@/components/home/InstallationFacility';
 import VehicleWrapFAQ from '@/components/home/VehicleWrapFAQ';
+import PhotoGallery from '@/components/home/PhotoGallery';
 import { ExploreServices, ServiceAreaLinks } from '@/components/home/indexed-sections';
 import EasyButtonSection from '@/components/home/EasyButtonSection';
 import CallToAction from '@/components/CallToAction';
 import { useGalleryImages } from '@/hooks/useGalleryImages';
 import { cities } from '@/data/cities';
-import { HeroSection, ServicesMainSection, AreasServedMainSection } from './sections';
+import { HeroSection, ServicesMainSection } from './sections';
 
 const HomePageSections = () => {
   const { fleetWrapVan, colorChangeVan, commercialGraphics } = useGalleryImages();
@@ -46,7 +47,7 @@ const HomePageSections = () => {
         <InstallationFacility />
       </section>
       
-      <AreasServedMainSection cities={cities} />
+      <PhotoGallery />
       
       <section aria-labelledby="faq-heading">
         <h2 id="faq-heading" className="sr-only">Vehicle Wrap FAQ</h2>
@@ -55,10 +56,6 @@ const HomePageSections = () => {
       
       <section aria-labelledby="explore-heading">
         <ExploreServices />
-      </section>
-      
-      <section aria-labelledby="locations-heading">
-        <ServiceAreaLinks cities={cities} />
       </section>
       
       <EasyButtonSection />
