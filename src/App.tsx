@@ -180,7 +180,7 @@ function App() {
             <CompetitorDominationSEO />
             <TechnicalSEOEnhancer />
             <XMLSitemapGenerator />
-            <SEOHealthChecker />
+            {/* <SEOHealthChecker /> */}
             <PerformanceOptimizer />
             <ConversionTracking />
             <GoogleAnalytics />
