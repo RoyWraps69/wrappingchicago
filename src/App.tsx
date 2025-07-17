@@ -181,7 +181,7 @@ function App() {
             <TechnicalSEOEnhancer />
             <XMLSitemapGenerator />
             {/* <SEOHealthChecker /> */}
-            <PerformanceOptimizer />
+            {/* <PerformanceOptimizer /> */}
             <ConversionTracking />
             <GoogleAnalytics />
             <FacebookPixel />

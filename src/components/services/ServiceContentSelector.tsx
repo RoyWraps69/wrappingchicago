@@ -8,7 +8,7 @@ interface ServiceContentSelectorProps {
 }
 
 const ServiceContentSelector: React.FC<ServiceContentSelectorProps> = ({ path }) => {
-  console.log("ServiceContentSelector received path:", path);
+  
   
   // Normalize path by removing /services/ prefix if present and removing trailing slashes
   const normalizedPath = path.replace(/^\/services\//, '').replace(/\/$/, '');
@@ -16,7 +16,7 @@ const ServiceContentSelector: React.FC<ServiceContentSelectorProps> = ({ path })
   // Handle direct routes without the /services/ prefix
   const servicePath = normalizedPath || 'services';
   
-  console.log("ServiceContentSelector using normalized path:", servicePath);
+  
   
   const shouldShowCompactGlossary = servicePath !== 'services';
   const glossaryMaxResults = servicePath === 'services' ? 8 : undefined;

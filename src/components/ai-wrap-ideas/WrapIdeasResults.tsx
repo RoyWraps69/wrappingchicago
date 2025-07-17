@@ -16,19 +16,7 @@ const WrapIdeasResults = () => {
     isGeneratingImage 
   } = useAIWrap();
 
-  // Debug logging
-  useEffect(() => {
-    console.log("WrapIdeasResults rendered with:", {
-      generatedIdeasCount: generatedIdeas.length,
-      isGenerating,
-      hasGeneratedImage: !!generatedImage,
-      isGeneratingImage
-    });
-
-    if (generatedIdeas.length > 0) {
-      console.log("First idea:", generatedIdeas[0]);
-    }
-  }, [generatedIdeas, isGenerating, generatedImage, isGeneratingImage]);
+  // Debug logging removed for performance
   
   return (
     <div className="mt-12">
