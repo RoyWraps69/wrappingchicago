@@ -94,7 +94,7 @@ const LocationPageContent: React.FC<LocationPageContentProps> = ({ location }) =
               </Badge>
             </div>
             <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary via-primary/80 to-accent bg-clip-text text-transparent">
-              Vehicle Wraps {location.name}
+              #1 Vehicle Wraps {location.name} | Car Wraps, Truck Wraps & Fleet Graphics
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
               Professional carwraps, truck wraps, and fleet graphics that turn your vehicles into powerful marketing assets throughout Chicago and {location.county}. Transform your business presence with custom vehicle wraps designed for {location.name}'s competitive market.
@@ -209,7 +209,7 @@ const LocationPageContent: React.FC<LocationPageContentProps> = ({ location }) =
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Why {location.name} Businesses Choose Our Vehicle Wraps
+              Best Vehicle Wrap Company {location.name} Illinois | Premium Carwraps & Truck Graphics
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Real stories from real businesses who transformed their success with professional vehicle wraps
@@ -242,7 +242,7 @@ const LocationPageContent: React.FC<LocationPageContentProps> = ({ location }) =
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Chicago-Tested Vehicle Wrap Services That Drive Results
+              Professional Car Wraps, Truck Wraps & Fleet Graphics {location.name} IL
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               From carwraps that command attention to truck wraps that win contracts, we deliver vehicle graphics that work as hard as Chicago's trades and business professionals
@@ -276,7 +276,7 @@ const LocationPageContent: React.FC<LocationPageContentProps> = ({ location }) =
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Our {location.name} Vehicle Wrap Process
+              Vehicle Wrap Installation Process {location.name} | Custom Auto Wraps & Commercial Graphics
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               From consultation to completion, we ensure every detail meets our high standards
@@ -289,7 +289,7 @@ const LocationPageContent: React.FC<LocationPageContentProps> = ({ location }) =
                 <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
                   <span className="text-2xl font-bold text-primary-foreground">1</span>
                 </div>
-                <CardTitle>Free Consultation</CardTitle>
+                <h3 className="text-xl font-bold">Free Vehicle Wrap Consultation {location.name}</h3>
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground">
@@ -303,7 +303,7 @@ const LocationPageContent: React.FC<LocationPageContentProps> = ({ location }) =
                 <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
                   <span className="text-2xl font-bold text-primary-foreground">2</span>
                 </div>
-                <CardTitle>Custom Design</CardTitle>
+                <h3 className="text-xl font-bold">Custom Car Wrap Design {location.name}</h3>
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground">
@@ -317,7 +317,7 @@ const LocationPageContent: React.FC<LocationPageContentProps> = ({ location }) =
                 <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
                   <span className="text-2xl font-bold text-primary-foreground">3</span>
                 </div>
-                <CardTitle>Professional Installation</CardTitle>
+                <h3 className="text-xl font-bold">Professional Vehicle Wrap Installation</h3>
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground">
@@ -331,7 +331,7 @@ const LocationPageContent: React.FC<LocationPageContentProps> = ({ location }) =
                 <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
                   <span className="text-2xl font-bold text-primary-foreground">4</span>
                 </div>
-                <CardTitle>Quality Guarantee</CardTitle>
+                <h3 className="text-xl font-bold">Vehicle Wrap Quality Guarantee</h3>
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground">
@@ -348,7 +348,7 @@ const LocationPageContent: React.FC<LocationPageContentProps> = ({ location }) =
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Vehicle Wrap Questions from {location.name} Customers
+              Vehicle Wraps FAQ {location.name} | Car Wrap Cost, Installation & Maintenance
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Answers to the most common questions we receive from {location.name} residents and businesses
@@ -358,7 +358,7 @@ const LocationPageContent: React.FC<LocationPageContentProps> = ({ location }) =
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             <Card>
               <CardHeader>
-                <CardTitle className="text-lg">How long do vehicle wraps last in {location.name}?</CardTitle>
+                <h3 className="text-lg font-bold">How long do vehicle wraps last in {location.name}?</h3>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
@@ -371,7 +371,7 @@ const LocationPageContent: React.FC<LocationPageContentProps> = ({ location }) =
 
             <Card>
               <CardHeader>
-                <CardTitle className="text-lg">Do you offer mobile service in {location.name}?</CardTitle>
+                <h3 className="text-lg font-bold">Do you offer mobile vehicle wrap service in {location.name}?</h3>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
@@ -383,7 +383,7 @@ const LocationPageContent: React.FC<LocationPageContentProps> = ({ location }) =
 
             <Card>
               <CardHeader>
-                <CardTitle className="text-lg">What's the cost of vehicle wraps in {location.name}?</CardTitle>
+                <h3 className="text-lg font-bold">What's the cost of vehicle wraps in {location.name}?</h3>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
@@ -396,7 +396,7 @@ const LocationPageContent: React.FC<LocationPageContentProps> = ({ location }) =
 
             <Card>
               <CardHeader>
-                <CardTitle className="text-lg">Can wraps be removed without damaging paint?</CardTitle>
+                <h3 className="text-lg font-bold">Can vehicle wraps be removed without damaging paint?</h3>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
@@ -491,7 +491,7 @@ const LocationPageContent: React.FC<LocationPageContentProps> = ({ location }) =
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Proudly Serving {location.name} Since 2014
+              Trusted Vehicle Wrap Experts Serving {location.name} Since 2014 | 3M Certified Installers
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Deep local knowledge and personalized service for every customer
@@ -570,7 +570,7 @@ const LocationPageContent: React.FC<LocationPageContentProps> = ({ location }) =
       <section className="py-20 px-4 bg-gradient-to-r from-primary/10 via-primary/5 to-accent/10">
         <div className="container mx-auto max-w-4xl text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Transform Your Vehicle in {location.name} Today
+            Get Professional Vehicle Wraps {location.name} IL | Free Quotes & Same-Day Service
           </h2>
           <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
             Join hundreds of satisfied customers throughout {location.name} and {location.county} who trust 
