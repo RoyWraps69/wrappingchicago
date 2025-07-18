@@ -60,6 +60,9 @@ const HomeSEO = () => {
         <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
         <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
         
+        {/* OTTO UUID for SEO tracking */}
+        <meta name="otto-uuid" content="9f6f3de6-77b6-40f9-8e7a-7e851522164f" />
+        
         {/* Enhanced Local Business SEO */}
         <meta name="geo.region" content="US-IL" />
         <meta name="geo.placename" content="Chicago" />
