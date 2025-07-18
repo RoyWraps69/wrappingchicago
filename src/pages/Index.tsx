@@ -5,15 +5,52 @@ import InternalLinkingSection from "@/components/seo/InternalLinkingSection";
 import Google2025SEOOptimizer from "@/components/seo/Google2025SEOOptimizer";
 import AEOOptimizer from "@/components/seo/AEOOptimizer";
 import LocalSEOBooster from "@/components/seo/LocalSEOBooster";
+import AdvancedSEODominator from "@/components/seo/AdvancedSEODominator";
+import FeaturedSnippetOptimizer from "@/components/seo/FeaturedSnippetOptimizer";
+import ReviewSchemaGenerator, { chicagoVehicleWrapReviews } from "@/components/seo/ReviewSchemaGenerator";
+import CompetitorAnalysisOptimizer from "@/components/seo/CompetitorAnalysisOptimizer";
 {/* Removed CoreWebVitalsOptimizer import - causing conflicts */}
 import { getAllKeywords } from "@/components/home/seo/HomeKeywords";
 import Hero from "@/components/home/Hero";
 
 const Index = () => {
   const tradeKeywords = [
-    'plumber truck wraps Chicago', 'electrician van wraps', 'HVAC vehicle graphics',
-    'contractor truck lettering', 'trade vehicle wraps Chicago', 'service truck advertising',
-    'Chicago commercial vehicle wraps', 'trade business vehicle graphics'
+    'vehicle wraps Chicago', 'car wraps Chicago', 'truck wraps Chicago', 'van wraps Chicago',
+    'fleet wraps Chicago', 'commercial vehicle wraps', 'custom car wraps', 'vinyl wraps Chicago',
+    'auto wraps Chicago', 'vehicle graphics Chicago', 'car wrap cost', 'truck wrap cost',
+    'van wrap cost', 'vehicle wrap installation', 'mobile vehicle wraps', 'same day car wrap',
+    'professional vehicle wraps', '3M vehicle wraps', 'Avery Dennison wraps', 'vehicle wrap near me',
+    'car wrap near me', 'truck wrap near me', 'wrap shop near me', 'Chicago vehicle wrap company',
+    'best vehicle wraps Chicago', 'premium car wraps', 'commercial truck wraps', 'fleet vehicle wraps'
+  ];
+
+  const featuredSnippetQuestions = [
+    {
+      question: "How much does a vehicle wrap cost in Chicago?",
+      answer: "Vehicle wrap costs in Chicago range from $1,200 for partial wraps to $5,000+ for full premium wraps. Car wraps average $2,500-$4,000, truck wraps $3,500-$6,000, and van wraps $2,800-$4,500. Cost factors include vehicle size, wrap coverage, design complexity, and material quality.",
+      category: 'cost' as const
+    },
+    {
+      question: "How long do vehicle wraps last?", 
+      answer: "Professional vehicle wraps last 5-7 years with proper care. Premium 3M and Avery Dennison materials are designed to withstand Chicago weather, UV rays, and daily wear while protecting your original paint.",
+      category: 'durability' as const
+    },
+    {
+      question: "Will a vehicle wrap damage my car's paint?",
+      answer: "No, professional vehicle wraps protect your paint. High-quality vinyl with proper installation preserves your original paint finish and can be removed without damage by certified installers.",
+      category: 'process' as const
+    }
+  ];
+
+  const uniqueAdvantages = [
+    "Only Chicago wrap shop with 24/7 mobile installation service",
+    "AI-powered design preview technology for instant mockups", 
+    "Same-day wrap repair and touch-up services",
+    "Exclusive partnership with 3M for latest materials",
+    "GPS fleet tracking integration for business customers",
+    "Real-time ROI tracking and marketing analytics",
+    "Extended 5-year comprehensive warranty program",
+    "Green vehicle wrap recycling program"
   ];
 
   const tradeFAQs = [
