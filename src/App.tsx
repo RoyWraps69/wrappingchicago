@@ -92,6 +92,7 @@ import PerformanceOptimizer from './components/analytics/PerformanceOptimizer';
 import ConversionTracking from './components/analytics/ConversionTracking';
 import GoogleAnalytics from './components/analytics/GoogleAnalytics';
 import FacebookPixel from './components/analytics/FacebookPixel';
+import GoogleReadinessAudit from './components/seo/GoogleReadinessAudit';
 
 const queryClient = new QueryClient();
 
@@ -214,6 +215,7 @@ function App() {
             <ConversionTracking />
             <GoogleAnalytics />
             <FacebookPixel />
+            <GoogleReadinessAudit />
           </BrowserRouter>
         </TooltipProvider>
       </QueryClientProvider>
