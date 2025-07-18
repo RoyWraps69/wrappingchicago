@@ -34,6 +34,20 @@ import BerwynLocationPage from "./pages/locations/BerwynLocationPage";
 import WheatonLocationPage from "./pages/locations/WheatonLocationPage";
 import DownersGroveLocationPage from "./pages/locations/DownersGroveLocationPage";
 import BolingbrookLocationPage from "./pages/locations/BolingbrookLocationPage";
+// New Chicago Area Location Pages
+import LakeviewChicagoPage from "./pages/locations/LakeviewChicagoPage";
+import LoganSquareChicagoPage from "./pages/locations/LoganSquareChicagoPage";
+import AndersonvilleChicagoPage from "./pages/locations/AndersonvilleChicagoPage";
+import BucktownChicagoPage from "./pages/locations/BucktownChicagoPage";
+import GoldCoastChicagoPage from "./pages/locations/GoldCoastChicagoPage";
+import ArlingtonHeightsILPage from "./pages/locations/ArlingtonHeightsILPage";
+import OakLawnILPage from "./pages/locations/OakLawnILPage";
+import TinleyParkILPage from "./pages/locations/TinleyParkILPage";
+import OrlandParkILPage from "./pages/locations/OrlandParkILPage";
+import PalatineILPage from "./pages/locations/PalatineILPage";
+import ElmhurstILPage from "./pages/locations/ElmhurstILPage";
+import LombardILPage from "./pages/locations/LombardILPage";
+import GlenEllynILPage from "./pages/locations/GlenEllynILPage";
 import CityLocationPage from "./pages/CityLocationPage";
 import GalleryPage from "./pages/GalleryPage";
 import AboutPage from "./pages/AboutPage";
@@ -161,6 +175,21 @@ function App() {
           <Route path="/downers-grove" element={<DownersGroveLocationPage />} />
           <Route path="/bolingbrook" element={<BolingbrookLocationPage />} />
           <Route path="/truck-wraps-chicago" element={<TruckWrapsChicagoPage />} />
+          
+          {/* New Chicago Area Location Routes */}
+          <Route path="/lakeview-chicago" element={<LakeviewChicagoPage />} />
+          <Route path="/logan-square-chicago" element={<LoganSquareChicagoPage />} />
+          <Route path="/andersonville-chicago" element={<AndersonvilleChicagoPage />} />
+          <Route path="/bucktown-chicago" element={<BucktownChicagoPage />} />
+          <Route path="/gold-coast-chicago" element={<GoldCoastChicagoPage />} />
+          <Route path="/arlington-heights-il" element={<ArlingtonHeightsILPage />} />
+          <Route path="/oak-lawn-il" element={<OakLawnILPage />} />
+          <Route path="/tinley-park-il" element={<TinleyParkILPage />} />
+          <Route path="/orland-park-il" element={<OrlandParkILPage />} />
+          <Route path="/palatine-il" element={<PalatineILPage />} />
+          <Route path="/elmhurst-il" element={<ElmhurstILPage />} />
+          <Route path="/lombard-il" element={<LombardILPage />} />
+          <Route path="/glen-ellyn-il" element={<GlenEllynILPage />} />
                   
                   {/* Dynamic city routes - MUST be after specific routes */}
                   <Route path="/vehicle-wraps-:citySlug-il" element={<CityLocationPage />} />
