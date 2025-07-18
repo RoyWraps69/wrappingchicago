@@ -81,20 +81,7 @@ import TermsOfServicePage from "./pages/TermsOfServicePage";
 import ReturnPolicyPage from "./pages/ReturnPolicyPage";
 import ShippingPage from "./pages/ShippingPage";
 import TruckWrapsChicagoPage from "./pages/TruckWrapsChicagoPage";
-import SchemaValidator from "./components/seo/SchemaValidator";
-import SEOHealthChecker from "./components/seo/SEOHealthChecker";
-// import CoreWebVitalsOptimizer from "./components/performance/CoreWebVitalsOptimizer";
-import AdvancedSEOOptimizer from './components/seo/AdvancedSEOOptimizer';
-import CompetitorDominationSEO from './components/seo/CompetitorDominationSEO';
-import TechnicalSEOEnhancer from './components/seo/TechnicalSEOEnhancer';
-import XMLSitemapGenerator from './components/seo/XMLSitemapGenerator';
-import PerformanceOptimizer from './components/analytics/PerformanceOptimizer';
-import ConversionTracking from './components/analytics/ConversionTracking';
-import GoogleAnalytics from './components/analytics/GoogleAnalytics';
-import FacebookPixel from './components/analytics/FacebookPixel';
-import GoogleReadinessAudit from './components/seo/GoogleReadinessAudit';
-import Missing2025Requirements from './components/seo/Missing2025Requirements';
-import ImageSEOOptimizer from './components/seo/ImageSEOOptimizer';
+import UnifiedSEOSystem from './components/seo/UnifiedSEOSystem';
 import InternalLinkingHub from './components/navigation/InternalLinkingHub';
 
 const queryClient = new QueryClient();
@@ -207,20 +194,8 @@ function App() {
               </main>
               <Footer />
             </div>
-            {/* Removed CoreWebVitalsOptimizer - causing conflicts */}
-            <SchemaValidator />
-            <AdvancedSEOOptimizer />
-            <CompetitorDominationSEO />
-            <TechnicalSEOEnhancer />
-            <XMLSitemapGenerator />
-            <SEOHealthChecker />
-            <PerformanceOptimizer />
-            <ConversionTracking />
-            <GoogleAnalytics />
-            <FacebookPixel />
-            <GoogleReadinessAudit />
-            <Missing2025Requirements />
-            <ImageSEOOptimizer />
+            {/* Unified SEO System - Single source of truth */}
+            <UnifiedSEOSystem />
             <InternalLinkingHub />
           </BrowserRouter>
         </TooltipProvider>
