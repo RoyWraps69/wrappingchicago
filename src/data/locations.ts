@@ -93,7 +93,7 @@ export const chicagoLocations: Location[] = [
   },
   {
     name: "Oak Brook",
-    slug: "oak-brook", 
+    slug: "oak-brook-illinois",
     county: "DuPage County",
     zipCodes: ["60523"],
     landmarks: ["Oakbrook Center", "Drake Hotel", "Oak Brook Golf Club", "Mayslake Peabody Estate"],
