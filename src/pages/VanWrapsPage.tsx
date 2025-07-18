@@ -13,26 +13,33 @@ const VanWrapsPage = () => {
   const domain = "https://www.wrappingchicago.com";
   
   const vanWrapKeywords = [
-    'electrician van wraps Chicago', 'plumber van graphics', 'service van wraps',
-    'cargo van advertising', 'delivery van lettering', 'contractor van graphics'
+    'van wraps Chicago', 'commercial van wraps', 'van wrap cost', 'van wrap near me',
+    'cargo van wraps', 'delivery van graphics', 'service van wraps', 'work van wraps',
+    'transit van wraps', 'sprinter van wraps', 'van wrap installation', 'mobile van wraps',
+    'business van wraps', 'van graphics', 'custom van wraps', 'vinyl van wraps',
+    'fleet van wraps', 'commercial vehicle graphics', 'van wrap design', 'van wrap removal'
   ];
 
   const vanWrapFAQs = [
     {
-      question: "How much do electrician van wraps cost?",
-      answer: "Electrician van wraps in Chicago typically cost $2,800-$4,200 depending on van size. Most electricians see increased calls within the first month."
+      question: "How much does a van wrap cost in Chicago?",
+      answer: "Van wrap cost varies by size and design. Standard cargo van wraps cost $2,800-$4,200, sprinter van wraps $3,500-$5,000. Cost to wrap a van depends on vehicle size, wrap coverage, and design complexity."
     },
     {
-      question: "Can you wrap a work van that gets heavy daily use?",
-      answer: "Absolutely! We use commercial-grade vinyl that's designed for work vehicles. It handles job sites, loading, and daily wear better than regular wraps."
+      question: "Can you wrap work vans that see heavy daily use?",
+      answer: "Yes! Our commercial van wraps use heavy-duty vinyl designed for work vehicles. Van wrap installation includes protective coatings that handle job sites, loading, and daily wear."
+    },
+    {
+      question: "Do you offer mobile van wrap installation?",
+      answer: "We provide mobile van wraps service throughout Chicago. Our installers can wrap your van at your business location to minimize downtime."
     }
   ];
   
   return (
     <>
       <Google2025SEOOptimizer
-        pageTitle="Electrician & Plumber Van Wraps Chicago | Your Van is Your Billboard"
-        pageDescription="Turn your work van into a customer magnet! Chicago electricians and plumbers choose us for van wraps that actually work. Durable materials, professional look, more service calls."
+        pageTitle="Van Wraps Chicago | Commercial Van Graphics & Vehicle Wrap Installation Near Me"
+        pageDescription="Professional van wraps Chicago! Commercial van graphics, cargo van wraps, transit van branding. Mobile van wrap installation, same day service. Van wrap cost from $2,800. 3M vinyl materials."
         businessType="electrician"
         serviceArea={['Chicago', 'Evanston', 'Naperville', 'Schaumburg']}
         primaryKeywords={vanWrapKeywords}
@@ -90,10 +97,10 @@ const VanWrapsPage = () => {
         <section className="py-20 px-4 bg-gradient-to-br from-background via-background/80 to-primary/5">
           <div className="container mx-auto max-w-4xl text-center">
             <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary via-primary/80 to-accent bg-clip-text text-transparent">
-              Your Van is Your Best Employee
+              Professional Van Wraps Chicago | Commercial Vehicle Graphics & Mobile Installation
             </h1>
             <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-              Chicago electricians and plumbers - your van is already out there every day. Make it bring in more customers with professional graphics that show you mean business.
+              Premium van wraps for Chicago businesses! Commercial van graphics, cargo van wraps, transit van branding. Professional vinyl wrap installation, mobile service available. Van wrap cost from $2,800 - same day installation.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="text-lg px-8">

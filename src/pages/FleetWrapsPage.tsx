@@ -17,27 +17,33 @@ const FleetWrapsPage = () => {
   const domain = "https://www.wrappingchicago.com";
 
   const fleetKeywords = [
-    'Chicago fleet wraps', 'contractor fleet graphics', 'multi vehicle wraps',
-    'business fleet branding', 'company truck wraps', 'commercial fleet advertising'
+    'fleet wraps Chicago', 'fleet vehicle wraps', 'commercial fleet wraps', 'business fleet graphics',
+    'fleet wrap cost', 'fleet vehicle graphics', 'corporate fleet wraps', 'multi vehicle wraps',
+    'company truck wraps', 'fleet branding', 'commercial vehicle wraps', 'fleet wrap installation',
+    'business vehicle graphics', 'fleet vinyl wraps', 'fleet wrap design', 'professional fleet wraps'
   ];
 
   const fleetFAQs = [
     {
-      question: "How much do fleet wraps cost for multiple trucks?",
-      answer: "Fleet wraps in Chicago start at $2,800 per vehicle with volume discounts for 3+ vehicles. Most contractors save 15-20% on fleet projects versus individual wraps."
+      question: "How much do fleet wraps cost for multiple vehicles?",
+      answer: "Fleet wrap cost varies by vehicle count and design. Fleet vehicle wraps start at $2,800 per vehicle with volume discounts for 3+ vehicles. Business fleet graphics packages save 15-20% versus individual wraps."
     },
     {
-      question: "How long does it take to wrap a whole fleet?",
-      answer: "We can typically wrap 2-3 vehicles per day. For a 5-truck fleet, expect 3-4 business days total with minimal downtime for each vehicle."
+      question: "How long does fleet vehicle wrap installation take?",
+      answer: "We can wrap 2-3 fleet vehicles per day. For a 5-vehicle commercial fleet, expect 3-4 business days total with minimal downtime per vehicle. Mobile fleet wrap installation available."
+    },
+    {
+      question: "Do you design consistent fleet graphics for multiple vehicles?",
+      answer: "Yes! Our fleet vehicle graphics maintain consistent branding across all vehicles while adapting to different vehicle sizes and types in your commercial fleet."
     }
   ];
 
   return (
     <>
       <Google2025SEOOptimizer
-        pageTitle="Chicago Fleet Wraps for Contractors | Wrap Your Whole Team"
-        pageDescription="Got multiple trucks? We wrap contractor fleets fast with volume pricing. Same look across all your vehicles shows customers you're professional and organized."
-        businessType="contractor"
+        pageTitle="Fleet Wraps Chicago | Commercial Fleet Vehicle Graphics & Business Vehicle Branding"
+        pageDescription="Professional fleet wraps Chicago! Commercial fleet vehicle graphics, business fleet branding, corporate vehicle wraps. Fleet wrap cost from $2,800/vehicle with volume discounts. Mobile installation."
+        businessType="general"
         serviceArea={['Chicago', 'Evanston', 'Naperville', 'Schaumburg']}
         primaryKeywords={fleetKeywords}
         faqData={fleetFAQs}
@@ -56,12 +62,12 @@ const FleetWrapsPage = () => {
       />
 
       <Helmet>
-        <title>Chicago Fleet Wraps for Contractors | Wrap Your Whole Team</title>
+        <title>Fleet Wraps Chicago | Commercial Fleet Vehicle Graphics & Business Vehicle Branding</title>
         <meta 
           name="description" 
-          content="Got multiple trucks? We wrap contractor fleets fast with volume pricing. Same look across all your vehicles shows customers you're professional and organized." 
+          content="Professional fleet wraps Chicago! Commercial fleet vehicle graphics, business fleet branding, corporate vehicle wraps. Fleet wrap cost from $2,800/vehicle with volume discounts. Mobile installation." 
         />
-        <meta name="keywords" content="Chicago fleet wraps, contractor fleet graphics, multi vehicle wraps, business fleet branding, company truck wraps" />
+        <meta name="keywords" content="fleet wraps Chicago, fleet vehicle wraps, commercial fleet wraps, business fleet graphics, fleet wrap cost, corporate fleet wraps, fleet vehicle graphics, multi vehicle wraps" />
         <link rel="canonical" href={`${domain}/fleet-wraps`} />
       </Helmet>
 
@@ -93,8 +99,8 @@ const FleetWrapsPage = () => {
             </div>
             
             <div className="mb-8">
-              <h1 className="text-3xl md:text-4xl font-bold text-brand-navy mb-4">Wrap Your Whole Fleet, Look Like the Pros</h1>
-              <p className="text-lg text-gray-700 mb-2">When all your trucks match, customers know you're organized and professional</p>
+              <h1 className="text-3xl md:text-4xl font-bold text-brand-navy mb-4">Professional Fleet Wraps Chicago | Commercial Fleet Vehicle Graphics & Business Vehicle Branding</h1>
+              <p className="text-lg text-gray-700 mb-2">Transform your entire fleet with consistent professional vehicle graphics. Fleet wrap cost from $2,800/vehicle with volume discounts for 3+ vehicles.</p>
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

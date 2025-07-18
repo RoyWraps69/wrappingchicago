@@ -13,9 +13,9 @@ const AboutPage = () => {
   return (
     <>
       <Helmet>
-        <title>About Wrapping Chicago | Real People Who Get Trade Businesses</title>
-        <meta name="description" content="We're Chicago locals who understand trade businesses. Been wrapping plumber trucks, electrician vans, and HVAC vehicles for over 10 years. Your success is our business." />
-        <meta name="keywords" content="Chicago vehicle wrap company, trade business wraps, local wrap installers, plumber truck wraps, electrician van graphics, HVAC vehicle advertising" />
+        <title>About Wrapping Chicago | Professional Vehicle Wraps, Car Wraps & Truck Wrap Installation</title>
+        <meta name="description" content="Chicago's premier vehicle wrap company! Professional car wraps, truck wraps, van wraps, fleet graphics. 3M certified installers, mobile service. Vehicle wrap cost from $1,200. Same day installation available." />
+        <meta name="keywords" content="vehicle wraps Chicago, car wrap company, truck wrap installation, commercial vehicle wraps, fleet graphics, vinyl wrap installation, auto wraps, custom vehicle wraps, mobile wraps, 3M wraps, Avery Dennison" />
         <link rel="canonical" href="https://www.wrappingchicago.com/about" />
       </Helmet>
       
@@ -31,36 +31,34 @@ const AboutPage = () => {
         <main className="flex-grow">
           <div className="container mx-auto py-12 px-4">
             <Breadcrumbs />
-            <h1 className="text-4xl font-bold text-brand-navy mb-6">We Get Trade Businesses</h1>
+            <h1 className="text-4xl font-bold text-brand-navy mb-6">Chicago's Premier Vehicle Wrap Company</h1>
             
             <div className="grid md:grid-cols-2 gap-12 mb-12">
               <div>
                 <div className="prose max-w-none">
                   <p className="text-lg mb-6">
-                    Hey there! We're not some fancy corporate wrap shop. We're Chicago locals who understand 
-                    that your truck is more than transportation - it's your mobile office, your tool storage, 
-                    and your best advertising all rolled into one.
+                    Welcome to Chicago's most trusted vehicle wrap company! Since 2014, we've been transforming cars, trucks, vans, and fleet vehicles with professional vinyl wraps, custom graphics, and commercial vehicle branding. Whether you need car wraps, truck wraps, fleet graphics, or specialty vehicle graphics, we deliver results that drive your business forward.
                   </p>
                   
                   <p className="mb-6">
-                    For over 10 years, we've been helping plumbers, electricians, HVAC techs, and other trade 
-                    pros turn their work vehicles into customer magnets. We know you need wraps that look 
-                    professional but can handle the real world - job sites, weather, and daily wear.
+                    Our team specializes in premium vehicle wrap installation using 3M and Avery Dennison materials. From custom car wraps and color change wraps to commercial truck wraps and fleet vehicle graphics, we handle projects of all sizes with professional precision.
                   </p>
                   
                   <h2 className="text-2xl font-semibold text-brand-navy mt-8 mb-4">Our Expertise</h2>
                   
                   <p className="mb-6">
-                    As a leading vehicle wrap provider in Chicago, we specialize in:
+                    As Chicago's leading vehicle wrap company, we provide comprehensive wrap services including:
                   </p>
                   
                   <ul className="list-disc pl-6 mb-6">
-                    <li className="mb-2">Fleet vehicle wraps for businesses of all sizes</li>
-                    <li className="mb-2">Full and partial commercial vehicle wraps</li>
-                    <li className="mb-2">Color change wraps for personal vehicles</li>
-                    <li className="mb-2">Specialty and custom design wraps</li>
-                    <li className="mb-2">Protective films and paint protection</li>
-                    <li className="mb-2">Vehicle lettering and graphics</li>
+                    <li className="mb-2">Custom car wraps and automotive vinyl wraps</li>
+                    <li className="mb-2">Commercial truck wraps and fleet vehicle graphics</li>
+                    <li className="mb-2">Van wraps and cargo vehicle graphics</li>
+                    <li className="mb-2">Color change wraps and matte car wraps</li>
+                    <li className="mb-2">Chrome wraps and specialty vinyl applications</li>
+                    <li className="mb-2">Vehicle decals and custom lettering</li>
+                    <li className="mb-2">Paint protection wraps and UV protection</li>
+                    <li className="mb-2">Mobile vehicle wrap installation</li>
                   </ul>
                   
                   <h2 className="text-2xl font-semibold text-brand-navy mt-8 mb-4">Our Commitment</h2>

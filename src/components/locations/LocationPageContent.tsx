@@ -97,7 +97,7 @@ const LocationPageContent: React.FC<LocationPageContentProps> = ({ location }) =
               #1 Vehicle Wraps {location.name} | Car Wraps, Truck Wraps & Fleet Graphics
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-              Professional carwraps, truck wraps, and fleet graphics that turn your vehicles into powerful marketing assets throughout Chicago and {location.county}. Transform your business presence with custom vehicle wraps designed for {location.name}'s competitive market.
+              Professional vehicle wraps, custom car wraps, truck wraps, and commercial fleet graphics serving {location.name} and {location.county}. Premium vinyl wraps, automotive graphics, mobile wrap installation. Cost to wrap a car starts at $2,500, truck wraps from $3,500. Same day service available.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="text-lg px-8">

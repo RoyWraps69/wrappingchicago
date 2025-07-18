@@ -12,17 +12,14 @@ const TruckWrapsPage = () => {
   return (
     <>
       <PageSEO 
-        title="Plumber & Contractor Truck Wraps Chicago | Turn Your Truck Into a Billboard"
-        description="Your work truck is driving around all day anyway - make it work for your business! Chicago plumbers, electricians, and contractors trust us for truck wraps that actually bring in more customers."
+        title="Truck Wraps Chicago | Commercial Truck Graphics & Fleet Vehicle Wraps Near Me"
+        description="Professional truck wraps Chicago! Commercial vehicle wraps, fleet graphics, van wraps, semi truck wraps. Mobile truck wrap installation. 3M vinyl, same day service. Truck wrap cost from $3,500."
         keywords={[
-          "plumber truck wraps chicago",
-          "contractor truck graphics",
-          "electrician pickup truck wraps",
-          "HVAC truck lettering chicago",
-          "work truck advertising",
-          "service truck wraps",
-          "trade business vehicle graphics",
-          "chicago contractor truck wraps"
+          "truck wraps Chicago", "commercial truck wraps", "truck wrap cost", "truck wrap near me",
+          "commercial vehicle wraps", "fleet vehicle wraps", "van wraps", "semi truck wraps",
+          "truck graphics", "vehicle wrap installation", "mobile truck wraps", "truck wrap shop near me",
+          "professional truck wraps", "business vehicle wraps", "truck wrap removal", "truck wrap design",
+          "fleet graphics", "commercial van wraps", "work truck wraps", "service truck wraps"
         ]}
         canonicalUrl={`${domain}/truck-wraps`}
         h1="Chicago Truck Wraps for Trade Professionals"
@@ -74,11 +71,11 @@ const TruckWrapsPage = () => {
             <div className="flex items-center justify-center mb-6">
               <Truck className="w-12 h-12 text-primary mr-4" />
               <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-primary via-primary/80 to-accent bg-clip-text text-transparent">
-                Your Work Truck Should Work Harder
+                Professional Truck Wraps Chicago | Commercial Vehicle Graphics & Fleet Wraps
               </h1>
             </div>
             <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-              Chicago plumbers, electricians, and HVAC guys - your truck is already driving around all day. Make it bring in more customers with professional vehicle wraps that actually work.
+              Professional truck wraps for Chicago businesses! Commercial vehicle wraps, fleet graphics, van wraps, semi truck wraps. Mobile truck wrap installation, same day service. Truck wrap cost from $3,500. Transform your work truck into a marketing machine.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="text-lg px-8">

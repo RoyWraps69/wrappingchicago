@@ -16,12 +16,12 @@ const ContactPage = () => {
   return (
     <>
       <Helmet>
-        <title>Get Your Quote | Chicago Vehicle Wraps That Actually Work</title>
+        <title>Contact | Chicago Vehicle Wraps, Car Wraps & Truck Wrap Installation Quote</title>
         <meta 
           name="description" 
-          content="Ready to get more customers? Call us at (312) 597-1286 or fill out our form. We'll give you a straight answer about what your truck wrap will cost and how fast we can get it done." 
+          content="Get your vehicle wrap quote! Professional car wraps, truck wraps, van wraps, fleet graphics. Vehicle wrap cost estimates, same day installation available. Call (312) 597-1286 for instant quote." 
         />
-        <meta name="keywords" content="vehicle wrap quote Chicago, truck wrap cost, plumber van wrap price, electrician truck graphics quote, HVAC vehicle wrap estimate" />
+        <meta name="keywords" content="vehicle wrap quote Chicago, car wrap cost, truck wrap estimate, van wrap price, fleet wrap quote, vinyl wrap installation quote, mobile wrap service, wrap shop near me" />
         <link rel="canonical" href={`${domain}/contact`} />
         <meta property="og:title" content="Contact Wrapping Chicago" />
         <meta property="og:description" content="Get contact Wrapping Chicago services for quotes, consultations, and scheduling. Speak with our vehicle wrap experts and start your project today." />
@@ -44,8 +44,8 @@ const ContactPage = () => {
             <Breadcrumbs />
             
             <div className="mb-8">
-              <h1 className="text-3xl md:text-4xl font-bold text-black mb-4">Let's Talk About Your Truck</h1>
-              <p className="text-lg text-black font-medium">Call us at (312) 597-1286 or fill out the form. We'll give you a straight answer about cost and timing.</p>
+              <h1 className="text-3xl md:text-4xl font-bold text-black mb-4">Get Your Vehicle Wrap Quote Today | Chicago Car Wraps & Truck Installation</h1>
+              <p className="text-lg text-black font-medium">Professional vehicle wrap installation quote! Car wraps, truck wraps, van wraps, fleet graphics. Call (312) 597-1286 for instant vehicle wrap cost estimate and same day service.</p>
             </div>
             
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
