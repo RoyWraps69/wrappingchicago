@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <url>
+    <loc>https://www.wrappingchicago.com/</loc>
+    <image:image>
+      <image:loc>https://www.wrappingchicago.com/lovable-uploads/6ef3b1af-8591-4d36-97c2-9366401115fa.png</image:loc>
+      <image:title>Professional Vehicle Wrap Services Chicago</image:title>
+      <image:caption>Premium vehicle wrapping services for cars, trucks, vans, and fleets in Chicago area</image:caption>
+      <image:geo_location>Chicago, Illinois</image:geo_location>
+      <image:license>https://www.wrappingchicago.com/license</image:license>
+    </image:image>
+    <lastmod>2025-01-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://www.wrappingchicago.com/gallery</loc>
+    <image:image>
+      <image:loc>https://www.wrappingchicago.com/gallery/fleet-wrap-chicago-1.jpg</image:loc>
+      <image:title>Commercial Fleet Wrap Chicago - Plumbing Company</image:title>
+      <image:caption>Professional fleet wrap installation for Chicago plumbing business showing brand consistency</image:caption>
+      <image:geo_location>Chicago, Illinois</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.wrappingchicago.com/gallery/truck-wrap-hvac.jpg</image:loc>
+      <image:title>HVAC Truck Wrap Installation Chicago</image:title>
+      <image:caption>Commercial HVAC truck wrap with professional branding and contact information</image:caption>
+      <image:geo_location>Chicago, Illinois</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.wrappingchicago.com/gallery/car-wrap-color-change.jpg</image:loc>
+      <image:title>Color Change Car Wrap Chicago - Luxury Vehicle</image:title>
+      <image:caption>Premium color change wrap installation on luxury vehicle showcasing matte finish</image:caption>
+      <image:geo_location>Chicago, Illinois</image:geo_location>
+    </image:image>
+    <lastmod>2025-01-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.wrappingchicago.com/truck-wraps</loc>
+    <image:image>
+      <image:loc>https://www.wrappingchicago.com/gallery/commercial-truck-wrap.jpg</image:loc>
+      <image:title>Commercial Truck Wrap Chicago - Business Branding</image:title>
+      <image:caption>Professional commercial truck wrap with business branding and contact information</image:caption>
+      <image:geo_location>Chicago, Illinois</image:geo_location>
+    </image:image>
+    <lastmod>2025-01-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.wrappingchicago.com/car-wraps</loc>
+    <image:image>
+      <image:loc>https://www.wrappingchicago.com/gallery/luxury-car-wrap.jpg</image:loc>
+      <image:title>Luxury Car Wrap Chicago - Custom Design</image:title>
+      <image:caption>Custom luxury car wrap with premium vinyl and professional installation</image:caption>
+      <image:geo_location>Chicago, Illinois</image:geo_location>
+    </image:image>
+    <lastmod>2025-01-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.wrappingchicago.com/van-wraps</loc>
+    <image:image>
+      <image:loc>https://www.wrappingchicago.com/gallery/commercial-van-wrap.jpg</image:loc>
+      <image:title>Commercial Van Wrap Chicago - Delivery Vehicle</image:title>
+      <image:caption>Professional van wrap for delivery and service vehicles in Chicago area</image:caption>
+      <image:geo_location>Chicago, Illinois</image:geo_location>
+    </image:image>
+    <lastmod>2025-01-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.wrappingchicago.com/fleet-wraps</loc>
+    <image:image>
+      <image:loc>https://www.wrappingchicago.com/gallery/fleet-wrap-consistency.jpg</image:loc>
+      <image:title>Fleet Vehicle Wraps Chicago - Brand Consistency</image:title>
+      <image:caption>Multiple fleet vehicles with consistent branding and professional wrap installation</image:caption>
+      <image:geo_location>Chicago, Illinois</image:geo_location>
+    </image:image>
+    <lastmod>2025-01-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.wrappingchicago.com/plumbing-wraps</loc>
+    <image:image>
+      <image:loc>https://www.wrappingchicago.com/lovable-uploads/e179a41b-cd40-4757-b53a-1e5ec084ba1e.png</image:loc>
+      <image:title>Plumbing Vehicle Wrap Chicago - Professional Branding</image:title>
+      <image:caption>Professional plumbing vehicle wrap with company branding and contact information</image:caption>
+      <image:geo_location>Chicago, Illinois</image:geo_location>
+    </image:image>
+    <lastmod>2025-01-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.wrappingchicago.com/chicago</loc>
+    <image:image>
+      <image:loc>https://www.wrappingchicago.com/gallery/chicago-skyline-wrap.jpg</image:loc>
+      <image:title>Vehicle Wraps Chicago - City Skyline Background</image:title>
+      <image:caption>Professional vehicle wrap services in Chicago with city skyline in background</image:caption>
+      <image:geo_location>Chicago, Illinois</image:geo_location>
+    </image:image>
+    <lastmod>2025-01-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+</urlset>

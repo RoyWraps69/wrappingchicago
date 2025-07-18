@@ -93,6 +93,8 @@ import ConversionTracking from './components/analytics/ConversionTracking';
 import GoogleAnalytics from './components/analytics/GoogleAnalytics';
 import FacebookPixel from './components/analytics/FacebookPixel';
 import GoogleReadinessAudit from './components/seo/GoogleReadinessAudit';
+import Missing2025Requirements from './components/seo/Missing2025Requirements';
+import ImageSEOOptimizer from './components/seo/ImageSEOOptimizer';
 
 const queryClient = new QueryClient();
 
@@ -216,6 +218,8 @@ function App() {
             <GoogleAnalytics />
             <FacebookPixel />
             <GoogleReadinessAudit />
+            <Missing2025Requirements />
+            <ImageSEOOptimizer />
           </BrowserRouter>
         </TooltipProvider>
       </QueryClientProvider>
