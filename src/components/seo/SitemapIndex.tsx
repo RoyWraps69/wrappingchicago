@@ -26,8 +26,7 @@ const SitemapIndex: React.FC = () => {
       {/* Additional Crawlability Hints */}
       <meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
       
-      {/* Prevent Duplicate Content Issues */}
-      <link rel="canonical" href={`${domain}${window.location.pathname}`} />
+      {/* Canonical URL is now handled by DynamicCanonicalManager */}
     </Helmet>
   );
 };

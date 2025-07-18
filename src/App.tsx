@@ -82,6 +82,7 @@ import ReturnPolicyPage from "./pages/ReturnPolicyPage";
 import ShippingPage from "./pages/ShippingPage";
 import TruckWrapsChicagoPage from "./pages/TruckWrapsChicagoPage";
 import UnifiedSEOSystem from './components/seo/UnifiedSEOSystem';
+import DynamicCanonicalManager from './components/seo/DynamicCanonicalManager';
 import InternalLinkingHub from './components/navigation/InternalLinkingHub';
 
 const queryClient = new QueryClient();
@@ -194,7 +195,8 @@ function App() {
               </main>
               <Footer />
             </div>
-            {/* Unified SEO System - Single source of truth */}
+            {/* Dynamic SEO Components */}
+            <DynamicCanonicalManager />
             <UnifiedSEOSystem />
             <InternalLinkingHub />
           </BrowserRouter>
