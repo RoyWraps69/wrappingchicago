@@ -1,4 +1,6 @@
 
+import { chicagoLocations } from '../data/locations';
+
 export const generateSitemap = (): string => {
   const domain = 'https://www.wrappingchicago.com';
   const currentDate = new Date().toISOString().split('T')[0];
@@ -37,6 +39,13 @@ export const generateSitemap = (): string => {
     { loc: '/vehicle-wraps-naperville-il', priority: '0.8', changefreq: 'weekly' },
     { loc: '/vehicle-wraps-schaumburg-il', priority: '0.8', changefreq: 'weekly' },
     { loc: '/truck-wraps-chicago', priority: '0.8', changefreq: 'weekly' },
+    
+    // All new location pages
+    ...chicagoLocations.map(location => ({
+      loc: `/locations/${location.slug}`,
+      priority: '0.8',
+      changefreq: 'weekly'
+    })),
     
     // Sitemap and utility pages
     { loc: '/sitemap', priority: '0.5', changefreq: 'monthly' },

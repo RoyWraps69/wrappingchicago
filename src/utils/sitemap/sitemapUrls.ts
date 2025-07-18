@@ -1,5 +1,6 @@
 
 import { SITEMAP_CONFIG, CHANGE_FREQUENCIES, PRIORITIES } from './sitemapConfig';
+import { chicagoLocations } from '../../data/locations';
 
 export interface SitemapURL {
   url: string;
@@ -73,7 +74,7 @@ export function generateSitemapUrls(): SitemapURL[] {
       priority: PRIORITIES.MEDIUM_HIGH
     },
     
-    // Location Pages - Fixed to use correct URL format
+    // Location Pages - Updated to include all actual location pages
     {
       url: `${domain}/locations`,
       lastmod: currentDate,
@@ -86,6 +87,16 @@ export function generateSitemapUrls(): SitemapURL[] {
       changefreq: CHANGE_FREQUENCIES.MONTHLY,
       priority: PRIORITIES.MEDIUM_HIGH
     },
+    
+    // Generate URLs for all location pages
+    ...chicagoLocations.map(location => ({
+      url: `${domain}/locations/${location.slug}`,
+      lastmod: currentDate,
+      changefreq: CHANGE_FREQUENCIES.MONTHLY,
+      priority: PRIORITIES.MEDIUM
+    })),
+    
+    // Legacy location URLs for SEO preservation
     {
       url: `${domain}/vehicle-wraps-evanston-il`,
       lastmod: currentDate,
