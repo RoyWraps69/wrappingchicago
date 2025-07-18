@@ -84,6 +84,7 @@ import TruckWrapsChicagoPage from "./pages/TruckWrapsChicagoPage";
 import UnifiedSEOSystem from './components/seo/UnifiedSEOSystem';
 import DynamicCanonicalManager from './components/seo/DynamicCanonicalManager';
 import DynamicTitleManager from './components/seo/DynamicTitleManager';
+import DynamicHeadingManager from './components/seo/DynamicHeadingManager';
 import InternalLinkingHub from './components/navigation/InternalLinkingHub';
 
 const queryClient = new QueryClient();
@@ -199,6 +200,7 @@ function App() {
             {/* Dynamic SEO Components */}
             <DynamicTitleManager />
             <DynamicCanonicalManager />
+            <DynamicHeadingManager />
             <UnifiedSEOSystem />
             <InternalLinkingHub />
           </BrowserRouter>
