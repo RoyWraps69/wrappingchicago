@@ -86,6 +86,7 @@ import DynamicCanonicalManager from './components/seo/DynamicCanonicalManager';
 import DynamicTitleManager from './components/seo/DynamicTitleManager';
 import DynamicHeadingManager from './components/seo/DynamicHeadingManager';
 import EnhancedSchemaGenerator from './components/seo/EnhancedSchemaGenerator';
+import DynamicMetaManager from './components/seo/DynamicMetaManager';
 import InternalLinkingHub from './components/navigation/InternalLinkingHub';
 
 const queryClient = new QueryClient();
@@ -200,6 +201,7 @@ function App() {
             </div>
             {/* Dynamic SEO Components */}
             <DynamicTitleManager />
+            <DynamicMetaManager />
             <DynamicCanonicalManager />
             <DynamicHeadingManager />
             <EnhancedSchemaGenerator />

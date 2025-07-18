@@ -67,44 +67,5 @@ Disallow: /*.cgi$
 Disallow: /*sessionid*
 Disallow: /*PHPSESSID*
 
-# Enhanced crawl directives for major search engines
-User-agent: Googlebot
-Allow: /
-Crawl-delay: 1
-
-User-agent: Googlebot-Image
-Allow: /
-Allow: /*.jpg$
-Allow: /*.jpeg$
-Allow: /*.png$
-Allow: /*.webp$
-Allow: /*.gif$
-
-User-agent: Bingbot
-Allow: /
-Crawl-delay: 1
-
-User-agent: Slurp
-Allow: /
-Crawl-delay: 1
-
-User-agent: DuckDuckBot
-Allow: /
-Crawl-delay: 1
-
-User-agent: facebookexternalhit
-Allow: /
-
-User-agent: Twitterbot
-Allow: /
-
-# Yelp crawler support
-User-agent: YelpBot
-Allow: /
-Crawl-delay: 1
-
 # Host preference for canonical URLs
 Host: www.wrappingchicago.com
-
-# Clean-param directive for Google to handle URL parameters
-Clean-param: utm_source&utm_medium&utm_campaign&utm_content&utm_term&fbclid&gclid&ref&sessionid&PHPSESSID

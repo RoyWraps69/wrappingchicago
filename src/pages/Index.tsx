@@ -1,5 +1,6 @@
 import React from "react";
 import ComprehensiveContentGenerator from "@/components/seo/ComprehensiveContentGenerator";
+import EnhancedInternalLinking from "@/components/seo/EnhancedInternalLinking";
 import HomeSEO from "@/components/home/HomeSEO";
 import PageSEO from "@/components/seo/PageSEO";
 import InternalLinkingSection from "@/components/seo/InternalLinkingSection";
@@ -109,6 +110,9 @@ const Index = () => {
         
         {/* Comprehensive content to meet word count requirements */}
         <ComprehensiveContentGenerator />
+        
+        {/* Enhanced internal linking for better SEO */}
+        <EnhancedInternalLinking />
         
         {/* Internal Linking for SEO */}
         <InternalLinkingSection />
