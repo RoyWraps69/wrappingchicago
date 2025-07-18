@@ -16,8 +16,22 @@ const DesktopNav = () => {
 
   return (
     <div className="hidden md:flex items-center space-x-2">
-      {/* Home and basic navigation links */}
-      {navItems.map((item) => (
+      {/* Home link first */}
+      <Link
+        to="/"
+        className="text-brand-navy hover:text-brand-red transition-colors duration-300 font-medium px-4 py-2 rounded-md hover:bg-gray-50"
+      >
+        Home
+      </Link>
+      
+      {/* Important business items first */}
+      <ServiceMenu />
+      <PricingMenu />
+      <LocationsMenu />
+      <TradeMenu />
+      
+      {/* Secondary navigation links */}
+      {navItems.slice(1).map((item) => (
         <Link
           key={item.path}
           to={item.path}
@@ -26,18 +40,6 @@ const DesktopNav = () => {
           {item.label}
         </Link>
       ))}
-      
-      {/* Service menu */}
-      <ServiceMenu />
-      
-      {/* Locations menu */}
-      <LocationsMenu />
-      
-      {/* Trade Specialists menu */}
-      <TradeMenu />
-      
-      {/* Pricing menu */}
-      <PricingMenu />
     </div>
   );
 };
