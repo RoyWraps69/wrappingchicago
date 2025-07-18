@@ -95,6 +95,7 @@ import FacebookPixel from './components/analytics/FacebookPixel';
 import GoogleReadinessAudit from './components/seo/GoogleReadinessAudit';
 import Missing2025Requirements from './components/seo/Missing2025Requirements';
 import ImageSEOOptimizer from './components/seo/ImageSEOOptimizer';
+import InternalLinkingHub from './components/navigation/InternalLinkingHub';
 
 const queryClient = new QueryClient();
 
@@ -220,6 +221,7 @@ function App() {
             <GoogleReadinessAudit />
             <Missing2025Requirements />
             <ImageSEOOptimizer />
+            <InternalLinkingHub />
           </BrowserRouter>
         </TooltipProvider>
       </QueryClientProvider>
