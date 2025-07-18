@@ -10,7 +10,7 @@ const TruckHero = () => {
       <div className="container mx-auto px-4 text-center">
         <div className="max-w-3xl mx-auto">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            Professional Truck Wraps in Chicago, IL
+            Commercial Truck Wraps Chicago - Business Vehicle Graphics
           </h1>
           <p className="text-xl mb-8">
             Transform your commercial trucks into powerful mobile billboards with expert truck wrapping services.

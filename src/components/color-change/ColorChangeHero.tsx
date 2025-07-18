@@ -18,7 +18,7 @@ const ColorChangeHero = () => {
       <div className="relative z-10 container mx-auto px-4 py-20 md:py-28">
         <div className="max-w-2xl">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Transform Your Vehicle With Premium Color Change Wraps
+            Chicago Color Change Wraps - Transform Your Vehicle
           </h1>
           <p className="text-xl text-white/90 mb-8">
             From luxurious matte black to vibrant chrome finishes, our color change wraps 

@@ -18,7 +18,7 @@ const DesignerWrapsHero = () => {
       <div className="relative z-10 container mx-auto px-4 py-20 md:py-28">
         <div className="max-w-2xl">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Stand Out With Custom Designer Vehicle Wraps
+            Designer Vehicle Wraps Chicago - Custom Artistic Graphics
           </h1>
           <p className="text-xl text-white/90 mb-8">
             Transform your vehicle into a personalized masterpiece with our custom designer wraps. 
