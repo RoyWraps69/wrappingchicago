@@ -5,7 +5,8 @@ import { City } from '@/data/cities';
 import UnifiedBreadcrumbs from '@/components/navigation/UnifiedBreadcrumbs';
 import UnifiedBreadcrumbSchema from '@/components/schemas/UnifiedBreadcrumbSchema';
 import EnhancedLocationHero from './EnhancedLocationHero';
-import ComprehensiveLocationContent from './ComprehensiveLocationContent';
+import UniqueLocationContent from './UniqueLocationContent';
+import { getLocationSpecificFAQs } from './UniqueLocationFAQs';
 import PageFAQ from '@/components/common/PageFAQ';
 import CallToAction from '@/components/CallToAction';
 import Schema from '@/components/Schema';
@@ -39,24 +40,7 @@ const EnhancedLocationPage = ({ city }: EnhancedLocationPageProps) => {
     `wrap installation ${city.name}`
   ];
 
-  const cityFAQs = [
-    {
-      question: `How much do vehicle wraps cost in ${city.name}?`,
-      answer: `Vehicle wrap costs in ${city.name} typically range from $2,500 to $5,000 per vehicle for full wraps, depending on vehicle size and design complexity. Partial wraps start around $1,500, while commercial truck wraps range from $3,500-$6,500. We offer volume discounts for fleet projects and provide free detailed quotes for all ${city.name} businesses.`
-    },
-    {
-      question: `Where can I get my vehicle wrapped in ${city.name}?`,
-      answer: `Wrapping Chicago provides professional vehicle wrapping services to ${city.name} residents and businesses from our state-of-the-art facility at 4711 N. Lamon Ave, Chicago, IL. We're approximately ${city.distance} from ${city.name} and offer mobile consultation services for fleet projects throughout ${city.county} County.`
-    },
-    {
-      question: `How long do vehicle wraps last in ${city.name}'s climate?`,
-      answer: `With proper care and maintenance, our premium 3M vinyl vehicle wraps typically last 5-7 years in ${city.name}'s climate. We use UV-resistant materials specifically designed to withstand Illinois weather conditions including harsh winters, hot summers, and varying humidity levels throughout the year.`
-    },
-    {
-      question: `What types of businesses in ${city.name} benefit most from vehicle wraps?`,
-      answer: `Vehicle wraps are highly effective for ${city.name} service businesses, delivery companies, contractors, food trucks, healthcare providers, and any business with mobile operations. Companies that frequently travel throughout ${city.county} County see the highest ROI from vehicle wraps due to increased brand exposure and lead generation.`
-    }
-  ];
+  const cityFAQs = getLocationSpecificFAQs(city.name, city.county, city.distance);
 
   return (
     <>
@@ -93,7 +77,7 @@ const EnhancedLocationPage = ({ city }: EnhancedLocationPageProps) => {
           </div>
           
           <EnhancedLocationHero city={city} />
-          <ComprehensiveLocationContent city={city} />
+          <UniqueLocationContent city={city} />
           
           {/* Add Glossary Component */}
           <section className="py-8 bg-gray-50">

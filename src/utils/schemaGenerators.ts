@@ -25,6 +25,26 @@ export const generateLocalBusinessSchema = (city: City) => ({
     "latitude": 41.8781,
     "longitude": -87.6298
   },
+  "serviceArea": {
+    "@type": "GeoCircle",
+    "geoMidpoint": {
+      "@type": "GeoCoordinates",
+      "latitude": 41.8781,
+      "longitude": -87.6298
+    },
+    "geoRadius": "40 miles"
+  },
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": city.name,
+      "addressRegion": "IL"
+    },
+    {
+      "@type": "State",
+      "name": "Illinois"
+    }
+  ],
   "openingHoursSpecification": [
     {
       "@type": "OpeningHoursSpecification",
@@ -39,7 +59,31 @@ export const generateLocalBusinessSchema = (city: City) => ({
       "closes": "14:00"
     }
   ],
-  // ... Add other business details
+  "priceRange": "$2500-$6500",
+  "paymentAccepted": "Cash, Credit Card, Check",
+  "currenciesAccepted": "USD",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Vehicle Wrap Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Fleet Vehicle Wraps",
+          "description": `Professional fleet wrapping services for ${city.name} businesses`
+        }
+      },
+      {
+        "@type": "Offer", 
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Commercial Vehicle Graphics",
+          "description": `Custom vehicle graphics for ${city.name} commercial vehicles`
+        }
+      }
+    ]
+  }
 });
 
 export const generateWebsiteSchema = (title: string, description: string, url: string, lastModified: string, keywords?: string[]) => ({
