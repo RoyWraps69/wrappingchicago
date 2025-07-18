@@ -1,4 +1,5 @@
 import React from "react";
+import ComprehensiveContentGenerator from "@/components/seo/ComprehensiveContentGenerator";
 import HomeSEO from "@/components/home/HomeSEO";
 import PageSEO from "@/components/seo/PageSEO";
 import InternalLinkingSection from "@/components/seo/InternalLinkingSection";
@@ -102,21 +103,15 @@ const Index = () => {
       {/* Legacy SEO components */}
       <HomeSEO />
       
-      {/* Page Content with Proper Heading Structure */}
+      {/* Page Content with Comprehensive SEO Content */}
       <div className="min-h-screen">
-        {/* H1 is handled in Hero component */}
         <Hero />
+        
+        {/* Comprehensive content to meet word count requirements */}
+        <ComprehensiveContentGenerator />
         
         {/* Internal Linking for SEO */}
         <InternalLinkingSection />
-        
-        {/* Core sections with proper SEO structure */}
-        <section className="py-16">
-          <div className="container mx-auto">
-            <h2 className="text-3xl font-bold mb-8">Professional Vehicle Wrap Services</h2>
-            <p className="text-lg text-muted-foreground">Complete vehicle transformation solutions</p>
-          </div>
-        </section>
       </div>
     </>
   );

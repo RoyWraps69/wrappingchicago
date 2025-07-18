@@ -85,6 +85,7 @@ import UnifiedSEOSystem from './components/seo/UnifiedSEOSystem';
 import DynamicCanonicalManager from './components/seo/DynamicCanonicalManager';
 import DynamicTitleManager from './components/seo/DynamicTitleManager';
 import DynamicHeadingManager from './components/seo/DynamicHeadingManager';
+import EnhancedSchemaGenerator from './components/seo/EnhancedSchemaGenerator';
 import InternalLinkingHub from './components/navigation/InternalLinkingHub';
 
 const queryClient = new QueryClient();
@@ -201,6 +202,7 @@ function App() {
             <DynamicTitleManager />
             <DynamicCanonicalManager />
             <DynamicHeadingManager />
+            <EnhancedSchemaGenerator />
             <UnifiedSEOSystem />
             <InternalLinkingHub />
           </BrowserRouter>
