@@ -14,9 +14,20 @@ const PlumbingWrapsPage = () => {
       </Helmet>
 
       {/* Hero Section */}
-      <section className="relative min-h-[600px] flex items-center justify-center bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 text-white overflow-hidden">
-        <div className="absolute inset-0 bg-black/20"></div>
-        <div className="container mx-auto px-4 relative z-10">
+      <section className="relative min-h-[600px] flex items-center justify-center bg-black text-white overflow-hidden">
+        {/* Hero background image */}
+        <div className="absolute inset-0 z-0 flex items-center justify-center">
+          <img 
+            src="/lovable-uploads/e179a41b-cd40-4757-b53a-1e5ec084ba1e.png"
+            alt="Professional PuroClean plumbing service van wrap showing emergency water, fire, mold, and biohazard services in Chicago"
+            className="max-w-full max-h-full object-contain"
+          />
+        </div>
+        
+        {/* Dark overlay for text visibility */}
+        <div className="absolute inset-0 z-10 bg-black/40"></div>
+        
+        <div className="container mx-auto px-4 relative z-20">
           <div className="max-w-4xl mx-auto text-center">
             <div className="flex justify-center mb-6">
               <Wrench className="w-16 h-16 text-blue-300" />
