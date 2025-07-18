@@ -15,39 +15,39 @@ const LocationPageContent: React.FC<LocationPageContentProps> = ({ location }) =
     const baseServices = [
       { 
         name: "Premium Car Wraps", 
-        description: `Transform your personal vehicle with stunning custom wraps perfect for ${location.name}'s discerning drivers`,
+        description: `Transform your personal vehicle with stunning custom carwraps that turn heads throughout ${location.name}`,
         price: "From $2,500",
-        details: `Whether you're cruising past ${location.landmarks[0]} or parking at ${location.landmarks[1]}, make your vehicle stand out with our premium car wrap solutions.`
+        details: `Picture this: You're driving past ${location.landmarks[0]}, and instead of blending into traffic, your vehicle commands attention with a flawless custom wrap. Our car wraps don't just change your vehicle's appearance—they transform how people see you and your success.`
       },
       { 
-        name: "Commercial Vehicle Wraps", 
-        description: `Professional truck and van wraps that help ${location.name} businesses advertise while they drive`,
+        name: "Commercial Truck Wraps", 
+        description: `Professional truck wraps that make every mile a marketing opportunity for Chicago-area trades and fleets`,
         price: "From $3,500",
-        details: `Perfect for businesses serving the ${location.county} area, our commercial wraps turn your vehicles into mobile billboards.`
+        details: `Every contractor knows: if your truck looks amateur, potential customers assume your work is too. Our commercial vehicle wraps give your business the credibility it deserves, whether you're serving ${location.name} families or navigating Chicago's bustling construction sites.`
       },
       { 
         name: "Fleet Branding Solutions", 
-        description: `Consistent, professional fleet graphics for ${location.name} companies of all sizes`,
+        description: `Dominate the ${location.county} market with consistent, professional fleet graphics that multiply your brand presence`,
         price: "Custom quote",
-        details: `From small business fleets to large corporate vehicles, we ensure brand consistency across your entire fleet in ${location.name}.`
+        details: `Imagine your competition's reaction when they see your professionally wrapped fleet vehicles everywhere—from downtown Chicago to ${location.name} neighborhoods. That's the power of coordinated fleet branding that makes your business impossible to ignore.`
       },
       { 
-        name: "Luxury & Exotic Wraps", 
-        description: `High-end vehicle transformations for ${location.name}'s luxury car enthusiasts`,
+        name: "Trade Vehicle Wraps", 
+        description: `Specialized wraps for plumbers, electricians, HVAC contractors, and other trades serving Chicagoland`,
+        price: "From $2,800",
+        details: `Your work truck is your mobile office, your billboard, and your first impression all rolled into one. Our trade-specific vehicle wraps help you win more jobs by positioning you as the established, professional choice in ${location.name}'s competitive market.`
+      },
+      { 
+        name: "Luxury Vehicle Wraps", 
+        description: `Exclusive transformations for high-end vehicles that reflect ${location.name}'s sophisticated taste`,
         price: "From $4,500",
-        details: `Specializing in premium finishes, color changes, and protective films for luxury vehicles throughout ${location.county}.`
-      },
-      { 
-        name: "Paint Protection Film", 
-        description: `Invisible protection to keep your vehicle looking pristine in ${location.name}'s climate`,
-        price: "From $1,800",
-        details: `Protect your investment from road debris, weather, and daily wear with our premium PPF installations.`
+        details: `Success deserves to be seen. Our luxury vehicle wraps combine cutting-edge materials with artistic design to create automotive statements worthy of ${location.name}'s most discerning residents.`
       },
       { 
         name: "Partial Wraps & Graphics", 
-        description: `Cost-effective advertising solutions for ${location.name} small businesses`,
+        description: `Strategic partial vehicle wraps that maximize your marketing budget without compromising impact`,
         price: "From $1,200",
-        details: `Strategic partial wraps that maximize your marketing budget while delivering professional results.`
+        details: `Not every business needs a full wrap to make a big impression. Our partial wraps focus on high-impact areas that catch attention while you're parked at job sites, client meetings, or anywhere in ${location.county}.`
       }
     ];
     return baseServices;
@@ -66,16 +66,16 @@ const LocationPageContent: React.FC<LocationPageContentProps> = ({ location }) =
 
   const getLocationStory = () => {
     const stories = {
-      "River North": "In the heart of Chicago's premier business district, River North represents the pinnacle of urban sophistication. Our vehicle wrap services cater to the discerning professionals and luxury car enthusiasts who call this vibrant neighborhood home. From the towering condos overlooking the Chicago River to the bustling art galleries and upscale dining establishments, River North demands vehicles that match its elevated status.",
-      "Lincoln Park": "Lincoln Park embodies the perfect blend of urban convenience and family-friendly charm. Home to young professionals, growing families, and established residents, this lakefront community values quality and reliability. Our vehicle wrap services reflect these values, offering everything from practical family vehicle graphics to sophisticated business branding for the area's thriving professional community.",
-      "Wicker Park": "Wicker Park pulses with creative energy and artistic expression. This trendy neighborhood, known for its vibrant music scene, independent businesses, and artistic community, calls for vehicle wraps that are as unique and bold as the people who live here. We specialize in custom designs that capture the neighborhood's creative spirit while maintaining professional quality.",
-      "The Loop": "As Chicago's central business district, The Loop is where commerce, culture, and innovation converge. From the iconic Willis Tower to the stunning architecture that defines the city's skyline, this area demands vehicle graphics that command respect and convey professionalism. Our corporate fleet services and executive vehicle wraps are designed to meet the exacting standards of Loop businesses.",
-      "Schaumburg": "Schaumburg represents the ideal suburban community, where families thrive and businesses flourish. With Woodfield Mall as a central hub and numerous corporate headquarters calling this area home, vehicle wrap needs span from family-friendly designs to corporate fleet graphics. We understand the suburban lifestyle and provide solutions that enhance both personal and professional image.",
-      "Naperville": "Naperville stands as one of America's premier suburban communities, known for excellent schools, beautiful neighborhoods, and a thriving business environment. Our vehicle wrap services cater to this affluent, educated community with solutions ranging from luxury personal vehicle transformations to sophisticated business graphics that reflect Naperville's high standards.",
-      "Oak Brook": "Oak Brook epitomizes executive elegance and corporate success. Home to numerous Fortune 500 companies and upscale shopping at Oakbrook Center, this community demands the highest quality in everything, including vehicle appearance. Our premium wrap services are designed to meet the exacting standards of Oak Brook's business leaders and affluent residents.",
-      "Evanston": "Evanston's unique character as a university town creates a diverse community of students, faculty, professionals, and families. Home to Northwestern University and a thriving downtown area, vehicle wrap needs range from budget-friendly student options to sophisticated professional graphics. We understand this diversity and offer solutions for every segment of the Evanston community."
+      "River North": "Last Tuesday, a contractor pulled up to a million-dollar River North condo renovation in a beat-up truck with faded lettering. The doorman almost turned him away. That same week, another contractor arrived in a professionally wrapped vehicle—clean, branded, impressive. Guess who got the referral for three more units? In River North, where first impressions determine whether you get past the front desk, your vehicle wrap isn't just decoration—it's your business card, your reputation, and your competitive edge all rolling down Michigan Avenue.",
+      "Lincoln Park": "Picture this: You're a Lincoln Park family considering two plumbers for your kitchen renovation. One drives a rusted van with duct-taped bumpers. The other pulls up in a spotless, professionally wrapped vehicle with customer testimonials right on the side. Which one feels safer inviting into your home? Lincoln Park families invest heavily in their properties and their peace of mind. Your vehicle wrap signals that you're the professional choice they can trust with their most valuable asset—their home.",
+      "Wicker Park": "The boutique owner in Wicker Park thought she couldn't compete with the chains. Then she wrapped her delivery van with stunning graphics that perfectly captured her brand's artistic vibe. Suddenly, every delivery became mobile advertising. Customers started flagging her down on Division Street, asking about her products. Her vehicle wrap didn't just transport inventory—it transported her brand story throughout Chicago's most creative neighborhood, turning routine errands into customer acquisition opportunities.",
+      "The Loop": "A fleet manager for a Loop-based consulting firm was tired of explaining why their company cars looked shabby next to competitors' vehicles at client meetings. Six months after wrapping their fleet with cohesive branding, they landed their biggest contract yet. The prospect later admitted that seeing their professional-looking vehicles parked outside gave the confidence that this was a company that handled details—exactly what they needed in a consultant. In The Loop, where million-dollar deals happen over lunch, your vehicle fleet speaks before you even enter the room.",
+      "Schaumburg": "The HVAC contractor struggled to stand out in Schaumburg's competitive market until he wrapped his truck with before-and-after photos of his work. Now homeowners actively seek him out when they see his impressive truck in their neighborhoods. His vehicle wrap became his portfolio, his testimonial, and his appointment setter all in one. In suburban Schaumburg, where neighbors talk and referrals matter, a well-designed truck wrap doesn't just advertise—it starts conversations that turn into contracts.",
+      "Naperville": "A Naperville electrical contractor was frustrated watching lesser-skilled competitors win jobs simply because they looked more professional. After wrapping his work truck with clean graphics highlighting his certifications and guarantees, he saw an immediate shift. Homeowners began choosing him over flashier competitors because his vehicle communicated competence and reliability. In Naperville's educated market, vehicle wraps don't just catch attention—they communicate the professionalism that wins business.",
+      "Oak Brook": "The corporate executive was embarrassed every time clients saw his company's unmarked, aging fleet vehicles. After investing in professional vehicle wraps for the entire fleet, client perceptions shifted overnight. The wrapped vehicles now project the same premium image as their Oak Brook headquarters, ensuring brand consistency whether meeting at the office or on-site. In Oak Brook's executive environment, every touchpoint matters—including what clients see in the parking lot.",
+      "Evanston": "A small Evanston business owner discovered that her food truck's success wasn't just about the food—it was about being impossible to miss. Her eye-catching vehicle wrap draws lines of Northwestern students and local professionals wherever she parks. The wrap pays for itself every month by turning her truck into a beacon that hungry customers can spot from blocks away. In Evanston's diverse, fast-paced environment, standing out isn't optional—it's survival."
     };
-    return stories[location.name] || `${location.name} is a unique community with its own character and vehicle wrap needs. Our experienced team understands the local market and provides tailored solutions.`;
+    return stories[location.name] || `${location.name} business owners know that in today's competitive market, every advantage matters. A professionally wrapped vehicle transforms routine drives into powerful marketing opportunities, helping local businesses stand out and win more customers throughout ${location.county}.`;
   };
 
   const services = getLocationServices();
@@ -97,7 +97,7 @@ const LocationPageContent: React.FC<LocationPageContentProps> = ({ location }) =
               Vehicle Wraps {location.name}
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-              {location.description}
+              Professional carwraps, truck wraps, and fleet graphics that turn your vehicles into powerful marketing assets throughout Chicago and {location.county}. Transform your business presence with custom vehicle wraps designed for {location.name}'s competitive market.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="text-lg px-8">
@@ -209,25 +209,28 @@ const LocationPageContent: React.FC<LocationPageContentProps> = ({ location }) =
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Vehicle Wraps in {location.name}: Your Local Advantage
+              Why {location.name} Businesses Choose Our Vehicle Wraps
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Understanding our community means delivering better results
+              Real stories from real businesses who transformed their success with professional vehicle wraps
             </p>
           </div>
 
           <div className="max-w-4xl mx-auto">
-            <Card className="p-8">
+            <Card className="p-8 border-l-4 border-l-primary">
               <CardContent className="prose prose-lg max-w-none">
-                <p className="text-lg leading-relaxed text-muted-foreground">
+                <p className="text-lg leading-relaxed text-muted-foreground italic">
                   {getLocationStory()}
                 </p>
-                <p className="text-lg leading-relaxed text-muted-foreground mt-6">
-                  Our team understands the unique vehicle wrap needs of {location.name} residents and businesses. 
-                  From climate considerations to local business requirements, we tailor our approach to deliver 
-                  exceptional results that last. Whether you're looking to advertise your business throughout {location.county} 
-                  or simply want to transform your personal vehicle, we have the expertise and materials to exceed your expectations.
-                </p>
+                <div className="mt-8 p-6 bg-primary/5 rounded-lg">
+                  <h3 className="text-xl font-bold text-primary mb-4">The Chicago Advantage: Built for Chicagoland's Unique Challenges</h3>
+                  <p className="text-lg leading-relaxed text-muted-foreground">
+                    Chicago's weather isn't for the weak—and neither are our vehicle wraps. From brutal winters that crack inferior materials to sweltering summers that fade cheap inks, we've engineered our carwraps and truck wraps specifically for Chicagoland's demanding climate. Our 3M and Avery Dennison materials don't just survive here—they thrive, maintaining their vibrant appearance year after year.
+                  </p>
+                  <p className="text-lg leading-relaxed text-muted-foreground mt-4">
+                    Whether you're a plumber racing between {location.name} service calls, a contractor building Chicago's skyline, or a business owner growing your local presence, your vehicle wrap needs to work as hard as you do. That's why we focus on fleet solutions and trade-specific designs that actually drive business results, not just pretty pictures.
+                  </p>
+                </div>
               </CardContent>
             </Card>
           </div>
@@ -239,10 +242,10 @@ const LocationPageContent: React.FC<LocationPageContentProps> = ({ location }) =
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Professional Vehicle Wrap Services in {location.name}
+              Chicago-Tested Vehicle Wrap Services That Drive Results
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Complete vehicle transformation services designed specifically for {location.name} drivers and businesses
+              From carwraps that command attention to truck wraps that win contracts, we deliver vehicle graphics that work as hard as Chicago's trades and business professionals
             </p>
           </div>
 
