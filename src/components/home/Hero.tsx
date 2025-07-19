@@ -3,6 +3,7 @@ import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Phone } from 'lucide-react';
+import DynamicHeading from '@/components/common/DynamicHeading';
 
 const Hero = () => {
   console.log('Hero component rendering...');
@@ -27,13 +28,15 @@ const Hero = () => {
       <div className="absolute inset-0 z-10 bg-black/40"></div>
       
       <div className="hero-content relative z-20 text-center max-w-6xl mx-auto px-4">
-        <h1 className="text-5xl sm:text-6xl md:text-7xl font-extrabold uppercase tracking-wider text-white mb-6 text-center speakable">
-          Chicago Vehicle Wraps, Car Wraps & Truck Wraps That Get You More Calls
-        </h1>
+        <DynamicHeading 
+          level={1} 
+          className="text-5xl sm:text-6xl md:text-7xl font-extrabold uppercase tracking-wider text-white mb-6 text-center speakable"
+        />
         
-        <h2 className="text-xl md:text-2xl font-medium text-white mb-10 max-w-2xl mx-auto text-center speakable">
-          Professional vinyl wraps, custom car wraps, commercial vehicle wraps & fleet graphics for Chicago plumbers, electricians, HVAC contractors & trades. Premium 3M vinyl wrap installation near you.
-        </h2>
+        <DynamicHeading 
+          level={2} 
+          className="text-xl md:text-2xl font-medium text-white mb-10 max-w-2xl mx-auto text-center speakable"
+        />
         
         <div className="flex flex-col sm:flex-row justify-center gap-4 mb-10">
           <Button

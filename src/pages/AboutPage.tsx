@@ -1,37 +1,21 @@
-
-import React from 'react';
-import { Helmet } from 'react-helmet-async';
-import Footer from '@/components/Footer';
-import Breadcrumbs from '@/components/navigation/Breadcrumbs';
-import Schema from '@/components/Schema';
-import { cities } from '@/data/cities';
-import CallToAction from '@/components/CallToAction';
+import React from "react";
+import { Check, Users, Award, Clock, MapPin, Phone, Mail } from "lucide-react";
+import PageSEO from "@/components/seo/PageSEO";
 
 const AboutPage = () => {
-  // For Schema component
-  const chicagoCity = cities.find(city => city.slug === 'chicago') || cities[0];
   return (
     <>
-      <Helmet>
-        <title>About Wrapping Chicago | Professional Vehicle Wraps, Car Wraps & Truck Wrap Installation</title>
-        <meta name="description" content="Chicago's premier vehicle wrap company! Professional car wraps, truck wraps, van wraps, fleet graphics. 3M certified installers, mobile service. Vehicle wrap cost from $1,200. Same day installation available." />
-        <meta name="keywords" content="vehicle wraps Chicago, car wrap company, truck wrap installation, commercial vehicle wraps, fleet graphics, vinyl wrap installation, auto wraps, custom vehicle wraps, mobile wraps, 3M wraps, Avery Dennison" />
-        <link rel="canonical" href="https://www.wrappingchicago.com/about" />
-      </Helmet>
-      
-      <Schema 
-        city={chicagoCity} 
-        path="/about" 
-        pageTitle="About Chicago Fleet Wraps | Professional Vehicle Wrap Company" 
-        pageDescription="Learn about Chicago Fleet Wraps, a premier vehicle wrapping company serving Chicago and surrounding areas." 
+      <PageSEO 
+        title="About Wrapping Chicago - 20+ Years Experience | Professional Vehicle Wraps"
+        description="Chicago's premier vehicle wrap company with 20+ years experience. Professional car wraps, truck wraps, van wraps, and fleet graphics with 3M certified installation."
+        keywords={["about wrapping chicago", "vehicle wrap company", "car wrap installation", "professional wrapping", "chicago wraps"]}
+        canonicalUrl="https://www.wrappingchicago.com/about"
       />
       
-      <div className="flex flex-col min-h-screen">
-        
-        <main className="flex-grow">
-          <div className="container mx-auto py-12 px-4">
-            <Breadcrumbs />
-            <h1 className="text-4xl font-bold text-brand-navy mb-6">Chicago's Premier Vehicle Wrap Company</h1>
+      <div className="min-h-screen bg-gray-50">
+        <div className="container mx-auto py-12 px-4">
+          <div className="max-w-4xl mx-auto">
+            <h1 className="text-4xl font-bold text-brand-navy mb-6">About Wrapping Chicago - 20+ Years of Excellence</h1>
             
             <div className="grid md:grid-cols-2 gap-12 mb-12">
               <div>
@@ -61,10 +45,10 @@ const AboutPage = () => {
                     <li className="mb-2">Mobile vehicle wrap installation</li>
                   </ul>
                   
-                  <h2 className="text-2xl font-semibold text-brand-navy mt-8 mb-4">Our Commitment</h2>
+                  <h2 className="text-2xl font-semibold text-brand-navy mt-8 mb-4">Our Commitment to Excellence</h2>
                   
                   <p className="mb-6">
-                    At Chicago Fleet Wraps, we're committed to:
+                    At Wrapping Chicago, we're committed to:
                   </p>
                   
                   <ul className="list-disc pl-6 mb-6">
@@ -79,9 +63,13 @@ const AboutPage = () => {
               
               <div>
                 <div className="bg-white rounded-lg shadow-md overflow-hidden mb-8">
-                  <img alt="Chicago Fleet Wraps Installation Facility" className="w-full h-64 object-cover" src="/lovable-uploads/a10b218d-522c-49b7-b10f-6cde9ee79cf6.jpg" />
+                  <img 
+                    alt="Chicago vehicle wrap installation facility showing professional equipment and climate-controlled environment" 
+                    className="w-full h-64 object-cover" 
+                    src="/lovable-uploads/a10b218d-522c-49b7-b10f-6cde9ee79cf6.jpg" 
+                  />
                   <div className="p-6">
-                    <h3 className="text-xl font-semibold text-brand-navy mb-2">State-of-the-Art Facility</h3>
+                    <h3 className="text-xl font-semibold text-brand-navy mb-2">State-of-the-Art Installation Facility</h3>
                     <p className="text-gray-700">
                       Our climate-controlled installation facility ensures optimal conditions for 
                       perfect wrap application every time.
@@ -90,50 +78,42 @@ const AboutPage = () => {
                 </div>
                 
                 <div className="bg-brand-navy/5 rounded-lg p-6 border border-brand-navy/10">
-                  <h3 className="text-xl font-semibold text-brand-navy mb-4">Why Choose Us?</h3>
+                  <h3 className="text-xl font-semibold text-brand-navy mb-4">Why Choose Wrapping Chicago?</h3>
                   
                   <div className="space-y-4">
                     <div className="flex items-start">
                       <div className="bg-brand-red rounded-full p-2 mr-4 text-white">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                        </svg>
+                        <Check className="h-5 w-5" />
                       </div>
                       <div>
-                        <h4 className="font-medium">Experience</h4>
-                        <p className="text-sm text-gray-600">Years of professional experience wrapping all types of vehicles</p>
+                        <h4 className="font-medium">20+ Years Experience</h4>
+                        <p className="text-sm text-gray-600">Decades of professional experience wrapping all types of vehicles</p>
                       </div>
                     </div>
                     
                     <div className="flex items-start">
                       <div className="bg-brand-red rounded-full p-2 mr-4 text-white">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                        </svg>
+                        <Check className="h-5 w-5" />
                       </div>
                       <div>
-                        <h4 className="font-medium">Quality Materials</h4>
+                        <h4 className="font-medium">Premium Materials Only</h4>
                         <p className="text-sm text-gray-600">We exclusively use premium 3M and Avery wrap films</p>
                       </div>
                     </div>
                     
                     <div className="flex items-start">
                       <div className="bg-brand-red rounded-full p-2 mr-4 text-white">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                        </svg>
+                        <Check className="h-5 w-5" />
                       </div>
                       <div>
-                        <h4 className="font-medium">Customer Service</h4>
+                        <h4 className="font-medium">Exceptional Customer Service</h4>
                         <p className="text-sm text-gray-600">Dedicated support and attention to detail from start to finish</p>
                       </div>
                     </div>
                     
                     <div className="flex items-start">
                       <div className="bg-brand-red rounded-full p-2 mr-4 text-white">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                        </svg>
+                        <Check className="h-5 w-5" />
                       </div>
                       <div>
                         <h4 className="font-medium">Warranty Backed</h4>
@@ -146,22 +126,22 @@ const AboutPage = () => {
             </div>
             
             <div className="bg-white rounded-lg shadow-md p-6 mb-12">
-              <h2 className="text-2xl font-semibold text-brand-navy mb-4">Our Process</h2>
+              <h2 className="text-2xl font-semibold text-brand-navy mb-4">Our Professional Installation Process</h2>
               
               <div className="grid md:grid-cols-4 gap-6">
                 <div className="text-center">
                   <div className="bg-brand-navy/5 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
                     <span className="text-2xl font-bold text-brand-navy">1</span>
                   </div>
-                  <h3 className="font-semibold mb-2">Consultation</h3>
-                  <p className="text-sm text-gray-600">We discuss your needs and goals for your vehicle wrap</p>
+                  <h3 className="font-semibold mb-2">Free Consultation</h3>
+                  <p className="text-sm text-gray-600">We discuss your needs and goals for your vehicle wrap project</p>
                 </div>
                 
                 <div className="text-center">
                   <div className="bg-brand-navy/5 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
                     <span className="text-2xl font-bold text-brand-navy">2</span>
                   </div>
-                  <h3 className="font-semibold mb-2">Design</h3>
+                  <h3 className="font-semibold mb-2">Custom Design</h3>
                   <p className="text-sm text-gray-600">Our designers create custom concepts for your approval</p>
                 </div>
                 
@@ -169,7 +149,7 @@ const AboutPage = () => {
                   <div className="bg-brand-navy/5 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
                     <span className="text-2xl font-bold text-brand-navy">3</span>
                   </div>
-                  <h3 className="font-semibold mb-2">Production</h3>
+                  <h3 className="font-semibold mb-2">Material Production</h3>
                   <p className="text-sm text-gray-600">We print and prepare your wrap using premium materials</p>
                 </div>
                 
@@ -177,15 +157,28 @@ const AboutPage = () => {
                   <div className="bg-brand-navy/5 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
                     <span className="text-2xl font-bold text-brand-navy">4</span>
                   </div>
-                  <h3 className="font-semibold mb-2">Installation</h3>
-                  <p className="text-sm text-gray-600">Expert installers apply your wrap with precision</p>
+                  <h3 className="font-semibold mb-2">Expert Installation</h3>
+                  <p className="text-sm text-gray-600">Certified installers apply your wrap with precision</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-brand-red text-white p-8 rounded-lg text-center">
+              <h2 className="text-2xl font-bold mb-4">Ready to Get Started?</h2>
+              <p className="mb-6">Contact us today for a free consultation and quote on your vehicle wrap project.</p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <div className="flex items-center justify-center bg-white text-brand-red px-6 py-3 rounded-lg font-semibold">
+                  <Phone className="mr-2 h-5 w-5" />
+                  (312) 597-1286
+                </div>
+                <div className="flex items-center justify-center bg-white text-brand-red px-6 py-3 rounded-lg font-semibold">
+                  <Mail className="mr-2 h-5 w-5" />
+                  info@wrappingchicago.com
                 </div>
               </div>
             </div>
           </div>
-          
-          <CallToAction />
-        </main>
+        </div>
       </div>
     </>
   );
