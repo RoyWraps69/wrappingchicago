@@ -12,7 +12,7 @@ const HomeSEO = () => {
   return (
     <>
       <Helmet>
-        <title>{`Vehicle Wraps Chicago | Car Wraps, Truck Wraps, Van Wraps & Fleet Graphics | ${currentYear}`}</title>
+        {/* Title removed - handled by DynamicTitleManager */}
         <meta 
           name="description" 
           content="Professional vehicle wraps in Chicago IL. Custom car wraps, truck wraps, van wraps, and fleet graphics with premium 3M vinyl. Get quotes for color change wraps, luxury wraps, and commercial branding solutions." 
