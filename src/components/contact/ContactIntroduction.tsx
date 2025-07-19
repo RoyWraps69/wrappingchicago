@@ -4,7 +4,7 @@ import React from 'react';
 const ContactIntroduction = () => {
   return (
     <div className="mb-8">
-      <h2 className="text-2xl font-bold mb-4">Get in Touch With Chicago's Premier Vehicle Wrap Experts</h2>
+      <h2 className="text-2xl font-bold mb-4">Connect With Chicago's Vehicle Wrap Specialists</h2>
       <p className="text-lg mb-4">
         Ready to transform your vehicle or fleet? Contact Wrapping Chicago today 
         for a free consultation and quote. Our team of vehicle wrap specialists is standing by to answer your 

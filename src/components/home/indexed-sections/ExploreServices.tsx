@@ -85,7 +85,7 @@ const ExploreServices: React.FC = () => {
   return (
     <section className="py-12 bg-white">
       <div className="container mx-auto px-4">
-        <h2 className="text-2xl font-bold text-brand-navy mb-2 text-center">Explore Our Vehicle Wrap Services</h2>
+        <h2 className="text-2xl font-bold text-brand-navy mb-2 text-center">Discover Your Perfect Vehicle Wrap Solution</h2>
         <p className="text-gray-600 mb-8 max-w-3xl mx-auto text-center">
           Chicago's leading provider of professional vehicle wraps, car wraps, truck wraps, 
           van wraps, fleet wraps, and commercial graphics with over 16,000 completed projects.

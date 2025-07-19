@@ -13,7 +13,7 @@ const VehicleWrapFAQ: React.FC = () => {
         
         <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
           <div className="bg-gray-50 p-6 rounded-lg shadow-sm">
-            <h3 className="text-xl font-semibold text-brand-navy mb-2">How much do vehicle wraps cost in Chicago?</h3>
+            <h3 className="text-xl font-semibold text-brand-navy mb-2">What's the investment for vehicle wraps in Chicago?</h3>
             <p className="text-gray-700">
               Vehicle wrap pricing in Chicago varies based on the size of your vehicle and complexity of the design. 
               Full car wraps typically range from $2,500-$5,000, while partial wraps start around $1,000. 
@@ -22,7 +22,7 @@ const VehicleWrapFAQ: React.FC = () => {
           </div>
           
           <div className="bg-gray-50 p-6 rounded-lg shadow-sm">
-            <h3 className="text-xl font-semibold text-brand-navy mb-2">How long do vinyl vehicle wraps last?</h3>
+            <h3 className="text-xl font-semibold text-brand-navy mb-2">What's the lifespan of professional vinyl wraps?</h3>
             <p className="text-gray-700">
               With proper care and maintenance, our premium 3M vinyl vehicle wraps typically last 5-7 years. 
               All our car wraps, truck wraps, and van wraps come with a 2-year warranty. Factors affecting 
@@ -31,7 +31,7 @@ const VehicleWrapFAQ: React.FC = () => {
           </div>
           
           <div className="bg-gray-50 p-6 rounded-lg shadow-sm">
-            <h3 className="text-xl font-semibold text-brand-navy mb-2">Do vehicle wraps damage paint?</h3>
+            <h3 className="text-xl font-semibold text-brand-navy mb-2">Will wraps harm my vehicle's original paint?</h3>
             <p className="text-gray-700">
               No, our professional vehicle wraps actually protect your paint when properly installed and removed. 
               Our 3M vinyl wraps act as a shield against minor scratches, stone chips, and UV damage. When removed by 
@@ -40,7 +40,7 @@ const VehicleWrapFAQ: React.FC = () => {
           </div>
           
           <div className="bg-gray-50 p-6 rounded-lg shadow-sm">
-            <h3 className="text-xl font-semibold text-brand-navy mb-2">How long does it take to wrap a vehicle?</h3>
+            <h3 className="text-xl font-semibold text-brand-navy mb-2">What's the timeline for vehicle wrap installation?</h3>
             <p className="text-gray-700">
               Our professional vehicle wrap installation typically takes 3-5 business days from start to finish. 
               Basic car wraps may be completed in 2-3 days, while complex commercial truck wraps or van wraps with 

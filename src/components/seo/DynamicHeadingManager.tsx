@@ -171,21 +171,145 @@ const DynamicHeadingManager: React.FC = () => {
     // Trade services
     if (pathname === '/plumbing-wraps') {
       return {
-        h1: `Plumbing Vehicle Wraps Chicago - Trade Graphics`,
+        h1: `Plumbing Vehicle Wraps Chicago - Trade Van Graphics`,
         h2: [
           `Professional Plumbing Van Wraps`,
-          `Trade Business Branding`,
-          `Plumbing Fleet Graphics`
+          `Plumber Business Vehicle Branding Solutions`,
+          `Trade Van Graphics That Generate Leads`
         ]
       };
     }
     if (pathname === '/hvac-wraps') {
       return {
-        h1: `HVAC Vehicle Wraps Chicago - Trade Graphics`,
+        h1: `HVAC Vehicle Wraps Chicago - Heating & Cooling Graphics`,
         h2: [
           `Professional HVAC Truck Wraps`,
-          `Heating & Cooling Graphics`,
-          `HVAC Business Branding`
+          `Heating & Air Conditioning Vehicle Graphics`,
+          `HVAC Contractor Fleet Branding`
+        ]
+      };
+    }
+    if (pathname === '/electrical-wraps') {
+      return {
+        h1: `Electrical Vehicle Wraps Chicago - Electrician Van Graphics`,
+        h2: [
+          `Professional Electrician Van Wraps`,
+          `Electrical Contractor Vehicle Branding`,
+          `Trade Vehicle Graphics for Electricians`
+        ]
+      };
+    }
+    if (pathname === '/movers-wraps') {
+      return {
+        h1: `Moving Company Vehicle Wraps Chicago - Truck Graphics`,
+        h2: [
+          `Professional Moving Company Branding`,
+          `Moving Truck Wrap Solutions`,
+          `Relocation Business Vehicle Graphics`
+        ]
+      };
+    }
+    if (pathname === '/logistics-wraps') {
+      return {
+        h1: `Logistics Vehicle Wraps Chicago - Fleet Graphics`,
+        h2: [
+          `Professional Logistics Company Branding`,
+          `Delivery Fleet Vehicle Graphics`,
+          `Transportation Business Wraps`
+        ]
+      };
+    }
+    if (pathname === '/delivery-wraps') {
+      return {
+        h1: `Delivery Vehicle Wraps Chicago - Van Graphics`,
+        h2: [
+          `Professional Delivery Service Branding`,
+          `Delivery Van Wrap Solutions`,
+          `Last-Mile Delivery Vehicle Graphics`
+        ]
+      };
+    }
+    
+    // Additional service pages
+    if (pathname === '/luxury-exotic-wraps') {
+      return {
+        h1: `Luxury Car Wraps Chicago - Exotic Vehicle Specialists`,
+        h2: [
+          `Premium Luxury Vehicle Wrapping`,
+          `Exotic Car Wrap Expertise`,
+          `High-End Vehicle Graphics Solutions`
+        ]
+      };
+    }
+    if (pathname === '/designer-wraps') {
+      return {
+        h1: `Designer Vehicle Wraps Chicago - Custom Artistic Graphics`,
+        h2: [
+          `Unique Designer Wrap Concepts`,
+          `Artistic Vehicle Graphics Design`,
+          `Custom Creative Wrap Solutions`
+        ]
+      };
+    }
+    
+    // Extended location pages
+    if (pathname === '/arlington-heights') {
+      return {
+        h1: `Vehicle Wraps Arlington Heights IL - Professional Installation`,
+        h2: [
+          `Arlington Heights Vehicle Wrap Services`,
+          `Local Arlington Heights Wrap Specialists`,
+          `Arlington Heights Commercial Graphics`
+        ]
+      };
+    }
+    if (pathname === '/palatine') {
+      return {
+        h1: `Vehicle Wraps Palatine IL - Fleet Graphics Experts`,
+        h2: [
+          `Palatine Vehicle Wrap Installation`,
+          `Palatine Business Vehicle Graphics`,
+          `Commercial Fleet Wraps Palatine`
+        ]
+      };
+    }
+    if (pathname === '/aurora') {
+      return {
+        h1: `Vehicle Wraps Aurora IL - Car & Truck Wrapping`,
+        h2: [
+          `Aurora Vehicle Graphics Installation`,
+          `Aurora Commercial Vehicle Wraps`,
+          `Professional Wrapping Services Aurora`
+        ]
+      };
+    }
+    if (pathname === '/joliet') {
+      return {
+        h1: `Vehicle Wraps Joliet IL - Professional Graphics`,
+        h2: [
+          `Joliet Vehicle Wrap Specialists`,
+          `Joliet Fleet Graphics Solutions`,
+          `Commercial Wrapping Services Joliet`
+        ]
+      };
+    }
+    if (pathname === '/oak-park') {
+      return {
+        h1: `Vehicle Wraps Oak Park IL - Car Wrapping Services`,
+        h2: [
+          `Oak Park Vehicle Graphics Installation`,
+          `Oak Park Professional Wrapping`,
+          `Custom Vehicle Wraps Oak Park`
+        ]
+      };
+    }
+    if (pathname === '/wheaton') {
+      return {
+        h1: `Vehicle Wraps Wheaton IL - Professional Installation`,
+        h2: [
+          `Wheaton Vehicle Wrap Services`,
+          `Wheaton Commercial Graphics`,
+          `Professional Vehicle Wrapping Wheaton`
         ]
       };
     }

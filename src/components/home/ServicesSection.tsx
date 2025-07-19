@@ -64,7 +64,7 @@ const ServicesSection = ({ fleetWrapVan, colorChangeVan, commercialGraphics }: S
     <section className="py-8 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-8">
-          <h2 className="text-3xl font-bold mb-3 text-brand-navy">Our Vehicle Wrap Services</h2>
+          <h2 className="text-3xl font-bold mb-3 text-brand-navy">Complete Vehicle Transformation Solutions</h2>
           <p className="text-lg text-gray-700 max-w-3xl mx-auto">
             Wrapping Chicago offers a comprehensive range of vehicle wrapping services to meet the needs of businesses and individuals throughout Chicago and surrounding areas.
           </p>
@@ -79,7 +79,7 @@ const ServicesSection = ({ fleetWrapVan, colorChangeVan, commercialGraphics }: S
         </div>
         
         <div>
-          <h3 className="text-2xl font-bold mb-6 text-brand-navy">Additional Wrapping Services</h3>
+          <h3 className="text-2xl font-bold mb-6 text-brand-navy">Specialized Installation Services</h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {additionalServices.map((service, index) => (
               <AdditionalService key={index} {...service} />

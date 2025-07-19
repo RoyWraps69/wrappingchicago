@@ -50,7 +50,7 @@ const WhyChooseUsSection = () => {
     <section className="py-10 relative">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-8">
-          <h2 className="text-3xl font-bold mb-3 text-brand-navy">Why Choose Wrapping Chicago</h2>
+          <h2 className="text-3xl font-bold mb-3 text-brand-navy">What Sets Us Apart in Chicago</h2>
           <p className="text-lg text-gray-700 max-w-3xl mx-auto">
             When it comes to vehicle wraps in Chicago and surrounding areas, Wrapping Chicago stands apart from the competition.
           </p>
