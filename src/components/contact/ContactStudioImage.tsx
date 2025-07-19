@@ -10,7 +10,7 @@ const ContactStudioImage = () => {
       <div className="relative">
         <img 
           src="/lovable-uploads/efdbc4bf-1f04-42bb-a904-f52dae7bef6c.png" 
-          alt="Wrapping Chicago installation facility - Professional vehicle wrap, car wrap, truck wrap, and van wrap installation shop in Chicago" 
+          alt="Wrapping Chicago production facility - state-of-the-art vehicle customization workspace featuring climate-controlled environment, precision application tools, and comprehensive project staging areas for optimal results" 
           className="w-full h-auto object-cover"
         />
         <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 via-black/70 to-transparent p-6">
@@ -51,7 +51,7 @@ const ContactStudioImage = () => {
           </div>
           
           <p className="text-white/80 text-sm mt-3">
-            Premium 3M vehicle wraps with expert installation and 2-year warranty
+            Advanced automotive customization with certified installation and comprehensive warranty coverage
           </p>
         </div>
       </div>

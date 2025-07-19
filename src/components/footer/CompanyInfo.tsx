@@ -15,7 +15,7 @@ const CompanyInfo = () => {
       </div>
       
       <p className="text-white/70 mb-6">
-        Chicago's premier vehicle wrap company specializing in commercial fleet wraps, 
+        Chicago's foremost vehicle customization company specializing in comprehensive fleet branding, 
         color change wraps, and custom graphics that turn your vehicles into powerful mobile advertising.
       </p>
       

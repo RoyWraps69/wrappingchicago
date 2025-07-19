@@ -87,8 +87,8 @@ const ExploreServices: React.FC = () => {
       <div className="container mx-auto px-4">
         <h2 className="text-2xl font-bold text-brand-navy mb-2 text-center">Discover Your Perfect Vehicle Wrap Solution</h2>
         <p className="text-gray-600 mb-8 max-w-3xl mx-auto text-center">
-          Chicago's leading provider of professional vehicle wraps, car wraps, truck wraps, 
-          van wraps, fleet wraps, and commercial graphics with over 16,000 completed projects.
+          Chicago's leading provider of comprehensive vehicle customization, automotive branding, commercial graphics, 
+          fleet transformation, and luxury enhancement with over 16,000 completed projects.
         </p>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
@@ -153,8 +153,8 @@ const ExploreServices: React.FC = () => {
           <div className="text-gray-600 text-sm space-y-3" itemProp="description">
             <p>
               At Wrapping Chicago, we provide premium vehicle wrapping services using high-quality 
-              3M and Avery vinyl materials. With over 16,000 completed projects in our 20 years of business, 
-              our expert installation team delivers exceptional results for businesses and individuals throughout 
+              cutting-edge vinyl technology. With over 16,000 completed projects spanning two decades of innovation, 
+              our expert installation team delivers exceptional results for businesses and individuals throughout
               Chicago and surrounding suburbs.
             </p>
             

@@ -15,7 +15,7 @@ const EEATContent: React.FC = () => {
             Why Chicago Trusts Our Vehicle Wrap Expertise
           </h2>
           <p className="text-lg text-black max-w-3xl mx-auto">
-            Over 20 years of proven experience in vehicle wrapping, backed by certifications, 
+            Over two decades of documented excellence in automotive customization, backed by industry certifications, 
             industry recognition, and thousands of satisfied customers across Chicago.
           </p>
         </div>
@@ -25,7 +25,7 @@ const EEATContent: React.FC = () => {
             <div className="w-16 h-16 bg-brand-red rounded-full flex items-center justify-center mx-auto mb-4">
               <Clock className="h-8 w-8 text-white" />
             </div>
-            <h3 className="font-bold text-black mb-2">20+ Years Experience</h3>
+            <h3 className="font-bold text-black mb-2">Two Decades of Excellence</h3>
             <p className="text-black">Founded in 2003, we've wrapped over 16,000 vehicles in Chicago</p>
           </div>
           
@@ -88,7 +88,7 @@ const EEATContent: React.FC = () => {
             </span>
             <span className="flex items-center">
               <CheckCircle className="h-5 w-5 mr-2 text-brand-red" />
-              20+ Years Experience
+              Two Decades of Excellence
             </span>
             <span className="flex items-center">
               <CheckCircle className="h-5 w-5 mr-2 text-brand-red" />

@@ -34,12 +34,12 @@ const Index = () => {
     },
     {
       question: "How long do vehicle wraps last?", 
-      answer: "Professional vehicle wraps last 5-7 years with proper care. Premium 3M and Avery Dennison materials are designed to withstand Chicago weather, UV rays, and daily wear while protecting your original paint.",
+      answer: "Superior vehicle wraps deliver 5-7 years of exceptional performance with appropriate care. Engineered materials withstand Chicago's seasonal temperature extremes while maintaining color integrity and adhesive strength throughout the product lifecycle.",
       category: 'durability' as const
     },
     {
       question: "Will a vehicle wrap damage my car's paint?",
-      answer: "No, professional vehicle wraps protect your paint. High-quality vinyl with proper installation preserves your original paint finish and can be removed without damage by certified installers.",
+      answer: "Vehicle wraps enhance paint preservation through advanced protective technology. Certified installation techniques ensure damage-free application and removal while maintaining factory finish quality and vehicle resale value.",
       category: 'process' as const
     }
   ];
@@ -62,7 +62,7 @@ const Index = () => {
     },
     {
       question: "Will wrapping my work truck hurt the paint?",
-      answer: "No, professional vehicle wraps actually protect your truck's original paint. High-quality vinyl can be removed without damage."
+      answer: "Truck wraps enhance paint protection through advanced vinyl barrier technology. Professional application preserves original finish integrity while providing superior protection against road hazards and environmental damage."
     },
     {
       question: "How long does installation take for trade vehicles?",

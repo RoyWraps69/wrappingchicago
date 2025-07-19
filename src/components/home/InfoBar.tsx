@@ -23,7 +23,7 @@ const InfoBar = () => {
             </div>
             <div>
               <h3 className="font-bold text-lg text-white">Premium Materials</h3>
-              <p className="text-white text-sm">3M & Avery Dennison</p>
+              <p className="text-white text-sm">Advanced Technology</p>
             </div>
           </div>
           
@@ -42,7 +42,7 @@ const InfoBar = () => {
               <Award className="text-brand-red group-hover:text-white h-5 w-5" />
             </div>
             <div>
-              <h3 className="font-bold text-lg text-white">Expert Installation</h3>
+              <h3 className="font-bold text-lg text-white">Certified Application</h3>
               <p className="text-white text-sm">Certified Professionals</p>
             </div>
           </div>

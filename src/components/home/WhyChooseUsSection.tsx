@@ -5,13 +5,13 @@ import { Shield, Users, Award, Clock, Wrench, Truck, ThumbsUp } from 'lucide-rea
 const WhyChooseUsSection = () => {
   const benefits = [
     {
-      title: "Premium Materials",
-      description: "We use only top-quality 3M and Avery vinyl materials for maximum durability and appearance.",
+      title: "Advanced Materials",
+      description: "We utilize cutting-edge vinyl technology and superior application techniques for optimal durability and visual impact.",
       icon: <Award className="w-8 h-8 text-white" />
     },
     {
-      title: "In-House Trained Professionals",
-      description: "Our in-house trained professionals ensure flawless application and attention to detail.",
+      title: "Certified Specialists",
+      description: "Our certified application specialists ensure precision installation and exceptional attention to detail on every project.",
       icon: <Users className="w-8 h-8 text-white" />
     },
     {

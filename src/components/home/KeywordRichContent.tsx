@@ -13,10 +13,10 @@ const KeywordRichContent: React.FC = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-black mb-4">
-            Chicago's Premier Vehicle Wrap Specialists
+            Chicago's Leading Vehicle Transformation Experts
           </h2>
           <p className="text-lg text-black max-w-3xl mx-auto">
-            From downtown Chicago to suburban communities, we deliver professional vehicle wraps 
+            From downtown Chicago to suburban communities, we deliver comprehensive vehicle customization 
             that transform cars, trucks, vans, and entire fleets into powerful marketing tools.
           </p>
         </div>
@@ -48,7 +48,7 @@ const KeywordRichContent: React.FC = () => {
             <p className="text-black mb-4">
               Our truck wraps Chicago and van wraps Chicago services cover all vehicle types. 
               Whether you need partial wraps, full color change wraps, or custom commercial 
-              graphics, we deliver exceptional results using premium 3M vinyl materials.
+              graphics, we deliver exceptional results using advanced vinyl application technology.
             </p>
             <Link 
               to="/services" 
@@ -79,14 +79,14 @@ const KeywordRichContent: React.FC = () => {
         
         <div className="bg-white p-8 rounded-lg shadow-lg">
           <h3 className="text-2xl font-bold text-black mb-6 text-center">
-            Why Choose Our Vehicle Wrap Services in Chicago?
+            What Makes Our Vehicle Customization Services Unique in Chicago?
           </h3>
           
           <div className="grid md:grid-cols-2 gap-8">
             <div>
               <h4 className="text-lg font-semibold text-black mb-3">Premium Materials & Installation</h4>
               <p className="text-black mb-4">
-                We exclusively use premium 3M and Avery Dennison vinyl for all our vehicle wraps Chicago projects. 
+                We exclusively use advanced vinyl technology and premium application techniques for all our Chicago vehicle transformation projects. 
                 Our certified installers ensure every wrap is applied with precision, from simple car graphics 
                 to complex truck lettering and commercial vehicle branding.
               </p>

@@ -55,15 +55,15 @@ const EasyButtonSection = () => {
                 <div className="flex items-start">
                   <Check className="h-5 w-5 text-green-400 mr-2 mt-0.5 flex-shrink-0" />
                   <div>
-                    <span className="text-white font-medium">Premium 3M Materials</span>
-                    <p className="text-white/80 text-sm">High-quality vinyl that lasts years</p>
+                    <span className="text-white font-medium">Advanced Vinyl Technology</span>
+                    <p className="text-white/80 text-sm">Superior vinyl that maintains vibrancy</p>
                   </div>
                 </div>
                 <div className="flex items-start">
                   <Check className="h-5 w-5 text-green-400 mr-2 mt-0.5 flex-shrink-0" />
                   <div>
-                    <span className="text-white font-medium">Expert Installation</span>
-                    <p className="text-white/80 text-sm">By certified professionals</p>
+                    <span className="text-white font-medium">Certified Application</span>
+                    <p className="text-white/80 text-sm">Applied by licensed specialists</p>
                   </div>
                 </div>
                 <div className="flex items-start">

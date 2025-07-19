@@ -19,11 +19,11 @@ const FAQPage = () => {
         },
         {
           question: "How long do vehicle wraps last?",
-          answer: "High-quality vehicle wraps typically last 5-7 years with proper care. The lifespan depends on factors like sun exposure, weather conditions, and maintenance. We use premium 3M and Avery materials that come with manufacturer warranties."
+          answer: "Durable vehicle wraps maintain their appearance for 5-7 years under typical usage conditions. Lifespan varies based on exposure intensity, vehicle storage, and maintenance frequency. Premium materials resist fading, cracking, and edge lifting throughout their service life."
         },
         {
           question: "Will a wrap damage my car's paint?",
-          answer: "No, professional vehicle wraps actually protect your paint. When properly installed and removed by professionals, wraps preserve the original paint underneath. In fact, wrapped areas often look better than unwrapped areas when the wrap is removed."
+          answer: "Vehicle wraps enhance paint protection rather than causing damage. Professional application and removal preserve the original finish while providing superior protection against environmental hazards, maintaining vehicle value and appearance."
         }
       ]
     },

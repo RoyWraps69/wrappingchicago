@@ -16,7 +16,7 @@ const ContactIntroduction = () => {
         and expert installation to ensure your satisfaction.
       </p>
       <p className="text-lg">
-        Serving all of Chicago and surrounding suburbs with over 20 years of experience and 
+        Serving all of Chicago and surrounding suburbs with over two decades of experience and 
         16,000+ completed vehicle wraps.
       </p>
     </div>

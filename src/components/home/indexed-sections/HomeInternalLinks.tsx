@@ -204,10 +204,10 @@ const HomeInternalLinks: React.FC = () => {
         {/* SEO text - hidden but available for search engines */}
         <div className="mt-12 text-sm text-gray-500">
           <p>
-            Looking for professional vehicle wraps in Chicago? Wrapping Chicago offers premium car wraps, 
-            truck wraps, van wraps, fleet wraps, and commercial graphics with over 16,000 completed 
-            projects in our 20 years of business. We serve Chicago and all surrounding suburbs with expert 
-            installation using premium 3M materials.
+            Looking for comprehensive vehicle transformation in Chicago? Wrapping Chicago offers premium automotive customization, 
+            commercial fleet branding, luxury enhancement, and custom graphic design with over 16,000 completed 
+            projects in our 20 years of business. We serve Chicago and all surrounding suburbs with advanced 
+            installation using cutting-edge vinyl technology.
           </p>
         </div>
       </div>

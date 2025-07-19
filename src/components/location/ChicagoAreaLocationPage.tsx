@@ -15,7 +15,7 @@ const ChicagoAreaLocationPage: React.FC<ChicagoAreaLocationPageProps> = ({ locat
   const currentYear = new Date().getFullYear();
   
   const pageTitle = `#1 Vehicle Wraps ${location.name} ${currentYear} | Car Wraps, Truck Wraps & Fleet Graphics`;
-  const metaDescription = `Professional vehicle wraps, car wraps, truck wraps, and fleet graphics in ${location.name}, ${location.county}. Premium vinyl wraps, commercial vehicle graphics serving all ${location.zipCodes.join(', ')} areas. Free quotes (312) 597-1286.`;
+  const metaDescription = `Comprehensive vehicle customization services in ${location.name}, ${location.county}. Advanced automotive branding, commercial fleet graphics, luxury enhancement serving ${location.zipCodes.join(', ')} areas. Consultation available (312) 597-1286.`;
   
   const keywords = [
     `vehicle wraps ${location.name}`,

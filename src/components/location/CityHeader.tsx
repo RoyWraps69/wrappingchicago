@@ -30,7 +30,7 @@ const CityHeader: React.FC<CityHeaderProps> = ({ city }) => {
       </div>
       
       <p className="text-gray-700 mb-4">
-        Expert installation of car wraps, truck wraps, van wraps, and fleet graphics with durable 3M vinyl materials. 
+        Advanced installation techniques for automotive wrapping, commercial fleet branding, luxury vehicle enhancement with premium vinyl application technology. 
         Over 16,000 wraps completed in our 20 years of business serving {city.name}, {city.county} County, and surrounding areas.
         Transform your personal or business vehicle with our professional vehicle wrapping services.
       </p>

@@ -74,7 +74,7 @@ const Schema: React.FC<SchemaProps> = ({
     "@id": `${domain}/#organization`,
     "name": "Wrapping Chicago",
     "alternateName": "Chicago Vehicle Wraps",
-    "description": `Professional vehicle wrap services in Chicago IL. Specializing in car wraps, truck wraps, van wraps, fleet graphics, custom graphics, color change wraps, luxury wraps, and commercial branding solutions using premium 3M vinyl and Avery materials.`,
+    "description": `Comprehensive vehicle customization services in Chicago IL. Specializing in automotive vinyl transformation, commercial fleet branding, custom graphic design, color modification wraps, luxury vehicle enhancement, and business marketing solutions using advanced application techniques and premium materials.`,
     "url": domain,
     "logo": {
       "@type": "ImageObject",

@@ -13,7 +13,7 @@ const Hero = () => {
       <div className="absolute inset-0 z-0 flex items-center justify-center">
         <img 
           src="/lovable-uploads/99d82949-5568-4a29-8a3a-72ff2ee6836e.png"
-          alt="Professional vehicle wraps in Chicago - fleet of wrapped cars, trucks, and commercial vehicles showcasing premium 3M vinyl materials and expert installation"
+          alt="Chicago vehicle transformation specialists - comprehensive fleet of custom wrapped automobiles, commercial trucks, and branded business vehicles displaying advanced vinyl application techniques and creative design solutions"
           className="max-w-full max-h-full object-contain"
           onError={(e) => {
             console.log('Hero image failed to load:', (e.target as HTMLImageElement).src);
@@ -77,7 +77,7 @@ const Hero = () => {
           </span>
           <span className="flex items-center text-white speakable">
             <span className="w-1.5 h-1.5 bg-brand-red rounded-full mr-2"></span>
-            Premium 3M & Avery Dennison Wraps
+            Advanced Vinyl Technology & Application
           </span>
           <span className="flex items-center text-white speakable">
             <span className="w-1.5 h-1.5 bg-brand-red rounded-full mr-2"></span>

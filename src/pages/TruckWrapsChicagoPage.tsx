@@ -28,7 +28,7 @@ const TruckWrapsChicagoPage = () => {
     },
     {
       question: "How long do truck wraps last?",
-      answer: "With proper care and maintenance, our premium truck wraps typically last 5-7 years. All commercial truck wraps come with a 2-year warranty and are made with durable 3M vinyl materials."
+      answer: "Commercial truck wraps deliver 5-7 years of outstanding performance with routine maintenance. Engineered vinyl withstands heavy-duty usage, weather exposure, and frequent washing while maintaining professional appearance."
     },
     {
       question: "Do truck wraps damage paint?",

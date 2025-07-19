@@ -26,11 +26,11 @@ const HomePageSEO = () => {
   const faqData = [
     {
       question: "How much does a vehicle wrap cost in Chicago?",
-      answer: "Vehicle wrap costs in Chicago typically range from $2,500 to $5,000 for a full wrap, depending on vehicle size and design complexity. Partial wraps start around $1,500. We provide free detailed quotes for all projects."
+      answer: "Vehicle wrap investment varies by project scope and vehicle size. Compact vehicles typically range $2,200-$3,800, larger vehicles $3,200-$5,500. Partial coverage starts around $800. Every estimate includes design development, premium materials, and certified installation."
     },
     {
       question: "How long does a vehicle wrap last?",
-      answer: "With proper care and maintenance, a professional vehicle wrap can last 5-7 years. We use premium 3M materials that provide excellent durability and UV resistance with a 2-year warranty."
+      answer: "Premium vehicle wraps maintain optimal appearance for 5-7 years with appropriate maintenance. Engineered materials resist Chicago weather extremes while preserving color saturation and adhesive integrity throughout their operational lifespan."
     },
     {
       question: "How long does it take to wrap a vehicle?",
@@ -38,7 +38,7 @@ const HomePageSEO = () => {
     },
     {
       question: "Will a vehicle wrap damage my paint?",
-      answer: "No, professional vehicle wraps protect your paint and when removed properly, leave the original paint in excellent condition, often better than vehicles without wraps."
+      answer: "Vehicle wraps enhance paint preservation through protective barrier technology. Certified application processes ensure damage-free installation and removal while maintaining original finish quality and enhancing resale value."
     },
     {
       question: "Do you offer design services for vehicle wraps?",
@@ -130,7 +130,7 @@ const HomePageSEO = () => {
       {/* Comprehensive SEO Optimization */}
       <FullSEOOptimization
         pageTitle="Vehicle Wraps Chicago | Car Wraps, Truck Wraps, Van Wraps & Fleet Graphics | 2025"
-        pageDescription="Chicago's premier vehicle wrap specialists. Professional car wraps, truck wraps, van wraps, and fleet graphics with premium 3M vinyl. Custom designs, expert installation, and competitive pricing. Get your free quote today!"
+        pageDescription="Chicago's leading vehicle transformation specialists. Comprehensive automotive customization including color modification, commercial fleet branding, luxury enhancement, and business marketing solutions using advanced application technology. Request consultation today!"
         keywords={comprehensiveKeywords}
         h1Text="Professional Vehicle Wraps in Chicago"
         canonicalUrl="https://www.wrappingchicago.com/"

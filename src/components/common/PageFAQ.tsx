@@ -22,11 +22,11 @@ const defaultFAQs = [
   },
   {
     question: "How long do vinyl vehicle wraps last?",
-    answer: "With proper care and maintenance, our premium 3M vinyl vehicle wraps typically last 5-7 years. All our wraps come with a 2-year warranty. Longevity depends on exposure to weather, washing frequency, and storage conditions."
+    answer: "Quality vehicle wraps last 5-7 years when maintained correctly. Our professional-grade vinyl withstands Chicago weather conditions while maintaining color vibrancy and adhesion integrity throughout its lifespan."
   },
   {
     question: "Do vehicle wraps damage paint?",
-    answer: "No, professional vehicle wraps actually protect your paint when properly installed and removed. Our 3M vinyl wraps act as a shield against minor scratches, stone chips, and UV damage. When removed by professionals, the original paint remains in excellent condition."
+    answer: "Vehicle wraps safeguard your original paint finish when applied and removed by certified technicians. The vinyl acts as a protective barrier against road debris, UV rays, and environmental damage while preserving resale value."
   },
   {
     question: "How long does it take to wrap a vehicle?",

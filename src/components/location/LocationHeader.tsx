@@ -28,7 +28,7 @@ const LocationHeader: React.FC<LocationHeaderProps> = ({ city, cityKeywords }) =
       
       {/* Enhanced Open Graph Tags */}
       <meta property="og:title" content={`Professional Vehicle Wraps in ${city.name}, IL | Wrapping Chicago | ${currentYear}`} />
-      <meta property="og:description" content={`Expert vehicle wrapping services in ${city.name}, IL. Specializing in fleet wraps, car wraps, truck wraps, and commercial graphics with premium 3M materials and installation.`} />
+      <meta property="og:description" content={`Advanced vehicle customization services in ${city.name}, IL. Specializing in automotive transformation, commercial fleet branding, luxury enhancement with premium application technology and comprehensive installation solutions.`} />
       <meta property="og:url" content={`${domain}/vehicle-wraps-${city.slug}-il`} />
       <meta property="og:type" content="website" />
       <meta property="og:image" content="/og-image.png" />

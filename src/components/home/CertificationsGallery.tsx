@@ -12,9 +12,9 @@ const CertificationsGallery: React.FC = () => {
     {
       id: 1,
       src: "/lovable-uploads/199c2a21-e0b0-4c29-972f-f32d72698382.png",
-      alt: "Professional vehicle wrap installation Chicago - expert vinyl application on commercial vehicle with precision tools",
-      title: "Expert Installation",
-      description: "Professional vehicle wrap installation process showcasing expert craftsmanship and precision application techniques in Chicago"
+      alt: "Advanced vehicle customization process Chicago - specialized technician applying precision vinyl graphics on commercial vehicle using professional-grade tools and meticulous attention to detail",
+      title: "Precision Application Techniques",
+      description: "Advanced vehicle customization process showcasing specialized application methods and quality control standards in Chicago"
     },
     {
       id: 2,
@@ -201,8 +201,8 @@ const CertificationsGallery: React.FC = () => {
     {
       id: 28,
       src: "/lovable-uploads/7ddb7eff-51b6-4a23-8f20-b1249d22e300.png",
-      alt: "Professional vehicle wrap installer applying vinyl graphics - expert installation process Chicago",
-      title: "Professional Installation",
+      alt: "Certified vehicle transformation specialist executing vinyl graphics application - comprehensive installation methodology Chicago",
+      title: "Certified Installation Specialists",
       description: "Skilled technician applying vehicle wrap vinyl with precision tools in climate-controlled installation bay"
     },
     {
