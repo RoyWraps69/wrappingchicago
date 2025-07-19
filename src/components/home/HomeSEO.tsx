@@ -13,18 +13,9 @@ const HomeSEO = () => {
     <>
       <Helmet>
         {/* Title removed - handled by DynamicTitleManager */}
-        <meta 
-          name="description" 
-          content="Professional vehicle wraps in Chicago IL. Custom car wraps, truck wraps, van wraps, and fleet graphics with premium 3M vinyl. Get quotes for color change wraps, luxury wraps, and commercial branding solutions." 
-        />
-        <meta name="keywords" content={allKeywords} />
+        {/* Meta tags removed - handled by DynamicMetaManager */}
         
-        {/* Critical: Explicit canonical URL for homepage */}
-        <link rel="canonical" href={`${domain}/`} />
-        
-        {/* Prevent common duplicate content issues */}
-        <link rel="alternate" href={`${domain}/`} hrefLang="en-us" />
-        <link rel="alternate" href={`${domain}/`} hrefLang="en" />
+        {/* Canonical URLs removed - handled by DynamicCanonicalManager */}
         
         {/* Enhanced favicon setup */}
         <link rel="icon" type="image/png" sizes="32x32" href="/lovable-uploads/6ef3b1af-8591-4d36-97c2-9366401115fa.png" />
@@ -34,25 +25,9 @@ const HomeSEO = () => {
         <meta name="msapplication-TileImage" content="/lovable-uploads/6ef3b1af-8591-4d36-97c2-9366401115fa.png" />
         <meta name="msapplication-TileColor" content="#11172D" />
         
-        {/* Enhanced Open Graph / Social Media Tags */}
-        <meta property="og:title" content={`Vehicle Wraps Chicago | Premium Car Wraps, Truck Wraps & Fleet Graphics | ${currentYear}`} />
-        <meta property="og:description" content="Wrapping Chicago - Premier vehicle wrap specialists. Custom car wraps, truck wraps, van wraps, and fleet graphics with premium 3M vinyl. Professional installation, design consultation, and competitive pricing." />
-        <meta property="og:url" content={`${domain}/`} />
-        <meta property="og:type" content="website" />
-        <meta property="og:image" content={`${domain}/lovable-uploads/6ef3b1af-8591-4d36-97c2-9366401115fa.png`} />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
-        <meta property="og:image:alt" content="Professional vehicle wrap with vibrant colors on sports car in Chicago - Wrapping Chicago" />
-        <meta property="og:site_name" content="Wrapping Chicago" />
-        <meta property="og:locale" content="en_US" />
+        {/* All OG tags removed - handled by DynamicMetaManager */}
         
-        {/* Enhanced Twitter Card */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={`Vehicle Wraps Chicago | Car Wraps, Truck Wraps, Van Wraps & Fleet Graphics | ${currentYear}`} />
-        <meta name="twitter:description" content="Professional vehicle wraps in Chicago IL. Custom car wraps, truck wraps, van wraps, and fleet graphics with premium 3M vinyl. Get quotes for color change wraps and commercial branding." />
-        <meta name="twitter:image" content={`${domain}/lovable-uploads/6ef3b1af-8591-4d36-97c2-9366401115fa.png`} />
-        <meta name="twitter:image:alt" content="Professional vehicle wrap services in Chicago - colorful vehicle design" />
-        <meta name="twitter:site" content="@wrappingchicago" />
+        {/* Twitter tags removed - handled by DynamicMetaManager */}
         
         {/* Enhanced SEO meta tags - Critical for indexing */}
         <meta name="author" content="Wrapping Chicago" />
