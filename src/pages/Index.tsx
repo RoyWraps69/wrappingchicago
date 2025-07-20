@@ -1,8 +1,5 @@
 import React from "react";
-import HomeSEO from "@/components/home/HomeSEO";
 import Google2025SEOOptimizer from "@/components/seo/Google2025SEOOptimizer";
-import AEOOptimizer from "@/components/seo/AEOOptimizer";
-import LocalSEOBooster from "@/components/seo/LocalSEOBooster";
 import HomePageSections from "@/components/home/HomePageSections";
 
 const Index = () => {
@@ -64,7 +61,7 @@ const Index = () => {
   
   return (
     <>
-      {/* Enhanced SEO Stack for Google 2025 */}
+      {/* Unified SEO - No Conflicts */}
       <Google2025SEOOptimizer
         pageTitle="Chicago Vehicle Wraps for Plumbers, Electricians & HVAC | Get More Calls"
         pageDescription="Turn your work truck into a customer magnet! Chicago's trade professionals trust us for vehicle wraps that get noticed. Same week service, won't hurt your paint."
@@ -75,26 +72,8 @@ const Index = () => {
         reviewCount={247}
         averageRating={4.9}
       />
-      
-      <AEOOptimizer
-        businessType="general"
-        location="Chicago"
-        serviceKeywords={tradeKeywords}
-      />
-      
-      <LocalSEOBooster
-        cityName="Chicago"
-        businessType="general"
-        serviceRadius={35}
-        neighboringCities={['Evanston', 'Naperville', 'Schaumburg', 'Oak Park', 'Cicero']}
-      />
-      
-      {/* Removed CoreWebVitalsOptimizer - causing conflicts */}
-      
-      {/* Legacy SEO components */}
-      <HomeSEO />
-      
-      {/* Page Content with Comprehensive SEO Content */}
+
+      {/* Page Content */}
       <div className="min-h-screen">
         <HomePageSections />
       </div>

@@ -199,14 +199,7 @@ function App() {
               </main>
               <Footer />
             </div>
-            {/* Dynamic SEO Components */}
-            <DynamicTitleManager />
-            <DynamicMetaManager />
-            <DynamicCanonicalManager />
-            <DynamicHeadingManager />
-            <EnhancedSchemaGenerator />
-            <UnifiedSEOSystem />
-            <InternalLinkingHub />
+            {/* Removed conflicting SEO components that cause duplicate meta tags */}
           </BrowserRouter>
         </TooltipProvider>
       </QueryClientProvider>
