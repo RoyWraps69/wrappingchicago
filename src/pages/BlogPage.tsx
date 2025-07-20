@@ -7,6 +7,7 @@ import { Calendar, User, ArrowRight, Tag, Search } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import MetaTags from '@/components/seo/MetaTags';
+import BlogHero from '@/components/heroes/BlogHero';
 
 interface BlogPost {
   id: number;
@@ -148,16 +149,7 @@ const BlogPage: React.FC = () => {
         
         <main className="flex-grow">
           {/* Hero Section */}
-          <section className="bg-gradient-to-r from-brand-navy to-blue-900 text-white py-16">
-            <div className="container mx-auto px-4 text-center">
-              <h1 className="text-4xl md:text-5xl font-bold mb-4">
-                Vehicle Wrap Blog
-              </h1>
-              <p className="text-xl text-blue-100 max-w-2xl mx-auto">
-                Expert insights, trends, and tips from Chicago's premier vehicle wrap professionals
-              </p>
-            </div>
-          </section>
+          <BlogHero />
 
           {/* Blog Content */}
           <section className="py-16">

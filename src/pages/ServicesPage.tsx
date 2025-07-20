@@ -6,6 +6,7 @@ import Footer from '@/components/Footer';
 import CallToAction from '@/components/CallToAction';
 import Breadcrumbs from '@/components/navigation/Breadcrumbs';
 import ServiceContentSelector from '@/components/services/ServiceContentSelector';
+import ServicesHero from '@/components/heroes/ServicesHero';
 import { useParams } from 'react-router-dom';
 
 const ServicesPage = () => {
@@ -26,6 +27,8 @@ const ServicesPage = () => {
       
       <div className="flex flex-col min-h-screen">
         <main className="flex-grow">
+          <ServicesHero />
+          
           <div className="container mx-auto py-12 px-4">
             <Breadcrumbs />
             <ServiceContentSelector path={servicePath} />

@@ -3,6 +3,7 @@ import { MapPin, Phone, Mail, Clock, Star } from "lucide-react";
 import ContactForm from "@/components/contact/ContactForm";
 import ContactStudioImage from "@/components/contact/ContactStudioImage";
 import PageSEO from "@/components/seo/PageSEO";
+import ContactHero from "@/components/heroes/ContactHero";
 
 const ContactPage = () => {
   return (
@@ -14,13 +15,11 @@ const ContactPage = () => {
         canonicalUrl="https://www.wrappingchicago.com/contact"
       />
       
+      <ContactHero />
+      
       <div className="min-h-screen bg-gray-50">
         <div className="container mx-auto py-12 px-4">
           <div className="max-w-6xl mx-auto">
-            <div className="mb-8 text-center">
-              <h1 className="text-3xl md:text-4xl font-bold text-black mb-4">Contact Wrapping Chicago - Get Your Free Quote Today</h1>
-              <p className="text-lg text-black font-medium">Professional vehicle wrap installation quote! Car wraps, truck wraps, van wraps, fleet graphics. Call (312) 597-1286 for instant vehicle wrap cost estimate and same day service.</p>
-            </div>
             
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12">
               <div>

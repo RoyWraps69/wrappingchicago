@@ -3,6 +3,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import CallToAction from '@/components/CallToAction';
 import Breadcrumbs from '@/components/navigation/Breadcrumbs';
+import FAQHero from '@/components/heroes/FAQHero';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 import { useState } from 'react';
 
@@ -116,16 +117,10 @@ const FAQPage = () => {
       <div className="flex flex-col min-h-screen">
         
         <main className="flex-grow">
+          <FAQHero />
+          
           <div className="container mx-auto py-12 px-4">
             <Breadcrumbs />
-            
-            <div className="mb-12">
-              <h1 className="text-4xl font-bold text-brand-navy mb-6">Frequently Asked Questions</h1>
-              <p className="text-lg text-gray-700 mb-6">
-                Get answers to the most common questions about vehicle wraps, installation, pricing, and maintenance. 
-                Can't find what you're looking for? Contact us directly for personalized assistance.
-              </p>
-            </div>
             
             {faqSections.map((section, sectionIndex) => (
               <section key={sectionIndex} className="mb-12">

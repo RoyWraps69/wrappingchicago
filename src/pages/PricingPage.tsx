@@ -6,6 +6,7 @@ import Breadcrumbs from '@/components/navigation/Breadcrumbs';
 import MetaTags from '@/components/seo/MetaTags';
 import IndexingPriority from '@/components/seo/IndexingPriority';
 import InternalLinksFooter from '@/components/seo/InternalLinksFooter';
+import PricingHero from '@/components/heroes/PricingHero';
 import { Receipt, BadgePercent, Tags, BadgeDollarSign } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
@@ -127,29 +128,7 @@ const PricingPage = () => {
         
         <main className="flex-grow">
           {/* Hero Section */}
-          <section className="bg-black py-16 md:py-24">
-            <div className="container mx-auto px-4">
-              <Breadcrumbs />
-              
-              <div className="text-center max-w-4xl mx-auto">
-                <h1 className="text-3xl md:text-5xl font-extrabold text-white mb-4">
-                  Transparent Vehicle Wrap Pricing
-                </h1>
-                <p className="text-xl text-white/80 mb-8 max-w-2xl mx-auto">
-                  Premium quality wraps with competitive pricing and no hidden fees.
-                  Each project is unique, so we provide customized quotes based on your specific needs.
-                </p>
-                <div className="flex flex-wrap gap-4 justify-center">
-                  <Button variant="gradient" size="lg" animation="glow" asChild>
-                    <a href="#pricing-packages">View Pricing Packages</a>
-                  </Button>
-                  <Button variant="outlineWhite" size="lg" asChild>
-                    <a href="/contact">Request a Custom Quote</a>
-                  </Button>
-                </div>
-              </div>
-            </div>
-          </section>
+          <PricingHero />
           
           {/* Pricing Packages */}
           <section id="pricing-packages" className="py-16 bg-gray-50">

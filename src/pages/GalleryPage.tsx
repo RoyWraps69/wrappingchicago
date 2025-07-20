@@ -5,6 +5,7 @@ import CallToAction from '@/components/CallToAction';
 import GalleryFilter from '@/components/gallery/GalleryFilter';
 import GalleryGrid from '@/components/gallery/GalleryGrid';
 import ImageViewer from '@/components/gallery/ImageViewer';
+import GalleryHero from '@/components/heroes/GalleryHero';
 import { galleryItems } from '@/data/galleryItems';
 import { GalleryCategory, GalleryItem } from '@/types/gallery';
 import { Button } from '@/components/ui/button';
@@ -40,17 +41,8 @@ const GalleryPage = () => {
       />
 
       <div className="min-h-screen">
-        {/* Hero Section with H1 */}
-        <section className="py-20 px-4 bg-gradient-to-br from-background via-background/80 to-primary/5">
-          <div className="container mx-auto max-w-4xl text-center">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary via-primary/80 to-accent bg-clip-text text-transparent">
-              Vehicle Wrap Gallery Chicago
-            </h1>
-            <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-              Explore our portfolio of stunning vehicle transformations across Chicago and suburbs. Real projects, real results.
-            </p>
-          </div>
-        </section>
+        {/* Hero Section */}
+        <GalleryHero />
         
         {/* Main Content */}
         <section className="py-16 px-4">

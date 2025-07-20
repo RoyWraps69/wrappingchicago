@@ -1,6 +1,7 @@
 import React from "react";
 import { Check, Users, Award, Clock, MapPin, Phone, Mail } from "lucide-react";
 import PageSEO from "@/components/seo/PageSEO";
+import AboutHero from "@/components/heroes/AboutHero";
 
 const AboutPage = () => {
   return (
@@ -12,10 +13,11 @@ const AboutPage = () => {
         canonicalUrl="https://www.wrappingchicago.com/about"
       />
       
+      <AboutHero />
+      
       <div className="min-h-screen bg-gray-50">
         <div className="container mx-auto py-12 px-4">
           <div className="max-w-4xl mx-auto">
-            <h1 className="text-4xl font-bold text-brand-navy mb-6">About Wrapping Chicago - 20+ Years of Excellence</h1>
             
             <div className="grid md:grid-cols-2 gap-12 mb-12">
               <div>
