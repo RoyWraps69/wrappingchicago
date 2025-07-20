@@ -6,6 +6,7 @@ import LocalSEOBooster from '@/components/seo/LocalSEOBooster';
 import InternalLinkingSection from '@/components/seo/InternalLinkingSection';
 import CarWrapsContent from '@/components/services/car-wraps/CarWrapsContent';
 import CarWrapsContentSection from '@/components/services/CarWrapsContentSection';
+import CarWrapsHero from '@/components/services/heroes/CarWrapsHero';
 import { Helmet } from 'react-helmet-async';
 
 const CarWrapsPage = () => {
@@ -94,17 +95,8 @@ const CarWrapsPage = () => {
       </Helmet>
 
       <div className="min-h-screen">
-        {/* H1 Heading */}
-        <section className="py-20 px-4 bg-gradient-to-br from-background via-background/80 to-primary/5">
-          <div className="container mx-auto max-w-4xl text-center">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary via-primary/80 to-accent bg-clip-text text-transparent">
-              Custom Car Wraps Chicago | Vehicle Wraps & Vinyl Wrap Installation Near Me
-            </h1>
-            <p className="text-xl text-muted-foreground mb-8">
-              Transform your ride with premium car wraps! Custom vehicle wraps, color change wraps, matte wraps, chrome wraps. Professional vinyl wrap installation using 3M and Avery Dennison materials. Car wrap cost from $1,200 - mobile service available.
-            </p>
-          </div>
-        </section>
+        {/* Hero Section */}
+        <CarWrapsHero />
 
         {/* Car Wraps Content */}
         <CarWrapsContent />
