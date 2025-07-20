@@ -4,145 +4,145 @@ import { GalleryItem } from '@/types/gallery';
 export const galleryItems: GalleryItem[] = [
   { 
     id: 1, 
-    title: 'Premium Fleet Branding for Delivery Service', 
+    title: 'White Ford Transit Van with Blue Fleet Graphics', 
     category: 'Fleet Wraps',
     image: '/lovable-uploads/efdbc4bf-1f04-42bb-a904-f52dae7bef6c.png', 
-    description: 'Full fleet branding solution featuring professional company logo, service information, and contact details.',
+    description: 'Professional white Ford Transit van featuring bold blue company branding and contact information for enhanced business visibility.',
     client: 'Urban Delivery Co.',
     location: 'Chicago, IL'
   },
   { 
     id: 2, 
-    title: 'Sleek Matte Black Vehicle Transformation', 
+    title: 'Tesla Cybertruck Satin Black Wrap', 
     category: 'Color Change Wraps',
     image: '/lovable-uploads/676b4902-7b81-4619-90d8-8feb1f986636.png', 
-    description: 'Complete exterior transformation with premium matte black vinyl wrap and accent details.',
+    description: 'Striking Tesla Cybertruck transformed with premium satin black vinyl wrap, creating a sleek, modern appearance.',
     client: 'Executive Transport',
     location: 'Evanston, IL'
   },
   { 
     id: 3, 
-    title: 'Professional Service Van Branding', 
+    title: 'White Delivery Van with Red Commercial Graphics', 
     category: 'Commercial Graphics',
     image: '/lovable-uploads/9bb3d94e-589d-4daf-b35e-e19e80610439.png', 
-    description: 'Comprehensive service vehicle branding with company information and service highlights.',
+    description: 'Clean white delivery van featuring bright red commercial graphics with professional service branding and contact details.',
     client: 'Chicago Plumbing Solutions',
     location: 'Chicago, IL'
   },
   { 
     id: 4, 
-    title: 'Creative Food Truck Graphics', 
+    title: 'Food Service Van with Colorful Brand Graphics', 
     category: 'Partial Wraps',
     image: '/lovable-uploads/cc335205-fcef-4ca9-a269-5cf6dee478ed.png', 
-    description: 'Vibrant and attention-grabbing partial wrap design for a local food business.',
+    description: 'White commercial van featuring vibrant food service branding with appetizing imagery and business information.',
     client: 'Street Cuisine',
     location: 'Oak Park, IL'
   },
   { 
     id: 5, 
-    title: 'Corporate Pickup Truck Fleet Identity', 
+    title: 'Black Pickup Truck with Yellow Fleet Branding', 
     category: 'Fleet Wraps',
     image: '/lovable-uploads/76973c14-ac60-4c81-afa1-555b0f4f5f36.png', 
-    description: 'Consistent corporate identity applied across multiple pickup trucks with clean, professional branding.',
+    description: 'Black pickup truck featuring bright yellow corporate fleet graphics with professional company branding and contact information.',
     client: 'Midwest Logistics',
     location: 'Schaumburg, IL'
   },
   { 
     id: 6, 
-    title: 'Luxury Black Sedan Transformation', 
+    title: 'Mercedes Sedan Matte Black Color Change', 
     category: 'Color Change Wraps',
     image: '/lovable-uploads/0316f206-884b-44b4-bdb3-e0f7962a1714.png', 
-    description: "Elegant matte black wrap installation enhancing the vehicle's luxury appearance.",
+    description: 'Luxury Mercedes sedan completely transformed with premium matte black wrap for an elegant, sophisticated appearance.',
     client: 'Executive Car Service',
     location: 'Highland Park, IL'
   },
   { 
     id: 7, 
-    title: 'Blue Truck Commercial Branding', 
+    title: 'Blue Commercial Truck with Business Graphics', 
     category: 'Commercial Graphics',
     image: '/lovable-uploads/fb7a4b97-4b57-4b2e-8f81-42a1098270df.png', 
-    description: 'Highly visible commercial graphics package for service truck with contact information and service areas.',
+    description: 'Bright blue commercial truck featuring professional business graphics with clear company branding and service information.',
     client: 'Chicago Building Contractors',
     location: 'Chicago, IL'
   },
   { 
     id: 8, 
-    title: 'Sports Car Racing Stripes', 
+    title: 'Sports Car with Custom Racing Stripes', 
     category: 'Partial Wraps',
     image: '/lovable-uploads/77a1f4b1-efe3-4779-8646-f92e01667a29.png', 
-    description: "Custom racing stripe design enhancing the vehicle's sporty appearance with precision installation.",
+    description: 'High-performance sports car enhanced with precision-applied racing stripes and custom accent graphics.',
     client: 'Motorsport Enthusiast',
     location: 'Naperville, IL'
   },
   { 
     id: 9, 
-    title: 'Corporate Van Fleet System', 
+    title: 'White Service Van with Professional Fleet Graphics', 
     category: 'Fleet Wraps',
     image: '/lovable-uploads/230338ed-a8d9-4584-bb4c-ba33c793f7ab.png', 
-    description: 'Professional fleet branding solution for service vans with consistent corporate messaging.',
+    description: 'Clean white service van featuring professional fleet graphics with consistent corporate branding and contact information.',
     client: 'Regional Business Services',
     location: 'Arlington Heights, IL'
   },
   { 
     id: 10, 
-    title: 'Heavy-Duty Truck Graphics', 
+    title: 'Commercial Truck with Bold Service Graphics', 
     category: 'Commercial Graphics',
     image: '/lovable-uploads/0ec34598-bcc3-486d-9021-dd527bafe83a.png', 
-    description: 'Bold and durable commercial graphics for heavy-duty service vehicles with high-visibility design.',
+    description: 'Heavy-duty commercial truck featuring bold, high-visibility graphics designed for maximum business exposure and brand recognition.',
     client: 'Chicago Distribution Services',
     location: 'Chicago, IL'
   },
   { 
     id: 11, 
-    title: 'Metallic Blue Sports Car Wrap', 
+    title: 'BMW Sports Car Metallic Blue Wrap', 
     category: 'Color Change Wraps',
     image: '/lovable-uploads/9de106b5-94cb-4fd1-a7c7-5c75c75b7cbb.png', 
-    description: "Stunning metallic blue color change wrap enhancing the vehicle's contours and design lines.",
+    description: 'BMW sports car transformed with stunning metallic blue color change wrap, highlighting the vehicle\'s dynamic lines and curves.',
     client: 'Luxury Vehicle Owner',
     location: 'Winnetka, IL'
   },
   { 
     id: 12, 
-    title: 'Performance Car Custom Graphics', 
+    title: 'Performance Car with Custom Accent Graphics', 
     category: 'Partial Wraps',
     image: '/lovable-uploads/d2a8e418-117f-4bfc-a6a2-efb63dbbce7f.png', 
-    description: "Custom accent graphics highlighting the vehicle's performance characteristics with precise application.",
+    description: 'High-performance vehicle featuring custom accent graphics and design elements that enhance its sporty appearance.',
     client: 'Automotive Enthusiast',
     location: 'Chicago, IL'
   },
   { 
     id: 13, 
-    title: 'Bratcher HVAC Fleet Vans', 
+    title: 'Bratcher HVAC Blue and Red Fleet Vans', 
     category: 'Fleet Wraps',
     image: '/lovable-uploads/fc2146ab-62aa-4fc9-85aa-3582af7ce980.png', 
-    description: 'Bold blue and red fleet branding for HVAC service vans, featuring striking company logo and clean design elements.',
+    description: 'Professional HVAC service vans featuring bold blue and red fleet branding with striking company logo and service information.',
     client: 'Bratcher HVAC',
     location: 'Chicago, IL'
   },
   { 
     id: 14, 
-    title: 'Blue Truck Commercial Graphics', 
+    title: 'Blue Service Truck with Professional Branding', 
     category: 'Commercial Graphics',
     image: '/lovable-uploads/fb7a4b97-4b57-4b2e-8f81-42a1098270df.png', 
-    description: 'Professional commercial graphics for service trucks with bold branding and contact information.',
+    description: 'Bright blue service truck featuring clean, professional commercial graphics with company branding and contact details.',
     client: 'Chicago Service Company',
     location: 'Chicago, IL'
   },
   { 
     id: 15, 
-    title: 'Matte Black SUV Transformation', 
+    title: 'Jeep Grand Cherokee Matte Black SUV Wrap', 
     category: 'Color Change Wraps',
     image: '/lovable-uploads/e021924c-a0a1-407c-9d11-13372909975f.png', 
-    description: 'Jeep Grand Cherokee with premium matte black wrap and matching black wheels for a cohesive, stealthy appearance.',
+    description: 'Jeep Grand Cherokee SUV completely transformed with premium matte black wrap and matching black wheels for a cohesive, aggressive look.',
     client: 'Private Owner',
     location: 'Chicago, IL'
   },
   { 
     id: 16, 
-    title: 'IDG Tech Fleet SUVs', 
+    title: 'IDG Technology Fleet SUVs with Tech Branding', 
     category: 'Fleet Wraps',
     image: '/lovable-uploads/a8335462-2c63-40ad-8bd2-2aead73abfb1.png', 
-    description: 'Consistent brand identity across a fleet of technology company SUVs with "think tech" messaging and product imagery.',
+    description: 'Modern technology company fleet SUVs featuring consistent brand identity with "think tech" messaging and professional corporate graphics.',
     client: 'IDG Technology',
     location: 'Chicago, IL'
   }
