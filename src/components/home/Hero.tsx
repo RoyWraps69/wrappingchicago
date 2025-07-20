@@ -3,7 +3,6 @@ import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Phone } from 'lucide-react';
-import DynamicHeading from '@/components/common/DynamicHeading';
 
 const Hero = () => {
   console.log('Hero component rendering...');
@@ -28,61 +27,63 @@ const Hero = () => {
       <div className="absolute inset-0 z-10 bg-black/40"></div>
       
       <div className="hero-content relative z-20 text-center max-w-6xl mx-auto px-4">
-        <DynamicHeading 
-          level={1} 
-          className="text-5xl sm:text-6xl md:text-7xl font-extrabold uppercase tracking-wider text-white mb-6 text-center speakable"
-        />
+        <h1 className="text-5xl sm:text-6xl md:text-7xl font-extrabold uppercase tracking-wider text-white mb-6 text-center speakable">
+          Turn Your Truck Into a <span className="text-brand-red">Customer Magnet</span>
+        </h1>
         
-        <DynamicHeading 
-          level={2} 
-          className="text-xl md:text-2xl font-medium text-white mb-10 max-w-2xl mx-auto text-center speakable"
-        />
+        <h2 className="text-xl md:text-2xl font-medium text-white mb-10 max-w-2xl mx-auto text-center speakable">
+          Get 30% More Service Calls with Professional Vehicle Wraps That Won't Damage Your Paint
+        </h2>
         
-        <div className="flex flex-col sm:flex-row justify-center gap-4 mb-10">
+        <div className="flex flex-col sm:flex-row justify-center gap-4 mb-8">
           <Button
             asChild
             size="xl"
-            variant="gradient"
-            animation="glow"
-            className="font-semibold text-white bg-brand-red hover:bg-red-700"
+            className="font-bold text-lg px-8 py-4 bg-brand-red hover:bg-red-700 text-white border-2 border-brand-red hover:border-red-700 shadow-lg"
           >
-            <Link to="/contact" className="inline-flex items-center text-white">
-              Schedule Perfection Now!
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Link>
+            <a href="tel:3125971286" className="inline-flex items-center text-white">
+              <Phone className="mr-3 h-6 w-6" />
+              Call Now: (312) 597-1286
+            </a>
           </Button>
           
           <Button
             asChild
             variant="outline"
             size="xl"
-            className="border-white text-white hover:bg-white hover:text-black bg-transparent"
+            className="font-semibold text-lg px-8 py-4 border-2 border-white text-white hover:bg-white hover:text-black bg-transparent"
           >
-            <a href="tel:3125971286" className="inline-flex items-center text-white hover:text-black">
-              <Phone className="mr-2 h-5 w-5" />
-              (312) 597-1286
-            </a>
+            <Link to="/contact" className="inline-flex items-center text-white hover:text-black">
+              Get Free Quote
+              <ArrowRight className="ml-3 h-6 w-6" />
+            </Link>
           </Button>
         </div>
         
-        {/* Trust Signals with proper semantic markup */}
-        <div className="flex flex-wrap justify-center gap-x-8 gap-y-2 text-white text-sm">
-          <span className="flex items-center text-white speakable">
-            <span className="w-1.5 h-1.5 bg-brand-red rounded-full mr-2"></span>
-            800+ Vehicle Wraps Installed
-          </span>
-          <span className="flex items-center text-white speakable">
-            <span className="w-1.5 h-1.5 bg-brand-red rounded-full mr-2"></span>
-            Same Day Car Wrap Service
-          </span>
-          <span className="flex items-center text-white speakable">
-            <span className="w-1.5 h-1.5 bg-brand-red rounded-full mr-2"></span>
-            Advanced Vinyl Technology & Application
-          </span>
-          <span className="flex items-center text-white speakable">
-            <span className="w-1.5 h-1.5 bg-brand-red rounded-full mr-2"></span>
-            Mobile Wrap Installation Available
-          </span>
+        <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 mb-8 inline-block">
+          <p className="text-white font-semibold text-lg">
+            🚀 <span className="text-brand-red">Same Week Installation</span> • Won't Hurt Your Paint • 20+ Years Experience
+          </p>
+        </div>
+        
+        {/* Results-focused trust signals */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-white text-sm">
+          <div className="flex flex-col items-center p-3 bg-white/10 rounded-lg backdrop-blur-sm">
+            <span className="text-2xl font-bold text-brand-red">16,000+</span>
+            <span className="text-center">Vehicles Wrapped</span>
+          </div>
+          <div className="flex flex-col items-center p-3 bg-white/10 rounded-lg backdrop-blur-sm">
+            <span className="text-2xl font-bold text-brand-red">24/7</span>
+            <span className="text-center">Mobile Service</span>
+          </div>
+          <div className="flex flex-col items-center p-3 bg-white/10 rounded-lg backdrop-blur-sm">
+            <span className="text-2xl font-bold text-brand-red">2-3 Days</span>
+            <span className="text-center">Installation Time</span>
+          </div>
+          <div className="flex flex-col items-center p-3 bg-white/10 rounded-lg backdrop-blur-sm">
+            <span className="text-2xl font-bold text-brand-red">5-7 Years</span>
+            <span className="text-center">Wrap Lifespan</span>
+          </div>
         </div>
       </div>
     </div>
