@@ -1,77 +1,82 @@
 
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { Car, Truck, CircleDollarSign, Palette, Users, Calendar, Camera, MapPin } from 'lucide-react';
+import { Car, Truck, Users } from 'lucide-react';
 
 const QuickLinksBar = () => {
-  const links = [
+  const mainServices = [
+    {
+      icon: Truck,
+      title: "Truck Wraps",
+      description: "Get more service calls",
+      price: "From $2,800",
+      url: "/truck-wraps",
+      popular: true
+    },
     {
       icon: Car,
-      title: "Car Wraps",
-      description: "Custom designs for any vehicle",
+      title: "Car Wraps", 
+      description: "Custom vehicle graphics",
+      price: "From $2,500",
       url: "/car-wraps"
     },
     {
-      icon: Truck,
-      title: "Fleet Wraps",
-      description: "Branding for business fleets",
-      url: "/services/fleet-wraps"
-    },
-    {
-      icon: CircleDollarSign,
-      title: "Pricing",
-      description: "Transparent cost breakdown",
-      url: "/pricing"
-    },
-    {
-      icon: Palette,
-      title: "Color Change",
-      description: "Premium vinyl finishes",
-      url: "/color-change-wraps"
-    },
-    {
-      icon: Camera,
-      title: "Gallery",
-      description: "View our portfolio",
-      url: "/gallery"
-    },
-    {
       icon: Users,
-      title: "About Us",
-      description: "Our expertise & experience",
-      url: "/about"
-    },
-    {
-      icon: MapPin,
-      title: "Locations",
-      description: "Areas we serve",
-      url: "/locations"
-    },
-    {
-      icon: Calendar,
-      title: "Book Now",
-      description: "Schedule your installation",
-      url: "/contact"
+      title: "Fleet Wraps",
+      description: "Multiple vehicle deals",
+      price: "Volume discounts",
+      url: "/fleet-wraps"
     }
   ];
 
   return (
-    <div className="bg-black py-8">
+    <div className="bg-gray-100 py-12">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4">
-          {links.map((link, index) => (
-            <Link 
-              key={index} 
-              to={link.url}
-              className="bg-white/10 border-2 border-white/20 hover:border-brand-red rounded-2xl p-4 text-center transition-all duration-300 hover:bg-white/20 group"
-            >
-              <div className="bg-brand-red/20 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:bg-brand-red transition-colors duration-300 border-2 border-brand-red">
-                <link.icon className="h-6 w-6 text-brand-red group-hover:text-white transition-colors duration-300" />
+        <div className="text-center mb-8">
+          <h2 className="text-3xl font-bold text-gray-900 mb-2">Vehicle Wrap Services & Pricing</h2>
+          <p className="text-xl text-gray-600">Transform your vehicle into a customer magnet</p>
+        </div>
+        
+        <div className="grid md:grid-cols-3 gap-6 mb-8">
+          {mainServices.map((service, index) => (
+            <div key={index} className={`relative bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border-2 ${service.popular ? 'border-brand-red' : 'border-gray-200'}`}>
+              {service.popular && (
+                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-brand-red text-white px-4 py-1 rounded-full text-sm font-bold">
+                  Most Popular
+                </div>
+              )}
+              
+              <div className="text-center">
+                <div className="bg-brand-red/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <service.icon className="h-8 w-8 text-brand-red" />
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">{service.title}</h3>
+                <p className="text-gray-600 mb-3">{service.description}</p>
+                <div className="text-2xl font-bold text-brand-red mb-4">{service.price}</div>
+                <a 
+                  href={service.url}
+                  className="bg-brand-red text-white px-6 py-3 rounded-lg font-semibold hover:bg-red-700 transition-colors inline-block"
+                >
+                  Learn More
+                </a>
               </div>
-              <h3 className="font-bold text-white text-sm lg:text-base">{link.title}</h3>
-              <p className="text-white text-xs mt-1">{link.description}</p>
-            </Link>
+            </div>
           ))}
+        </div>
+        
+        {/* Quick action buttons */}
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <a 
+            href="tel:3125971286"
+            className="bg-brand-red text-white px-8 py-4 rounded-lg text-lg font-bold hover:bg-red-700 transition-colors text-center"
+          >
+            📞 Call for Instant Quote: (312) 597-1286
+          </a>
+          <a 
+            href="/contact"
+            className="bg-gray-900 text-white px-8 py-4 rounded-lg text-lg font-bold hover:bg-gray-800 transition-colors text-center"
+          >
+            Get Free Written Estimate
+          </a>
         </div>
       </div>
     </div>

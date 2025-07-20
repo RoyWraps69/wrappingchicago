@@ -11,6 +11,7 @@ import PhotoGallery from '@/components/home/PhotoGallery';
 import { ExploreServices, ServiceAreaLinks } from '@/components/home/indexed-sections';
 import EasyButtonSection from '@/components/home/EasyButtonSection';
 import CallToAction from '@/components/CallToAction';
+import PricingTransparency from '@/components/home/PricingTransparency';
 import { useGalleryImages } from '@/hooks/useGalleryImages';
 import { cities } from '@/data/cities';
 import { HeroSection, ServicesMainSection } from './sections';
@@ -31,6 +32,8 @@ const HomePageSections = () => {
         colorChangeVan={colorChangeVan}
         commercialGraphics={commercialGraphics}
       />
+      
+      <PricingTransparency />
       
       <section aria-labelledby="trust-heading">
         <h2 id="trust-heading" className="sr-only">Why Choose Wrapping Chicago</h2>
