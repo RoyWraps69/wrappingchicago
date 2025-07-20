@@ -5,6 +5,7 @@ import AEOOptimizer from '@/components/seo/AEOOptimizer';
 import LocalSEOBooster from '@/components/seo/LocalSEOBooster';
 import InternalLinkingSection from '@/components/seo/InternalLinkingSection';
 import CarWrapsContent from '@/components/services/car-wraps/CarWrapsContent';
+import CarWrapsContentSection from '@/components/services/CarWrapsContentSection';
 import { Helmet } from 'react-helmet-async';
 
 const CarWrapsPage = () => {
@@ -107,6 +108,9 @@ const CarWrapsPage = () => {
 
         {/* Car Wraps Content */}
         <CarWrapsContent />
+        
+        {/* Additional Comprehensive Content */}
+        <CarWrapsContentSection />
         
         {/* Internal Linking */}
         <InternalLinkingSection />

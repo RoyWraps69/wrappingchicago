@@ -1,6 +1,7 @@
 import React from 'react';
 import PageSEO from '@/components/seo/PageSEO';
 import InternalLinkingSection from '@/components/seo/InternalLinkingSection';
+import TruckWrapsContentSection from '@/components/services/TruckWrapsContentSection';
 import { Helmet } from 'react-helmet-async';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
@@ -92,73 +93,8 @@ const TruckWrapsPage = () => {
           </div>
         </section>
 
-        {/* H2 Services Section */}
-        <section className="py-16 px-4">
-          <div className="container mx-auto max-w-6xl">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-              Commercial Vehicle Graphics Solutions
-            </h2>
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="text-center p-6 rounded-lg border bg-background">
-                <h3 className="text-xl font-semibold mb-4">Pickup Truck Wraps</h3>
-                <p className="text-muted-foreground">Complete wraps and graphics for pickup trucks, perfect for contractors and small businesses.</p>
-              </div>
-              <div className="text-center p-6 rounded-lg border bg-background">
-                <h3 className="text-xl font-semibold mb-4">Box Truck Graphics</h3>
-                <p className="text-muted-foreground">Large format advertising on delivery and cargo vehicles for maximum visibility.</p>
-              </div>
-              <div className="text-center p-6 rounded-lg border bg-background">
-                <h3 className="text-xl font-semibold mb-4">Fleet Branding</h3>
-                <p className="text-muted-foreground">Consistent branding across multiple commercial vehicles for professional appearance.</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* H2 Benefits Section */}
-        <section className="py-16 px-4 bg-muted/30">
-          <div className="container mx-auto max-w-6xl">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-              Why Choose Professional Truck Wraps
-            </h2>
-            <div className="grid md:grid-cols-2 gap-8">
-              <div>
-                <h3 className="text-2xl font-semibold mb-6">Business Benefits</h3>
-                <div className="space-y-4">
-                  <div className="flex items-start gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
-                    <span>24/7 mobile advertising reaches thousands daily</span>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
-                    <span>Professional appearance builds customer trust</span>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
-                    <span>Lower cost per impression than traditional advertising</span>
-                  </div>
-                </div>
-              </div>
-              <div>
-                <h3 className="text-2xl font-semibold mb-6">Technical Advantages</h3>
-                <div className="space-y-4">
-                  <div className="flex items-start gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
-                    <span>Heavy-duty materials withstand commercial use</span>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
-                    <span>Protects vehicle paint from wear and UV damage</span>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
-                    <span>Removable without damage to original finish</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        {/* Comprehensive Content Section */}
+        <TruckWrapsContentSection />
 
         {/* Internal Linking */}
         <InternalLinkingSection />
