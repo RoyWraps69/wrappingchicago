@@ -1,5 +1,8 @@
 import React from "react";
-import Google2025SEOOptimizer from "@/components/seo/Google2025SEOOptimizer";
+import { SEOCoordinatorProvider } from "@/components/seo/SEOCoordinator";
+import Google2025SEOOptimizerCoordinated from "@/components/seo/Google2025SEOOptimizerCoordinated";
+import AEOOptimizerCoordinated from "@/components/seo/AEOOptimizerCoordinated";
+import LocalSEOBoosterCoordinated from "@/components/seo/LocalSEOBoosterCoordinated";
 import HomePageSections from "@/components/home/HomePageSections";
 
 const Index = () => {
@@ -60,9 +63,9 @@ const Index = () => {
   console.log('Index component rendering...');
   
   return (
-    <>
-      {/* Unified SEO - No Conflicts */}
-      <Google2025SEOOptimizer
+    <SEOCoordinatorProvider>
+      {/* All SEO optimizers working together in harmony */}
+      <Google2025SEOOptimizerCoordinated
         pageTitle="Chicago Vehicle Wraps for Plumbers, Electricians & HVAC | Get More Calls"
         pageDescription="Turn your work truck into a customer magnet! Chicago's trade professionals trust us for vehicle wraps that get noticed. Same week service, won't hurt your paint."
         businessType="general"
@@ -72,12 +75,25 @@ const Index = () => {
         reviewCount={247}
         averageRating={4.9}
       />
+      
+      <AEOOptimizerCoordinated
+        businessType="general"
+        location="Chicago"
+        serviceKeywords={tradeKeywords}
+      />
+      
+      <LocalSEOBoosterCoordinated
+        cityName="Chicago"
+        businessType="general"
+        serviceRadius={35}
+        neighboringCities={['Evanston', 'Naperville', 'Schaumburg', 'Oak Park', 'Cicero']}
+      />
 
       {/* Page Content */}
       <div className="min-h-screen">
         <HomePageSections />
       </div>
-    </>
+    </SEOCoordinatorProvider>
   );
 };
 
