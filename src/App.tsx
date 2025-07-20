@@ -63,6 +63,12 @@ import FleetWrapsPage from "./pages/FleetWrapsPage";
 import ColorChangeWrapsPage from "./pages/ColorChangeWrapsPage";
 import DesignerWrapsPage from "./pages/DesignerWrapsPage";
 import LuxuryExoticWrapsPage from "./pages/LuxuryExoticWrapsPage";
+import CommercialGraphicsPage from "./pages/CommercialGraphicsPage";
+import ProtectiveFilmsPage from "./pages/ProtectiveFilmsPage";
+import VehicleLetteringPage from "./pages/VehicleLetteringPage";
+import SpecialtyWrapsPage from "./pages/SpecialtyWrapsPage";
+import RetailGraphicsPage from "./pages/RetailGraphicsPage";
+import PartialWrapsPage from "./pages/PartialWrapsPage";
 import AIWrapIdeasPage from "./pages/AIWrapIdeasPage";
 import GlossaryPage from "./pages/GlossaryPage";
 import StatsPage from "./pages/StatsPage";
@@ -138,12 +144,12 @@ function App() {
                    <Route path="/color-change-wraps" element={<ColorChangeWrapsPage />} />
                    <Route path="/luxury-exotic-wraps" element={<LuxuryExoticWrapsPage />} />
                    <Route path="/designer-wraps" element={<DesignerWrapsPage />} />
-                   <Route path="/commercial-graphics" element={<ServicesPage />} />
-                   <Route path="/protective-films" element={<ServicesPage />} />
-                   <Route path="/vehicle-lettering" element={<ServicesPage />} />
-                   <Route path="/specialty-wraps" element={<ServicesPage />} />
-                   <Route path="/retail-graphics" element={<ServicesPage />} />
-                   <Route path="/partial-wraps" element={<ServicesPage />} />
+                   <Route path="/commercial-graphics" element={<CommercialGraphicsPage />} />
+                   <Route path="/protective-films" element={<ProtectiveFilmsPage />} />
+                   <Route path="/vehicle-lettering" element={<VehicleLetteringPage />} />
+                   <Route path="/specialty-wraps" element={<SpecialtyWrapsPage />} />
+                   <Route path="/retail-graphics" element={<RetailGraphicsPage />} />
+                   <Route path="/partial-wraps" element={<PartialWrapsPage />} />
                   
                   {/* Trade-specific pages */}
                   <Route path="/plumbing-wraps" element={<PlumbingWrapsPage />} />
