@@ -11,6 +11,8 @@ import PhotoGallery from '@/components/home/PhotoGallery';
 import { ExploreServices, ServiceAreaLinks } from '@/components/home/indexed-sections';
 import EasyButtonSection from '@/components/home/EasyButtonSection';
 import CallToAction from '@/components/CallToAction';
+import ComprehensiveContent from '@/components/home/ComprehensiveContent';
+import ServiceLinksSection from '@/components/home/ServiceLinksSection';
 import { useGalleryImages } from '@/hooks/useGalleryImages';
 import { cities } from '@/data/cities';
 import { HeroSection, ServicesMainSection } from './sections';
@@ -38,6 +40,8 @@ const HomePageSections = () => {
         <TrustIndicators />
       </section>
       
+      <ComprehensiveContent />
+      
       <section aria-labelledby="why-choose-heading">
         <WhyChooseUsSection />
       </section>
@@ -53,6 +57,8 @@ const HomePageSections = () => {
         <h2 id="faq-heading" className="sr-only">Vehicle Wrap FAQ</h2>
         <VehicleWrapFAQ />
       </section>
+      
+      <ServiceLinksSection />
       
       <section aria-labelledby="explore-heading">
         <ExploreServices />

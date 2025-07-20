@@ -1,19 +1,9 @@
 import React from "react";
-import ComprehensiveContentGenerator from "@/components/seo/ComprehensiveContentGenerator";
-import EnhancedInternalLinking from "@/components/seo/EnhancedInternalLinking";
 import HomeSEO from "@/components/home/HomeSEO";
-import PageSEO from "@/components/seo/PageSEO";
-import InternalLinkingSection from "@/components/seo/InternalLinkingSection";
 import Google2025SEOOptimizer from "@/components/seo/Google2025SEOOptimizer";
 import AEOOptimizer from "@/components/seo/AEOOptimizer";
 import LocalSEOBooster from "@/components/seo/LocalSEOBooster";
-import AdvancedSEODominator from "@/components/seo/AdvancedSEODominator";
-import FeaturedSnippetOptimizer from "@/components/seo/FeaturedSnippetOptimizer";
-import ReviewSchemaGenerator, { chicagoVehicleWrapReviews } from "@/components/seo/ReviewSchemaGenerator";
-import CompetitorAnalysisOptimizer from "@/components/seo/CompetitorAnalysisOptimizer";
-{/* Removed CoreWebVitalsOptimizer import - causing conflicts */}
-import { getAllKeywords } from "@/components/home/seo/HomeKeywords";
-import Hero from "@/components/home/Hero";
+import HomePageSections from "@/components/home/HomePageSections";
 
 const Index = () => {
   const tradeKeywords = [
@@ -106,16 +96,7 @@ const Index = () => {
       
       {/* Page Content with Comprehensive SEO Content */}
       <div className="min-h-screen">
-        <Hero />
-        
-        {/* Comprehensive content to meet word count requirements */}
-        <ComprehensiveContentGenerator />
-        
-        {/* Enhanced internal linking for better SEO */}
-        <EnhancedInternalLinking />
-        
-        {/* Internal Linking for SEO */}
-        <InternalLinkingSection />
+        <HomePageSections />
       </div>
     </>
   );
