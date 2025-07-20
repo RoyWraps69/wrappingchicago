@@ -6,6 +6,7 @@ import Footer from '@/components/Footer';
 import CallToAction from '@/components/CallToAction';
 import AreasServedSection from '@/components/home/AreasServedSection';
 import Breadcrumbs from '@/components/navigation/Breadcrumbs';
+import LocationsHero from '@/components/heroes/LocationsHero';
 import { cities } from '@/data/cities';
 import Schema from '@/components/Schema';
 
@@ -28,22 +29,14 @@ const LocationsPage = () => {
       />
       
       <div className="flex flex-col min-h-screen">
+        <Header />
         
         <main className="flex-grow">
-          <div className="container mx-auto py-12 px-4">
+          <div className="container mx-auto py-4 px-4">
             <Breadcrumbs />
-            
-            <header className="mb-8 text-center">
-              <h1 className="text-3xl md:text-4xl font-bold text-black mb-4">
-                Vehicle Wrap Service Areas in Chicago
-              </h1>
-              <p className="text-lg text-black max-w-3xl mx-auto">
-                We bring professional vehicle wrap services to businesses and individuals 
-                throughout Chicago and surrounding communities. Find your area below to 
-                learn more about our local services.
-              </p>
-            </header>
           </div>
+          
+          <LocationsHero />
           
           {/* Moved section from HomePage */}
           <AreasServedSection cities={cities} />

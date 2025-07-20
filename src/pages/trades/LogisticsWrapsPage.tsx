@@ -1,6 +1,9 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
+import TradeHero from '@/components/heroes/TradeHero';
 import { Package, Globe, Clock, BarChart } from 'lucide-react';
 
 const LogisticsWrapsPage = () => {
@@ -13,38 +16,15 @@ const LogisticsWrapsPage = () => {
         <link rel="canonical" href="https://www.wrappingchicago.com/logistics-wraps" />
       </Helmet>
 
-      {/* Hero Section */}
-      <section className="relative min-h-[600px] flex items-center justify-center text-white overflow-hidden">
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: `url('/lovable-uploads/3b2c3fd3-3d52-4fdf-8d96-cefa15997b1e.png')`
-          }}
-        ></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/70"></div>
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="flex justify-center mb-6">
-              <Package className="w-16 h-16 text-blue-300" />
-            </div>
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">
-              Professional <span className="text-blue-300">Logistics</span><br />
-              Vehicle Wraps
-            </h1>
-            <p className="text-xl md:text-2xl mb-8 text-blue-100">
-              Streamline your brand visibility with professional logistics vehicle graphics across Chicago's supply chain network
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/contact" className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors">
-                Get Free Quote
-              </Link>
-              <Link to="/gallery" className="border-2 border-white text-white hover:bg-white hover:text-blue-900 px-8 py-4 rounded-lg font-semibold text-lg transition-colors">
-                View Gallery
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      <Header />
+      
+      <TradeHero 
+        tradeName="Logistics"
+        tradeIcon={Package}
+        description="Streamline your brand visibility with professional logistics vehicle graphics across Chicago's supply chain network."
+        benefits={["Supply Chain", "Fleet Management", "Tracking Systems", "Professional Service"]}
+        startingPrice="$2,200"
+      />
 
       {/* Why Logistics Companies Choose Us */}
       <section className="py-16 bg-white">
@@ -187,6 +167,8 @@ const LogisticsWrapsPage = () => {
           </div>
         </div>
       </section>
+      
+      <Footer />
     </>
   );
 };

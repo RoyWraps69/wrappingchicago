@@ -1,6 +1,9 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
+import TradeHero from '@/components/heroes/TradeHero';
 import { Zap, Shield, Clock, Settings } from 'lucide-react';
 
 const ElectricalWrapsPage = () => {
@@ -13,38 +16,15 @@ const ElectricalWrapsPage = () => {
         <link rel="canonical" href="https://www.wrappingchicago.com/electrical-wraps" />
       </Helmet>
 
-      {/* Hero Section */}
-      <section className="relative min-h-[600px] flex items-center justify-center text-white overflow-hidden">
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: `url('/lovable-uploads/6e8f56a7-4c78-4861-a723-2e894c821a8f.png')`
-          }}
-        ></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/70"></div>
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="flex justify-center mb-6">
-              <Zap className="w-16 h-16 text-yellow-300" />
-            </div>
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">
-              Professional <span className="text-yellow-300">Electrical</span><br />
-              Vehicle Wraps
-            </h1>
-            <p className="text-xl md:text-2xl mb-8 text-yellow-100">
-              Power up your electrical business with professional vehicle graphics that showcase your expertise across Chicago
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/contact" className="bg-yellow-500 hover:bg-yellow-600 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors">
-                Get Free Quote
-              </Link>
-              <Link to="/gallery" className="border-2 border-white text-white hover:bg-white hover:text-yellow-900 px-8 py-4 rounded-lg font-semibold text-lg transition-colors">
-                View Gallery
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      <Header />
+      
+      <TradeHero 
+        tradeName="Electrical"
+        tradeIcon={Zap}
+        description="Power up your electrical business with professional vehicle graphics that showcase your expertise across Chicago."
+        benefits={["Licensed Electrician", "Emergency Service", "Safety Certified", "Commercial & Residential"]}
+        startingPrice="$1,600"
+      />
 
       {/* Why Electricians Choose Us */}
       <section className="py-16 bg-white">
@@ -172,6 +152,8 @@ const ElectricalWrapsPage = () => {
           </div>
         </div>
       </section>
+      
+      <Footer />
     </>
   );
 };

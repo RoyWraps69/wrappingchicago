@@ -3,6 +3,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import ShippingHero from '@/components/heroes/ShippingHero';
 import { Truck, Package, Clock, DollarSign, MapPin } from 'lucide-react';
 
 const ShippingPage = () => {
@@ -131,18 +132,7 @@ const ShippingPage = () => {
       <Header />
       
       <main className="min-h-screen bg-white">
-        {/* Hero Section */}
-        <section className="bg-gradient-to-r from-blue-900 to-blue-800 text-white py-20">
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto text-center">
-              <Truck className="w-16 h-16 mx-auto mb-6 text-blue-300" />
-              <h1 className="text-4xl md:text-5xl font-bold mb-6">Shipping Information</h1>
-              <p className="text-xl text-blue-200 leading-relaxed">
-                Fast, reliable shipping of vehicle wrap materials across the United States
-              </p>
-            </div>
-          </div>
-        </section>
+        <ShippingHero />
 
         {/* Service Area */}
         <section className="py-16 bg-blue-50">

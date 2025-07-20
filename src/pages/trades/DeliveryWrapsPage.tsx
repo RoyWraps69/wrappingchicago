@@ -1,6 +1,9 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
+import TradeHero from '@/components/heroes/TradeHero';
 import { MapPin, Clock, Smartphone, Star } from 'lucide-react';
 
 const DeliveryWrapsPage = () => {
@@ -13,38 +16,15 @@ const DeliveryWrapsPage = () => {
         <link rel="canonical" href="https://www.wrappingchicago.com/delivery-wraps" />
       </Helmet>
 
-      {/* Hero Section */}
-      <section className="relative min-h-[600px] flex items-center justify-center text-white overflow-hidden">
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: `url('/lovable-uploads/d7b0606a-ab26-4de8-85ed-be8a8c478d7f.png')`
-          }}
-        ></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/70"></div>
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="flex justify-center mb-6">
-              <MapPin className="w-16 h-16 text-red-300" />
-            </div>
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">
-              Professional <span className="text-red-300">Delivery</span><br />
-              Vehicle Wraps
-            </h1>
-            <p className="text-xl md:text-2xl mb-8 text-red-100">
-              Deliver your brand everywhere with professional vehicle graphics that build recognition and trust across Chicago
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/contact" className="bg-red-500 hover:bg-red-600 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors">
-                Get Free Quote
-              </Link>
-              <Link to="/gallery" className="border-2 border-white text-white hover:bg-white hover:text-red-900 px-8 py-4 rounded-lg font-semibold text-lg transition-colors">
-                View Gallery
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      <Header />
+      
+      <TradeHero 
+        tradeName="Delivery"
+        tradeIcon={MapPin}
+        description="Deliver your brand everywhere with professional vehicle graphics that build recognition and trust across Chicago."
+        benefits={["Fast Delivery", "GPS Tracking", "Professional Service", "Brand Recognition"]}
+        startingPrice="$1,400"
+      />
 
       {/* Why Delivery Companies Choose Us */}
       <section className="py-16 bg-white">
@@ -187,6 +167,8 @@ const DeliveryWrapsPage = () => {
           </div>
         </div>
       </section>
+      
+      <Footer />
     </>
   );
 };

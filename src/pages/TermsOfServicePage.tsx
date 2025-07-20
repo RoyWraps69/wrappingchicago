@@ -3,6 +3,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import LegalHero from '@/components/heroes/LegalHero';
 import { FileText, Scale, AlertTriangle, CreditCard, Truck, Users } from 'lucide-react';
 
 const TermsOfServicePage = () => {
@@ -57,19 +58,11 @@ const TermsOfServicePage = () => {
       <Header />
       
       <main className="min-h-screen bg-white">
-        {/* Hero Section */}
-        <section className="bg-gradient-to-r from-gray-900 to-gray-800 text-white py-20">
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto text-center">
-              <Scale className="w-16 h-16 mx-auto mb-6 text-brand-red" />
-              <h1 className="text-4xl md:text-5xl font-bold mb-6">Terms of Service</h1>
-              <p className="text-xl text-gray-300 leading-relaxed">
-                Legal terms and conditions for using our vehicle wrap services
-              </p>
-              <p className="text-sm text-gray-400 mt-4">Last updated: {new Date().toLocaleDateString()}</p>
-            </div>
-          </div>
-        </section>
+        <LegalHero 
+          title="Terms of Service"
+          subtitle="Legal terms and conditions for using our vehicle wrap services. Clear agreements for professional installations."
+          icon={Scale}
+        />
 
         {/* Terms Content */}
         <section className="py-16">

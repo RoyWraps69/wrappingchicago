@@ -1,6 +1,9 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
+import TradeHero from '@/components/heroes/TradeHero';
 import { Thermometer, Wind, Snowflake, Clock } from 'lucide-react';
 
 const HVACWrapsPage = () => {
@@ -13,38 +16,15 @@ const HVACWrapsPage = () => {
         <link rel="canonical" href="https://www.wrappingchicago.com/hvac-wraps" />
       </Helmet>
 
-      {/* Hero Section */}
-      <section className="relative min-h-[600px] flex items-center justify-center text-white overflow-hidden">
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: `url('/lovable-uploads/5ea65bd1-a99f-40d1-b676-b4855a0b463f.png')`
-          }}
-        ></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/70"></div>
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="flex justify-center mb-6">
-              <Thermometer className="w-16 h-16 text-orange-300" />
-            </div>
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">
-              Professional <span className="text-orange-300">HVAC</span><br />
-              Vehicle Wraps
-            </h1>
-            <p className="text-xl md:text-2xl mb-8 text-orange-100">
-              Heat up your HVAC business with professional vehicle graphics that work in all seasons across Chicago
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/contact" className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors">
-                Get Free Quote
-              </Link>
-              <Link to="/gallery" className="border-2 border-white text-white hover:bg-white hover:text-orange-900 px-8 py-4 rounded-lg font-semibold text-lg transition-colors">
-                View Gallery
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      <Header />
+      
+      <TradeHero 
+        tradeName="HVAC"
+        tradeIcon={Thermometer}
+        description="Heat up your HVAC business with professional vehicle graphics that work in all seasons across Chicago."
+        benefits={["Heating & Cooling", "24/7 Emergency", "Licensed Contractor", "Weather Resistant"]}
+        startingPrice="$1,800"
+      />
 
       {/* Why HVAC Contractors Choose Us */}
       <section className="py-16 bg-white">
@@ -176,6 +156,8 @@ const HVACWrapsPage = () => {
           </div>
         </div>
       </section>
+      
+      <Footer />
     </>
   );
 };
