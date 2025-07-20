@@ -1,9 +1,13 @@
 
 import React from 'react';
+import PartialWrapsHero from './heroes/PartialWrapsHero';
 
 const PartialWrapsContent: React.FC = () => {
   return (
-    <div className="bg-gray-900 text-white p-6 rounded-lg">
+    <>
+      <PartialWrapsHero />
+      <div className="container mx-auto px-4 py-12">
+        <div className="bg-gray-900 text-white p-6 rounded-lg">
       <h2 className="text-2xl font-semibold text-white mb-4">Effective Partial Vehicle Wraps</h2>
       <p className="mb-6 text-gray-200">
         Partial wraps provide an excellent balance of visual impact and affordability. By strategically covering 
@@ -34,7 +38,9 @@ const PartialWrapsContent: React.FC = () => {
           </ul>
         </div>
       </div>
-    </div>
+        </div>
+      </div>
+    </>
   );
 };
 

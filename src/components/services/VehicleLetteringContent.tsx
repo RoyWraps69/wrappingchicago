@@ -1,9 +1,13 @@
 
 import React from 'react';
+import VehicleLetteringHero from './heroes/VehicleLetteringHero';
 
 const VehicleLetteringContent: React.FC = () => {
   return (
     <>
+      <VehicleLetteringHero />
+      <div className="container mx-auto px-4 py-12">
+        <>
       <h2 className="text-2xl font-semibold text-gray-900 mb-4">Professional Vehicle Lettering</h2>
       <p className="mb-6 text-gray-700">
         Make your business vehicles identifiable with professional cut vinyl lettering. This cost-effective solution 
@@ -32,6 +36,8 @@ const VehicleLetteringContent: React.FC = () => {
             <li>Easily updating information as needed</li>
           </ul>
         </div>
+      </div>
+        </>
       </div>
     </>
   );

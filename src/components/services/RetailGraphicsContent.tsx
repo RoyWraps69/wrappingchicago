@@ -1,9 +1,13 @@
 
 import React from 'react';
+import RetailGraphicsHero from './heroes/RetailGraphicsHero';
 
 const RetailGraphicsContent: React.FC = () => {
   return (
     <>
+      <RetailGraphicsHero />
+      <div className="container mx-auto px-4 py-12">
+        <>
       <h2 className="text-2xl font-semibold text-gray-900 mb-4">Retail Graphics and Signage</h2>
       <p className="mb-6 text-gray-700">
         Enhance your retail space with our custom window wraps, wall graphics, and storefront signage. 
@@ -33,6 +37,8 @@ const RetailGraphicsContent: React.FC = () => {
             <li>Seasonal displays and promotions</li>
           </ul>
         </div>
+      </div>
+        </>
       </div>
     </>
   );

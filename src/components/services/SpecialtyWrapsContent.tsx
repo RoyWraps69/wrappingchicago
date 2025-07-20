@@ -1,9 +1,13 @@
 
 import React from 'react';
+import SpecialtyWrapsHero from './heroes/SpecialtyWrapsHero';
 
 const SpecialtyWrapsContent: React.FC = () => {
   return (
     <>
+      <SpecialtyWrapsHero />
+      <div className="container mx-auto px-4 py-12">
+        <>
       <h2 className="text-2xl font-semibold text-gray-900 mb-4">Specialty Vehicle Wraps</h2>
       <p className="mb-6 text-gray-700">
         Stand out from the crowd with our specialty vehicle wraps. These premium wrapping options include unique 
@@ -32,6 +36,8 @@ const SpecialtyWrapsContent: React.FC = () => {
             <li>Unique branding opportunities</li>
           </ul>
         </div>
+      </div>
+        </>
       </div>
     </>
   );

@@ -1,5 +1,6 @@
 
 import React from 'react';
+import GenericServiceHero from './heroes/GenericServiceHero';
 import ChicagoVehicleWrapsContent from './ChicagoVehicleWrapsContent';
 import LocalSEOEnhancer from './LocalSEOEnhancer';
 import ServiceCatalog from './ServiceCatalog';
@@ -13,6 +14,7 @@ const GenericServiceContent: React.FC<GenericServiceContentProps> = ({ serviceTy
   if (!serviceType || serviceType === 'services') {
     return (
       <>
+        <GenericServiceHero />
         <LocalSEOEnhancer />
         <ChicagoVehicleWrapsContent />
         <div className="py-16 bg-gray-50">
@@ -27,6 +29,7 @@ const GenericServiceContent: React.FC<GenericServiceContentProps> = ({ serviceTy
   // For specific service types, show targeted content
   return (
     <>
+      <GenericServiceHero serviceType={serviceType} />
       <LocalSEOEnhancer />
       <div className="container mx-auto py-12 px-4">
         <div className="text-center mb-12">

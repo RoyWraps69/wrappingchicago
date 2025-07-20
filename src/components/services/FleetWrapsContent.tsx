@@ -1,5 +1,6 @@
 
 import React from 'react';
+import FleetWrapsHero from './heroes/FleetWrapsHero';
 import FleetWrapIntro from './fleet-wraps/FleetWrapIntro';
 import FleetWrapBenefits from './fleet-wraps/FleetWrapBenefits';
 import FleetWrapProcess from './fleet-wraps/FleetWrapProcess';
@@ -10,7 +11,9 @@ import FleetWrapFAQ from './fleet-wraps/FleetWrapFAQ';
 
 const FleetWrapsContent: React.FC = () => {
   return (
-    <div className="text-gray-900">
+    <>
+      <FleetWrapsHero />
+      <div className="text-gray-900 container mx-auto px-4 py-12">
       <FleetWrapIntro />
       
       <div className="grid md:grid-cols-2 gap-6 mb-8">
@@ -22,7 +25,8 @@ const FleetWrapsContent: React.FC = () => {
       <IndustriesServed />
       <VehicleTypes />
       <FleetWrapFAQ />
-    </div>
+      </div>
+    </>
   );
 };
 

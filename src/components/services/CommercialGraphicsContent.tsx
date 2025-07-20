@@ -1,9 +1,13 @@
 
 import React from 'react';
+import CommercialGraphicsHero from './heroes/CommercialGraphicsHero';
 
 const CommercialGraphicsContent: React.FC = () => {
   return (
-    <article>
+    <>
+      <CommercialGraphicsHero />
+      <div className="container mx-auto px-4 py-12">
+        <article>
       <header className="mb-6">
         <h2 className="text-2xl md:text-3xl font-semibold text-gray-900 mb-4">
           Professional Commercial Graphics in Chicago
@@ -57,7 +61,9 @@ const CommercialGraphicsContent: React.FC = () => {
           </div>
         </div>
       </section>
-    </article>
+        </article>
+      </div>
+    </>
   );
 };
 
