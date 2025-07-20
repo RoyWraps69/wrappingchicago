@@ -128,15 +128,22 @@ function App() {
                   <Route path="/return-policy" element={<ReturnPolicyPage />} />
                   <Route path="/shipping" element={<ShippingPage />} />
                   
-                  {/* Service pages */}
-                  <Route path="/services" element={<ServicesPage />} />
-                  <Route path="/car-wraps" element={<CarWrapsPage />} />
-                  <Route path="/truck-wraps" element={<TruckWrapsPage />} />
-                  <Route path="/van-wraps" element={<VanWrapsPage />} />
-                  <Route path="/fleet-wraps" element={<FleetWrapsPage />} />
-                  <Route path="/color-change-wraps" element={<ColorChangeWrapsPage />} />
-                  <Route path="/luxury-exotic-wraps" element={<LuxuryExoticWrapsPage />} />
-                  <Route path="/designer-wraps" element={<DesignerWrapsPage />} />
+                   {/* Service pages */}
+                   <Route path="/services" element={<ServicesPage />} />
+                   <Route path="/services/:service" element={<ServicesPage />} />
+                   <Route path="/car-wraps" element={<CarWrapsPage />} />
+                   <Route path="/truck-wraps" element={<TruckWrapsPage />} />
+                   <Route path="/van-wraps" element={<VanWrapsPage />} />
+                   <Route path="/fleet-wraps" element={<FleetWrapsPage />} />
+                   <Route path="/color-change-wraps" element={<ColorChangeWrapsPage />} />
+                   <Route path="/luxury-exotic-wraps" element={<LuxuryExoticWrapsPage />} />
+                   <Route path="/designer-wraps" element={<DesignerWrapsPage />} />
+                   <Route path="/commercial-graphics" element={<ServicesPage />} />
+                   <Route path="/protective-films" element={<ServicesPage />} />
+                   <Route path="/vehicle-lettering" element={<ServicesPage />} />
+                   <Route path="/specialty-wraps" element={<ServicesPage />} />
+                   <Route path="/retail-graphics" element={<ServicesPage />} />
+                   <Route path="/partial-wraps" element={<ServicesPage />} />
                   
                   {/* Trade-specific pages */}
                   <Route path="/plumbing-wraps" element={<PlumbingWrapsPage />} />
