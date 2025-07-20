@@ -88,6 +88,7 @@ import DynamicHeadingManager from './components/seo/DynamicHeadingManager';
 import EnhancedSchemaGenerator from './components/seo/EnhancedSchemaGenerator';
 import DynamicMetaManager from './components/seo/DynamicMetaManager';
 import InternalLinkingHub from './components/navigation/InternalLinkingHub';
+import ScrollToTop from './components/navigation/ScrollToTop';
 
 const queryClient = new QueryClient();
 
@@ -99,6 +100,7 @@ function App() {
           <Toaster />
           <Sonner />
           <BrowserRouter>
+            <ScrollToTop />
             <div className="min-h-screen flex flex-col">
               <Header />
               <main className="flex-grow">
