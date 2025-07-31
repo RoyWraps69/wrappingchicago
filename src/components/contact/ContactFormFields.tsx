@@ -33,9 +33,11 @@ const ContactFormFields = ({ form, apiKeyExists }: ContactFormFieldsProps) => {
       >
         {/* FormSubmit.co specific configuration fields */}
         <input type="hidden" name="_subject" value="Chicago Fleet Wraps: New Quote Request" />
-        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_captcha" value="true" />
         <input type="hidden" name="_next" value={successUrl} />
         <input type="hidden" name="_template" value="table" />
+        <input type="hidden" name="_blacklist" value="viagra,casino,porn,gambling,pharmacy" />
+        <input type="hidden" name="_cc" value="" />
         
         {/* Honeypot field to prevent spam */}
         <input type="text" name="_honey" style={{ display: 'none' }} />
