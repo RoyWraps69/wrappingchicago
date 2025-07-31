@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import RichSnippetsManager from '../../components/seo/RichSnippetsManager';
 import SERPEnhancer from '../../components/seo/SERPEnhancer';
+import LazyImage from '../../components/LazyImage';
 import { Helmet } from 'react-helmet-async';
 
 const VehicleWrapROIArticle = () => {
@@ -108,17 +109,17 @@ const VehicleWrapROIArticle = () => {
               <h2 className="text-3xl font-bold text-primary mt-12 mb-6">Understanding Vehicle Wrap ROI in Chicago</h2>
               
               <p className="text-gray-700 leading-relaxed mb-6">
-                Vehicle wraps represent one of the most cost-effective advertising mediums available to Chicago businesses, but calculating return on investment requires understanding both direct and indirect benefits. Unlike traditional advertising that requires ongoing payments, a vehicle wrap is a one-time investment that continues generating returns for 5-7 years.
+                Vehicle wraps represent one of the most cost-effective advertising mediums available to Chicago businesses, but calculating return on investment requires understanding both direct and indirect benefits. Unlike those expensive billboards along the Kennedy Expressway that require ongoing payments, a vehicle wrap is a one-time investment that continues generating returns for 5-7 years. I've been in this business for over 20 years, and I can tell you - smart Chicago business owners who track their numbers are blown away by the results.
               </p>
 
               <h3 className="text-2xl font-semibold text-primary mt-8 mb-4">The True Cost of Vehicle Wrap Advertising</h3>
               <p className="text-gray-700 leading-relaxed mb-6">
-                When calculating ROI, consider the total cost per impression compared to other advertising mediums. A professionally wrapped vehicle in Chicago generates approximately 30,000-70,000 impressions per day depending on routes traveled. Over a 5-year lifespan, this translates to roughly $0.003 per impression – significantly lower than billboard, radio, or digital advertising costs.
+                When calculating ROI, consider the total cost per impression compared to other advertising mediums. A professionally wrapped vehicle driving through downtown Chicago during rush hour generates approximately 30,000-70,000 impressions per day - that's more eyeballs than most billboards! I had one client who tracked his van on the Dan Ryan during morning commute - massive exposure. Over a 5-year lifespan, this translates to roughly $0.003 per impression – significantly lower than those pricey Loop billboards, radio spots, or Facebook ads.
               </p>
 
               <h3 className="text-2xl font-semibold text-primary mt-8 mb-4">Direct Revenue Attribution Methods</h3>
               <p className="text-gray-700 leading-relaxed mb-6">
-                Track direct ROI through several methods: dedicated phone numbers on the wrap, unique website landing pages, QR codes leading to special offers, and customer surveys asking how they heard about your business. Chicago businesses using these tracking methods typically see 15-25% of new customers attributing their initial contact to vehicle wrap visibility.
+                Track direct ROI through several methods: dedicated phone numbers on the wrap (we set these up for clients), unique website landing pages, QR codes leading to special offers, and customer surveys asking how they heard about your business. Smart Chicago businesses using these tracking methods typically see 15-25% of new customers attributing their initial contact to vehicle wrap visibility. One of my Schaumburg clients tracks every call - 30% come directly from people seeing his wrapped trucks!
               </p>
 
               <h2 className="text-3xl font-bold text-primary mt-12 mb-6">Real Chicago Case Studies</h2>

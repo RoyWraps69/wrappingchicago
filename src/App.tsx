@@ -106,6 +106,8 @@ import DynamicMetaManager from './components/seo/DynamicMetaManager';
 import InternalLinkingHub from './components/navigation/InternalLinkingHub';
 import ScrollToTop from './components/navigation/ScrollToTop';
 import AppWithChat from './components/AppWithChat';
+import ErrorBoundary from './components/ErrorBoundary';
+import GoogleAnalytics from './components/analytics/GoogleAnalytics';
 
 const queryClient = new QueryClient();
 
@@ -114,8 +116,10 @@ function App() {
     <HelmetProvider>
       <QueryClientProvider client={queryClient}>
         <TooltipProvider>
-          <Toaster />
-          <Sonner />
+          <ErrorBoundary>
+            <GoogleAnalytics />
+            <Toaster />
+            <Sonner />
           <BrowserRouter>
             <ScrollToTop />
             <AppWithChat>
@@ -243,6 +247,7 @@ function App() {
             </AppWithChat>
             {/* Removed conflicting SEO components that cause duplicate meta tags */}
           </BrowserRouter>
+        </ErrorBoundary>
         </TooltipProvider>
       </QueryClientProvider>
     </HelmetProvider>
