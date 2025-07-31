@@ -73,6 +73,16 @@ import AIWrapIdeasPage from "./pages/AIWrapIdeasPage";
 import GlossaryPage from "./pages/GlossaryPage";
 import StatsPage from "./pages/StatsPage";
 
+// New core pages
+import TestimonialsPage from "./pages/TestimonialsPage";
+import IndustriesPage from "./pages/IndustriesPage";
+// New tool pages
+import InstantQuoteCalculatorPage from "./pages/tools/InstantQuoteCalculatorPage";
+import AppointmentSchedulerPage from "./pages/tools/AppointmentSchedulerPage";
+// Blog articles
+import VehicleWrapTrendsArticle from "./pages/blog/VehicleWrapTrendsArticle";
+import VehicleWrapROIArticle from "./pages/blog/VehicleWrapROIArticle";
+
 // Trade-specific pages
 import PlumbingWrapsPage from "./pages/trades/PlumbingWrapsPage";
 import HVACWrapsPage from "./pages/trades/HVACWrapsPage";
@@ -95,6 +105,7 @@ import EnhancedSchemaGenerator from './components/seo/EnhancedSchemaGenerator';
 import DynamicMetaManager from './components/seo/DynamicMetaManager';
 import InternalLinkingHub from './components/navigation/InternalLinkingHub';
 import ScrollToTop from './components/navigation/ScrollToTop';
+import AppWithChat from './components/AppWithChat';
 
 const queryClient = new QueryClient();
 
@@ -107,7 +118,8 @@ function App() {
           <Sonner />
           <BrowserRouter>
             <ScrollToTop />
-            <div className="min-h-screen flex flex-col">
+            <AppWithChat>
+              <div className="min-h-screen flex flex-col">
               <Header />
               <main className="flex-grow">
                 <Routes>
@@ -128,11 +140,25 @@ function App() {
                   <Route path="/glossary" element={<GlossaryPage />} />
                   <Route path="/stats" element={<StatsPage />} />
                   
+                  {/* New Core Pages */}
+                  <Route path="/testimonials" element={<TestimonialsPage />} />
+                  <Route path="/industries" element={<IndustriesPage />} />
+                  
+                  {/* Tool Pages */}
+                  <Route path="/instant-quote" element={<InstantQuoteCalculatorPage />} />
+                  <Route path="/schedule-appointment" element={<AppointmentSchedulerPage />} />
+                  
+                  
+                  {/* Blog Articles */}
+                  <Route path="/blog/2024-vehicle-wrap-trends" element={<VehicleWrapTrendsArticle />} />
+                  <Route path="/blog/vehicle-wrap-roi-calculator" element={<VehicleWrapROIArticle />} />
+                  
                   {/* Legal pages */}
                   <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
                   <Route path="/terms" element={<TermsOfServicePage />} />
                   <Route path="/return-policy" element={<ReturnPolicyPage />} />
                   <Route path="/shipping" element={<ShippingPage />} />
+                  
                   
                    {/* Service pages */}
                    <Route path="/services" element={<ServicesPage />} />
@@ -213,7 +239,8 @@ function App() {
                 </Routes>
               </main>
               <Footer />
-            </div>
+              </div>
+            </AppWithChat>
             {/* Removed conflicting SEO components that cause duplicate meta tags */}
           </BrowserRouter>
         </TooltipProvider>
