@@ -1,6 +1,7 @@
 
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import PageSEO from '@/components/seo/PageSEO';
 import BreadcrumbNavigation from '@/components/seo/BreadcrumbNavigation';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Calendar, User, ArrowRight, Tag, Search } from 'lucide-react';
@@ -136,12 +137,15 @@ const BlogPage: React.FC = () => {
 
   return (
     <>
-      <MetaTags
+      <PageSEO 
         title="Vehicle Wrap Blog - Tips, Trends & Insights | Wrapping Chicago"
-        description="Stay updated with the latest vehicle wrap trends, maintenance tips, business insights, and design ideas from Chicago's premier wrap experts."
-        keywords="vehicle wrap blog, wrap trends, car wrap tips, truck wrap maintenance, fleet wrap ROI, vehicle wrap design, Chicago vehicle wraps, wrap care tips"
-        canonicalUrl="/blog"
-        structuredData={blogStructuredData}
+        description="Stay updated with the latest vehicle wrap trends, maintenance tips, business insights, and design ideas from Chicago's premier wrap experts and professionals."
+        keywords={["vehicle wrap blog", "wrap trends chicago", "car wrap tips", "truck wrap maintenance", "fleet wrap ROI", "vehicle wrap design", "chicago vehicle wraps", "wrap care tips"]}
+        canonicalUrl="https://www.wrappingchicago.com/blog"
+        h1="Vehicle Wrap Blog - Expert Tips & Insights"
+        h2={["Latest Vehicle Wrap Trends", "Professional Wrap Tips", "Business Growth Insights"]}
+        h3={["Wrap Maintenance Guide", "Design Best Practices", "ROI Case Studies"]}
+        pageType="service"
       />
       
       <div className="flex flex-col min-h-screen">

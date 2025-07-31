@@ -1,5 +1,6 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
+import PageSEO from '@/components/seo/PageSEO';
+import Google2025SEOOptimizer from '@/components/seo/Google2025SEOOptimizer';
 import { Link } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -9,19 +10,43 @@ import { Wrench, Droplets, Shield, Clock } from 'lucide-react';
 const PlumbingWrapsPage = () => {
   return (
     <>
-      <Helmet>
-        <title>Plumbing Vehicle Wraps Chicago | Professional Plumber Fleet Graphics</title>
-        <meta name="description" content="Professional plumbing vehicle wraps in Chicago. Custom plumber truck graphics, van wraps, and fleet branding that builds trust and drives business growth." />
-        <meta name="keywords" content="plumbing vehicle wraps chicago, plumber truck graphics, plumbing van wraps, plumber fleet branding, chicago plumbing advertising" />
-        <link rel="canonical" href="https://www.wrappingchicago.com/plumbing-wraps" />
-      </Helmet>
-
-      <Header />
+      <PageSEO 
+        title="Plumbing Vehicle Wraps Chicago | Professional Plumber Van & Truck Graphics"
+        description="Professional plumbing vehicle wraps in Chicago. Custom van & truck graphics for plumbers. Increase brand visibility, showcase services, and build trust with quality wraps."
+        keywords={["plumbing vehicle wraps chicago", "plumber van wraps", "plumbing truck graphics", "service vehicle wraps", "professional plumbing advertising", "chicago plumber branding"]}
+        canonicalUrl="https://www.wrappingchicago.com/trades/plumbing-wraps"
+        h1="Professional Plumbing Vehicle Wraps in Chicago"
+        h2={["Custom Plumber Van & Truck Graphics", "Professional Service Vehicle Branding", "Increase Your Plumbing Business Visibility"]}
+        h3={["Emergency Plumbing Services Advertising", "Residential & Commercial Plumbing Graphics", "Licensed Plumber Vehicle Identification"]}
+        pageType="service"
+        serviceSchema={true}
+      />
       
+      <Google2025SEOOptimizer 
+        pageTitle="Plumbing Vehicle Wraps Chicago | Professional Plumber Van & Truck Graphics"
+        pageDescription="Professional plumbing vehicle wraps in Chicago. Custom van & truck graphics for plumbers. Increase brand visibility, showcase services, and build trust with quality wraps."
+        businessType="plumber"
+        primaryKeywords={[
+          "emergency plumbing services",
+          "residential plumbing contractor", 
+          "commercial plumbing company",
+          "licensed plumber chicago",
+          "drain cleaning services",
+          "water heater installation",
+          "pipe repair specialists",
+          "bathroom renovation plumbing",
+          "kitchen plumbing services",
+          "sewer line specialists"
+        ]}
+      />
+      
+      <Header />
+        
+      {/* Hero Section */}
       <TradeHero 
         tradeName="Plumbing"
         tradeIcon={Wrench}
-        description="Build trust and grow your plumbing business with eye-catching vehicle graphics that showcase your professionalism across Chicago."
+        description="Transform your plumbing vehicles into powerful mobile billboards. Custom van and truck graphics that showcase your expertise and build customer trust."
         benefits={["Emergency Service", "Licensed & Insured", "Professional Image", "24/7 Availability"]}
         startingPrice="$1,500"
       />

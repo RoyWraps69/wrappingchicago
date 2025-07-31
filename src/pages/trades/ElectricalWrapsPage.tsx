@@ -1,5 +1,6 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
+import PageSEO from '@/components/seo/PageSEO';
+import Google2025SEOOptimizer from '@/components/seo/Google2025SEOOptimizer';
 import { Link } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -9,12 +10,35 @@ import { Zap, Shield, Clock, Settings } from 'lucide-react';
 const ElectricalWrapsPage = () => {
   return (
     <>
-      <Helmet>
-        <title>Electrical Vehicle Wraps Chicago | Electrician Fleet Graphics</title>
-        <meta name="description" content="Professional electrical vehicle wraps in Chicago. Custom electrician truck graphics, van wraps, and fleet branding that showcases your electrical expertise." />
-        <meta name="keywords" content="electrical vehicle wraps chicago, electrician truck graphics, electrical van wraps, electrician fleet branding, chicago electrical advertising" />
-        <link rel="canonical" href="https://www.wrappingchicago.com/electrical-wraps" />
-      </Helmet>
+      <PageSEO 
+        title="Electrical Vehicle Wraps Chicago | Professional Electrician Fleet Graphics"
+        description="Professional electrical vehicle wraps in Chicago. Custom electrician truck graphics, van wraps, and fleet branding that showcases electrical expertise and safety credentials."
+        keywords={["electrical vehicle wraps chicago", "electrician truck graphics", "electrical van wraps", "electrician fleet branding", "chicago electrical contractor advertising"]}
+        canonicalUrl="https://www.wrappingchicago.com/trades/electrical-wraps"
+        h1="Professional Electrical Vehicle Wraps in Chicago"
+        h2={["Custom Electrician Fleet Graphics", "Professional Electrical Service Vehicle Branding", "Licensed Electrician Marketing Solutions"]}
+        h3={["Emergency Electrical Service Advertising", "Residential & Commercial Electrical Graphics", "Certified Electrician Vehicle Identification"]}
+        pageType="service"
+        serviceSchema={true}
+      />
+      
+      <Google2025SEOOptimizer 
+        pageTitle="Electrical Vehicle Wraps Chicago | Professional Electrician Fleet Graphics"
+        pageDescription="Professional electrical vehicle wraps in Chicago. Custom electrician truck graphics, van wraps, and fleet branding that showcases electrical expertise and safety credentials."
+        businessType="electrician"
+        primaryKeywords={[
+          "emergency electrical services",
+          "residential electrician", 
+          "commercial electrical company",
+          "licensed electrician chicago",
+          "electrical panel upgrades",
+          "outlet installation",
+          "electrical safety inspection",
+          "industrial electrical work",
+          "smart home wiring",
+          "electrical code compliance"
+        ]}
+      />
 
       <Header />
       

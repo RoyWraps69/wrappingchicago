@@ -1,5 +1,6 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
+import PageSEO from '@/components/seo/PageSEO';
+import Google2025SEOOptimizer from '@/components/seo/Google2025SEOOptimizer';
 import { Link } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -9,12 +10,35 @@ import { Thermometer, Wind, Snowflake, Clock } from 'lucide-react';
 const HVACWrapsPage = () => {
   return (
     <>
-      <Helmet>
-        <title>HVAC Vehicle Wraps Chicago | Heating & Cooling Fleet Graphics</title>
-        <meta name="description" content="Professional HVAC vehicle wraps in Chicago. Custom heating & cooling truck graphics, van wraps, and fleet branding for year-round business growth." />
-        <meta name="keywords" content="hvac vehicle wraps chicago, heating cooling truck graphics, hvac van wraps, hvac fleet branding, chicago hvac advertising" />
-        <link rel="canonical" href="https://www.wrappingchicago.com/hvac-wraps" />
-      </Helmet>
+      <PageSEO 
+        title="HVAC Vehicle Wraps Chicago | Heating & Cooling Truck Graphics"
+        description="Professional HVAC vehicle wraps in Chicago. Custom heating & cooling truck graphics, van wraps, and fleet branding for year-round business growth and emergency service visibility."
+        keywords={["hvac vehicle wraps chicago", "heating cooling truck graphics", "hvac van wraps", "air conditioning fleet branding", "chicago hvac contractor advertising"]}
+        canonicalUrl="https://www.wrappingchicago.com/trades/hvac-wraps"
+        h1="Professional HVAC Vehicle Wraps in Chicago"
+        h2={["Custom Heating & Cooling Fleet Graphics", "Professional HVAC Service Vehicle Branding", "Year-Round HVAC Business Marketing"]}
+        h3={["Emergency HVAC Service Advertising", "Residential & Commercial HVAC Graphics", "Licensed HVAC Contractor Identification"]}
+        pageType="service"
+        serviceSchema={true}
+      />
+      
+      <Google2025SEOOptimizer 
+        pageTitle="HVAC Vehicle Wraps Chicago | Heating & Cooling Truck Graphics"
+        pageDescription="Professional HVAC vehicle wraps in Chicago. Custom heating & cooling truck graphics, van wraps, and fleet branding for year-round business growth and emergency service visibility."
+        businessType="hvac"
+        primaryKeywords={[
+          "emergency hvac services",
+          "residential heating contractor", 
+          "commercial cooling company",
+          "licensed hvac chicago",
+          "air conditioning repair",
+          "furnace installation",
+          "ductwork specialists",
+          "indoor air quality",
+          "energy efficient systems",
+          "hvac maintenance contracts"
+        ]}
+      />
 
       <Header />
       
