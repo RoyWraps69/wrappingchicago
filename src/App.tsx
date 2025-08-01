@@ -116,18 +116,14 @@ function App() {
   return (
     <BrowserRouter>
       <div className="min-h-screen flex flex-col">
-        <Header />
+        <div style={{padding: '20px', background: 'red', color: 'white'}}>Header Test</div>
         <main className="flex-grow">
           <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/contact" element={<ContactPage />} />
-            <Route path="/about" element={<AboutPage />} />
-            <Route path="/gallery" element={<GalleryPage />} />
-            <Route path="/pricing" element={<PricingPage />} />
-            <Route path="*" element={<NotFound />} />
+            <Route path="/" element={<div style={{padding: '20px', fontSize: '24px'}}>Homepage Test</div>} />
+            <Route path="*" element={<div>Not Found</div>} />
           </Routes>
         </main>
-        <Footer />
+        <div style={{padding: '20px', background: 'blue', color: 'white'}}>Footer Test</div>
       </div>
     </BrowserRouter>
   );
