@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -73,6 +72,8 @@ import AIWrapIdeasPage from "./pages/AIWrapIdeasPage";
 import GlossaryPage from "./pages/GlossaryPage";
 import StatsPage from "./pages/StatsPage";
 
+import ServiceContentSelector from "./components/services/ServiceContentSelector";
+
 // New core pages
 import TestimonialsPage from "./pages/TestimonialsPage";
 import IndustriesPage from "./pages/IndustriesPage";
@@ -112,20 +113,149 @@ import GoogleAnalytics from './components/analytics/GoogleAnalytics';
 const queryClient = new QueryClient();
 
 function App() {
-  console.log('App.tsx: App component rendering');
   return (
-    <BrowserRouter>
-      <div className="min-h-screen flex flex-col">
-        <div style={{padding: '20px', background: 'red', color: 'white'}}>Header Test</div>
-        <main className="flex-grow">
-          <Routes>
-            <Route path="/" element={<div style={{padding: '20px', fontSize: '24px'}}>Homepage Test</div>} />
-            <Route path="*" element={<div>Not Found</div>} />
-          </Routes>
-        </main>
-        <div style={{padding: '20px', background: 'blue', color: 'white'}}>Footer Test</div>
-      </div>
-    </BrowserRouter>
+    <HelmetProvider>
+      <QueryClientProvider client={queryClient}>
+        <TooltipProvider>
+          <ErrorBoundary>
+            <GoogleAnalytics />
+            <Toaster />
+            <Sonner />
+          <BrowserRouter>
+            <ScrollToTop />
+            <AppWithChat>
+              <div className="min-h-screen flex flex-col">
+              <Header />
+              <main className="flex-grow">
+                <Routes>
+                  {/* Homepage */}
+                  <Route path="/" element={<Index />} />
+                  
+                  {/* Core pages - HIGH PRIORITY ROUTES FIRST */}
+                  <Route path="/contact" element={<ContactPage />} />
+                  <Route path="/about" element={<AboutPage />} />
+                  <Route path="/gallery" element={<GalleryPage />} />
+                  <Route path="/pricing" element={<PricingPage />} />
+                  <Route path="/faq" element={<FAQPage />} />
+                  <Route path="/sitemap" element={<SitemapPage />} />
+                  <Route path="/blog" element={<BlogPage />} />
+                  <Route path="/blog/:slug" element={<BlogPostPage />} />
+                  <Route path="/service-areas" element={<ServiceAreasPage />} />
+                  <Route path="/ai-wrap-ideas" element={<AIWrapIdeasPage />} />
+                  
+                  <Route path="/glossary" element={<GlossaryPage />} />
+                  <Route path="/industries" element={<IndustriesPage />} />
+                  <Route path="/testimonials" element={<TestimonialsPage />} />
+                  <Route path="/stats" element={<StatsPage />} />
+                  
+                  {/* Services Routes */}
+                  <Route path="/services" element={<ServicesPage />} />
+                  <Route path="/services/*" element={<ServiceContentSelector path={window.location.pathname} />} />
+                  <Route path="/car-wraps" element={<CarWrapsPage />} />
+                  <Route path="/truck-wraps" element={<TruckWrapsPage />} />
+                  <Route path="/van-wraps" element={<VanWrapsPage />} />
+                  <Route path="/fleet-wraps" element={<FleetWrapsPage />} />
+                  <Route path="/color-change-wraps" element={<ColorChangeWrapsPage />} />
+                  <Route path="/designer-wraps" element={<DesignerWrapsPage />} />
+                  <Route path="/luxury-exotic-wraps" element={<LuxuryExoticWrapsPage />} />
+                  <Route path="/commercial-graphics" element={<CommercialGraphicsPage />} />
+                  <Route path="/protective-films" element={<ProtectiveFilmsPage />} />
+                  <Route path="/vehicle-lettering" element={<VehicleLetteringPage />} />
+                  <Route path="/specialty-wraps" element={<SpecialtyWrapsPage />} />
+                  <Route path="/retail-graphics" element={<RetailGraphicsPage />} />
+                  <Route path="/partial-wraps" element={<PartialWrapsPage />} />
+                  
+                  {/* Trade-specific routes */}
+                  <Route path="/plumbing-wraps" element={<PlumbingWrapsPage />} />
+                  <Route path="/hvac-wraps" element={<HVACWrapsPage />} />
+                  <Route path="/electrical-wraps" element={<ElectricalWrapsPage />} />
+                  <Route path="/movers-wraps" element={<MoversWrapsPage />} />
+                  <Route path="/logistics-wraps" element={<LogisticsWrapsPage />} />
+                  <Route path="/delivery-wraps" element={<DeliveryWrapsPage />} />
+                  
+                  {/* Tools Routes */}
+                  <Route path="/tools/instant-quote" element={<InstantQuoteCalculatorPage />} />
+                  <Route path="/tools/appointment" element={<AppointmentSchedulerPage />} />
+                  
+                  {/* Blog Routes */}
+                  <Route path="/blog/vehicle-wrap-trends-2024" element={<VehicleWrapTrendsArticle />} />
+                  <Route path="/blog/vehicle-wrap-roi-analysis" element={<VehicleWrapROIArticle />} />
+                  
+                  {/* Location routes */}
+                  <Route path="/locations" element={<LocationsPage />} />
+                  <Route path="/chicago" element={<ChicagoLocationPage />} />
+                  <Route path="/evanston" element={<EvanstonLocationPage />} />
+                  <Route path="/naperville" element={<NapervilleLocationPage />} />
+                  <Route path="/schaumburg" element={<SchaumburgLocationPage />} />
+                  <Route path="/skokie" element={<SkokieLocationPage />} />
+                  <Route path="/arlington-heights" element={<ArlingtonHeightsLocationPage />} />
+                  <Route path="/palatine" element={<PalatineLocationPage />} />
+                  <Route path="/waukegan" element={<WaukeganLocationPage />} />
+                  <Route path="/des-plaines" element={<DesPlainesLocationPage />} />
+                  <Route path="/elgin" element={<ElginLocationPage />} />
+                  <Route path="/hoffman-estates" element={<HoffmanEstatesLocationPage />} />
+                  <Route path="/mclean-county" element={<McLeanCountyLocationPage />} />
+                  <Route path="/oak-park" element={<OakParkLocationPage />} />
+                  <Route path="/aurora" element={<AuroraLocationPage />} />
+                  <Route path="/joliet" element={<JolietLocationPage />} />
+                  <Route path="/cicero" element={<CiceroLocationPage />} />
+                  <Route path="/berwyn" element={<BerwynLocationPage />} />
+                  <Route path="/wheaton" element={<WheatonLocationPage />} />
+                  <Route path="/downers-grove" element={<DownersGroveLocationPage />} />
+                  <Route path="/bolingbrook" element={<BolingbrookLocationPage />} />
+                  
+                  {/* Chicago neighborhood routes */}
+                  <Route path="/lakeview-chicago" element={<LakeviewChicagoPage />} />
+                  <Route path="/logan-square-chicago" element={<LoganSquareChicagoPage />} />
+                  <Route path="/andersonville-chicago" element={<AndersonvilleChicagoPage />} />
+                  <Route path="/bucktown-chicago" element={<BucktownChicagoPage />} />
+                  <Route path="/gold-coast-chicago" element={<GoldCoastChicagoPage />} />
+                  
+                  {/* Additional IL location routes */}
+                  <Route path="/arlington-heights-il" element={<ArlingtonHeightsILPage />} />
+                  <Route path="/oak-lawn-il" element={<OakLawnILPage />} />
+                  <Route path="/tinley-park-il" element={<TinleyParkILPage />} />
+                  <Route path="/orland-park-il" element={<OrlandParkILPage />} />
+                  <Route path="/palatine-il" element={<PalatineILPage />} />
+                  <Route path="/elmhurst-il" element={<ElmhurstILPage />} />
+                  <Route path="/lombard-il" element={<LombardILPage />} />
+                  <Route path="/glen-ellyn-il" element={<GlenEllynILPage />} />
+                  
+                  {/* Specific location route */}
+                  <Route path="/truck-wraps-chicago" element={<TruckWrapsChicagoPage />} />
+                  
+                  {/* Dynamic city routes */}
+                  <Route path="/location/:citySlug" element={<LocationPage />} />
+                  <Route path="/city/:citySlug" element={<CityLocationPage />} />
+                  
+                  {/* Legal pages */}
+                  <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+                  <Route path="/terms-of-service" element={<TermsOfServicePage />} />
+                  <Route path="/return-policy" element={<ReturnPolicyPage />} />
+                  <Route path="/shipping" element={<ShippingPage />} />
+                  
+                  {/* Catch-all route for undefined paths */}
+                  <Route path="*" element={<NotFound />} />
+                </Routes>
+              </main>
+              <Footer />
+              </div>
+            </AppWithChat>
+            
+            {/* SEO Components */}
+            <UnifiedSEOSystem />
+            <DynamicCanonicalManager />
+            <DynamicTitleManager />
+            <DynamicHeadingManager />
+            <EnhancedSchemaGenerator />
+            <DynamicMetaManager />
+            <InternalLinkingHub />
+            
+          </BrowserRouter>
+          </ErrorBoundary>
+        </TooltipProvider>
+      </QueryClientProvider>
+    </HelmetProvider>
   );
 }
 
