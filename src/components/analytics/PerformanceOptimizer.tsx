@@ -165,8 +165,9 @@ const PerformanceOptimizer: React.FC = () => {
           });
         }
         
-        if (webVitals.onFID) {
-          webVitals.onFID((metric) => {
+        // FID is deprecated in web-vitals v3, using onINP instead
+        if (webVitals.onINP) {
+          webVitals.onINP((metric) => {
             if (window.gtag) {
               window.gtag('event', 'web_vitals', {
                 event_category: 'Web Vitals',

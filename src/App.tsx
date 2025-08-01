@@ -108,6 +108,12 @@ import ScrollToTop from './components/navigation/ScrollToTop';
 import AppWithChat from './components/AppWithChat';
 import ErrorBoundary from './components/ErrorBoundary';
 import EnhancedGoogleAnalytics from './components/analytics/EnhancedGoogleAnalytics';
+import DynamicSitemapGenerator from './components/seo/DynamicSitemapGenerator';
+import CoreWebVitalsOptimizer from './components/performance/CoreWebVitalsOptimizer';
+import GoogleMyBusinessSchema from './components/schemas/GoogleMyBusinessSchema';
+import SocialProofIntegration from './components/social/SocialProofIntegration';
+import EntityKnowledgeGraph from './components/seo/EntityKnowledgeGraph';
+import TechnicalSEOMonitor from './components/analytics/TechnicalSEOMonitor';
 
 const queryClient = new QueryClient();
 
@@ -121,6 +127,12 @@ function App() {
             <Sonner />
             <BrowserRouter>
               <EnhancedGoogleAnalytics />
+              <DynamicSitemapGenerator />
+              <CoreWebVitalsOptimizer />
+              <GoogleMyBusinessSchema />
+              <SocialProofIntegration />
+              <EntityKnowledgeGraph />
+              <TechnicalSEOMonitor />
               <ScrollToTop />
               <AppWithChat>
               <div className="min-h-screen flex flex-col">
