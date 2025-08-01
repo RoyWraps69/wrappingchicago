@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import RichSnippetsManager from '../components/seo/RichSnippetsManager';
 import SERPEnhancer from '../components/seo/SERPEnhancer';
-import LazyImage from '../components/LazyImage';
 import { Helmet } from 'react-helmet-async';
 
 const TestimonialsPage = () => {
@@ -13,10 +12,10 @@ const TestimonialsPage = () => {
       business: "Rodriguez Plumbing Services",
       location: "Schaumburg, IL",
       rating: 5,
-      review: "Man, these guys totally transformed our whole fleet - all 8 service vans! I was skeptical at first, you know? But after seeing the first van done, I knew we hit gold. Our phone's been ringing off the hook, especially in the Woodfield area. Had one customer tell me she called because our van looked so professional parked outside her neighbor's house. Roy's team? They're perfectionists. Worth every penny.",
+      review: "Wrapping Chicago transformed our fleet of 8 service vans. The quality is outstanding and our calls increased 40% in the first month. Professional service from start to finish.",
       service: "Fleet Wraps",
-      beforeImage: "https://images.unsplash.com/photo-1452378174528-3090a4bba7b2?w=400",
-      afterImage: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400"
+      beforeImage: "/lovable-uploads/before-plumbing-van.jpg",
+      afterImage: "/lovable-uploads/after-plumbing-van.jpg"
     },
     {
       id: 2,
@@ -24,10 +23,10 @@ const TestimonialsPage = () => {
       business: "Thompson Legal Group",
       location: "Downtown Chicago, IL",
       rating: 5,
-      review: "Honestly, I wasn't sure about putting graphics on my BMW at first - seemed too flashy for a law practice. But Roy showed me these elegant designs, and wow! It's sophisticated, not tacky at all. I drive to court downtown every day, and I've gotten three new clients just from people seeing my car parked on LaSalle Street. One judge even complimented the design!",
+      review: "Our luxury vehicle wrap for court appearances has elevated our firm's image tremendously. The attention to detail and premium materials used were exactly what we needed.",
       service: "Luxury Vehicle Wraps",
-      beforeImage: "https://images.unsplash.com/photo-1500375592092-40eb2168fd21?w=400",
-      afterImage: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=400"
+      beforeImage: "/lovable-uploads/before-legal-car.jpg",
+      afterImage: "/lovable-uploads/after-legal-car.jpg"
     },
     {
       id: 3,
@@ -35,10 +34,10 @@ const TestimonialsPage = () => {
       business: "Mendoza HVAC Solutions",
       location: "Naperville, IL",
       rating: 5,
-      review: "Best business decision I've made in 15 years, hands down. My trucks were just plain white before - looked like every other HVAC guy out there. Now? People remember us. Had a lady in Lisle flag me down at a stoplight to ask for my card! The wrap's held up through two brutal Chicago winters too. Roy wasn't kidding when he said this stuff was tough.",
+      review: "Best investment we've made for our business. The truck wraps have turned our vehicles into mobile billboards. Roy and his team are true professionals.",
       service: "Commercial Vehicle Graphics",
-      beforeImage: "https://images.unsplash.com/photo-1426604966848-d7adac402bff?w=400",
-      afterImage: "https://images.unsplash.com/photo-1500673922987-e212871fec22?w=400"
+      beforeImage: "/lovable-uploads/before-hvac-truck.jpg",
+      afterImage: "/lovable-uploads/after-hvac-truck.jpg"
     },
     {
       id: 4,
@@ -46,21 +45,21 @@ const TestimonialsPage = () => {
       business: "Walsh Catering Company",
       location: "Evanston, IL",
       rating: 5,
-      review: "OMG, the food truck looks incredible! We do a lot of Northwestern University events, and students are always taking selfies with our truck now. The colors pop so much - even on those gloomy Chicago days, we stand out. My Instagram followers doubled just from people tagging us in their posts. The investment paid for itself in three months from all the extra bookings!",
+      review: "Our food truck wrap is absolutely stunning! The vibrant colors and design perfectly capture our brand. We get compliments everywhere we go.",
       service: "Food Truck Wraps",
-      beforeImage: "https://images.unsplash.com/photo-1470813740244-df37b8c1edcb?w=400",
-      afterImage: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=400"
+      beforeImage: "/lovable-uploads/before-food-truck.jpg",
+      afterImage: "/lovable-uploads/after-food-truck.jpg"
     },
     {
       id: 5,
-      name: "Dr. Robert Kim",
+      name: "Robert Kim",
       business: "Kim Medical Transport",
       location: "Oak Park, IL",
       rating: 5,
-      review: "Running a medical transport service, trust is everything. Our old vans looked dated and unprofessional. The new wraps give us that clean, medical appearance families expect. I've had nurses at hospitals compliment our vehicles. Plus, the reflective elements they added help with visibility during those early morning pickups on the Eisenhower. Smart thinking all around.",
+      review: "Professional, clean, and exactly what we needed for our medical transport fleet. The wraps look great and have held up perfectly through Chicago winters.",
       service: "Medical Vehicle Wraps",
-      beforeImage: "https://images.unsplash.com/photo-1504893524553-b855bce32c67?w=400",
-      afterImage: "https://images.unsplash.com/photo-1482881497185-d4a9ddbe4151?w=400"
+      beforeImage: "/lovable-uploads/before-medical-van.jpg",
+      afterImage: "/lovable-uploads/after-medical-van.jpg"
     },
     {
       id: 6,
@@ -68,10 +67,10 @@ const TestimonialsPage = () => {
       business: "Chen Real Estate Group",
       location: "Palatine, IL",
       rating: 5,
-      review: "I drive all over the northwest suburbs showing homes, and this partial wrap has been like having a mobile billboard! Way more effective than those expensive Zillow ads. Had a seller in Arlington Heights contact me after seeing my car parked at an open house down the street. The design is classy - not over the top - which works perfect for real estate. My broker's getting one done next month!",
+      review: "Our partial vehicle wrap campaign has been incredibly effective. Professional appearance that drives leads. Highly recommend Wrapping Chicago!",
       service: "Partial Vehicle Wraps",
-      beforeImage: "https://images.unsplash.com/photo-1523712999610-f77fbcfc3843?w=400",
-      afterImage: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=400"
+      beforeImage: "/lovable-uploads/before-realestate-car.jpg",
+      afterImage: "/lovable-uploads/after-realestate-car.jpg"
     }
   ];
 
@@ -197,22 +196,26 @@ const TestimonialsPage = () => {
                   {/* Before/After Images */}
                   <div className="grid grid-cols-2">
                     <div className="relative">
-                      <LazyImage
+                      <img 
                         src={testimonial.beforeImage} 
-                        alt={`Before vehicle wrap - ${testimonial.business}`}
+                        alt={`Before - ${testimonial.business}`}
                         className="w-full h-32 object-cover"
-                        fallbackSrc="https://images.unsplash.com/photo-1452378174528-3090a4bba7b2?w=400"
+                        onError={(e) => {
+                          e.currentTarget.src = '/lovable-uploads/6ef3b1af-8591-4d36-97c2-9366401115fa.png';
+                        }}
                       />
                       <div className="absolute bottom-0 left-0 bg-black bg-opacity-75 text-white px-2 py-1 text-xs">
                         Before
                       </div>
                     </div>
                     <div className="relative">
-                      <LazyImage
+                      <img 
                         src={testimonial.afterImage} 
-                        alt={`After vehicle wrap - ${testimonial.business}`}
+                        alt={`After - ${testimonial.business}`}
                         className="w-full h-32 object-cover"
-                        fallbackSrc="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400"
+                        onError={(e) => {
+                          e.currentTarget.src = '/lovable-uploads/6ef3b1af-8591-4d36-97c2-9366401115fa.png';
+                        }}
                       />
                       <div className="absolute bottom-0 right-0 bg-primary text-white px-2 py-1 text-xs">
                         After
@@ -223,24 +226,25 @@ const TestimonialsPage = () => {
               ))}
             </div>
 
+            {/* ROI Statistics */}
             <div className="bg-primary text-white rounded-lg p-8 mb-12">
-              <h2 className="text-3xl font-bold text-center mb-8">Real Results from Real Chicago Businesses</h2>
+              <h2 className="text-3xl font-bold text-center mb-8">Real Results from Real Customers</h2>
               <div className="grid grid-cols-1 md:grid-cols-4 gap-6 text-center">
                 <div>
                   <div className="text-4xl font-bold mb-2">40%</div>
-                  <div className="text-primary-foreground">Average Lead Increase Across Chicagoland</div>
+                  <div className="text-primary-foreground">Average Lead Increase</div>
                 </div>
                 <div>
-                  <div className="text-4xl font-bold mb-2">340%</div>
-                  <div className="text-primary-foreground">Average ROI in First Year (Northwest Suburbs)</div>
+                  <div className="text-4xl font-bold mb-2">300%</div>
+                  <div className="text-primary-foreground">Average ROI First Year</div>
                 </div>
                 <div>
                   <div className="text-4xl font-bold mb-2">16,000+</div>
-                  <div className="text-primary-foreground">Vehicles Wrapped Since 2003</div>
+                  <div className="text-primary-foreground">Vehicles Wrapped</div>
                 </div>
                 <div>
                   <div className="text-4xl font-bold mb-2">98%</div>
-                  <div className="text-primary-foreground">Customer Satisfaction (Better than Deep Dish!)</div>
+                  <div className="text-primary-foreground">Customer Satisfaction</div>
                 </div>
               </div>
             </div>

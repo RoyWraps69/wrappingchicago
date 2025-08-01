@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import RichSnippetsManager from '../components/seo/RichSnippetsManager';
 import SERPEnhancer from '../components/seo/SERPEnhancer';
-import LazyImage from '../components/LazyImage';
 import { Helmet } from 'react-helmet-async';
 
 const IndustriesPage = () => {
@@ -14,8 +13,8 @@ const IndustriesPage = () => {
       description: "Professional vehicle wraps for medical practices, hospitals, home healthcare, and medical transport services.",
       services: ["Ambulance Wraps", "Medical Transport Vans", "Healthcare Branding", "HIPAA Compliant Designs"],
       benefits: ["Professional appearance", "Patient trust building", "Regulatory compliance", "Emergency visibility"],
-      image: "https://images.unsplash.com/photo-1500375592092-40eb2168fd21?w=600",
-      caseStudy: "Increased patient referrals by 35% for Northwest Community Hospital's transport fleet after implementing clean, professional wrap designs that build trust with families throughout the north and northwest suburbs."
+      image: "/lovable-uploads/medical-vehicle-wrap.jpg",
+      caseStudy: "Increased patient referrals by 35% for Northwest Community Hospital's transport fleet"
     },
     {
       id: 2,
@@ -151,11 +150,13 @@ const IndustriesPage = () => {
               {industries.map((industry) => (
                 <div key={industry.id} className="bg-white rounded-lg shadow-lg overflow-hidden">
                   <div className="relative">
-                    <LazyImage
+                    <img 
                       src={industry.image} 
-                      alt={`${industry.name} Vehicle Wrap Services in Chicago`}
+                      alt={`${industry.name} Vehicle Wrap`}
                       className="w-full h-48 object-cover"
-                      fallbackSrc="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=600"
+                      onError={(e) => {
+                        e.currentTarget.src = '/lovable-uploads/6ef3b1af-8591-4d36-97c2-9366401115fa.png';
+                      }}
                     />
                     <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
                       <h2 className="text-2xl font-bold text-white text-center">{industry.name}</h2>

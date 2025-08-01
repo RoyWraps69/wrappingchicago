@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import RichSnippetsManager from '../../components/seo/RichSnippetsManager';
 import SERPEnhancer from '../../components/seo/SERPEnhancer';
-import LazyImage from '../../components/LazyImage';
 import { Helmet } from 'react-helmet-async';
 
 const VehicleWrapTrendsArticle = () => {
@@ -76,11 +75,10 @@ const VehicleWrapTrendsArticle = () => {
 
             {/* Featured Image */}
             <div className="mb-12">
-              <LazyImage
-                src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop"
-                alt="2024 Vehicle Wrap Trends Chicago - Modern vehicle wrap designs"
+              <img 
+                src="/lovable-uploads/6ef3b1af-8591-4d36-97c2-9366401115fa.png"
+                alt="2024 Vehicle Wrap Trends Chicago"
                 className="w-full h-64 md:h-96 object-cover rounded-lg shadow-lg"
-                fallbackSrc="https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=800"
               />
             </div>
 
@@ -90,12 +88,12 @@ const VehicleWrapTrendsArticle = () => {
               <h2 className="text-3xl font-bold text-primary mt-12 mb-6">Top Vehicle Wrap Trends Shaping Chicago in 2024</h2>
               
               <p className="text-gray-700 leading-relaxed mb-6">
-                The vehicle wrap industry in Chicago is experiencing unprecedented innovation in 2024. As businesses compete for attention on busy streets from the Magnificent Mile to Millennium Park, the latest design trends are helping companies stand out while maintaining professional appeal. I was just chatting with a client in River North last week who said their new matte black wrap has people stopping them at red lights asking for business cards. Here's what's driving the most successful vehicle wrap campaigns this year.
+                The vehicle wrap industry in Chicago is experiencing unprecedented innovation in 2024. As businesses compete for attention on busy streets from the Loop to Lincoln Park, the latest design trends are helping companies stand out while maintaining professional appeal. Here's what's driving the most successful vehicle wrap campaigns this year.
               </p>
 
               <h3 className="text-2xl font-semibold text-primary mt-8 mb-4">1. Matte and Satin Finishes Dominate</h3>
               <p className="text-gray-700 leading-relaxed mb-6">
-                Matte and satin finishes have moved from luxury vehicles to mainstream business wraps. These sophisticated finishes offer several advantages for Chicago businesses: they reduce glare during those brutal summer days on Lake Shore Drive, hide minor imperfections better than gloss (trust me, Chicago potholes are rough on vehicles), and create a premium appearance that commands attention without being flashy. We've seen a 40% increase in matte finish requests from professional services in the Loop and Lincoln Park areas.
+                Matte and satin finishes have moved from luxury vehicles to mainstream business wraps. These sophisticated finishes offer several advantages for Chicago businesses: they reduce glare in bright sunlight, hide minor imperfections better than gloss, and create a premium appearance that commands attention without being flashy. We've seen a 40% increase in matte finish requests from professional services like law firms and medical practices.
               </p>
 
               <h3 className="text-2xl font-semibold text-primary mt-8 mb-4">2. Color-Changing and Iridescent Vinyls</h3>

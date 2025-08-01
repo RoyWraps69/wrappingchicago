@@ -6,7 +6,6 @@ import LocalSEOBoosterCoordinated from "@/components/seo/LocalSEOBoosterCoordina
 import HomePageSections from "@/components/home/HomePageSections";
 
 const Index = () => {
-  console.log('Index.tsx: Index page rendering');
   const tradeKeywords = [
     'vehicle wraps Chicago', 'car wraps Chicago', 'truck wraps Chicago', 'van wraps Chicago',
     'fleet wraps Chicago', 'commercial vehicle wraps', 'custom car wraps', 'vinyl wraps Chicago',
