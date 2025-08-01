@@ -112,6 +112,7 @@ import GoogleAnalytics from './components/analytics/GoogleAnalytics';
 const queryClient = new QueryClient();
 
 function App() {
+  console.log('App.tsx: App component rendering');
   return (
     <HelmetProvider>
       <QueryClientProvider client={queryClient}>
