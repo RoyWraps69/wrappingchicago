@@ -106,19 +106,23 @@ import DynamicMetaManager from './components/seo/DynamicMetaManager';
 import InternalLinkingHub from './components/navigation/InternalLinkingHub';
 import ScrollToTop from './components/navigation/ScrollToTop';
 import AppWithChat from './components/AppWithChat';
+import ErrorBoundary from './components/ErrorBoundary';
+import EnhancedGoogleAnalytics from './components/analytics/EnhancedGoogleAnalytics';
 
 const queryClient = new QueryClient();
 
 function App() {
   return (
-    <HelmetProvider>
-      <QueryClientProvider client={queryClient}>
-        <TooltipProvider>
-          <Toaster />
-          <Sonner />
-          <BrowserRouter>
-            <ScrollToTop />
-            <AppWithChat>
+    <ErrorBoundary>
+      <HelmetProvider>
+        <QueryClientProvider client={queryClient}>
+          <TooltipProvider>
+            <Toaster />
+            <Sonner />
+            <BrowserRouter>
+              <EnhancedGoogleAnalytics />
+              <ScrollToTop />
+              <AppWithChat>
               <div className="min-h-screen flex flex-col">
               <Header />
               <main className="flex-grow">
@@ -240,12 +244,13 @@ function App() {
               </main>
               <Footer />
               </div>
-            </AppWithChat>
-            {/* Removed conflicting SEO components that cause duplicate meta tags */}
-          </BrowserRouter>
-        </TooltipProvider>
-      </QueryClientProvider>
-    </HelmetProvider>
+              </AppWithChat>
+              {/* Removed conflicting SEO components that cause duplicate meta tags */}
+            </BrowserRouter>
+          </TooltipProvider>
+        </QueryClientProvider>
+      </HelmetProvider>
+    </ErrorBoundary>
   );
 }
 

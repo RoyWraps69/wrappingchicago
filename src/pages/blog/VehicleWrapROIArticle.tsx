@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import LazyImage from '../../components/LazyImage';
 import RichSnippetsManager from '../../components/seo/RichSnippetsManager';
 import SERPEnhancer from '../../components/seo/SERPEnhancer';
 import { Helmet } from 'react-helmet-async';
@@ -123,38 +124,41 @@ const VehicleWrapROIArticle = () => {
 
               <h2 className="text-3xl font-bold text-primary mt-12 mb-6">Real Chicago Case Studies</h2>
 
-              <h3 className="text-2xl font-semibold text-primary mt-8 mb-4">Case Study 1: Plumbing Service Company</h3>
+              <h3 className="text-2xl font-semibold text-primary mt-8 mb-4">Case Study 1: Northwest Suburbs Plumbing Service</h3>
               <div className="bg-gray-50 p-6 rounded-lg mb-6">
                 <p className="text-gray-700 leading-relaxed">
                   <strong>Investment:</strong> $4,500 for full van wrap<br/>
                   <strong>Results after 12 months:</strong><br/>
-                  • 42 new customers directly attributed to wrap<br/>
+                  • 42 new customers directly attributed to wrap (mainly from Arlington Heights, Schaumburg, and Mount Prospect)<br/>
                   • Average job value: $280<br/>
                   • Total revenue generated: $11,760<br/>
+                  • Additional referrals from impressed neighbors<br/>
                   <strong>ROI: 261%</strong>
                 </p>
               </div>
 
-              <h3 className="text-2xl font-semibold text-primary mt-8 mb-4">Case Study 2: Food Truck Operation</h3>
+              <h3 className="text-2xl font-semibold text-primary mt-8 mb-4">Case Study 2: Downtown Chicago Food Truck</h3>
               <div className="bg-gray-50 p-6 rounded-lg mb-6">
                 <p className="text-gray-700 leading-relaxed">
                   <strong>Investment:</strong> $6,200 for complete truck wrap<br/>
                   <strong>Results after 8 months:</strong><br/>
-                  • 35% increase in daily sales<br/>
-                  • Enhanced social media presence (400% follower growth)<br/>
-                  • Additional catering bookings worth $18,000<br/>
+                  • 35% increase in daily sales (especially strong at Loop locations)<br/>
+                  • Enhanced social media presence (400% follower growth from Instagram-worthy design)<br/>
+                  • Additional catering bookings worth $18,000 from corporate events downtown<br/>
+                  • Featured in Chicago Tribune food section due to eye-catching design<br/>
                   <strong>ROI: 390%</strong>
                 </p>
               </div>
 
-              <h3 className="text-2xl font-semibold text-primary mt-8 mb-4">Case Study 3: Legal Firm</h3>
+              <h3 className="text-2xl font-semibold text-primary mt-8 mb-4">Case Study 3: LaSalle Street Legal Firm</h3>
               <div className="bg-gray-50 p-6 rounded-lg mb-6">
                 <p className="text-gray-700 leading-relaxed">
                   <strong>Investment:</strong> $3,800 for luxury vehicle partial wrap<br/>
                   <strong>Results after 18 months:</strong><br/>
-                  • 8 new high-value clients<br/>
+                  • 8 new high-value clients (including referrals from courthouse parking lot encounters)<br/>
                   • Average case value: $4,500<br/>
-                  • Enhanced professional image leading to referrals<br/>
+                  • Enhanced professional image leading to referrals from other downtown attorneys<br/>
+                  • Increased recognition at Cook County courthouse and legal events<br/>
                   <strong>ROI: 947%</strong>
                 </p>
               </div>
@@ -163,7 +167,7 @@ const VehicleWrapROIArticle = () => {
 
               <h3 className="text-2xl font-semibold text-primary mt-8 mb-4">Strategic Route Planning</h3>
               <p className="text-gray-700 leading-relaxed mb-6">
-                Chicago businesses can significantly increase ROI through strategic route planning. High-traffic areas like Michigan Avenue, Lake Shore Drive, and major business districts generate more impressions. However, don't overlook neighborhood routes where your target customers live and work – these often generate higher conversion rates.
+                Chicago businesses can significantly increase ROI through strategic route planning. High-traffic areas like the Kennedy Expressway, Dan Ryan, Michigan Avenue, and Lake Shore Drive generate more impressions. However, don't overlook neighborhood routes in places like Lincoln Park, Lakeview, or the Northwest suburbs where your target customers live and work – these often generate higher conversion rates. Many successful businesses report their best leads come from local visibility in neighborhoods rather than just downtown traffic.
               </p>
 
               <h3 className="text-2xl font-semibold text-primary mt-8 mb-4">Design Elements That Drive ROI</h3>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import LazyImage from '../../components/LazyImage';
 import RichSnippetsManager from '../../components/seo/RichSnippetsManager';
 import SERPEnhancer from '../../components/seo/SERPEnhancer';
 import { Helmet } from 'react-helmet-async';
@@ -75,10 +76,11 @@ const VehicleWrapTrendsArticle = () => {
 
             {/* Featured Image */}
             <div className="mb-12">
-              <img 
-                src="/lovable-uploads/6ef3b1af-8591-4d36-97c2-9366401115fa.png"
-                alt="2024 Vehicle Wrap Trends Chicago"
+              <LazyImage 
+                src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1200&h=600&q=80"
+                alt="2024 Vehicle Wrap Trends Chicago - Modern vehicle wraps showcasing latest design trends"
                 className="w-full h-64 md:h-96 object-cover rounded-lg shadow-lg"
+                fallbackSrc="/lovable-uploads/6ef3b1af-8591-4d36-97c2-9366401115fa.png"
               />
             </div>
 
@@ -88,7 +90,7 @@ const VehicleWrapTrendsArticle = () => {
               <h2 className="text-3xl font-bold text-primary mt-12 mb-6">Top Vehicle Wrap Trends Shaping Chicago in 2024</h2>
               
               <p className="text-gray-700 leading-relaxed mb-6">
-                The vehicle wrap industry in Chicago is experiencing unprecedented innovation in 2024. As businesses compete for attention on busy streets from the Loop to Lincoln Park, the latest design trends are helping companies stand out while maintaining professional appeal. Here's what's driving the most successful vehicle wrap campaigns this year.
+                The vehicle wrap industry in Chicago is experiencing unprecedented innovation in 2024. As businesses compete for attention on busy streets from the Magnificent Mile to Millennium Park, and from Lake Shore Drive to the Northwest suburbs, the latest design trends are helping companies stand out while maintaining professional appeal. Whether you're cruising down River North or heading to Lincoln Park, here's what's driving the most successful vehicle wrap campaigns this year.
               </p>
 
               <h3 className="text-2xl font-semibold text-primary mt-8 mb-4">1. Matte and Satin Finishes Dominate</h3>

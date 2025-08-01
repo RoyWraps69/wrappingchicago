@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import LazyImage from '../components/LazyImage';
 import RichSnippetsManager from '../components/seo/RichSnippetsManager';
 import SERPEnhancer from '../components/seo/SERPEnhancer';
 import { Helmet } from 'react-helmet-async';
@@ -150,13 +151,10 @@ const IndustriesPage = () => {
               {industries.map((industry) => (
                 <div key={industry.id} className="bg-white rounded-lg shadow-lg overflow-hidden">
                   <div className="relative">
-                    <img 
+                    <LazyImage 
                       src={industry.image} 
                       alt={`${industry.name} Vehicle Wrap`}
                       className="w-full h-48 object-cover"
-                      onError={(e) => {
-                        e.currentTarget.src = '/lovable-uploads/6ef3b1af-8591-4d36-97c2-9366401115fa.png';
-                      }}
                     />
                     <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
                       <h2 className="text-2xl font-bold text-white text-center">{industry.name}</h2>
