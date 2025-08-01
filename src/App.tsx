@@ -114,10 +114,22 @@ const queryClient = new QueryClient();
 function App() {
   console.log('App.tsx: App component rendering');
   return (
-    <div style={{padding: '20px', fontSize: '24px', color: 'black'}}>
-      <h1>Website Loading Test</h1>
-      <p>If you can see this, React is working!</p>
-    </div>
+    <BrowserRouter>
+      <div className="min-h-screen flex flex-col">
+        <Header />
+        <main className="flex-grow">
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="/contact" element={<ContactPage />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/gallery" element={<GalleryPage />} />
+            <Route path="/pricing" element={<PricingPage />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
+    </BrowserRouter>
   );
 }
 
