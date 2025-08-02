@@ -1,549 +1,572 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://www.wrappingchicago.com/</loc>
-    <lastmod>2025-01-18</lastmod>
+    <lastmod>2025-01-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wrappingchicago.com/" />
   </url>
-
-  <url>
-    <loc>https://www.wrappingchicago.com/about</loc>
-    <lastmod>2025-01-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://www.wrappingchicago.com/contact</loc>
-    <lastmod>2025-01-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
   <url>
     <loc>https://www.wrappingchicago.com/services</loc>
-    <lastmod>2025-01-18</lastmod>
+    <lastmod>2025-01-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wrappingchicago.com/services" />
   </url>
-
-  <url>
-    <loc>https://www.wrappingchicago.com/gallery</loc>
-    <lastmod>2025-01-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://www.wrappingchicago.com/locations</loc>
-    <lastmod>2025-01-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://www.wrappingchicago.com/faq</loc>
-    <lastmod>2025-01-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://www.wrappingchicago.com/pricing</loc>
-    <lastmod>2025-01-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://www.wrappingchicago.com/ai-wrap-ideas</loc>
-    <lastmod>2025-01-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
   <url>
     <loc>https://www.wrappingchicago.com/car-wraps</loc>
-    <lastmod>2025-01-18</lastmod>
+    <lastmod>2025-01-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wrappingchicago.com/car-wraps" />
   </url>
-
   <url>
     <loc>https://www.wrappingchicago.com/truck-wraps</loc>
-    <lastmod>2025-01-18</lastmod>
+    <lastmod>2025-01-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wrappingchicago.com/truck-wraps" />
   </url>
-
   <url>
     <loc>https://www.wrappingchicago.com/van-wraps</loc>
-    <lastmod>2025-01-18</lastmod>
+    <lastmod>2025-01-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wrappingchicago.com/van-wraps" />
   </url>
-
   <url>
     <loc>https://www.wrappingchicago.com/fleet-wraps</loc>
-    <lastmod>2025-01-18</lastmod>
+    <lastmod>2025-01-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wrappingchicago.com/fleet-wraps" />
   </url>
-
   <url>
     <loc>https://www.wrappingchicago.com/color-change-wraps</loc>
-    <lastmod>2025-01-18</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2025-01-02</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wrappingchicago.com/color-change-wraps" />
   </url>
-
-  <url>
-    <loc>https://www.wrappingchicago.com/commercial-graphics</loc>
-    <lastmod>2025-01-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://www.wrappingchicago.com/partial-wraps</loc>
-    <lastmod>2025-01-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://www.wrappingchicago.com/protective-films</loc>
-    <lastmod>2025-01-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://www.wrappingchicago.com/vehicle-lettering</loc>
-    <lastmod>2025-01-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://www.wrappingchicago.com/specialty-wraps</loc>
-    <lastmod>2025-01-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://www.wrappingchicago.com/retail-graphics</loc>
-    <lastmod>2025-01-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
   <url>
     <loc>https://www.wrappingchicago.com/luxury-exotic-wraps</loc>
-    <lastmod>2025-01-18</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2025-01-02</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wrappingchicago.com/luxury-exotic-wraps" />
   </url>
-
   <url>
     <loc>https://www.wrappingchicago.com/designer-wraps</loc>
-    <lastmod>2025-01-18</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2025-01-02</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wrappingchicago.com/designer-wraps" />
   </url>
-
+  <url>
+    <loc>https://www.wrappingchicago.com/commercial-graphics</loc>
+    <lastmod>2025-01-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wrappingchicago.com/commercial-graphics" />
+  </url>
+  <url>
+    <loc>https://www.wrappingchicago.com/protective-films</loc>
+    <lastmod>2025-01-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wrappingchicago.com/protective-films" />
+  </url>
+  <url>
+    <loc>https://www.wrappingchicago.com/vehicle-lettering</loc>
+    <lastmod>2025-01-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wrappingchicago.com/vehicle-lettering" />
+  </url>
+  <url>
+    <loc>https://www.wrappingchicago.com/specialty-wraps</loc>
+    <lastmod>2025-01-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wrappingchicago.com/specialty-wraps" />
+  </url>
+  <url>
+    <loc>https://www.wrappingchicago.com/retail-graphics</loc>
+    <lastmod>2025-01-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wrappingchicago.com/retail-graphics" />
+  </url>
+  <url>
+    <loc>https://www.wrappingchicago.com/partial-wraps</loc>
+    <lastmod>2025-01-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wrappingchicago.com/partial-wraps" />
+  </url>
+  <url>
+    <loc>https://www.wrappingchicago.com/plumbing-wraps</loc>
+    <lastmod>2025-01-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wrappingchicago.com/plumbing-wraps" />
+  </url>
+  <url>
+    <loc>https://www.wrappingchicago.com/hvac-wraps</loc>
+    <lastmod>2025-01-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wrappingchicago.com/hvac-wraps" />
+  </url>
+  <url>
+    <loc>https://www.wrappingchicago.com/electrical-wraps</loc>
+    <lastmod>2025-01-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wrappingchicago.com/electrical-wraps" />
+  </url>
+  <url>
+    <loc>https://www.wrappingchicago.com/movers-wraps</loc>
+    <lastmod>2025-01-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wrappingchicago.com/movers-wraps" />
+  </url>
+  <url>
+    <loc>https://www.wrappingchicago.com/logistics-wraps</loc>
+    <lastmod>2025-01-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wrappingchicago.com/logistics-wraps" />
+  </url>
+  <url>
+    <loc>https://www.wrappingchicago.com/delivery-wraps</loc>
+    <lastmod>2025-01-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wrappingchicago.com/delivery-wraps" />
+  </url>
+  <url>
+    <loc>https://www.wrappingchicago.com/locations</loc>
+    <lastmod>2025-01-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wrappingchicago.com/locations" />
+  </url>
   <url>
     <loc>https://www.wrappingchicago.com/chicago</loc>
-    <lastmod>2025-01-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <lastmod>2025-01-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wrappingchicago.com/chicago" />
   </url>
-
   <url>
     <loc>https://www.wrappingchicago.com/vehicle-wraps-chicago-il</loc>
-    <lastmod>2025-01-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://www.wrappingchicago.com/vehicle-wraps-evanston-il</loc>
-    <lastmod>2025-01-18</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2025-01-02</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wrappingchicago.com/vehicle-wraps-chicago-il" />
   </url>
-
   <url>
-    <loc>https://www.wrappingchicago.com/vehicle-wraps-naperville-il</loc>
-    <lastmod>2025-01-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://www.wrappingchicago.com/evanston</loc>
+    <lastmod>2025-01-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wrappingchicago.com/evanston" />
   </url>
-
   <url>
-    <loc>https://www.wrappingchicago.com/vehicle-wraps-schaumburg-il</loc>
-    <lastmod>2025-01-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://www.wrappingchicago.com/naperville</loc>
+    <lastmod>2025-01-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wrappingchicago.com/naperville" />
   </url>
-
   <url>
-    <loc>https://www.wrappingchicago.com/truck-wraps-chicago</loc>
-    <lastmod>2025-01-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://www.wrappingchicago.com/schaumburg</loc>
+    <lastmod>2025-01-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wrappingchicago.com/schaumburg" />
   </url>
-
   <url>
-    <loc>https://www.wrappingchicago.com/locations/river-north</loc>
-    <lastmod>2025-01-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://www.wrappingchicago.com/skokie</loc>
+    <lastmod>2025-01-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wrappingchicago.com/skokie" />
   </url>
-
   <url>
-    <loc>https://www.wrappingchicago.com/locations/lincoln-park</loc>
-    <lastmod>2025-01-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://www.wrappingchicago.com/arlington-heights</loc>
+    <lastmod>2025-01-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wrappingchicago.com/arlington-heights" />
   </url>
-
   <url>
-    <loc>https://www.wrappingchicago.com/locations/wicker-park</loc>
-    <lastmod>2025-01-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://www.wrappingchicago.com/palatine</loc>
+    <lastmod>2025-01-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wrappingchicago.com/palatine" />
   </url>
-
   <url>
-    <loc>https://www.wrappingchicago.com/locations/the-loop</loc>
-    <lastmod>2025-01-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://www.wrappingchicago.com/waukegan</loc>
+    <lastmod>2025-01-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wrappingchicago.com/waukegan" />
   </url>
-
-  <url>
-    <loc>https://www.wrappingchicago.com/locations/schaumburg</loc>
-    <lastmod>2025-01-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://www.wrappingchicago.com/locations/naperville</loc>
-    <lastmod>2025-01-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://www.wrappingchicago.com/locations/oak-brook-illinois</loc>
-    <lastmod>2025-01-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://www.wrappingchicago.com/locations/evanston</loc>
-    <lastmod>2025-01-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
   <url>
     <loc>https://www.wrappingchicago.com/des-plaines</loc>
-    <lastmod>2025-01-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2025-01-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wrappingchicago.com/des-plaines" />
   </url>
-
   <url>
     <loc>https://www.wrappingchicago.com/elgin</loc>
-    <lastmod>2025-01-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2025-01-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wrappingchicago.com/elgin" />
   </url>
-
   <url>
     <loc>https://www.wrappingchicago.com/hoffman-estates</loc>
-    <lastmod>2025-01-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2025-01-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wrappingchicago.com/hoffman-estates" />
   </url>
-
   <url>
     <loc>https://www.wrappingchicago.com/mclean-county</loc>
-    <lastmod>2025-01-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2025-01-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wrappingchicago.com/mclean-county" />
   </url>
-
   <url>
     <loc>https://www.wrappingchicago.com/oak-park</loc>
-    <lastmod>2025-01-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2025-01-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wrappingchicago.com/oak-park" />
   </url>
-
   <url>
     <loc>https://www.wrappingchicago.com/aurora</loc>
-    <lastmod>2025-01-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2025-01-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wrappingchicago.com/aurora" />
   </url>
-
   <url>
     <loc>https://www.wrappingchicago.com/joliet</loc>
-    <lastmod>2025-01-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2025-01-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wrappingchicago.com/joliet" />
   </url>
-
   <url>
     <loc>https://www.wrappingchicago.com/cicero</loc>
-    <lastmod>2025-01-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2025-01-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wrappingchicago.com/cicero" />
   </url>
-
   <url>
     <loc>https://www.wrappingchicago.com/berwyn</loc>
-    <lastmod>2025-01-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2025-01-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wrappingchicago.com/berwyn" />
   </url>
-
   <url>
     <loc>https://www.wrappingchicago.com/wheaton</loc>
-    <lastmod>2025-01-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2025-01-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wrappingchicago.com/wheaton" />
   </url>
-
   <url>
     <loc>https://www.wrappingchicago.com/downers-grove</loc>
-    <lastmod>2025-01-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2025-01-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wrappingchicago.com/downers-grove" />
   </url>
-
   <url>
     <loc>https://www.wrappingchicago.com/bolingbrook</loc>
-    <lastmod>2025-01-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2025-01-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wrappingchicago.com/bolingbrook" />
   </url>
-
-  <!-- New Chicago Area Location Pages -->
+  <url>
+    <loc>https://www.wrappingchicago.com/truck-wraps-chicago</loc>
+    <lastmod>2025-01-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wrappingchicago.com/truck-wraps-chicago" />
+  </url>
   <url>
     <loc>https://www.wrappingchicago.com/lakeview-chicago</loc>
-    <lastmod>2025-01-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <lastmod>2025-01-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wrappingchicago.com/lakeview-chicago" />
   </url>
-
   <url>
     <loc>https://www.wrappingchicago.com/logan-square-chicago</loc>
-    <lastmod>2025-01-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <lastmod>2025-01-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wrappingchicago.com/logan-square-chicago" />
   </url>
-
   <url>
     <loc>https://www.wrappingchicago.com/andersonville-chicago</loc>
-    <lastmod>2025-01-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <lastmod>2025-01-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wrappingchicago.com/andersonville-chicago" />
   </url>
-
   <url>
     <loc>https://www.wrappingchicago.com/bucktown-chicago</loc>
-    <lastmod>2025-01-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <lastmod>2025-01-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wrappingchicago.com/bucktown-chicago" />
   </url>
-
   <url>
     <loc>https://www.wrappingchicago.com/gold-coast-chicago</loc>
-    <lastmod>2025-01-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <lastmod>2025-01-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wrappingchicago.com/gold-coast-chicago" />
   </url>
-
   <url>
     <loc>https://www.wrappingchicago.com/arlington-heights-il</loc>
-    <lastmod>2025-01-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2025-01-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wrappingchicago.com/arlington-heights-il" />
   </url>
-
   <url>
     <loc>https://www.wrappingchicago.com/oak-lawn-il</loc>
-    <lastmod>2025-01-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2025-01-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wrappingchicago.com/oak-lawn-il" />
   </url>
-
   <url>
     <loc>https://www.wrappingchicago.com/tinley-park-il</loc>
-    <lastmod>2025-01-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2025-01-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wrappingchicago.com/tinley-park-il" />
   </url>
-
   <url>
     <loc>https://www.wrappingchicago.com/orland-park-il</loc>
-    <lastmod>2025-01-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2025-01-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wrappingchicago.com/orland-park-il" />
   </url>
-
   <url>
     <loc>https://www.wrappingchicago.com/palatine-il</loc>
-    <lastmod>2025-01-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2025-01-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wrappingchicago.com/palatine-il" />
   </url>
-
   <url>
     <loc>https://www.wrappingchicago.com/elmhurst-il</loc>
-    <lastmod>2025-01-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2025-01-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wrappingchicago.com/elmhurst-il" />
   </url>
-
   <url>
     <loc>https://www.wrappingchicago.com/lombard-il</loc>
-    <lastmod>2025-01-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2025-01-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wrappingchicago.com/lombard-il" />
   </url>
-
   <url>
     <loc>https://www.wrappingchicago.com/glen-ellyn-il</loc>
-    <lastmod>2025-01-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://www.wrappingchicago.com/sitemap</loc>
-    <lastmod>2025-01-18</lastmod>
+    <lastmod>2025-01-02</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wrappingchicago.com/glen-ellyn-il" />
   </url>
-
   <url>
-    <loc>https://www.wrappingchicago.com/html-sitemap</loc>
-    <lastmod>2025-01-18</lastmod>
+    <loc>https://www.wrappingchicago.com/vehicle-wraps-evanston-il</loc>
+    <lastmod>2025-01-02</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wrappingchicago.com/vehicle-wraps-evanston-il" />
   </url>
-
-  <!-- Trade-specific service pages -->
   <url>
-    <loc>https://www.wrappingchicago.com/trades/plumbing-wraps</loc>
-    <lastmod>2025-01-31</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://www.wrappingchicago.com/trades/hvac-wraps</loc>
-    <lastmod>2025-01-31</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://www.wrappingchicago.com/trades/electrical-wraps</loc>
-    <lastmod>2025-01-31</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://www.wrappingchicago.com/trades/movers-wraps</loc>
-    <lastmod>2025-01-31</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://www.wrappingchicago.com/trades/logistics-wraps</loc>
-    <lastmod>2025-01-31</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://www.wrappingchicago.com/trades/delivery-wraps</loc>
-    <lastmod>2025-01-31</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- Legal and policy pages -->
-  <url>
-    <loc>https://www.wrappingchicago.com/privacy-policy</loc>
-    <lastmod>2025-01-31</lastmod>
+    <loc>https://www.wrappingchicago.com/vehicle-wraps-naperville-il</loc>
+    <lastmod>2025-01-02</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wrappingchicago.com/vehicle-wraps-naperville-il" />
   </url>
-
   <url>
-    <loc>https://www.wrappingchicago.com/terms</loc>
-    <lastmod>2025-01-31</lastmod>
+    <loc>https://www.wrappingchicago.com/vehicle-wraps-schaumburg-il</loc>
+    <lastmod>2025-01-02</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wrappingchicago.com/vehicle-wraps-schaumburg-il" />
   </url>
-
-  <!-- New Core Pages -->
+  <url>
+    <loc>https://www.wrappingchicago.com/about</loc>
+    <lastmod>2025-01-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wrappingchicago.com/about" />
+  </url>
+  <url>
+    <loc>https://www.wrappingchicago.com/contact</loc>
+    <lastmod>2025-01-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wrappingchicago.com/contact" />
+  </url>
+  <url>
+    <loc>https://www.wrappingchicago.com/gallery</loc>
+    <lastmod>2025-01-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wrappingchicago.com/gallery" />
+  </url>
+  <url>
+    <loc>https://www.wrappingchicago.com/faq</loc>
+    <lastmod>2025-01-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wrappingchicago.com/faq" />
+  </url>
+  <url>
+    <loc>https://www.wrappingchicago.com/pricing</loc>
+    <lastmod>2025-01-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wrappingchicago.com/pricing" />
+  </url>
+  <url>
+    <loc>https://www.wrappingchicago.com/ai-wrap-ideas</loc>
+    <lastmod>2025-01-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wrappingchicago.com/ai-wrap-ideas" />
+  </url>
+  <url>
+    <loc>https://www.wrappingchicago.com/blog</loc>
+    <lastmod>2025-01-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wrappingchicago.com/blog" />
+  </url>
+  <url>
+    <loc>https://www.wrappingchicago.com/service-areas</loc>
+    <lastmod>2025-01-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wrappingchicago.com/service-areas" />
+  </url>
   <url>
     <loc>https://www.wrappingchicago.com/testimonials</loc>
-    <lastmod>2025-01-31</lastmod>
+    <lastmod>2025-01-02</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wrappingchicago.com/testimonials" />
   </url>
-
   <url>
     <loc>https://www.wrappingchicago.com/industries</loc>
-    <lastmod>2025-01-31</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2025-01-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wrappingchicago.com/industries" />
   </url>
-
-  <!-- Tool Pages -->
   <url>
     <loc>https://www.wrappingchicago.com/instant-quote</loc>
-    <lastmod>2025-01-31</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <lastmod>2025-01-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wrappingchicago.com/instant-quote" />
   </url>
-
   <url>
     <loc>https://www.wrappingchicago.com/schedule-appointment</loc>
-    <lastmod>2025-01-31</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.9</priority>
+    <lastmod>2025-01-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wrappingchicago.com/schedule-appointment" />
   </url>
-
-  <!-- Blog Articles -->
   <url>
     <loc>https://www.wrappingchicago.com/blog/2024-vehicle-wrap-trends</loc>
-    <lastmod>2025-01-31</lastmod>
+    <lastmod>2025-01-02</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wrappingchicago.com/blog/2024-vehicle-wrap-trends" />
   </url>
-
   <url>
     <loc>https://www.wrappingchicago.com/blog/vehicle-wrap-roi-calculator</loc>
-    <lastmod>2025-01-31</lastmod>
+    <lastmod>2025-01-02</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wrappingchicago.com/blog/vehicle-wrap-roi-calculator" />
   </url>
-
+  <url>
+    <loc>https://www.wrappingchicago.com/glossary</loc>
+    <lastmod>2025-01-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wrappingchicago.com/glossary" />
+  </url>
+  <url>
+    <loc>https://www.wrappingchicago.com/stats</loc>
+    <lastmod>2025-01-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wrappingchicago.com/stats" />
+  </url>
+  <url>
+    <loc>https://www.wrappingchicago.com/sitemap</loc>
+    <lastmod>2025-01-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wrappingchicago.com/sitemap" />
+  </url>
+  <url>
+    <loc>https://www.wrappingchicago.com/privacy-policy</loc>
+    <lastmod>2025-01-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wrappingchicago.com/privacy-policy" />
+  </url>
+  <url>
+    <loc>https://www.wrappingchicago.com/terms</loc>
+    <lastmod>2025-01-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wrappingchicago.com/terms" />
+  </url>
+  <url>
+    <loc>https://www.wrappingchicago.com/return-policy</loc>
+    <lastmod>2025-01-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wrappingchicago.com/return-policy" />
+  </url>
+  <url>
+    <loc>https://www.wrappingchicago.com/shipping</loc>
+    <lastmod>2025-01-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wrappingchicago.com/shipping" />
+  </url>
 </urlset>
