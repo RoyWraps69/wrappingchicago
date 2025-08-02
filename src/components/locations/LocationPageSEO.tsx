@@ -225,39 +225,7 @@ const LocationPageSEO: React.FC<LocationPageSEOProps> = ({ location }) => {
         })}
       </script>
 
-      {/* FAQ Schema */}
-      <script type="application/ld+json">
-        {JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "FAQPage",
-          "mainEntity": [
-            {
-              "@type": "Question",
-              "name": `How much do vehicle wraps cost in ${location.name}?`,
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": `Vehicle wrap costs in ${location.name} vary by size and complexity. Partial wraps start at $1,200, full car wraps from $2,500, commercial truck wraps from $3,500. We provide free quotes with same-day estimates for all ${location.name} customers.`
-              }
-            },
-            {
-              "@type": "Question",
-              "name": `How long do vehicle wraps last in ${location.name}?`,
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": `Our premium 3M and Avery Dennison vehicle wraps last 5-7 years in ${location.name}'s climate. We use materials specifically rated for Midwest weather conditions, including temperature fluctuations and seasonal changes common in ${location.county}.`
-              }
-            },
-            {
-              "@type": "Question",
-              "name": `Do you provide mobile vehicle wrap service in ${location.name}?`,
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": `Yes! We provide mobile vehicle wrap services throughout ${location.name} and surrounding ${location.county} areas. Our mobile unit is fully equipped for on-site installations at your home or business location.`
-              }
-            }
-          ]
-        })}
-      </script>
+      {/* FAQ Schema removed - handled by dedicated FAQ schema components */}
     </Helmet>
   );
 };

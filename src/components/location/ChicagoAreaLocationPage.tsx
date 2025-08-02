@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { MapPin, Phone, Star, Clock, CheckCircle, Users, DollarSign, Zap, Award } from "lucide-react";
 import { ChicagoAreaLocation } from "@/data/chicagoAreaLocations";
 import { Helmet } from 'react-helmet-async';
+import LocationFAQSchema from '@/components/schemas/LocationFAQSchema';
 
 interface ChicagoAreaLocationPageProps {
   location: ChicagoAreaLocation;
@@ -177,40 +178,37 @@ const ChicagoAreaLocationPage: React.FC<ChicagoAreaLocationPageProps> = ({ locat
           })}
         </script>
 
-        {/* FAQ Schema */}
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            "mainEntity": [
-              {
-                "@type": "Question",
-                "name": `How much do vehicle wraps cost in ${location.name}?`,
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": `Vehicle wrap costs in ${location.name} vary by size and complexity. Partial wraps start at $1,200, full car wraps from $2,500, commercial truck wraps from $3,500. We provide free quotes with same-day estimates for all ${location.name} customers.`
-                }
-              },
-              {
-                "@type": "Question", 
-                "name": `Do you serve all areas of ${location.name}?`,
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": `Yes! We provide vehicle wrap services throughout ${location.name} including all zip codes: ${location.zipCodes.join(', ')}. We also offer mobile service for on-site installations.`
-                }
-              },
-              {
-                "@type": "Question",
-                "name": `What's included in ${location.name} vehicle wrap installation?`,
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": `Our ${location.name} vehicle wrap service includes free consultation, custom design, professional installation using premium materials, and comprehensive warranty. We handle everything from concept to completion.`
-                }
-              }
-            ]
-          })}
-        </script>
+        {/* FAQ Schema removed - handled by dedicated FAQ schema components */}
       </Helmet>
+
+      {/* Dedicated FAQ Schema component for location-specific FAQs */}
+      <LocationFAQSchema 
+        city={{ 
+          name: location.name, 
+          slug: location.slug,
+          county: location.county,
+          state: "Illinois",
+          description: location.description,
+          population: location.population,
+          businessAreas: location.keyFeatures.join(', '),
+          distance: "25 miles from Chicago",
+          website: `https://www.wrappingchicago.com/vehicle-wraps-${location.slug}-il`
+        }} 
+        faqs={[
+          {
+            question: `How much do vehicle wraps cost in ${location.name}?`,
+            answer: `Vehicle wrap costs in ${location.name} vary by size and complexity. Partial wraps start at $1,200, full car wraps from $2,500, commercial truck wraps from $3,500. We provide free quotes with same-day estimates for all ${location.name} customers.`
+          },
+          {
+            question: `Do you serve all areas of ${location.name}?`,
+            answer: `Yes! We provide vehicle wrap services throughout ${location.name} including all zip codes: ${location.zipCodes.join(', ')}. We also offer mobile service for on-site installations.`
+          },
+          {
+            question: `What's included in ${location.name} vehicle wrap installation?`,
+            answer: `Our ${location.name} vehicle wrap service includes free consultation, custom design, professional installation using premium materials, and comprehensive warranty. We handle everything from concept to completion.`
+          }
+        ]}
+      />
 
       <div className="min-h-screen bg-gradient-to-br from-background via-background/80 to-primary/5">
         {/* Hero Section */}
