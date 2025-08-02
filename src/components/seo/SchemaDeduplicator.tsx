@@ -12,6 +12,8 @@ interface SchemaRegistry {
   Review: Set<string>;
   HowTo: Set<string>;
   ImageGallery: Set<string>;
+  FeaturedSnippet: Set<string>;
+  RichResults: Set<string>;
   // Add other schema types as needed
 }
 
@@ -35,6 +37,8 @@ export const SchemaDeduplicatorProvider: React.FC<{ children: React.ReactNode }>
     Review: new Set(),
     HowTo: new Set(),
     ImageGallery: new Set(),
+    FeaturedSnippet: new Set(),
+    RichResults: new Set(),
   });
 
   const canRenderSchema = (schemaType: keyof SchemaRegistry, sourceComponent: string): boolean => {

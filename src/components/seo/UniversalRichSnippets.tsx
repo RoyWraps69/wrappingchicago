@@ -12,6 +12,8 @@ import {
   MediaSchema,
   HowToSchema
 } from '@/components/schemas/Deduplicated';
+import FeaturedSnippetSchema from '@/components/schemas/FeaturedSnippetSchema';
+import RichResultsSchema from '@/components/schemas/RichResultsSchema';
 
 interface UniversalRichSnippetsProps {
   pageTitle?: string;
@@ -80,17 +82,30 @@ const UniversalRichSnippets: React.FC<UniversalRichSnippetsProps> = ({
       <MediaSchema />
       <HowToSchema />
       
+      {/* AMAZING Featured Snippets - Designed to Win */}
+      <FeaturedSnippetSchema 
+        pageType={pageType === 'CollectionPage' ? 'services' : 'home'}
+        city="Chicago"
+      />
+      
+      {/* AMAZING Rich Results - Maximum Visual Impact */}
+      <RichResultsSchema 
+        pageType={pageType === 'CollectionPage' ? 'services' : 'home'}
+        businessName="Wrapping Chicago"
+        businessUrl="https://www.wrappingchicago.com"
+      />
+      
       {/* Voice Search Optimization */}
       <script type="application/ld+json">
         {JSON.stringify({
           "@context": "https://schema.org",
           "@type": "SpeakableSpecification",
-          "cssSelector": [".speakable", "h1", "h2", "[data-speakable]"],
-          "xpath": ["//h1", "//h2", "//*[@class='speakable']"]
+          "cssSelector": [".speakable", "h1", "h2", "[data-speakable]", ".voice-optimized"],
+          "xpath": ["//h1", "//h2", "//*[@class='speakable']", "//*[@data-speakable]"]
         })}
       </script>
       
-      {/* Voice Assistant Optimization */}
+      {/* Voice Assistant Quick Answers */}
       <script type="application/ld+json">
         {JSON.stringify({
           "@context": "https://schema.org",
@@ -100,7 +115,7 @@ const UniversalRichSnippets: React.FC<UniversalRichSnippetsProps> = ({
             "name": "Best vehicle wrap company Chicago",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Wrapping Chicago is Chicago's premier vehicle wrap company with 16,000+ vehicles wrapped, 24/7 mobile service, and 5-7 year warranties."
+              "text": "Wrapping Chicago is Chicago's premier vehicle wrap company with 16,000+ vehicles wrapped, 4.9 star rating, 24/7 mobile service, and 5-year warranties."
             }
           }
         })}
