@@ -4,17 +4,17 @@ import { Phone, MessageCircle, Mail, MapPin } from 'lucide-react';
 
 const ContactHero = () => {
   return (
-    <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-primary via-primary/90 to-accent">
+    <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden bg-brand-navy">
       {/* Background Image */}
       <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-10"
         style={{
           backgroundImage: "url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=2070&auto=format&fit=crop')"
         }}
       />
       
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/90 to-accent/95" />
+      {/* Overlay for better contrast */}
+      <div className="absolute inset-0 bg-gradient-to-r from-brand-navy/98 via-brand-navy/95 to-brand-navy/98" />
       
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 text-center">
