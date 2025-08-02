@@ -3,6 +3,7 @@ import { SEOCoordinatorProvider } from "@/components/seo/SEOCoordinator";
 import { SchemaDeduplicatorProvider } from "@/components/seo/SchemaDeduplicator";
 import ComprehensiveSchemaAudit from "@/components/seo/ComprehensiveSchemaAudit";
 import ComprehensiveAuditSummary from "@/components/seo/ComprehensiveAuditSummary";
+import GoogleIndexingAudit from "@/components/seo/GoogleIndexingAudit";
 import Google2025SEOOptimizerCoordinated from "@/components/seo/Google2025SEOOptimizerCoordinated";
 import AEOOptimizerCoordinated from "@/components/seo/AEOOptimizerCoordinated";
 import LocalSEOBoosterCoordinated from "@/components/seo/LocalSEOBoosterCoordinated";
@@ -101,6 +102,7 @@ const Index = () => {
       {/* Schema Audit Tool - Shows current schema status */}
       <ComprehensiveSchemaAudit />
       <ComprehensiveAuditSummary />
+      <GoogleIndexingAudit />
     </SEOCoordinatorProvider>
     </SchemaDeduplicatorProvider>
   );
