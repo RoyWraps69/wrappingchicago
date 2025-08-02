@@ -1,5 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
+import FAQSchema from '@/components/schemas/Deduplicated/FAQSchema';
 
 /**
  * AEO (Answer Engine Optimization) Component
@@ -118,14 +119,30 @@ const AEOOptimizer: React.FC<AEOOptimizerProps> = ({
 
   return (
     <>
+      {/* Use deduplicated FAQ schema */}
+      <FAQSchema 
+        faqs={aeoQuestions.map(qa => ({ question: qa.question, answer: qa.answer }))}
+      />
+
       <Helmet>
-        {/* AEO-optimized structured data */}
+        {/* Entity optimization without duplicate LocalBusiness */}
         <script type="application/ld+json">
-          {JSON.stringify(aeoSchema)}
-        </script>
-        
-        <script type="application/ld+json">
-          {JSON.stringify(entityOptimization)}
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Thing",
+            "name": "Wrapping Chicago",
+            "description": `Professional vehicle wraps for ${businessType}s in ${location}. Turn your work truck into a customer magnet with high-quality vinyl graphics.`,
+            "knowsAbout": [
+              "Vehicle Wrapping",
+              "Commercial Graphics", 
+              "Fleet Branding",
+              `${businessType} Vehicle Graphics`,
+              "Vinyl Installation",
+              "3M Materials",
+              "Trade Vehicle Advertising"
+            ],
+            "expertise": serviceKeywords
+          })}
         </script>
         
         {/* Speakable content for voice search */}

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
+import LocalBusinessSchema from '@/components/schemas/Deduplicated/LocalBusinessSchema';
 
 interface LocalSEOBoosterProps {
   cityName: string;
@@ -156,28 +157,44 @@ const LocalSEOBooster: React.FC<LocalSEOBoosterProps> = ({
   ];
 
   return (
-    <Helmet>
-      {/* Enhanced local SEO meta tags */}
-      <meta name="geo.region" content="US-IL" />
-      <meta name="geo.placename" content={cityName} />
-      <meta name="DC.title" content={`${businessType} Vehicle Wraps ${cityName} | Professional Installation`} />
-      <meta name="geo.neighborhood" content={chicagoNeighborhoods.join(', ')} />
-      
-      {/* Local business structured data */}
-      <script type="application/ld+json">
-        {JSON.stringify(enhancedLocalSchema)}
-      </script>
+    <>
+      {/* Use deduplicated LocalBusiness schema */}
+      <LocalBusinessSchema 
+        businessName={`Wrapping Chicago - ${cityName} Vehicle Wraps`}
+        description={`Professional vehicle wraps for ${businessType}s in ${cityName} and surrounding areas. Turn your work truck into a powerful marketing tool with custom graphics and professional installation.`}
+        telephone="+13125971286"
+        address={{
+          streetAddress: "4711 N. Lamon Ave",
+          addressLocality: "Chicago",
+          addressRegion: "IL",
+          postalCode: "60630",
+          addressCountry: "US"
+        }}
+        geo={{
+          latitude: cityName === 'Chicago' ? 41.8781 : 42.0451,
+          longitude: cityName === 'Chicago' ? -87.6298 : -87.6877
+        }}
+        openingHours={["Mo-Fr 08:00-17:00", "Sa 09:00-15:00"]}
+      />
 
-      {/* Local keywords for enhanced targeting */}
-      <meta name="keywords" content={localKeywords.join(', ')} />
-      
-      {/* Hreflang for local variations */}
-      <link rel="alternate" hrefLang="en-us" href={`https://www.wrappingchicago.com/vehicle-wraps-${cityName.toLowerCase()}-il`} />
-      
-      {/* Local business verification */}
-      <meta name="google-site-verification" content="local-business-verification-code" />
-      <meta name="msvalidate.01" content="bing-local-verification-code" />
-    </Helmet>
+      <Helmet>
+        {/* Enhanced local SEO meta tags */}
+        <meta name="geo.region" content="US-IL" />
+        <meta name="geo.placename" content={cityName} />
+        <meta name="DC.title" content={`${businessType} Vehicle Wraps ${cityName} | Professional Installation`} />
+        <meta name="geo.neighborhood" content={chicagoNeighborhoods.join(', ')} />
+
+        {/* Local keywords for enhanced targeting */}
+        <meta name="keywords" content={localKeywords.join(', ')} />
+        
+        {/* Hreflang for local variations */}
+        <link rel="alternate" hrefLang="en-us" href={`https://www.wrappingchicago.com/vehicle-wraps-${cityName.toLowerCase()}-il`} />
+        
+        {/* Local business verification */}
+        <meta name="google-site-verification" content="local-business-verification-code" />
+        <meta name="msvalidate.01" content="bing-local-verification-code" />
+      </Helmet>
+    </>
   );
 };
 

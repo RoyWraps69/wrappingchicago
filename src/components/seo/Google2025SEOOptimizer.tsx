@@ -1,6 +1,9 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useLocation } from 'react-router-dom';
+import OrganizationSchema from '@/components/schemas/Deduplicated/OrganizationSchema';
+import WebSiteSchema from '@/components/schemas/Deduplicated/WebSiteSchema';
+import FAQSchema from '@/components/schemas/Deduplicated/FAQSchema';
 
 interface Google2025SEOOptimizerProps {
   pageTitle: string;
@@ -181,60 +184,73 @@ const Google2025SEOOptimizer: React.FC<Google2025SEOOptimizerProps> = ({
   };
 
   return (
-    <Helmet>
-      {/* Enhanced meta for Google 2025 algorithms */}
-      <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-      <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <>
+      {/* Use deduplicated schema components */}
+      <OrganizationSchema 
+        name="Wrapping Chicago"
+        description={`Chicago's most trusted vehicle wrap specialists for ${businessType === 'general' ? 'trade professionals' : businessType + 's'}. Professional installation, premium materials, real results.`}
+        url={domain}
+        telephone="+13125971286"
+        email="roy@chicagofleetwraps.com"
+      />
       
-      {/* E-E-A-T signals */}
-      <meta name="author" content="Wrapping Chicago - Professional Vehicle Wrap Specialists" />
-      <meta name="publisher" content="Wrapping Chicago LLC" />
-      <meta name="copyright" content="Wrapping Chicago LLC" />
+      <WebSiteSchema 
+        name="Wrapping Chicago"
+        url={domain}
+        description="Professional vehicle wrap services in Chicago and surrounding areas"
+      />
       
-      {/* Local SEO optimization */}
-      <meta name="geo.region" content="US-IL" />
-      <meta name="geo.placename" content="Chicago" />
-      <meta name="geo.position" content="41.8781;-87.6298" />
-      <meta name="ICBM" content="41.8781, -87.6298" />
-      
-      {/* Enhanced social media optimization */}
-      <meta property="og:type" content="website" />
-      <meta property="og:locale" content="en_US" />
-      <meta property="og:site_name" content="Wrapping Chicago" />
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:site" content="@wrappingchicago" />
-      
-      {/* Mobile and accessibility optimization */}
-      <meta name="format-detection" content="telephone=yes" />
-      <meta name="HandheldFriendly" content="true" />
-      <meta name="MobileOptimized" content="width" />
-      
-      {/* Enhanced structured data for Google 2025 */}
-      <script type="application/ld+json">
-        {JSON.stringify(enhancedBusinessSchema)}
-      </script>
-      
-      <script type="application/ld+json">
-        {JSON.stringify(webPageSchema)}
-      </script>
-      
-      {faqSchema && (
-        <script type="application/ld+json">
-          {JSON.stringify(faqSchema)}
-        </script>
+      {faqData.length > 0 && (
+        <FAQSchema 
+          faqs={faqData.map(faq => ({ question: faq.question, answer: faq.answer }))}
+        />
       )}
-      
-      {/* Additional semantic hints for AI search */}
-      <meta name="description" content={pageDescription} />
-      <meta name="keywords" content={primaryKeywords.join(', ')} />
-      
-      {/* Canonical URL for consolidation */}
-      <link rel="canonical" href={currentUrl} />
-      
-      {/* Language and regional targeting */}
-      <link rel="alternate" hrefLang="en-us" href={currentUrl} />
-      <link rel="alternate" hrefLang="en" href={currentUrl} />
-    </Helmet>
+
+      <Helmet>
+        {/* Enhanced meta for Google 2025 algorithms */}
+        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+        <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+        
+        {/* E-E-A-T signals */}
+        <meta name="author" content="Wrapping Chicago - Professional Vehicle Wrap Specialists" />
+        <meta name="publisher" content="Wrapping Chicago LLC" />
+        <meta name="copyright" content="Wrapping Chicago LLC" />
+        
+        {/* Local SEO optimization */}
+        <meta name="geo.region" content="US-IL" />
+        <meta name="geo.placename" content="Chicago" />
+        <meta name="geo.position" content="41.8781;-87.6298" />
+        <meta name="ICBM" content="41.8781, -87.6298" />
+        
+        {/* Enhanced social media optimization */}
+        <meta property="og:type" content="website" />
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:site_name" content="Wrapping Chicago" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@wrappingchicago" />
+        
+        {/* Mobile and accessibility optimization */}
+        <meta name="format-detection" content="telephone=yes" />
+        <meta name="HandheldFriendly" content="true" />
+        <meta name="MobileOptimized" content="width" />
+        
+        {/* Enhanced WebPage schema */}
+        <script type="application/ld+json">
+          {JSON.stringify(webPageSchema)}
+        </script>
+        
+        {/* Additional semantic hints for AI search */}
+        <meta name="description" content={pageDescription} />
+        <meta name="keywords" content={primaryKeywords.join(', ')} />
+        
+        {/* Canonical URL for consolidation */}
+        <link rel="canonical" href={currentUrl} />
+        
+        {/* Language and regional targeting */}
+        <link rel="alternate" hrefLang="en-us" href={currentUrl} />
+        <link rel="alternate" hrefLang="en" href={currentUrl} />
+      </Helmet>
+    </>
   );
 };
 

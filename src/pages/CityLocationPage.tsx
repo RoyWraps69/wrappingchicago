@@ -3,6 +3,7 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import { cities, findCityBySlug } from '@/data/cities';
 import TradeLocationPage from '@/components/location/TradeLocationPage';
+import { SchemaDeduplicatorProvider } from '@/components/seo/SchemaDeduplicator';
 
 const CityLocationPage = () => {
   const { citySlug } = useParams();
@@ -41,7 +42,11 @@ const CityLocationPage = () => {
     return <div>City not found</div>;
   }
 
-  return <TradeLocationPage citySlug={city.slug} businessType="general" />;
+  return (
+    <SchemaDeduplicatorProvider>
+      <TradeLocationPage citySlug={city.slug} businessType="general" />
+    </SchemaDeduplicatorProvider>
+  );
 };
 
 export default CityLocationPage;
