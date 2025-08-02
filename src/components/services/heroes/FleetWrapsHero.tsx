@@ -17,7 +17,7 @@ const FleetWrapsHero = () => {
       <div className="relative z-10 container mx-auto px-4 py-20 md:py-28">
         <div className="max-w-3xl">
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-            Turn Your Fleet Into a <span className="text-brand-yellow">Customer Magnet</span>
+            Turn Your Fleet Into a <span className="text-brand-red">Customer Magnet</span>
           </h1>
           <p className="text-xl text-white/90 mb-4">
             Get 30% more service calls with professional fleet wraps that make your business impossible to ignore.
@@ -33,7 +33,7 @@ const FleetWrapsHero = () => {
                 Call (312) 597-1286
               </a>
             </Button>
-            <Button asChild size="lg" variant="outlineWhite">
+            <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-brand-navy">
               <Link to="/contact" className="inline-flex items-center">
                 <MessageSquare className="mr-2 h-5 w-5" />
                 Get Free Quote
