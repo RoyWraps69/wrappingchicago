@@ -33,31 +33,9 @@ const HomePageSections = () => {
         commercialGraphics={commercialGraphics}
       />
       
-      <PricingTransparency />
-      
       <section aria-labelledby="trust-heading">
         <h2 id="trust-heading" className="sr-only">Why Choose Wrapping Chicago</h2>
         <TrustIndicators />
-      </section>
-      
-      <section aria-labelledby="why-choose-heading">
-        <WhyChooseUsSection />
-      </section>
-      
-      <section aria-labelledby="facility-heading">
-        <h2 id="facility-heading" className="sr-only">Our Installation Facility</h2>
-        <InstallationFacility />
-      </section>
-      
-      <PhotoGallery />
-      
-      <section aria-labelledby="faq-heading">
-        <h2 id="faq-heading" className="sr-only">Vehicle Wrap FAQ</h2>
-        <VehicleWrapFAQ />
-      </section>
-      
-      <section aria-labelledby="explore-heading">
-        <ExploreServices />
       </section>
       
       <EasyButtonSection />

@@ -7,6 +7,7 @@ import CallToAction from '@/components/CallToAction';
 import Breadcrumbs from '@/components/navigation/Breadcrumbs';
 import ServiceContentSelector from '@/components/services/ServiceContentSelector';
 import ServicesHero from '@/components/heroes/ServicesHero';
+import PricingTransparency from '@/components/home/PricingTransparency';
 import { useParams } from 'react-router-dom';
 
 const ServicesPage = () => {
@@ -33,6 +34,10 @@ const ServicesPage = () => {
             <Breadcrumbs />
             <ServiceContentSelector path={servicePath} />
           </div>
+          
+          {/* Pricing Transparency Section - moved from homepage */}
+          <PricingTransparency />
+          
           <CallToAction />
         </main>
       </div>

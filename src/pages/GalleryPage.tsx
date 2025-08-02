@@ -6,6 +6,7 @@ import GalleryFilter from '@/components/gallery/GalleryFilter';
 import GalleryGrid from '@/components/gallery/GalleryGrid';
 import ImageViewer from '@/components/gallery/ImageViewer';
 import GalleryHero from '@/components/heroes/GalleryHero';
+import PhotoGallery from '@/components/home/PhotoGallery';
 import { galleryItems } from '@/data/galleryItems';
 import { GalleryCategory, GalleryItem } from '@/types/gallery';
 import { Button } from '@/components/ui/button';
@@ -169,6 +170,9 @@ const GalleryPage = () => {
           item={expandedImage} 
           onClose={() => setExpandedImage(null)} 
         />
+        
+        {/* Photo Gallery Section - moved from homepage */}
+        <PhotoGallery />
         
         {/* Call to Action */}
         <CallToAction />

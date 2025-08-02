@@ -2,6 +2,8 @@ import React from "react";
 import { Check, Users, Award, Clock, MapPin, Phone, Mail } from "lucide-react";
 import PageSEO from "@/components/seo/PageSEO";
 import AboutHero from "@/components/heroes/AboutHero";
+import WhyChooseUsSection from "@/components/home/WhyChooseUsSection";
+import InstallationFacility from "@/components/home/InstallationFacility";
 
 const AboutPage = () => {
   return (
@@ -181,6 +183,12 @@ const AboutPage = () => {
             </div>
           </div>
         </div>
+        
+        {/* Why Choose Us Section - moved from homepage */}
+        <WhyChooseUsSection />
+        
+        {/* Installation Facility Section - moved from homepage */}
+        <InstallationFacility />
       </div>
     </>
   );

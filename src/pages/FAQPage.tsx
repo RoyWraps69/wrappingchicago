@@ -4,6 +4,7 @@ import { Helmet } from 'react-helmet-async';
 import CallToAction from '@/components/CallToAction';
 import Breadcrumbs from '@/components/navigation/Breadcrumbs';
 import FAQHero from '@/components/heroes/FAQHero';
+import VehicleWrapFAQ from '@/components/home/VehicleWrapFAQ';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 import { useState } from 'react';
 
@@ -177,6 +178,9 @@ const FAQPage = () => {
               </div>
             </section>
           </div>
+          
+          {/* Vehicle Wrap FAQ Section - moved from homepage */}
+          <VehicleWrapFAQ />
           
           <CallToAction city="Chicago" />
         </main>
