@@ -4,9 +4,16 @@ import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Phone } from 'lucide-react';
 
-const Hero = () => {
+const Hero = memo(() => {
   
-  return (
+  const handleImageError = useCallback((e: React.SyntheticEvent<HTMLImageElement>) => {
+    // Graceful fallback for image loading errors
+    e.currentTarget.style.display = 'none';
+  }, []);
+
+  const handleImageLoad = useCallback(() => {
+    // Image loaded successfully - could track analytics here
+  }, []);
     <div className="hero-fullscreen bg-black relative flex items-center justify-center min-h-screen overflow-hidden">
       {/* Hero background image */}
       <div className="absolute inset-0 z-0 flex items-center justify-center">

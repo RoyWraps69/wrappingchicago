@@ -111,8 +111,8 @@ interface EnhancedGoogleAnalyticsProps {
 }
 
 const EnhancedGoogleAnalytics: React.FC<EnhancedGoogleAnalyticsProps> = ({ 
-  measurementId = 'G-XXXXXXXXXX', // Replace with actual GA4 ID
-  clarityId = 'XXXXXXXXX' // Replace with actual Clarity ID
+  measurementId = 'G-YV5EB7KMWL', // Production GA4 ID
+  clarityId = 'o5x3c2p8nj' // Production Clarity ID
 }) => {
   const location = useLocation();
 

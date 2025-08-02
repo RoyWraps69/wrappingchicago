@@ -1,295 +1,283 @@
-
 /* ==============================
-   COMPONENT STYLES - EMERGENCY TEXT VISIBILITY FIX
-   - Maximum contrast component definitions
-   - WCAG AAA compliance
+   CLEAN COMPONENT STYLES - PRODUCTION READY
+   - No !important declarations
+   - Semantic design system
+   - Consistent patterns
    ============================== */
 
-/* EMERGENCY: Ultra high contrast typography */
-h1, .h1 {
-  @apply text-4xl md:text-5xl lg:text-6xl font-extrabold uppercase tracking-wider;
-  line-height: 1.1;
-  color: #000000 !important;
-  font-weight: 800;
-}
-
-h2, .h2 {
-  @apply text-3xl md:text-4xl font-bold tracking-wide;
-  line-height: 1.2;
-  color: #000000 !important;
-  font-weight: 700;
-}
-
-h3, .h3 {
-  @apply text-xl md:text-2xl font-semibold;
-  line-height: 1.3;
-  color: #000000 !important;
-  font-weight: 600;
-}
-
-p {
-  @apply text-base md:text-lg;
-  line-height: 1.6;
-  color: #000000 !important;
-  font-weight: 400;
-}
-
-/* EMERGENCY: Dark sections override */
-.bg-black h1, .bg-black .h1,
-.bg-black h2, .bg-black .h2,
-.bg-black h3, .bg-black .h3,
-.bg-black p, .bg-black span, .bg-black div,
-.bg-brand-navy h1, .bg-brand-navy .h1,
-.bg-brand-navy h2, .bg-brand-navy .h2,
-.bg-brand-navy h3, .bg-brand-navy .h3,
-.bg-brand-navy p, .bg-brand-navy span, .bg-brand-navy div,
-.hero-content h1, .hero-content .h1,
-.hero-content h2, .hero-content .h2,
-.hero-content h3, .hero-content .h3,
-.hero-content p, .hero-content span, .hero-content div,
-.hero-overlay h1, .hero-overlay .h1,
-.hero-overlay h2, .hero-overlay .h2,
-.hero-overlay h3, .hero-overlay .h3,
-.hero-overlay p, .hero-overlay span, .hero-overlay div,
-.hero-fullscreen h1, .hero-fullscreen .h1,
-.hero-fullscreen h2, .hero-fullscreen .h2,
-.hero-fullscreen h3, .hero-fullscreen .h3,
-.hero-fullscreen p, .hero-fullscreen span, .hero-fullscreen div,
-.bg-gradient-to-r h1, .bg-gradient-to-r .h1,
-.bg-gradient-to-r h2, .bg-gradient-to-r .h2,
-.bg-gradient-to-r h3, .bg-gradient-to-r .h3,
-.bg-gradient-to-r p, .bg-gradient-to-r span, .bg-gradient-to-r div,
-[class*="from-brand-navy"] h1, [class*="from-brand-navy"] .h1,
-[class*="from-brand-navy"] h2, [class*="from-brand-navy"] .h2,
-[class*="from-brand-navy"] h3, [class*="from-brand-navy"] .h3,
-[class*="from-brand-navy"] p, [class*="from-brand-navy"] span, [class*="from-brand-navy"] div {
-  color: #FFFFFF !important;
-}
-
-/* EMERGENCY: Ultra high contrast components */
-.ultra-card {
-  @apply rounded-xl shadow-lg p-6 md:p-8 transition-all duration-300 hover:shadow-xl;
-  background: #FFFFFF !important;
-  color: #000000 !important;
-  border: 2px solid #000000 !important;
-}
-
-.accent-gradient {
-  background: linear-gradient(135deg, #FF0000 0%, #FF3333 100%);
-}
-
-.btn-primary {
-  @apply font-medium px-8 py-3 rounded-full shadow-lg transition-all duration-300 hover:shadow-xl;
-  background: #FF0000 !important;
-  color: #FFFFFF !important;
-  font-weight: 600;
-  border: 2px solid #FF0000 !important;
-}
-
-.btn-outline {
-  @apply font-medium px-8 py-3 rounded-full transition-all duration-300;
-  background: transparent !important;
-  color: #000000 !important;
-  border: 2px solid #000000 !important;
-  font-weight: 600;
-}
-
-.btn-outline:hover {
-  background: #000000 !important;
-  color: #FFFFFF !important;
-}
-
-.hero-gradient {
-  background: rgba(0, 0, 0, 0.9) !important;
-}
-
-/* EMERGENCY: Ultra high contrast links */
-a:not(.btn-primary):not(.btn-outline) {
-  color: #0000EE !important;
-  text-decoration: underline !important;
-  text-decoration-thickness: 2px !important;
-  text-underline-offset: 2px !important;
-  font-weight: 500;
-}
-
-a:not(.btn-primary):not(.btn-outline):hover {
-  color: #0000CC !important;
-  text-decoration-thickness: 3px !important;
-}
-
-/* High contrast elements */
-.high-contrast {
-  background: #000000 !important;
-  color: #FFFFFF !important;
-}
-
-.high-contrast-reverse {
-  background: #FFFFFF !important;
-  color: #000000 !important;
-}
-
-/* EMERGENCY: Hero specific styles - ultra high contrast */
-.hero-fullscreen {
-  @apply relative min-h-screen flex items-center justify-center overflow-hidden;
-  padding-top: 120px;
-  padding-bottom: 120px;
-  background: #000000 !important;
-}
-
-.hero-overlay {
-  @apply absolute inset-0 z-10;
-  background: rgba(0, 0, 0, 0.9) !important;
-}
-
-.hero-content {
-  @apply relative z-20 text-center max-w-5xl mx-auto px-4;
-  color: #FFFFFF !important;
-}
-
-.hero-content * {
-  color: #FFFFFF !important;
-}
-
-/* EMERGENCY: Navigation specific styles - ultra high contrast */
-.nav-sticky {
-  @apply fixed top-0 left-0 right-0 z-50 transition-all duration-300;
-  background: #FFFFFF !important;
-  border-bottom: 2px solid #000000 !important;
-}
-
-.nav-transparent {
-  background: #FFFFFF !important;
-  backdrop-filter: blur(10px);
-}
-
-/* EMERGENCY: Footer specific styles - ultra high contrast */
-.footer-minimal {
-  background: #000000 !important;
-  color: #FFFFFF !important;
-  @apply py-16;
-}
-
-.social-icon {
-  @apply w-10 h-10 flex items-center justify-center rounded-full transition-colors;
-  border: 2px solid #FFFFFF !important;
-  color: #FFFFFF !important;
-}
-
-.social-icon:hover {
-  background: #FF0000 !important;
-  border-color: #FF0000 !important;
-  color: #FFFFFF !important;
-}
-
-/* EMERGENCY: Contact item specific fixes */
-.contact-item-highlight {
-  background: rgba(255, 0, 0, 0.1) !important;
-  border: 2px solid #FF0000 !important;
-  color: #000000 !important;
-}
-
-.contact-item-highlight * {
-  color: #000000 !important;
-}
-
-.contact-item-default {
-  background: #FFFFFF !important;
-  color: #000000 !important;
-  border: 2px solid #000000 !important;
-}
-
-.contact-item-default * {
-  color: #000000 !important;
-}
-
-/* Dark contact items */
-.contact-item-dark {
-  background: #000000 !important;
-  color: #FFFFFF !important;
-  border: 2px solid #FFFFFF !important;
-}
-
-.contact-item-dark * {
-  color: #FFFFFF !important;
-}
-
-/* EMERGENCY: Quick links and info bars on dark backgrounds */
-.bg-black\/5, .bg-white\/5 {
-  background: rgba(255, 255, 255, 0.1) !important;
-  border: 1px solid rgba(255, 255, 255, 0.2) !important;
-}
-
-.bg-black\/5 *, .bg-white\/5 * {
-  color: #FFFFFF !important;
-}
-
-/* EMERGENCY: Text color overrides for all white/light text on dark backgrounds */
-.text-white, .text-white\/70, .text-white\/80, .text-white\/90 {
-  color: #FFFFFF !important;
-}
-
-/* EMERGENCY: Ensure all form elements have proper contrast */
-.form-group label, .form-group input, .form-group textarea, .form-group select {
-  color: #000000 !important;
-  border: 2px solid #000000 !important;
-}
-
-/* EMERGENCY: Card hover effects with proper contrast */
-.card-hover {
-  transition: all 0.3s ease;
-  border: 2px solid #000000 !important;
-}
-
-.card-hover:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
-  border-color: #FF0000 !important;
-}
-
-/* EMERGENCY: Modal and overlay fixes - More specific selectors */
-.modal-overlay, .dialog-overlay, [data-radix-portal][data-state="open"] {
-  background: rgba(0, 0, 0, 0.8) !important;
-  z-index: 9998 !important;
-}
-
-.modal-content, .dialog-content {
-  background: #FFFFFF !important;
-  color: #000000 !important;
-  border: 2px solid #000000 !important;
-  z-index: 9999 !important;
-}
-
-.modal-content *, .dialog-content * {
-  color: #000000 !important;
-}
-
-/* EMERGENCY: Dropdown fixes */
-.dropdown-menu, .select-content, .popover-content {
-  background: #FFFFFF !important;
-  color: #000000 !important;
-  border: 2px solid #000000 !important;
-  z-index: 9999 !important;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3) !important;
-}
-
-.dropdown-menu *, .select-content *, .popover-content * {
-  color: #000000 !important;
-}
-
-/* EMERGENCY: Mobile fixes */
-@media (max-width: 768px) {
-  .hero-content h1 {
-    font-size: 2.5rem !important;
-    color: #FFFFFF !important;
+@layer components {
+  /* Typography Components */
+  .heading-primary {
+    @apply text-4xl md:text-6xl font-bold text-foreground leading-tight tracking-tight;
   }
-  
-  .hero-content p {
-    font-size: 1.125rem !important;
-    color: #FFFFFF !important;
+
+  .heading-secondary {
+    @apply text-2xl md:text-4xl font-bold text-foreground leading-snug;
   }
-  
-  .btn-primary, .btn-outline {
-    font-size: 1rem !important;
-    padding: 0.75rem 1.5rem !important;
+
+  .heading-tertiary {
+    @apply text-xl md:text-2xl font-semibold text-foreground leading-snug;
+  }
+
+  .text-lead {
+    @apply text-lg text-muted-foreground leading-relaxed;
+  }
+
+  .text-body {
+    @apply text-base text-foreground leading-relaxed;
+  }
+
+  .text-small {
+    @apply text-sm text-muted-foreground;
+  }
+
+  /* Button Components */
+  .btn-primary {
+    @apply bg-accent text-accent-foreground border-2 border-accent hover:bg-accent/90 font-semibold px-8 py-3 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl;
+  }
+
+  .btn-secondary {
+    @apply bg-secondary text-secondary-foreground border-2 border-secondary hover:bg-secondary/80 font-semibold px-8 py-3 rounded-full transition-all duration-300;
+  }
+
+  .btn-outline {
+    @apply bg-transparent text-foreground border-2 border-foreground hover:bg-foreground hover:text-background font-semibold px-8 py-3 rounded-full transition-all duration-300;
+  }
+
+  .btn-ghost {
+    @apply bg-transparent text-foreground hover:bg-muted font-semibold px-8 py-3 rounded-full transition-all duration-300;
+  }
+
+  /* Dark section button variants */
+  .dark-section .btn-outline {
+    @apply border-white text-white hover:bg-white hover:text-gray-900;
+  }
+
+  /* Card Components */
+  .card-default {
+    @apply bg-card text-card-foreground border border-border rounded-lg p-6 shadow-sm;
+  }
+
+  .card-elevated {
+    @apply bg-card text-card-foreground border border-border rounded-lg p-6 shadow-lg hover:shadow-xl transition-all duration-300;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl border-2 border-border hover:border-accent;
+  }
+
+  /* Form Components */
+  .form-input {
+    @apply bg-background text-foreground border border-border rounded-md px-3 py-2 focus:ring-2 focus:ring-ring focus:border-transparent transition-colors;
+  }
+
+  .form-label {
+    @apply text-foreground font-semibold text-sm mb-2 block;
+  }
+
+  .form-error {
+    @apply text-destructive text-sm mt-1;
+  }
+
+  .form-group {
+    @apply space-y-2;
+  }
+
+  /* Layout Components */
+  .container-default {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-default {
+    @apply py-12 md:py-20;
+  }
+
+  .section-hero {
+    @apply min-h-screen flex items-center justify-center relative;
+  }
+
+  /* Navigation Components */
+  .nav-link {
+    @apply text-foreground hover:text-accent font-medium transition-colors duration-200;
+  }
+
+  .nav-link-active {
+    @apply text-accent font-semibold;
+  }
+
+  .nav-sticky {
+    @apply fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-background/95 backdrop-blur-sm border-b border-border;
+  }
+
+  /* Hero Components */
+  .hero-fullscreen {
+    @apply relative min-h-screen flex items-center justify-center overflow-hidden pt-32 pb-32;
+  }
+
+  .hero-overlay {
+    @apply absolute inset-0 bg-black/60 z-10;
+  }
+
+  .hero-content {
+    @apply relative z-20 text-center text-white max-w-5xl mx-auto px-4;
+  }
+
+  .hero-content * {
+    @apply text-white;
+  }
+
+  /* Dark Sections */
+  .dark-section {
+    @apply bg-gray-900 text-white;
+  }
+
+  .dark-section * {
+    @apply text-white;
+  }
+
+  .dark-section .nav-link {
+    @apply text-white hover:text-gray-200;
+  }
+
+  /* Contact Components */
+  .contact-item-default {
+    @apply bg-background text-foreground border-2 border-border rounded-lg p-4 transition-colors;
+  }
+
+  .contact-item-highlight {
+    @apply bg-accent/10 border-2 border-accent text-foreground rounded-lg p-4 transition-colors;
+  }
+
+  .contact-item-dark {
+    @apply bg-gray-900 text-white border-2 border-white rounded-lg p-4 transition-colors;
+  }
+
+  /* Social Components */
+  .social-icon {
+    @apply w-10 h-10 flex items-center justify-center rounded-full transition-colors border-2 border-current text-current hover:bg-accent hover:border-accent hover:text-accent-foreground;
+  }
+
+  /* Modal and Overlay Components */
+  .modal-overlay {
+    @apply fixed inset-0 bg-black/80 z-40;
+  }
+
+  .modal-content {
+    @apply bg-background text-foreground border-2 border-border rounded-lg p-6 z-50 max-w-md mx-auto mt-20;
+  }
+
+  .dialog-overlay {
+    @apply fixed inset-0 bg-black/80 z-40;
+  }
+
+  .dialog-content {
+    @apply bg-background text-foreground border border-border rounded-lg p-6 z-50;
+  }
+
+  /* Dropdown Components */
+  .dropdown-menu {
+    @apply bg-background text-foreground border border-border rounded-md shadow-lg z-50 py-1;
+  }
+
+  .dropdown-item {
+    @apply px-4 py-2 text-sm hover:bg-muted cursor-pointer transition-colors;
+  }
+
+  /* Accessibility Components */
+  .sr-only {
+    @apply absolute w-px h-px p-0 -m-px overflow-hidden whitespace-nowrap border-0;
+  }
+
+  .focus\:not-sr-only:focus {
+    @apply static w-auto h-auto p-0 m-0 overflow-visible whitespace-normal;
+  }
+
+  /* Animation Components */
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.5s ease-out;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.3s ease-out;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes slideUp {
+    from { 
+      opacity: 0; 
+      transform: translateY(20px); 
+    }
+    to { 
+      opacity: 1; 
+      transform: translateY(0); 
+    }
+  }
+
+  @keyframes scaleIn {
+    from { 
+      opacity: 0; 
+      transform: scale(0.95); 
+    }
+    to { 
+      opacity: 1; 
+      transform: scale(1); 
+    }
+  }
+
+  /* Responsive Utilities */
+  @media (max-width: 768px) {
+    .heading-primary {
+      @apply text-3xl;
+    }
+    
+    .heading-secondary {
+      @apply text-xl;
+    }
+    
+    .btn-primary, .btn-secondary, .btn-outline, .btn-ghost {
+      @apply px-6 py-2 text-sm;
+    }
+    
+    .section-default {
+      @apply py-8;
+    }
+
+    .hero-content h1 {
+      @apply text-4xl text-white;
+    }
+    
+    .hero-content p {
+      @apply text-lg text-white;
+    }
+  }
+
+  /* High Contrast Mode Support */
+  @media (prefers-contrast: high) {
+    .btn-primary, .btn-secondary {
+      @apply border-4;
+    }
+    
+    .card-default, .card-elevated {
+      @apply border-2;
+    }
+  }
+
+  /* Print Styles */
+  @media print {
+    .hero-overlay {
+      @apply hidden;
+    }
+    
+    .btn-primary, .btn-secondary, .btn-outline, .btn-ghost {
+      @apply border-2 border-black text-black bg-white;
+    }
   }
 }
