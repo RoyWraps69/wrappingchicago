@@ -53,71 +53,7 @@ const IndexHelmetTags: React.FC = () => {
       <meta name="format-detection" content="telephone=yes" />
       <meta name="theme-color" content="#11172D" />
       
-      {/* Enhanced structured data for homepage */}
-      <script type="application/ld+json">{`
-        {
-          "@context": "https://schema.org",
-          "@type": "WebPage",
-          "@id": "${domain}/#webpage",
-          "url": "${domain}/",
-          "name": "Vehicle Wraps Chicago | Premium Car & Truck Wrapping Services",
-          "description": "Wrapping Chicago - Comprehensive vehicle customization company offering automotive transformation, commercial fleet branding, luxury enhancement & business marketing solutions with advanced application technology and premium materials.",
-          "speakable": {
-            "@type": "SpeakableSpecification",
-            "cssSelector": ["h1", "h2.speakable", ".speakable"]
-          },
-          "mainEntity": {
-            "@type": "Organization",
-            "name": "Wrapping Chicago",
-            "url": "${domain}",
-            "logo": {
-              "@type": "ImageObject",
-              "url": "${domain}/lovable-uploads/6ef3b1af-8591-4d36-97c2-9366401115fa.png",
-              "width": "180",
-              "height": "60"
-            }
-          }
-        }
-      `}</script>
-      
-      {/* Breadcrumb structured data with proper itemListElement */}
-      <script type="application/ld+json">{`
-        {
-          "@context": "https://schema.org",
-          "@type": "BreadcrumbList",
-          "itemListElement": [
-            {
-              "@type": "ListItem",
-              "position": 1,
-              "name": "Home",
-              "item": "${domain}/"
-            }
-          ]
-        }
-      `}</script>
-      
-      {/* Enhanced Publisher data */}
-      <script type="application/ld+json">{`
-        {
-          "@context": "https://schema.org",
-          "@type": "Organization",
-          "@id": "${domain}/#organization",
-          "name": "Wrapping Chicago",
-          "url": "${domain}",
-          "logo": {
-            "@type": "ImageObject",
-            "url": "${domain}/lovable-uploads/6ef3b1af-8591-4d36-97c2-9366401115fa.png", 
-            "width": "180",
-            "height": "60"
-          },
-          "sameAs": [
-            "https://www.facebook.com/wrappingchicago",
-            "https://www.instagram.com/wrappingchicago",
-            "https://twitter.com/wrappingchicago",
-            "https://www.linkedin.com/company/wrappingchicago"
-          ]
-        }
-      `}</script>
+      {/* DISABLED: All schemas moved to deduplicated components */}
     </Helmet>
   );
 };

@@ -1,5 +1,8 @@
 import React from "react";
 import { SEOCoordinatorProvider } from "@/components/seo/SEOCoordinator";
+import { SchemaDeduplicatorProvider } from "@/components/seo/SchemaDeduplicator";
+import ComprehensiveSchemaAudit from "@/components/seo/ComprehensiveSchemaAudit";
+import ComprehensiveAuditSummary from "@/components/seo/ComprehensiveAuditSummary";
 import Google2025SEOOptimizerCoordinated from "@/components/seo/Google2025SEOOptimizerCoordinated";
 import AEOOptimizerCoordinated from "@/components/seo/AEOOptimizerCoordinated";
 import LocalSEOBoosterCoordinated from "@/components/seo/LocalSEOBoosterCoordinated";
@@ -63,7 +66,8 @@ const Index = () => {
   
   
   return (
-    <SEOCoordinatorProvider>
+    <SchemaDeduplicatorProvider>
+      <SEOCoordinatorProvider>
       {/* All SEO optimizers working together in harmony */}
       <Google2025SEOOptimizerCoordinated
         pageTitle="Chicago Vehicle Wraps for Plumbers, Electricians & HVAC | Get More Calls"
@@ -93,7 +97,12 @@ const Index = () => {
       <div className="min-h-screen">
         <HomePageSections />
       </div>
+
+      {/* Schema Audit Tool - Shows current schema status */}
+      <ComprehensiveSchemaAudit />
+      <ComprehensiveAuditSummary />
     </SEOCoordinatorProvider>
+    </SchemaDeduplicatorProvider>
   );
 };
 
