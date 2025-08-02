@@ -1,4 +1,5 @@
 import React from 'react';
+import UniversalRichSnippets from '@/components/seo/UniversalRichSnippets';
 import PageSEO from '@/components/seo/PageSEO';
 import InternalLinkingSection from '@/components/seo/InternalLinkingSection';
 import TruckWrapsContentSection from '@/components/services/TruckWrapsContentSection';
@@ -64,6 +65,12 @@ const TruckWrapsPage = () => {
           })}
         </script>
       </Helmet>
+
+      <UniversalRichSnippets 
+        pageTitle="Truck Wraps Chicago | Commercial Truck Graphics & Fleet Vehicle Wraps Near Me"
+        pageDescription="Professional truck wraps Chicago! Commercial vehicle wraps, fleet graphics, van wraps, semi truck wraps. Mobile truck wrap installation. 3M vinyl, same day service. Truck wrap cost from $3,500."
+        pageType="WebPage"
+      />
 
       <div className="min-h-screen">
         {/* H1 Hero Section */}

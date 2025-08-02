@@ -1,4 +1,5 @@
 import React from 'react';
+import UniversalRichSnippets from '@/components/seo/UniversalRichSnippets';
 import PageSEO from '@/components/seo/PageSEO';
 import Google2025SEOOptimizer from '@/components/seo/Google2025SEOOptimizer';
 import AEOOptimizer from '@/components/seo/AEOOptimizer';
@@ -93,6 +94,13 @@ const CarWrapsPage = () => {
           })}
         </script>
       </Helmet>
+
+      <UniversalRichSnippets 
+        pageTitle="Car Wraps Chicago | Custom Vehicle Wraps & Vinyl Wrap Installation Near Me"
+        pageDescription="Premium car wraps Chicago! Custom vinyl car wraps, matte wraps, chrome wraps, color change wraps. Professional car wrap installation, mobile service. 3M & Avery Dennison materials. Car wrap cost from $1,200."
+        pageType="WebPage"
+        customFAQs={carWrapFAQs}
+      />
 
       <div className="min-h-screen">
         {/* Hero Section */}

@@ -1,5 +1,6 @@
 
 import React from 'react';
+import UniversalRichSnippets from '@/components/seo/UniversalRichSnippets';
 import { Helmet } from 'react-helmet-async';
 import CallToAction from '@/components/CallToAction';
 import Breadcrumbs from '@/components/navigation/Breadcrumbs';
@@ -114,6 +115,14 @@ const FAQPage = () => {
         <meta name="keywords" content="vehicle wrap FAQ, car wrap questions, truck wrap answers, vehicle wrap cost, wrap installation Chicago, vehicle wrap maintenance" />
         <link rel="canonical" href="https://www.wrappingchicago.com/faq" />
       </Helmet>
+      
+      
+      <UniversalRichSnippets 
+        pageTitle="Vehicle Wrap FAQ | Common Questions Answered | Wrapping Chicago"
+        pageDescription="Get answers to frequently asked questions about vehicle wraps, installation, pricing, and maintenance. Expert advice from Chicago's premier vehicle wrap specialists."
+        pageType="WebPage"
+        customFAQs={faqSections.flatMap(section => section.questions)}
+      />
       
       <div className="flex flex-col min-h-screen">
         

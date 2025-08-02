@@ -1,4 +1,5 @@
 import React from 'react';
+import UniversalRichSnippets from '@/components/seo/UniversalRichSnippets';
 import PageSEO from '@/components/seo/PageSEO';
 import Google2025SEOOptimizer from '@/components/seo/Google2025SEOOptimizer';
 import AEOOptimizer from '@/components/seo/AEOOptimizer';
@@ -91,6 +92,13 @@ const VanWrapsPage = () => {
           })}
         </script>
       </Helmet>
+
+      <UniversalRichSnippets 
+        pageTitle="Van Wraps Chicago | Commercial Van Graphics & Vehicle Wrap Installation Near Me"
+        pageDescription="Professional van wraps Chicago! Commercial van graphics, cargo van wraps, transit van branding. Mobile van wrap installation, same day service. Van wrap cost from $2,800. 3M vinyl materials."
+        pageType="WebPage"
+        customFAQs={vanWrapFAQs}
+      />
 
       <div className="min-h-screen">
         {/* H1 Hero Section */}

@@ -1,5 +1,6 @@
 
 import React from 'react';
+import UniversalRichSnippets from '@/components/seo/UniversalRichSnippets';
 import { Helmet } from 'react-helmet-async';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -25,6 +26,13 @@ const ServicesPage = () => {
         <meta name="keywords" content="plumber truck wraps Chicago, electrician van wraps, HVAC vehicle graphics, contractor truck lettering, trade vehicle wraps Chicago, service truck advertising" />
         <link rel="canonical" href="https://www.wrappingchicago.com/services" />
       </Helmet>
+      
+      
+      <UniversalRichSnippets 
+        pageTitle="Vehicle Wraps for Chicago Trade Businesses | Plumbers, Electricians, HVAC"
+        pageDescription="Turn your work truck into your best salesperson. Chicago trade professionals choose us for vehicle wraps that get noticed and bring in more customers."
+        pageType="CollectionPage"
+      />
       
       <div className="flex flex-col min-h-screen">
         <main className="flex-grow">

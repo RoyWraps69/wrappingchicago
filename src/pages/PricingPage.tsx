@@ -1,5 +1,6 @@
 
 import React from 'react';
+import UniversalRichSnippets from '@/components/seo/UniversalRichSnippets';
 import { Helmet } from 'react-helmet-async';
 import CallToAction from '@/components/CallToAction';
 import Breadcrumbs from '@/components/navigation/Breadcrumbs';
@@ -123,6 +124,13 @@ const PricingPage = () => {
         lastModified={currentDate}
       />
       <IndexingPriority priority="high" />
+      
+      
+      <UniversalRichSnippets 
+        pageTitle="Vehicle Wrap Pricing | Chicago Fleet Wraps"
+        pageDescription="Transparent pricing for professional vehicle wraps in Chicago. View our competitive rates for car wraps, truck wraps, fleet wraps, and color change wraps."
+        pageType="WebPage"
+      />
       
       <div className="flex flex-col min-h-screen">
         
