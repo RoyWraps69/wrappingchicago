@@ -2,8 +2,16 @@
 import React from 'react';
 import StatsCard from './StatsCard';
 
+interface StatData {
+  statistic: string;
+  value: string;
+  category: string;
+  source: string;
+  insight: string;
+}
+
 interface StatsGridProps {
-  stats: any[];
+  stats: StatData[];
 }
 
 const StatsGrid: React.FC<StatsGridProps> = ({ stats }) => {

@@ -95,20 +95,7 @@ export const AIWrapProvider: React.FC<{ children: ReactNode }> = ({ children }) 
     }
   };
   
-  // Debug logging for context values
-  useEffect(() => {
-    console.log("AIWrapContext values updated:", {
-      business,
-      description,
-      selectedVehicleType,
-      isGenerating,
-      isGeneratingImage,
-      showResults,
-      ideasCount: generatedIdeas.length,
-      hasGeneratedImage: !!generatedImage,
-      progress: generationProgress
-    });
-  }, [business, description, selectedVehicleType, isGenerating, isGeneratingImage, showResults, generatedIdeas, generatedImage, generationProgress]);
+  // Context state management - debug logging removed for production
 
   const value: AIWrapContextType = {
     business,

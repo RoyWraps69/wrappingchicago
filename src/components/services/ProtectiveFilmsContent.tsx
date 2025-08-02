@@ -7,7 +7,6 @@ const ProtectiveFilmsContent: React.FC = () => {
     <>
       <ProtectiveFilmsHero />
       <div className="container mx-auto px-4 py-12">
-        <>
       <h2 className="text-2xl font-semibold text-gray-900 mb-4">Vehicle Protective Films</h2>
       <p className="mb-6 text-gray-700">
         Protect your vehicle's paint and finish with our high-quality protective films. These transparent films provide 
@@ -36,8 +35,7 @@ const ProtectiveFilmsContent: React.FC = () => {
             <li>Can be removed without damaging paint</li>
           </ul>
         </div>
-      </div>
-        </>
+        </div>
       </div>
     </>
   );

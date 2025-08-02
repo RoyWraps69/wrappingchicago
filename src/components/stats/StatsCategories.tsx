@@ -2,8 +2,16 @@
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 
+interface StatData {
+  statistic: string;
+  value: string;
+  category: string;
+  source: string;
+  insight: string;
+}
+
 interface StatsCategoriesProps {
-  stats: any[];
+  stats: StatData[];
 }
 
 const StatsCategories: React.FC<StatsCategoriesProps> = ({ stats }) => {
