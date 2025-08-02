@@ -180,6 +180,8 @@ function App() {
                   
                    {/* Service pages */}
                    <Route path="/services" element={<ServicesPage />} />
+                   {/* Direct service routes should redirect to their dedicated pages */}
+                   <Route path="/services/fleet-wraps" element={<FleetWrapsPage />} />
                    <Route path="/services/:service" element={<ServicesPage />} />
                    <Route path="/car-wraps" element={<CarWrapsPage />} />
                    <Route path="/truck-wraps" element={<TruckWrapsPage />} />
