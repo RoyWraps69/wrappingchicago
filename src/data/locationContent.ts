@@ -404,11 +404,126 @@ export const wickerParkContent: LocationContent = {
   }
 };
 
-// Export the content mapping
+// ============= THE LOOP - BUSINESS DISTRICT =============
+export const theLoopContent: LocationContent = {
+  heroStory: "In Chicago's business epicenter, where deals worth millions happen daily and C-suite executives make split-second decisions, your vehicle either signals success or gets ignored. When a law firm lost a Fortune 500 client because their partner's unmarked car was mistaken for an Uber driver in the Willis Tower parking garage, they realized perception drives profits. After wrapping their fleet with sophisticated, executive-grade graphics, they've secured three major corporate clients who specifically mentioned their 'professional appearance' as a deciding factor.",
+  
+  businessCaseStudy: {
+    title: "Investment Firm Closes Biggest Deal Ever",
+    problem: "High-end investment firm's vehicles looked unprofessional compared to competitors during client meetings",
+    solution: "Subtle, sophisticated vehicle graphics emphasizing trust, stability, and financial success",
+    results: [
+      "Landed $50M investment management contract",
+      "Client specifically cited 'attention to detail'",
+      "Partner referrals increased 60%",
+      "Featured in Crain's Chicago Business"
+    ],
+    quote: "Our wrapped vehicles communicate success before we even speak. In the Loop, that matters more than any presentation.",
+    clientType: "Investment Management Firm"
+  },
+  
+  localInsights: {
+    title: "Loop Financial District Intelligence",
+    insights: [
+      "Loop businesses generate $78B annually - appearance drives trust and credibility",
+      "Willis Tower and surrounding buildings house 200+ major corporations",
+      "Average Loop executive makes purchasing decisions worth $500K+",
+      "Millennium Park events create 25M annual visitor interactions"
+    ],
+    marketTrends: [
+      "Increased demand for discrete luxury business branding",
+      "Growing focus on sustainable corporate image",
+      "Rise in corporate fleet standardization requirements",
+      "Expansion of financial technology and consulting services"
+    ]
+  },
+  
+  specializedServices: [
+    {
+      name: "Executive Fleet Branding",
+      description: "Sophisticated vehicle graphics that command respect in Chicago's financial district",
+      targetAudience: "Law firms, investment companies, consulting firms, corporate executives",
+      uniqueValue: "Discrete elegance that signals authority without appearing flashy",
+      pricing: "From $4,200",
+      examples: ["BigLaw firm fleets", "Investment management vehicles", "C-suite executive cars"]
+    },
+    {
+      name: "Corporate Tower Parking Optimization",
+      description: "Vehicle graphics designed specifically for visibility in downtown parking structures",
+      targetAudience: "Downtown businesses with corporate parking",
+      uniqueValue: "Graphics optimized for artificial lighting and close-quarters visibility",
+      pricing: "From $3,800",
+      examples: ["Willis Tower tenants", "Aon Center businesses", "Chase Tower companies"]
+    },
+    {
+      name: "Financial District Networking Graphics",
+      description: "Professional vehicle branding that facilitates business connections and referrals",
+      targetAudience: "Professional services, financial firms, business consultants",
+      uniqueValue: "Designs that encourage executive-level networking and referral generation",
+      pricing: "From $3,500",
+      examples: ["Accounting firms", "Management consultants", "Financial advisors"]
+    }
+  ],
+  
+  competitiveAdvantages: [
+    {
+      advantage: "Executive Psychology Expertise",
+      explanation: "Research-based designs that subconsciously signal competence and trustworthiness to C-suite decision makers",
+      proof: "Clients report 45% increase in executive-level referrals after wrap installation"
+    },
+    {
+      advantage: "Financial District Visibility Mastery",
+      explanation: "Specialized techniques for maximum impact in downtown Chicago's unique lighting and traffic conditions",
+      proof: "Only wrap shop with documented case studies from Willis Tower and Aon Center businesses"
+    },
+    {
+      advantage: "Corporate Compliance Integration",
+      explanation: "Graphics that meet corporate branding standards while maximizing marketing impact",
+      proof: "100% approval rate for corporate fleet standardization projects"
+    }
+  ],
+  
+  uniqueFeatures: [
+    {
+      feature: "Boardroom-Approved Design Process",
+      benefit: "Graphics that meet corporate approval standards while maximizing marketing impact",
+      localRelevance: "Critical for Loop businesses with strict corporate branding requirements"
+    },
+    {
+      feature: "Executive Parking Structure Optimization",
+      benefit: "Visibility strategies tailored to downtown Chicago's unique parking environments",
+      localRelevance: "Essential for businesses operating in Willis Tower, Aon Center, and other major buildings"
+    },
+    {
+      feature: "Financial District Networking Integration",
+      benefit: "Design elements that facilitate business connections and referral generation",
+      localRelevance: "Leverages Loop's concentration of decision-makers and networking opportunities"
+    }
+  ],
+  
+  seoStrategy: {
+    primaryKeywords: ["executive vehicle wraps Loop Chicago", "financial district car graphics", "corporate fleet branding downtown"],
+    secondaryKeywords: ["Willis Tower business vehicle wraps", "Loop professional graphics", "downtown corporate branding"],
+    longTailKeywords: ["executive vehicle graphics Chicago financial district", "corporate fleet wraps Willis Tower area", "professional car branding Loop Chicago"],
+    localSEOFocus: ["Willis Tower vehicle wraps", "Millennium Park business graphics", "downtown Chicago corporate wraps"],
+    contentThemes: ["executive presence", "corporate professionalism", "financial district networking", "business credibility"]
+  },
+  
+  layoutConfig: {
+    type: 'business-district',
+    heroLayout: 'split',
+    sectionsOrder: ['hero', 'executive-case-study', 'corporate-services', 'networking-benefits', 'competitive-advantages', 'cta'],
+    specialSections: ['executive-testimonials', 'corporate-compliance', 'downtown-visibility'],
+    colorScheme: 'corporate'
+  }
+};
+
+// Export the expanded content mapping
 export const locationContentMap: Record<string, LocationContent> = {
   'river-north': riverNorthContent,
   'lincoln-park': lincolnParkContent,
   'wicker-park': wickerParkContent,
+  'the-loop': theLoopContent,
   // Add more locations as needed
 };
 

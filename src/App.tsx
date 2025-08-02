@@ -13,7 +13,7 @@ import ServicesPage from "./pages/ServicesPage";
 import ServiceAreasPage from "./pages/ServiceAreasPage";
 import FAQPage from "./pages/FAQPage";
 import SitemapPage from "./pages/SitemapPage";
-import LocationPage from "./pages/LocationPage";
+import DynamicLocationPage from '@/components/location/DynamicLocationPage';
 import LocationsPage from "./pages/LocationsPage";
 import ChicagoLocationPage from "./pages/locations/ChicagoLocationPage";
 import EvanstonLocationPage from "./pages/locations/EvanstonLocationPage";
@@ -205,7 +205,7 @@ function App() {
                   
                   {/* Location pages */}
                   <Route path="/locations" element={<LocationsPage />} />
-                  <Route path="/locations/:locationSlug" element={<LocationPage />} />
+                  <Route path="/locations/:locationSlug" element={<DynamicLocationPage />} />
                   
                   {/* Specific city routes - MUST come before dynamic routes */}
                   <Route path="/vehicle-wraps-chicago-il" element={<ChicagoLocationPage />} />
