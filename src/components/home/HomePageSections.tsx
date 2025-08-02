@@ -15,18 +15,35 @@ import PricingTransparency from '@/components/home/PricingTransparency';
 import { useGalleryImages } from '@/hooks/useGalleryImages';
 import { cities } from '@/data/cities';
 import { HeroSection, ServicesMainSection } from './sections';
-import { OrganizationSchema, LocalBusinessSchema, WebSiteSchema, ReviewSchema } from '@/components/schemas/Deduplicated';
+import { 
+  OrganizationSchema, 
+  LocalBusinessSchema, 
+  WebSiteSchema, 
+  ReviewSchema, 
+  FAQSchema, 
+  BreadcrumbSchema, 
+  ServiceSchema, 
+  WebPageSchema,
+  MediaSchema,
+  HowToSchema
+} from '@/components/schemas/Deduplicated';
 
 const HomePageSections = () => {
   const { fleetWrapVan, colorChangeVan, commercialGraphics } = useGalleryImages();
 
   return (
     <>
-      {/* Core Schema Components - Deduplicated */}
+      {/* Comprehensive Rich Snippet Coverage - All Deduplicated */}
       <OrganizationSchema />
       <LocalBusinessSchema />
       <WebSiteSchema />
       <ReviewSchema />
+      <FAQSchema />
+      <BreadcrumbSchema />
+      <ServiceSchema />
+      <WebPageSchema />
+      <MediaSchema />
+      <HowToSchema />
       
       <main className="flex-grow" role="main">
       <HeroSection />
