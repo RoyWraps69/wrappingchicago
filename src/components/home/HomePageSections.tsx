@@ -23,15 +23,15 @@ const HomePageSections = () => {
     <main className="flex-grow" role="main">
       <HeroSection />
       
-      <InfoBar />
-      <QuickLinksBar />
-      <StickyContactButtons />
-      
       <ServicesMainSection 
         fleetWrapVan={fleetWrapVan}
         colorChangeVan={colorChangeVan}
         commercialGraphics={commercialGraphics}
       />
+      
+      <InfoBar />
+      <QuickLinksBar />
+      <StickyContactButtons />
       
       <section aria-labelledby="trust-heading">
         <h2 id="trust-heading" className="sr-only">Why Choose Wrapping Chicago</h2>
