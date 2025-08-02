@@ -51,7 +51,7 @@ const DynamicSitemapGenerator: React.FC = () => {
     // Send to server to update sitemap.xml
     if (typeof window !== 'undefined') {
       localStorage.setItem('dynamic-sitemap', sitemapXml);
-      console.log('Dynamic sitemap generated with fresh timestamps');
+      // Dynamic sitemap generated with fresh timestamps
     }
   };
 

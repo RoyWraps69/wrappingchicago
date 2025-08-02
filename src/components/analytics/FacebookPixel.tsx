@@ -17,7 +17,7 @@ const FacebookPixel: React.FC = () => {
     
     // Skip initialization if no valid pixel ID is provided
     if (!PIXEL_ID || PIXEL_ID === 'FB_PIXEL_ID') {
-      console.log('Facebook Pixel not initialized - no valid pixel ID provided');
+      // Facebook Pixel not initialized - no valid pixel ID provided
       return;
     }
 

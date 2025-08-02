@@ -43,7 +43,11 @@ const MobileNav: React.FC<MobileNavProps> = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
 
   return (
-    <div className="md:hidden absolute top-full left-0 w-full bg-white shadow-xl border-t z-50">
+    <div 
+      className="md:hidden absolute top-full left-0 w-full bg-white shadow-xl border-t z-50"
+      role="navigation"
+      aria-label="Mobile navigation menu"
+    >
       <div className="px-4 py-6">
         {/* Main Navigation */}
         <div className="space-y-4 mb-6">
@@ -52,7 +56,8 @@ const MobileNav: React.FC<MobileNavProps> = ({ isOpen, onClose }) => {
               key={item.path}
               to={item.path}
               onClick={onClose}
-              className="block py-2 text-brand-navy hover:text-brand-red transition-colors font-medium text-lg"
+              className="block py-2 text-foreground hover:text-accent transition-colors font-medium text-lg"
+              aria-label={`Navigate to ${item.label}`}
             >
               {item.label}
             </Link>
@@ -61,14 +66,15 @@ const MobileNav: React.FC<MobileNavProps> = ({ isOpen, onClose }) => {
 
         {/* Services Section */}
         <div className="border-t pt-6 mb-6">
-          <h3 className="font-semibold text-brand-navy mb-4 text-lg">Our Services</h3>
+          <h3 className="font-semibold text-foreground mb-4 text-lg">Our Services</h3>
           <div className="space-y-3">
             {serviceItems.map((service) => (
               <Link
                 key={service.path}
                 to={service.path}
                 onClick={onClose}
-                className="flex items-center justify-between py-2 text-gray-700 hover:text-brand-red transition-colors"
+                className="flex items-center justify-between py-2 text-muted-foreground hover:text-accent transition-colors"
+                aria-label={`Navigate to ${service.label} service`}
               >
                 {service.label}
                 <ChevronRight className="h-4 w-4" />

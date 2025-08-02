@@ -28,7 +28,7 @@ export const trackConversion = (event: string, data?: Record<string, any>) => {
   }
 
   // Console logging for development
-  console.log('Conversion tracked:', { event, data });
+  // Conversion tracked: { event, data }
 };
 
 // Specific conversion functions

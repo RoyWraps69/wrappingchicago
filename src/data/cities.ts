@@ -21,8 +21,7 @@ export const findCityBySlug = (slug: string): City | undefined => {
   if (!slug) return undefined;
   
   // Log all available cities for debugging
-  console.log("Looking for city with slug:", slug);
-  console.log("Available slugs:", cities.map(c => c.slug).join(', '));
+  // Debug logging removed for production
   
   // Normalize the slug
   const normalizedSlug = slug.toLowerCase().trim();
@@ -34,7 +33,7 @@ export const findCityBySlug = (slug: string): City | undefined => {
   );
   
   if (exactMatch) {
-    console.log(`Found exact match for "${slug}": ${exactMatch.name}`);
+    // Found exact match
     return exactMatch;
   }
   
@@ -47,7 +46,7 @@ export const findCityBySlug = (slug: string): City | undefined => {
   );
   
   if (partialMatch) {
-    console.log(`Found partial match for "${slug}": ${partialMatch.name}`);
+    // Found partial match
     return partialMatch;
   }
   
@@ -64,7 +63,7 @@ export const findCityBySlug = (slug: string): City | undefined => {
   });
   
   if (hyphenMatch) {
-    console.log(`Found hyphen variation match for "${slug}": ${hyphenMatch.name}`);
+    // Found hyphen variation match
     return hyphenMatch;
   }
   
@@ -76,11 +75,11 @@ export const findCityBySlug = (slug: string): City | undefined => {
     );
     
     if (arlingtonHeights) {
-      console.log(`Special case match for Arlington Heights`);
+      // Special case match for Arlington Heights
       return arlingtonHeights;
     }
   }
   
-  console.log(`No match found for "${slug}"`);
+  // No match found
   return undefined;
 };

@@ -60,7 +60,7 @@ const Index = () => {
     }
   ];
 
-  console.log('Index component rendering...');
+  
   
   return (
     <SEOCoordinatorProvider>

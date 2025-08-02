@@ -99,7 +99,7 @@ const TechnicalSEOMonitor: React.FC = () => {
       })
     }).catch(() => {
       // Fallback: at least log the sitemap update
-      console.log('Sitemap submitted for indexing');
+      // Sitemap submitted for indexing
     });
   };
 

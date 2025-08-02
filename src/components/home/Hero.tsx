@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Phone } from 'lucide-react';
 
 const Hero = () => {
-  console.log('Hero component rendering...');
+  
   return (
     <div className="hero-fullscreen bg-black relative flex items-center justify-center min-h-screen overflow-hidden">
       {/* Hero background image */}
@@ -15,10 +15,10 @@ const Hero = () => {
           alt="Chicago vehicle transformation specialists - comprehensive fleet of custom wrapped automobiles, commercial trucks, and branded business vehicles displaying advanced vinyl application techniques and creative design solutions"
           className="max-w-full max-h-full object-contain"
           onError={(e) => {
-            console.log('Hero image failed to load:', (e.target as HTMLImageElement).src);
+            
           }}
           onLoad={() => {
-            console.log('Hero image loaded successfully');
+            
           }}
         />
       </div>

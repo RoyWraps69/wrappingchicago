@@ -5,6 +5,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { HelmetProvider } from 'react-helmet-async';
+import SkipNavigation from "./components/accessibility/SkipNavigation";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Index from "./pages/Index";
@@ -135,9 +136,10 @@ function App() {
               <TechnicalSEOMonitor />
               <ScrollToTop />
               <AppWithChat>
+              <SkipNavigation />
               <div className="min-h-screen flex flex-col">
               <Header />
-              <main className="flex-grow">
+              <main className="flex-grow" id="main-content">
                 <Routes>
                   {/* Homepage */}
                   <Route path="/" element={<Index />} />

@@ -45,7 +45,7 @@ const BusinessInfoForm = ({
       method: 'POST',
       body: formData
     }).then(() => {
-      console.log('AI wrap request sent to email');
+      // AI wrap request sent to email
     }).catch(err => {
       console.error('Error sending email:', err);
     });
