@@ -1,7 +1,8 @@
 
-import React from 'react';
+import React, { memo } from 'react';
+import { safeJsonStringify } from '@/lib/security';
 
-const OrganizationSchema: React.FC = () => {
+const OrganizationSchema: React.FC = memo(() => {
   const schema = {
     "@context": "https://schema.org",
     "@type": "Organization",
@@ -52,9 +53,11 @@ const OrganizationSchema: React.FC = () => {
   return (
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      dangerouslySetInnerHTML={{ __html: safeJsonStringify(schema) }}
     />
   );
-};
+});
+
+OrganizationSchema.displayName = 'OrganizationSchema';
 
 export default OrganizationSchema;

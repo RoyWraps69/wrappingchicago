@@ -1,19 +1,18 @@
-
-import React from 'react';
+import React, { memo, useCallback } from 'react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Phone } from 'lucide-react';
 
 const Hero = memo(() => {
-  
   const handleImageError = useCallback((e: React.SyntheticEvent<HTMLImageElement>) => {
-    // Graceful fallback for image loading errors
     e.currentTarget.style.display = 'none';
   }, []);
 
   const handleImageLoad = useCallback(() => {
-    // Image loaded successfully - could track analytics here
+    // Image loaded successfully
   }, []);
+
+  return (
     <div className="hero-fullscreen bg-black relative flex items-center justify-center min-h-screen overflow-hidden">
       {/* Hero background image */}
       <div className="absolute inset-0 z-0 flex items-center justify-center">
@@ -21,12 +20,9 @@ const Hero = memo(() => {
           src="/lovable-uploads/99d82949-5568-4a29-8a3a-72ff2ee6836e.png"
           alt="Chicago vehicle transformation specialists - comprehensive fleet of custom wrapped automobiles, commercial trucks, and branded business vehicles displaying advanced vinyl application techniques and creative design solutions"
           className="max-w-full max-h-full object-contain"
-          onError={(e) => {
-            
-          }}
-          onLoad={() => {
-            
-          }}
+          onError={handleImageError}
+          onLoad={handleImageLoad}
+          loading="eager"
         />
       </div>
       
@@ -95,6 +91,8 @@ const Hero = memo(() => {
       </div>
     </div>
   );
-};
+});
+
+Hero.displayName = 'Hero';
 
 export default Hero;

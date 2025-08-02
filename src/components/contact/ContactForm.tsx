@@ -1,27 +1,24 @@
-
-import React, { useState } from 'react';
+import React, { useState, useEffect, useCallback, memo } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { MessageSquare, Check } from 'lucide-react';
 
-const ContactForm = () => {
+const ContactForm = memo(() => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   
-  // Check for success parameter in URL on component mount
-  React.useEffect(() => {
+  useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search);
     if (urlParams.get('success') === 'true') {
       setIsSubmitted(true);
-      // Clean up URL
       window.history.replaceState({}, '', window.location.pathname);
     }
   }, []);
 
-  const handleReset = () => {
+  const handleReset = useCallback(() => {
     setIsSubmitted(false);
-  };
+  }, []);
 
   if (isSubmitted) {
     return (
@@ -43,7 +40,6 @@ const ContactForm = () => {
     );
   }
 
-  // Get absolute URL for the success redirect
   const baseUrl = window.location.origin;
   const successUrl = `${baseUrl}/contact?success=true`;
 
@@ -56,7 +52,6 @@ const ContactForm = () => {
         method="POST"
         className="space-y-6"
       >
-        {/* FormSubmit.co configuration */}
         <input type="hidden" name="_subject" value="Chicago Fleet Wraps: New Quote Request" />
         <input type="hidden" name="_captcha" value="false" />
         <input type="hidden" name="_next" value={successUrl} />
@@ -139,6 +134,8 @@ const ContactForm = () => {
       </form>
     </div>
   );
-};
+});
+
+ContactForm.displayName = 'ContactForm';
 
 export default ContactForm;
