@@ -64,9 +64,9 @@ export default {
 				},
 				// Custom colors for Wrapping Chicago - HSL format for consistent theming
 				brand: {
-					navy: '0 0% 7%', // Dark navy in HSL
-					red: '8 96% 59%', // Brand red in HSL
-					light: '0 0% 100%', // Pure white in HSL
+					navy: 'hsl(0, 0%, 7%)', // Dark navy
+					red: 'hsl(8, 96%, 59%)', // Brand red
+					light: 'hsl(0, 0%, 100%)', // Pure white
 				}
 			},
 			borderRadius: {
