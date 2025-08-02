@@ -75,13 +75,6 @@ const LocalBusinessSchema: React.FC<LocalBusinessSchemaProps> = ({
       "opens": hours.split(' ')[1]?.split('-')[0],
       "closes": hours.split(' ')[1]?.split('-')[1]
     })),
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.9",
-      "reviewCount": "247",
-      "bestRating": "5",
-      "worstRating": "1"
-    }
   };
 
   return (

@@ -9,6 +9,7 @@ interface SchemaRegistry {
   FAQPage: Set<string>;
   WebPage: Set<string>;
   BreadcrumbList: Set<string>;
+  Review: Set<string>;
   // Add other schema types as needed
 }
 
@@ -29,6 +30,7 @@ export const SchemaDeduplicatorProvider: React.FC<{ children: React.ReactNode }>
     FAQPage: new Set(),
     WebPage: new Set(),
     BreadcrumbList: new Set(),
+    Review: new Set(),
   });
 
   const canRenderSchema = (schemaType: keyof SchemaRegistry, sourceComponent: string): boolean => {
