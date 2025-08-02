@@ -76,7 +76,7 @@ const ContactHero = () => {
               size="lg" 
               variant="outline"
               className="border-2 border-white text-white hover:bg-white hover:text-primary font-bold text-lg px-8 py-6 h-auto"
-              onClick={() => window.location.href = 'mailto:info@wrappingchicago.com'}
+              onClick={() => window.location.href = 'mailto:roy@chicagofleetwraps.com'}
             >
               <Mail className="mr-2 h-5 w-5" />
               Email Us Now

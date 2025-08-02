@@ -152,7 +152,7 @@ const CompetitorDominationSEO = () => {
           "description": "Chicago's #1 rated vehicle wrap specialists. Award-winning installations, premium materials, certified technicians. Serving Chicago + 40-mile radius since 2018.",
           "url": `${domain}/`,
           "telephone": "+13125971286",
-          "email": "info@wrappingchicago.com",
+          "email": "roy@chicagofleetwraps.com",
           "priceRange": "$$$",
           "paymentAccepted": ["Cash", "Credit Card", "Check", "Financing Available"],
           "currenciesAccepted": "USD",

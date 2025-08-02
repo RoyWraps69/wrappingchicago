@@ -43,7 +43,7 @@ const ContactPage = () => {
                       <Mail className="h-6 w-6 text-brand-red mr-4" />
                       <div>
                         <h3 className="font-semibold">Email</h3>
-                        <p className="text-gray-600">info@wrappingchicago.com</p>
+                        <p className="text-gray-600">roy@chicagofleetwraps.com</p>
                       </div>
                     </div>
                     
@@ -114,7 +114,7 @@ const ContactPage = () => {
                   Call Now: (312) 597-1286
                 </a>
                 <a 
-                  href="mailto:info@wrappingchicago.com" 
+                  href="mailto:roy@chicagofleetwraps.com" 
                   className="bg-white text-brand-navy px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors inline-flex items-center justify-center"
                 >
                   <Mail className="mr-2 h-5 w-5" />

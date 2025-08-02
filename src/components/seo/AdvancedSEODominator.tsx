@@ -57,7 +57,7 @@ const AdvancedSEODominator: React.FC<AdvancedSEODominatorProps> = ({
       `${domain}/lovable-uploads/99d82949-5568-4a29-8a3a-72ff2ee6836e.png`
     ],
     "telephone": "+13125971286",
-    "email": "info@wrappingchicago.com",
+    "email": "roy@chicagofleetwraps.com",
     "foundingDate": `${currentYear - businessAge}`,
     "numberOfEmployees": "10-20",
     "address": {

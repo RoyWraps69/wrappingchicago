@@ -32,7 +32,7 @@ const AdvancedSEOOptimizer = () => {
             "height": 630
           },
           "telephone": "+13125971286",
-          "email": "info@wrappingchicago.com",
+          "email": "roy@chicagofleetwraps.com",
           "address": {
             "@type": "PostalAddress",
             "streetAddress": "4711 N. Lamon Ave",

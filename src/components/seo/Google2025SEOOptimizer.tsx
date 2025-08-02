@@ -55,7 +55,7 @@ const Google2025SEOOptimizer: React.FC<Google2025SEOOptimizerProps> = ({
     "description": `Chicago's most trusted vehicle wrap specialists for ${businessType === 'general' ? 'trade professionals' : businessType + 's'}. Professional installation, premium materials, real results.`,
     "url": domain,
     "telephone": "+13125971286",
-    "email": "info@wrappingchicago.com",
+    "email": "roy@chicagofleetwraps.com",
     "foundingDate": "2014",
     "slogan": "Your Truck is Your Best Billboard",
     

@@ -177,7 +177,7 @@ const AboutPage = () => {
                 </div>
                 <div className="flex items-center justify-center bg-white text-brand-red px-6 py-3 rounded-lg font-semibold">
                   <Mail className="mr-2 h-5 w-5" />
-                  info@wrappingchicago.com
+                  roy@chicagofleetwraps.com
                 </div>
               </div>
             </div>
