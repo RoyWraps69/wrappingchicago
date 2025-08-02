@@ -1,6 +1,7 @@
 
 import React from 'react';
 import InfoBar from '@/components/home/InfoBar';
+import UniversalRichSnippets from '@/components/seo/UniversalRichSnippets';
 import QuickLinksBar from '@/components/home/QuickLinksBar';
 import StickyContactButtons from '@/components/home/StickyContactButtons';
 import TrustIndicators from '@/components/home/TrustIndicators';
@@ -33,17 +34,12 @@ const HomePageSections = () => {
 
   return (
     <>
-      {/* Comprehensive Rich Snippet Coverage - All Deduplicated */}
-      <OrganizationSchema />
-      <LocalBusinessSchema />
-      <WebSiteSchema />
-      <ReviewSchema />
-      <FAQSchema />
-      <BreadcrumbSchema />
-      <ServiceSchema />
-      <WebPageSchema />
-      <MediaSchema />
-      <HowToSchema />
+      {/* Universal Rich Snippets + Voice Search Optimization */}
+      <UniversalRichSnippets 
+        pageTitle="Chicago Vehicle Wraps - Professional Car, Truck & Van Wrapping Services"
+        pageDescription="Chicago's premier vehicle wrap specialists. Get 30% more service calls with professional wraps. Same week installation. Won't damage paint. 16,000+ vehicles wrapped."
+        pageType="WebPage"
+      />
       
       <main className="flex-grow" role="main">
       <HeroSection />
