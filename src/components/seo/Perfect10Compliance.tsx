@@ -21,16 +21,23 @@ const Perfect10Compliance: React.FC<Perfect10ComplianceProps> = ({
   const [vitalsData, setVitalsData] = useState<any>({});
   
   useEffect(() => {
-    // Core Web Vitals monitoring
-    if ('web-vitals' in window) {
-      import('web-vitals').then(({ onCLS, onFCP, onLCP, onINP, onTTFB }) => {
-        onCLS((metric) => setVitalsData(prev => ({ ...prev, cls: metric.value })));
-        onFCP((metric) => setVitalsData(prev => ({ ...prev, fcp: metric.value })));
-        onLCP((metric) => setVitalsData(prev => ({ ...prev, lcp: metric.value })));
-        onINP((metric) => setVitalsData(prev => ({ ...prev, inp: metric.value })));
-        onTTFB((metric) => setVitalsData(prev => ({ ...prev, ttfb: metric.value })));
-      });
-    }
+    // Core Web Vitals monitoring with error handling
+    const loadWebVitals = async () => {
+      try {
+        const webVitals = await import('web-vitals');
+        if (webVitals) {
+          webVitals.onCLS?.((metric) => setVitalsData(prev => ({ ...prev, cls: metric.value })));
+          webVitals.onFCP?.((metric) => setVitalsData(prev => ({ ...prev, fcp: metric.value })));
+          webVitals.onLCP?.((metric) => setVitalsData(prev => ({ ...prev, lcp: metric.value })));
+          webVitals.onINP?.((metric) => setVitalsData(prev => ({ ...prev, inp: metric.value })));
+          webVitals.onTTFB?.((metric) => setVitalsData(prev => ({ ...prev, ttfb: metric.value })));
+        }
+      } catch (error) {
+        console.log('Web vitals not available:', error);
+      }
+    };
+
+    loadWebVitals();
 
     // Performance monitoring
     const observer = new PerformanceObserver((list) => {
