@@ -75,8 +75,12 @@ import GlossaryPage from "./pages/GlossaryPage";
 import StatsPage from "./pages/StatsPage";
 
 // New core pages
-import TestimonialsPage from "./pages/TestimonialsPage";
-import IndustriesPage from "./pages/IndustriesPage";
+  import TestimonialsPage from "./pages/TestimonialsPage";
+  import IndustriesPage from "./pages/IndustriesPage";
+  // E-E-A-T Pages
+  import ProjectsPage from "./pages/ProjectsPage";
+  import TeamPage from "./pages/TeamPage";
+  import FAQHubPage from "./pages/FAQHubPage";
 // New tool pages
 import InstantQuoteCalculatorPage from "./pages/tools/InstantQuoteCalculatorPage";
 import AppointmentSchedulerPage from "./pages/tools/AppointmentSchedulerPage";
@@ -161,6 +165,11 @@ function App() {
                   {/* New Core Pages */}
                   <Route path="/testimonials" element={<TestimonialsPage />} />
                   <Route path="/industries" element={<IndustriesPage />} />
+                  
+                  {/* E-E-A-T Pages */}
+                  <Route path="/projects" element={<ProjectsPage />} />
+                  <Route path="/team" element={<TeamPage />} />
+                  <Route path="/faq-hub" element={<FAQHubPage />} />
                   
                   {/* Tool Pages */}
                   <Route path="/instant-quote" element={<InstantQuoteCalculatorPage />} />
