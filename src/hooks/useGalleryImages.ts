@@ -14,14 +14,14 @@ export const useGalleryImages = (): GalleryImages => {
     item.description.toLowerCase().includes('van')
   ).slice(0, 3); // Take the first 3 van-related images
   
-  // Use the new uploaded IDG fleet vans image for fleet wraps section
-  const fleetWrapVan = "/lovable-uploads/a8335462-2c63-40ad-8bd2-2aead73abfb1.png";
+  // Use the State Farm SUV image for fleet wraps section
+  const fleetWrapVan = "/lovable-uploads/905af9f6-be4c-4556-b437-8aab136a5307.png";
   
-  // Use the Cybertruck image for color change wraps section
-  const colorChangeVan = "/lovable-uploads/020ef79d-a051-4f6f-9c1e-d4ded8bf2260.png";
+  // Use the sports car color change image for color change wraps section
+  const colorChangeVan = "/lovable-uploads/ca1d6cca-00da-4bd7-8d01-7ffc62508a02.png";
   
-  // Use the commercial graphics image
-  const commercialGraphics = "/lovable-uploads/bc84c157-8367-4197-9b08-8ef75da53ce3.png";
+  // Use the roofing truck image for commercial graphics
+  const commercialGraphics = "/lovable-uploads/ea32c99e-7c6e-43f1-b122-f3c64fb9fdf2.png";
 
   return {
     fleetWrapVan,

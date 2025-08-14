@@ -14,19 +14,19 @@ const GenericServiceHero: React.FC<GenericServiceHeroProps> = ({ serviceType }) 
         return {
           title: 'Premium Car Wraps',
           subtitle: 'Transform your car into a head-turning masterpiece',
-          image: 'https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&w=2000&q=80'
+          image: '/lovable-uploads/ca1d6cca-00da-4bd7-8d01-7ffc62508a02.png'
         };
       case 'truck':
         return {
           title: 'Professional Truck Wraps',
           subtitle: 'Turn your truck into a mobile billboard that drives business',
-          image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=2000&q=80'
+          image: '/lovable-uploads/ea32c99e-7c6e-43f1-b122-f3c64fb9fdf2.png'
         };
       case 'van':
         return {
           title: 'Expert Van Wraps',
           subtitle: 'Maximize your van\'s marketing potential with professional wraps',
-          image: 'https://images.unsplash.com/photo-1586953208448-b95a79798f07?auto=format&fit=crop&w=2000&q=80'
+          image: '/lovable-uploads/51269403-3cfa-4a99-ae4b-cfab9a74115b.png'
         };
       case 'luxury':
         return {
@@ -38,13 +38,13 @@ const GenericServiceHero: React.FC<GenericServiceHeroProps> = ({ serviceType }) 
         return {
           title: 'Designer Custom Wraps',
           subtitle: 'Unique, artistic wraps that make your vehicle a work of art',
-          image: 'https://images.unsplash.com/photo-1544829099-b9b6367fc6e4?auto=format&fit=crop&w=2000&q=80'
+          image: '/lovable-uploads/a63bad58-2435-4c95-a1d1-77e8f66e8085.png'
         };
       default:
         return {
           title: 'Professional Vehicle Wraps',
           subtitle: 'Transform any vehicle with our expert wrap services',
-          image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=2000&q=80'
+          image: '/lovable-uploads/905af9f6-be4c-4556-b437-8aab136a5307.png'
         };
     }
   };

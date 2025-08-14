@@ -226,5 +226,95 @@ export const galleryItems: GalleryItem[] = [
     description: 'Professional green sedan featuring Country Financial agent branding with personal photo and comprehensive insurance service offerings.',
     client: 'Country Financial - Justin Boyd',
     location: 'Illinois'
+  },
+  {
+    id: 26,
+    title: 'State Farm Insurance SUV Wrap',
+    category: 'Commercial Graphics',
+    image: '/lovable-uploads/905af9f6-be4c-4556-b437-8aab136a5307.png',
+    description: 'Professional State Farm agent vehicle wrap with agent photo and branding',
+    client: 'Anna Schappaugh - State Farm',
+    location: 'Chicago, IL'
+  },
+  {
+    id: 27,
+    title: 'MasterCraft Boat Wrap',
+    category: 'Partial Wraps',
+    image: '/lovable-uploads/3223ed4b-96c9-4326-8477-aa6224543822.png',
+    description: 'Custom boat wrap installation for MasterCraft watercraft',
+    client: 'Private Client',
+    location: 'Chicago, IL'
+  },
+  {
+    id: 28,
+    title: 'Political Campaign Vehicle Wrap',
+    category: 'Commercial Graphics',
+    image: '/lovable-uploads/3866ee24-e044-4320-8675-8c853fdc4245.png',
+    description: 'Professional political campaign vehicle wrap with candidate photo',
+    client: 'Richards for McLean County Clerk',
+    location: 'Illinois'
+  },
+  {
+    id: 29,
+    title: 'Patriotic SUV Wrap Design',
+    category: 'Designer Wraps',
+    image: '/lovable-uploads/2ebb4134-2d8f-442b-880a-018279e6c55a.png',
+    description: 'Custom patriotic themed vehicle wrap with stars and stripes design',
+    client: 'Kathy Michael Campaign',
+    location: 'Illinois'
+  },
+  {
+    id: 30,
+    title: 'Real Estate Van Wrap',
+    category: 'Commercial Graphics',
+    image: '/lovable-uploads/51269403-3cfa-4a99-ae4b-cfab9a74115b.png',
+    description: 'Professional real estate agent van wrap with bold branding',
+    client: 'Ryan Dallas Real Estate',
+    location: 'Illinois'
+  },
+  {
+    id: 31,
+    title: 'All Angles Roofing Truck Wrap',
+    category: 'Commercial Graphics',
+    image: '/lovable-uploads/ea32c99e-7c6e-43f1-b122-f3c64fb9fdf2.png',
+    description: 'Professional roofing company truck wrap with measurement graphics',
+    client: 'All Angles Roofing',
+    location: 'Illinois'
+  },
+  {
+    id: 32,
+    title: 'Colorado Pickup Truck Designer Wrap',
+    category: 'Designer Wraps',
+    image: '/lovable-uploads/a63bad58-2435-4c95-a1d1-77e8f66e8085.png',
+    description: 'Bold yellow and black custom graphics on Chevrolet Colorado',
+    client: 'Private Client',
+    location: 'Chicago, IL'
+  },
+  {
+    id: 33,
+    title: 'Construction Company SUV Wrap',
+    category: 'Commercial Graphics',
+    image: '/lovable-uploads/98c22c48-e4fc-40d9-bbb0-b1f4c6dc9fff.png',
+    description: 'Professional construction company vehicle wrap with company branding',
+    client: 'Koch Construction',
+    location: 'Illinois'
+  },
+  {
+    id: 34,
+    title: 'Entertainment Van Wrap',
+    category: 'Commercial Graphics',
+    image: '/lovable-uploads/b9a1aa4c-3d1a-482a-9b9d-de00b53de732.png',
+    description: 'Bold entertainment venue van wrap with promotional graphics',
+    client: 'Kappa Mens Club',
+    location: 'Illinois'
+  },
+  {
+    id: 35,
+    title: 'Sports Car Color Change Wrap',
+    category: 'Color Change Wraps',
+    image: '/lovable-uploads/ca1d6cca-00da-4bd7-8d01-7ffc62508a02.png',
+    description: 'Stunning purple to blue gradient with yellow accents on sports car',
+    client: 'Private Client',
+    location: 'Chicago, IL'
   }
 ];

@@ -9,8 +9,8 @@ const LuxuryExoticHero = () => {
     <div className="relative bg-black overflow-hidden">
       <div className="absolute inset-0 z-0">
         <img 
-          src="https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?auto=format&fit=crop&w=2000&q=80"
-          alt="Exotic Lamborghini with premium wrap finish"
+          src="/lovable-uploads/ca1d6cca-00da-4bd7-8d01-7ffc62508a02.png"
+          alt="Exotic sports car with premium color change wrap finish"
           className="w-full h-full object-cover opacity-60"
         />
       </div>

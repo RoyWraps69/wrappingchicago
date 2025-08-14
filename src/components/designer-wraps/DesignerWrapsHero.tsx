@@ -9,8 +9,8 @@ const DesignerWrapsHero = () => {
     <div className="relative bg-black overflow-hidden">
       <div className="absolute inset-0 z-0">
         <img 
-          src="https://images.unsplash.com/photo-1562911791-c7a97b729ec5?auto=format&fit=crop&w=2000&q=80"
-          alt="Custom wrapped sports car with unique design elements"
+          src="/lovable-uploads/a63bad58-2435-4c95-a1d1-77e8f66e8085.png"
+          alt="Custom wrapped yellow pickup truck with unique black design elements"
           className="w-full h-full object-cover opacity-60"
         />
       </div>
