@@ -73,6 +73,12 @@ import PartialWrapsPage from "./pages/PartialWrapsPage";
 import AIWrapIdeasPage from "./pages/AIWrapIdeasPage";
 import GlossaryPage from "./pages/GlossaryPage";
 import StatsPage from "./pages/StatsPage";
+import PlumbingWrapsPage from "./pages/PlumbingWrapsPage";
+import HVACWrapsPage from "./pages/HVACWrapsPage";
+import ElectricalWrapsPage from "./pages/ElectricalWrapsPage";
+import MoversWrapsPage from "./pages/MoversWrapsPage";
+import LogisticsWrapsPage from "./pages/LogisticsWrapsPage";
+import DeliveryWrapsPage from "./pages/DeliveryWrapsPage";
 
 // New core pages
   import TestimonialsPage from "./pages/TestimonialsPage";
@@ -89,13 +95,6 @@ import AppointmentSchedulerPage from "./pages/tools/AppointmentSchedulerPage";
 import VehicleWrapTrendsArticle from "./pages/blog/VehicleWrapTrendsArticle";
 import VehicleWrapROIArticle from "./pages/blog/VehicleWrapROIArticle";
 
-// Trade-specific pages
-import PlumbingWrapsPage from "./pages/trades/PlumbingWrapsPage";
-import HVACWrapsPage from "./pages/trades/HVACWrapsPage";
-import ElectricalWrapsPage from "./pages/trades/ElectricalWrapsPage";
-import MoversWrapsPage from "./pages/trades/MoversWrapsPage";
-import LogisticsWrapsPage from "./pages/trades/LogisticsWrapsPage";
-import DeliveryWrapsPage from "./pages/trades/DeliveryWrapsPage";
 
 // Legal and other pages
 import PrivacyPolicyPage from "./pages/PrivacyPolicyPage";
