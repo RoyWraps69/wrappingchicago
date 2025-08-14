@@ -122,10 +122,10 @@ import SocialProofIntegration from './components/social/SocialProofIntegration';
 import EntityKnowledgeGraph from './components/seo/EntityKnowledgeGraph';
 import TechnicalSEOMonitor from './components/analytics/TechnicalSEOMonitor';
 import Perfect10Compliance from './components/seo/Perfect10ComplianceSimplified';
-import SitemapGenerator from './components/seo/SitemapGenerator';
-import AccessibilityEnforcer from './components/seo/AccessibilityEnforcer';
-import EEATOptimizer from './components/seo/EEATOptimizer';
-import LocalSEOOptimizer from './components/seo/LocalSEOOptimizer';
+import SitemapGenerator from './components/seo/SitemapGeneratorSafe';
+import AccessibilityEnforcer from './components/seo/AccessibilityEnforcerSafe';
+import EEATOptimizer from './components/seo/EEATOptimizerSafe';
+import LocalSEOOptimizer from './components/seo/LocalSEOOptimizerSafe';
 
 const queryClient = new QueryClient();
 
@@ -138,7 +138,17 @@ function App() {
             <Toaster />
             <Sonner />
             <BrowserRouter>
-              {/* Minimal components to ensure stability */}
+              {/* Google Perfect 10 Requirements 2025 - SAFE VERSIONS */}
+              <Perfect10Compliance 
+                pageTitle="Vehicle Wraps Chicago - Perfect 10 Compliance"
+                pageDescription="Professional vehicle wrap services meeting all Google 2025 requirements"
+                pageUrl="https://www.wrappingchicago.com"
+              />
+              <SitemapGenerator />
+              <AccessibilityEnforcer />
+              <EEATOptimizer pageType="home" />
+              <LocalSEOOptimizer locationName="Chicago" isMainLocation />
+              {/* Core Components */}
               <EnhancedGoogleAnalytics />
               <CoreWebVitalsOptimizer />
               <ScrollToTop />

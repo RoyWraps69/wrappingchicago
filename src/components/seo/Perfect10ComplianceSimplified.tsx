@@ -18,6 +18,9 @@ const Perfect10Compliance: React.FC<Perfect10ComplianceProps> = ({
   lastModified = new Date().toISOString(),
   structuredData = []
 }) => {
+  console.log('Perfect10Compliance rendering with:', { pageTitle, pageDescription, pageUrl });
+  
+  try {
   
   // Generate robots content based on page type
   const getRobotsContent = () => {
@@ -131,6 +134,10 @@ const Perfect10Compliance: React.FC<Perfect10ComplianceProps> = ({
       `}</style>
     </Helmet>
   );
+  } catch (error) {
+    console.error('Perfect10Compliance error:', error);
+    return null;
+  }
 };
 
 export default Perfect10Compliance;
