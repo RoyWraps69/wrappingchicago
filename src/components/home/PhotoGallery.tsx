@@ -5,39 +5,39 @@ const PhotoGallery: React.FC = () => {
   const galleryImages = [
     {
       id: 1,
-      src: 'https://images.unsplash.com/photo-1649972904349-6e44c42644a7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
-      alt: 'Professional vehicle wrap installation process showing attention to detail',
-      title: 'Expert Installation'
+      src: '/lovable-uploads/905af9f6-be4c-4556-b437-8aab136a5307.png',
+      alt: 'State Farm insurance agent SUV wrap with professional branding',
+      title: 'Insurance Agent Wrap'
     },
     {
       id: 2,
-      src: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
-      alt: 'Modern design studio with latest technology for vehicle wrap design',
-      title: 'Design Studio'
+      src: '/lovable-uploads/ea32c99e-7c6e-43f1-b122-f3c64fb9fdf2.png',
+      alt: 'All Angles roofing company truck wrap with measurement graphics',
+      title: 'Commercial Truck Wrap'
     },
     {
       id: 3,
-      src: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
-      alt: 'Consultation session with client discussing vehicle wrap options',
-      title: 'Client Consultation'
+      src: '/lovable-uploads/51269403-3cfa-4a99-ae4b-cfab9a74115b.png',
+      alt: 'Real estate agent van wrap with bold professional branding',
+      title: 'Real Estate Van Wrap'
     },
     {
       id: 4,
-      src: 'https://images.unsplash.com/photo-1500673922987-e212871fec22?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
-      alt: 'Beautiful finished vehicle wrap showcasing vibrant colors and professional quality',
-      title: 'Stunning Results'
+      src: '/lovable-uploads/ca1d6cca-00da-4bd7-8d01-7ffc62508a02.png',
+      alt: 'Sports car with stunning purple to blue gradient color change wrap',
+      title: 'Color Change Wrap'
     },
     {
       id: 5,
-      src: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
-      alt: 'Fleet of professionally wrapped commercial vehicles ready for Chicago streets',
-      title: 'Fleet Solutions'
+      src: '/lovable-uploads/a63bad58-2435-4c95-a1d1-77e8f66e8085.png',
+      alt: 'Yellow Chevrolet Colorado with bold black designer graphics',
+      title: 'Designer Truck Wrap'
     },
     {
       id: 6,
-      src: 'https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
-      alt: 'Premium materials and tools used for high-quality vehicle wraps',
-      title: 'Quality Materials'
+      src: '/lovable-uploads/3866ee24-e044-4320-8675-8c853fdc4245.png',
+      alt: 'Political campaign vehicle wrap with candidate photo and branding',
+      title: 'Campaign Vehicle Wrap'
     }
   ];
 

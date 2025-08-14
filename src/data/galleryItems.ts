@@ -4,7 +4,7 @@ import { GalleryItem } from '@/types/gallery';
 export const galleryItems: GalleryItem[] = [
   { 
     id: 1, 
-    title: 'White Ford Transit Van with Blue Fleet Graphics', 
+    title: 'IDG Fleet Vans with Modern Tech Branding',
     category: 'Fleet Wraps',
     image: '/lovable-uploads/efdbc4bf-1f04-42bb-a904-f52dae7bef6c.png', 
     description: 'Professional white Ford Transit van featuring bold blue company branding and contact information for enhanced business visibility.',
@@ -13,7 +13,7 @@ export const galleryItems: GalleryItem[] = [
   },
   { 
     id: 2, 
-    title: 'Tesla Cybertruck Satin Black Wrap', 
+    title: 'Tesla Cybertruck Matte Black Color Change', 
     category: 'Color Change Wraps',
     image: '/lovable-uploads/676b4902-7b81-4619-90d8-8feb1f986636.png', 
     description: 'Striking Tesla Cybertruck transformed with premium satin black vinyl wrap, creating a sleek, modern appearance.',
@@ -22,7 +22,7 @@ export const galleryItems: GalleryItem[] = [
   },
   { 
     id: 3, 
-    title: 'White Delivery Van with Red Commercial Graphics', 
+    title: 'Mr. Appliance Professional Service Van Wrap', 
     category: 'Commercial Graphics',
     image: '/lovable-uploads/9bb3d94e-589d-4daf-b35e-e19e80610439.png', 
     description: 'Clean white delivery van featuring bright red commercial graphics with professional service branding and contact details.',
@@ -31,7 +31,7 @@ export const galleryItems: GalleryItem[] = [
   },
   { 
     id: 4, 
-    title: 'Food Service Van with Colorful Brand Graphics', 
+    title: 'Window Washing Wizard Character Van Wrap', 
     category: 'Partial Wraps',
     image: '/lovable-uploads/cc335205-fcef-4ca9-a269-5cf6dee478ed.png', 
     description: 'White commercial van featuring vibrant food service branding with appetizing imagery and business information.',
@@ -40,7 +40,7 @@ export const galleryItems: GalleryItem[] = [
   },
   { 
     id: 5, 
-    title: 'Black Pickup Truck with Yellow Fleet Branding', 
+    title: 'Country Financial Agent Professional Car Wrap', 
     category: 'Fleet Wraps',
     image: '/lovable-uploads/76973c14-ac60-4c81-afa1-555b0f4f5f36.png', 
     description: 'Black pickup truck featuring bright yellow corporate fleet graphics with professional company branding and contact information.',
