@@ -145,5 +145,86 @@ export const galleryItems: GalleryItem[] = [
     description: 'Modern technology company fleet SUVs featuring consistent brand identity with "think tech" messaging and professional corporate graphics.',
     client: 'IDG Technology',
     location: 'Chicago, IL'
+  },
+  { 
+    id: 17, 
+    title: 'The Door Doctor Blue Van Fleet Graphics', 
+    category: 'Commercial Graphics',
+    image: '/lovable-uploads/b3090742-c9d0-454e-9621-3036eecb82c2.png', 
+    description: 'Professional blue van featuring "The Door Doctor" garage door service branding with character mascot and clear contact information.',
+    client: 'The Door Doctor',
+    location: 'Bloomington, IL'
+  },
+  { 
+    id: 18, 
+    title: 'Window Washing Wizard Character SUV Wrap', 
+    category: 'Commercial Graphics',
+    image: '/lovable-uploads/417c465a-5666-4e76-8a80-0b9eace442f5.png', 
+    description: 'Creative SUV wrap featuring "The Window Washing Wizard" with custom cartoon character and professional service branding.',
+    client: 'The Window Washing Wizard',
+    location: 'Chicago, IL'
+  },
+  { 
+    id: 19, 
+    title: 'Custom Anime Character Designer Wrap', 
+    category: 'Designer Wraps',
+    image: '/lovable-uploads/c2d02192-2880-498a-afd4-93ae0f099816.png', 
+    description: 'Vibrant yellow sedan featuring custom anime character artwork with gradient color transitions and artistic design elements.',
+    client: 'Private Collector',
+    location: 'Chicago, IL'
+  },
+  { 
+    id: 20, 
+    title: 'State Farm Agent Professional Car Wrap', 
+    category: 'Commercial Graphics',
+    image: '/lovable-uploads/78e3b0ad-643e-408d-8cd9-b05c84d25638.png', 
+    description: 'Professional red sedan featuring State Farm agent branding with personal photo and contact information for insurance services.',
+    client: 'Chris Mizell - State Farm',
+    location: 'Central Illinois'
+  },
+  { 
+    id: 21, 
+    title: 'Changing Seasons Landscaping Truck Wrap', 
+    category: 'Commercial Graphics',
+    image: '/lovable-uploads/5a4d8697-8f9d-4f43-8fb6-5f15bae20506.png', 
+    description: 'Large commercial truck featuring Changing Seasons landscape company branding with seasonal leaf design and comprehensive service listing.',
+    client: 'Changing Seasons Lawn and Landscape LLC',
+    location: 'Central Illinois'
+  },
+  { 
+    id: 22, 
+    title: 'Purple to Blue Gradient Color Change Wrap', 
+    category: 'Color Change Wraps',
+    image: '/lovable-uploads/39639a03-62f6-4030-8282-2fcb749e3e39.png', 
+    description: 'Stunning sports car featuring premium purple to blue gradient color change wrap with smooth transition effects.',
+    client: 'Performance Car Enthusiast',
+    location: 'Chicago, IL'
+  },
+  { 
+    id: 23, 
+    title: 'Oak Bros Tree Service Fleet Truck Installation', 
+    category: 'Fleet Wraps',
+    image: '/lovable-uploads/6e0e5c4d-d69b-436b-9490-2476b1158b50.png', 
+    description: 'Professional tree service company truck wrap featuring Oak Bros branding with green and yellow color scheme and service details.',
+    client: 'Oak Bros Tree Removal & Stump Grinding',
+    location: 'Bloomington, IL'
+  },
+  { 
+    id: 24, 
+    title: 'Mr. Appliance Service Van Professional Wrap', 
+    category: 'Commercial Graphics',
+    image: '/lovable-uploads/214e827b-16f4-448a-9690-7c21ff46dca3.png', 
+    description: 'Clean white service van featuring Mr. Appliance professional branding with orange and blue accents and neighborhood company messaging.',
+    client: 'Mr. Appliance',
+    location: 'Bloomington, IL'
+  },
+  { 
+    id: 25, 
+    title: 'Country Financial Agent Car Wrap', 
+    category: 'Commercial Graphics',
+    image: '/lovable-uploads/8d49145d-4d3f-4667-b035-9d2020ace530.png', 
+    description: 'Professional green sedan featuring Country Financial agent branding with personal photo and comprehensive insurance service offerings.',
+    client: 'Country Financial - Justin Boyd',
+    location: 'Illinois'
   }
 ];

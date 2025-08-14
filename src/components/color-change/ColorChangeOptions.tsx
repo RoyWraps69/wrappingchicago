@@ -6,38 +6,38 @@ const ColorChangeOptions = () => {
     {
       title: "Matte Finish",
       description: "Non-reflective, sophisticated finish that adds a premium, stealth look to any vehicle.",
-      image: "https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=800&q=80",
-      alt: "Luxury sports car with matte black wrap"
+      image: "/lovable-uploads/0316f206-884b-44b4-bdb3-e0f7962a1714.png",
+      alt: "Mercedes sedan with matte black color change wrap"
     },
     {
       title: "Gloss Finish",
       description: "Vibrant, high-shine finish that enhances your vehicle's lines and creates a showroom-quality appearance.",
-      image: "https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?auto=format&fit=crop&w=800&q=80",
-      alt: "Sports car with glossy blue wrap"
+      image: "/lovable-uploads/9de106b5-94cb-4fd1-a7c7-5c75c75b7cbb.png",
+      alt: "BMW sports car with metallic blue gloss finish"
     },
     {
       title: "Satin Finish",
       description: "The perfect middle ground between matte and gloss, offering a subtle sheen with an elegant look.",
-      image: "https://images.unsplash.com/photo-1494905998402-395d579af36f?auto=format&fit=crop&w=800&q=80",
-      alt: "Luxury sedan with satin silver wrap"
+      image: "/lovable-uploads/020ef79d-a051-4f6f-9c1e-d4ded8bf2260.png",
+      alt: "Tesla Cybertruck with satin black color change wrap"
     },
     {
       title: "Chrome & Metallic",
       description: "Eye-catching reflective finishes that create a stunning, mirror-like or metallic appearance.",
-      image: "https://images.unsplash.com/photo-1526726538690-5cbf956ae2fd?auto=format&fit=crop&w=800&q=80",
-      alt: "Sports car with chrome finish wrap"
+      image: "/lovable-uploads/e021924c-a0a1-407c-9d11-13372909975f.png",
+      alt: "Jeep Grand Cherokee with matte black metallic finish"
     },
     {
       title: "Color Shift",
       description: "Advanced vinyl that changes color depending on the viewing angle and lighting conditions.",
-      image: "https://images.unsplash.com/photo-1562911791-c7a97b729ec5?auto=format&fit=crop&w=800&q=80",
-      alt: "Supercar with color shifting wrap that changes from purple to blue"
+      image: "/lovable-uploads/39639a03-62f6-4030-8282-2fcb749e3e39.png",
+      alt: "Sports car with purple to blue gradient color shift wrap"
     },
     {
       title: "Custom Colors",
       description: "Match any specific color or create a fully custom finish for a truly unique vehicle.",
-      image: "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=800&q=80",
-      alt: "Sports car with custom color wrap"
+      image: "/lovable-uploads/c2d02192-2880-498a-afd4-93ae0f099816.png",
+      alt: "Custom anime character wrap with vibrant yellow and artistic design"
     }
   ];
 
