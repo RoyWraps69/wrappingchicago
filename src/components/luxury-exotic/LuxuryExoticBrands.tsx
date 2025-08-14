@@ -6,38 +6,38 @@ const LuxuryExoticBrands = () => {
     {
       name: "Ferrari",
       description: "Specialized wrapping techniques for Ferrari's unique curves and design elements. Our team understands the precision required for models like the 488, F8 Tributo, and SF90 Stradale.",
-      image: "https://images.unsplash.com/photo-1592198084033-aade902d1aae?auto=format&fit=crop&w=800&q=80",
-      alt: "Red Ferrari with premium wrap"
+      image: "/lovable-uploads/ca1d6cca-00da-4bd7-8d01-7ffc62508a02.png",
+      alt: "Premium sports car with custom wrap finish"
     },
     {
       name: "Lamborghini",
       description: "Expert handling of Lamborghini's aggressive styling and complex body panels. We've wrapped numerous Huracán, Aventador, and Urus models with flawless results.",
-      image: "https://images.unsplash.com/photo-1580274455191-1c62238fa333?auto=format&fit=crop&w=800&q=80",
-      alt: "Lamborghini with custom wrap finish"
+      image: "/lovable-uploads/39639a03-62f6-4030-8282-2fcb749e3e39.png",
+      alt: "Lamborghini with custom wrap design"
     },
     {
       name: "Porsche",
       description: "Precision wrapping for Porsche's iconic designs. Our team has extensive experience with 911, Taycan, Panamera, and other models in the Porsche lineup.",
-      image: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=80",
+      image: "/lovable-uploads/2ebb4134-2d8f-442b-880a-018279e6c55a.png",
       alt: "Porsche sports car with premium wrap"
     },
     {
       name: "McLaren",
       description: "Specialized techniques for McLaren's advanced aerodynamics and carbon fiber components. We're experienced with models including the 720S, GT, and Artura.",
-      image: "https://images.unsplash.com/photo-1572635196237-14b3f281503f?auto=format&fit=crop&w=800&q=80",
+      image: "/lovable-uploads/a63bad58-2435-4c95-a1d1-77e8f66e8085.png",
       alt: "McLaren with custom wrap design"
     },
     {
       name: "Aston Martin",
       description: "Meticulous care for Aston Martin's elegant lines and distinctive features. Our team handles models like the DB11, Vantage, and DBS with exceptional attention to detail.",
-      image: "https://images.unsplash.com/photo-1525609004556-c46c7d6cf023?auto=format&fit=crop&w=800&q=80",
+      image: "/lovable-uploads/8d49145d-4d3f-4667-b035-9d2020ace530.png",
       alt: "Aston Martin with luxury wrap finish"
     },
     {
       name: "Other Luxury Brands",
       description: "We also specialize in wrapping other high-end vehicles including Mercedes-AMG, BMW M, Audi R8, Bentley, Rolls-Royce, Maserati, and more.",
-      image: "https://images.unsplash.com/photo-1549399542-7e8f2e928464?auto=format&fit=crop&w=800&q=80",
-      alt: "Luxury Mercedes-Benz with premium wrap"
+      image: "/lovable-uploads/c2d02192-2880-498a-afd4-93ae0f099816.png",
+      alt: "Luxury vehicle with premium wrap"
     }
   ];
 

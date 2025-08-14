@@ -6,38 +6,38 @@ const DesignerWrapsOptions = () => {
     {
       title: "Custom Patterns",
       description: "Unique geometric patterns, abstract designs, and artistic motifs that transform your vehicle into moving art.",
-      image: "https://images.unsplash.com/photo-1605152322258-121402f52eef?auto=format&fit=crop&w=800&q=80",
-      alt: "Sports car with geometric pattern wrap design"
+      image: "/lovable-uploads/ca1d6cca-00da-4bd7-8d01-7ffc62508a02.png",
+      alt: "Sports car with custom purple to blue gradient color change wrap"
     },
     {
       title: "Color Shift & Chameleon",
       description: "Advanced vinyl that changes colors as light hits from different angles, creating a mesmerizing effect.",
-      image: "https://images.unsplash.com/photo-1570324165334-8b5be4bea06f?auto=format&fit=crop&w=800&q=80",
-      alt: "Sports car with color shifting wrap that changes from purple to teal"
+      image: "/lovable-uploads/39639a03-62f6-4030-8282-2fcb749e3e39.png",
+      alt: "Sports car with color shifting wrap that changes from purple to blue"
     },
     {
       title: "Textured Finishes",
       description: "Add visual and tactile depth with carbon fiber, brushed metal, leather, or wood grain textures.",
-      image: "https://images.unsplash.com/photo-1533106418989-88406c7cc8ca?auto=format&fit=crop&w=800&q=80",
-      alt: "Luxury car with carbon fiber textured wrap elements"
+      image: "/lovable-uploads/2ebb4134-2d8f-442b-880a-018279e6c55a.png",
+      alt: "Political campaign vehicle with patriotic themed textured wrap"
     },
     {
       title: "Multi-Tone & Fades",
       description: "Combine multiple colors with professional fades and transitions for a custom, premium appearance.",
-      image: "https://images.unsplash.com/photo-1542282088-fe8426682b8f?auto=format&fit=crop&w=800&q=80",
-      alt: "Sports car with two-tone wrap featuring color fade"
+      image: "/lovable-uploads/a63bad58-2435-4c95-a1d1-77e8f66e8085.png",
+      alt: "Yellow Colorado truck with black multi-tone designer graphics"
     },
     {
       title: "Custom Graphics",
       description: "Incorporate custom illustrations, artwork, and graphics designed specifically for your vehicle.",
-      image: "https://images.unsplash.com/photo-1570324404364-f0b60fa6a1de?auto=format&fit=crop&w=800&q=80",
-      alt: "Vehicle with custom graphic artwork wrap"
+      image: "/lovable-uploads/c2d02192-2880-498a-afd4-93ae0f099816.png",
+      alt: "Vehicle with custom anime character artwork and graphics"
     },
     {
       title: "Reflective & Specialty",
       description: "Stand out day and night with reflective materials, glow-in-the-dark elements, and specialty finishes.",
-      image: "https://images.unsplash.com/photo-1563723498198-0caae5b24a68?auto=format&fit=crop&w=800&q=80",
-      alt: "Sports car with reflective wrap elements"
+      image: "/lovable-uploads/8d49145d-4d3f-4667-b035-9d2020ace530.png",
+      alt: "Green Country Financial vehicle with professional specialty graphics"
     }
   ];
 

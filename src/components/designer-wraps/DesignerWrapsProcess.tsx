@@ -29,7 +29,7 @@ const DesignerWrapsProcess = () => {
               </div>
               <div className="md:w-1/2 md:pl-12">
                 <img 
-                  src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80"
+                  src="/lovable-uploads/905af9f6-be4c-4556-b437-8aab136a5307.png"
                   alt="Design consultation with client and designer discussing wrap concepts"
                   className="rounded-lg shadow-md"
                 />
@@ -55,7 +55,7 @@ const DesignerWrapsProcess = () => {
               </div>
               <div className="md:w-1/2 md:pl-12 md:order-1">
                 <img 
-                  src="https://images.unsplash.com/photo-1558655146-9f40138edfeb?auto=format&fit=crop&w=800&q=80"
+                  src="/lovable-uploads/ca1d6cca-00da-4bd7-8d01-7ffc62508a02.png"
                   alt="Designer creating custom vehicle wrap design on computer"
                   className="rounded-lg shadow-md"
                 />
@@ -81,7 +81,7 @@ const DesignerWrapsProcess = () => {
               </div>
               <div className="md:w-1/2 md:pl-12">
                 <img 
-                  src="https://images.unsplash.com/photo-1588497859490-85d1c17db96d?auto=format&fit=crop&w=800&q=80"
+                  src="/lovable-uploads/ea32c99e-7c6e-43f1-b122-f3c64fb9fdf2.png"
                   alt="Large format printer producing custom vehicle wrap graphics"
                   className="rounded-lg shadow-md"
                 />
@@ -106,7 +106,7 @@ const DesignerWrapsProcess = () => {
               </div>
               <div className="md:w-1/2 md:pl-12 md:order-1">
                 <img 
-                  src="https://images.unsplash.com/photo-1625131258126-d1abe3bc1c95?auto=format&fit=crop&w=800&q=80"
+                  src="/lovable-uploads/51269403-3cfa-4a99-ae4b-cfab9a74115b.png"
                   alt="Professional installer applying custom wrap to vehicle"
                   className="rounded-lg shadow-md"
                 />
@@ -132,7 +132,7 @@ const DesignerWrapsProcess = () => {
               </div>
               <div className="md:w-1/2 md:pl-12">
                 <img 
-                  src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=800&q=80"
+                  src="/lovable-uploads/a63bad58-2435-4c95-a1d1-77e8f66e8085.png"
                   alt="Completed custom wrapped vehicle with unique design"
                   className="rounded-lg shadow-md"
                 />
