@@ -138,17 +138,7 @@ function App() {
             <Toaster />
             <Sonner />
             <BrowserRouter>
-              {/* Google Perfect 10 Requirements 2025 - With Error Handling */}
-              <Perfect10Compliance 
-                pageTitle="Vehicle Wraps Chicago - Perfect 10 Compliance"
-                pageDescription="Professional vehicle wrap services meeting all Google 2025 requirements"
-                pageUrl="https://www.wrappingchicago.com"
-              />
-              <SitemapGenerator />
-              <AccessibilityEnforcer />
-              <EEATOptimizer pageType="home" />
-              <LocalSEOOptimizer locationName="Chicago" isMainLocation />
-              {/* Core SEO Components */}
+              {/* Minimal components to ensure stability */}
               <EnhancedGoogleAnalytics />
               <CoreWebVitalsOptimizer />
               <ScrollToTop />
