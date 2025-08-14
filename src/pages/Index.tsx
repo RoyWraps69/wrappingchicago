@@ -4,6 +4,8 @@ import { SchemaDeduplicatorProvider } from "@/components/seo/SchemaDeduplicator"
 import Google2025SEOOptimizerCoordinated from "@/components/seo/Google2025SEOOptimizerCoordinated";
 import AEOOptimizerCoordinated from "@/components/seo/AEOOptimizerCoordinated";
 import LocalSEOBoosterCoordinated from "@/components/seo/LocalSEOBoosterCoordinated";
+import CompetitiveRankingBooster from "@/components/seo/CompetitiveRankingBooster";
+import LocalDominanceBooster from "@/components/seo/LocalDominanceBooster";
 import HomePageSections from "@/components/home/HomePageSections";
 
 const Index = () => {
@@ -63,10 +65,28 @@ const Index = () => {
 
   
   
+  const chicagoNeighborhoods = [
+    "Lakeview", "Logan Square", "Andersonville", "Bucktown", "Gold Coast",
+    "Lincoln Park", "Wicker Park", "River North", "Loop", "West Loop",
+    "Pilsen", "Little Village", "Chinatown", "Old Town", "North Center"
+  ];
+
   return (
     <SchemaDeduplicatorProvider>
       <SEOCoordinatorProvider>
-      {/* All SEO optimizers working together in harmony */}
+        {/* Competitive ranking boosters for top Google positions */}
+        <CompetitiveRankingBooster 
+          primaryKeyword="Chicago Vehicle Wraps"
+          location="Chicago, IL"
+          businessType="vehicle wrap"
+        />
+        <LocalDominanceBooster 
+          city="Chicago"
+          neighborhoods={chicagoNeighborhoods}
+          serviceRadius={25}
+        />
+        
+        {/* All SEO optimizers working together in harmony */}
       <Google2025SEOOptimizerCoordinated
         pageTitle="Chicago Vehicle Wraps for Plumbers, Electricians & HVAC | Get More Calls"
         pageDescription="Turn your work truck into a customer magnet! Chicago's trade professionals trust us for vehicle wraps that get noticed. Same week service, won't hurt your paint."
