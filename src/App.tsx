@@ -121,7 +121,7 @@ import GoogleMyBusinessSchema from './components/schemas/GoogleMyBusinessSchema'
 import SocialProofIntegration from './components/social/SocialProofIntegration';
 import EntityKnowledgeGraph from './components/seo/EntityKnowledgeGraph';
 import TechnicalSEOMonitor from './components/analytics/TechnicalSEOMonitor';
-import Perfect10Compliance from './components/seo/Perfect10Compliance';
+import Perfect10Compliance from './components/seo/Perfect10ComplianceSimplified';
 import SitemapGenerator from './components/seo/SitemapGenerator';
 import AccessibilityEnforcer from './components/seo/AccessibilityEnforcer';
 import EEATOptimizer from './components/seo/EEATOptimizer';
@@ -138,7 +138,17 @@ function App() {
             <Toaster />
             <Sonner />
             <BrowserRouter>
-              {/* Core SEO Components Only - Simplified for Stability */}
+              {/* Google Perfect 10 Requirements 2025 - With Error Handling */}
+              <Perfect10Compliance 
+                pageTitle="Vehicle Wraps Chicago - Perfect 10 Compliance"
+                pageDescription="Professional vehicle wrap services meeting all Google 2025 requirements"
+                pageUrl="https://www.wrappingchicago.com"
+              />
+              <SitemapGenerator />
+              <AccessibilityEnforcer />
+              <EEATOptimizer pageType="home" />
+              <LocalSEOOptimizer locationName="Chicago" isMainLocation />
+              {/* Core SEO Components */}
               <EnhancedGoogleAnalytics />
               <CoreWebVitalsOptimizer />
               <ScrollToTop />
