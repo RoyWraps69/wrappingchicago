@@ -63,6 +63,28 @@ const PricingMenu = () => {
               </ListItem>
               
               <ListItem
+                to="/instant-quote"
+                title="Instant Quote Calculator"
+                className="flex flex-col"
+              >
+                <div className="flex items-center mb-1">
+                  <DollarSign className="w-4 h-4 mr-2 text-brand-red" />
+                  Calculate your wrap cost in 30 seconds
+                </div>
+              </ListItem>
+              
+              <ListItem
+                to="/schedule-appointment"
+                title="Schedule Appointment"
+                className="flex flex-col"
+              >
+                <div className="flex items-center mb-1">
+                  <Info className="w-4 h-4 mr-2 text-brand-red" />
+                  Book your free consultation today
+                </div>
+              </ListItem>
+              
+              <ListItem
                 to="/about"
                 title="About Us"
                 className="flex flex-col"

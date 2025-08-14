@@ -133,13 +133,9 @@ function App() {
             <Toaster />
             <Sonner />
             <BrowserRouter>
+              {/* Core tracking and optimization only */}
               <EnhancedGoogleAnalytics />
-              <DynamicSitemapGenerator />
               <CoreWebVitalsOptimizer />
-              <GoogleMyBusinessSchema />
-              <SocialProofIntegration />
-              <EntityKnowledgeGraph />
-              <TechnicalSEOMonitor />
               <ScrollToTop />
               <ScrollToTopButton />
               <AppWithChat>
@@ -191,11 +187,7 @@ function App() {
                   <Route path="/shipping" element={<ShippingPage />} />
                   
                   
-                   {/* Service pages */}
-                   <Route path="/services" element={<ServicesPage />} />
-                   {/* Direct service routes should redirect to their dedicated pages */}
-                   <Route path="/services/fleet-wraps" element={<FleetWrapsPage />} />
-                   <Route path="/services/:service" element={<ServicesPage />} />
+                   {/* Service pages - SPECIFIC ROUTES FIRST */}
                    <Route path="/car-wraps" element={<CarWrapsPage />} />
                    <Route path="/truck-wraps" element={<TruckWrapsPage />} />
                    <Route path="/van-wraps" element={<VanWrapsPage />} />
@@ -209,6 +201,11 @@ function App() {
                    <Route path="/specialty-wraps" element={<SpecialtyWrapsPage />} />
                    <Route path="/retail-graphics" element={<RetailGraphicsPage />} />
                    <Route path="/partial-wraps" element={<PartialWrapsPage />} />
+                   
+                   {/* Generic service routes - AFTER specific routes */}
+                   <Route path="/services" element={<ServicesPage />} />
+                   <Route path="/services/fleet-wraps" element={<FleetWrapsPage />} />
+                   <Route path="/services/:service" element={<ServicesPage />} />
                   
                   {/* Trade-specific pages */}
                   <Route path="/plumbing-wraps" element={<PlumbingWrapsPage />} />
@@ -274,7 +271,7 @@ function App() {
               <Footer />
               </div>
               </AppWithChat>
-              {/* Removed conflicting SEO components that cause duplicate meta tags */}
+              {/* SEO components moved to individual pages to prevent conflicts */}
             </BrowserRouter>
           </TooltipProvider>
         </QueryClientProvider>

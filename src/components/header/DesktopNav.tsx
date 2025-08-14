@@ -9,6 +9,7 @@ import LocationsMenu from './LocationsMenu';
 const DesktopNav = () => {
   const navItems = [
     { label: 'Home', path: '/' },
+    { label: 'Industries', path: '/industries' },
     { label: 'Gallery', path: '/gallery' },
     { label: 'FAQ', path: '/faq' },
     { label: 'Contact', path: '/contact' }

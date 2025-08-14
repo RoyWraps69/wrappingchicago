@@ -36,6 +36,9 @@ const MobileNav: React.FC<MobileNavProps> = ({ isOpen, onClose }) => {
 
   const pricingItems = [
     { label: 'Pricing', path: '/pricing' },
+    { label: 'Instant Quote Calculator', path: '/instant-quote' },
+    { label: 'Schedule Appointment', path: '/schedule-appointment' },
+    { label: 'Industries We Serve', path: '/industries' },
     { label: 'About', path: '/about' },
     { label: 'Blog', path: '/blog' }
   ];
