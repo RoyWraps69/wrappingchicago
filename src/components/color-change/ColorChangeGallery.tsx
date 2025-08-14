@@ -7,28 +7,28 @@ import { ArrowRight } from 'lucide-react';
 const ColorChangeGallery = () => {
   const galleryItems = [
     {
-      image: "https://images.unsplash.com/photo-1606016159991-dfe4f2746ad5?auto=format&fit=crop&w=800&q=80",
-      alt: "Matte black wrapped luxury sports car",
-      title: "Matte Black Porsche 911",
-      description: "Complete matte black transformation with premium 3M vinyl wrap."
+      image: "/lovable-uploads/020ef79d-a051-4f6f-9c1e-d4ded8bf2260.png",
+      alt: "Tesla Cybertruck with satin black color change wrap",
+      title: "Tesla Cybertruck Satin Black Wrap",
+      description: "Complete satin black transformation with premium vinyl wrap."
     },
     {
-      image: "https://images.unsplash.com/photo-1615386693523-c360936e5aa3?auto=format&fit=crop&w=800&q=80",
-      alt: "Glossy blue wrapped sedan",
-      title: "Gloss Blue Tesla Model 3",
-      description: "Vibrant gloss blue wrap that enhances the vehicle's modern lines."
+      image: "/lovable-uploads/9de106b5-94cb-4fd1-a7c7-5c75c75b7cbb.png",
+      alt: "BMW sports car with metallic blue color change wrap",
+      title: "BMW Metallic Blue Color Change",
+      description: "Vibrant metallic blue wrap that enhances the vehicle's dynamic lines."
     },
     {
-      image: "https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?auto=format&fit=crop&w=800&q=80",
-      alt: "Satin white wrapped luxury SUV",
-      title: "Satin Pearl White Range Rover",
-      description: "Elegant satin pearl finish on a Range Rover Sport."
+      image: "/lovable-uploads/0316f206-884b-44b4-bdb3-e0f7962a1714.png",
+      alt: "Mercedes sedan with matte black color change wrap",
+      title: "Mercedes Sedan Matte Black",
+      description: "Elegant matte black finish on a luxury Mercedes sedan."
     },
     {
-      image: "https://images.unsplash.com/photo-1610915819558-7dc776ba03e4?auto=format&fit=crop&w=800&q=80",
-      alt: "Metallic silver wrapped sports car",
-      title: "Metallic Silver BMW M4",
-      description: "Metallic silver wrap that highlights the aggressive body lines."
+      image: "/lovable-uploads/e021924c-a0a1-407c-9d11-13372909975f.png",
+      alt: "Jeep Grand Cherokee with matte black color change wrap",
+      title: "Jeep Grand Cherokee Matte Black",
+      description: "Matte black wrap that highlights the SUV's aggressive styling."
     }
   ];
 

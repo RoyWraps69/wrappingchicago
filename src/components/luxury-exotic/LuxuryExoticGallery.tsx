@@ -7,28 +7,28 @@ import { ArrowRight } from 'lucide-react';
 const LuxuryExoticGallery = () => {
   const galleryItems = [
     {
-      image: "https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?auto=format&fit=crop&w=800&q=80",
-      alt: "Ferrari with premium matte black wrap",
-      title: "Ferrari 488 Matte Black",
-      description: "Complete matte black transformation with carbon fiber accents on a Ferrari 488."
+      image: "/lovable-uploads/0316f206-884b-44b4-bdb3-e0f7962a1714.png",
+      alt: "Mercedes sedan with premium matte black luxury wrap",
+      title: "Mercedes Sedan Matte Black",
+      description: "Complete matte black transformation on a luxury Mercedes sedan."
     },
     {
-      image: "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&w=800&q=80",
-      alt: "Porsche 911 with satin metallic blue wrap",
-      title: "Porsche 911 Metallic Blue",
-      description: "Satin metallic blue wrap with black accents on a Porsche 911 Turbo S."
+      image: "/lovable-uploads/9de106b5-94cb-4fd1-a7c7-5c75c75b7cbb.png",
+      alt: "BMW sports car with satin metallic blue wrap",
+      title: "BMW Sports Car Metallic Blue",
+      description: "Satin metallic blue wrap with premium finish on a BMW sports car."
     },
     {
-      image: "https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=800&q=80",
-      alt: "Lamborghini with striking purple color shift wrap",
-      title: "Lamborghini Aventador SVJ",
-      description: "Custom color shift wrap that transitions from purple to blue on a Lamborghini Aventador SVJ."
+      image: "/lovable-uploads/77a1f4b1-efe3-4779-8646-f92e01667a29.png",
+      alt: "Sports car with custom racing stripes and luxury accents",
+      title: "Custom Sports Car Racing Design",
+      description: "Custom racing stripe design with precision application on high-performance vehicle."
     },
     {
-      image: "https://images.unsplash.com/photo-1597934877652-a0eef2b2e56b?auto=format&fit=crop&w=800&q=80",
-      alt: "McLaren with gloss racing stripe design",
-      title: "McLaren 720S Racing Design",
-      description: "McLaren 720S with custom racing stripe design and full PPF protection."
+      image: "/lovable-uploads/d2a8e418-117f-4bfc-a6a2-efb63dbbce7f.png",
+      alt: "Performance car with luxury custom accent graphics",
+      title: "Performance Car Custom Accents",
+      description: "High-end performance vehicle with custom accent graphics and luxury finish."
     }
   ];
 

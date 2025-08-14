@@ -7,28 +7,28 @@ import { ArrowRight } from 'lucide-react';
 const DesignerWrapsGallery = () => {
   const galleryItems = [
     {
-      image: "https://images.unsplash.com/photo-1519245659620-e859806a8d3b?auto=format&fit=crop&w=800&q=80",
+      image: "/lovable-uploads/77a1f4b1-efe3-4779-8646-f92e01667a29.png",
       alt: "Sports car with custom racing stripe design wrap",
       title: "Custom Racing Stripes Design",
       description: "Bold racing stripes with metallic accents and custom color fades."
     },
     {
-      image: "https://images.unsplash.com/photo-1603384699007-50707fc265ce?auto=format&fit=crop&w=800&q=80",
-      alt: "Vehicle with geometric pattern wrap design",
-      title: "Geometric Pattern Concept",
-      description: "Modern geometric design combining matte and gloss finishes with precise edges."
+      image: "/lovable-uploads/0316f206-884b-44b4-bdb3-e0f7962a1714.png",
+      alt: "Mercedes sedan with luxury matte black wrap",
+      title: "Luxury Matte Black Design",
+      description: "Premium matte black finish on luxury Mercedes sedan."
     },
     {
-      image: "https://images.unsplash.com/photo-1570071677470-c04398af73fc?auto=format&fit=crop&w=800&q=80",
-      alt: "Luxury car with color shift wrap",
-      title: "Color Shift Chameleon",
-      description: "Premium color-shifting wrap that transitions from purple to blue depending on viewing angle."
+      image: "/lovable-uploads/d2a8e418-117f-4bfc-a6a2-efb63dbbce7f.png",
+      alt: "Performance car with custom accent graphics",
+      title: "Custom Performance Graphics",
+      description: "Modern accent graphics with dynamic color transitions."
     },
     {
-      image: "https://images.unsplash.com/photo-1595840688621-60f943209793?auto=format&fit=crop&w=800&q=80",
-      alt: "Vehicle with artistic abstract design wrap",
-      title: "Abstract Art Concept",
-      description: "Custom abstract design featuring flowing lines and vibrant color transitions."
+      image: "/lovable-uploads/9de106b5-94cb-4fd1-a7c7-5c75c75b7cbb.png",
+      alt: "BMW sports car with metallic blue designer wrap",
+      title: "Metallic Blue Designer Wrap",
+      description: "Stunning metallic blue wrap that highlights dynamic vehicle lines."
     }
   ];
 
