@@ -111,6 +111,7 @@ import EnhancedSchemaGenerator from './components/seo/EnhancedSchemaGenerator';
 import DynamicMetaManager from './components/seo/DynamicMetaManager';
 import InternalLinkingHub from './components/navigation/InternalLinkingHub';
 import ScrollToTop from './components/navigation/ScrollToTop';
+import ScrollToTopButton from './components/navigation/ScrollToTopButton';
 import AppWithChat from './components/AppWithChat';
 import ErrorBoundary from './components/ErrorBoundary';
 import EnhancedGoogleAnalytics from './components/analytics/EnhancedGoogleAnalytics';
@@ -140,6 +141,7 @@ function App() {
               <EntityKnowledgeGraph />
               <TechnicalSEOMonitor />
               <ScrollToTop />
+              <ScrollToTopButton />
               <AppWithChat>
               <SkipNavigation />
               <div className="min-h-screen flex flex-col">
