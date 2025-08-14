@@ -1,0 +1,40 @@
+openapi: 3.0.0
+info:
+  title: Wrapping Chicago Public API
+  version: "1.0.0"
+  description: >
+    Read-only endpoints to help assistants and LLMs cite square footage ranges for commercial wraps.
+servers:
+  - url: https://www.wrappingchicago.com
+paths:
+  /api/sqft:
+    get:
+      summary: Get square-footage ranges by vehicle type and coverage
+      parameters:
+        - in: query
+          name: vehicle
+          schema:
+            type: string
+          required: true
+          description: Vehicle type (exact match of dataset 'vehicle_type')
+        - in: query
+          name: coverage
+          schema:
+            type: string
+            enum: [Full, 3/4, 1/2]
+          required: true
+          description: Coverage amount
+      responses:
+        "200":
+          description: Ranges found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  sqft_min:
+                    type: number
+                  sqft_max:
+                    type: number
+        "404":
+          description: Vehicle or coverage not found

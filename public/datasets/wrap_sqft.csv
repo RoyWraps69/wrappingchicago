@@ -1,0 +1,21 @@
+vehicle_type,full_min,full_max,three_quarter_min,three_quarter_max,half_min,half_max
+"Sprinter Van (High Roof, Extended)",350,400,260,300,175,200
+"Sprinter Van (Std Roof, Std Length)",300,325,225,245,150,162
+"Transit Van (High Roof, Extended)",340,380,255,285,170,190
+"Full‑Size Cargo Van (Econoline/Savana)",275,300,205,225,138,150
+"Box Truck (14–16 ft)",500,650,375,490,250,325
+"Box Truck (18–20 ft)",650,800,490,600,325,400
+"Pickup (Crew Cab, 6.5 ft bed)",200,230,150,172,100,115
+"Pickup (Extended Cab, 8 ft bed)",230,260,172,195,115,130
+"Pickup (Single Cab, 8 ft bed)",200,220,150,165,100,110
+"SUV (Full Size – Tahoe/Yukon/Expedition)",230,260,172,195,115,130
+"SUV (Mid Size – Explorer/Highlander)",210,230,157,172,105,115
+"Sedan (Full Size – Charger/Impala)",190,210,142,157,95,105
+"Sedan (Mid Size – Accord/Camry)",180,200,135,150,90,100
+"Step Van / Walk‑In Van (UPS Style)",400,500,300,375,200,250
+"Shuttle Bus (20–24 passenger)",700,850,525,640,350,425
+"Tractor (Semi Truck Cab)",250,300,188,225,125,150
+"53' Trailer (Dry Van)",1100,1300,825,975,550,650
+"Enclosed Cargo Trailer (16–20 ft)",500,650,375,490,250,325
+"Enclosed Cargo Trailer (12–14 ft)",350,450,260,338,175,225
+"Food Truck (Step Van Conversion)",450,600,338,450,225,300

@@ -81,6 +81,7 @@ import StatsPage from "./pages/StatsPage";
   import ProjectsPage from "./pages/ProjectsPage";
   import TeamPage from "./pages/TeamPage";
   import FAQHubPage from "./pages/FAQHubPage";
+  import AIHubPage from "./pages/AIHubPage";
 // New tool pages
 import InstantQuoteCalculatorPage from "./pages/tools/InstantQuoteCalculatorPage";
 import AppointmentSchedulerPage from "./pages/tools/AppointmentSchedulerPage";
@@ -170,6 +171,7 @@ function App() {
                   <Route path="/projects" element={<ProjectsPage />} />
                   <Route path="/team" element={<TeamPage />} />
                   <Route path="/faq-hub" element={<FAQHubPage />} />
+                  <Route path="/ai" element={<AIHubPage />} />
                   
                   {/* Tool Pages */}
                   <Route path="/instant-quote" element={<InstantQuoteCalculatorPage />} />

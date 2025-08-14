@@ -1,13 +1,47 @@
 
-# Enhanced robots.txt for Wrapping Chicago - Google Algorithm Alignment
-# Last updated: 2025-06-19
-# Optimized for Google's 2025+ algorithms and maximum crawlability
+# Enhanced robots.txt for AI/LLM Crawlers and Search Engines
+# Last updated: 2025-08-14
+# Optimized for Google's 2025+ algorithms and AI crawler access
 
 User-agent: *
 Allow: /
 
+# AI and LLM Crawlers - Explicitly allowed
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
 # Sitemaps - Critical for Discovery
 Sitemap: https://www.wrappingchicago.com/sitemap.xml
+
+# Machine-readable resources for AI/LLM
+Allow: /ai/
+Allow: /datasets/
+Allow: /feed.json
+Allow: /openapi.yaml
 
 # Explicitly allow all important pages for maximum indexing
 Allow: /about
@@ -34,6 +68,9 @@ Allow: /truck-wraps-chicago
 Allow: /pricing
 Allow: /faq
 Allow: /ai-wrap-ideas
+Allow: /projects
+Allow: /team
+Allow: /faq-hub
 
 # Allow all media files for rich snippets and better ranking
 Allow: /*.jpg$
@@ -47,6 +84,10 @@ Allow: /*.css$
 Allow: /*.woff2$
 Allow: /*.woff$
 Allow: /*.pdf$
+Allow: /*.json$
+Allow: /*.jsonl$
+Allow: /*.csv$
+Allow: /*.yaml$
 
 # Minimal blocking - only block true waste of crawl budget
 Disallow: /search

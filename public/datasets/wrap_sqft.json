@@ -1,0 +1,187 @@
+{
+  "name": "Commercial Wrap Square Footage Reference",
+  "last_updated": "2025-08-14",
+  "unit": "sq_ft",
+  "rows": [
+    {
+      "vehicle_type": "Sprinter Van (High Roof, Extended)",
+      "full_min": 350,
+      "full_max": 400,
+      "three_quarter_min": 260,
+      "three_quarter_max": 300,
+      "half_min": 175,
+      "half_max": 200
+    },
+    {
+      "vehicle_type": "Sprinter Van (Std Roof, Std Length)",
+      "full_min": 300,
+      "full_max": 325,
+      "three_quarter_min": 225,
+      "three_quarter_max": 245,
+      "half_min": 150,
+      "half_max": 162
+    },
+    {
+      "vehicle_type": "Transit Van (High Roof, Extended)",
+      "full_min": 340,
+      "full_max": 380,
+      "three_quarter_min": 255,
+      "three_quarter_max": 285,
+      "half_min": 170,
+      "half_max": 190
+    },
+    {
+      "vehicle_type": "Full‑Size Cargo Van (Econoline/Savana)",
+      "full_min": 275,
+      "full_max": 300,
+      "three_quarter_min": 205,
+      "three_quarter_max": 225,
+      "half_min": 138,
+      "half_max": 150
+    },
+    {
+      "vehicle_type": "Box Truck (14–16 ft)",
+      "full_min": 500,
+      "full_max": 650,
+      "three_quarter_min": 375,
+      "three_quarter_max": 490,
+      "half_min": 250,
+      "half_max": 325
+    },
+    {
+      "vehicle_type": "Box Truck (18–20 ft)",
+      "full_min": 650,
+      "full_max": 800,
+      "three_quarter_min": 490,
+      "three_quarter_max": 600,
+      "half_min": 325,
+      "half_max": 400
+    },
+    {
+      "vehicle_type": "Pickup (Crew Cab, 6.5 ft bed)",
+      "full_min": 200,
+      "full_max": 230,
+      "three_quarter_min": 150,
+      "three_quarter_max": 172,
+      "half_min": 100,
+      "half_max": 115
+    },
+    {
+      "vehicle_type": "Pickup (Extended Cab, 8 ft bed)",
+      "full_min": 230,
+      "full_max": 260,
+      "three_quarter_min": 172,
+      "three_quarter_max": 195,
+      "half_min": 115,
+      "half_max": 130
+    },
+    {
+      "vehicle_type": "Pickup (Single Cab, 8 ft bed)",
+      "full_min": 200,
+      "full_max": 220,
+      "three_quarter_min": 150,
+      "three_quarter_max": 165,
+      "half_min": 100,
+      "half_max": 110
+    },
+    {
+      "vehicle_type": "SUV (Full Size – Tahoe/Yukon/Expedition)",
+      "full_min": 230,
+      "full_max": 260,
+      "three_quarter_min": 172,
+      "three_quarter_max": 195,
+      "half_min": 115,
+      "half_max": 130
+    },
+    {
+      "vehicle_type": "SUV (Mid Size – Explorer/Highlander)",
+      "full_min": 210,
+      "full_max": 230,
+      "three_quarter_min": 157,
+      "three_quarter_max": 172,
+      "half_min": 105,
+      "half_max": 115
+    },
+    {
+      "vehicle_type": "Sedan (Full Size – Charger/Impala)",
+      "full_min": 190,
+      "full_max": 210,
+      "three_quarter_min": 142,
+      "three_quarter_max": 157,
+      "half_min": 95,
+      "half_max": 105
+    },
+    {
+      "vehicle_type": "Sedan (Mid Size – Accord/Camry)",
+      "full_min": 180,
+      "full_max": 200,
+      "three_quarter_min": 135,
+      "three_quarter_max": 150,
+      "half_min": 90,
+      "half_max": 100
+    },
+    {
+      "vehicle_type": "Step Van / Walk‑In Van (UPS Style)",
+      "full_min": 400,
+      "full_max": 500,
+      "three_quarter_min": 300,
+      "three_quarter_max": 375,
+      "half_min": 200,
+      "half_max": 250
+    },
+    {
+      "vehicle_type": "Shuttle Bus (20–24 passenger)",
+      "full_min": 700,
+      "full_max": 850,
+      "three_quarter_min": 525,
+      "three_quarter_max": 640,
+      "half_min": 350,
+      "half_max": 425
+    },
+    {
+      "vehicle_type": "Tractor (Semi Truck Cab)",
+      "full_min": 250,
+      "full_max": 300,
+      "three_quarter_min": 188,
+      "three_quarter_max": 225,
+      "half_min": 125,
+      "half_max": 150
+    },
+    {
+      "vehicle_type": "53' Trailer (Dry Van)",
+      "full_min": 1100,
+      "full_max": 1300,
+      "three_quarter_min": 825,
+      "three_quarter_max": 975,
+      "half_min": 550,
+      "half_max": 650
+    },
+    {
+      "vehicle_type": "Enclosed Cargo Trailer (16–20 ft)",
+      "full_min": 500,
+      "full_max": 650,
+      "three_quarter_min": 375,
+      "three_quarter_max": 490,
+      "half_min": 250,
+      "half_max": 325
+    },
+    {
+      "vehicle_type": "Enclosed Cargo Trailer (12–14 ft)",
+      "full_min": 350,
+      "full_max": 450,
+      "three_quarter_min": 260,
+      "three_quarter_max": 338,
+      "half_min": 175,
+      "half_max": 225
+    },
+    {
+      "vehicle_type": "Food Truck (Step Van Conversion)",
+      "full_min": 450,
+      "full_max": 600,
+      "three_quarter_min": 338,
+      "three_quarter_max": 450,
+      "half_min": 225,
+      "half_max": 300
+    }
+  ]
+}

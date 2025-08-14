@@ -1,0 +1,32 @@
+{
+  "version": "https://jsonfeed.org/version/1.1",
+  "title": "Wrapping Chicago Updates",
+  "home_page_url": "https://www.wrappingchicago.com/",
+  "feed_url": "https://www.wrappingchicago.com/feed.json",
+  "items": [
+    {
+      "id": "case-study-lakeview-sprinter-2025-08-14",
+      "url": "https://www.wrappingchicago.com/projects/lakeview-sprinter",
+      "title": "Lakeview Sprinter Van — Full Wrap",
+      "date_published": "2025-08-14T10:00:00-05:00",
+      "content_text": "Avery cast film, 2-day turnaround, 340–380 sq ft.",
+      "tags": ["case-study","sprinter","fleet"]
+    },
+    {
+      "id": "fleet-transformation-2025-08-12",
+      "url": "https://www.wrappingchicago.com/projects/fleet-transformation",
+      "title": "Chicago Plumbing Co. Fleet Transformation",
+      "date_published": "2025-08-12T14:30:00-05:00",
+      "content_text": "Complete fleet of 12 service vehicles including vans and trucks. Custom design incorporating company branding with high-visibility safety elements.",
+      "tags": ["case-study","fleet","commercial"]
+    },
+    {
+      "id": "tesla-chrome-delete-2025-08-10",
+      "url": "https://www.wrappingchicago.com/projects/tesla-chrome-delete",
+      "title": "Luxury Tesla Model S Chrome Delete",
+      "date_published": "2025-08-10T11:15:00-05:00",
+      "content_text": "Complete chrome delete and color change from white to matte black. Premium 3M 1080 Series vinyl with 7-year warranty.",
+      "tags": ["case-study","luxury","color-change"]
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "brand": "Wrapping Chicago",
+  "domain": "wrappingchicago.com",
+  "last_updated": "2025-08-14",
+  "service_area": ["Chicago, IL", "Evanston, IL", "Skokie, IL", "Naperville, IL", "Schaumburg, IL"],
+  "contact": {
+    "phone": "+1-312-597-1286",
+    "address": "4711 N Lamon Ave, Chicago, IL 60630",
+    "email": "roy@chicagofleetwraps.com"
+  },
+  "capabilities": [
+    "Fleet wraps",
+    "Box truck wraps", 
+    "Color change wraps",
+    "Commercial graphics",
+    "Trailers & step vans",
+    "Luxury vehicle wraps",
+    "Food truck wraps",
+    "Partial wraps",
+    "Vehicle lettering",
+    "Protective films"
+  ],
+  "proof": {
+    "vehicles_wrapped": 16000,
+    "years_in_business": 11,
+    "average_turnaround_days": "2-5 (most jobs)",
+    "customer_rating": 4.9,
+    "review_count": 247
+  },
+  "certifications": [
+    "3M Preferred Installer",
+    "Avery Dennison Certified", 
+    "UASG Professional Member",
+    "PDAA Certified",
+    "BBB A+ Rating"
+  ],
+  "materials": [
+    "3M Cast Vinyl",
+    "Avery Dennison Cast Vinyl",
+    "Premium automotive-grade adhesives",
+    "5-7 year material warranties"
+  ],
+  "warranty": {
+    "materials": "5-7 years",
+    "installation": "2 years workmanship",
+    "satisfaction": "100% guarantee"
+  }
+}
