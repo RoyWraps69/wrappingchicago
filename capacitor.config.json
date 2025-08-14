@@ -1,0 +1,20 @@
+{
+  "appId": "app.lovable.34ca22b2d69b4faeb4478583f63c4669",
+  "appName": "wrappingchicago",
+  "webDir": "dist",
+  "server": {
+    "url": "https://34ca22b2-d69b-4fae-b447-8583f63c4669.lovableproject.com?forceHideBadge=true",
+    "cleartext": true
+  },
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 2000,
+      "backgroundColor": "#1e293b",
+      "androidSplashResourceName": "splash",
+      "showSpinner": false
+    },
+    "StatusBar": {
+      "style": "dark"
+    }
+  }
+}

@@ -133,7 +133,7 @@ function App() {
             <Toaster />
             <Sonner />
             <BrowserRouter>
-              {/* Core tracking and optimization only */}
+              {/* Google 2025 Advanced Features */}
               <EnhancedGoogleAnalytics />
               <CoreWebVitalsOptimizer />
               <ScrollToTop />

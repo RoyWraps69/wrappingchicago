@@ -6,6 +6,11 @@ import AEOOptimizerCoordinated from "@/components/seo/AEOOptimizerCoordinated";
 import LocalSEOBoosterCoordinated from "@/components/seo/LocalSEOBoosterCoordinated";
 import CompetitiveRankingBooster from "@/components/seo/CompetitiveRankingBooster";
 import LocalDominanceBooster from "@/components/seo/LocalDominanceBooster";
+import AdvancedUXTracker from "@/components/analytics/AdvancedUXTracker";
+import ContentAutomation from "@/components/automation/ContentAutomation";
+import VisualSearchOptimizer from "@/components/seo/VisualSearchOptimizer";
+import SecurityEnhancements from "@/components/security/SecurityEnhancements";
+import { AIPersonalizationProvider } from "@/components/ai/AIPersonalizationProvider";
 import HomePageSections from "@/components/home/HomePageSections";
 
 const Index = () => {
