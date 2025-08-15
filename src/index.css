@@ -6,11 +6,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
 :root {
-  --background: 0 0% 8%;
+  --background: 0 0% 0%;
   --foreground: 45 96% 85%;
-  --card: 0 0% 12%;
+  --card: 0 0% 8%;
   --card-foreground: 45 96% 90%;
-  --popover: 0 0% 8%;
+  --popover: 0 0% 0%;
   --popover-foreground: 45 96% 90%;
   --primary: 45 96% 65%;
   --primary-foreground: 0 0% 8%;
@@ -29,11 +29,11 @@
 }
 
 .dark {
-  --background: 0 0% 5%;
+  --background: 0 0% 0%;
   --foreground: 45 96% 90%;
   --card: 0 0% 8%;
   --card-foreground: 45 96% 95%;
-  --popover: 0 0% 5%;
+  --popover: 0 0% 0%;
   --popover-foreground: 45 96% 95%;
   --primary: 45 96% 70%;
   --primary-foreground: 0 0% 5%;
@@ -68,7 +68,7 @@
 }
 
 .gradient-hero {
-  background: linear-gradient(135deg, hsl(45, 96%, 65%) 0%, hsl(0, 0%, 8%) 100%);
+  background: linear-gradient(135deg, hsl(45, 96%, 65%) 0%, hsl(0, 0%, 0%) 100%);
 }
 
 .text-shadow {
