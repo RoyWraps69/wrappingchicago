@@ -101,10 +101,10 @@ export default {
 				},
 				'glow': {
 					'0%, 100%': {
-						'box-shadow': '0 0 10px 0 hsl(45, 100%, 50%)'
+						'box-shadow': '0 0 10px 0 rgba(255, 215, 0, 0.6)'
 					},
 					'50%': {
-						'box-shadow': '0 0 20px 5px hsl(45, 100%, 50%)'
+						'box-shadow': '0 0 20px 5px rgba(255, 215, 0, 0.8)'
 					}
 				}
 			},
