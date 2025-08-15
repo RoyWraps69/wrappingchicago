@@ -62,11 +62,11 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Custom colors for Wrapping Chicago - HSL format for consistent theming
+				// Custom colors for Wrapping Chicago - Black & Gold theme
 				brand: {
-					navy: 'hsl(0, 0%, 7%)', // Dark navy
-					red: 'hsl(8, 96%, 59%)', // Brand red
-					light: 'hsl(0, 0%, 100%)', // Pure white
+					navy: 'hsl(0, 0%, 8%)', // Deep black
+					red: 'hsl(45, 96%, 65%)', // Gold
+					light: 'hsl(45, 96%, 90%)', // Light gold/cream
 				}
 			},
 			borderRadius: {
@@ -101,10 +101,10 @@ export default {
 				},
 				'glow': {
 					'0%, 100%': {
-						'box-shadow': '0 0 10px 0 rgba(255, 49, 49, 0.6)'
+						'box-shadow': '0 0 10px 0 rgba(255, 215, 0, 0.6)'
 					},
 					'50%': {
-						'box-shadow': '0 0 20px 5px rgba(255, 49, 49, 0.8)'
+						'box-shadow': '0 0 20px 5px rgba(255, 215, 0, 0.8)'
 					}
 				}
 			},
