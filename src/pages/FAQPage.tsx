@@ -4,7 +4,6 @@ import UniversalRichSnippets from '@/components/seo/UniversalRichSnippets';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import CallToAction from '@/components/CallToAction';
-import Breadcrumbs from '@/components/navigation/Breadcrumbs';
 import FAQHero from '@/components/heroes/FAQHero';
 import VehicleWrapFAQ from '@/components/home/VehicleWrapFAQ';
 import { ChevronDown, ChevronUp } from 'lucide-react';
@@ -131,8 +130,6 @@ const FAQPage = () => {
           <FAQHero />
           
           <div className="container mx-auto py-12 px-4">
-            <Breadcrumbs />
-            
             {faqSections.map((section, sectionIndex) => (
               <section key={sectionIndex} className="mb-12">
                 <h2 className="text-2xl font-bold text-brand-navy mb-6">{section.category}</h2>
