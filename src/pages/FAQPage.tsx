@@ -2,6 +2,7 @@
 import React from 'react';
 import UniversalRichSnippets from '@/components/seo/UniversalRichSnippets';
 import { Helmet } from 'react-helmet-async';
+import { Link } from 'react-router-dom';
 import CallToAction from '@/components/CallToAction';
 import Breadcrumbs from '@/components/navigation/Breadcrumbs';
 import FAQHero from '@/components/heroes/FAQHero';
@@ -178,12 +179,12 @@ const FAQPage = () => {
                 >
                   Call (312) 597-1286
                 </a>
-                <a 
-                  href="/contact"
+                <Link 
+                  to="/contact"
                   className="bg-brand-navy text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-800 transition-colors"
                 >
                   Request a Quote
-                </a>
+                </Link>
               </div>
             </section>
           </div>
