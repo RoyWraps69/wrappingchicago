@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Phone, MessageCircle, HelpCircle, Users } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const FAQHero = () => {
   return (
@@ -50,21 +51,25 @@ const FAQHero = () => {
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Button 
+              asChild
               size="lg" 
               className="bg-white text-primary hover:bg-white/90 font-bold text-lg px-8 py-6 h-auto shadow-lg"
-              onClick={() => window.location.href = 'tel:+13125971286'}
             >
-              <Phone className="mr-2 h-5 w-5" />
-              Call (312) 597-1286
+              <a href="tel:+13125971286">
+                <Phone className="mr-2 h-5 w-5" />
+                Call (312) 597-1286
+              </a>
             </Button>
             <Button 
+              asChild
               size="lg" 
               variant="outline"
               className="border-2 border-white text-white hover:bg-white hover:text-primary font-bold text-lg px-8 py-6 h-auto"
-              onClick={() => window.location.href = '/contact'}
             >
-              <MessageCircle className="mr-2 h-5 w-5" />
-              Get Free Quote
+              <Link to="/contact">
+                <MessageCircle className="mr-2 h-5 w-5" />
+                Get Free Quote
+              </Link>
             </Button>
           </div>
         </div>
