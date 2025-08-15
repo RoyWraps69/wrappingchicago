@@ -3,7 +3,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { HashRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { HelmetProvider } from 'react-helmet-async';
 import SkipNavigation from "./components/accessibility/SkipNavigation";
 import Header from "./components/Header";
@@ -136,7 +136,7 @@ function App() {
           <TooltipProvider>
             <Toaster />
             <Sonner />
-            <HashRouter>
+            <BrowserRouter>
               {/* Google Perfect 10 Requirements 2025 - SAFE VERSIONS */}
               <Perfect10Compliance 
                 pageTitle="Vehicle Wraps Chicago - Perfect 10 Compliance"
@@ -286,7 +286,7 @@ function App() {
               </div>
               </AppWithChat>
               {/* SEO components moved to individual pages to prevent conflicts */}
-            </HashRouter>
+            </BrowserRouter>
           </TooltipProvider>
         </QueryClientProvider>
       </HelmetProvider>

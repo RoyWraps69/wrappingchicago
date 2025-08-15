@@ -17,7 +17,7 @@ const ServicesSection = ({ fleetWrapVan, colorChangeVan, commercialGraphics }: S
     description: "Transform your vehicle's appearance with our premium color change wraps. Slide to see the dramatic before and after transformation from silver to vibrant blue on this Lexus IS.",
     beforeImage: "/lovable-uploads/60c7cf64-9ac2-4f0b-b567-3b7f87c327c9.png",
     afterImage: "/lovable-uploads/b6c498ab-7a00-4a2c-957d-9ff9c4f11e8c.png",
-    link: "/services/color-change-wraps"
+    link: "/color-change-wraps"
   };
 
   // Secondary services configuration
@@ -32,7 +32,7 @@ const ServicesSection = ({ fleetWrapVan, colorChangeVan, commercialGraphics }: S
       title: "Commercial Graphics",
       description: "From simple lettering to complex designs, our commercial graphics solutions help businesses create professional vehicle identities that stand out on the road.",
       image: commercialGraphics,
-      link: "/services/commercial-graphics"
+      link: "/commercial-graphics"
     }
   ];
 
@@ -51,12 +51,12 @@ const ServicesSection = ({ fleetWrapVan, colorChangeVan, commercialGraphics }: S
     {
       title: "Partial Wraps",
       description: "Cost-effective partial wrapping solutions that deliver maximum visual impact while working with your budget.",
-      link: "/services/partial-wraps"
+      link: "/partial-wraps"
     },
     {
       title: "Protective Films",
       description: "Shield your vehicle's paint from road debris, scratches, and environmental damage with our premium protective film installations.",
-      link: "/services/protective-films"
+      link: "/protective-films"
     }
   ];
 
