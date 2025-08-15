@@ -5,11 +5,9 @@ import { Helmet } from 'react-helmet-async';
 import CallToAction from '@/components/CallToAction';
 import FAQHero from '@/components/heroes/FAQHero';
 import VehicleWrapFAQ from '@/components/home/VehicleWrapFAQ';
-import { SchemaDeduplicatorProvider } from '@/components/seo/SchemaDeduplicator';
-
 const FAQPage = () => {
   return (
-    <SchemaDeduplicatorProvider>
+    <>
       <Helmet>
         <title>Vehicle Wrap FAQ - Frequently Asked Questions | Wrapping Chicago</title>
         <meta name="description" content="Get answers to common questions about vehicle wraps, car wraps, and commercial fleet wrapping services in Chicago and surrounding areas." />
@@ -28,7 +26,7 @@ const FAQPage = () => {
         <VehicleWrapFAQ />
         <CallToAction />
       </main>
-    </SchemaDeduplicatorProvider>
+    </>
   );
 };
 
