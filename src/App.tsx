@@ -128,8 +128,13 @@ import LocalSEOOptimizer from './components/seo/LocalSEOOptimizerSafe';
 
 const queryClient = new QueryClient();
 
-// Use HashRouter in Lovable preview to prevent 404s on navigation
-const Router = (typeof window !== 'undefined' && window.location.hostname.includes('lovable.app')) ? HashRouter : BrowserRouter;
+// Use HashRouter in Lovable preview and local/dev or when hash-based URL is detected to prevent 404s
+const isClient = typeof window !== 'undefined';
+const host = isClient ? window.location.hostname : '';
+const isLovable = /lovable(app|project)\.com$/i.test(host);
+const isLocal = host === 'localhost' || host === '127.0.0.1';
+const hasHashRouting = isClient && window.location.hash.startsWith('#/');
+const Router = (isLovable || isLocal || hasHashRouting) ? HashRouter : BrowserRouter;
 
 function App() {
   return (
